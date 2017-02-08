@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Option
+# key: option
+# --
+<option${1: value="$2"}>$3</option>$0

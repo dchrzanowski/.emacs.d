@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: constant string
+# key: cos
+# --
+public static final String ${1:var} = "$2";$0

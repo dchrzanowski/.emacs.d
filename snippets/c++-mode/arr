@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Array
+# key: arr
+# --
+std::array<${1:int}, ${2:size_of_array}> ${3:var_name} {{0}};${0}

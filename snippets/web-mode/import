@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Import
+# key: import
+# --
+<link rel="import" href="$1">$0

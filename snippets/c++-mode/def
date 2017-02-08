@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: #ifndef … #define … #endif
+# key: def
+# --
+#ifndef ${1:SYMBOL}
+#define $1 ${2:value}
+#endif

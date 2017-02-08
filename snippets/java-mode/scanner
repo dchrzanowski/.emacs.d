@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: scanner
+# key: scan
+# --
+Scanner ${1:in} = new Scanner(System.in);$0

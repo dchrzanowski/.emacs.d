@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Quote
+# key: q
+# --
+<q${1: cite="$2"}>$3</q>$0

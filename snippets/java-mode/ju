@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: java.util.
+# key: j.u
+# --
+java.util.$0

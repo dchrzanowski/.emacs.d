@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: From/Import
+# key: fim
+# --
+from ${1:package/module} import ${2:names}

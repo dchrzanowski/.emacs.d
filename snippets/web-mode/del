@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Deleted Text
+# key: del
+# --
+<del>$1</del>$0

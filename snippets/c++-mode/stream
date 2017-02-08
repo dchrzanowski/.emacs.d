@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: String Stream
+# key: stream
+# --
+std::stringstream(${1:input var}) >> ${2:output var};

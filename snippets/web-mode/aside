@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Aside
+# key: aside
+# --
+<aside class="$1">
+    $2
+</aside>

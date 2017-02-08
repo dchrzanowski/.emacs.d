@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: throw new
+# key: tn
+# --
+throw new $0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Sample Output
+# key: samp
+# --
+<samp>$1</samp>$0

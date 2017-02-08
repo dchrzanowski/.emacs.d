@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: test case
+# key: tc
+# --
+public class ${1:MyTest} extends ${2:TestCase} {
+    $0
+}

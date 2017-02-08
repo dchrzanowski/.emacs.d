@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Area
+# key: area
+# --
+<area${1: shape="${2:default}"} coords="$3"${4: href="${5:#}" alt="$6"}>$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Select
+# key: select
+# --
+<select class="$1" name="$2">
+    $3
+</select>

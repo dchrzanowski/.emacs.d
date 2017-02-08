@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Data
+# key: data
+# --
+<data value="$1">$2</data>$0

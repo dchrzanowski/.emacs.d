@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Text Area
+# key: textarea
+# --
+<textarea name="${1:name}" rows="${2:8}" cols="${3:80}">$4</textarea>$0

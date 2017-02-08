@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Fail (a test)
+# key: fail
+# --
+self.fail('${1:message}')$0

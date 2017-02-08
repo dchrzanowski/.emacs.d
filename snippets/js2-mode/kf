@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Object Method
+# key: kf
+# --
+${1:methodName}: function (${2:attribute}) {
+    $3
+}${4:,}

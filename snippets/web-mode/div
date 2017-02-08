@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Div
+# key: div
+# --
+<div class="$2">
+    $3
+</div> <!-- $2 ends here -->

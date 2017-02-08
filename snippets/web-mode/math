@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: MathML
+# key: math
+# --
+<math>
+    $1
+</math>

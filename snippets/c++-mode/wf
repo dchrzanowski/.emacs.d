@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: write file
+# key: wf
+# --
+FILE *${1:fp};
+${1:fp} = fopen ("${2:filename.txt}","w");
+if (${1:fp}!=NULL)
+{
+    fprintf(${1:fp},"${3:Some String
+}");
+    fclose (${1:fp});
+}

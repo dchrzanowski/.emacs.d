@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Data List
+# key: datalist
+# --
+<datalist${1: class="$2"}>
+    $3
+</datalist>

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Switch Statement
+# key: switch
+# --
+switch (${1:/* expression */}) {
+    case ${2:/* value */}:
+}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Pointer Predefined
+# key: ptrp
+# --
+${1:int} ${2:var_name} = ${3:value};
+${1:int} *${2:var_name}_ptr = &${2:var_name};${0}

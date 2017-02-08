@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Raw For Loop
+# key: forraw
+# --
+for (${1:size_t} ${2:i = 0}; ${3:i < count}; ${4:i++}) {
+    ${5:/* code */}
+}

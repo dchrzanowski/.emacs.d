@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Style
+# key: style
+# --
+<style media="screen">
+    $1
+</style>

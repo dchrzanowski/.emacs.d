@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Declare Int
+# key: int
+# --
+int $1 = $2;$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Do While Loop
+# key: do
+# --
+do {
+    ${0:/* code */}
+} while(${1:/* condition */});

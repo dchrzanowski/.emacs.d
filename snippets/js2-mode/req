@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: CommonJS require
+# key: req
+# --
+const ${1:module} = require('${1:module}');

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: SVG
+# key: svg
+# --
+<svg>
+    $1
+</svg>

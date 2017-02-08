@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Definition Term
+# key: dt
+# --
+<dt>$1</dt>$0

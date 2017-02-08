@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Option Group
+# key: optgroup
+# --
+<optgroup label="$1">
+    $2
+</optgroup>

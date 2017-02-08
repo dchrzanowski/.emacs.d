@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Navigation
+# key: nav
+# --
+<nav>
+    $1
+</nav>

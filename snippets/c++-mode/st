@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Struct
+# key: st
+# --
+struct ${1:name_t} {
+    ${2:/* data */}
+};

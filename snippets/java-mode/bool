@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Declare Boolean
+# key: bool
+# --
+boolean $1 = $2;$0

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Header Include-Guard
+# key: once
+# --
+#ifndef ${1:SYMBOL}
+#define $1
+
+${2}
+
+#endif /* end of include guard: $1 */

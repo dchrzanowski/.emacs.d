@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Form
+# key: form
+# --
+<form class="$1" action="${2:index.html}" method="${3:post}">
+    $4
+</form>

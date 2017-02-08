@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Declare String
+# key: String
+# --
+String $1 = $2;$0

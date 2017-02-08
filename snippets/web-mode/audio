@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Audio
+# key: audio
+# --
+<audio src="$1">
+    $2
+</audio>

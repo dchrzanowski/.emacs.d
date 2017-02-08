@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Article
+# key: article
+# --
+<article class="$1">
+    $2
+</article>

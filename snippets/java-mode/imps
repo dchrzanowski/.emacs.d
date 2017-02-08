@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Import Scanner
+# key: imps
+# --
+import java.util.Scanner;$0

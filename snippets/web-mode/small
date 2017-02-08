@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Small
+# key: small
+# --
+<small>$1</small>$0

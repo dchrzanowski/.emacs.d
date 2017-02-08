@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Mark
+# key: mark
+# --
+<mark>$1</mark>$0

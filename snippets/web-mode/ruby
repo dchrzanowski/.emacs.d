@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ruby Annotation
+# key: ruby
+# --
+<ruby>$1</ruby>$0

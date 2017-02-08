@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Body
+# key: body
+# --
+<body>
+    $1
+</body>

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: class
+# key: cl
+# --
+class ${1:MyClass} ${2:extends ${3:Parent} }${4:implements ${5:Interface} }{
+    $6
+}

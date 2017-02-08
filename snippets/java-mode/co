@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: constant
+# key: co
+# --
+public static final ${1:String} ${2:var} = $3;$0

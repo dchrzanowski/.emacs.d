@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: setTimeout function
+# key: timeout
+# --
+setTimeout(${2:function () {
+    $3
+}}, ${1:10});

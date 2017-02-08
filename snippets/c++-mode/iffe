@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: If ElseIf Else
+# key: iffe
+# --
+if (${1:/* condition */}) {
+    ${2:/* code */}
+} else if (${3:/* condition */}) {
+    ${4:/* code */}
+} else {
+    ${5:/* code */}
+}

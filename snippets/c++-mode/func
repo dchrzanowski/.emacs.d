@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: any function
+# key: func
+# --
+${1:int} ${2:name}(${3:/* arguments */}) {
+    ${5:/* code */}
+    return ${4:0};
+}

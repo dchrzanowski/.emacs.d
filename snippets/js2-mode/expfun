@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: export function
+# key: expfun
+# --
+exports.${1:functionName} = function ($2) {
+    ${3:// body...}
+};

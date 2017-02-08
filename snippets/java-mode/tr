@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: try
+# key: tr
+# --
+try {
+    $0
+}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: setInterval function
+# key: interval
+# --
+setInterval(${2:function () {
+    $3
+}}, ${1:10});

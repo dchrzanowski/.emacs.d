@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Bi-Directional Override
+# key: bdo
+# --
+<bdo dir="${1:rtl}">$2</bdo>$0

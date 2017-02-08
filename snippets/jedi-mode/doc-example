@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Insert Docstring with example
+# key: doc-example
+# --
+"""${1:short_description}
+
+(${2:input_var}) -> ${3:output_var}
+
+${4:full_description}
+
+>>> ${5:function_action}
+${6:output}
+"""

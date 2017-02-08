@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Ordered List
+# key: ol
+# --
+<ol>
+    $1
+</ol>

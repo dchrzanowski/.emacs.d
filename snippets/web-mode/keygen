@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Keygen
+# key: keygen
+# --
+<keygen name="${1:name}" challenge="${2:string}" keytype="${3:RSA}" keyparams="${4:medium}">$0

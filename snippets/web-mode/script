@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Script
+# key: script
+# --
+<script${1: type="${2:text/javascript}"}>
+    $3
+</script>

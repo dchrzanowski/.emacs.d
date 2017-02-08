@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Column Group
+# key: colgroup
+# --
+<colgroup>$1</colgroup>$0

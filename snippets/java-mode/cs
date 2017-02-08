@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: case
+# key: cs
+# --
+case $1:
+    $2
+$0

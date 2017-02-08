@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: interface
+# key: in
+# --
+interface ${1:MyInterface} ${2:extends ${3:Parent} }{
+    $0
+}

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Class
+# key: cl
+# --
+class ${1:name_t} {
+private:
+    ${0:/* data */}
+
+public:
+    ${1:name_t} (${2:arguments});
+    virtual ~${1:name_t} ();
+};

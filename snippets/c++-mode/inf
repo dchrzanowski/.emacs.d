@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: input file
+# key: inf
+# --
+std::ifstream ${1:afile}("${2:filename.txt}", std::ios::in);
+if (${1:afile}.is_open()) {
+    std::string line;
+    while (std::getline(${1:afile}, line)) {
+        std::cout << line << '
+';
+    }
+    ${1:afile}.close();
+}
+else {
+    std::cerr << "Unable to open file
+";
+}

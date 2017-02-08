@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: List Comprehension
+# key: lc
+# --
+[${1:value} for ${2:value} in ${3:variable}]

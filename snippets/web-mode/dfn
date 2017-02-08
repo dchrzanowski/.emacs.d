@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Definition
+# key: dfn
+# --
+<dfn>$1</dfn>$0

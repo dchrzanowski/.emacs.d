@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Heading 6
+# key: h6
+# --
+<h6>$1</h6>$0

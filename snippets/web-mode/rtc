@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ruby Text Container
+# key: rtc
+# --
+<rtc>$1</rtc>$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: serialVersionUID
+# key: se
+# --
+private static final long serialVersionUID = ${1:42}l;$0

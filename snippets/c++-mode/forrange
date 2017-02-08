@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Range For Loop
+# key: forrange
+# --
+for (${1:auto} each : ${2:input_var}) {
+    ${3:/* code */}
+}

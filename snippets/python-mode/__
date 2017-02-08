@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: __magic__
+# key: __
+# --
+__${1:init}__

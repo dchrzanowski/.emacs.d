@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ruby Base
+# key: rb
+# --
+<rb>$1</rb>$0

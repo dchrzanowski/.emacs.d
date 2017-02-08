@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Legend
+# key: legend
+# --
+<legend>$1</legend>$0

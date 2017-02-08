@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Anonymous Generator
+# key: g
+# --
+function* ($1) {
+    $2
+}

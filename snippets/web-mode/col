@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Column
+# key: col
+# --
+<col${1: span="${2:2}"}>$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Inline Frame
+# key: iframe
+# --
+<iframe src="$1" width="$2" height="$3">$4</iframe>$0

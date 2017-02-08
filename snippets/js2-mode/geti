@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: getElementById
+# key: geti
+# --
+getElementById(${1:'${2:id}'})$3

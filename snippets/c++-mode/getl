@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Get Line
+# key: getl
+# --
+getline(std::cin, ${1:output_var});

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: querySelector
+# key: qs
+# --
+querySelector(${1:'${2:query}'})$3

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Footer
+# key: footer
+# --
+<footer>$1</footer>$0

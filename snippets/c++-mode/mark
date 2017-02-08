@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: #pragma mark
+# key: mark
+# --
+#if 0
+${1:#pragma mark -
+}#pragma mark $2
+#endif
+
+$0

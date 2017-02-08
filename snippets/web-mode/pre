@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Preformatted Text
+# key: pre
+# --
+<pre>$1</pre>$0

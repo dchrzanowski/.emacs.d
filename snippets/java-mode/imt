@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: import junit.framework.TestCase;
+# key: imt
+# --
+import junit.framework.TestCase;
+$0

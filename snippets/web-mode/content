@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Content
+# key: content
+# --
+<content select="$1">$2</content>$0

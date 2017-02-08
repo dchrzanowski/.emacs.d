@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Dictionary Comprehension
+# key: dc
+# --
+{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:variable}}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Noscript
+# key: noscript
+# --
+<noscript>
+    $1
+</noscript>

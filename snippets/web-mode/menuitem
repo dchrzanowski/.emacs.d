@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Menu Item
+# key: menuitem
+# --
+<menuitem type="${1:command}" label="${2:Save}">$0

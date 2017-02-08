@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: read file
+# key: rf
+# --
+FILE *${1:fp};
+${1:fp} = fopen ("${2:filename.txt}","r");
+if (${1:fp}!=NULL)
+{
+    fscanf(${1:fp},"${3:Some String
+}", ${3:&var});
+    fclose (${1:fp});
+}

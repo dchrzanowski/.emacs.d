@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Address
+# key: address
+# --
+<address${1: class="$2"}>
+    $3
+</address>

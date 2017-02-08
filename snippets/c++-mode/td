@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Typedef
+# key: td
+# --
+typedef ${1:int} ${2:MyCustomType};

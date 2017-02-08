@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Table Foot
+# key: tfoot
+# --
+<tfoot>
+    $1
+</tfoot>

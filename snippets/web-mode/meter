@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Meter
+# key: meter
+# --
+<meter value="$1"${2: min="${3:0}" max="${4:100}"}>$5</meter>$0

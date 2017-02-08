@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: getElementsByClassName
+# key: get
+# --
+getElementsByClassName(${1:'${2:className}'})$3

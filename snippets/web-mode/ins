@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Inserted Text
+# key: ins
+# --
+<ins>$1</ins>$0

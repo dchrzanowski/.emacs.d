@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Table
+# key: table
+# --
+<table>
+    $1
+</table>

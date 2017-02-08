@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Script With External Source
+# key: scriptsrc
+# --
+<script src="$1" charset="${2:utf-8}"></script>$0

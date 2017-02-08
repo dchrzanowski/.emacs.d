@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Subscript
+# key: sub
+# --
+<sub>$1</sub>$0

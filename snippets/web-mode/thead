@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Table Head
+# key: thead
+# --
+<thead>
+    $1
+</thead>

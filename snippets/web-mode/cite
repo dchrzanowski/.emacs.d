@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Citation
+# key: cite
+# --
+<cite>$1</cite>$0

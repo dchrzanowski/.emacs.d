@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ruby Parenthesis
+# key: rp
+# --
+<rp>$1</rp>$0

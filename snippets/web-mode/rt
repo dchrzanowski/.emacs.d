@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ruby Pronunciation
+# key: rt
+# --
+<rt>$1</rt>$0

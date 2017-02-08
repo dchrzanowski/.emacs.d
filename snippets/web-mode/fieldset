@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Fieldset
+# key: fieldset
+# --
+<fieldset>
+    $1
+</fieldset>

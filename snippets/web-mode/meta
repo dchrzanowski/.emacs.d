@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Meta
+# key: meta
+# --
+<meta name="${1:twitter:}" content="$2">$0

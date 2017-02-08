@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: inspect
+# key: inspect
+# --
+console.log(require('util').inspect($0, { depth: null }));

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Description List
+# key: dl
+# --
+<dl${1: class="$2"}>
+    $3
+</dl>

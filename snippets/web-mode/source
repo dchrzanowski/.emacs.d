@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Source
+# key: source
+# --
+<source src="${1:https://}" type="${2:video/}">$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Base
+# key: base
+# --
+<base href="${1:#}" target="${2:_blank}">$0

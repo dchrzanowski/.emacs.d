@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Menu
+# key: menu
+# --
+<menu>
+    $1
+</menu>

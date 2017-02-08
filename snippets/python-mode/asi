@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Assert Is
+# key: asi
+# --
+self.assertIs(${1:expected}, ${2:actual}${3:, '${4:message}'})$0
