@@ -74,6 +74,7 @@
 
 ;; helm bindings
 (global-set-key (kbd "M-w") 'helm-M-x)
+(define-key magit-mode-map (kbd "M-w") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-buffers-list)
 
 ;; helm-swoop binds
