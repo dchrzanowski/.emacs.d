@@ -272,7 +272,11 @@
  ";" 'comment-or-uncomment-region
  "k" 'comment-line
  "w" 'helm-M-x
- "b" 'helm-buffers-list)
+ "b" 'helm-buffers-list
+ "hg" 'helm-do-grep-ag
+ "ha" 'helm-do-ag
+ "gs" 'magit-status
+ "gi" 'magit-init)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
