@@ -263,7 +263,7 @@
 
 ;; evil leader bindings
 (evil-leader/set-key
- "f" 'helm-swoop
+ "f" 'helm-swoop-without-pre-input
  "s" (lambda() (interactive) (save-some-buffers t))
  "F" 'helm-find-files
  "pp" 'helm-projectile-switch-project
@@ -277,7 +277,8 @@
  ";" 'comment-or-uncomment-region
  "k" 'comment-line
  "w" 'helm-M-x
- "b" 'helm-buffers-list
+ "x" 'helm-buffers-list
+ "b" 'helm-bookmarks
  "n" 'cleanup-buffer
  "hg" 'helm-do-grep-ag
  "ha" 'helm-do-ag
@@ -286,7 +287,24 @@
  "cew" 'web-mode-element-wrap
  "ces" 'web-mode-element-select
  "cea" 'web-mode-element-content-select
- "cek" 'web-mode-element-kill)
+ "cek" 'web-mode-element-kill
+ "cei" 'web-mode-element-insert
+ "cec" 'web-mode-element-clone
+ "cer" 'web-mode-element-rename
+ "cet" 'web-mode-element-transpose
+ "cen" 'web-mode-element-next
+ "cep" 'web-mode-element-previous
+ "cai" 'web-mode-attribute-insert
+ "cak" 'web-mode-attribute-kill
+ "can" 'web-mode-attribute-next
+ "cap" 'web-mode-attribute-previous
+ "cas" 'web-mode-attribute-select
+ "ctm" 'web-mode-tag-match
+ "cts" 'web-mode-tag-select
+ "ctn" 'web-mode-tag-next
+ "ctp" 'web-mode-tag-previous
+ "cdn" 'web-mode-dom-normalize
+ "cdt" 'web-mode-dom-traverse)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
