@@ -266,7 +266,9 @@
  "f" 'helm-swoop
  "s" (lambda() (interactive) (save-some-buffers t))
  "F" 'helm-find-files
- "p" 'helm-projectile-switch-project
+ "pp" 'helm-projectile-switch-project
+ "pf" 'helm-projectile-find-file
+ "pF" 'helm-projectile-find-file-in-known-projects
  "d" 'ace-window
  "e" 'ace-jump-mode
  "j" 'ace-jump-char-mode
@@ -276,10 +278,15 @@
  "k" 'comment-line
  "w" 'helm-M-x
  "b" 'helm-buffers-list
+ "n" 'cleanup-buffer
  "hg" 'helm-do-grep-ag
  "ha" 'helm-do-ag
  "gs" 'magit-status
- "gi" 'magit-init)
+ "gi" 'magit-init
+ "cew" 'web-mode-element-wrap
+ "ces" 'web-mode-element-select
+ "cea" 'web-mode-element-content-select
+ "cek" 'web-mode-element-kill)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

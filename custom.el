@@ -87,6 +87,8 @@
  '(shell-pop-window-position "bottom")
  '(shell-pop-window-size 30)
  '(show-paren-mode t)
+ '(split-height-threshold 5)
+ '(split-width-threshold 5)
  '(sr-show-file-attributes nil)
  '(sr-traditional-other-window t)
  '(sr-windows-default-ratio 100)
