@@ -269,6 +269,7 @@
  "pp" 'helm-projectile-switch-project
  "pf" 'helm-projectile-find-file
  "pF" 'helm-projectile-find-file-in-known-projects
+ "pi" 'projectile-invalidate-cache
  "d" 'ace-window
  "e" 'ace-jump-mode
  "j" 'ace-jump-char-mode
