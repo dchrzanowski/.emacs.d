@@ -69,7 +69,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (nlinum nlinum-relative magit evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil evil elpy tide highlight dired-narrow dired-rainbow dired+ powerline htmlize palette latex-extra tabbar speed-type shell-pop rainbow-mode rainbow-delimiters pyvenv org-bullets key-chord iy-go-to-char highlight-indentation hexrgb helm-swoop helm-projectile diminish company-web company-php company-jedi company-emacs-eclim auto-package-update auto-highlight-symbol anaphora ace-jump-mode ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (evil-magit nlinum nlinum-relative magit evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil evil elpy tide highlight dired-narrow dired-rainbow dired+ powerline htmlize palette latex-extra tabbar speed-type shell-pop rainbow-mode rainbow-delimiters pyvenv org-bullets key-chord iy-go-to-char highlight-indentation hexrgb helm-swoop helm-projectile diminish company-web company-php company-jedi company-emacs-eclim auto-package-update auto-highlight-symbol anaphora ace-jump-mode ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
  '(save-place t nil (saveplace))

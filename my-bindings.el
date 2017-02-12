@@ -6,6 +6,13 @@
 ;; key binds / shortcuts
 ;; -------------------------------------------------------------------------------------------------------------------------
 (global-set-key [f8] 'neotree-toggle)
+(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-ace-window)
+(evil-define-key 'normal neotree-mode-map (kbd "h") 'neotree-select-up-node)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
+
 (global-set-key [f9] 'sunrise)
 (global-set-key [f5]
                 (lambda ()
@@ -88,7 +95,7 @@
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
 (global-set-key (kbd "C-c C-b") 'helm-bookmarks)
 
-;; vim like for helm
+;; vim like helm
 (define-key helm-map (kbd "M-j") 'helm-next-line)
 (define-key helm-map (kbd "M-k") 'helm-previous-line)
 (define-key helm-map (kbd "M-h") 'helm-next-source)
@@ -128,8 +135,8 @@
 ;; (key-chord-define-global "rt" 'er/contractb-region)
 
 ;; iy-go-to-char
-(global-set-key (kbd "C-.") 'iy-go-to-char)
-(global-set-key (kbd "C-,") 'iy-go-to-char-backward)
+;; (global-set-key (kbd "C-.") 'iy-go-to-char)
+;; (global-set-key (kbd "C-,") 'iy-go-to-char-backward)
 
 ;; web mode custom binds
 (define-key web-mode-map (kbd "C-t") 'web-mode-tag-match)  ; grab and toggle tags
@@ -189,8 +196,6 @@
 
 (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
 (define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
-(define-key company-active-map (kbd "M-j") 'company-select-next)
-(define-key company-active-map (kbd "M-k") 'company-select-previous)
 
 (define-key yas-minor-mode-map [tab] nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
@@ -199,8 +204,13 @@
 (define-key yas-keymap (kbd "TAB") 'yas-next-field-or-maybe-expand)
 (define-key yas-keymap [(control tab)] 'nil)
 (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
+;; company mode
+(define-key company-active-map (kbd "M-j") 'company-select-next)
+(define-key company-active-map (kbd "M-k") 'company-select-previous)
+(define-key company-active-map [escape] 'company-abort)
 
 ;; dired and sunrise fixes
+(define-key sr-mode-map (kbd "<f2>") 'evil-mode)
 (define-key dired-mode-map (kbd "TAB") 'other-window)
 (define-key dired-mode-map [tab] 'other-window)
 (define-key sr-mode-map (kbd "TAB") 'sr-change-window)
@@ -209,15 +219,22 @@
 (define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key sr-mode-map (kbd "/") 'dired-narrow-fuzzy)
 
+(define-key dired-mode-map (kbd "j") 'diredp-next-line)
+(define-key sr-mode-map (kbd "j") 'diredp-next-line)
+(define-key dired-mode-map (kbd "k") 'diredp-previous-line)
+(define-key sr-mode-map (kbd "k") 'diredp-previous-line)
+(define-key dired-mode-map (kbd "h") 'diredp-up-directory-reuse-dir-buffer)
+(define-key sr-mode-map (kbd "h") 'sr-dired-prev-subdir)
+(define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
+(define-key sr-mode-map (kbd "l") 'sr-advertised-find-file)
+
 ;;palette
 (global-set-key (kbd "C-<f9>") 'palette-launch-from-kill-ring)
 (global-set-key (kbd "C-S-<f9>") 'palette-paste-in-current-color)
 
 ;; my support functions
-(global-set-key (kbd "C-c k") 'delete-line-from-any-position)
 (global-set-key (kbd "C-j") 'my-fancy-newline)
-(global-set-key (kbd "C-S-j") 'end-of-line-and-indented-new-line)
-(global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
+(global-set-key (kbd "C-c C-d") 'duplicate-current-line-or-region)
 
 ;; evil-mode
 (global-set-key (kbd "<f2>") 'evil-mode)
@@ -227,14 +244,14 @@
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 (define-key evil-insert-state-map (kbd "C-<SPC>") 'company-complete-common)
 
-; scroll up/down with C-k, C-j
+                                        ; scroll up/down with C-k, C-j
 (define-key evil-normal-state-map (kbd "C-k") (lambda ()
-                    (interactive)
-                    (evil-scroll-up nil)))
+                                                (interactive)
+                                                (evil-scroll-up nil)))
 (define-key evil-normal-state-map (kbd "C-j") (lambda ()
-                        (interactive)
-                        (evil-scroll-down nil)))
-; SPC x -> C-x  , SPC h -> C-h   , SPC c -> C-c
+                                                (interactive)
+                                                (evil-scroll-down nil)))
+                                        ; SPC x -> C-x  , SPC h -> C-h   , SPC c -> C-c
 ;; (define-key evil-normal-state-map (kbd "SPC x") ctl-x-map)
 (define-key evil-normal-state-map (kbd "SPC h") help-map)
 ;; (define-key evil-normal-state-map (kbd "SPC c")
@@ -263,49 +280,58 @@
 
 ;; evil leader bindings
 (evil-leader/set-key
- "f" 'helm-swoop-without-pre-input
- "s" (lambda() (interactive) (save-some-buffers t))
- "F" 'helm-find-files
- "pp" 'helm-projectile-switch-project
- "pf" 'helm-projectile-find-file
- "pF" 'helm-projectile-find-file-in-known-projects
- "pi" 'projectile-invalidate-cache
- "d" 'ace-window
- "e" 'ace-jump-mode
- "j" 'ace-jump-char-mode
- "a" 'anzu-query-replace
- "A" 'anzu-query-replace-at-cursor
- ";" 'comment-or-uncomment-region
- "k" 'comment-line
- "w" 'helm-M-x
- "x" 'helm-buffers-list
- "b" 'helm-bookmarks
- "n" 'cleanup-buffer
- "hg" 'helm-do-grep-ag
- "ha" 'helm-do-ag
- "gs" 'magit-status
- "gi" 'magit-init
- "cew" 'web-mode-element-wrap
- "ces" 'web-mode-element-select
- "cea" 'web-mode-element-content-select
- "cek" 'web-mode-element-kill
- "cei" 'web-mode-element-insert
- "cec" 'web-mode-element-clone
- "cer" 'web-mode-element-rename
- "cet" 'web-mode-element-transpose
- "cen" 'web-mode-element-next
- "cep" 'web-mode-element-previous
- "cai" 'web-mode-attribute-insert
- "cak" 'web-mode-attribute-kill
- "can" 'web-mode-attribute-next
- "cap" 'web-mode-attribute-previous
- "cas" 'web-mode-attribute-select
- "ctm" 'web-mode-tag-match
- "cts" 'web-mode-tag-select
- "ctn" 'web-mode-tag-next
- "ctp" 'web-mode-tag-previous
- "cdn" 'web-mode-dom-normalize
- "cdt" 'web-mode-dom-traverse)
+  "f" 'helm-swoop-without-pre-input
+  "s" (lambda() (interactive) (save-some-buffers t))
+  "F" 'helm-find-files
+  "pp" 'helm-projectile-switch-project
+  "pf" 'helm-projectile-find-file
+  "pF" 'helm-projectile-find-file-in-known-projects
+  "pi" 'projectile-invalidate-cache
+  "D" 'dired
+  "d" 'ace-window
+  "e" 'ace-jump-mode
+  "j" 'ace-jump-char-mode
+  "a" 'anzu-query-replace
+  "A" 'anzu-query-replace-at-cursor
+  ";" 'comment-or-uncomment-region
+  "k" 'comment-line
+  "w" 'helm-M-x
+  "x" 'helm-buffers-list
+  "b" 'helm-bookmarks
+  "n" 'cleanup-buffer
+  "hg" 'helm-do-grep-ag
+  "ha" 'helm-do-ag
+  "gs" 'magit-status
+  "gi" 'magit-init)
+
+(evil-leader/set-key-for-mode 'web-mode
+  "cew" 'web-mode-element-wrap
+  "ces" 'web-mode-element-select
+  "cea" 'web-mode-element-content-select
+  "cek" 'web-mode-element-kill
+  "cei" 'web-mode-element-insert
+  "cec" 'web-mode-element-clone
+  "cer" 'web-mode-element-rename
+  "cet" 'web-mode-element-transpose
+  "cen" 'web-mode-element-next
+  "cep" 'web-mode-element-previous
+  "cai" 'web-mode-attribute-insert
+  "cak" 'web-mode-attribute-kill
+  "can" 'web-mode-attribute-next
+  "cap" 'web-mode-attribute-previous
+  "cas" 'web-mode-attribute-select
+  "ctm" 'web-mode-tag-match
+  "cts" 'web-mode-tag-select
+  "ctn" 'web-mode-tag-next
+  "ctp" 'web-mode-tag-previous
+  "cdn" 'web-mode-dom-normalize
+  "cdt" 'web-mode-dom-traverse)
+
+(evil-leader/set-key-for-mode 'neotree-mode
+  "r" 'neotree-rename-node
+  "D" 'neotree-delete-node
+  "n" 'neotree-create-node
+  "c" 'neotree-copy-node)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
