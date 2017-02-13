@@ -131,12 +131,6 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "M-RET") 'er/expand-region)
 (global-set-key (kbd "C--") 'er/contract-region)
-;; (key-chord-define-global "er" 'er/expand-region)
-;; (key-chord-define-global "rt" 'er/contractb-region)
-
-;; iy-go-to-char
-;; (global-set-key (kbd "C-.") 'iy-go-to-char)
-;; (global-set-key (kbd "C-,") 'iy-go-to-char-backward)
 
 ;; web mode custom binds
 (define-key web-mode-map (kbd "C-t") 'web-mode-tag-match)  ; grab and toggle tags
@@ -227,6 +221,7 @@
 (define-key sr-mode-map (kbd "h") 'sr-dired-prev-subdir)
 (define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
 (define-key sr-mode-map (kbd "l") 'sr-advertised-find-file)
+(define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 
 ;;palette
 (global-set-key (kbd "C-<f9>") 'palette-launch-from-kill-ring)

@@ -19,7 +19,7 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'package)
 ;; packages list
-(setq package-list '(ac-dabbrev ac-html ac-html-bootstrap ace-jump-mode ace-window ag anaphora atom-one-dark-theme auto-complete auto-highlight-symbol auto-package-update avy company-emacs-eclim company-jedi company-php ac-php-core company-quickhelp company-web diminish dired+ dired-narrow dired-rainbow dired-hacks-utils drag-stuff eclim elpy company evil-anzu anzu evil-args evil-god-state evil-leader evil-magit evil-matchit evil-surround evil-visualstar expand-region f find-file-in-project ggtags god-mode helm-ag helm-projectile helm-swoop helm helm-core highlight highlight-indentation htmlize ivy iy-go-to-char jedi-core epc ctable concurrent js2-mode key-chord linum-relative magit git-commit magit-popup multiple-cursors neotree nlinum-relative nlinum org-bullets palette hexrgb php-mode popup pos-tip powerline-evil powerline evil goto-chg projectile python-environment deferred pyvenv rainbow-delimiters rainbow-mode s shell-pop smart-mode-line rich-minority smartparens speed-type tabbar tide flycheck seq pkg-info epl typescript-mode undo-tree web-completion-data web-mode which-key with-editor dash async xcscope yasnippet))
+(setq package-list '(ac-dabbrev ac-html ac-html-bootstrap ace-jump-mode ace-window ag anaphora atom-one-dark-theme auto-complete auto-highlight-symbol auto-package-update avy company-emacs-eclim company-jedi company-php ac-php-core company-quickhelp company-web diminish dired+ dired-narrow dired-rainbow dired-hacks-utils drag-stuff eclim elpy company evil-anzu anzu evil-args evil-god-state evil-leader evil-magit evil-matchit evil-surround evil-visualstar expand-region f find-file-in-project ggtags god-mode helm-ag helm-projectile helm-swoop helm helm-core highlight highlight-indentation htmlize ivy jedi-core epc ctable concurrent js2-mode linum-relative magit git-commit magit-popup multiple-cursors neotree nlinum-relative nlinum org-bullets palette hexrgb php-mode popup pos-tip powerline-evil powerline evil goto-chg projectile python-environment deferred pyvenv rainbow-delimiters rainbow-mode rich-minority s shell-pop smartparens speed-type tabbar tide flycheck seq pkg-info epl typescript-mode undo-tree web-completion-data web-mode which-key with-editor dash async xcscope yasnippet))
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)   ;; org mode specials
@@ -178,15 +178,9 @@
 (define-key isearch-mode-map [remap isearch-query-replace-regexp] #'anzu-isearch-query-replace-regexp)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; iy-go-to-char
-;; -------------------------------------------------------------------------------------------------------------------------
-(require 'iy-go-to-char)
-
-;; -------------------------------------------------------------------------------------------------------------------------
 ;; multiple cursors
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'multiple-cursors)
-(add-to-list 'mc/cursor-specific-vars 'iy-go-to-char-start-pos)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; expand region
@@ -354,6 +348,7 @@
 ;; sunrise commander
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'sunrise-commander)
+(require 'sunrise-x-loop)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; dired extensions and settings
@@ -408,7 +403,6 @@
       (setq dired-omit-mode t)
     (setq dired-omit-mode nil)))
 
-(define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (add-hook 'dired-mode-hook 'dired-omit-caller)
 (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
 
@@ -467,6 +461,7 @@
 
 (add-to-list 'evil-emacs-state-modes 'dired-mode)
 (add-to-list 'evil-emacs-state-modes 'sr-mode)
+(add-to-list 'evil-emacs-state-modes 'palette)
 ;;; Code:
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Run custom code
@@ -530,8 +525,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (which-key-mode)
 (which-key-add-key-based-replacements "SPC h" "C-h")
-(which-key-add-key-based-replacements "SPC x" "C-x")
-(which-key-add-key-based-replacements "SPC c" "C-c")
 
 ;;; Commentary:
 (provide 'init)
