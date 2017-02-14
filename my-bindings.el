@@ -296,6 +296,7 @@
   "n" 'cleanup-buffer
   "hg" 'helm-do-grep-ag
   "ha" 'helm-do-ag
+  "hl" 'helm-locate
   "gs" 'magit-status
   "gi" 'magit-init)
 
