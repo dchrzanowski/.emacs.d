@@ -1,0 +1,24 @@
+# Remove all
+anaconda-mode
+auto-save-list
+backup
+elpa
+emms
+eshell
+image-dired
+plugins
+.python-environments
+semanticdb
+settings
+speed-type
+url
+
+*.*
+!*.el
+.mc-lists.el
+history
+places
+recentf
+tramp
+flycheck_init.el
+!.gitignore
