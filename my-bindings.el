@@ -187,6 +187,7 @@
 (global-set-key [tab] 'tab-indent-or-complete)
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
 (global-set-key (kbd "C-<SPC>") 'company-complete-common)
+(global-set-key (kbd "M-<SPC>") 'company-complete-common)
 
 (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
 (define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
