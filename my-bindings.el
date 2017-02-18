@@ -181,12 +181,16 @@
 (global-set-key (kbd "C-'") 'cua-set-mark)
 
 ;; yas expand
-(global-set-key (kbd "M-<tab>") 'yas-expand)
-
+(global-set-key (kbd "M-<tab>") 'company-yasnippet)
+;; company ring map
+(define-prefix-command 'ring-map)
+(global-unset-key (kbd "C-<SPC>"))
+(global-set-key (kbd "C-<SPC>") 'ring-map)
 ;; company mode tab fix
 (global-set-key [tab] 'tab-indent-or-complete)
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
-(global-set-key (kbd "C-<SPC>") 'company-complete-common)
+(global-set-key (kbd "C-<SPC> <SPC>") 'company-complete-common)
+(global-set-key (kbd "C-<SPC> g") 'company-gtags)
 (global-set-key (kbd "M-<SPC>") 'company-complete-common)
 
 (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
@@ -238,7 +242,8 @@
 (define-key evil-visual-state-map (kbd "M-p") 'always-paste-zero)
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)  ;; scroll through visual lines
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-(define-key evil-insert-state-map (kbd "C-<SPC>") 'company-complete-common)
+(define-key evil-insert-state-map (kbd "C-<SPC> <SPC>") 'company-complete-common)
+(define-key evil-insert-state-map (kbd "C-<SPC> g") 'company-gtags)
 
                                         ; scroll up/down with C-k, C-j
 (define-key evil-normal-state-map (kbd "C-k") (lambda ()
