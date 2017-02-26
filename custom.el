@@ -77,11 +77,6 @@
  '(semantic-mode nil)
  '(send-mail-function (quote mailclient-send-it))
  '(shell-pop-full-span t)
- '(shell-pop-shell-type
-   (quote
-    ("xterm" "*xterm*"
-     (lambda nil
-       (ansi-term shell-pop-term-shell)))))
  '(shell-pop-term-shell "/bin/bash")
  '(shell-pop-universal-key "C-`")
  '(shell-pop-window-position "bottom")

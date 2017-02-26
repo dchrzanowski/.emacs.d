@@ -301,6 +301,7 @@
   "x" 'helm-buffers-list
   "b" 'helm-bookmarks
   "n" 'cleanup-buffer
+  "r" 'helm-semantic-or-imenu
   "hg" 'helm-do-grep-ag
   "ha" 'helm-do-ag
   "hl" 'helm-locate

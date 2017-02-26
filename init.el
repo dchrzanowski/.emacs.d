@@ -290,8 +290,8 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'shell-pop)
 (custom-set-variables
- '(shell-pop-shell-type (quote ("xterm" "*xterm*" (lambda nil (ansi-term shell-pop-term-shell)))))
- '(shell-pop-term-shell "/bin/bash")
+ '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell)))))
+ '(shell-pop-term-shell "eshell")
  '(shell-pop-universal-key "C-'")
  '(shell-pop-window-size 30)
  '(shell-pop-full-span t)
