@@ -69,7 +69,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (bookmark+ helm-flx flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil dired-narrow dired-rainbow powerline htmlize latex-extra tabbar shell-pop rainbow-mode rainbow-delimiters org-bullets highlight-indentation helm-swoop diminish company-web company-jedi auto-package-update auto-highlight-symbol anaphora ace-jump-mode ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (quickrun bookmark+ helm-flx flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil dired-narrow dired-rainbow powerline htmlize latex-extra tabbar shell-pop rainbow-mode rainbow-delimiters org-bullets highlight-indentation helm-swoop diminish company-web company-jedi auto-package-update auto-highlight-symbol anaphora ace-jump-mode ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
  '(save-place t nil (saveplace))
@@ -77,6 +77,11 @@
  '(semantic-mode nil)
  '(send-mail-function (quote mailclient-send-it))
  '(shell-pop-full-span t)
+ '(shell-pop-shell-type
+   (quote
+    ("eshell" "*eshell*"
+     (lambda nil
+       (eshell shell-pop-term-shell)))))
  '(shell-pop-term-shell "/bin/bash")
  '(shell-pop-universal-key "C-`")
  '(shell-pop-window-position "bottom")

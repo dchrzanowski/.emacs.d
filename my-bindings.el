@@ -14,11 +14,12 @@
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
 
 (global-set-key [f9] 'sunrise)
-(global-set-key [f5]
-                (lambda ()
-                  (interactive)
-                  (save-window-excursion
-                    (async-shell-command (concat "urxvt -e run_any.py " default-directory " " (buffer-name))))))
+;; (global-set-key [f5]
+;;                 (lambda ()
+;;                   (interactive)
+;;                   (save-window-excursion
+;;                     (async-shell-command (concat "urxvt -e run_any.py " default-directory " " (buffer-name))))))
+(global-set-key [f5] 'quickrun)
 (global-set-key (kbd "C-w") 'kill-this-buffer)
 
 ;; windmove
@@ -238,6 +239,8 @@
 
 ;; evil-mode
 (global-set-key (kbd "<f2>") 'evil-mode)
+(evil-define-key 'normal quickrun--mode-map (kbd "q") 'quit-window)
+
 (define-key evil-normal-state-map (kbd "M-p") 'always-paste-zero)
 (define-key evil-visual-state-map (kbd "M-p") 'always-paste-zero)
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)  ;; scroll through visual lines
