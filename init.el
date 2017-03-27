@@ -59,10 +59,10 @@
       kept-new-versions 20   ; how many of the newest versions to keep
       kept-old-versions 5    ; and how many of the old
       )
-(setq indent-tabs-mode nil)  ;; do not insert tabs
-(setq sgml-basic-offset 4)  ;; indent for html
-(setq tab-width 4)   ; standard tab width
-(setq c-basic-offset 4)  ;; standard width for c/C++
+(setq-default indent-tabs-mode nil)  ;; do not insert tabs
+(setq-default sgml-basic-offset 4)  ;; indent for html
+(setq-default tab-width 4)   ; standard tab width
+(setq-default c-basic-offset 4)  ;; standard width for c/C++
 ;; http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html
 (setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))  ;; remove annoying minibuffer prompts
 
@@ -73,9 +73,10 @@
 (require 'nlinum-relative)
 (nlinum-relative-setup-evil)
 (add-hook 'prog-mode-hook 'nlinum-relative-mode)
-(setq nlinum-relative-redisplay-delay 0.5)
+(add-hook 'org-mode-hook 'nlinum-relative-mode)
+(setq-default nlinum-relative-redisplay-delay 0.5)
 (global-visual-line-mode)   ;; scroll through visual lines
-(setq auto-window-vscroll nil) ;; remove slow on scroll
+(setq-default auto-window-vscroll nil) ;; remove slow on scroll
 (column-number-mode t) ;; show column numbers
 (when (fboundp 'winner-mode)
   (winner-mode 1))  ;; winner mode (undo/redo frames)
