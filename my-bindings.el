@@ -309,7 +309,8 @@
   "ha" 'helm-do-ag
   "hl" 'helm-locate
   "gs" 'magit-status
-  "gi" 'magit-init)
+  "gi" 'magit-init
+  "gl" 'magit-log-popup)
 
 (evil-leader/set-key-for-mode 'web-mode
   "cew" 'web-mode-element-wrap
