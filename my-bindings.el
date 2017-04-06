@@ -67,11 +67,6 @@
 ;; open setting with F6
 (global-set-key (kbd "<f6>") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
 
-;; ace jump keybinds
-(define-key global-map (kbd "M-e") 'ace-jump-mode)
-(define-key global-map (kbd "M-a") 'ace-jump-line-mode)
-;; (key-chord-define-global (kbd "jj") 'ace-jump-mode)
-
 ;; ace window
 (global-set-key (kbd "M-q") 'ace-window)
 (define-key dired-mode-map (kbd "M-q") 'ace-window)
@@ -155,8 +150,6 @@
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-(define-key org-mode-map (kbd "M-e") 'ace-jump-mode)
-(define-key org-mode-map (kbd "M-a") 'ace-jump-line-mode)
 (define-key org-mode-map [(control tab)] 'tabbar-forward-tab)
 (define-key org-mode-map (kbd "<C-iso-lefttab>") 'tabbar-backward-tab)
 
@@ -292,10 +285,13 @@
   "pf" 'helm-projectile-find-file
   "pF" 'helm-projectile-find-file-in-known-projects
   "pi" 'projectile-invalidate-cache
+  "pk" 'projectile-kill-buffers
   "D" 'dired
   "d" 'ace-window
-  "e" 'ace-jump-mode
-  "j" 'ace-jump-char-mode
+  "e" 'evil-avy-goto-word-or-subword-1
+  "E" 'evil-avy-goto-word-0
+  "j" 'evil-avy-goto-char
+  "J" 'evil-avy-goto-char-2
   "a" 'anzu-query-replace
   "A" 'anzu-query-replace-at-cursor
   ";" 'comment-or-uncomment-region

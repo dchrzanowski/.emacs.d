@@ -19,7 +19,7 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'package)
 ;; packages list
-(setq package-list '(quickrun ac-dabbrev ac-html ac-html-bootstrap ace-jump-mode ace-window ag anaphora atom-one-dark-theme auto-complete auto-highlight-symbol auto-package-update avy bookmark+ company-emacs-eclim company-jedi company-php ac-php-core company-quickhelp company-web diminish dired+ dired-narrow dired-rainbow dired-hacks-utils drag-stuff eclim elpy company evil-anzu anzu evil-args evil-god-state evil-leader evil-magit evil-matchit evil-surround evil-visualstar expand-region f find-file-in-project ggtags god-mode helm-ag helm-flx flx helm-projectile helm-swoop helm helm-core highlight highlight-indentation htmlize ivy jedi-core epc ctable concurrent js2-mode linum-relative magit git-commit magit-popup multiple-cursors neotree nlinum-relative nlinum org-bullets palette hexrgb php-mode popup pos-tip powerline-evil powerline evil goto-chg projectile python-environment deferred pyvenv rainbow-delimiters rainbow-mode rich-minority s shell-pop smartparens speed-type tabbar tide flycheck seq pkg-info epl typescript-mode undo-tree web-completion-data web-mode which-key with-editor dash async xcscope yasnippet))
+(setq package-list '(quickrun ac-dabbrev ac-html ac-html-bootstrap ace-window ag anaphora atom-one-dark-theme auto-complete auto-highlight-symbol auto-package-update avy bookmark+ company-emacs-eclim company-jedi company-php ac-php-core company-quickhelp company-web diminish dired+ dired-narrow dired-rainbow dired-hacks-utils drag-stuff eclim elpy company evil-anzu anzu evil-args evil-god-state evil-leader evil-magit evil-matchit evil-surround evil-visualstar expand-region f find-file-in-project ggtags god-mode helm-ag helm-flx flx helm-projectile helm-swoop helm helm-core highlight highlight-indentation htmlize ivy jedi-core epc ctable concurrent js2-mode linum-relative magit git-commit magit-popup multiple-cursors neotree nlinum-relative nlinum org-bullets palette hexrgb php-mode popup pos-tip powerline-evil powerline evil goto-chg projectile python-environment deferred pyvenv rainbow-delimiters rainbow-mode rich-minority s shell-pop smartparens speed-type tabbar tide flycheck seq pkg-info epl typescript-mode undo-tree web-completion-data web-mode which-key with-editor dash async xcscope yasnippet))
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)   ;; org mode specials
@@ -146,14 +146,11 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; ace jump mode major function
+;; avy
 ;; -------------------------------------------------------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode-20140616.115/ace-jump-mode.el/in/")
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
+(require 'avy)
+(setq-default avy-background t)
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; ace window
 ;; -------------------------------------------------------------------------------------------------------------------------

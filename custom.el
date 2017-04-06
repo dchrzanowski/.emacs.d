@@ -18,8 +18,8 @@
  '(company-backends
    (quote
     (company-emacs-eclim company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
-			 (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
-			 company-oddmuse)))
+                         (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
+                         company-oddmuse)))
  '(company-begin-commands (quote (self-insert-command)))
  '(company-dabbrev-code-everywhere t)
  '(company-dabbrev-code-modes
@@ -44,7 +44,7 @@
  '(cursor-type (quote bar))
  '(custom-safe-themes
    (quote
-    ("08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "1160f5fc215738551fce39a67b2bcf312ed07ef3568d15d53c87baa4fd1f4d4e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "02e30200f168b362d5e12cdef4afb2453aa9e00af11cc93c2bcd2a413251eac1" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "54ece5659cc7acdcd529dddd78675c2972a5ac69260af4a6aec517dcea16208b" "770181eda0f652ef9293e8db103a7e5ca629c516ca33dfa4709e2c8a0e7120f3" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "1160f5fc215738551fce39a67b2bcf312ed07ef3568d15d53c87baa4fd1f4d4e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "02e30200f168b362d5e12cdef4afb2453aa9e00af11cc93c2bcd2a413251eac1" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "54ece5659cc7acdcd529dddd78675c2972a5ac69260af4a6aec517dcea16208b" "770181eda0f652ef9293e8db103a7e5ca629c516ca33dfa4709e2c8a0e7120f3" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" default)))
  '(default-frame-alist (quote ((vertical-scroll-bars))))
  '(eclimd-default-workspace "~/Eclipse")
  '(expand-region-preferred-python-mode (quote fgallina-python))
@@ -69,7 +69,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (quickrun bookmark+ helm-flx flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil dired-narrow dired-rainbow powerline htmlize latex-extra tabbar shell-pop rainbow-mode rainbow-delimiters org-bullets highlight-indentation helm-swoop diminish company-web company-jedi auto-package-update auto-highlight-symbol anaphora ace-jump-mode ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (solarized-theme esup quickrun bookmark+ helm-flx flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil dired-narrow dired-rainbow powerline htmlize latex-extra tabbar shell-pop rainbow-mode rainbow-delimiters org-bullets highlight-indentation helm-swoop diminish company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
  '(save-place t nil (saveplace))
