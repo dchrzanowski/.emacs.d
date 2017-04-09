@@ -49,7 +49,6 @@
 (prefer-coding-system        'utf-8)   ; with sugar on top
 (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
-
 ;; vars
 ;; (if (window-system) (set-frame-size (selected-frame) 130 48)) ;; set initial frame size
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))   ; create a special folder for backup files
@@ -88,9 +87,18 @@
 (setq-default cursor-type 'bar) ;; set the cursor to bar style
 (set-cursor-color "#FF0000")  ;; set the cursor color to red
 (global-auto-revert-mode t)  ;; auto refresh file when changed on disk
+(setq-default help-window-select t)  ;; auto-focus help windows
 
 ;; misc
 (defalias 'yes-or-no-p 'y-or-n-p)  ; do a y/s  instead of yes/no
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; use-package config
+;; -------------------------------------------------------------------------------------------------------------------------
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)                ;; if you use :diminish
+(require 'bind-key)                ;; if you use any :bind variant
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Python
@@ -167,6 +175,21 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; ace window
 ;; -------------------------------------------------------------------------------------------------------------------------
+(defun window-split-into-3-columns ()
+  "Split the window into three columns."
+  (interactive)
+  (split-window-horizontally)
+  (split-window-horizontally)
+  (balance-windows))
+
+(defun window-split-into-2-columns-and-a-row ()
+  "Split the window into two columns and split the second column into two rows."
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+  (split-window-below)
+  (balance-windows))
+
 (setq aw-dispatch-always t)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
@@ -178,7 +201,9 @@
     (?v aw-split-window-horz " Ace - Split Horz Window")
     (?r delete-other-windows " Ace - Maximize Window")
     (?o delete-other-windows)
-    (?w kill-this-buffer))
+    (?w kill-this-buffer)
+    (?3 window-split-into-3-columns)
+    (?2 window-split-into-2-columns-and-a-row))
   "List of actions for `aw-dispatch-default'.")
 
 (require 'ace-window)
@@ -523,7 +548,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline
 ;; -------------------------------------------------------------------------------------------------------------------------
-(require 'diminish)
 (diminish 'visual-line-mode)
 (diminish 'which-key-mode)
 (diminish 'company-mode)
