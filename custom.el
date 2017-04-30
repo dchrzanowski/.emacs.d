@@ -91,7 +91,7 @@
  '(split-width-threshold 5)
  '(sr-show-file-attributes nil)
  '(sr-traditional-other-window t)
- '(sr-windows-default-ratio 100)
+ '(sr-windows-default-ratio 80)
  '(tabbar-background-color "#2F343F")
  '(tabbar-mode t nil (tabbar))
  '(tabbar-mwheel-mode t nil (tabbar))

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: header
+# key: head
+# --
+#+TITLE: ${1:title}
+#+DATE: `(let ((x (org-insert-time-stamp nil t t ))))`
+#+AUTHOR: Damian Chrzanowski
+#+EMAIL: pjdamian.chrzanowski@gmail.com
+#+OPTIONS: H:${2:heading_depth}
