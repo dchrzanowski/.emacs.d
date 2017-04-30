@@ -218,11 +218,6 @@
 (define-key isearch-mode-map [remap isearch-query-replace-regexp] #'anzu-isearch-query-replace-regexp)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; multiple cursors
-;; -------------------------------------------------------------------------------------------------------------------------
-(require 'multiple-cursors)
-
-;; -------------------------------------------------------------------------------------------------------------------------
 ;; expand region
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'expand-region)
@@ -239,6 +234,13 @@
 (unless (boundp 'completion-in-region-function)
   (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
   (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; helm-projectile
+;; -------------------------------------------------------------------------------------------------------------------------
+(require 'ace-jump-helm-line)
+(eval-after-load "helm"
+'(define-key helm-map (kbd "M-e") 'ace-jump-helm-line))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; helm-projectile
@@ -269,7 +271,7 @@
 (setq helm-swoop-split-with-multiple-windows t)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; helm-flx
+;; helm-flx (fuzzy match)
 ;; -------------------------------------------------------------------------------------------------------------------------
 (helm-flx-mode +1)
 (setq helm-flx-for-helm-find-files t ;; t by default
@@ -298,12 +300,11 @@
 (global-auto-highlight-symbol-mode t)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; load yasnippets
+;; yasnippets and autoyasnippet
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'yasnippet)
 (yas-global-mode 1)
-
-(add-to-list 'warning-suppress-types '(yasnippet backquote-change))  ;; fix error when using snippets with backticks
+(require 'auto-yasnippet)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; drag stuff
@@ -510,6 +511,12 @@
 (add-to-list 'evil-emacs-state-modes 'dired-mode)
 (add-to-list 'evil-emacs-state-modes 'sr-mode)
 (add-to-list 'evil-emacs-state-modes 'palette)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; evil multiple cursors
+;; -------------------------------------------------------------------------------------------------------------------------
+(require 'evil-mc)
+(global-evil-mc-mode 1)
 
 ;;; Code:
 ;; -------------------------------------------------------------------------------------------------------------------------

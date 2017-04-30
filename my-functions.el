@@ -193,4 +193,23 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
     (abort-recursive-edit)))
 (provide 'my-functions)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; insert org timestamp for the usage of yasnippet
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun yas/org-get-time-stamp (&rest args)
+  "Return the string that `org-insert-time-stamp' would insert."
+  (with-temp-buffer
+    (apply #'org-insert-time-stamp args)
+    (buffer-string)))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; custom keyboard quite to assits with evil-mc as well
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun my-keyboard-quit()
+  "Removes the evil-mc cursors first and then does a standard keyboard-quit."
+  (interactive)
+  (evil-mc-undo-all-cursors)
+  (keyboard-quit))
+
 ;;; my-functions.el ends here
