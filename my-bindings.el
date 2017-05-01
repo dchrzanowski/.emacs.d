@@ -81,9 +81,10 @@
 (define-key helm-map (kbd "C-S-h") 'describe-key)
 (define-key helm-map (kbd "M-l") (kbd "RET"))
 (define-key helm-map [escape] 'helm-keyboard-quit)
-(dolist (keymap (list helm-find-files-map helm-read-file-map))
+(dolist (keymap (list helm-find-files-map helm-read-file-map helm-generic-files-map))
   (define-key keymap (kbd "M-l") 'helm-execute-persistent-action)
   (define-key keymap (kbd "M-h") 'helm-find-files-up-one-level)
+  (define-key keymap (kbd "M-J") 'helm-ff-run-open-file-with-default-tool)
   (define-key keymap (kbd "C-S-h") 'describe-key))
 
 ;; tabbar binds
@@ -168,6 +169,9 @@
 (define-key sr-mode-map (kbd "TAB") 'sr-change-window)
 (define-key sr-mode-map [tab] 'sr-change-window)
 
+(define-key dired-mode-map (kbd "RET") 'dired-find-file)
+(define-key sr-mode-map (kbd "(") 'sr-toggle-attributes)
+
 (define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key sr-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key dired-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
@@ -246,6 +250,7 @@
   "pF" 'helm-projectile-find-file-in-known-projects
   "pi" 'projectile-invalidate-cache
   "pk" 'projectile-kill-buffers
+  "pa" 'helm-projectile-ag
   "D" 'dired
   "d" 'ace-window
   "e" 'evil-avy-goto-word-or-subword-1

@@ -12,6 +12,7 @@
  '(anzu-replace-to-string-separator " > ")
  '(async-shell-command-buffer (quote confirm-new-buffer))
  '(before-save-hook (quote (delete-trailing-whitespace)))
+ '(bmkp-last-as-first-bookmark-file "/home/grimscythe/.emacs.d/bookmarks")
  '(browse-url-browser-function (quote browse-url-chromium))
  '(column-number-mode t)
  '(company-auto-complete-chars (quote (32 41 46)))
@@ -59,6 +60,7 @@
  '(global-semantic-decoration-mode nil)
  '(global-semantic-idle-scheduler-mode t)
  '(global-semanticdb-minor-mode t)
+ '(helm-external-programs-associations (quote (("html" . "chromium"))))
  '(helm-swoop-split-with-multiple-windows t)
  '(line-move-visual nil)
  '(mc/always-run-for-all t)
@@ -69,7 +71,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (auto-yasnippet evil-mc ace-jump-helm-line use-package solarized-theme esup quickrun bookmark+ helm-flx flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil dired-narrow dired-rainbow powerline htmlize latex-extra tabbar shell-pop rainbow-mode rainbow-delimiters org-bullets highlight-indentation helm-swoop diminish company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package solarized-theme esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
  '(save-place t nil (saveplace))

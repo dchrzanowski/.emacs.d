@@ -2,34 +2,44 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("package_minifier"
- (filename . "~/Projects/python_test/emacs_package_minifier/main.py")
- (front-context-string . "#!/usr/bin/env p")
- (rear-context-string)
- (position . 1))
-("custom.el"
- (filename . "~/.emacs.d/custom.el")
- (front-context-string . ";;; package --- ")
- (rear-context-string)
- (position . 1))
-("my-functions"
- (filename . "~/.emacs.d/my-functions.el")
- (front-context-string . ";;; package --- ")
- (rear-context-string)
- (position . 1))
-("my-company-config"
- (filename . "~/.emacs.d/my-company-config.el")
- (front-context-string . ";;; Commentary:\n")
- (rear-context-string . "age --- Summary\n")
- (position . 25))
-("my-bindings"
- (filename . "~/.emacs.d/my-bindings.el")
- (front-context-string . ";;; package --- ")
- (rear-context-string)
- (position . 1))
-("init.el"
- (filename . "~/.emacs.d/init.el")
- (front-context-string . ";;; package --- ")
- (rear-context-string)
- (position . 1))
+(#1=(#("package_minifier" 0 16
+      (bmkp-full-record #1#))
+    (filename . "~/Projects/python_test/emacs_package_minifier/main.py")
+    (front-context-string . "#!/usr/bin/env p")
+    (rear-context-string)
+    (position . 1))
+#1=(#("custom.el" 0 9
+      (bmkp-full-record #1#))
+    (filename . "~/.emacs.d/custom.el")
+    (front-context-string . ";;; package --- ")
+    (rear-context-string)
+    (position . 1))
+#1=(#("my-functions" 0 12
+      (bmkp-full-record #1#))
+    (time 22791 40143 602106 407000)
+    (visits . 0)
+    (filename . "~/.emacs.d/my-functions.el")
+    (front-context-string . ";;; package --- ")
+    (rear-context-string)
+    (position . 1))
+#1=(#("my-company-config" 0 17
+      (bmkp-full-record #1#))
+    (time 22791 40460 930815 274000)
+    (visits . 0)
+    (filename . "~/.emacs.d/my-company-config.el")
+    (front-context-string . ";;; Commentary:\n")
+    (rear-context-string . "age --- Summary\n")
+    (position . 25))
+#1=(#("my-bindings" 0 11
+      (bmkp-full-record #1#))
+    (filename . "~/.emacs.d/my-bindings.el")
+    (front-context-string . ";;; package --- ")
+    (rear-context-string)
+    (position . 1))
+#1=(#("init.el" 0 7
+      (bmkp-full-record #1#))
+    (filename . "~/.emacs.d/init.el")
+    (front-context-string . ";;; package --- ")
+    (rear-context-string)
+    (position . 1))
 )

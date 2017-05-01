@@ -19,7 +19,7 @@
 ;; using melpa and load missing packages
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'package)
-(setq package-enable-at-startup nil)
+(setq package-enable-at-startup t)
 (package-initialize)
 ;; packages list
 ;; (setq package-list '(quickrun ac-dabbrev ac-html ac-html-bootstrap ace-window ag anaphora atom-one-dark-theme auto-complete auto-highlight-symbol auto-package-update avy bookmark+ company-emacs-eclim company-jedi company-php ac-php-core company-quickhelp company-web diminish dired+ dired-narrow dired-rainbow dired-hacks-utils drag-stuff eclim elpy company evil-anzu anzu evil-args evil-god-state evil-leader evil-magit evil-matchit evil-surround evil-visualstar expand-region f find-file-in-project ggtags god-mode helm-ag helm-flx flx helm-projectile helm-swoop helm helm-core highlight highlight-indentation htmlize ivy jedi-core epc ctable concurrent js2-mode linum-relative magit git-commit magit-popup multiple-cursors neotree nlinum-relative nlinum org-bullets palette hexrgb php-mode popup pos-tip powerline-evil powerline evil goto-chg projectile python-environment deferred pyvenv rainbow-delimiters rainbow-mode rich-minority s shell-pop smartparens speed-type tabbar tide flycheck seq pkg-info epl typescript-mode undo-tree web-completion-data web-mode which-key with-editor dash async xcscope yasnippet))
@@ -64,15 +64,8 @@
 ;; http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html
 (setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))  ;; remove annoying minibuffer prompts
 
-;; modes
+;; imprtant emacs modifications
 (savehist-mode 1) ;; save history (minibuffer)
-;; (global-linum-mode) ;; show line numbers
-;; (linum-relative-global-mode)  ;; show as relative numbers
-(require 'nlinum-relative)
-(nlinum-relative-setup-evil)
-(add-hook 'prog-mode-hook 'nlinum-relative-mode)
-(add-hook 'org-mode-hook 'nlinum-relative-mode)
-(setq-default nlinum-relative-redisplay-delay 0.5)
 (global-visual-line-mode)   ;; scroll through visual lines
 (setq-default auto-window-vscroll nil) ;; remove slow on scroll
 (column-number-mode t) ;; show column numbers
@@ -98,6 +91,15 @@
   (require 'use-package))
 (require 'diminish)                ;; if you use :diminish
 (require 'bind-key)                ;; if you use any :bind variant
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; nlinum
+;; -------------------------------------------------------------------------------------------------------------------------
+(require 'nlinum-relative)
+(nlinum-relative-setup-evil)
+(add-hook 'prog-mode-hook 'nlinum-relative-mode)
+(add-hook 'org-mode-hook 'nlinum-relative-mode)
+(setq-default nlinum-relative-redisplay-delay 0.5)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Python
@@ -153,7 +155,7 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;;neotree
+;; neotree
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'neotree)
 (setq neo-theme (quote arrow))  ; set fancy arrows
@@ -402,20 +404,20 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; dired extensions and settings
 ;; -------------------------------------------------------------------------------------------------------------------------
+(setq dired-listing-switches "-alh")  ;; show file sizes in kbytes, mbytes, gbytes....
+;; dired rainbow
 (require 'dired-rainbow)
 (diredp-toggle-find-file-reuse-dir 1)  ;; do not open additional buffers
 
+;; defining colors for individual files
 (defconst my-dired-media-files-extensions
   '("mp3" "mp4" "MP3" "MP4" "avi" "mpg" "flv" "ogg" "mkv")
   "Media files.")
-
 (dired-rainbow-define html "#4e9a06" ("htm" "html" "xhtml"))
 (dired-rainbow-define media "#ce5c00" my-dired-media-files-extensions)
-
 ; boring regexp due to lack of imagination
 (dired-rainbow-define log (:inherit default
                            :italic t) ".*\\.log")
-
 ; highlight executable files, but not directories
 (dired-rainbow-define-chmod executable-unix "Green" "-[rw-]+x.*")
 (put 'dired-find-alternate-file 'disabled nil)  ;; use single window
@@ -434,6 +436,13 @@
   (after dired-after-updating-hook first () activate)
   "Sort dired listings with directories first before adding mark."
   (mydired-sort))
+
+;; dired launch
+(dired-launch-enable)
+(setq dired-launch-default-launcher '("xdg-open"))
+
+;; dired async
+(dired-async-mode)
 
 ;; make omit persistant and also exclude dotfiles
 (defvar v-dired-omit t
@@ -465,8 +474,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; EVIL MODE
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; (setq evil-want-C-u-scroll t)
-
 ; evil
 (require 'evil)
 (evil-mode 1)
@@ -510,8 +517,10 @@
 
 (add-to-list 'evil-emacs-state-modes 'dired-mode)
 (add-to-list 'evil-emacs-state-modes 'sr-mode)
-(add-to-list 'evil-emacs-state-modes 'palette)
+(add-to-list 'evil-emacs-state-modes 'palette-mode)
 
+;; evil org
+(require 'evil-org)
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; evil multiple cursors
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -562,7 +571,6 @@
 (diminish 'undo-tree-mode)
 (diminish 'undo-tree-visualizer-selection-mode)
 (diminish 'drag-stuff-mode)
-(diminish 'visual-line-mode)
 (diminish 'helm-mode)
 (diminish 'auto-highlight-symbol-mode)
 (diminish 'yas-minor-mode)
@@ -573,8 +581,11 @@
 (diminish 'linum-relative-mode)
 (diminish 'nlinum-relative-mode)
 (diminish 'auto-revert-mode)
+(diminish 'evil-mc-mode)
+(diminish 'evil-org-mode)
 (add-hook 'evil-god-state-entry-hook (lambda () (diminish 'god-local-mode)))
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Key guide (which-key)
 ;; -------------------------------------------------------------------------------------------------------------------------

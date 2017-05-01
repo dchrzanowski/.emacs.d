@@ -212,4 +212,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (evil-mc-undo-all-cursors)
   (keyboard-quit))
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; custom keyboard quite to assits with evil-mc as well
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun insert-color-hex ()
+  "Select a color and insert its hexadecimal format."
+  (interactive "*")
+  (let ((buf (current-buffer)))
+    (list-colors-display
+     nil nil `(lambda (name)
+                (interactive)
+                (quit-window)
+                (with-current-buffer ,buf
+                  (insert (apply 'color-rgb-to-hex
+                                 (color-name-to-rgb name))))))))
 ;;; my-functions.el ends here
