@@ -266,6 +266,8 @@
   "b" 'helm-bookmarks
   "n" 'cleanup-buffer
   "r" 'helm-semantic-or-imenu
+  "y" 'helm-show-kill-ring
+  "Y" 'helm-register
   "hg" 'helm-do-grep-ag
   "ha" 'helm-do-ag
   "hl" 'helm-locate
@@ -273,6 +275,9 @@
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
+  "gt" 'git-timemachine-toggle
+  "gg" 'git-gutter:toggle
+  "gn" 'git-gutter:next-diff
   "tn" 'ahs-forward
   "tp" 'ahs-backward
   "te" 'ahs-edit-mode)

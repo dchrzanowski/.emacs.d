@@ -1,5 +1,9 @@
 ;;; package --- Summary
 
+;; personal data
+(setq user-full-name '"Damian Chrzanowski")
+(setq user-mail-address '"pjdamian.chrzanowski@gmail.com")
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -102,6 +106,42 @@
 (setq-default nlinum-relative-redisplay-delay 0.5)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; git gutter
+;; -------------------------------------------------------------------------------------------------------------------------
+(require 'git-gutter-fringe)
+(setq-default git-gutter-fr:side 'right-fringe)
+(set-face-foreground 'git-gutter-fr:modified "DarkOrange")
+(set-face-foreground 'git-gutter-fr:added    "OliveDrab")
+(set-face-foreground 'git-gutter-fr:deleted  "firebrick")
+(fringe-helper-define 'git-gutter-fr:added nil
+  "........"
+  "....X..."
+  "....X..."
+  "..XXXXX."
+  "....X..."
+  "....X..."
+  "........"
+  "........")
+(fringe-helper-define 'git-gutter-fr:deleted nil
+  "........"
+  "........"
+  "........"
+  ".XXXXXX."
+  ".XXXXXX."
+  "........"
+  "........"
+  "........")
+(fringe-helper-define 'git-gutter-fr:modified nil
+  "........"
+  ".XXXXXX."
+  ".X....X."
+  ".X....X."
+  ".X....X."
+  ".X....X."
+  ".XXXXXX."
+  "........")
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; Python
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; anaconda-mode
@@ -158,7 +198,7 @@
 ;; neotree
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'neotree)
-(setq neo-theme (quote arrow))  ; set fancy arrows
+(setq neo-theme 'icons)  ; set fancy arrows
 (setq neo-smart-open t) ; adjust to the current buffer
 (setq neo-window-width 30)
 
@@ -396,6 +436,13 @@
 (setq gdb-many-windows t)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; magit
+;; -------------------------------------------------------------------------------------------------------------------------
+(require 'magit)
+(require 'magithub)
+(magithub-feature-autoinject t)
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; sunrise commander
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'sunrise-commander)
@@ -464,6 +511,8 @@
 (add-hook 'dired-mode-hook 'dired-omit-caller)
 (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
 
+;; dired icons
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; God mode and evil god-state
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -518,14 +567,28 @@
 (add-to-list 'evil-emacs-state-modes 'dired-mode)
 (add-to-list 'evil-emacs-state-modes 'sr-mode)
 (add-to-list 'evil-emacs-state-modes 'palette-mode)
+(eval-after-load 'git-timemachine
+  '(progn
+     (evil-make-overriding-map git-timemachine-mode-map 'normal)
+     (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))  ;; git-timemachine, switch off evil
 
 ;; evil org
 (require 'evil-org)
-;; -------------------------------------------------------------------------------------------------------------------------
+
 ;; evil multiple cursors
-;; -------------------------------------------------------------------------------------------------------------------------
 (require 'evil-mc)
 (global-evil-mc-mode 1)
+
+;; evil goggles
+(require 'evil-goggles)
+(setq evil-goggles-duration 0.100)
+(evil-goggles-mode)
+(setq evil-goggles-default-face 'bmkp-no-local)
+(setq evil-goggles-faces-alist `(
+                                 ( evil-delete . bmkp-su-or-sudo )
+                                 ( evil-yank . bmkp-non-file )
+                                 ( evil-paste-after . bmkp-sequence)
+                                 ( evil-paste-before . bmkp-sequence)))
 
 ;;; Code:
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -546,6 +609,7 @@
 (require 'powerline)
 (require 'powerline-evil)
 (powerline-evil-center-color-theme)
+(setq-default powerline-default-separator (quote wave))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; load emacs atom theme
@@ -581,8 +645,12 @@
 (diminish 'linum-relative-mode)
 (diminish 'nlinum-relative-mode)
 (diminish 'auto-revert-mode)
+(diminish 'dired-omit-mode)
+(diminish 'all-the-icons-dired-mode)
+(diminish 'dired-launch-mode)
 (diminish 'evil-mc-mode)
 (diminish 'evil-org-mode)
+(diminish 'evil-goggles-mode)
 (add-hook 'evil-god-state-entry-hook (lambda () (diminish 'god-local-mode)))
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))
 
