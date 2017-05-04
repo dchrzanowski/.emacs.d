@@ -7,29 +7,25 @@
 ;; company config
 ;; -------------------------------------------------------------------------------------------------------------------------
 
-(require 'company)
-(require 'ac-html-bootstrap)
-(unless (assoc "Bootstrap" web-completion-data-sources)
-  (setq web-completion-data-sources
-        (cons (cons "Bootstrap" "/home/grimscythe/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
-              web-completion-data-sources)))
-(require 'company-web-html)
-(require 'company-yasnippet)
-(require 'company-emacs-eclim)
-(require 'company-jedi)
-;;(require 'company-anaconda)
+(use-package company
+  :config
+  (require 'company-yasnippet)
+  (add-hook 'after-init-hook 'global-company-mode))
+(use-package web-completion-data)
+(use-package auto-complete)
+(use-package ac-html-bootstrap
+  :config
+  (unless (assoc "Bootstrap" web-completion-data-sources)
+    (setq web-completion-data-sources
+          (cons (cons "Bootstrap" "/home/grimscythe/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
+                web-completion-data-sources))))
+(use-package company-web)
+(use-package company-emacs-eclim)
+(use-package company-jedi)
 
-;; initialise
-(add-hook 'after-init-hook 'global-company-mode)
-
-;;quick help mode
-(company-quickhelp-mode 1)
-
-;; hook for python with anaconda and gtags
-;;(add-hook 'python-mode-hook
-;;          (lambda ()
-;;           (set (make-local-variable 'company-backends)
-;;                 '((compnay-gtags company-anaconda company-dabbrev-code company-yasnippet)))))
+(use-package company-quickhelp
+  :config
+  (company-quickhelp-mode 1))
 
 ;; ------------------------------------------------------------------------------------------------
 ;; PYTHON
