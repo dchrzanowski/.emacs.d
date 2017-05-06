@@ -1,3 +1,4 @@
+;;; package -- Summary
 ;;; Commentary:
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;;; Code:
@@ -5,7 +6,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; key binds / shortcuts
 ;; -------------------------------------------------------------------------------------------------------------------------
-
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-enter)
@@ -27,6 +27,9 @@
 
 ;; quickrun
 (global-set-key [f5] 'quickrun)
+
+;; pomidor
+(global-set-key [f7] 'pomidor)
 
 ;; packages
 (global-set-key (kbd "M-[") 'package-install)
@@ -243,6 +246,7 @@
 ;; evil leader bindings
 (evil-leader/set-key
   "f" 'helm-swoop-without-pre-input
+  "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
   "F" 'helm-find-files
   "pp" 'helm-projectile-switch-project
@@ -266,6 +270,11 @@
   "b" 'helm-bookmarks
   "n" 'cleanup-buffer
   "r" 'helm-semantic-or-imenu
+  "lo" 'dumb-jump-go-other-window
+  "lj" 'dumb-jump-go
+  "lx" 'dumb-jump-go-prefer-external
+  "lz" 'dumb-jump-go-prefer-external-other-window
+  "lq" 'dumb-jump-quick-look
   "y" 'helm-show-kill-ring
   "Y" 'helm-register
   "hg" 'helm-do-grep-ag

@@ -192,13 +192,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (setq deactivate-mark  t)
     (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
     (abort-recursive-edit)))
-(provide 'my-functions)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; insert org timestamp for the usage of yasnippet
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun yas/org-get-time-stamp (&rest args)
-  "Return the string that `org-insert-time-stamp' would insert."
+  "Return the string that `org-insert-time-stamp' would insert.  ARGS."
   (with-temp-buffer
     (apply #'org-insert-time-stamp args)
     (buffer-string)))
@@ -226,4 +225,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
                 (with-current-buffer ,buf
                   (insert (apply 'color-rgb-to-hex
                                  (color-name-to-rgb name))))))))
+
 ;;; my-functions.el ends here
+(provide 'my-functions)

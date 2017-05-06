@@ -7,6 +7,8 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
+(tool-bar-mode -1)
+
 ;; No splash screen
 (setq inhibit-startup-message t)
 
@@ -15,29 +17,28 @@
 (transient-mark-mode t)
 (setq select-enable-clipboard t)
 
-;; Set up load path
-(add-to-list 'load-path "~/.emacs.d/settings/")
-
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; using melpa and load missing packages
+;; initialize package repos and make sure that use-package is installed
 ;; -------------------------------------------------------------------------------------------------------------------------
 (require 'package)
 (setq package-enable-at-startup nil)
-(package-initialize)
-;; packages list
-;; (setq package-list '(ac-dabbrev ac-html ac-html-bootstrap ace-jump-helm-line ace-jump-mode ace-window ag all-the-icons-dired all-the-icons anaphora atom-one-dark-theme auto-complete auto-highlight-symbol auto-package-update auto-yasnippet avy bookmark+ company-emacs-eclim company-jedi company-php ac-php-core company-quickhelp company-web dired+ dired-launch dired-narrow dired-rainbow dired-hacks-utils drag-stuff eclim elpy company esup evil-anzu anzu evil-args evil-god-state evil-goggles evil-magit evil-matchit evil-mc evil-org evil-leader evil-surround evil-visualstar expand-region f find-file-in-project font-lock+ ggtags git-gutter-fringe fringe-helper git-gutter git-timemachine god-mode helm-ag helm-flx flx helm-projectile helm-swoop helm helm-core highlight highlight-indentation htmlize iedit ivy jedi-core epc ctable concurrent js2-mode lice linum-relative magithub magit magit-popup git-commit neotree nlinum-relative nlinum org-bullets palette hexrgb php-mode popup pos-tip powerline-evil powerline evil goto-chg projectile python-environment deferred pyvenv quickrun rainbow-delimiters rainbow-mode rich-minority s shell-pop smartparens solarized-theme speed-type tabbar tide flycheck seq pkg-info epl typescript-mode undo-tree use-package diminish bind-key web-completion-data web-mode which-key with-editor dash async xcscope yasnippet))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("SC" . "http://joseito.republika.pl/sunrise-commander/"))
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)   ;; org mode specials
+(package-initialize)
 
-;; the list of packages available
-;; (unless package-archive-contents
-;;   (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-;; the missing packages
-;; (dolist (package package-list)
-;;   (unless (package-installed-p package)
-;;     (package-install package)))
+;; -------------------------------------------------------------------------------------------------------------------------
+;; use-package config
+;; -------------------------------------------------------------------------------------------------------------------------
+(eval-when-compile
+  (require 'use-package))
+(setq use-package-always-ensure t)
+(require 'diminish)                ;; if you use :diminish
+(require 'bind-key)                ;; if you use any :bind variant
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; emacs system settigs
@@ -65,17 +66,18 @@
 (setq-default sgml-basic-offset 4)  ;; indent for html
 (setq-default tab-width 4)   ; standard tab width
 (setq-default c-basic-offset 4)  ;; standard width for c/C++
+(c-set-offset 'substatement-open 0) ;; fix c/c++ indent
+
 ;; http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html
 (setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))  ;; remove annoying minibuffer prompts
 
-;; important emacs modifications
+;; emacs core modifications
 (savehist-mode 1) ;; save history (minibuffer)
 (global-visual-line-mode)   ;; scroll through visual lines
 (setq-default auto-window-vscroll nil) ;; remove slow on scroll
 (column-number-mode t) ;; show column numbers
 (when (fboundp 'winner-mode)
   (winner-mode 1))  ;; winner mode (undo/redo frames)
-(c-set-offset 'substatement-open 0) ;; fix c/c++ indent
 (desktop-save-mode t)  ;; save opened buffers (and window config)
 (electric-indent-mode t)  ;; auto indent
 (show-paren-mode t)  ;; show matching brackets
@@ -86,15 +88,6 @@
 
 ;; misc
 (defalias 'yes-or-no-p 'y-or-n-p)  ; do a y/s  instead of yes/no
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; use-package config
-;; -------------------------------------------------------------------------------------------------------------------------
-(eval-when-compile
-  (require 'use-package))
-(setq use-package-always-ensure t)
-(require 'diminish)                ;; if you use :diminish
-(require 'bind-key)                ;; if you use any :bind variant
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; nlinum
@@ -564,6 +557,7 @@
   (add-to-list 'evil-emacs-state-modes 'dired-mode)
   (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'palette-mode)
+  (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (eval-after-load 'git-timemachine
     '(progn
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
@@ -616,14 +610,30 @@
 
 (use-package evil-goggles
   :config
-  (setq evil-goggles-duration 0.100)
+  (setq evil-goggles-duration 0.050)
   (evil-goggles-mode)
   (setq evil-goggles-default-face 'bmkp-no-local)
-  (setq evil-goggles-faces-alist `(
-                                   ( evil-delete . bmkp-su-or-sudo )
+  (setq evil-goggles-faces-alist `(( evil-delete . bmkp-su-or-sudo )
                                    ( evil-yank . bmkp-non-file )
                                    ( evil-paste-after . bmkp-sequence)
                                    ( evil-paste-before . bmkp-sequence))))
+;; -------------------------------------------------------------------------------------------------------------------------
+;; pomidor
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package pomidor
+  :defer t
+  :config
+  (setq pomidor-sound-tick nil
+        pomidor-sound-tack nil
+        pomidor-sound-overwork nil
+        alert-default-style 'libnotify))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; pomidor
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package dumb-jump
+  :config (setq dumb-jump-selector 'helm))
+
 ;;; Code:
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -631,6 +641,16 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; run custom functions
 (load-file '"~/.emacs.d/my-functions.el")
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; run company config
+;; -------------------------------------------------------------------------------------------------------------------------
+(load-file '"~/.emacs.d/my-company-config.el")
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; custom key bindings
+;; -------------------------------------------------------------------------------------------------------------------------
+(load-file '"~/.emacs.d/my-bindings.el")
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Keep emacs Custom-settings in separate file
@@ -652,18 +672,7 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package atom-one-dark-theme
   :config
-  (load-theme 'atom-one-dark))
-
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; custom key bindings
-;; -------------------------------------------------------------------------------------------------------------------------
-(load-file '"~/.emacs.d/my-bindings.el")
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; run company config
-;; -------------------------------------------------------------------------------------------------------------------------
-(load-file '"~/.emacs.d/my-company-config.el")
+  (load-theme 'atom-one-dark t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline
@@ -688,7 +697,7 @@
 (diminish 'all-the-icons-dired-mode)
 (diminish 'dired-launch-mode)
 (diminish 'evil-mc-mode)
-(diminish 'evil-org-mode)
+(diminish 'evil-org-mode)05
 (diminish 'evil-goggles-mode)
 (add-hook 'evil-god-state-entry-hook (lambda () (diminish 'god-local-mode)))
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))

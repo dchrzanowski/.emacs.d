@@ -55,7 +55,6 @@
  '(flycheck-python-flake8-executable nil)
  '(ggtags-executable-directory "/usr/bin")
  '(ggtags-use-project-gtagsconf nil)
- '(global-company-mode t)
  '(global-flycheck-mode t)
  '(global-semantic-decoration-mode nil)
  '(global-semantic-idle-scheduler-mode t)
@@ -71,7 +70,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (company-yasnippet eclimd evil-lion git-gutter-fringe magithub git-timemachine lice evil-goggles evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package solarized-theme esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (dumb-jump pomidor company-yasnippet eclimd evil-lion git-gutter-fringe magithub git-timemachine lice evil-goggles evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package solarized-theme esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
@@ -139,6 +138,7 @@
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:foreground "chartreuse3" :underline nil))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "LavenderBlush1"))))
+ '(rainbow-delimiters-unmatched-face ((t (:foreground "red" :underline t))))
  '(sr-active-path-face ((t (:background "black" :foreground "white" :weight bold :height 120))))
  '(sr-editing-path-face ((t (:background "red" :foreground "white" :weight bold :height 120))))
  '(sr-highlight-path-face ((t (:background "yellow" :foreground "black" :weight bold :height 120))))
