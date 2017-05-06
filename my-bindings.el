@@ -89,13 +89,17 @@
 (define-key helm-map (kbd "M-e") 'ace-jump-helm-line)
 (define-key helm-map (kbd "C-S-h") 'describe-key)
 (define-key helm-map (kbd "M-l") (kbd "RET"))
+(define-key helm-map (kbd "TAB") (kbd "RET"))
+(define-key helm-map [tab] (kbd "RET"))
 (define-key helm-map [escape] 'helm-keyboard-quit)
 (dolist (keymap (list helm-find-files-map helm-read-file-map helm-generic-files-map))
   (define-key keymap (kbd "M-l") 'helm-execute-persistent-action)
   (define-key keymap (kbd "M-h") 'helm-find-files-up-one-level)
   (define-key keymap (kbd "M-J") 'helm-ff-run-open-file-with-default-tool)
   (define-key keymap (kbd "C-S-h") 'describe-key)
-  (define-key keymap (kbd "M-e") 'ace-jump-helm-line))
+  (define-key keymap (kbd "M-e") 'ace-jump-helm-line)
+  (define-key keymap (kbd "TAB") (kbd "RET"))
+  (define-key keymap [tab] (kbd "RET")))
 
 ;; tabbar binds
 (global-set-key [(control tab)] 'tabbar-forward-tab)

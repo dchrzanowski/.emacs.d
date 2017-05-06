@@ -1,22 +1,5 @@
 ;;; package --- Summary
 
-;; personal data
-(setq user-full-name '"Damian Chrzanowski")
-(setq user-mail-address '"pjdamian.chrzanowski@gmail.com")
-
-;; Turn off mouse interface early in startup to avoid momentary display
-(scroll-bar-mode -1)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
-;; No splash screen
-(setq inhibit-startup-message t)
-
-;; set standard deletion mode and enable clipboard
-(delete-selection-mode t)
-(transient-mark-mode t)
-(setq select-enable-clipboard t)
-
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -61,17 +44,26 @@
       kept-old-versions 5    ; and how many of the old
       )
 
+;; personal data
+(setq user-full-name '"Damian Chrzanowski")
+(setq user-mail-address '"pjdamian.chrzanowski@gmail.com")
+;; Turn off mouse interface early in startup to avoid momentary display
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+(setq inhibit-startup-message t) ;; No splash screen
+(delete-selection-mode t)  ;; delete when region when starting to type inside
+(transient-mark-mode t)  ;; mark follows the point
+(setq select-enable-clipboard t)  ;; share kill ring with the system's clipboard
 ;; indents config
 (setq-default indent-tabs-mode nil)  ;; do not insert tabs
 (setq-default sgml-basic-offset 4)  ;; indent for html
 (setq-default tab-width 4)   ; standard tab width
 (setq-default c-basic-offset 4)  ;; standard width for c/C++
 (c-set-offset 'substatement-open 0) ;; fix c/c++ indent
-
 ;; http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html
 (setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))  ;; remove annoying minibuffer prompts
-
-;; emacs core modifications
 (savehist-mode 1) ;; save history (minibuffer)
 (global-visual-line-mode)   ;; scroll through visual lines
 (setq-default auto-window-vscroll nil) ;; remove slow on scroll
@@ -82,6 +74,7 @@
 (electric-indent-mode t)  ;; auto indent
 (show-paren-mode t)  ;; show matching brackets
 (global-hl-line-mode)  ;; highlight current line
+(global-subword-mode)  ;; iterate through camelcase
 (global-auto-revert-mode t)  ;; auto refresh file when changed on disk
 (setq-default auto-revert-verbose nil)  ;; keep auto revert quiet
 (setq-default help-window-select t)  ;; auto-focus help windows, easier to Q them
@@ -184,7 +177,8 @@
 (use-package org
   :config
   (use-package org-bullets)
-  (setq org-log-done t)
+  (setq org-log-done t
+        org-startup-folded nil)
   (setq org-agenda-files '("~/org/projects"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
@@ -487,7 +481,9 @@
 ;; dired extensions and settings
 ;; -------------------------------------------------------------------------------------------------------------------------
 (put 'dired-find-alternate-file 'disabled nil)  ;; use single window
-(setq dired-dwim-target t)  ;; dired copy to other pane
+(setq dired-dwim-target t  ;; dired copy to other pane
+      dired-auto-revert-buffer t)  ;; dired refresh on change
+
 ;; put folders obove files
 (defun mydired-sort ()
   "Sort dired listings with directories first."
@@ -549,6 +545,7 @@
   :config
   (dired-launch-enable)
   (setq-default dired-launch-default-launcher '("xdg-open")))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; God mode and evil god-state
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -723,6 +720,7 @@
 (diminish 'yas-minor-mode)
 (diminish 'projectile-mode)
 (diminish 'anzu-mode)
+(diminish 'subword-mode)
 (diminish 'flycheck-mode)
 (diminish 'smartparens-mode)
 (diminish 'linum-relative-mode)
