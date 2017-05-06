@@ -90,6 +90,11 @@
 (defalias 'yes-or-no-p 'y-or-n-p)  ; do a y/s  instead of yes/no
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; eldoc
+;; -------------------------------------------------------------------------------------------------------------------------
+(global-eldoc-mode)
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; nlinum
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package nlinum-relative
@@ -182,6 +187,14 @@
   (setq org-log-done t)
   (setq org-agenda-files '("~/org/projects"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; hl-todo
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package hl-todo
+  :diminish global-hl-todo-mode
+  :config
+  (global-hl-todo-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; neotree
@@ -279,9 +292,7 @@
 ;; ace jump helm line
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package ace-jump-helm-line
-  :ensure helm
-  :config
-  (define-key helm-map (kbd "M-e") 'ace-jump-helm-line))
+  :ensure helm)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; helm-projectile
@@ -437,9 +448,10 @@
 ;; css-eldoc
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package css-eldoc
-  :defer t
   :config
-  (turn-on-css-eldoc))
+  (progn
+    (add-hook 'css-mode-hook 'turn-on-css-eldoc)
+    (add-hook 'scss-mode-hook 'turn-on-css-eldoc)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; emacs eclim
@@ -551,7 +563,8 @@
 (use-package evil
   :config
   (evil-mode 1)
-  (setq evil-move-cursor-back nil)
+  (setq evil-move-cursor-back nil
+        evil-cross-lines t)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
   (evil-put-property 'evil-state-properties 'insert   :tag " INSERT ")
@@ -625,6 +638,7 @@
                                    ( evil-yank . bmkp-non-file )
                                    ( evil-paste-after . bmkp-sequence)
                                    ( evil-paste-before . bmkp-sequence))))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -640,7 +654,20 @@
 ;; dumb-jump
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package dumb-jump
+  :defer t
   :config (setq dumb-jump-selector 'helm))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; imenu-anywhere
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package imenu-anywhere
+  :defer t)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; webpaste
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package webpaste
+  :defer t)
 
 ;;; Code:
 
@@ -705,7 +732,7 @@
 (diminish 'all-the-icons-dired-mode)
 (diminish 'dired-launch-mode)
 (diminish 'evil-mc-mode)
-(diminish 'evil-org-mode)05
+(diminish 'evil-org-mode)
 (diminish 'evil-goggles-mode)
 (add-hook 'evil-god-state-entry-hook (lambda () (diminish 'god-local-mode)))
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))

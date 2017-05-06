@@ -35,6 +35,10 @@
 (global-set-key (kbd "M-[") 'package-install)
 (global-set-key (kbd "M-]") 'list-packages)
 
+;; upcase/downcase
+(global-set-key (kbd "M-u") 'upcase-dwim)
+(global-set-key (kbd "M-l") 'downcase-dwim)
+
 ;; open init with F6
 (global-set-key (kbd "<f6>") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
 
@@ -43,8 +47,9 @@
 (global-set-key (kbd "C-M-r") 'anzu-query-replace-at-cursor-thing)
 (global-set-key (kbd "C-M-s-r") 'anzu-query-replace-at-cursor)
 
-(global-set-key (kbd "C-M->") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+;; webpaste
+(global-set-key (kbd "C-c C-p C-b") 'webpaste-paste-buffer)
+(global-set-key (kbd "C-c C-p C-r") 'webpaste-paste-region)
 
 ;;rainbow mode
 (global-set-key (kbd "C-c r") 'rainbow-mode)
@@ -81,6 +86,7 @@
 (define-key helm-map (kbd "M-j") 'helm-next-line)
 (define-key helm-map (kbd "M-k") 'helm-previous-line)
 (define-key helm-map (kbd "M-h") 'helm-next-source)
+(define-key helm-map (kbd "M-e") 'ace-jump-helm-line)
 (define-key helm-map (kbd "C-S-h") 'describe-key)
 (define-key helm-map (kbd "M-l") (kbd "RET"))
 (define-key helm-map [escape] 'helm-keyboard-quit)
@@ -88,7 +94,8 @@
   (define-key keymap (kbd "M-l") 'helm-execute-persistent-action)
   (define-key keymap (kbd "M-h") 'helm-find-files-up-one-level)
   (define-key keymap (kbd "M-J") 'helm-ff-run-open-file-with-default-tool)
-  (define-key keymap (kbd "C-S-h") 'describe-key))
+  (define-key keymap (kbd "C-S-h") 'describe-key)
+  (define-key keymap (kbd "M-e") 'ace-jump-helm-line))
 
 ;; tabbar binds
 (global-set-key [(control tab)] 'tabbar-forward-tab)
@@ -246,9 +253,9 @@
 ;; evil leader bindings
 (evil-leader/set-key
   "f" 'helm-swoop-without-pre-input
+  "F" 'helm-find-files
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
-  "F" 'helm-find-files
   "pp" 'helm-projectile-switch-project
   "pf" 'helm-projectile-find-file
   "pF" 'helm-projectile-find-file-in-known-projects
@@ -270,11 +277,14 @@
   "b" 'helm-bookmarks
   "n" 'cleanup-buffer
   "r" 'helm-semantic-or-imenu
+  "R" 'helm-imenu-anywhere
   "lo" 'dumb-jump-go-other-window
   "lj" 'dumb-jump-go
   "lx" 'dumb-jump-go-prefer-external
   "lz" 'dumb-jump-go-prefer-external-other-window
   "lq" 'dumb-jump-quick-look
+  "ir" 'webpaste-paste-region
+  "ib" 'webpaste-paste-buffer
   "y" 'helm-show-kill-ring
   "Y" 'helm-register
   "hg" 'helm-do-grep-ag
@@ -289,7 +299,10 @@
   "gn" 'git-gutter:next-diff
   "tn" 'ahs-forward
   "tp" 'ahs-backward
-  "te" 'ahs-edit-mode)
+  "te" 'ahs-edit-mode
+  "Tn" 'hl-todo-next
+  "Tp" 'hl-todo-previous
+  "To" 'hl-todo-occur)
 
 (evil-leader/set-key-for-mode 'web-mode
   "cew" 'web-mode-element-wrap
