@@ -331,6 +331,9 @@
   "cdn" 'web-mode-dom-normalize
   "cdt" 'web-mode-dom-traverse)
 
+(evil-leader/set-key-for-mode 'org-mode
+  "f" 'helm-org-rifle)
+
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
