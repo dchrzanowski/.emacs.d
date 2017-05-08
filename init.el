@@ -488,7 +488,9 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (put 'dired-find-alternate-file 'disabled nil)  ;; use single window
 (setq dired-dwim-target t  ;; dired copy to other pane
-      dired-auto-revert-buffer t)  ;; dired refresh on change
+      dired-auto-revert-buffer t
+      dired-recursive-copies 'always
+      dired-recursive-deletes 'always)  ;; dired refresh on change
 
 ;; put folders obove files
 (defun mydired-sort ()
@@ -681,7 +683,9 @@
   (setq-default beacon-blink-delay nil
                 beacon-color '"#FF0000"
                 beacon-size 30
-                beacon-blink-duration 0.2)
+                beacon-blink-duration 0.2
+                beacon-blink-when-point-moves-horizontally nil
+                beacon-blink-when-point-moves-vertically 2)
   (beacon-mode t))
 
 ;;; Code:

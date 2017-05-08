@@ -50,6 +50,7 @@
  '(eclimd-default-workspace "~/Eclipse")
  '(expand-region-preferred-python-mode (quote fgallina-python))
  '(expand-region-smart-cursor t)
+ '(fci-rule-color "#3E4451")
  '(flycheck-flake8-maximum-line-length 120)
  '(flycheck-idle-change-delay 5)
  '(flycheck-python-flake8-executable nil)
@@ -70,7 +71,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (atom-one-dark-theme helm-org-rifle beacon hl-todo imenu-anywhere webpaste dumb-jump pomidor company-yasnippet eclimd evil-lion git-gutter-fringe magithub git-timemachine lice evil-goggles evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (zenburn-theme atom-one-dark-theme helm-org-rifle beacon hl-todo imenu-anywhere webpaste dumb-jump pomidor company-yasnippet eclimd evil-lion git-gutter-fringe magithub git-timemachine lice evil-goggles evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))

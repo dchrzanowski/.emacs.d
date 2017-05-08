@@ -175,10 +175,10 @@ there's a region, all lines that region covers will be duplicated."
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Always paste from zero for evil
 ;; -------------------------------------------------------------------------------------------------------------------------
-(defun always-paste-zero()
+(defun always-paste-from-j()
   "Always paste in from the zero register"
   (interactive)
-  (evil-paste-after 1 ?0))
+  (evil-paste-after 1 ?j))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; esc to quit minibuffer and other...
@@ -208,7 +208,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (defun my-keyboard-quit()
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
-  ;; (evil-mc-undo-all-cursors)
+  (evil-mc-undo-all-cursors)
   (keyboard-quit))
 
 ;; -------------------------------------------------------------------------------------------------------------------------

@@ -82,9 +82,11 @@
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
 (global-set-key (kbd "C-c C-b") 'helm-bookmarks)
 
-;; vim like helm
+;; vim like helm movement
 (define-key helm-map (kbd "M-j") 'helm-next-line)
 (define-key helm-map (kbd "M-k") 'helm-previous-line)
+(define-key helm-map (kbd "C-j") 'helm-next-page)
+(define-key helm-map (kbd "C-k") 'helm-previous-page)
 (define-key helm-map (kbd "M-h") 'helm-next-source)
 (define-key helm-map (kbd "M-e") 'ace-jump-helm-line)
 (define-key helm-map (kbd "C-S-h") 'describe-key)
@@ -184,6 +186,7 @@
 (define-key sr-mode-map [tab] 'sr-change-window)
 
 (define-key dired-mode-map (kbd "RET") 'dired-find-file)
+(define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
 (define-key sr-mode-map (kbd "(") 'sr-toggle-attributes)
 
 (define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
@@ -204,6 +207,7 @@
 (define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
 (define-key sr-mode-map (kbd "l") 'sr-advertised-find-file)
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
+(define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
 
 ;;palette
 (global-set-key (kbd "C-<f9>") 'palette-launch-from-kill-ring)
@@ -216,8 +220,9 @@
 (global-set-key (kbd "<f2>") 'evil-mode)
 (evil-define-key 'normal quickrun--mode-map (kbd "q") 'quit-window)
 
-(define-key evil-normal-state-map (kbd "M-p") 'always-paste-zero)
-(define-key evil-visual-state-map (kbd "M-p") 'always-paste-zero)
+(evil-define-key 'normal evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
+(evil-define-key 'visual evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
+(evil-define-key 'insert evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)  ;; scroll through visual lines
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
