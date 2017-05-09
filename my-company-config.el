@@ -10,6 +10,7 @@
 (use-package company
   :config
   (require 'company-yasnippet)
+  (require 'company-ispell)
   (add-hook 'after-init-hook 'global-company-mode))
 (use-package web-completion-data)
 (use-package auto-complete)

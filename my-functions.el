@@ -208,8 +208,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (defun my-keyboard-quit()
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
-  (evil-mc-undo-all-cursors)
-  (keyboard-quit))
+  (progn
+    (evil-mc-undo-all-cursors)
+    (evil-normal-state)
+    (keyboard-quit)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; custom keyboard quite to assits with evil-mc as well

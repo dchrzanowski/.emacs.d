@@ -176,7 +176,7 @@
 ;; company mode
 (define-key company-active-map (kbd "M-j") 'company-select-next)
 (define-key company-active-map (kbd "M-k") 'company-select-previous)
-(define-key company-active-map [escape] 'company-abort)
+(define-key company-active-map [escape] 'my-keyboard-quit)
 
 ;; dired and sunrise fixes
 (define-key sr-mode-map (kbd "<f2>") 'evil-mode)
