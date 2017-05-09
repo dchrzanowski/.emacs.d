@@ -21,7 +21,9 @@
     (company-emacs-eclim company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
                          (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
                          company-oddmuse)))
- '(company-begin-commands (quote (self-insert-command)))
+ '(company-begin-commands
+   (quote
+    (self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash)))
  '(company-dabbrev-code-everywhere t)
  '(company-dabbrev-code-modes
    (quote
