@@ -98,6 +98,14 @@
   (setq-default nlinum-relative-redisplay-delay 0.5))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; hl-todo
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package hl-todo
+  :diminish global-hl-todo-mode
+  :config
+  (global-hl-todo-mode))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; git gutter
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package git-gutter-fringe
@@ -153,7 +161,8 @@
       (remove-hook 'elpy-modules 'elpy-module-flymake)
       (remove-hook 'elpy-mode-hook 'elpy-module-highlight-indentation)
       (add-hook 'elpy-mode-hook 'flycheck-mode)
-      (add-hook 'elpy-mode-hook 'ggtags-mode))
+      (add-hook 'elpy-mode-hook 'ggtags-mode)
+      (add-hook 'elpy-mode-hook 'hl-todo-mode))
     (elpy-enable)
     (setq elpy-rpc-backend "jedi")))
 
@@ -187,14 +196,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package helm-org-rifle
   :defer t)
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; hl-todo
-;; -------------------------------------------------------------------------------------------------------------------------
-(use-package hl-todo
-  :diminish global-hl-todo-mode
-  :config
-  (global-hl-todo-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; neotree
@@ -335,7 +336,10 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package js2-mode
   :config
-  (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode)))  ;; attach js2 mode to js files
+  (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
+  (add-hook 'js2-mode-hook 'hl-todo-mode)
+  (add-hook 'prog-mode 'hl-todo-mode)
+  (add-hook 'prog-mode 'auto-highlight-symbol-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; semantic mode
@@ -346,7 +350,6 @@
 ;; auto highlight mode
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package auto-highlight-symbol
-  :defer t
   :diminish auto-highlight-symbol-mode
   :config
   (global-auto-highlight-symbol-mode t))
@@ -454,12 +457,14 @@
     (add-hook 'scss-mode-hook 'turn-on-css-eldoc)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; emacs eclim
+;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package eclim
   :init
   (add-hook 'java-mode-hook 'eclim-mode)
   (require 'eclimd))
+
+(add-hook 'java-mode-hook 'hl-todo-mode)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; GDB
@@ -491,6 +496,7 @@
       dired-auto-revert-buffer t
       dired-recursive-copies 'always
       dired-recursive-deletes 'always)  ;; dired refresh on change
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 ;; put folders obove files
 (defun mydired-sort ()
