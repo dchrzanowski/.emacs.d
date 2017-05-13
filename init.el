@@ -199,19 +199,23 @@
 
 ;; org-brain
 (use-package org-brain
+  :defer t
   :config
   (setq org-brain-path "/home/grimscythe/org/brain/"))
 
 ;; org-export to github markdown
 (use-package ox-gfm
+  :defer t
   :after org)
 
 ;; org-export to impress.js
 (use-package ox-impress-js
+  :defer t
   :after org)
 
 ;; org-export reveal.js
 (use-package ox-reveal
+  :defer t
   :after org)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -418,7 +422,6 @@
 ;; tabbar
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package tabbar
-  :defer t
   :config
   (tabbar-mode))
 
@@ -609,7 +612,6 @@
   (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'palette-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
-  (add-to-list 'evil-emacs-state-modes ')
   (eval-after-load 'git-timemachine
     '(progn
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
