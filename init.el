@@ -139,7 +139,8 @@
     ".XXXXXX."
     "........")
   :config
-  (setq-default git-gutter-fr:side 'right-fringe)
+  (setq-default git-gutter-fr:side 'right-fringe
+                git-gutter:update-interval 1)
   (set-face-foreground 'git-gutter-fr:modified "DarkOrange")
   (set-face-foreground 'git-gutter-fr:added    "OliveDrab")
   (set-face-foreground 'git-gutter-fr:deleted  "firebrick"))
@@ -181,21 +182,37 @@
   :defer t)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; org-mode
+;; org-mode and addons
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package org
   :config
   (use-package org-bullets)
   (setq org-log-done t
         org-startup-folded nil)
+  (setq org-directory '("~/org"))
   (setq org-agenda-files '("~/org/projects"))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; -------------------------------------------------------------------------------------------------------------------------
 ;; org-helm-rifle
-;; -------------------------------------------------------------------------------------------------------------------------
 (use-package helm-org-rifle
   :defer t)
+
+;; org-brain
+(use-package org-brain
+  :config
+  (setq org-brain-path "/home/grimscythe/org/brain/"))
+
+;; org-export to github markdown
+(use-package ox-gfm
+  :after org)
+
+;; org-export to impress.js
+(use-package ox-impress-js
+  :after org)
+
+;; org-export reveal.js
+(use-package ox-reveal
+  :after org)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; neotree
@@ -476,10 +493,10 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package magit)
 
-(use-package magithub
-  :after magit
-  :config
-  (magithub-feature-autoinject t))
+;; (use-package magithub
+;;   :after magit
+;;   :config
+;;   (magithub-feature-autoinject t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; sunrise commander
@@ -537,7 +554,9 @@
 
 (use-package dired+
   :config
-  (setq dired-listing-switches "-alh")  ;; show file sizes in kbytes, mbytes, gbytes....
+  (setq dired-listing-switches "-alh"  ;; show file sizes in kbytes, mbytes, gbytes....
+        diredp-hide-details-initially-flag nil
+        diredp-hide-details-propagate-flag nil)
   (diredp-toggle-find-file-reuse-dir 1))  ;; do not open additional buffers
 
 (use-package dired-narrow)
@@ -590,6 +609,7 @@
   (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'palette-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
+  (add-to-list 'evil-emacs-state-modes ')
   (eval-after-load 'git-timemachine
     '(progn
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
@@ -599,7 +619,8 @@
 (use-package evil-leader
   :after evil
   :config
-  (setq evil-leader/in-all-states nil)
+  (setq evil-leader/in-all-states nil
+        evil-leader/no-prefix-mode-rx '("dired-mode"))  ;; add more to the list if necessary
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>"))
 
@@ -633,6 +654,7 @@
 (use-package evil-mc
   :after evil
   :config
+  (setq evil-mc-undo-cursors-on-keyboard-quit t)
   (global-evil-mc-mode 1))
 
 (use-package evil-lion

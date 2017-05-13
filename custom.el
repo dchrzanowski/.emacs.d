@@ -40,10 +40,7 @@
  '(company-show-numbers t)
  '(company-tooltip-align-annotations t)
  '(company-tooltip-minimum-width 40)
- '(cua-mode t nil (cua-base))
- '(cua-normal-cursor-color "black")
  '(cua-rectangle-mark-key [C-M-return])
- '(cua-rectangle-modifier-key (quote super))
  '(cursor-type (quote bar))
  '(custom-safe-themes
    (quote
@@ -73,7 +70,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (company-ispell zenburn-theme atom-one-dark-theme helm-org-rifle beacon hl-todo imenu-anywhere webpaste dumb-jump pomidor company-yasnippet eclimd evil-lion git-gutter-fringe magithub git-timemachine lice evil-goggles evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
+    (ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell zenburn-theme atom-one-dark-theme helm-org-rifle beacon hl-todo imenu-anywhere webpaste dumb-jump pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice evil-goggles evil-org dired-launch palette auto-yasnippet evil-mc ace-jump-helm-line use-package esup quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader linum-relative powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-html ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))

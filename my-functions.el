@@ -59,6 +59,21 @@ two curly braces, otherwise do a regular newline and indent"
   (insert (palette-current-color)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; Neo tree open xdg on point helpers
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun xdg-open-from-kill-ring ()
+  "Launch the default xdg appplication."
+  (interactive)
+  (shell-command (concat "xdg-open " (substring-no-properties (car kill-ring)))))
+
+(defun neotree-open-xdg-on-point ()
+  "Open a file under point."
+  (interactive)
+  (progn
+    (neotree-copy-filepath-to-yank-ring)
+    (xdg-open-from-kill-ring)))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; Indent/Unindent
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun my-indent-region (N)
@@ -209,7 +224,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
   (progn
-    (evil-mc-undo-all-cursors)
     (evil-normal-state)
     (keyboard-quit)))
 

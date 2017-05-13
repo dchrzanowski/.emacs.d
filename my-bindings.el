@@ -6,6 +6,10 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; key binds / shortcuts
 ;; -------------------------------------------------------------------------------------------------------------------------
+
+;; minibuffer allow to paste in the Evil register way
+(define-key minibuffer-local-map (kbd "C-r") 'evil-paste-from-register)
+
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-enter)
@@ -15,6 +19,8 @@
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
+(evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
+
 ;; additional evil leader bindings for neotree
 (evil-leader/set-key-for-mode 'neotree-mode
   "r" 'neotree-rename-node
@@ -200,8 +206,12 @@
 
 (define-key dired-mode-map (kbd "j") 'diredp-next-line)
 (define-key sr-mode-map (kbd "j") 'diredp-next-line)
+(define-key dired-mode-map (kbd "C-j") 'scroll-up-command)
+(define-key sr-mode-map (kbd "C-j") 'scroll-up-command)
 (define-key dired-mode-map (kbd "k") 'diredp-previous-line)
 (define-key sr-mode-map (kbd "k") 'diredp-previous-line)
+(define-key dired-mode-map (kbd "C-k") 'scroll-down-command)
+(define-key sr-mode-map (kbd "C-k") 'scroll-down-command)
 (define-key dired-mode-map (kbd "h") 'diredp-up-directory-reuse-dir-buffer)
 (define-key sr-mode-map (kbd "h") 'sr-dired-prev-subdir)
 (define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
@@ -304,7 +314,7 @@
   "gi" 'magit-init
   "gl" 'magit-log-popup
   "gt" 'git-timemachine-toggle
-  "gg" 'git-gutter:toggle
+  "gg" 'git-gutter-mode
   "gn" 'git-gutter:next-diff
   "tn" 'ahs-forward
   "tp" 'ahs-backward
