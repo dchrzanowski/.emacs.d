@@ -1,5 +1,9 @@
 ;;; package --- Summary
 
+;; set a much higher GC collection threshold
+(setq-default gc-cons-threshold 100000000)
+(setq-default jit-lock-defer-time 0.05)  ;; might fix scrolling speed
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
 ;; -------------------------------------------------------------------------------------------------------------------------
