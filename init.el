@@ -600,7 +600,7 @@
 (use-package evil
   :config
   (evil-mode 1)
-  (setq evil-move-cursor-back nil
+  (setq evil-move-cursor-back t
         evil-cross-lines t)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
