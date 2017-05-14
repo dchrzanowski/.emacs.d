@@ -36,7 +36,6 @@
  '(company-gtags-modes (quote (prog-mode jde-mode python-mode)))
  '(company-idle-delay 0.5)
  '(company-minimum-prefix-length 2)
- '(company-quickhelp-mode nil)
  '(company-show-numbers t)
  '(company-tooltip-align-annotations t)
  '(company-tooltip-minimum-width 40)

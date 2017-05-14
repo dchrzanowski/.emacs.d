@@ -1,8 +1,8 @@
 ;;; package --- Summary
 
 ;; set a much higher GC collection threshold
-(setq-default gc-cons-threshold 100000000)
-(setq-default jit-lock-defer-time 0.05)  ;; might fix scrolling speed
+;; (setq-default garbage-collection-messages t)
+(setq-default gc-cons-threshold 10000000)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
@@ -522,6 +522,9 @@
       dired-recursive-deletes 'always)  ;; dired refresh on change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
+;; dired async
+(dired-async-mode)
+
 ;; put folders obove files
 (defun mydired-sort ()
   "Sort dired listings with directories first."
@@ -535,9 +538,6 @@
   (after dired-after-updating-hook first () activate)
   "Sort dired listings with directories first before adding mark."
   (mydired-sort))
-
-;; dired async
-(dired-async-mode)
 
 ;; make omit persistant and also exclude dotfiles
 (defvar v-dired-omit t
