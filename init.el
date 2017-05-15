@@ -600,7 +600,7 @@
 (use-package evil
   :config
   (evil-mode 1)
-  (setq evil-move-cursor-back t
+  (setq evil-move-cursor-back nil
         evil-cross-lines t)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
@@ -661,6 +661,8 @@
   :after evil
   :config
   (setq evil-mc-undo-cursors-on-keyboard-quit t)
+  (add-hook 'evil-mc-before-cursors-created (lambda () (setq evil-move-cursor-back t)))
+  (add-hook 'evil-mc-after-cursors-deleted (lambda () (setq evil-move-cursor-back nil)))
   (global-evil-mc-mode 1))
 
 (use-package evil-lion

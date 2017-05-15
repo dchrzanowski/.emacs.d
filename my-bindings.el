@@ -315,7 +315,8 @@
   "gl" 'magit-log-popup
   "gt" 'git-timemachine-toggle
   "gg" 'git-gutter-mode
-  "gn" 'git-gutter:next-diff
+  "gn" 'git-gutter:next-hunk
+  "gp" 'git-gutter:previous-hunk
   "tn" 'ahs-forward
   "tp" 'ahs-backward
   "te" 'ahs-edit-mode
