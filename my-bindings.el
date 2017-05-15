@@ -97,8 +97,8 @@
 (define-key helm-map (kbd "M-e") 'ace-jump-helm-line)
 (define-key helm-map (kbd "C-S-h") 'describe-key)
 (define-key helm-map (kbd "M-l") (kbd "RET"))
-(define-key helm-map (kbd "TAB") (kbd "RET"))
-(define-key helm-map [tab] (kbd "RET"))
+(define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
+(define-key helm-map [tab] 'helm-execute-persistent-action)
 (define-key helm-map [escape] 'helm-keyboard-quit)
 (dolist (keymap (list helm-find-files-map helm-read-file-map helm-generic-files-map))
   (define-key keymap (kbd "M-l") 'helm-execute-persistent-action)
@@ -226,21 +226,25 @@
 ;; better new line form inside of a bracket
 (global-set-key (kbd "C-j") 'my-fancy-newline)
 
-;; evil-mode
-(global-set-key (kbd "<f2>") 'evil-mode)
-(evil-define-key 'normal quickrun--mode-map (kbd "q") 'quit-window)
-
+;; evil mc
 (evil-define-key 'normal evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
 (evil-define-key 'visual evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
 (evil-define-key 'insert evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
-(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)  ;; scroll through visual lines
-(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+(evil-define-key 'normal evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
+(evil-define-key 'visual evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
+(evil-define-key 'insert evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 
+;; evil-mode
+(global-set-key (kbd "<f2>") 'evil-mode)
+(evil-define-key 'normal quickrun--mode-map (kbd "q") 'quit-window)
+;; scroll through visual lines
+(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+;;evil plus company synergy
 (define-key evil-insert-state-map (kbd "C-<SPC>") 'company-complete-common)
 (define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-yasnippet)
 (define-key evil-insert-state-map (kbd "M-<SPC> g") 'company-gtags)
 (define-key evil-insert-state-map (kbd "M-<SPC> f") 'company-files)
-
 ;; scroll up/down with C-k, C-j
 (define-key evil-normal-state-map (kbd "C-k") (lambda ()
                                                 (interactive)
@@ -294,6 +298,7 @@
   "x" 'helm-M-x
   "w" 'helm-buffers-list
   "b" 'helm-bookmarks
+  "m" 'helm-all-mark-rings
   "n" 'cleanup-buffer
   "r" 'helm-semantic-or-imenu
   "R" 'helm-imenu-anywhere
@@ -307,9 +312,11 @@
   "y" 'helm-show-kill-ring
   "Y" 'helm-register
   "hg" 'helm-do-grep-ag
+  "hG" 'helm-google-suggest
   "ha" 'helm-do-ag
   "hl" 'helm-locate
   "hw" 'helm-do-ag-buffers
+  "hc" 'helm-colors
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup

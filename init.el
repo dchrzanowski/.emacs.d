@@ -312,7 +312,9 @@
   (define-key global-map [remap dabbrev-expand] 'helm-dabbrev)
   (unless (boundp 'completion-in-region-function)
     (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
-    (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point)))
+    (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+  (setq helm-split-window-in-side-p t
+        helm-move-to-line-cycle-in-source t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; ace jump helm line
@@ -336,7 +338,9 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package helm-swoop
   :config
-  (setq helm-swoop-split-with-multiple-windows t))
+  (setq helm-swoop-split-with-multiple-windows t
+        helm-swoop-use-fuzzy-match t
+        helm-swoop-pre-input-function (lambda () "")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; helm-flx (fuzzy match)
@@ -346,7 +350,11 @@
   :config
   (helm-flx-mode +1)
   (setq helm-flx-for-helm-find-files t
-        helm-flx-for-helm-locate t))
+        helm-flx-for-helm-locate t
+        helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match t
+        helm-semantic-fuzzy-match t
+        helm-imenu-fuzzy-match t)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; smartparens
@@ -600,7 +608,7 @@
 (use-package evil
   :config
   (evil-mode 1)
-  (setq evil-move-cursor-back nil
+  (setq-default evil-move-cursor-back nil
         evil-cross-lines t)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
@@ -661,8 +669,10 @@
   :after evil
   :config
   (setq evil-mc-undo-cursors-on-keyboard-quit t)
-  (add-hook 'evil-mc-before-cursors-created (lambda () (setq evil-move-cursor-back t)))
-  (add-hook 'evil-mc-after-cursors-deleted (lambda () (setq evil-move-cursor-back nil)))
+  (add-hook 'evil-mc-before-cursors-created (lambda () (setq-default evil-move-cursor-back t)))
+  (add-hook 'evil-mc-after-cursors-deleted (lambda () (setq-default evil-move-cursor-back nil)))
+  (advice-add 'helm-swoop--edit :after #'evil-mc-mode)
+  (advice-add 'helm-ag--edit :after #'evil-mc-mode)
   (global-evil-mc-mode 1))
 
 (use-package evil-lion
@@ -675,10 +685,10 @@
   (setq evil-goggles-duration 0.050)
   (evil-goggles-mode)
   (setq evil-goggles-default-face 'bmkp-no-local)
-  (setq evil-goggles-faces-alist `(( evil-delete . bmkp-su-or-sudo )
-                                   ( evil-yank . bmkp-non-file )
-                                   ( evil-paste-after . bmkp-sequence)
-                                   ( evil-paste-before . bmkp-sequence))))
+  (setq evil-goggles-faces-alist `((evil-delete . bmkp-su-or-sudo)
+                                   (evil-yank . bmkp-non-file)
+                                   (evil-paste-after . bmkp-sequence)
+                                   (evil-paste-before . bmkp-sequence))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor

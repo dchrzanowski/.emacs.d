@@ -71,7 +71,8 @@ two curly braces, otherwise do a regular newline and indent"
   (interactive)
   (progn
     (neotree-copy-filepath-to-yank-ring)
-    (xdg-open-from-kill-ring)))
+    (xdg-open-from-kill-ring)
+    (setq kill-ring (cdr kill-ring))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Indent/Unindent
