@@ -339,7 +339,7 @@
 (use-package helm-swoop
   :config
   (setq helm-swoop-split-with-multiple-windows t
-        helm-swoop-use-fuzzy-match t
+        helm-swoop-use-fuzzy-match nil
         helm-swoop-pre-input-function (lambda () "")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -351,10 +351,10 @@
   (helm-flx-mode +1)
   (setq helm-flx-for-helm-find-files t
         helm-flx-for-helm-locate t
-        helm-buffers-fuzzy-matching t
-        helm-recentf-fuzzy-match t
+        helm-buffers-fuzzy-matching nil
+        helm-recentf-fuzzy-match nil
         helm-semantic-fuzzy-match t
-        helm-imenu-fuzzy-match t)
+        helm-imenu-fuzzy-match t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; smartparens
@@ -533,40 +533,6 @@
 ;; dired async
 (dired-async-mode)
 
-;; put folders obove files
-(defun mydired-sort ()
-  "Sort dired listings with directories first."
-  (save-excursion
-    (let (buffer-read-only)
-      (forward-line 2) ;; beyond dir. header
-      (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max)))
-    (set-buffer-modified-p nil)))
-
-(defadvice dired-readin
-  (after dired-after-updating-hook first () activate)
-  "Sort dired listings with directories first before adding mark."
-  (mydired-sort))
-
-;; make omit persistant and also exclude dotfiles
-(defvar v-dired-omit t
-  "If dired-omit-mode enabled by default.  Don't setq me.")
-(defun dired-omit-switch ()
-  "This function is a small enhancement for `dired-omit-mode', which will \"remember\" omit state across Dired buffers."
-  (interactive)
-  (if (eq v-dired-omit t)
-      (setq v-dired-omit nil)
-    (setq v-dired-omit t))
-  (dired-omit-caller)
-  (revert-buffer))
-
-(defun dired-omit-caller ()
-  (if v-dired-omit
-      (setq dired-omit-mode t)
-    (setq dired-omit-mode nil)))
-
-(add-hook 'dired-mode-hook 'dired-omit-caller)
-(setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
-
 (use-package dired+
   :config
   (setq dired-listing-switches "-alh"  ;; show file sizes in kbytes, mbytes, gbytes....
@@ -578,15 +544,6 @@
 (use-package dired-hacks-utils)
 
 (use-package dired-rainbow)
-(defconst my-dired-media-files-extensions
-  '("mp3" "mp4" "MP3" "MP4" "avi" "mpg" "flv" "ogg" "mkv")
-  "Media files.")
-(dired-rainbow-define html "#4e9a06" ("htm" "html" "xhtml"))
-(dired-rainbow-define media "#ce5c00" my-dired-media-files-extensions)
-(dired-rainbow-define log (:inherit default
-                                    :italic t) ".*\\.log")
-;; highlight executable files, but not directories
-(dired-rainbow-define-chmod executable-unix "Green" "-[rw-]+x.*")
 
 ;; dired launch
 (use-package dired-launch
@@ -594,6 +551,7 @@
   (dired-launch-enable)
   (setq-default dired-launch-default-launcher '("xdg-open")))
 
+(load-file '"~/.emacs.d/dired-settings.el")  ;; load file colourings for dired and setup dired omit
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; God mode and evil god-state
 ;; -------------------------------------------------------------------------------------------------------------------------

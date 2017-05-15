@@ -107,6 +107,7 @@
   (define-key keymap (kbd "C-S-h") 'describe-key)
   (define-key keymap (kbd "M-e") 'ace-jump-helm-line)
   (define-key keymap (kbd "TAB") (kbd "RET"))
+  (define-key keymap (kbd "C-r") 'evil-paste-from-register)
   (define-key keymap [tab] (kbd "RET")))
 
 ;; tabbar binds

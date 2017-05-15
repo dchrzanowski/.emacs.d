@@ -123,7 +123,7 @@
  '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
  '(cursor ((t (:background "#FF0000"))))
  '(diredp-dir-heading ((t (:foreground "white" :underline t :weight bold :height 120))))
- '(diredp-dir-name ((t (:background "RoyalBlue4" :foreground "white"))))
+ '(diredp-dir-name ((t (:background "RoyalBlue4" :foreground "white" :weight bold))))
  '(diredp-file-name ((t (:foreground "white"))))
  '(evil-ex-lazy-highlight ((t (:background "black" :foreground "white"))))
  '(evil-ex-search ((t (:background "black" :foreground "white"))))
