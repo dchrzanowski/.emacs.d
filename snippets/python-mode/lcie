@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: List Comprehension If Else
-# key: lcie
-# --
-[${1:value} if ${2:condition} else ${3:condition} for ${4:value} in ${5:variable}]

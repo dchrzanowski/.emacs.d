@@ -235,5 +235,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
                   (insert (apply 'color-rgb-to-hex
                                  (color-name-to-rgb name))))))))
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; quit side windows
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun quit-bottom-side-windows ()
+  "Quit side windows of the current frame."
+  (interactive)
+  (dolist (window (window-at-side-list))
+    (quit-window nil window)))
+
 ;;; my-functions.el ends here
 (provide 'my-functions)

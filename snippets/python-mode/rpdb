@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: rPDB set trace
-# key: rpdb
-# --
-import rpdb2; rpdb2.start_embedded_debugger('${1:debug_password}')$0

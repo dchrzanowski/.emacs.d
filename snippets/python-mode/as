@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Assert
-# key: as
-# --
-self.assert_(${1:boolean expression}${2:, '${3:message}'})$0

@@ -78,7 +78,7 @@
 (electric-indent-mode t)  ;; auto indent
 (show-paren-mode t)  ;; show matching brackets
 (global-hl-line-mode)  ;; highlight current line
-(global-subword-mode)  ;; iterate through camelcase
+;; (global-subword-mode)  ;; iterate through camelcase
 (global-auto-revert-mode t)  ;; auto refresh file when changed on disk
 (setq-default auto-revert-verbose nil)  ;; keep auto revert quiet
 (setq-default help-window-select t)  ;; auto-focus help windows, easier to Q them
@@ -322,7 +322,8 @@
     (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
     (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
   (setq helm-split-window-in-side-p t
-        helm-move-to-line-cycle-in-source t))
+        helm-echo-input-in-header-line t
+        helm-move-to-line-cycle-in-source nil))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; ace jump helm line
@@ -379,6 +380,7 @@
   :config
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
   (add-hook 'js2-mode-hook 'hl-todo-mode)
+  (add-hook 'js2-mode-hook #'setup-tide-mode)
   (add-hook 'prog-mode 'hl-todo-mode)
   (add-hook 'prog-mode 'auto-highlight-symbol-mode))
 
@@ -475,7 +477,11 @@
   (setq-default web-mode-enable-current-element-highlight t)
   (setq-default web-mode-enable-current-column-highlight t)
   :config
+  ;;auto load web mode
   (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  ;; hooks
   (defun my-web-mode-hook ()
     "Hooks for Web mode."
     (setq web-mode-markup-indent-offset 4)
@@ -485,6 +491,14 @@
     (setq web-mode-enable-auto-pairing t)
     (setq web-mode-enable-css-colorization t))
 
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "jsx" (file-name-extension buffer-file-name))
+                (setup-tide-mode))))
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (setup-tide-mode))))
   (add-hook 'web-mode-hook  'my-web-mode-hook))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -721,6 +735,33 @@
 (use-package realgud
   :config
   (setq realgud:pdb-command-name "python -m pdb"))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; restclient
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package restclient)
+
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; paradox
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package paradox)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; hydra
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package hydra)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; misbeahaving (shitty) windows, reconfigure their type so that they are easy to close
+;; -------------------------------------------------------------------------------------------------------------------------
+(add-to-list 'display-buffer-alist
+             `(,(rx bos "*tide-documentation*" eos)
+               (display-buffer-reuse-window
+                display-buffer-in-side-window)
+               (reusable-frames . visible)
+               (side            . bottom)
+               (window-height   . 0.3)))
 
 ;;; Code:
 

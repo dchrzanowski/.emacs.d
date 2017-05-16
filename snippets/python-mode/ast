@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Assert True
-# key: ast
-# --
-self.assertTrue(${1:actual}${2:, '${3:message}'})$0

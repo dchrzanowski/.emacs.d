@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Assert In
-# key: asin
-# --
-self.assertIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$0

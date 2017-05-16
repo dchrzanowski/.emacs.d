@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Assert Raises
-# key: asr
-# --
-self.assertRaises(${1:exception}, ${2:callable})$0

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Import
-# key: im
-# --
-import ${1:package/module}

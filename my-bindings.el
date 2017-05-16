@@ -39,7 +39,7 @@
 
 ;; packages
 (global-set-key (kbd "M-[") 'package-install)
-(global-set-key (kbd "M-]") 'list-packages)
+(global-set-key (kbd "M-]") 'paradox-list-packages)
 
 ;; upcase/downcase
 (global-set-key (kbd "M-u") 'upcase-dwim)
@@ -299,6 +299,8 @@
   "pa" 'helm-projectile-ag
   "D" 'dired
   "d" 'ace-window
+  "q" 'quit-bottom-side-windows
+  "Q" 'clean-buffer-list
   "e" 'evil-avy-goto-word-or-subword-1
   "E" 'evil-avy-goto-word-0
   "j" 'evil-avy-goto-char
@@ -379,6 +381,9 @@
 
 (evil-leader/set-key-for-mode 'org-mode
   "f" 'helm-org-rifle)
+
+(evil-leader/set-key-for-mode 'js2-mode
+  "c" 'tide-documentation-at-point)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

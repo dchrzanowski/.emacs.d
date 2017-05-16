@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Assert Not In
-# key: asni
-# --
-self.assertNotIn(${1:needle}, ${2:haystack}${3:, '${4:message}'})$0

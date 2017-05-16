@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: Insert Docstring
-# key: doc
-# --
-"""${1:short_description}
-
-(${2:input_var}) -> ${3:output_var}
-"""

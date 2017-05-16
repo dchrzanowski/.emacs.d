@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Assert Is None
-# key: asino
-# --
-self.assertIsNone(${1:actual}${2:, '${3:message}'})$0
