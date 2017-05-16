@@ -61,18 +61,10 @@ two curly braces, otherwise do a regular newline and indent"
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Neo tree open xdg on point helpers
 ;; -------------------------------------------------------------------------------------------------------------------------
-(defun xdg-open-from-kill-ring ()
-  "Launch the default xdg appplication."
-  (interactive)
-  (shell-command (concat "xdg-open " (substring-no-properties (car kill-ring)))))
-
 (defun neotree-open-xdg-on-point ()
   "Open a file under point."
   (interactive)
-  (progn
-    (neotree-copy-filepath-to-yank-ring)
-    (xdg-open-from-kill-ring)
-    (setq kill-ring (cdr kill-ring))))
+  (shell-command (concat "xdg-open " (neo-buffer--get-filename-current-line))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Indent/Unindent

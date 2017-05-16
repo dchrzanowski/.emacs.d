@@ -134,6 +134,10 @@
 (define-key web-mode-map (kbd "C-<down>") 'web-mode-element-next)
 (define-key web-mode-map (kbd "C-<up>") 'web-mode-element-previous)
 
+;; emmet-mode
+(define-key web-mode-map (kbd "M-;") 'emmet-expand-line)
+(global-set-key (kbd "M-;") 'emmet-expand-line)
+
 ;; indent and unindent
 (global-set-key (kbd "M->") 'my-indent-region)
 (global-set-key (kbd "M-<") 'my-unindent-region)
@@ -227,6 +231,13 @@
 ;; better new line form inside of a bracket
 (global-set-key (kbd "C-j") 'my-fancy-newline)
 
+;; eyebrowse
+(evil-define-key 'normal eyebrowse-mode-map (kbd "gt") 'eyebrowse-next-window-config)
+(evil-define-key 'normal eyebrowse-mode-map (kbd "gT") 'eyebrowse-prev-window-config)
+(evil-define-key 'normal eyebrowse-mode-map (kbd "zx") 'eyebrowse-last-window-config)
+(evil-define-key 'normal eyebrowse-mode-map (kbd "gc") 'eyebrowse-close-window-config)
+(evil-define-key 'normal eyebrowse-mode-map (kbd "g.") 'eyebrowse-switch-to-window-config)
+
 ;; evil mc
 (evil-define-key 'normal evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
 (evil-define-key 'visual evil-mc-key-map (kbd "M-p") 'always-paste-from-j)
@@ -295,7 +306,12 @@
   "a" 'anzu-query-replace
   "A" 'anzu-query-replace-at-cursor
   ";" 'comment-or-uncomment-region
-  "k" 'comment-line
+  "kk" 'evilnc-comment-or-uncomment-lines
+  "kl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "kc" 'evilnc-copy-and-comment-lines
+  "kp" 'evilnc-comment-or-uncomment-paragraphs
+  "kr" 'comment-or-uncomment-region
+  "kv" 'evilnc-toggle-invert-comment-line-by-line
   "x" 'helm-M-x
   "w" 'helm-buffers-list
   "b" 'helm-bookmarks
@@ -330,7 +346,13 @@
   "te" 'ahs-edit-mode
   "Tn" 'hl-todo-next
   "Tp" 'hl-todo-previous
-  "To" 'hl-todo-occur)
+  "To" 'hl-todo-occur
+  "'" 'eyebrowse-last-window-config
+  "0" 'eyebrowse-switch-to-window-config-0
+  "1" 'eyebrowse-switch-to-window-config-1
+  "2" 'eyebrowse-switch-to-window-config-2
+  "3" 'eyebrowse-switch-to-window-config-3
+  "4" 'eyebrowse-switch-to-window-config-4)
 
 (evil-leader/set-key-for-mode 'web-mode
   "cew" 'web-mode-element-wrap

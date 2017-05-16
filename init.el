@@ -247,6 +247,14 @@
   (setq-default avy-background t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; eyebrowse
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package eyebrowse
+  :config
+  (setq-default eyebrowse-wrap-around t)
+  (eyebrowse-mode t))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; ace window
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package ace-window
@@ -280,8 +288,8 @@
       (?o delete-other-windows)
       (?w kill-this-buffer)
       (?3 window-split-into-3-columns)
-      (?2 window-split-into-2-columns-and-a-row))
-    "List of actions for `aw-dispatch-default'."))
+      (?2 window-split-into-2-columns-and-a-row)
+    "List of actions for `aw-dispatch-default'.")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; anzu settings
@@ -489,6 +497,15 @@
     (add-hook 'scss-mode-hook 'turn-on-css-eldoc)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; web mode
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package emmet-mode
+  :defer t
+  :config
+  (add-hook 'web-mode-hook 'emmet-mode)
+  (add-hook 'css-mode-hook 'emmet-mode)
+  (add-hook 'scss-mode-hook 'emmet-mode))
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package eclim
@@ -545,13 +562,13 @@
 
 (use-package dired-rainbow)
 
-;; dired launch
 (use-package dired-launch
   :config
   (dired-launch-enable)
   (setq-default dired-launch-default-launcher '("xdg-open")))
 
 (load-file '"~/.emacs.d/dired-settings.el")  ;; load file colourings for dired and setup dired omit
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; God mode and evil god-state
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -567,7 +584,7 @@
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
-        evil-cross-lines t)
+                evil-cross-lines t)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
   (evil-put-property 'evil-state-properties 'insert   :tag " INSERT ")
@@ -615,13 +632,17 @@
   (global-evil-visualstar-mode))
 
 (use-package evil-args
+  :defer t
   :after evil)
 
 (use-package evil-magit
   :after evil)
 
 (use-package evil-org
-  :after evil)
+  :after evil
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (evil-org-set-key-theme '(navigation insert textobjects additional shift todo heading)))
 
 (use-package evil-mc
   :after evil
@@ -648,6 +669,8 @@
                                    (evil-paste-after . bmkp-sequence)
                                    (evil-paste-before . bmkp-sequence))))
 
+(use-package evil-nerd-commenter
+  :defer t)
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -691,6 +714,13 @@
                 beacon-blink-when-point-moves-horizontally nil
                 beacon-blink-when-point-moves-vertically 2)
   (beacon-mode t))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; realgud
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package realgud
+  :config
+  (setq realgud:pdb-command-name "python -m pdb"))
 
 ;;; Code:
 
