@@ -61,15 +61,10 @@ two curly braces, otherwise do a regular newline and indent"
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Neo tree open xdg on point helpers
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; (defcustom neo-default-system-application "xdg-open"
-;;   "*Name of the application that is used to open a file under point.  By default it is xdg-open."
-;;   :type 'string
-;;   :group 'neotree)
-
-;; (defun neotree-open-system-application-on-file ()
-;;   "Open a file under point."
-;;   (interactive)
-;;   (shell-command (concat neo-default-system-application " " (neo-buffer--get-filename-current-line))))
+(defun neotree-open-xdg-on-point ()
+  "Open a file under point."
+  (call-process "xdg-open" nil 0 nil
+                (neo-buffer--get-filename-current-line)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Indent/Unindent

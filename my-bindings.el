@@ -19,7 +19,7 @@
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
-(evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-file-in-system-application)
+(evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
 
 ;; additional evil leader bindings for neotree
 (evil-leader/set-key-for-mode 'neotree-mode
