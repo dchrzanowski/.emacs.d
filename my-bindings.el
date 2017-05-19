@@ -19,7 +19,7 @@
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
-(evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
+(evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-file-in-system-application)
 
 ;; additional evil leader bindings for neotree
 (evil-leader/set-key-for-mode 'neotree-mode
@@ -245,6 +245,7 @@
 (evil-define-key 'normal evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (evil-define-key 'visual evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (evil-define-key 'insert evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
+(global-set-key (kbd "C-S-<mouse-1>") 'evil-mc-toggle-cursor-on-click)
 
 ;; evil-mode
 (global-set-key (kbd "<f2>") 'evil-mode)
@@ -307,7 +308,7 @@
   "J" 'evil-avy-goto-char-2
   "a" 'anzu-query-replace
   "A" 'anzu-query-replace-at-cursor
-  ";" 'comment-or-uncomment-region
+  ";" 'evilnc-comment-or-uncomment-lines
   "kk" 'evilnc-comment-or-uncomment-lines
   "kl" 'evilnc-quick-comment-or-uncomment-to-the-line
   "kc" 'evilnc-copy-and-comment-lines

@@ -56,21 +56,21 @@
 ;; JAVA MODE
 ;; select the raw hook or the eclim setup
 ;; ------------------------------------------------------------------------------------------------
-(add-hook 'java-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-semantic company-dabbrev-code company-yasnippet)))))
+;; (add-hook 'java-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-semantic company-dabbrev-code company-yasnippet)))))
 
 ;; setup for eclim (java)
-;;(company-emacs-eclim-setup)
+(company-emacs-eclim-setup)
 
 ;; ------------------------------------------------------------------------------------------------
 ;; JS2 MODE
 ;; ------------------------------------------------------------------------------------------------
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-semantic company-dabbrev-code company-yasnippet)))))
+;; (add-hook 'js2-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-semantic company-dabbrev-code company-yasnippet)))))
 
 
 ;; fix for yasnippets

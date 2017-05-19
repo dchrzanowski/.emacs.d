@@ -280,6 +280,7 @@
 
   (defvar aw-dispatch-alist
     '((?x aw-delete-window " Ace - Delete Window")
+      (?u aw-delete-window " Ace - Delete Window")
       (?z aw-swap-window " Ace - Swap Window")
       (?i aw-flip-window)
       (?b aw-split-window-vert " Ace - Split Vert Window")
@@ -403,8 +404,9 @@
 (use-package yasnippet
   :defer t
   :config
-  (yas-global-mode 1)
-  (use-package auto-yasnippet))
+  (yas-global-mode 1))
+
+(use-package auto-yasnippet)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; drag stuff
@@ -519,6 +521,7 @@
   (add-hook 'web-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook 'emmet-mode)
   (add-hook 'scss-mode-hook 'emmet-mode))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -751,6 +754,11 @@
 ;; hydra
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package hydra)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; quickrun
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package quickrun)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; misbeahaving (shitty) windows, reconfigure their type so that they are easy to close

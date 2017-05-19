@@ -18,9 +18,9 @@
  '(company-auto-complete-chars (quote (32 41 46)))
  '(company-backends
    (quote
-    (company-emacs-eclim company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
-                         (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
-                         company-oddmuse)))
+    (company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
+                  (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
+                  company-oddmuse company-emacs-eclim)))
  '(company-begin-commands
    (quote
     (self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash)))
@@ -34,7 +34,7 @@
    (quote
     (company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend company-quickhelp-frontend)))
  '(company-gtags-modes (quote (prog-mode jde-mode python-mode)))
- '(company-idle-delay 0.5)
+ '(company-idle-delay 0.2)
  '(company-minimum-prefix-length 2)
  '(company-show-numbers t)
  '(company-tooltip-align-annotations t)
@@ -138,6 +138,9 @@
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:foreground "chartreuse3" :underline nil))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "LavenderBlush1"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "lime green"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "dark orange"))))
  '(rainbow-delimiters-unmatched-face ((t (:foreground "red" :underline t))))
  '(sr-active-path-face ((t (:background "black" :foreground "white" :weight bold :height 120))))
  '(sr-editing-path-face ((t (:background "red" :foreground "white" :weight bold :height 120))))

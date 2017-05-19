@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: File Reader
+# key: filer
+# --
+static String fileToString(String fileName) {
+
+    String output = "";
+
+    try {
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        String line;
+        while ((line = br.readLine()) != null) {
+            output += line + "\n";
+        }
+        br.close();
+        return output;
+    } catch (IOException e) {
+        e.getMessage();
+        return null;
+    }
+}
