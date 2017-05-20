@@ -527,10 +527,16 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package eclim
   :init
-  (add-hook 'java-mode-hook 'eclim-mode)
-  (require 'eclimd))
+  (require 'eclimd)
+  :config
+  (defun my-java-mode-hook()
+    (eclim-mode t)
+    (hl-todo-mode)
+    (setq-default help-at-pt-display-when-idle t)
+    (setq-default help-at-pt-timer-delay 0.1)
+    (help-at-pt-set-timer))
+  (add-hook 'java-mode-hook 'my-java-mode-hook))
 
-(add-hook 'java-mode-hook 'hl-todo-mode)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; GDB
@@ -616,6 +622,7 @@
   (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'palette-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
+  (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
   (eval-after-load 'git-timemachine
     '(progn
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
@@ -763,13 +770,13 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; misbeahaving (shitty) windows, reconfigure their type so that they are easy to close
 ;; -------------------------------------------------------------------------------------------------------------------------
-(add-to-list 'display-buffer-alist
-             `(,(rx bos "*tide-documentation*" eos)
-               (display-buffer-reuse-window
-                display-buffer-in-side-window)
-               (reusable-frames . visible)
-               (side            . bottom)
-               (window-height   . 0.3)))
+;; (add-to-list 'display-buffer-alist
+;;              `(,(rx bos "*tide-documentation*" eos)
+;;                (display-buffer-reuse-window
+;;                 display-buffer-in-side-window)
+;;                (reusable-frames . visible)
+;;                (side            . bottom)
+;;                (window-height   . 0.3)))
 
 ;;; Code:
 
