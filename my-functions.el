@@ -211,7 +211,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (buffer-string)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; custom keyboard quite to assits with evil-mc as well
+;; custom keyboard quite to assits with evil as well
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun my-keyboard-quit()
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
@@ -221,7 +221,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (keyboard-quit)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; custom keyboard quite to assits with evil-mc as well
+;; insert hex color
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun insert-color-hex ()
   "Select a color and insert its hexadecimal format."
@@ -234,15 +234,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
                 (with-current-buffer ,buf
                   (insert (apply 'color-rgb-to-hex
                                  (color-name-to-rgb name))))))))
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; quit side windows
-;; -------------------------------------------------------------------------------------------------------------------------
-(defun quit-bottom-side-windows ()
-  "Quit side windows of the current frame."
-  (interactive)
-  (dolist (window (window-at-side-list))
-    (quit-window nil window)))
 
 ;;; my-functions.el ends here
 (provide 'my-functions)

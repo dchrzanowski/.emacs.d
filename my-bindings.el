@@ -300,8 +300,9 @@
   "pa" 'helm-projectile-ag
   "D" 'dired
   "d" 'ace-window
-  "q" 'quit-bottom-side-windows
-  "Q" 'clean-buffer-list
+  "q" 'winner-undo
+  "Q" 'winner-redo
+  "M-q" 'clean-buffer-list
   "e" 'evil-avy-goto-word-or-subword-1
   "E" 'evil-avy-goto-word-0
   "j" 'evil-avy-goto-char
@@ -337,6 +338,7 @@
   "hl" 'helm-locate
   "hw" 'helm-do-ag-buffers
   "hc" 'helm-colors
+  "hC" 'insert-color-hex
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
