@@ -388,6 +388,10 @@
 (evil-leader/set-key-for-mode 'js2-mode
   "c" 'tide-documentation-at-point)
 
+(evil-leader/set-key-for-mode 'message-mode
+  "w" 'helm-buffer-list
+  "d" 'ace-window)
+
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)

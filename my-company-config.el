@@ -21,7 +21,10 @@
           (cons (cons "Bootstrap" "/home/grimscythe/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
                 web-completion-data-sources))))
 (use-package company-web)
-(use-package company-emacs-eclim)
+(use-package company-emacs-eclim
+  :config
+  (setq company-emacs-eclim-ignore-case nil))
+
 (use-package company-jedi)
 
 (use-package company-quickhelp
@@ -54,7 +57,7 @@
 
 ;; ------------------------------------------------------------------------------------------------
 ;; JAVA MODE
-;; select the raw hook or the eclim setup
+;; select the raw-non-eclim-hook or the eclim setup
 ;; ------------------------------------------------------------------------------------------------
 ;; (add-hook 'java-mode-hook
 ;;           (lambda ()

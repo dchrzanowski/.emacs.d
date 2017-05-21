@@ -164,7 +164,7 @@
     ;; Use Flycheck instead of Flymake
     (when (require 'flycheck nil t)
       (remove-hook 'elpy-modules 'elpy-module-flymake)
-      (remove-hook 'elpy-mode-hook 'elpy-module-highlight-indentation)
+      (remove-hook 'elpy-modules 'elpy-module-highlight-indentation)
       (add-hook 'elpy-mode-hook 'flycheck-mode)
       (add-hook 'elpy-mode-hook 'ggtags-mode)
       (add-hook 'elpy-mode-hook 'hl-todo-mode))
@@ -375,7 +375,7 @@
   (smartparens-global-mode 1))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; hooks for languages
+;; js2 mode
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package js2-mode
   :config
@@ -603,7 +603,15 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; EVIL MODE
 ;; -------------------------------------------------------------------------------------------------------------------------
+(use-package evil-leader
+  :config
+  (setq evil-leader/in-all-states nil
+        evil-leader/no-prefix-mode-rx '("dired-mode"))  ;; add more to the list if necessary
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>"))
+
 (use-package evil
+  :after evil-leader
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
@@ -628,14 +636,6 @@
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
        (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))  ;; git-timemachine, switch off evil
   )
-
-(use-package evil-leader
-  :after evil
-  :config
-  (setq evil-leader/in-all-states nil
-        evil-leader/no-prefix-mode-rx '("dired-mode"))  ;; add more to the list if necessary
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>"))
 
 (use-package evil-anzu
   :after evil)
@@ -695,6 +695,7 @@
 
 (use-package evil-nerd-commenter
   :defer t)
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -767,17 +768,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package quickrun)
 
-;; -------------------------------------------------------------------------------------------------------------------------
-;; misbeahaving (shitty) windows, reconfigure their type so that they are easy to close
-;; -------------------------------------------------------------------------------------------------------------------------
-;; (add-to-list 'display-buffer-alist
-;;              `(,(rx bos "*tide-documentation*" eos)
-;;                (display-buffer-reuse-window
-;;                 display-buffer-in-side-window)
-;;                (reusable-frames . visible)
-;;                (side            . bottom)
-;;                (window-height   . 0.3)))
-
 ;;; Code:
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -797,12 +787,6 @@
 (load-file '"~/.emacs.d/my-bindings.el")
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; Keep emacs Custom-settings in separate file
-;; -------------------------------------------------------------------------------------------------------------------------
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
-;; -------------------------------------------------------------------------------------------------------------------------
 ;; load powerline
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package powerline)
@@ -812,11 +796,21 @@
   (setq-default powerline-default-separator (quote wave)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; Keep emacs Custom-settings in separate file
+;; -------------------------------------------------------------------------------------------------------------------------
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; load emacs atom theme
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package atom-one-dark-theme
+;; (use-package atom-one-dark-theme
+;;   :config
+;;   (load-theme 'atom-one-dark t))
+
+(use-package doom-themes
   :config
-  (load-theme 'atom-one-dark t))
+  (load-theme 'doom-one t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline
