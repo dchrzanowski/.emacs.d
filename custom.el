@@ -110,9 +110,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
- '(ahs-definition-face ((t (:background "gray8" :weight bold))))
- '(ahs-edit-mode-face ((t (:background "dark slate gray" :foreground "White"))))
- '(ahs-face ((t (:background "gray8" :foreground "dark gray"))))
+ '(ahs-definition-face ((t (:background "black" :weight bold))))
+ '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
+ '(ahs-face ((t (:background "black"))))
  '(ahs-plugin-defalt-face ((t nil)))
  '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
  '(anzu-replace-highlight ((t (:background "black" :foreground "dark orange"))))
