@@ -63,6 +63,7 @@ two curly braces, otherwise do a regular newline and indent"
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun neotree-open-xdg-on-point ()
   "Open a file under point."
+  (interactive)
   (call-process "xdg-open" nil 0 nil
                 (neo-buffer--get-filename-current-line)))
 

@@ -14,13 +14,18 @@
   (add-hook 'after-init-hook 'global-company-mode))
 (use-package web-completion-data)
 (use-package auto-complete)
+(use-package ac-html)
 (use-package ac-html-bootstrap
   :config
   (unless (assoc "Bootstrap" web-completion-data-sources)
     (setq web-completion-data-sources
-          (cons (cons "Bootstrap" "/home/grimscythe/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
-                web-completion-data-sources))))
-(use-package company-web)
+          (cons (cons "Bootstrap" "/home/damian/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
+                web-completion-data-sources)))
+  )
+(use-package company-web
+  :config
+  (require 'company-web-html))
+
 (use-package company-emacs-eclim
   :config
   (setq company-emacs-eclim-ignore-case nil))
@@ -74,7 +79,6 @@
 ;;           (lambda ()
 ;;             (set (make-local-variable 'company-backends)
 ;;                  '((company-semantic company-dabbrev-code company-yasnippet)))))
-
 
 ;; fix for yasnippets
 (defun check-expansion ()

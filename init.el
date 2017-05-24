@@ -491,7 +491,8 @@
     (setq web-mode-css-indent-offset 4)
     (setq web-mode-code-indent-offset 4)
     (setq web-mode-enable-auto-pairing t)
-    (setq web-mode-enable-css-colorization t))
+    (setq web-mode-enable-css-colorization t)
+    (auto-highlight-symbol-mode t))
 
   (add-hook 'web-mode-hook
             (lambda ()
@@ -501,6 +502,7 @@
             (lambda ()
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
                 (setup-tide-mode))))
+
   (add-hook 'web-mode-hook  'my-web-mode-hook))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -740,7 +742,7 @@
                 beacon-blink-duration 0.2
                 beacon-blink-when-point-moves-horizontally nil
                 beacon-blink-when-point-moves-vertically 2)
-  (beacon-mode t))
+  (beacon-mode -1))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; realgud
