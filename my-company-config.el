@@ -16,10 +16,9 @@
 (use-package auto-complete)
 (use-package ac-html)
 (use-package ac-html-bootstrap
-  :config
-  (unless (assoc "Bootstrap" web-completion-data-sources)
+  :config (unless (assoc "Bootstrap" web-completion-data-sources)
     (setq web-completion-data-sources
-          (cons (cons "Bootstrap" "/home/damian/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
+          (cons (cons "Bootstrap" "/home/grimscythe/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
                 web-completion-data-sources)))
   )
 (use-package company-web

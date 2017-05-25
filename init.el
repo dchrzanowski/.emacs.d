@@ -742,7 +742,7 @@
                 beacon-blink-duration 0.2
                 beacon-blink-when-point-moves-horizontally nil
                 beacon-blink-when-point-moves-vertically 2)
-  (beacon-mode -1))
+  (beacon-mode t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; realgud
