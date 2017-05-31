@@ -107,7 +107,8 @@
 (use-package hl-todo
   :diminish global-hl-todo-mode
   :config
-  (global-hl-todo-mode))
+  (global-hl-todo-mode)
+  (add-hook 'prog-mode 'hl-todo-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; git gutter
@@ -381,9 +382,8 @@
   :config
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
   (add-hook 'js2-mode-hook 'hl-todo-mode)
-  (add-hook 'js2-mode-hook #'setup-tide-mode)
-  (add-hook 'prog-mode 'hl-todo-mode)
-  (add-hook 'prog-mode 'auto-highlight-symbol-mode))
+  (add-hook 'js2-mode-hook 'auto-highlight-symbol-mode)
+  (add-hook 'js2-mode-hook #'setup-tide-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; semantic mode
@@ -396,7 +396,8 @@
 (use-package auto-highlight-symbol
   :diminish auto-highlight-symbol-mode
   :config
-  (global-auto-highlight-symbol-mode t))
+  (global-auto-highlight-symbol-mode t)
+  (add-hook 'prog-mode 'auto-highlight-symbol-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; yasnippets and autoyasnippet
@@ -461,7 +462,7 @@
     (flycheck-mode +1)
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
-    (tide-hl-identifier-mode +1)
+    ;; (tide-hl-identifier-mode +1)
     (company-mode +1))
 
   ;; formats the buffer before saving
