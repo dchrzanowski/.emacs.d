@@ -137,6 +137,7 @@
 ;; emmet-mode
 (define-key web-mode-map (kbd "M-;") 'emmet-expand-line)
 (global-set-key (kbd "M-;") 'emmet-expand-line)
+(define-key emmet-mode-keymap (kbd "C-j") 'my-fancy-newline)
 
 ;; indent and unindent
 (global-set-key (kbd "M->") 'my-indent-region)
@@ -386,6 +387,9 @@
   "f" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
+  "c" 'tide-documentation-at-point)
+
+(evil-leader/set-key-for-mode 'typescript-mode
   "c" 'tide-documentation-at-point)
 
 (evil-leader/set-key-for-mode 'message-mode

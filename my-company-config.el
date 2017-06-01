@@ -16,11 +16,16 @@
 (use-package auto-complete)
 (use-package ac-html)
 (use-package ac-html-bootstrap
-  :config (unless (assoc "Bootstrap" web-completion-data-sources)
+  :config
+  (unless (assoc "Bootstrap" web-completion-data-sources)
     (setq web-completion-data-sources
           (cons (cons "Bootstrap" "/home/grimscythe/.emacs.d/elpa/ac-html-bootstrap-20160302.901/html-stuff")
                 web-completion-data-sources)))
-  )
+  (unless (assoc "FontAwesome" web-completion-data-sources)
+    (setq web-completion-data-sources
+          (cons (cons "FontAwesome" "/home/damian/.emacs.d/elpa/ac-html-bootstrap-20160302.901/fa-html-stuff")
+                web-completion-data-sources))))
+
 (use-package company-web
   :config
   (require 'company-web-html))
@@ -41,7 +46,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-ispell company-capf company-dabbrev company-files company-semantic)))))
+                 '((company-ispell company-dabbrev company-files)))))
 
 ;; ------------------------------------------------------------------------------------------------
 ;; PYTHON
