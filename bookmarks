@@ -19,8 +19,11 @@
     (created 22832 28485 158713 862000))
 #1=(#("org" 0 3
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22832 30905 555912 705000)
+    (visits . 0)
     (filename . "/home/grimscythe/org")
-    (position . 0)
+    (position . 1)
     (created 22832 28481 462877 604000))
 #1=(#("Google Drive" 0 12
       (bmkp-full-record #1#))
@@ -29,8 +32,11 @@
     (created 22832 28476 918717 928000))
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22832 28930 444638 654000)
+    (visits . 0)
     (filename . "/home/grimscythe/github")
-    (position . 0)
+    (position . 1)
     (created 22832 28464 821874 763000))
 #1=(#("Home" 0 4
       (bmkp-full-record #1#))
