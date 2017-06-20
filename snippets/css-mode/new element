@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: new element
+# key: n
+# --
+$1{
+   $0
+}
