@@ -291,6 +291,7 @@
 (evil-leader/set-key
   "f" 'helm-swoop-without-pre-input
   "F" 'helm-find-files
+  "<f1>" 'show-file-name
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
   "pp" 'helm-projectile-switch-project
