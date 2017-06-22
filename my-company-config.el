@@ -35,6 +35,8 @@
 
 (use-package company-jedi)
 
+(use-package company-tern)
+
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
@@ -78,10 +80,10 @@
 ;; ------------------------------------------------------------------------------------------------
 ;; JS2 MODE
 ;; ------------------------------------------------------------------------------------------------
-;; (add-hook 'js2-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-semantic company-dabbrev-code company-yasnippet)))))
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '((company-tern company-semantic company-dabbrev-code company-yasnippet)))))
 
 ;; fix for yasnippets
 (defun check-expansion ()

@@ -392,7 +392,11 @@
   "f" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
-  "c" 'tide-documentation-at-point)
+  "cc" 'tern-get-type
+  "cr" 'tern-rename-variable
+  "c." 'tern-find-definition
+  "c," 'tern-pop-find-definition
+  "cd" 'tern-get-docs)
 
 (evil-leader/set-key-for-mode 'typescript-mode
   "c" 'tide-documentation-at-point)

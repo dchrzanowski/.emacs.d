@@ -383,7 +383,7 @@
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
   (add-hook 'js2-mode-hook 'hl-todo-mode)
   (add-hook 'js2-mode-hook 'auto-highlight-symbol-mode)
-  (add-hook 'js2-mode-hook #'setup-tide-mode))
+  (add-hook 'js2-mode-hook (lambda () (tern-mode) (company-mode))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; semantic mode
