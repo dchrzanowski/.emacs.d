@@ -291,6 +291,7 @@
 (evil-leader/set-key
   "f" 'helm-swoop-without-pre-input
   "F" 'helm-find-files
+  "<f1>" 'show-file-name
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
   "pp" 'helm-projectile-switch-project
@@ -353,12 +354,16 @@
   "Tn" 'hl-todo-next
   "Tp" 'hl-todo-previous
   "To" 'hl-todo-occur
+  "on" 'flycheck-next-error
+  "op" 'flycheck-previous-error
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
   "2" 'eyebrowse-switch-to-window-config-2
   "3" 'eyebrowse-switch-to-window-config-3
-  "4" 'eyebrowse-switch-to-window-config-4)
+  "4" 'eyebrowse-switch-to-window-config-4
+  "5" 'eyebrowse-switch-to-window-config-5
+  "6" 'eyebrowse-switch-to-window-config-6)
 
 (evil-leader/set-key-for-mode 'web-mode
   "cew" 'web-mode-element-wrap
@@ -387,7 +392,11 @@
   "f" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
-  "c" 'tide-documentation-at-point)
+  "cc" 'tern-get-type
+  "cr" 'tern-rename-variable
+  "c." 'tern-find-definition
+  "c," 'tern-pop-find-definition
+  "cd" 'tern-get-docs)
 
 (evil-leader/set-key-for-mode 'typescript-mode
   "c" 'tide-documentation-at-point)

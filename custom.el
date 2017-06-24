@@ -20,7 +20,7 @@
    (quote
     (company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
                   (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
-                  company-oddmuse company-emacs-eclim)))
+                  company-oddmuse company-emacs-eclim company-tern)))
  '(company-begin-commands
    (quote
     (self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash)))
@@ -69,7 +69,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (ac-html web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch palette auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+    (company-tern ac-html web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch palette auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
