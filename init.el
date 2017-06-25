@@ -818,15 +818,15 @@
 (load custom-file)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; load emacs atom theme
+;; load theme
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; (use-package atom-one-dark-theme
-;;   :config
-;;   (load-theme 'atom-one-dark t))
-
 (use-package doom-themes
   :config
-  (load-theme 'doom-one t))
+  (load-theme 'doom-one t)
+  (custom-set-faces
+   '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+   '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
+   '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline

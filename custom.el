@@ -93,8 +93,6 @@
  '(sr-show-file-attributes nil)
  '(sr-traditional-other-window t)
  '(sr-windows-default-ratio 80)
- '(tabbar-mode t nil (tabbar))
- '(tabbar-mwheel-mode t nil (tabbar))
  '(tabbar-separator (quote (1)))
  '(tool-bar-mode nil)
  '(track-eol t)
