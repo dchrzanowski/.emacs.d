@@ -615,7 +615,8 @@
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
-                evil-cross-lines t)
+                evil-cross-lines t
+                evil-echo-state nil)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
   (evil-put-property 'evil-state-properties 'insert   :tag " INSERT ")
