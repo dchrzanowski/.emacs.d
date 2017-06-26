@@ -291,7 +291,7 @@
       (?w kill-this-buffer)
       (?3 window-split-into-3-columns)
       (?2 window-split-into-2-columns-and-a-row)
-    "List of actions for `aw-dispatch-default'.")))
+      "List of actions for `aw-dispatch-default'.")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; anzu settings
@@ -619,7 +619,8 @@
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
-                evil-cross-lines t)
+                evil-cross-lines t
+                evil-echo-state nil)
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
   (evil-put-property 'evil-state-properties 'insert   :tag " INSERT ")
@@ -831,7 +832,11 @@
 
 (use-package doom-themes
   :config
-  (load-theme 'doom-one t))
+  (load-theme 'doom-one t)
+  (custom-set-faces
+   '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+   '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
+   '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline
