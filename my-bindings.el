@@ -343,6 +343,7 @@
   "hw" 'helm-do-ag-buffers
   "hc" 'helm-colors
   "hC" 'insert-color-hex
+  "hd" 'helm-dash
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
