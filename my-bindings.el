@@ -83,6 +83,8 @@
 ;; avy
 (global-set-key (kbd "M-e") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "M-j") 'avy-goto-char)
+(evil-define-key 'normal global-map (kbd "s") 'avy-goto-char-timer)
+(evil-define-key 'visual global-map (kbd "s") 'avy-goto-char-timer)
 
 ;; helm bookmark
 (global-set-key (kbd "C-c b") 'helm-bookmarks)

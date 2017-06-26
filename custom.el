@@ -118,6 +118,7 @@
  '(ahs-plugin-defalt-face ((t nil)))
  '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
  '(anzu-replace-highlight ((t (:background "black" :foreground "dark orange"))))
+ '(avy-goto-char-timer-face ((t (:background "black" :foreground "green"))))
  '(avy-lead-face ((t (:background "black" :foreground "red"))))
  '(avy-lead-face-0 ((t (:background "black" :foreground "green"))))
  '(avy-lead-face-1 ((t (:background "black" :foreground "dark orange"))))
@@ -150,6 +151,9 @@
  '(sr-editing-path-face ((t (:background "red" :foreground "white" :weight bold :height 120))))
  '(sr-highlight-path-face ((t (:background "yellow" :foreground "black" :weight bold :height 120))))
  '(sr-passive-path-face ((t (:background "white" :foreground "black" :weight bold :height 120))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+ '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
+ '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
  '(web-mode-html-tag-face ((t (:foreground "#db5762")))))
 (provide 'custom)
 ;;; custom.el ends here
