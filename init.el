@@ -352,11 +352,45 @@
   (setq helm-swoop-split-with-multiple-windows t
         helm-swoop-use-fuzzy-match nil
         helm-swoop-pre-input-function (lambda () "")))
+ ;; -------------------------------------------------------------------------------------------------------------------------
+;; helm-swoop
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package helm-dash
+  :config
+  (setq helm-dash-min-length 2
+        helm-dash-enable-debugging nil)
+
+  (defun javascript-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("JavaScript")))
+  (add-hook 'js2-mode-hook 'javascript-dash-doc)
+
+  (defun typescript-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("TypeScript")))
+  (add-hook 'typescript-mode-hook 'typescript-dash-doc)
+
+  (defun python3-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("Python 3")))
+  (add-hook 'python-mode-hook 'python3-dash-doc)
+
+  (defun html-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("HTML")))
+  (add-hook 'web-mode-hook 'html-dash-doc)
+
+  (defun css-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("CSS")))
+  (add-hook 'css-mode-hook 'css-dash-doc))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; helm-flx (fuzzy match)
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package helm-flx
+  :init
+  (use-package flx)
   :ensure helm
   :config
   (helm-flx-mode +1)
@@ -563,7 +597,8 @@
 (setq dired-dwim-target t  ;; dired copy to other pane
       dired-auto-revert-buffer t
       dired-recursive-copies 'always
-      dired-recursive-deletes 'always)  ;; dired refresh on change
+      dired-recursive-deletes 'always
+      dired-omit-verbose nil)  ;; dired refresh on change
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
 ;; dired async
