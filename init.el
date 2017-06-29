@@ -196,6 +196,8 @@
         org-startup-folded nil)
   (setq org-directory '("~/org"))
   (setq org-agenda-files '("~/org/projects"))
+  (setq org-todo-keywords
+        '((sequence "VERIFY" "TODO" "IN-PROGRESS" "|" "DONE" "DELEGATED" "CANCELLED")))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; org-helm-rifle
@@ -276,6 +278,15 @@
     (split-window-below)
     (balance-windows))
 
+  (defun window-split-into-4 ()
+    "Split the window into two columns and split the second column into two rows."
+    (interactive)
+    (split-window-right)
+    (split-window-below)
+    (other-window 2)
+    (split-window-below)
+    (balance-windows))
+
   (setq-default aw-dispatch-always t)
   (setq-default aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
@@ -291,6 +302,7 @@
       (?w kill-this-buffer)
       (?3 window-split-into-3-columns)
       (?2 window-split-into-2-columns-and-a-row)
+      (?4 window-split-into-4)
       "List of actions for `aw-dispatch-default'.")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
