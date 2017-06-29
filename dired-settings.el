@@ -54,7 +54,8 @@
     (setq dired-omit-mode nil)))
 
 (add-hook 'dired-mode-hook 'dired-omit-caller)
-(setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
+(setq dired-omit-files (concat dired-omit-files "\\|^\\..+$")
+      dired-omit-verbose nil)
 
 ;;; dired-settings.el ends here
 (provide 'dired-settings)

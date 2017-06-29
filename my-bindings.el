@@ -320,6 +320,7 @@
   "kp" 'evilnc-comment-or-uncomment-paragraphs
   "kr" 'comment-or-uncomment-region
   "kv" 'evilnc-toggle-invert-comment-line-by-line
+  "W" 'whitespace-mode
   "x" 'helm-M-x
   "w" 'helm-buffers-list
   "b" 'helm-bookmarks
@@ -359,6 +360,9 @@
   "To" 'hl-todo-occur
   "on" 'flycheck-next-error
   "op" 'flycheck-previous-error
+  "Bj" 'web-beautify-js
+  "Bc" 'web-beautify-css
+  "Bh" 'web-beautify-html
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
