@@ -531,6 +531,7 @@
   (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
   ;; hooks
   (defun my-web-mode-hook ()
     "Hooks for Web mode."
@@ -540,16 +541,21 @@
     (setq web-mode-code-indent-offset 4)
     (setq web-mode-enable-auto-pairing t)
     (setq web-mode-enable-css-colorization t)
+    (setq web-mode-enable-auto-quoting nil)
     (auto-highlight-symbol-mode t))
 
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "jsx" (file-name-extension buffer-file-name))
-                (setup-tide-mode))))
+                (js2-mode))))
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
                 (setup-tide-mode))))
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "ejs" (file-name-extension buffer-file-name))
+                (js2-mode))))
 
   (add-hook 'web-mode-hook  'my-web-mode-hook))
 
@@ -566,6 +572,7 @@
 ;; web mode
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package emmet-mode
+  :diminish emmet-mode
   :config
   (add-hook 'web-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook 'emmet-mode)
