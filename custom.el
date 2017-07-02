@@ -69,7 +69,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (helm-dash company-tern ac-html web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch palette auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+    (evil-snipe helm-dash company-tern ac-html web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch palette auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
@@ -127,6 +127,10 @@
  '(evil-ex-lazy-highlight ((t (:background "black" :foreground "white"))))
  '(evil-ex-search ((t (:background "black" :foreground "white"))))
  '(evil-ex-substitute-matches ((t (:background "black" :foreground "white"))))
+ '(evil-goggles-default-face ((t (:inherit (quote bmkp-no-local)))))
+ '(evil-goggles-delete-face ((t (:inherit (quote bmkp-su-or-sudo)))))
+ '(evil-goggles-paste-face ((t (:inherit (quote bmkp-sequence)))))
+ '(evil-goggles-yank-face ((t (:inherit (quote bmkp-non-file)))))
  '(evil-snipe-first-match-face ((t (:background "black" :foreground "red" :weight bold))))
  '(evil-snipe-matches-face ((t (:background "black" :foreground "red"))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
