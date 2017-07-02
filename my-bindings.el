@@ -322,6 +322,7 @@
   "kv" 'evilnc-toggle-invert-comment-line-by-line
   "x" 'helm-M-x
   "w" 'helm-buffers-list
+  "W" 'whitespace-mode
   "b" 'helm-bookmarks
   "m" 'helm-all-mark-rings
   "n" 'cleanup-buffer
@@ -359,6 +360,9 @@
   "To" 'hl-todo-occur
   "on" 'flycheck-next-error
   "op" 'flycheck-previous-error
+  "Bj" 'web-beautify-js
+  "Bc" 'web-beautify-css
+  "Bh" 'web-beautify-html
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
