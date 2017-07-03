@@ -340,6 +340,11 @@
         helm-move-to-line-cycle-in-source nil))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; helm-ag
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package helm-ag)
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; ace jump helm line
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package ace-jump-helm-line
@@ -366,7 +371,7 @@
         helm-swoop-pre-input-function (lambda () "")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; helm-swoop
+;; helm-dash
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package helm-dash
   :config
@@ -602,12 +607,9 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; magit
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package magit)
-
-;; (use-package magithub
-;;   :after magit
-;;   :config
-;;   (magithub-feature-autoinject t))
+(use-package magit
+  :config
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; sunrise commander
@@ -737,6 +739,13 @@
   (advice-add 'helm-ag--edit :after #'evil-mc-mode)
   (global-evil-mc-mode 1))
 
+(use-package evil-snipe
+  :config
+  (setq evil-snipe-scope 'buffer
+        evil-snipe-repeat-scope 'whole-buffer)
+  (evil-snipe-mode)
+  (evil-snipe-override-mode))
+
 (use-package evil-lion
   :ensure t
   :config
@@ -746,11 +755,11 @@
   :config
   (setq evil-goggles-duration 0.050)
   (evil-goggles-mode)
-  (setq evil-goggles-default-face 'bmkp-no-local)
-  (setq evil-goggles-faces-alist `((evil-delete . bmkp-su-or-sudo)
-                                   (evil-yank . bmkp-non-file)
-                                   (evil-paste-after . bmkp-sequence)
-                                   (evil-paste-before . bmkp-sequence))))
+  (custom-set-faces
+   '(evil-goggles-default-face ((t (:inherit 'bmkp-no-local))))
+   '(evil-goggles-delete-face ((t (:inherit 'bmkp-su-or-sudo))))
+   '(evil-goggles-paste-face ((t (:inherit 'bmkp-sequence))))
+   '(evil-goggles-yank-face ((t (:inherit 'bmkp-non-file))))))
 
 (use-package evil-nerd-commenter
   :defer t)

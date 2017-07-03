@@ -83,8 +83,6 @@
 ;; avy
 (global-set-key (kbd "M-e") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "M-j") 'avy-goto-char)
-(evil-define-key 'normal global-map (kbd "s") 'avy-goto-char-timer)
-(evil-define-key 'visual global-map (kbd "s") 'avy-goto-char-timer)
 
 ;; helm bookmark
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
@@ -307,10 +305,10 @@
   "q" 'winner-undo
   "Q" 'winner-redo
   "M-q" 'clean-buffer-list
-  "e" 'evil-avy-goto-word-or-subword-1
-  "E" 'evil-avy-goto-word-0
-  "j" 'evil-avy-goto-char
-  "J" 'evil-avy-goto-char-2
+  "j" 'evil-avy-goto-word-or-subword-1
+  "J" 'evil-avy-goto-word-0
+  "e" 'avy-goto-char-timer
+  "E" 'evil-avy-goto-char-2
   "a" 'anzu-query-replace
   "A" 'anzu-query-replace-at-cursor
   ";" 'evilnc-comment-or-uncomment-lines
