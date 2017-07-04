@@ -648,6 +648,8 @@
   (dired-launch-enable)
   (setq-default dired-launch-default-launcher '("xdg-open")))
 
+(use-package dired-du)
+
 (load-file '"~/.emacs.d/dired-settings.el")  ;; load file colourings for dired and setup dired omit
 
 ;; -------------------------------------------------------------------------------------------------------------------------
