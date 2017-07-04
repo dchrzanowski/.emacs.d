@@ -635,6 +635,9 @@
   (diredp-toggle-find-file-reuse-dir 1))  ;; do not open additional buffers
 
 (use-package dired-narrow)
+
+(use-package dired-du)
+
 (use-package dired-hacks-utils)
 
 (use-package dired-rainbow)
@@ -755,7 +758,13 @@
 (use-package evil-nerd-commenter
   :defer t)
 
-(use-package evil-snipe)
+(use-package evil-snipe
+  :diminish evil-snipe-local-mode
+  :config
+  (setq evil-snipe-scope 'buffer
+        evil-snipe-repeat-scope 'whole-buffer)
+  (evil-snipe-mode)
+  (evil-snipe-override-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor
