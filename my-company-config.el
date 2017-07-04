@@ -47,7 +47,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-ispell company-dabbrev company-files)))))
+                 '((company-dabbrev company-files)))))
 
 ;; ------------------------------------------------------------------------------------------------
 ;; PYTHON
