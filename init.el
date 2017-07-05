@@ -60,6 +60,7 @@
 (delete-selection-mode t)  ;; delete when region when starting to type inside
 (transient-mark-mode t)  ;; mark follows the point
 (setq select-enable-clipboard t)  ;; share kill ring with the system's clipboard
+
 ;; indents config
 (setq-default indent-tabs-mode nil)  ;; do not insert tabs
 (setq-default sgml-basic-offset 4)  ;; indent for html
@@ -742,6 +743,7 @@
   (global-evil-mc-mode 1))
 
 (use-package evil-snipe
+  :diminish evil-snipe-local-mode
   :config
   (setq evil-snipe-scope 'buffer
         evil-snipe-repeat-scope 'whole-buffer)
@@ -926,6 +928,7 @@
 (diminish 'dired-omit-mode)
 (diminish 'all-the-icons-dired-mode)
 (diminish 'dired-launch-mode)
+(diminish 'tern-mode)
 (diminish 'evil-mc-mode)
 (diminish 'evil-org-mode)
 (diminish 'evil-goggles-mode)
