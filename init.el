@@ -561,7 +561,7 @@
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "ejs" (file-name-extension buffer-file-name))
-                (js2-mode))))
+                (web-mode))))
 
   (add-hook 'web-mode-hook  'my-web-mode-hook))
 
