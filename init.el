@@ -746,7 +746,8 @@
   :diminish evil-snipe-local-mode
   :config
   (setq evil-snipe-scope 'buffer
-        evil-snipe-repeat-scope 'whole-buffer)
+        evil-snipe-repeat-scope 'whole-buffer
+        evil-snipe-smart-case t)
   (evil-snipe-mode)
   (evil-snipe-override-mode))
 
