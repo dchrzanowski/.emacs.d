@@ -557,7 +557,7 @@
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "ejs" (file-name-extension buffer-file-name))
-                (js2-mode))))
+                (web-mode))))
 
   (add-hook 'web-mode-hook  'my-web-mode-hook))
 
@@ -920,6 +920,7 @@
 (diminish 'dired-omit-mode)
 (diminish 'all-the-icons-dired-mode)
 (diminish 'dired-launch-mode)
+(diminish 'tern-mode)
 (diminish 'evil-mc-mode)
 (diminish 'evil-org-mode)
 (diminish 'evil-goggles-mode)
