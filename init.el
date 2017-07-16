@@ -195,7 +195,9 @@
   (setq org-log-done t
         org-startup-folded nil)
   (setq org-directory '("~/org"))
-  (setq org-agenda-files '("~/org/projects"))
+  (setq org-agenda-files '("~/org/projects/coach_finder"
+                           "~/org/projects/SRI_website"
+                           "~/org/projects/myLectures"))
   (setq org-todo-keywords
         '((sequence "VERIFY" "TODO" "IN-PROGRESS" "|" "DONE" "DELEGATED" "CANCELLED")))
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
@@ -762,7 +764,8 @@
   :diminish evil-snipe-local-mode
   :config
   (setq evil-snipe-scope 'buffer
-        evil-snipe-repeat-scope 'whole-buffer)
+        evil-snipe-repeat-scope 'whole-buffer
+        evil-snipe-smart-case t)
   (evil-snipe-mode)
   (evil-snipe-override-mode))
 

@@ -13,8 +13,8 @@
   (require 'company-ispell)
   (add-hook 'after-init-hook 'global-company-mode))
 (use-package web-completion-data)
-(use-package auto-complete)
-(use-package ac-html)
+;; (use-package auto-complete)
+;; (use-package ac-html)
 (use-package ac-html-bootstrap
   :config
   (unless (assoc "Bootstrap" web-completion-data-sources)

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: New Selector
+# key: n
+# --
+$1{
+    $0
+}
