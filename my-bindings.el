@@ -340,7 +340,7 @@
   "ha" 'helm-do-ag
   "hl" 'helm-locate
   "hw" 'helm-do-ag-buffers
-  "hc" 'helm-colors
+  "hc" 'zenity-cp-color-at-point-dwim
   "hC" 'insert-color-hex
   "hd" 'helm-dash
   "gs" 'magit-status

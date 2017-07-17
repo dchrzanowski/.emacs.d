@@ -218,6 +218,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
   (progn
+    (evil-mc-make-and-goto-first-cursor)
     (evil-normal-state)
     (keyboard-quit)))
 
