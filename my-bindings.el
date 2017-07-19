@@ -171,7 +171,8 @@
 (global-set-key [tab] 'tab-indent-or-complete)
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
 (global-set-key (kbd "C-<SPC>") 'company-dabbrev-code)
-(global-set-key (kbd "M-<SPC> <SPC>") 'company-yasnippet)
+(global-set-key (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(global-set-key (kbd "M-<SPC> s") 'company-yasnippet)
 (global-set-key (kbd "M-<SPC> g") 'company-gtags)
 (global-set-key (kbd "M-<SPC> f") 'company-files)
 
@@ -256,7 +257,8 @@
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 ;;evil plus company synergy
 (define-key evil-insert-state-map (kbd "C-<SPC>") 'company-dabbrev-code)
-(define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-yasnippet)
+(define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(define-key evil-insert-state-map (kbd "M-<SPC> s") 'company-yasnippet)
 (define-key evil-insert-state-map (kbd "M-<SPC> g") 'company-gtags)
 (define-key evil-insert-state-map (kbd "M-<SPC> f") 'company-files)
 ;; scroll up/down with C-k, C-j
