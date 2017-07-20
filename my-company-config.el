@@ -47,7 +47,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-dabbrev company-files)))))
+                 '((company-dabbrev-code company-files)))))
 
 ;; ------------------------------------------------------------------------------------------------
 ;; PYTHON
@@ -55,7 +55,7 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-gtags company-jedi company-dabbrev company-yasnippet)))))
+                 '((company-gtags company-jedi company-dabbrev-code company-yasnippet)))))
 
 ;; ------------------------------------------------------------------------------------------------
 ;; CPP

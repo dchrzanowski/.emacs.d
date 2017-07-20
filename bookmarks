@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("init.el" 0 7
+(#1=(#("srinew" 0 6
+      (bmkp-full-record #1#))
+    (filename . "/ftp:main@starlyondigital.com@starlyondigital.com#21:/srinew")
+    (position . 0)
+    (created 22896 32325 275757 434000))
+#1=(#("init.el" 0 7
       (bmkp-full-record #1#))
     (filename . "~/.emacs.d/init.el")
     (buffer-name . "init.el")

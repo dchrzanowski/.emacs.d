@@ -309,7 +309,7 @@
   "M-q" 'clean-buffer-list
   "j" 'evil-avy-goto-word-or-subword-1
   "J" 'evil-avy-goto-word-0
-  "e" 'avy-goto-char-timer
+  "e" 'evil-avy-goto-char-timer
   "E" 'evil-avy-goto-char-2
   "a" 'anzu-query-replace
   "A" 'anzu-query-replace-at-cursor
