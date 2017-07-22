@@ -249,7 +249,8 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package avy
   :config
-  (setq-default avy-background t))
+  (setq-default avy-background t
+                avy-timeout-seconds 2))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; eyebrowse
@@ -692,8 +693,8 @@
   ;;emacs state in
   (add-to-list 'evil-emacs-state-modes 'dired-mode)
   (add-to-list 'evil-emacs-state-modes 'sr-mode)
-  (add-to-list 'evil-emacs-state-modes 'palette-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
+  (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
   (eval-after-load 'git-timemachine
     '(progn
