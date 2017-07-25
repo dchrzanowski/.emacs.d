@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Ejs insert
+# key: ?
+# --
+<?$0 ?>
