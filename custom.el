@@ -137,7 +137,7 @@
  '(evil-snipe-first-match-face ((t (:background "black" :foreground "red" :weight bold))))
  '(evil-snipe-matches-face ((t (:background "black" :foreground "red"))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
- '(helm-buffer-directory ((t (:foreground "chocolate" :weight bold))))
+ '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
  '(helm-match-item ((t (:inherit isearch))))
  '(helm-selection ((t (:inherit bold :background "#101318"))))
  '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
