@@ -193,7 +193,7 @@
   :config
   (use-package org-bullets)
   (setq org-log-done t
-        org-startup-folded nil)
+        org-startup-folded t)
   (setq org-directory '("~/org"))
   (setq org-agenda-files '("~/org/projects/coach_finder"
                            "~/org/projects/SRI_website"
