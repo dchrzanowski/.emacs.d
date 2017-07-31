@@ -69,7 +69,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (zenity-color-picker dired-du evil-snipe helm-dash company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+    (js-doc zenity-color-picker dired-du evil-snipe helm-dash company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
@@ -113,7 +113,7 @@
  '(ahs-face ((t (:background "black"))))
  '(ahs-plugin-defalt-face ((t nil)))
  '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
- '(anzu-replace-highlight ((t (:background "black" :foreground "dark orange"))))
+ '(anzu-replace-highlight ((t (:background "black" :foreground "green"))))
  '(avy-goto-char-timer-face ((t (:background "black" :foreground "green"))))
  '(avy-lead-face ((t (:background "black" :foreground "red"))))
  '(avy-lead-face-0 ((t (:background "black" :foreground "green"))))

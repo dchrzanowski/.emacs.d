@@ -2,7 +2,9 @@
 
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq-default gc-cons-threshold 10000000)
+(setq-default gc-cons-threshold 100000000)
+
+(add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
@@ -429,6 +431,11 @@
   :ensure smartparens
   :config
   (smartparens-global-mode 1))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; js-doc
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package js-doc)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; js2 mode
