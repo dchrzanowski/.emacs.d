@@ -399,6 +399,7 @@
   "f" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
+  "ci" 'js-doc-insert-function-doc-snippet
   "cc" 'tern-get-type
   "cr" 'tern-rename-variable
   "c." 'tern-find-definition
