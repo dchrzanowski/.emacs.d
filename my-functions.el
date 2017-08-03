@@ -11,12 +11,9 @@
 Between them if a newline is attempted when the cursor is between
 two curly braces, otherwise do a regular newline and indent"
   (interactive)
-  (if (and (equal (char-before) 123) ; {
-           (equal (char-after) 125)) ; }
-      (progn (newline-and-indent)
-             (split-line)
-             (indent-for-tab-command))
-    (newline-and-indent)))
+  (progn (newline-and-indent)
+         (split-line)
+         (indent-for-tab-command)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Beautifier
@@ -123,46 +120,46 @@ there's a region, all lines that region covers will be duplicated."
 ;; Copy word/paste word
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun get-point (symbol &optional arg)
- "Get the point SYMBOL ARG."
- (funcall symbol arg)
- (point)
-)
+  "Get the point SYMBOL ARG."
+  (funcall symbol arg)
+  (point)
+  )
 
 (defun copy-thing (begin-of-thing end-of-thing &optional arg)
   "Copy thing between BEGIN-OF-THING & END-OF-THING into kill ring ARG."
-   (save-excursion
-     (let ((beg (get-point begin-of-thing 1))
-    	 (end (get-point end-of-thing arg)))
-       (copy-region-as-kill beg end)))
-)
+  (save-excursion
+    (let ((beg (get-point begin-of-thing 1))
+          (end (get-point end-of-thing arg)))
+      (copy-region-as-kill beg end)))
+  )
 
 (defun paste-to-mark(&optional arg)
   "Paste things to mark, or to the prompt in shell-mode"
   (let ((pasteMe
-    (lambda()
-       (if (string= "shell-mode" major-mode)
-         (progn (comint-next-prompt 25535) (yank))
-       (progn (goto-char (mark)) (yank) )))))
+         (lambda()
+           (if (string= "shell-mode" major-mode)
+               (progn (comint-next-prompt 25535) (yank))
+             (progn (goto-char (mark)) (yank) )))))
     (if arg
         (if (= arg 1)
-    	nil
+            nil
           (funcall pasteMe))
       (funcall pasteMe))
-  ))
+    ))
 
 (defun copy-word (&optional arg)
- "Copy words at point into 'kill-ring' ARG."
+  "Copy words at point into 'kill-ring' ARG."
   (interactive "P")
   (copy-thing 'backward-word 'forward-word arg)
   ;;(paste-to-mark arg)
-)
+  )
 
 (defun copy-line (&optional arg)
- "Save current line into Kill-Ring without mark the line ARG."
+  "Save current line into Kill-Ring without mark the line ARG."
   (interactive "P")
   (copy-thing 'beginning-of-line 'end-of-line arg)
   (paste-to-mark arg)
-)
+  )
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; End of line and indent
@@ -171,7 +168,7 @@ there's a region, all lines that region covers will be duplicated."
   "Jump to end of line, create a newline and indent."
   (interactive)
   (end-of-line)
-(newline-and-indent))
+  (newline-and-indent))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Show file name in the minibuffer
@@ -237,5 +234,21 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
                   (insert (apply 'color-rgb-to-hex
                                  (color-name-to-rgb name))))))))
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Launch dired from file under point
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun helm-ff-open-dired-at-point ()
+  "Launch dired from file unde point."
+  (interactive)
+  (helm-select-nth-action 4))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Delete other windows and split right
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun dired-delete-other-windows-and-split-right ()
+  "Delete all other windows and split right."
+  (interactive)
+  (delete-other-windows)
+  (split-window-right))
 ;;; my-functions.el ends here
 (provide 'my-functions)
