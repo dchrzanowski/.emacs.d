@@ -272,6 +272,7 @@
   (defun window-split-into-3-columns ()
     "Split the window into three columns."
     (interactive)
+    (delete-other-windows)
     (split-window-horizontally)
     (split-window-horizontally)
     (balance-windows))
@@ -279,6 +280,7 @@
   (defun window-split-into-2-columns-and-a-row ()
     "Split the window into two columns and split the second column into two rows."
     (interactive)
+    (delete-other-windows)
     (split-window-right)
     (other-window 1)
     (split-window-below)
@@ -287,6 +289,7 @@
   (defun window-split-into-4 ()
     "Split the window into two columns and split the second column into two rows."
     (interactive)
+    (delete-other-windows)
     (split-window-right)
     (split-window-below)
     (other-window 2)

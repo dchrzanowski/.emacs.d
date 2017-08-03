@@ -11,12 +11,9 @@
 Between them if a newline is attempted when the cursor is between
 two curly braces, otherwise do a regular newline and indent"
   (interactive)
-  (if (and (equal (char-before) 123) ; {
-           (equal (char-after) 125)) ; }
       (progn (newline-and-indent)
              (split-line)
-             (indent-for-tab-command))
-    (newline-and-indent)))
+             (indent-for-tab-command)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Beautifier
@@ -236,6 +233,23 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
                 (with-current-buffer ,buf
                   (insert (apply 'color-rgb-to-hex
                                  (color-name-to-rgb name))))))))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; delete other windows and split right
+;; ------------------------------------------------------------------------------------------------------------------------
+(defun dired-delete-other-windows-and-split-right ()
+  "Delete all other windows and split right."
+  (interactive)
+  (delete-other-windows)
+  (split-window-right))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; helm launch dired from under point
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun helm-ff-open-dired-at-point ()
+  "Open dired from helm find file panel."
+  (interactive)
+  (helm-select-nth-action 4))
 
 ;;; my-functions.el ends here
 (provide 'my-functions)

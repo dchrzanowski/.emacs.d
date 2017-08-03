@@ -81,8 +81,8 @@
 (global-set-key (kbd "C-M-S-f") 'helm-multi-swoop-all)
 
 ;; avy
-(global-set-key (kbd "M-e") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "M-j") 'avy-goto-char)
+(global-set-key (kbd "M-e") 'avy-goto-char-timer)
+(global-set-key (kbd "M-j") 'avy-goto-word-or-subword-1)
 
 ;; helm bookmark
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
@@ -104,6 +104,7 @@
   (define-key keymap (kbd "M-l") 'helm-execute-persistent-action)
   (define-key keymap (kbd "M-h") 'helm-find-files-up-one-level)
   (define-key keymap (kbd "M-J") 'helm-ff-run-open-file-with-default-tool)
+  (define-key keymap (kbd "M-K") 'helm-ff-open-dired-at-point)
   (define-key keymap (kbd "C-S-h") 'describe-key)
   (define-key keymap (kbd "M-e") 'ace-jump-helm-line)
   (define-key keymap (kbd "TAB") (kbd "RET"))
@@ -193,6 +194,7 @@
 
 ;; dired and sunrise fixes
 (define-key sr-mode-map (kbd "<f2>") 'evil-mode)
+
 (define-key dired-mode-map (kbd "TAB") 'other-window)
 (define-key dired-mode-map [tab] 'other-window)
 (define-key sr-mode-map (kbd "TAB") 'sr-change-window)
@@ -200,16 +202,18 @@
 
 (define-key dired-mode-map (kbd "RET") 'dired-find-file)
 (define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
+
 (define-key sr-mode-map (kbd "(") 'sr-toggle-attributes)
 
 (define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key sr-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key dired-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
 (define-key sr-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
-(define-key dired-mode-map (kbd "M-e") 'avy-goto-word-or-subword-1)
-(define-key sr-mode-map (kbd "M-e") 'avy-goto-word-or-subword-1)
-(define-key dired-mode-map (kbd "M-j") 'avy-goto-char)
-(define-key sr-mode-map (kbd "M-j") 'avy-goto-char)
+
+(define-key dired-mode-map (kbd "M-e") 'avy-goto-char-timer)
+(define-key sr-mode-map (kbd "M-e") 'avy-goto-char-timer)
+(define-key dired-mode-map (kbd "M-j") 'avy-goto-word-or-subword-1)
+(define-key sr-mode-map (kbd "M-j") 'avy-goto-word-or-subword-1)
 
 (define-key dired-mode-map (kbd "j") 'diredp-next-line)
 (define-key sr-mode-map (kbd "j") 'diredp-next-line)
@@ -223,12 +227,11 @@
 (define-key sr-mode-map (kbd "h") 'sr-dired-prev-subdir)
 (define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
 (define-key sr-mode-map (kbd "l") 'sr-advertised-find-file)
+
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
 
-;;palette
-(global-set-key (kbd "C-<f9>") 'palette-launch-from-kill-ring)
-(global-set-key (kbd "C-S-<f9>") 'palette-paste-in-current-color)
+(define-key dired-mode-map (kbd "C-<right>") 'dired-delete-other-windows-and-split-right)
 
 ;; better new line form inside of a bracket
 (global-set-key (kbd "C-j") 'my-fancy-newline)
@@ -252,6 +255,9 @@
 ;; evil-mode
 (global-set-key (kbd "<f2>") 'evil-mode)
 (evil-define-key 'normal quickrun--mode-map (kbd "q") 'quit-window)
+;; redefine evil-jump-forward
+(define-key evil-normal-state-map (kbd "C-S-o") 'evil-jump-forward)
+(define-key evil-visual-state-map (kbd "C-S-o") 'evil-jump-forward)
 ;; scroll through visual lines
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
