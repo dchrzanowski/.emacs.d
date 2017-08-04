@@ -237,7 +237,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; delete other windows and split right
 ;; ------------------------------------------------------------------------------------------------------------------------
-(defun dired-delete-other-windows-and-split-right ()
+(defun delete-other-windows-and-split-right ()
   "Delete all other windows and split right."
   (interactive)
   (delete-other-windows)

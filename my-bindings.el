@@ -187,12 +187,12 @@
 (define-key yas-keymap (kbd "TAB") 'yas-next-field-or-maybe-expand)
 (define-key yas-keymap [(control tab)] 'nil)
 (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
-;; company mode
+;; evilify company mode
 (define-key company-active-map (kbd "M-j") 'company-select-next)
 (define-key company-active-map (kbd "M-k") 'company-select-previous)
 (define-key company-active-map [escape] 'my-keyboard-quit)
 
-;; dired and sunrise fixes
+;; evilify dired and sunrise
 (define-key sr-mode-map (kbd "<f2>") 'evil-mode)
 
 (define-key dired-mode-map (kbd "TAB") 'other-window)
@@ -231,7 +231,8 @@
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
 
-(define-key dired-mode-map (kbd "C-<right>") 'dired-delete-other-windows-and-split-right)
+(define-key dired-mode-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
+(define-key global-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
 
 ;; better new line form inside of a bracket
 (global-set-key (kbd "C-j") 'my-fancy-newline)
