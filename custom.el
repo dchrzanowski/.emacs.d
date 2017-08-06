@@ -15,7 +15,8 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(browse-url-browser-function (quote browse-url-chromium))
  '(column-number-mode t)
- '(company-auto-complete-chars (quote (32 41 46)))
+ '(company-auto-complete t)
+ '(company-auto-complete-chars (quote (32 95 40 46)))
  '(company-backends
    (quote
     (company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
@@ -34,8 +35,8 @@
    (quote
     (company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend company-quickhelp-frontend)))
  '(company-gtags-modes (quote (prog-mode jde-mode python-mode)))
- '(company-idle-delay 0.2)
- '(company-minimum-prefix-length 2)
+ '(company-idle-delay 20)
+ '(company-minimum-prefix-length 0)
  '(company-show-numbers t)
  '(company-tooltip-align-annotations t)
  '(company-tooltip-minimum-width 40)

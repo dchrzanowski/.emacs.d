@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: New Var
+# key: v
+# --
+var $1: $2 = $3;$0

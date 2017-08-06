@@ -173,6 +173,7 @@
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
 (global-set-key (kbd "C-<SPC>") 'company-dabbrev-code)
 (global-set-key (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(global-set-key (kbd "M-<SPC> j") 'company-complete)
 (global-set-key (kbd "M-<SPC> s") 'company-yasnippet)
 (global-set-key (kbd "M-<SPC> g") 'company-gtags)
 (global-set-key (kbd "M-<SPC> f") 'company-files)
