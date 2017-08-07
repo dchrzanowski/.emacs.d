@@ -35,7 +35,7 @@
    (quote
     (company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend company-quickhelp-frontend)))
  '(company-gtags-modes (quote (prog-mode jde-mode python-mode)))
- '(company-idle-delay 20)
+ '(company-idle-delay nil)
  '(company-minimum-prefix-length 0)
  '(company-show-numbers t)
  '(company-tooltip-align-annotations t)
