@@ -27,7 +27,7 @@
  '(company-dabbrev-code-everywhere t)
  '(company-dabbrev-code-modes
    (quote
-    (prog-mode batch-file-mode csharp-mode css-mode erlang-mode haskell-mode jde-mode lua-mode python-mode web-mode js2-mode java-mode)))
+    (prog-mode batch-file-mode csharp-mode css-mode erlang-mode haskell-mode jde-mode lua-mode python-mode web-mode js2-mode java-mode typescript-mode)))
  '(company-dabbrev-code-other-buffers (quote all))
  '(company-dabbrev-downcase nil)
  '(company-frontends

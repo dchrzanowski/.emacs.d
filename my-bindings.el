@@ -227,7 +227,8 @@
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
 
-(define-key dired-mode-map (kbd "C-<right>") 'dired-delete-other-windows-and-split-right)
+(define-key dired-mode-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
+(define-key global-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
 
 ;; better new line form inside of a bracket
 (global-set-key (kbd "C-j") 'my-fancy-newline)
@@ -372,7 +373,10 @@
   "3" 'eyebrowse-switch-to-window-config-3
   "4" 'eyebrowse-switch-to-window-config-4
   "5" 'eyebrowse-switch-to-window-config-5
-  "6" 'eyebrowse-switch-to-window-config-6)
+  "6" 'eyebrowse-switch-to-window-config-6
+  "7" 'eyebrowse-switch-to-window-config-7
+  "8" 'eyebrowse-switch-to-window-config-8
+  "9" 'eyebrowse-switch-to-window-config-9)
 
 (evil-leader/set-key-for-mode 'web-mode
   "cew" 'web-mode-element-wrap
