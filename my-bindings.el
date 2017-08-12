@@ -32,7 +32,7 @@
 (global-set-key [f9] 'sunrise)
 
 ;; quickrun
-;; (global-set-key [f5] 'quickrun)
+(global-set-key [f5] 'quickrun)
 
 ;; pomidor
 (global-set-key [f7] 'pomidor)
@@ -147,8 +147,20 @@
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key (kbd "C-c c") 'org-capture)
+
 (define-key org-mode-map [(control tab)] 'tabbar-forward-tab)
 (define-key org-mode-map (kbd "<C-iso-lefttab>") 'tabbar-backward-tab)
+(define-key org-mode-map (kbd "C-c C-r") 'org-refile)
+(evil-define-key 'normal org-mode-map (kbd "R") 'org-refile)
+
+;; org-agenda
+(define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
+(define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
+(define-key org-agenda-mode-map (kbd "C-k") 'scroll-down-command)
+(define-key org-agenda-mode-map (kbd "C-j") 'scroll-up-command)
+(define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view)
 
 ;; Comment/uncomment block
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
@@ -165,14 +177,15 @@
 
 ;; yas expand
 ;; company ring map
-(define-prefix-command 'ring-map)
+(define-prefix-command 'completion-ring-map)
 (global-unset-key (kbd "M-<SPC>"))
-(global-set-key (kbd "M-<SPC>") 'ring-map)
+(global-set-key (kbd "M-<SPC>") 'completion-ring-map)
 ;; company mode tab fix
 (global-set-key [tab] 'tab-indent-or-complete)
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
 (global-set-key (kbd "C-<SPC>") 'company-dabbrev-code)
 (global-set-key (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(global-set-key (kbd "M-<SPC> j") 'company-complete)
 (global-set-key (kbd "M-<SPC> s") 'company-yasnippet)
 (global-set-key (kbd "M-<SPC> g") 'company-gtags)
 (global-set-key (kbd "M-<SPC> f") 'company-files)
@@ -366,6 +379,9 @@
   "Bj" 'web-beautify-js
   "Bc" 'web-beautify-css
   "Bh" 'web-beautify-html
+  "<SPC>c" 'org-capture
+  "<SPC>a" 'org-agenda
+  "<SPC>b" 'org-iswitchb
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
