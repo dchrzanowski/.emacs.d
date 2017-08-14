@@ -196,13 +196,29 @@
   (use-package org-bullets)
   (setq org-log-done t
         org-startup-folded t)
-
+  ;; org paths
   (setq org-directory '("~/org"))
+  (setq org-default-notes-file '("~/org/refile.org"))
   (setq org-agenda-files '("~/org/projects/coach_finder"
                            "~/org/projects/SRI_website"
                            "~/org/projects/myLectures"))
+  ;; TODO sequence
   (setq org-todo-keywords
-        '((sequence "VERIFY" "TODO" "IN-PROGRESS" "|" "DONE" "DELEGATED" "CANCELLED")))
+        '((sequence "VERIFY(v)" "TODO(t)" "IN-PROGRESS(i)" "|" "DONE(d)" "DELEGATED(l)" "CANCELLED(c)")))
+  ;; org capture
+  (setq org-capture-templates
+        (quote (("t" "todo" entry (file "~/org/refile.org")
+                 "* TODO %?")
+                ("n" "note" entry (file "~/org/refile.org")
+                 "* %? :NOTE:")
+                ("m" "Meeting" entry (file "~/org/refile.org")
+                 "* MEETING with %? :MEETING:")
+                ("p" "Respond" entry (file "~/org/refile.org")
+                 "* RESPOND %? :RESPOND:"))))
+  (setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                   (org-agenda-files :maxlevel . 9))))
+  (setq org-refile-use-outline-path t)
+
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; org-helm-rifle
@@ -674,7 +690,7 @@
 (use-package evil-leader
   :config
   (setq evil-leader/in-all-states nil
-        evil-leader/no-prefix-mode-rx '("dired-mode"))  ;; add more to the list if necessary
+        evil-leader/no-prefix-mode-rx '("dired-mode" "org-agenda-mode"))  ;; add more to the list if necessary
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>"))
 

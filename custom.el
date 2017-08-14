@@ -123,6 +123,7 @@
  '(avy-lead-face-0 ((t (:background "black" :foreground "green"))))
  '(avy-lead-face-1 ((t (:background "black" :foreground "dark orange"))))
  '(avy-lead-face-2 ((t (:background "black" :foreground "white"))))
+ '(aw-leading-char-face ((t (:foreground "red" :height 2.0))))
  '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
  '(cursor ((t (:background "#FF0000"))))
  '(diredp-dir-heading ((t (:foreground "white" :underline t :weight bold :height 120))))
