@@ -107,8 +107,11 @@
     (created 22819 15658 393707 356000))
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22929 48568 250809 38000)
+    (visits . 0)
     (filename . "/home/damian/github")
-    (position . 0)
+    (position . 1)
     (created 22819 15649 726989 630000))
 #1=(#(".emacs.d" 0 8
       (bmkp-full-record #1#))

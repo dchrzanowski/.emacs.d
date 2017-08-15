@@ -156,11 +156,13 @@
 (evil-define-key 'normal org-mode-map (kbd "R") 'org-refile)
 
 ;; org-agenda
-(define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
-(define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
-(define-key org-agenda-mode-map (kbd "C-k") 'scroll-down-command)
-(define-key org-agenda-mode-map (kbd "C-j") 'scroll-up-command)
-(define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view)
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
+            (define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
+            (define-key org-agenda-mode-map (kbd "C-k") 'scroll-down-command)
+            (define-key org-agenda-mode-map (kbd "C-j") 'scroll-up-command)
+            (define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view)))
 
 ;; Comment/uncomment block
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
