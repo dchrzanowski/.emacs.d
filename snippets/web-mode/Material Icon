@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Material Icon
+# key: icon
+# --
+<i class="material-icons">$1</i>$0
