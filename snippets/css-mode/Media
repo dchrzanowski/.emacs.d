@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Media
+# key: media
+# --
+@media screen and (min-$1: $2px) {
+    $0
+}

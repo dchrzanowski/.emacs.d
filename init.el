@@ -201,6 +201,7 @@
   (setq org-default-notes-file "~/org/refile.org")
   (setq org-agenda-files '("~/org/projects/coach_finder"
                            "~/org/projects/SRI_website"
+                           "~/org/projects/COMAND_website"
                            "~/org/projects/myLectures"))
   (setq org-todo-keywords
         '((sequence "VERIFY(v)" "TODO(t)" "IN-PROGRESS(i)" "|" "DONE(d)" "DELEGATED(l)" "CANCELLED(c)")))
