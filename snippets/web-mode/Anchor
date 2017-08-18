@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Anchor
+# key: a
+# --
+<a href="$1">$2</a>
