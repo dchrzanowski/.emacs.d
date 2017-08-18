@@ -172,6 +172,8 @@
 (global-set-key (kbd "M-<down>") 'drag-stuff-down)
 (global-set-key (kbd "M-<left>") 'drag-stuff-left)
 (global-set-key (kbd "M-<right>") 'drag-stuff-right)
+(define-key evil-normal-state-map (kbd "M-k") 'drag-stuff-up)
+(define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
 
 ;; eclim
 (define-key eclim-mode-map (kbd "C-c C-e <f5>") 'eclim-run-class)
