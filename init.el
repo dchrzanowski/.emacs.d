@@ -659,7 +659,9 @@
 
 (use-package dired-narrow)
 
-(use-package dired-du)
+(use-package dired-du
+  :config
+  (setq dired-du-size-format t))
 
 (use-package dired-hacks-utils)
 

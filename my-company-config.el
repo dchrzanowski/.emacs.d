@@ -84,7 +84,7 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-tern company-semantic company-dabbrev-code company-yasnippet)))))
+                 '((company-tern company-gtags company-semantic company-dabbrev-code company-yasnippet)))))
 
 ;; fix for yasnippets
 (defun check-expansion ()
