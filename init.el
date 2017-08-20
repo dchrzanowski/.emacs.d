@@ -891,19 +891,6 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package notmuch
   :config
-  (setq notmuch-search-oldest-first nil
-        mail-user-agent 'message-user-agent
-        smtpmail-stream-type 'ssl
-        smtpmail-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-service 465
-        message-send-mail-function 'message-smtpmail-send-it
-        smtpmail-debug-info t
-        message-default-mail-headers "Cc: \nBcc: \n"
-        message-auto-save-directory "~/Mail/maestrosartori69/draft"
-        message-kill-buffer-on-exit t
-        message-directory "~/Mail/maestrosartori69/draft"
-        notmuch-fcc-dirs "maestrosartori69/sent"
-        user-mail-address "maestrosartori69@gmail.com")
 
   (load-file '"~/.emacs.d/notmuch-settings.el"))
 

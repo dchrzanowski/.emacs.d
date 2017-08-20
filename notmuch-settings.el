@@ -4,8 +4,22 @@
 ;;; Code:
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; key binds for notmuch and other settings
+;; settings and key bindings for notmuch
 ;; -------------------------------------------------------------------------------------------------------------------------
+
+(setq notmuch-search-oldest-first nil
+      mail-user-agent 'message-user-agent
+      smtpmail-stream-type 'ssl
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 465
+      message-send-mail-function 'message-smtpmail-send-it
+      smtpmail-debug-info t
+      message-default-mail-headers "Cc: \nBcc: \n"
+      message-auto-save-directory "~/Mail/pjdamian/draft"
+      message-kill-buffer-on-exit t
+      message-directory "~/Mail/pjdamian/draft"
+      notmuch-fcc-dirs "pjdamian/sent"
+      user-mail-address "pjdamian.chrzanowski@gmail.com")
 
 ;; notmuch
 (global-set-key [f10] 'notmuch)
