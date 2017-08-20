@@ -52,7 +52,7 @@
 
 ;; personal data
 (setq user-full-name '"Damian Chrzanowski")
-(setq user-mail-address '"pjdamian.chrzanowski@gmail.com")
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -692,7 +692,8 @@
 (use-package evil-leader
   :config
   (setq evil-leader/in-all-states nil
-        evil-leader/no-prefix-mode-rx '("dired-mode" "org-agenda-mode"))  ;; add more to the list if necessary
+        evil-leader/no-prefix-mode-rx '("dired-mode"
+                                        "org-agenda-mode"))  ;; list of modes where leader is forced in emacs mode
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>"))
 
@@ -712,12 +713,18 @@
   (evil-put-property 'evil-state-properties 'replace  :tag " REPLACE ")
   (evil-put-property 'evil-state-properties 'operator :tag " OPERTR ")
   (evil-put-property 'evil-state-properties 'god      :tag " GOD-MODE ")
-  ;;emacs state in
+
+  ;; force emacs state in
   (add-to-list 'evil-emacs-state-modes 'dired-mode)
   (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
+  ;; force evil in modes
+  (add-to-list 'evil-normal-state-modes 'notmuch-hello-mode)
+  (add-to-list 'evil-normal-state-modes 'notmuch-search-mode)
+  (add-to-list 'evil-normal-state-modes 'notmuch-show-mode)
+
   (eval-after-load 'git-timemachine
     '(progn
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
@@ -879,23 +886,44 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package zenity-color-picker)
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; notmuch
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package notmuch
+  :config
+  (setq notmuch-search-oldest-first nil
+        mail-user-agent 'message-user-agent
+        smtpmail-stream-type 'ssl
+        smtpmail-smtp-server "smtp.gmail.com"
+        smtpmail-smtp-service 465
+        message-send-mail-function 'message-smtpmail-send-it
+        smtpmail-debug-info t
+        message-default-mail-headers "Cc: \nBcc: \n"
+        message-auto-save-directory "~/Mail/maestrosartori69/draft"
+        message-kill-buffer-on-exit t
+        message-directory "~/Mail/maestrosartori69/draft"
+        notmuch-fcc-dirs "maestrosartori69/sent"
+        user-mail-address "maestrosartori69@gmail.com")
+
+  (load-file '"~/.emacs.d/notmuch-settings.el"))
+
 ;;; Code:
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Run custom code
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; run custom functions
-(load-file '"~/.emacs.d/my-functions.el")
+(load-file '"~/.emacs.d/custom-functions.el")
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; run company config
 ;; -------------------------------------------------------------------------------------------------------------------------
-(load-file '"~/.emacs.d/my-company-config.el")
+(load-file '"~/.emacs.d/company-settings.el")
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; custom key bindings
 ;; -------------------------------------------------------------------------------------------------------------------------
-(load-file '"~/.emacs.d/my-bindings.el")
+(load-file '"~/.emacs.d/key-bindings.el")
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; load powerline

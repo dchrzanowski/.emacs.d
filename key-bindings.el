@@ -37,6 +37,22 @@
 ;; pomidor
 (global-set-key [f7] 'pomidor)
 
+;; notmuch
+(global-set-key [f10] 'notmuch)
+
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "h") 'widget-backward)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "l") 'widget-forward)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "f") 'notmuch-jump-search)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "q") 'notmuch-bury-or-kill-this-buffer)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "RET") 'widget-button-press)
+
+(evil-define-key 'normal notmuch-search-mode-map (kbd "l") 'notmuch-search-show-thread)
+(evil-define-key 'normal notmuch-search-mode-map (kbd "h") 'notmuch-bury-or-kill-this-buffer)
+(evil-define-key 'normal notmuch-search-mode-map (kbd "f") 'notmuch-jump-search)
+
+(evil-define-key 'normal notmuch-show-mode-map (kbd "h") 'notmuch-bury-or-kill-this-buffer)
+(evil-define-key 'normal notmuch-show-mode-map (kbd "f") 'notmuch-jump-search)
+
 ;; packages
 (global-set-key (kbd "M-[") 'package-install)
 (global-set-key (kbd "M-]") 'paradox-list-packages)
@@ -288,6 +304,12 @@
 (define-key evil-normal-state-map (kbd "C-j") (lambda ()
                                                 (interactive)
                                                 (evil-scroll-down nil)))
+(define-key evil-motion-state-map (kbd "C-k") (lambda ()
+                                                (interactive)
+                                                (evil-scroll-up nil)))
+(define-key evil-motion-state-map (kbd "C-j") (lambda ()
+                                                (interactive)
+                                                (evil-scroll-down nil)))
 (define-key evil-normal-state-map (kbd "SPC h") help-map)
 
 ;; esc anything
@@ -443,5 +465,5 @@
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
 
-(provide 'my-bindings)
-;;; my-bindings.el ends here
+(provide 'key-bindings)
+;;; key-bindings.el ends here

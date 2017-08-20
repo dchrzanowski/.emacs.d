@@ -42,20 +42,6 @@ two curly braces, otherwise do a regular newline and indent"
     (replace-regexp re "" nil beg end)))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; Palette personal function
-;; -------------------------------------------------------------------------------------------------------------------------
-(defun palette-launch-from-kill-ring ()
-  "Launch the palette from the content of the kill ring."
-  (interactive)
-  (palette (concat "#" (substring-no-properties (car kill-ring)))))
-
-
-(defun palette-paste-in-current-color ()
-  "Paste the currently selected color in the palette to the buffer."
-  (interactive)
-  (insert (palette-current-color)))
-
-;; -------------------------------------------------------------------------------------------------------------------------
 ;; Neo tree open xdg on point helpers
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun neotree-open-xdg-on-point ()
@@ -251,5 +237,5 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (delete-other-windows)
   (split-window-right))
 
-;;; my-functions.el ends here
-(provide 'my-functions)
+(provide 'custom-functions)
+;;; custom-functions ends here
