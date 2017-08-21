@@ -102,8 +102,11 @@
     (created 22819 15667 480545 918000))
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22938 39675 210531 545000)
+    (visits . 0)
     (filename . "/home/damian/Downloads")
-    (position . 0)
+    (position . 1)
     (created 22819 15658 393707 356000))
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
