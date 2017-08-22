@@ -2,7 +2,15 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("org-refile-last-stored" 0 22
+(#1=(#("a00246203.eu.pn" 0 15
+      (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22938 58159 193725 860000)
+    (visits . 0)
+    (filename . "/ftp:1985106_damian@damianch.eu.pn:/a00246203.eu.pn")
+    (position . 1)
+    (created 22938 58130 341952 720000))
+#1=(#("org-refile-last-stored" 0 22
       (bmkp-full-record #1#))
     (annotation)
     (tags)

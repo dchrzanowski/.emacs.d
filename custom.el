@@ -82,11 +82,11 @@
  '(shell-pop-full-span t)
  '(shell-pop-shell-type
    (quote
-    ("eshell" "*eshell*"
+    ("shell" "*shell*"
      (lambda nil
-       (eshell shell-pop-term-shell)))))
- '(shell-pop-term-shell "/bin/bash")
- '(shell-pop-universal-key "C-`")
+       (shell shell-pop-term-shell)))))
+ '(shell-pop-term-shell "shell")
+ '(shell-pop-universal-key "C-'")
  '(shell-pop-window-position "bottom")
  '(shell-pop-window-size 30)
  '(show-paren-mode t)

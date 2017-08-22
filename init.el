@@ -517,9 +517,10 @@
 (use-package shell-pop
   :defer t
   :config
+  (add-hook 'eshell-mode-hook (lambda () (setq-default pcomplete-cycle-completions nil)))
   (custom-set-variables
-   '(shell-pop-shell-type (quote ("eshell" "*eshell*" (lambda nil (eshell shell-pop-term-shell)))))
-   '(shell-pop-term-shell "eshell")
+   '(shell-pop-shell-type (quote ("shell" "*shell*" (lambda nil (shell shell-pop-term-shell)))))
+   '(shell-pop-term-shell "shell")
    '(shell-pop-universal-key "C-'")
    '(shell-pop-window-size 30)
    '(shell-pop-full-span t)
@@ -882,13 +883,6 @@
 ;; zenity
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package zenity-color-picker)
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; mu4e
-;; -------------------------------------------------------------------------------------------------------------------------
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
-(require 'mu4e)
-(setq mu4e-maildir "/home/damian/Mail")
 
 ;;; Code:
 

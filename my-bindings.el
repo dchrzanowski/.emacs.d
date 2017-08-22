@@ -30,6 +30,9 @@
   "n" 'neotree-create-node
   "c" 'neotree-copy-node)
 
+;; mu4e
+(global-set-key [f10] 'mu4e)
+
 ;; sunrise
 (global-set-key [f9] 'sunrise)
 
