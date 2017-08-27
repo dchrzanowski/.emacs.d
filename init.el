@@ -576,6 +576,7 @@
     (setq web-mode-code-indent-offset 4)
     (setq web-mode-enable-auto-pairing t)
     (setq web-mode-enable-css-colorization t)
+    (setq web-mode-auto-close-style nil)
     (auto-highlight-symbol-mode t))
 
   (add-hook 'web-mode-hook

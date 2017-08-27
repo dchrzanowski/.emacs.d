@@ -81,8 +81,11 @@
     (position . 153))
 #1=(#(".emacs.d" 0 8
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22945 38283 318322 93000)
+    (visits . 1)
     (filename . "/home/grimscythe/.emacs.d")
-    (position . 0)
+    (position . 1)
     (created 22832 28501 495797 134000))
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
