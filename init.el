@@ -254,7 +254,14 @@
   :config
   (setq neo-theme 'arrow)  ; set fancy arrows
   (setq neo-smart-open t) ; adjust to the current buffer
-  (setq neo-window-width 30))
+  (setq neo-window-width 30)
+  (add-hook 'neo-after-create-hook
+            #'(lambda (_)
+                (with-current-buffer (get-buffer neo-buffer-name)
+                  (setq truncate-lines t)
+                  (setq word-wrap nil)
+                  (make-local-variable 'auto-hscroll-mode)
+                  (setq auto-hscroll-mode nil)))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; rainbow delimiters
