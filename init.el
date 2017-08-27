@@ -252,7 +252,7 @@
 (use-package neotree
   :defer t
   :config
-  (setq neo-theme 'arrow)  ; set fancy arrows
+  (setq neo-theme 'icons)  ; set fancy arrows
   (setq neo-smart-open t) ; adjust to the current buffer
   (setq neo-window-width 30)
   (add-hook 'neo-after-create-hook
@@ -550,6 +550,7 @@
     (tide-setup)
     (flycheck-mode +1)
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    (auto-highlight-symbol-mode)
     (eldoc-mode +1)
     (company-mode +1))
 
@@ -900,11 +901,15 @@
 (use-package zenity-color-picker)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; all the icons
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package all-the-icons)
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; notmuch
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package notmuch
   :config
-
   (load-file '"~/.emacs.d/notmuch-settings.el"))
 
 ;;; Code:

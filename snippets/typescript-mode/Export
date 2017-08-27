@@ -4,4 +4,7 @@
 # --
 export class ${1:clasName} {
 
+    constructor($2) {
+        $0
+    }
 }

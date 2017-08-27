@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Number
+# key: n
+# --
+number$0
