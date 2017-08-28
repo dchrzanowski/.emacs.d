@@ -14,8 +14,15 @@
 (global-set-key [f8] 'neotree-toggle)
 (define-key undo-tree-map (kbd "C-/") 'nil)
 (global-set-key (kbd "C-/") 'neotree-toggle)
-(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-ace-window)
+
+(defun neotree-enter-and-close-neotree ()
+  "Open a file under point and close neotree."
+  (interactive)
+  (neotree-enter)
+  (neotree-hide))
+
+(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-quick-look)
+(evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-and-close-neotree)
 (evil-define-key 'normal neotree-mode-map (kbd "h") 'neotree-select-up-node)
 (evil-define-key 'normal neotree-mode-map (kbd "o") 'neotree-hidden-file-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)

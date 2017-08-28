@@ -257,9 +257,16 @@
 (use-package neotree
   :defer t
   :config
-  (setq neo-theme 'arrow)  ; set fancy arrows
+  (setq neo-theme 'icons)  ; set fancy arrows
   (setq neo-smart-open t) ; adjust to the current buffer
-  (setq neo-window-width 30))
+  (setq neo-window-width 30)
+  (add-hook 'neo-after-create-hook
+            #'(lambda (_)
+                (with-current-buffer (get-buffer neo-buffer-name)
+                  (setq truncate-lines t)
+                  (setq word-wrap nil)
+                  (make-local-variable 'auto-hscroll-mode)
+                  (setq auto-hscroll-mode nil)))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; rainbow delimiters
@@ -546,6 +553,7 @@
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
     ;; (tide-hl-identifier-mode +1)
+    (auto-highlight-symbol-mode)
     (company-mode +1))
 
   ;; formats the buffer before saving
@@ -883,6 +891,12 @@
 ;; zenity
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package zenity-color-picker)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; all the icons
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package all-the-icons)
+
 
 ;;; Code:
 
