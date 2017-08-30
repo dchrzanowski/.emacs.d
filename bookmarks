@@ -87,8 +87,8 @@
     (rear-context-string)
     (front-context-region-string)
     (rear-context-region-string)
-    (visits . 1)
-    (time 22819 15965 816923 634000)
+    (visits . 2)
+    (time 22947 55692 903967 405000)
     (created 22819 15791 940760 998000)
     (position . 1))
 #1=(#("custom.el" 0 9
@@ -126,7 +126,10 @@
     (created 22819 15649 726989 630000))
 #1=(#(".emacs.d" 0 8
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22948 13534 992775 901000)
+    (visits . 1)
     (filename . "/home/damian/.emacs.d")
-    (position . 0)
+    (position . 1)
     (created 22819 15638 106565 611000))
 )

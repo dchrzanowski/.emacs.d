@@ -622,17 +622,17 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package eclim
-  :init
-  (require 'eclimd)
-  :config
-  (defun my-java-mode-hook()
-    (eclim-mode t)
-    (hl-todo-mode)
-    (setq-default help-at-pt-display-when-idle t)
-    (setq-default help-at-pt-timer-delay 0.1)
-    (help-at-pt-set-timer))
-  (add-hook 'java-mode-hook 'my-java-mode-hook))
+;; (use-package eclim
+;;   :init
+;;   (require 'eclimd)
+;;   :config
+;;   (defun my-java-mode-hook()
+;;     (eclim-mode t)
+;;     (hl-todo-mode)
+;;     (setq-default help-at-pt-display-when-idle t)
+;;     (setq-default help-at-pt-timer-delay 0.1)
+;;     (help-at-pt-set-timer))
+;;   (add-hook 'java-mode-hook 'my-java-mode-hook))
 
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -675,9 +675,10 @@
   (diredp-toggle-find-file-reuse-dir 1))  ;; do not open additional buffers
 
 (use-package dired-narrow)
+
 (use-package dired-hacks-utils)
 
-(use-package dired-rainbow)
+;; (use-package dired-rainbow)
 
 (use-package dired-launch
   :config
@@ -896,7 +897,9 @@
 ;; all the icons
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package all-the-icons)
-
+(use-package all-the-icons-dired
+  :config
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
 ;;; Code:
 

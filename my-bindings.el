@@ -188,8 +188,8 @@
 (define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
 
 ;; eclim
-(define-key eclim-mode-map (kbd "C-c C-e <f5>") 'eclim-run-class)
-(define-key eclim-mode-map (kbd "C-c C-e /") 'eclim-java-show-documentation-for-current-element)
+;;(define-key eclim-mode-map (kbd "C-c C-e <f5>") 'eclim-run-class)
+;;(define-key eclim-mode-map (kbd "C-c C-e /") 'eclim-java-show-documentation-for-current-element)
 
 ;; yas expand
 ;; company ring map

@@ -6,17 +6,17 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;;; Dired rainbow
 ;; -------------------------------------------------------------------------------------------------------------------------
-(dired-rainbow-define video "#6951A6" ("mp4" "avi" "mpg" "mkv" "mpeg" "flv"))
-(dired-rainbow-define sound "#800064" ("mp3" "wav" "ogg" "flac"))
-(dired-rainbow-define images "#14D100" ("jpg" "jpeg" "png" "bmp" "gif" "tif" "tiff"))
-(dired-rainbow-define html "#9acd32" ("htm" "html" "xhtml"))
-(dired-rainbow-define stylesheet "#008080" ("css" "less" "scss"))
-(dired-rainbow-define docs "#FF0000" ("pdf" "doc" "docx" "json"))
-(dired-rainbow-define code "#1e90ff" ("py" "cpp" "c" "java" "js" "jsx" "ts" "el" "go"))
-(dired-rainbow-define log (:inherit default
-                                    :italic t) ".*\\.log")
-;; highlight executable files, but not directories
-(dired-rainbow-define-chmod executable-unix "Green" "-[rw-]+x.*")
+;; (dired-rainbow-define video "#6951A6" ("mp4" "avi" "mpg" "mkv" "mpeg" "flv"))
+;; (dired-rainbow-define sound "#800064" ("mp3" "wav" "ogg" "flac"))
+;; (dired-rainbow-define images "#14D100" ("jpg" "jpeg" "png" "bmp" "gif" "tif" "tiff"))
+;; (dired-rainbow-define html "#9acd32" ("htm" "html" "xhtml"))
+;; (dired-rainbow-define stylesheet "#008080" ("css" "less" "scss"))
+;; (dired-rainbow-define docs "#FF0000" ("pdf" "doc" "docx" "json"))
+;; (dired-rainbow-define code "#1e90ff" ("py" "cpp" "c" "java" "js" "jsx" "ts" "el" "go"))
+;; (dired-rainbow-define log (:inherit default
+;;                                     :italic t) ".*\\.log")
+;; ;; highlight executable files, but not directories
+;; (dired-rainbow-define-chmod executable-unix "Green" "-[rw-]+x.*")
 
 
 ;; -------------------------------------------------------------------------------------------------------------------------

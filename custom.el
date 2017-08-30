@@ -72,7 +72,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (org-agenda js-doc zenity-color-picker 2048-game dired-du evil-snipe helm-ag helm-dash helm-flx company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+    (php-mode all-the-icons-dired org-agenda js-doc zenity-color-picker 2048-game dired-du evil-snipe helm-ag helm-dash helm-flx company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
@@ -138,6 +138,7 @@
  '(evil-goggles-yank-face ((t (:inherit (quote bmkp-non-file)))))
  '(evil-snipe-first-match-face ((t (:background "black" :foreground "green" :weight bold))))
  '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :underline t :weight bold))))
+ '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
  '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
  '(helm-match-item ((t (:inherit isearch))))
@@ -145,8 +146,11 @@
  '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
  '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
  '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
+ '(hl-line ((t (:background "#252931"))))
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
+ '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
+ '(powerline-evil-operator-face ((t (:inherit powerline-evil-operator-face :background "cyan"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "LavenderBlush1"))))
  '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
  '(rainbow-delimiters-depth-6-face ((t (:foreground "lime green"))))
