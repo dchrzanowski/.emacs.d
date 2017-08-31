@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Immediately-Invoked Function Expression
+# key: iife
+# --
+(function() {
+    ${1:'use strict';
+}    $2
+}());

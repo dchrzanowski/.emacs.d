@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Export
+# key: export
+# --
+export class ${1:clasName} {
+
+    constructor($2) {
+        $0
+    }
+}
