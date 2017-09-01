@@ -402,6 +402,8 @@
   "<SPC>c" 'org-capture
   "<SPC>a" 'org-agenda
   "<SPC>b" 'org-iswitchb
+  "<SPC>d" 'dired-jump
+  "<SPC>p" 'pomidor
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
