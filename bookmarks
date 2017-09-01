@@ -89,8 +89,11 @@
     (created 22832 28501 495797 134000))
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22952 21897 140540 805000)
+    (visits . 0)
     (filename . "/home/grimscythe/Downloads")
-    (position . 0)
+    (position . 1)
     (created 22832 28492 438942 538000))
 #1=(#("Projects" 0 8
       (bmkp-full-record #1#))
@@ -113,8 +116,8 @@
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 22832 28930 444638 654000)
-    (visits . 0)
+    (time 22952 21860 38113 22000)
+    (visits . 1)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))
