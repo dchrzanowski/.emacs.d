@@ -204,8 +204,7 @@
   ;; org paths
   (setq org-directory '("~/org"))
   (setq org-default-notes-file '("~/org/refile.org"))
-  (setq org-agenda-files '("~/org/projects/coach_finder"
-                           "~/org/projects/SRI_website"
+  (setq org-agenda-files '("~/org/projects/SRI_website"
                            "~/org/projects/myLectures"))
   ;; TODO sequence
   (setq org-todo-keywords
