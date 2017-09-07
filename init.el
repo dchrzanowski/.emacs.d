@@ -989,6 +989,7 @@
 (diminish 'all-the-icons-dired-mode)
 (diminish 'dired-launch-mode)
 (diminish 'tern-mode)
+(diminish 'rainbow-mode)
 (diminish 'evil-mc-mode)
 (diminish 'evil-org-mode)
 (diminish 'evil-goggles-mode)
