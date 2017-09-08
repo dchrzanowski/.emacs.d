@@ -153,6 +153,7 @@
  '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
  '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
  '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
+ '(hl-line ((t (:background "#252931"))))
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
@@ -167,6 +168,9 @@
  '(sr-editing-path-face ((t (:background "red" :foreground "white" :weight bold :height 120))))
  '(sr-highlight-path-face ((t (:background "yellow" :foreground "black" :weight bold :height 120))))
  '(sr-passive-path-face ((t (:background "white" :foreground "black" :weight bold :height 120))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+ '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
+ '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
  '(web-mode-html-tag-face ((t (:foreground "#db5762")))))
 (provide 'custom)
 ;;; custom.el ends here
