@@ -86,7 +86,7 @@
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
- '(save-place-mode t nil (saveplace))
+ '(save-place-mode t)
  '(scroll-preserve-screen-position 1)
  '(send-mail-function (quote mailclient-send-it))
  '(shell-pop-full-span t)
