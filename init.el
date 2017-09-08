@@ -204,10 +204,8 @@
 
   (setq org-directory '("~/org"))
   (setq org-default-notes-file "~/org/refile.org")
-  (setq org-agenda-files '("~/org/projects/coach_finder"
-                           "~/org/projects/SRI_website"
-                           "~/org/projects/COMAND_website"
-                           "~/org/projects/myLectures"))
+  (setq org-agenda-files '("~/org/projects/myLectures"))
+
   (setq org-todo-keywords
         '((sequence "VERIFY(v)" "TODO(t)" "IN-PROGRESS(i)" "|" "DONE(d)" "DELEGATED(l)" "CANCELLED(c)")))
 
@@ -690,6 +688,9 @@
 
 (load-file '"~/.emacs.d/dired-settings.el")  ;; load file colourings for dired and setup dired omit
 
+(add-hook 'dired-after-readin-hook (lambda () (setq truncate-partial-width-windows t
+                                                    truncate-lines t)))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; God mode and evil god-state
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -901,6 +902,11 @@
 (use-package zenity-color-picker)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; markdown
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package markdown-mode)
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; all the icons
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package all-the-icons)
@@ -983,6 +989,7 @@
 (diminish 'all-the-icons-dired-mode)
 (diminish 'dired-launch-mode)
 (diminish 'tern-mode)
+(diminish 'rainbow-mode)
 (diminish 'evil-mc-mode)
 (diminish 'evil-org-mode)
 (diminish 'evil-goggles-mode)
