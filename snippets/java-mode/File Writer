@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: File Writer
+# key: filew
+# --
+static void stringToFile(String name, String ext, String data) {
+
+    String fileName = name + "." + ext;
+
+    try {
+        FileWriter out = null;
+        out = new FileWriter(fileName);
+        for (char c : data.toCharArray()) {
+            out.write(c);
+        }
+        if (out != null) {
+            System.out.println("Data saved successfully in: " + fileName);
+            out.close();
+        }
+    } catch (IOException e) {
+        System.out.println(e.getMessage());
+    }
+}

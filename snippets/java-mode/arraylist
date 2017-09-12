@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Damian Chrzanowski
+# name: arraylist
+# key: list
+# --
+ArrayList<${1:String}> ${2:varName} = new ArrayList<$1>();

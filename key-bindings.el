@@ -12,8 +12,16 @@
 
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
-(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-ace-window)
+(define-key undo-tree-map (kbd "C-/") 'nil)
+(global-set-key (kbd "C-/") 'neotree-toggle)
+(defun neotree-enter-and-close-neotree ()
+  "Open a file under point and close neotree."
+  (interactive)
+  (neotree-enter)
+  (neotree-hide))
+
+(evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-and-close-neotree)
+(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-quick-look)
 (evil-define-key 'normal neotree-mode-map (kbd "h") 'neotree-select-up-node)
 (evil-define-key 'normal neotree-mode-map (kbd "o") 'neotree-hidden-file-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
@@ -36,6 +44,22 @@
 
 ;; pomidor
 (global-set-key [f7] 'pomidor)
+
+;; notmuch
+(global-set-key [f10] 'notmuch)
+
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "h") 'widget-backward)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "l") 'widget-forward)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "f") 'notmuch-jump-search)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "q") 'notmuch-bury-or-kill-this-buffer)
+(evil-define-key 'normal notmuch-hello-mode-map (kbd "RET") 'widget-button-press)
+
+(evil-define-key 'normal notmuch-search-mode-map (kbd "l") 'notmuch-search-show-thread)
+(evil-define-key 'normal notmuch-search-mode-map (kbd "h") 'notmuch-bury-or-kill-this-buffer)
+(evil-define-key 'normal notmuch-search-mode-map (kbd "f") 'notmuch-jump-search)
+
+(evil-define-key 'normal notmuch-show-mode-map (kbd "h") 'notmuch-bury-or-kill-this-buffer)
+(evil-define-key 'normal notmuch-show-mode-map (kbd "f") 'notmuch-jump-search)
 
 ;; packages
 (global-set-key (kbd "M-[") 'package-install)
@@ -81,8 +105,8 @@
 (global-set-key (kbd "C-M-S-f") 'helm-multi-swoop-all)
 
 ;; avy
-(global-set-key (kbd "M-e") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "M-j") 'avy-goto-char)
+(global-set-key (kbd "M-e") 'avy-goto-char-timer)
+(global-set-key (kbd "M-j") 'avy-goto-word-or-subword-1)
 
 ;; helm bookmark
 (global-set-key (kbd "C-c b") 'helm-bookmarks)
@@ -104,6 +128,7 @@
   (define-key keymap (kbd "M-l") 'helm-execute-persistent-action)
   (define-key keymap (kbd "M-h") 'helm-find-files-up-one-level)
   (define-key keymap (kbd "M-J") 'helm-ff-run-open-file-with-default-tool)
+  (define-key keymap (kbd "M-K") 'helm-ff-open-dired-at-point)
   (define-key keymap (kbd "C-S-h") 'describe-key)
   (define-key keymap (kbd "M-e") 'ace-jump-helm-line)
   (define-key keymap (kbd "TAB") (kbd "RET"))
@@ -137,6 +162,7 @@
 ;; emmet-mode
 (define-key web-mode-map (kbd "M-;") 'emmet-expand-line)
 (global-set-key (kbd "M-;") 'emmet-expand-line)
+(define-key emmet-mode-keymap (kbd "C-j") 'my-fancy-newline)
 
 ;; indent and unindent
 (global-set-key (kbd "M->") 'my-indent-region)
@@ -145,8 +171,22 @@
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key (kbd "C-c c") 'org-capture)
+
 (define-key org-mode-map [(control tab)] 'tabbar-forward-tab)
 (define-key org-mode-map (kbd "<C-iso-lefttab>") 'tabbar-backward-tab)
+(define-key org-mode-map (kbd "C-c C-r") 'org-refile)
+(evil-define-key 'normal org-mode-map (kbd "R") 'org-refile)
+
+;; org-agenda
+(add-hook 'org-agenda-mode-hook
+          (lambda()
+            (define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
+            (define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
+            (define-key org-agenda-mode-map (kbd "C-k") 'scroll-down-command)
+            (define-key org-agenda-mode-map (kbd "C-j") 'scroll-up-command)
+            (define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view)))
 
 ;; Comment/uncomment block
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
@@ -156,21 +196,25 @@
 (global-set-key (kbd "M-<down>") 'drag-stuff-down)
 (global-set-key (kbd "M-<left>") 'drag-stuff-left)
 (global-set-key (kbd "M-<right>") 'drag-stuff-right)
+(define-key evil-normal-state-map (kbd "M-k") 'drag-stuff-up)
+(define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
 
 ;; eclim
-(define-key eclim-mode-map (kbd "C-c C-e <f5>") 'eclim-run-class)
-(define-key eclim-mode-map (kbd "C-c C-e /") 'eclim-java-show-documentation-for-current-element)
+;; (define-key eclim-mode-map (kbd "C-c C-e <f5>") 'eclim-run-class)
+;; (define-key eclim-mode-map (kbd "C-c C-e /") 'eclim-java-show-documentation-for-current-element)
 
 ;; yas expand
 ;; company ring map
-(define-prefix-command 'ring-map)
+(define-prefix-command 'completion-ring-map)
 (global-unset-key (kbd "M-<SPC>"))
-(global-set-key (kbd "M-<SPC>") 'ring-map)
+(global-set-key (kbd "M-<SPC>") 'completion-ring-map)
 ;; company mode tab fix
 (global-set-key [tab] 'tab-indent-or-complete)
 (global-set-key (kbd "TAB") 'tab-indent-or-complete)
-(global-set-key (kbd "C-<SPC>") 'company-complete-common)
-(global-set-key (kbd "M-<SPC> <SPC>") 'company-yasnippet)
+(global-set-key (kbd "C-<SPC>") 'company-dabbrev-code)
+(global-set-key (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(global-set-key (kbd "M-<SPC> j") 'company-complete)
+(global-set-key (kbd "M-<SPC> s") 'company-yasnippet)
 (global-set-key (kbd "M-<SPC> g") 'company-gtags)
 (global-set-key (kbd "M-<SPC> f") 'company-files)
 
@@ -184,12 +228,12 @@
 (define-key yas-keymap (kbd "TAB") 'yas-next-field-or-maybe-expand)
 (define-key yas-keymap [(control tab)] 'nil)
 (define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
-;; company mode
+;; evilify company mode
 (define-key company-active-map (kbd "M-j") 'company-select-next)
 (define-key company-active-map (kbd "M-k") 'company-select-previous)
 (define-key company-active-map [escape] 'my-keyboard-quit)
 
-;; dired and sunrise fixes
+;; evilify dired and sunrise
 (define-key sr-mode-map (kbd "<f2>") 'evil-mode)
 (define-key dired-mode-map (kbd "TAB") 'other-window)
 (define-key dired-mode-map [tab] 'other-window)
@@ -204,10 +248,10 @@
 (define-key sr-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key dired-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
 (define-key sr-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
-(define-key dired-mode-map (kbd "M-e") 'avy-goto-word-or-subword-1)
-(define-key sr-mode-map (kbd "M-e") 'avy-goto-word-or-subword-1)
-(define-key dired-mode-map (kbd "M-j") 'avy-goto-char)
-(define-key sr-mode-map (kbd "M-j") 'avy-goto-char)
+(define-key dired-mode-map (kbd "M-e") 'avy-goto-char-timer)
+(define-key sr-mode-map (kbd "M-e") 'avy-goto-char-timer)
+(define-key dired-mode-map (kbd "M-j") 'avy-goto-word-or-subword-1)
+(define-key sr-mode-map (kbd "M-j") 'avy-goto-word-or-subword-1)
 
 (define-key dired-mode-map (kbd "j") 'diredp-next-line)
 (define-key sr-mode-map (kbd "j") 'diredp-next-line)
@@ -224,9 +268,8 @@
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
 
-;;palette
-(global-set-key (kbd "C-<f9>") 'palette-launch-from-kill-ring)
-(global-set-key (kbd "C-S-<f9>") 'palette-paste-in-current-color)
+(define-key dired-mode-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
+(define-key global-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
 
 ;; better new line form inside of a bracket
 (global-set-key (kbd "C-j") 'my-fancy-newline)
@@ -245,6 +288,7 @@
 (evil-define-key 'normal evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (evil-define-key 'visual evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (evil-define-key 'insert evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
+(global-set-key (kbd "C-S-<mouse-1>") 'evil-mc-toggle-cursor-on-click)
 
 ;; evil-mode
 (global-set-key (kbd "<f2>") 'evil-mode)
@@ -252,9 +296,13 @@
 ;; scroll through visual lines
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+;; evil-jump-forward rebind
+(define-key evil-normal-state-map (kbd "C-S-o") 'evil-jump-forward)
+(define-key evil-visual-state-map (kbd "C-S-o") 'evil-jump-forward)
 ;;evil plus company synergy
-(define-key evil-insert-state-map (kbd "C-<SPC>") 'company-complete-common)
-(define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-yasnippet)
+(define-key evil-insert-state-map (kbd "C-<SPC>") 'company-dabbrev-code)
+(define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(define-key evil-insert-state-map (kbd "M-<SPC> s") 'company-yasnippet)
 (define-key evil-insert-state-map (kbd "M-<SPC> g") 'company-gtags)
 (define-key evil-insert-state-map (kbd "M-<SPC> f") 'company-files)
 ;; scroll up/down with C-k, C-j
@@ -262,6 +310,12 @@
                                                 (interactive)
                                                 (evil-scroll-up nil)))
 (define-key evil-normal-state-map (kbd "C-j") (lambda ()
+                                                (interactive)
+                                                (evil-scroll-down nil)))
+(define-key evil-motion-state-map (kbd "C-k") (lambda ()
+                                                (interactive)
+                                                (evil-scroll-up nil)))
+(define-key evil-motion-state-map (kbd "C-j") (lambda ()
                                                 (interactive)
                                                 (evil-scroll-down nil)))
 (define-key evil-normal-state-map (kbd "SPC h") help-map)
@@ -289,6 +343,7 @@
 (evil-leader/set-key
   "f" 'helm-swoop-without-pre-input
   "F" 'helm-find-files
+  "<f1>" 'show-file-name
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
   "pp" 'helm-projectile-switch-project
@@ -299,15 +354,16 @@
   "pa" 'helm-projectile-ag
   "D" 'dired
   "d" 'ace-window
-  "q" 'quit-bottom-side-windows
-  "Q" 'clean-buffer-list
-  "e" 'evil-avy-goto-word-or-subword-1
-  "E" 'evil-avy-goto-word-0
-  "j" 'evil-avy-goto-char
-  "J" 'evil-avy-goto-char-2
+  "q" 'winner-undo
+  "Q" 'winner-redo
+  "M-q" 'clean-buffer-list
+  "e" 'avy-goto-char-timer
+  "E" 'evil-avy-goto-char-2
+  "j" 'evil-avy-goto-word-or-subword-1
+  "J" 'evil-avy-goto-word-0
   "a" 'anzu-query-replace
   "A" 'anzu-query-replace-at-cursor
-  ";" 'comment-or-uncomment-region
+  ";" 'evilnc-comment-or-uncomment-lines
   "kk" 'evilnc-comment-or-uncomment-lines
   "kl" 'evilnc-quick-comment-or-uncomment-to-the-line
   "kc" 'evilnc-copy-and-comment-lines
@@ -316,6 +372,7 @@
   "kv" 'evilnc-toggle-invert-comment-line-by-line
   "x" 'helm-M-x
   "w" 'helm-buffers-list
+  "W" 'whitespace-mode
   "b" 'helm-bookmarks
   "m" 'helm-all-mark-rings
   "n" 'cleanup-buffer
@@ -335,7 +392,9 @@
   "ha" 'helm-do-ag
   "hl" 'helm-locate
   "hw" 'helm-do-ag-buffers
-  "hc" 'helm-colors
+  "hc" 'zenity-cp-color-at-point-dwim
+  "hC" 'insert-color-hex
+  "hd" 'helm-dash
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
@@ -349,12 +408,27 @@
   "Tn" 'hl-todo-next
   "Tp" 'hl-todo-previous
   "To" 'hl-todo-occur
+  "on" 'flycheck-next-error
+  "op" 'flycheck-previous-error
+  "Bj" 'web-beautify-js
+  "Bc" 'web-beautify-css
+  "Bh" 'web-beautify-html
+  "<SPC>c" 'org-capture
+  "<SPC>a" 'org-agenda
+  "<SPC>b" 'org-iswitchb
+  "<SPC>d" 'dired-jump
+  "<SPC>p" 'pomidor
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
   "2" 'eyebrowse-switch-to-window-config-2
   "3" 'eyebrowse-switch-to-window-config-3
-  "4" 'eyebrowse-switch-to-window-config-4)
+  "4" 'eyebrowse-switch-to-window-config-4
+  "5" 'eyebrowse-switch-to-window-config-5
+  "6" 'eyebrowse-switch-to-window-config-6
+  "7" 'eyebrowse-switch-to-window-config-7
+  "8" 'eyebrowse-switch-to-window-config-8
+  "9" 'eyebrowse-switch-to-window-config-9)
 
 (evil-leader/set-key-for-mode 'web-mode
   "cew" 'web-mode-element-wrap
@@ -383,11 +457,23 @@
   "f" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
+  "ci" 'js-doc-insert-function-doc-snippet
+  "cc" 'tern-get-type
+  "cr" 'tern-rename-variable
+  "c." 'tern-find-definition
+  "c," 'tern-pop-find-definition
+  "cd" 'tern-get-docs)
+
+(evil-leader/set-key-for-mode 'typescript-mode
   "c" 'tide-documentation-at-point)
+
+(evil-leader/set-key-for-mode 'message-mode
+  "w" 'helm-buffer-list
+  "d" 'ace-window)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
 
-(provide 'my-bindings)
-;;; my-bindings.el ends here
+(provide 'key-bindings)
+;;; key-bindings.el ends here

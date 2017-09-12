@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: New Method
+# key: m
+# --
+${1:name}($2) {
+    $0
+}

@@ -2,4 +2,4 @@
 # name: Anchor
 # key: a
 # --
-<a href="${1:#}">$2</a>$0
+<a href="$1">$2</a>

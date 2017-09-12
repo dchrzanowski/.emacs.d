@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Section
+# key: sec
+# --
+/*----- $1 STARTS HERE -----*/
+$0
+/*----- $1 ENDS HERE -----*/

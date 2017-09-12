@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: new Promise
+# key: prom
+# --
+new Promise(function(resolve, reject) {
+    $1
+});$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for of
+# key: forof
+# --
+for (${1:variable} of ${2:iterable}) {
+    $3
+}
