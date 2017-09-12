@@ -62,6 +62,7 @@
 (delete-selection-mode t)  ;; delete when region when starting to type inside
 (transient-mark-mode t)  ;; mark follows the point
 (setq select-enable-clipboard t)  ;; share kill ring with the system's clipboard
+(setq ring-bell-function 'ignore)  ;; switch off bell
 ;; indents config
 (setq-default indent-tabs-mode nil)  ;; do not insert tabs
 (setq-default sgml-basic-offset 4)  ;; indent for html
