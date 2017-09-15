@@ -619,17 +619,17 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; (use-package eclim
-;;   :init
-;;   (require 'eclimd)
-;;   :config
-;;   (defun my-java-mode-hook()
-;;     (eclim-mode t)
-;;     (hl-todo-mode)
-;;     (setq-default help-at-pt-display-when-idle t)
-;;     (setq-default help-at-pt-timer-delay 0.1)
-;;     (help-at-pt-set-timer))
-;;   (add-hook 'java-mode-hook 'my-java-mode-hook))
+(use-package eclim
+  :init
+  (require 'eclimd)
+  :config
+  (defun my-java-mode-hook()
+    (eclim-mode t)
+    (hl-todo-mode)
+    (setq-default help-at-pt-display-when-idle t)
+    (setq-default help-at-pt-timer-delay 0.1)
+    (help-at-pt-set-timer))
+  (add-hook 'java-mode-hook 'my-java-mode-hook))
 
 
 ;; -------------------------------------------------------------------------------------------------------------------------

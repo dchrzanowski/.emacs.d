@@ -40,8 +40,11 @@
     (position . 1))
 #1=(#("company-settings.el" 0 19
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 22968 22253 519320 792000)
+    (visits . 0)
     (filename . "/home/grimscythe/.emacs.d/company-settings.el")
-    (position . 0)
+    (position . 1)
     (created 22936 46499 28546 18000))
 #1=(#("coachfinder" 0 11
       (bmkp-full-record #1#))
