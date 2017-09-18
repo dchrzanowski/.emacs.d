@@ -86,6 +86,15 @@
             (set (make-local-variable 'company-backends)
                  '((company-tern company-gtags company-semantic company-dabbrev-code company-yasnippet)))))
 
+
+;; ------------------------------------------------------------------------------------------------
+;; C# MODE
+;; ------------------------------------------------------------------------------------------------
+(add-hook 'csharp-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '((company-omnisharp company-semantic company-dabbrev-code company-yasnippet)))))
+
 ;; fix for yasnippets
 (defun check-expansion ()
   (save-excursion

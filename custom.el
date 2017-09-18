@@ -81,7 +81,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (markdown-mode notmuch js-doc zenity-color-picker dired-du evil-snipe helm-dash company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+    (omnisharp omnisharp-emacs markdown-mode notmuch js-doc zenity-color-picker dired-du evil-snipe helm-dash company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell atom-one-dark-theme beacon hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet ace-jump-helm-line quickrun flx evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
@@ -167,6 +167,9 @@
  '(sr-editing-path-face ((t (:background "red" :foreground "white" :weight bold :height 120))))
  '(sr-highlight-path-face ((t (:background "yellow" :foreground "black" :weight bold :height 120))))
  '(sr-passive-path-face ((t (:background "white" :foreground "black" :weight bold :height 120))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+ '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
+ '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
  '(web-mode-html-tag-face ((t (:foreground "#db5762")))))
 (provide 'custom)
 ;;; custom.el ends here

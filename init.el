@@ -180,6 +180,28 @@
     (setq elpy-rpc-backend "jedi")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; c#
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package omnisharp
+  :config
+  (defun my-csharp-mode-setup ()
+    (setq indent-tabs-mode nil)
+    (setq c-syntactic-indentation t)
+    (c-set-style "ellemtel")
+    (setq c-basic-offset 4)
+    (setq truncate-lines t)
+    (setq tab-width 4)
+    (setq evil-shift-width 4)
+    (local-set-key (kbd "C-c C-c") 'recompile))
+
+  ;; (eval-after-load
+  ;;     'company
+  ;;   '(add-to-list 'company-backends 'company-omnisharp))
+
+  (add-hook 'csharp-mode-hook 'omnisharp-mode)
+  (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; flycheck linter for all
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package flycheck
