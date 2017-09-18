@@ -62,6 +62,7 @@
 (delete-selection-mode t)  ;; delete when region when starting to type inside
 (transient-mark-mode t)  ;; mark follows the point
 (setq select-enable-clipboard t)  ;; share kill ring with the system's clipboard
+(setq ring-bell-function 'ignore)  ;; switch off bell
 ;; indents config
 (setq-default indent-tabs-mode nil)  ;; do not insert tabs
 (setq-default sgml-basic-offset 4)  ;; indent for html
@@ -640,17 +641,17 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; (use-package eclim
-;;   :init
-;;   (require 'eclimd)
-;;   :config
-;;   (defun my-java-mode-hook()
-;;     (eclim-mode t)
-;;     (hl-todo-mode)
-;;     (setq-default help-at-pt-display-when-idle t)
-;;     (setq-default help-at-pt-timer-delay 0.1)
-;;     (help-at-pt-set-timer))
-;;   (add-hook 'java-mode-hook 'my-java-mode-hook))
+(use-package eclim
+  :init
+  (require 'eclimd)
+  :config
+  (defun my-java-mode-hook()
+    (eclim-mode t)
+    (hl-todo-mode)
+    (setq-default help-at-pt-display-when-idle t)
+    (setq-default help-at-pt-timer-delay 0.1)
+    (help-at-pt-set-timer))
+  (add-hook 'java-mode-hook 'my-java-mode-hook))
 
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -662,6 +663,11 @@
 ;; magit
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package magit)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; magit
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package git-timemachine)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; sunrise commander

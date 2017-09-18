@@ -30,9 +30,9 @@
   :config
   (require 'company-web-html))
 
-;; (use-package company-emacs-eclim
-;;   :config
-;;   (setq company-emacs-eclim-ignore-case nil))
+(use-package company-emacs-eclim
+  :config
+  (setq company-emacs-eclim-ignore-case nil))
 
 (use-package company-jedi)
 
@@ -70,13 +70,13 @@
 ;; JAVA MODE
 ;; select the raw-non-eclim-hook or the eclim setup
 ;; ------------------------------------------------------------------------------------------------
-(add-hook 'java-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-semantic company-dabbrev-code company-yasnippet)))))
+;; (add-hook 'java-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-semantic company-dabbrev-code company-yasnippet)))))
 
 ;; setup for eclim (java)
-;; (company-emacs-eclim-setup)
+(company-emacs-eclim-setup)
 
 ;; ------------------------------------------------------------------------------------------------
 ;; JS2 MODE
