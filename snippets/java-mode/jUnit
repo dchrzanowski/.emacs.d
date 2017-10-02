@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: jUnit
+# key: junit
+# --
+// Test number: $1
+// Test objective: $2
+// Input: $3
+// Expected Output: $4
+public void test$5() {
+    $0
+}
