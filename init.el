@@ -436,6 +436,11 @@
     (setq-local helm-dash-docsets '("JavaScript")))
   (add-hook 'js2-mode-hook 'javascript-dash-doc)
 
+  (defun java-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("Java")))
+  (add-hook 'java-mode-hook 'java-dash-doc)
+
   (defun typescript-dash-doc ()
     (interactive)
     (setq-local helm-dash-docsets '("TypeScript")))
