@@ -189,7 +189,7 @@
             (define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view)))
 
 ;; Comment/uncomment block
-(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-;") 'dired-jump)
 
 ;; move text up and down
 (global-set-key (kbd "M-<up>") 'drag-stuff-up)
@@ -398,6 +398,8 @@
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
+  "gm" 'git-messenger:popup-message
+  "gM" 'git-messenger:popup-show-verbose
   "gt" 'git-timemachine-toggle
   "gg" 'git-gutter-mode
   "gn" 'git-gutter:next-hunk
