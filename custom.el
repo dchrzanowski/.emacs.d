@@ -55,6 +55,7 @@
  '(flycheck-python-flake8-executable nil)
  '(ggtags-executable-directory "/usr/bin")
  '(ggtags-use-project-gtagsconf nil)
+ '(git-messenger:show-detail t)
  '(git-messenger:use-magit-popup t)
  '(global-flycheck-mode t)
  '(global-semantic-decoration-mode nil)

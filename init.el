@@ -465,6 +465,11 @@
     (setq-local helm-dash-docsets '("HTML")))
   (add-hook 'web-mode-hook 'html-dash-doc)
 
+  (defun elisp-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("Emacs Lisp")))
+  (add-hook 'emacs-lisp-mode-hook 'elisp-dash-doc)
+
   (defun css-dash-doc ()
     (interactive)
     (setq-local helm-dash-docsets '("CSS")))
