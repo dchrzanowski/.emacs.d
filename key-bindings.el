@@ -100,7 +100,7 @@
 (global-set-key (kbd "M-w") 'helm-buffers-list)
 
 ;; helm-swoop binds
-(global-set-key (kbd "M-f") 'helm-swoop-without-pre-input)
+(global-set-key (kbd "M-f") 'helm-swoop)
 (global-set-key (kbd "C-M-f") 'helm-multi-swoop)
 (global-set-key (kbd "C-M-S-f") 'helm-multi-swoop-all)
 
@@ -118,7 +118,6 @@
 (define-key helm-map (kbd "C-j") 'helm-next-page)
 (define-key helm-map (kbd "C-k") 'helm-previous-page)
 (define-key helm-map (kbd "M-h") 'helm-next-source)
-(define-key helm-map (kbd "M-e") 'ace-jump-helm-line)
 (define-key helm-map (kbd "C-S-h") 'describe-key)
 (define-key helm-map (kbd "M-l") (kbd "RET"))
 (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
@@ -130,7 +129,6 @@
   (define-key keymap (kbd "M-J") 'helm-ff-run-open-file-with-default-tool)
   (define-key keymap (kbd "M-K") 'helm-ff-open-dired-at-point)
   (define-key keymap (kbd "C-S-h") 'describe-key)
-  (define-key keymap (kbd "M-e") 'ace-jump-helm-line)
   (define-key keymap (kbd "TAB") (kbd "RET"))
   (define-key keymap (kbd "C-r") 'evil-paste-from-register)
   (define-key keymap [tab] (kbd "RET")))
@@ -373,7 +371,7 @@
   "x" 'helm-M-x
   "w" 'helm-buffers-list
   "W" 'whitespace-mode
-  "b" 'helm-bookmarks
+  "b" 'helm-filtered-bookmarks
   "m" 'helm-all-mark-rings
   "n" 'cleanup-buffer
   "r" 'helm-semantic-or-imenu
