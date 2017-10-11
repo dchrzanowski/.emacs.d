@@ -156,7 +156,7 @@
  '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
  '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
  '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
- '(hl-line ((t (:background "#252931"))))
+ '(hl-line ((t (:background "#20242A"))))
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
