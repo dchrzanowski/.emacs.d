@@ -1005,6 +1005,10 @@
    '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
    '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))))
 
+;; (use-package dracula-theme
+;;   :config
+;;   (load-theme 'dracula t))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline
 ;; -------------------------------------------------------------------------------------------------------------------------
