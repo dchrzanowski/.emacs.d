@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Var Function
+# key: varfun
+# --
+var $1 = function($2) {
+    $0
+};
