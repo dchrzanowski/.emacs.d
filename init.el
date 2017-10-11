@@ -665,7 +665,13 @@
     (help-at-pt-set-timer))
   (add-hook 'java-mode-hook 'my-java-mode-hook))
 
-
+;; (use-package meghanada
+;;   :config
+;;   (add-hook 'java-mode-hook
+;;             (lambda ()
+;;               (meghanada-mode t)
+;;               (setq c-basic-offset 4)
+;;               (add-hook 'before-save-hook 'meghanada-code-beautify-before-save))))
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; GDB
 ;; -------------------------------------------------------------------------------------------------------------------------

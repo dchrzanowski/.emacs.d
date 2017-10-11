@@ -154,4 +154,4 @@
     (company-abort)))
 
 (provide 'company-settings)
-;;; my-company-config.el ends here
+;;; company-settings.el ends here
