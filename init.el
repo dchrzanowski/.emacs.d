@@ -2,7 +2,7 @@
 
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq-default gc-cons-threshold 100000000)
+(setq gc-cons-threshold 100000000)
 
 (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
 
@@ -26,8 +26,8 @@
 (eval-when-compile
   (require 'use-package))
 (setq use-package-always-ensure t)
-(require 'diminish)                ;; if you use :diminish
-(require 'bind-key)                ;; if you use any :bind variant
+(require 'diminish)
+(require 'bind-key)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; emacs system settigs
@@ -50,27 +50,26 @@
       kept-old-versions 5    ; and how many of the old
       )
 
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; personal data
-(setq user-full-name '"Damian Chrzanowski")
+;; -------------------------------------------------------------------------------------------------------------------------
+(setq user-full-name "Damian Chrzanowski")
 
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; Turn off mouse interface early in startup to avoid momentary display
+;; -------------------------------------------------------------------------------------------------------------------------
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Emacs defaults
+;; -------------------------------------------------------------------------------------------------------------------------
 (setq inhibit-startup-message t) ;; No splash screen
 (delete-selection-mode t)  ;; delete when region when starting to type inside
 (transient-mark-mode t)  ;; mark follows the point
 (setq select-enable-clipboard t)  ;; share kill ring with the system's clipboard
 (setq ring-bell-function 'ignore)  ;; switch off bell
-;; indents config
-(setq-default indent-tabs-mode nil)  ;; do not insert tabs
-(setq-default sgml-basic-offset 4)  ;; indent for html
-(setq-default tab-width 4)   ; standard tab width
-(setq-default c-basic-offset 4)  ;; standard width for c/C++
-(c-set-offset 'substatement-open 0) ;; fix c/c++ indent
-;; http://ergoemacs.org/emacs/emacs_stop_cursor_enter_prompt.html
-(setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))  ;; remove annoying minibuffer prompts
 (savehist-mode 1) ;; save history (minibuffer)
 (global-visual-line-mode)   ;; scroll through visual lines
 (setq-default auto-window-vscroll nil) ;; remove slow on scroll
@@ -86,7 +85,19 @@
 (setq-default auto-revert-verbose nil)  ;; keep auto revert quiet
 (setq-default help-window-select t)  ;; auto-focus help windows, easier to Q them
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; indents config
+;; -------------------------------------------------------------------------------------------------------------------------
+(setq-default indent-tabs-mode nil)  ;; do not insert tabs
+(setq-default sgml-basic-offset 4)  ;; indent for html
+(setq-default tab-width 4)   ; standard tab width
+(setq-default c-basic-offset 4)  ;; standard width for c/C++
+(c-set-offset 'substatement-open 0) ;; fix c/c++ indent
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; misc
+;; -------------------------------------------------------------------------------------------------------------------------
+(setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))  ;; remove annoying minibuffer prompts
 (defalias 'yes-or-no-p 'y-or-n-p)  ; do a y/s  instead of yes/no
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -195,18 +206,14 @@
 (use-package omnisharp
   :config
   (defun my-csharp-mode-setup ()
-    (setq indent-tabs-mode nil)
-    (setq c-syntactic-indentation t)
     (c-set-style "ellemtel")
-    (setq c-basic-offset 4)
-    (setq truncate-lines t)
-    (setq tab-width 4)
-    (setq evil-shift-width 4)
+    (setq indent-tabs-mode nil
+          c-syntactic-indentation t
+          c-basic-offset 4
+          truncate-lines t
+          tab-width 4
+          evil-shift-width 4)
     (local-set-key (kbd "C-c C-c") 'recompile))
-
-  ;; (eval-after-load
-  ;;     'company
-  ;;   '(add-to-list 'company-backends 'company-omnisharp))
 
   (add-hook 'csharp-mode-hook 'omnisharp-mode)
   (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t))
@@ -232,22 +239,25 @@
   :config
   (use-package org-bullets)
   (setq org-log-done t
-        org-startup-folded t)
-
-  (setq org-directory '("~/org"))
-  (setq org-default-notes-file "~/org/refile.org")
-  (setq org-agenda-files '("~/org/projects/myLectures"))
-
-  (setq org-todo-keywords
-        '((sequence "VERIFY(v)" "TODO(t)" "IN-PROGRESS(i)" "|" "DONE(d)" "DELEGATED(l)" "CANCELLED(c)")))
-
-  (setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                   (org-agenda-files :maxlevel . 9))))
-  (setq org-refile-use-outline-path t)
-  (setq org-capture-templates
-        (quote (("t" "todo" entry (file "~/org/refile.org")
-                 "* TODO %?"))))
-  (setq org-agenda-span 'week)
+        org-startup-folded t
+        ;; org dirs
+        org-directory '("~/org")
+        org-default-notes-file "~/org/refile.org"
+        org-agenda-files '("~/org/projects/myLectures")
+        ;; org keywords
+        org-todo-keywords '((sequence "VERIFY(v)"
+                                      "TODO(t)"
+                                      "IN-PROGRESS(i)"
+                                      "|"
+                                      "DONE(d)"
+                                      "DELEGATED(l)"
+                                      "CANCELLED(c)"))
+        ;; org capture
+        org-refile-targets (quote ((nil :maxlevel . 9) (org-agenda-files :maxlevel . 9)))
+        org-refile-use-outline-path t
+        org-capture-templates (quote (("t" "todo" entry (file "~/org/refile.org") "* TODO %?")))
+        ;; org agenda
+        org-agenda-span 'week)
 
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
@@ -282,16 +292,16 @@
 (use-package neotree
   :defer t
   :config
-  (setq neo-theme 'icons)  ; set fancy arrows
-  (setq neo-smart-open t) ; adjust to the current buffer
-  (setq neo-window-width 30)
+  (setq neo-theme 'icons  ; set fancy arrows
+        neo-smart-open t ; adjust to the current buffer
+        neo-window-width 30)
   (add-hook 'neo-after-create-hook
             #'(lambda (_)
                 (with-current-buffer (get-buffer neo-buffer-name)
-                  (setq truncate-lines t)
-                  (setq word-wrap nil)
                   (make-local-variable 'auto-hscroll-mode)
-                  (setq auto-hscroll-mode nil)))))
+                  (setq truncate-lines t
+                        word-wrap nil
+                        auto-hscroll-mode nil)))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; rainbow delimiters
@@ -349,8 +359,8 @@
     (split-window-below)
     (balance-windows))
 
-  (setq-default aw-dispatch-always t)
-  (setq-default aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq-default aw-dispatch-always t
+                aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
   (defvar aw-dispatch-alist
     '((?x aw-delete-window " Ace - Delete Window")
@@ -413,8 +423,8 @@
   :config
   (projectile-mode)
   ;; (setq projectile-indexing-method 'native)
-  (setq-default projectile-enable-caching t)
-  (setq-default projectile-completion-system 'helm)
+  (setq-default projectile-enable-caching t
+                projectile-completion-system 'helm)
   (helm-projectile-on))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -545,10 +555,9 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package undo-tree
   :config
-  ;; (setq undo-;TODO: ree-visualizer-diff t)
-  (setq-default undo-tree-visualizer-timestamps t)
-  (setq-default undo-tree-auto-save-history nil)  ; change undo history
-  (setq-default undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo-tree")))  ; save all undo history into a single folder
+  (setq-default undo-tree-visualizer-timestamps t
+                undo-tree-auto-save-history nil  ; change undo history
+                undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo-tree")))  ; save all undo history into a single folder
   (global-undo-tree-mode))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -599,8 +608,8 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package web-mode
   :init
-  (setq-default web-mode-enable-current-element-highlight t)
-  (setq-default web-mode-enable-current-column-highlight t)
+  (setq-default web-mode-enable-current-element-highlight t
+                web-mode-enable-current-column-highlight t)
   :config
   ;;auto load web mode
   (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
@@ -611,13 +620,13 @@
   ;; hooks
   (defun my-web-mode-hook ()
     "Hooks for Web mode."
-    (setq web-mode-markup-indent-offset 4)
-    (setq web-mode-markup-indent-offset 4)
-    (setq web-mode-css-indent-offset 4)
-    (setq web-mode-code-indent-offset 4)
-    (setq web-mode-enable-auto-pairing t)
-    (setq web-mode-enable-css-colorization t)
-    (setq web-mode-auto-close-style nil)
+    (setq web-mode-markup-indent-offset 4
+          web-mode-markup-indent-offset 4
+          web-mode-css-indent-offset 4
+          web-mode-code-indent-offset 4
+          web-mode-enable-auto-pairing t
+          web-mode-enable-css-colorization t
+          web-mode-auto-close-style nil)
     (auto-highlight-symbol-mode t))
 
   (add-hook 'web-mode-hook
@@ -660,8 +669,8 @@
   (defun my-java-mode-hook()
     (eclim-mode t)
     (hl-todo-mode)
-    (setq-default help-at-pt-display-when-idle t)
-    (setq-default help-at-pt-timer-delay 0.1)
+    (setq-default help-at-pt-display-when-idle t
+                  help-at-pt-timer-delay 0.1)
     (help-at-pt-set-timer))
   (add-hook 'java-mode-hook 'my-java-mode-hook))
 
@@ -742,8 +751,8 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package god-mode
   :config
-  (setq god-exempt-major-modes nil)
-  (setq god-exempt-predicates nil))
+  (setq god-exempt-major-modes nil
+        god-exempt-predicates nil))
 
 (use-package evil-god-state)
 
