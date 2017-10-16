@@ -456,7 +456,11 @@
   (defun typescript-dash-doc ()
     (interactive)
     (setq-local helm-dash-docsets '("TypeScript")))
+  (defun angularTS-dash-doc ()
+    (interactive)
+    (setq-local helm-dash-docsets '("AngularTS")))
   (add-hook 'typescript-mode-hook 'typescript-dash-doc)
+  (add-hook 'typescript-mode-hook 'angularTS-dash-doc)
 
   (defun python3-dash-doc ()
     (interactive)
