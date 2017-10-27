@@ -1021,6 +1021,10 @@
    '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
    '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))))
 
+;; (use-package kaolin-themes
+;;   :config
+;;   (load-theme 'kaolin-dark))
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; diminish items from the modeline
 ;; -------------------------------------------------------------------------------------------------------------------------
