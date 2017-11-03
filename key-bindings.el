@@ -28,6 +28,7 @@
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
 (evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
+(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-enter-ace-window)
 
 ;; additional evil leader bindings for neotree
 (evil-leader/set-key-for-mode 'neotree-mode
@@ -317,6 +318,8 @@
                                                 (interactive)
                                                 (evil-scroll-down nil)))
 (define-key evil-normal-state-map (kbd "SPC h") help-map)
+
+(define-key evil-normal-state-map (kbd "H") 'neo-global--do-autorefresh)
 
 ;; esc anything
 (define-key evil-normal-state-map [escape] 'my-keyboard-quit)

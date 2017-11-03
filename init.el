@@ -292,9 +292,22 @@
 (use-package neotree
   :defer t
   :config
+  ;; override the neo's default function which is buggy when opening helm
+  (defun neo-global--do-autorefresh ()
+    "Do auto refresh."
+    (interactive)
+    (when (neo-global--window-exists-p)
+      (progn
+        (let ((cw (selected-window)))
+          (neotree-find)
+          (select-window cw)
+          ))))
+
   (setq neo-theme 'icons  ; set fancy arrows
         neo-smart-open t ; adjust to the current buffer
-        neo-window-width 30)
+        neo-autorefresh 5
+        neo-window-width 35)
+
   (add-hook 'neo-after-create-hook
             #'(lambda (_)
                 (with-current-buffer (get-buffer neo-buffer-name)

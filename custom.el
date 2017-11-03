@@ -158,6 +158,7 @@
  '(hl-line ((t (:background "#20242A"))))
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
+ '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "LavenderBlush1"))))
  '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
