@@ -102,8 +102,7 @@
 
 ;; helm-swoop binds
 (global-set-key (kbd "M-f") 'helm-swoop)
-(global-set-key (kbd "C-M-f") 'helm-multi-swoop)
-(global-set-key (kbd "C-M-S-f") 'helm-multi-swoop-all)
+(global-set-key (kbd "M-F") 'helm-multi-swoop-all)
 
 ;; avy
 (global-set-key (kbd "M-e") 'avy-goto-char-timer)
@@ -319,8 +318,6 @@
                                                 (evil-scroll-down nil)))
 (define-key evil-normal-state-map (kbd "SPC h") help-map)
 
-(define-key evil-normal-state-map (kbd "H") 'neo-global--do-autorefresh)
-
 ;; esc anything
 (define-key evil-normal-state-map [escape] 'my-keyboard-quit)
 (define-key evil-visual-state-map [escape] 'my-keyboard-quit)
@@ -342,9 +339,9 @@
 
 ;; evil leader bindings
 (evil-leader/set-key
+  "`" 'show-file-name
   "f" 'helm-swoop-without-pre-input
   "F" 'helm-find-files
-  "<f1>" 'show-file-name
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
   "pp" 'helm-projectile-switch-project
@@ -457,7 +454,7 @@
   "cdt" 'web-mode-dom-traverse)
 
 (evil-leader/set-key-for-mode 'org-mode
-  "f" 'helm-org-rifle)
+  "cf" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
   "ci" 'js-doc-insert-function-doc-snippet
