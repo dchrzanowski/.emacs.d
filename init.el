@@ -303,11 +303,13 @@
           (select-window cw)
           ))))
 
-  (setq neo-theme 'icons  ; set fancy arrows
-        neo-smart-open t ; adjust to the current buffer
-        neo-autorefresh 5
+  (setq neo-theme 'icons
+        neo-smart-open t
+        neo-autorefresh t
+        neo-force-change-root t
         neo-window-width 35)
 
+  ;; truncate neo lines
   (add-hook 'neo-after-create-hook
             #'(lambda (_)
                 (with-current-buffer (get-buffer neo-buffer-name)
