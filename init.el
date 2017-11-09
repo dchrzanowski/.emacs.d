@@ -606,7 +606,7 @@
     (interactive)
     (tide-setup)
     (flycheck-mode +1)
-    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    ;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (auto-highlight-symbol-mode)
     (eldoc-mode +1)
     (company-mode +1))
