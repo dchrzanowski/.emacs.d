@@ -292,9 +292,24 @@
 (use-package neotree
   :defer t
   :config
-  (setq neo-theme 'icons  ; set fancy arrows
-        neo-smart-open t ; adjust to the current buffer
-        neo-window-width 30)
+  ;; override the neo's default function which is buggy when opening helm
+  (defun neo-global--do-autorefresh ()
+    "Do auto refresh."
+    (interactive)
+    (when (neo-global--window-exists-p)
+      (progn
+        (let ((cw (selected-window)))
+          (neotree-find)
+          (select-window cw)
+          ))))
+
+  (setq neo-theme 'icons
+        neo-smart-open t
+        neo-autorefresh t
+        neo-force-change-root t
+        neo-window-width 35)
+
+  ;; truncate neo lines
   (add-hook 'neo-after-create-hook
             #'(lambda (_)
                 (with-current-buffer (get-buffer neo-buffer-name)
@@ -591,7 +606,7 @@
     (interactive)
     (tide-setup)
     (flycheck-mode +1)
-    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    ;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (auto-highlight-symbol-mode)
     (eldoc-mode +1)
     (company-mode +1))

@@ -28,6 +28,7 @@
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
 (evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
+(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-enter-ace-window)
 
 ;; additional evil leader bindings for neotree
 (evil-leader/set-key-for-mode 'neotree-mode
@@ -101,8 +102,7 @@
 
 ;; helm-swoop binds
 (global-set-key (kbd "M-f") 'helm-swoop)
-(global-set-key (kbd "C-M-f") 'helm-multi-swoop)
-(global-set-key (kbd "C-M-S-f") 'helm-multi-swoop-all)
+(global-set-key (kbd "M-F") 'helm-multi-swoop-all)
 
 ;; avy
 (global-set-key (kbd "M-e") 'avy-goto-char-timer)
@@ -339,9 +339,9 @@
 
 ;; evil leader bindings
 (evil-leader/set-key
+  "`" 'show-file-name
   "f" 'helm-swoop-without-pre-input
   "F" 'helm-find-files
-  "<f1>" 'show-file-name
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
   "pp" 'helm-projectile-switch-project
@@ -454,7 +454,7 @@
   "cdt" 'web-mode-dom-traverse)
 
 (evil-leader/set-key-for-mode 'org-mode
-  "f" 'helm-org-rifle)
+  "cf" 'helm-org-rifle)
 
 (evil-leader/set-key-for-mode 'js2-mode
   "ci" 'js-doc-insert-function-doc-snippet
