@@ -86,7 +86,6 @@
             (set (make-local-variable 'company-backends)
                  '((company-tern company-gtags company-semantic company-dabbrev-code company-yasnippet)))))
 
-
 ;; ------------------------------------------------------------------------------------------------
 ;; C# MODE
 ;; ------------------------------------------------------------------------------------------------

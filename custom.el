@@ -18,9 +18,9 @@
  '(company-auto-complete-chars (quote (32 41 46)))
  '(company-backends
    (quote
-    (company-emacs-eclim company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
-                         (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
-                         company-oddmuse company-tern)))
+    (company-tide company-emacs-eclim company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
+                  (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
+                  company-oddmuse company-tern)))
  '(company-begin-commands
    (quote
     (self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash)))
