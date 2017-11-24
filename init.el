@@ -699,10 +699,12 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; magit
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package magit)
+(use-package magit
+  :config
+  (setq magit-repository-directories '("~/github")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; magit
+;; git-timemachine
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package git-timemachine)
 
@@ -773,7 +775,8 @@
   :config
   (setq evil-leader/in-all-states nil
         evil-leader/no-prefix-mode-rx '("dired-mode"
-                                        "org-agenda-mode"))  ;; list of modes where leader is forced in emacs mode
+                                        "org-agenda-mode"
+                                        "magit-repolist-mode"))  ;; list of modes where leader is forced in emacs mode
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>"))
 
@@ -800,6 +803,7 @@
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
+  (add-to-list 'evil-emacs-state-modes 'magit-repolist-mode)
   ;; force evil in modes
   (add-to-list 'evil-normal-state-modes 'notmuch-hello-mode)
   (add-to-list 'evil-normal-state-modes 'notmuch-search-mode)

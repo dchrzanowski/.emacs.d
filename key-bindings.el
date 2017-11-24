@@ -396,6 +396,7 @@
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
+  "gr" 'magit-list-repositories
   "gm" 'git-messenger:popup-message
   "gM" 'git-messenger:popup-show-verbose
   "gt" 'git-timemachine-toggle
