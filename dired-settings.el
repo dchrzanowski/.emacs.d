@@ -3,21 +3,36 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;;; Code:
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; -------------------------------------------------------------------------------------------------------------------------
-;;; Dired rainbow
-;; -------------------------------------------------------------------------------------------------------------------------
-;; (dired-rainbow-define video "#6951A6" ("mp4" "avi" "mpg" "mkv" "mpeg" "flv"))
-;; (dired-rainbow-define sound "#800064" ("mp3" "wav" "ogg" "flac"))
-;; (dired-rainbow-define images "#14D100" ("jpg" "jpeg" "png" "bmp" "gif" "tif" "tiff"))
-;; (dired-rainbow-define html "#9acd32" ("htm" "html" "xhtml"))
-;; (dired-rainbow-define stylesheet "#008080" ("css" "less" "scss"))
-;; (dired-rainbow-define docs "#FF0000" ("pdf" "doc" "docx" "json"))
-;; (dired-rainbow-define code "#1e90ff" ("py" "cpp" "c" "java" "js" "jsx" "ts" "el" "go"))
-;; (dired-rainbow-define log (:inherit default
-;;                                     :italic t) ".*\\.log")
-;; ;; highlight executable files, but not directories
-;; (dired-rainbow-define-chmod executable-unix "Green" "-[rw-]+x.*")
+(put 'dired-find-alternate-file 'disabled nil)  ;; use single window
+(setq dired-dwim-target t  ;; dired copy to other pane
+      dired-auto-revert-buffer t
+      dired-recursive-copies 'always
+      dired-recursive-deletes 'always
+      dired-omit-verbose nil)  ;; dired refresh on change
 
+;; dired async
+(dired-async-mode)
+
+(use-package dired+
+  :config
+  (setq dired-listing-switches "-alh"  ;; show file sizes in kbytes, mbytes, gbytes....
+        diredp-hide-details-initially-flag nil
+        diredp-hide-details-propagate-flag nil)
+  (diredp-toggle-find-file-reuse-dir 1))  ;; do not open additional buffers
+
+(use-package dired-narrow)
+
+(use-package dired-du
+  :config
+  (setq dired-du-size-format t))
+
+(use-package dired-hacks-utils)
+
+(use-package dired-launch
+  :config
+  (dired-launch-enable)
+  (setq-default dired-launch-default-launcher '("xdg-open"))
+  (setf dired-launch-extensions-map nil))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;;; Dired Omit
@@ -53,8 +68,16 @@
       (setq dired-omit-mode t)
     (setq dired-omit-mode nil)))
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Hooks
+;; -------------------------------------------------------------------------------------------------------------------------
+;;omit
 (add-hook 'dired-mode-hook 'dired-omit-caller)
 (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
 
+;; truncate lines
+(add-hook 'dired-after-readin-hook (lambda () (setq truncate-partial-width-windows t
+                                                    truncate-lines t)))
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 ;;; dired-settings.el ends here
 (provide 'dired-settings)

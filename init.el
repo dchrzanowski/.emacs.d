@@ -12,8 +12,6 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("SC" . "http://joseito.republika.pl/sunrise-commander/"))
-;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)   ;; org mode specials
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -710,54 +708,9 @@
 (use-package git-timemachine)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
-;; sunrise commander
-;; -------------------------------------------------------------------------------------------------------------------------
-(use-package sunrise-commander)
-(use-package sunrise-x-loop
-  :after sunrise-commander)
-
-;; -------------------------------------------------------------------------------------------------------------------------
 ;; dired extensions and settings
 ;; -------------------------------------------------------------------------------------------------------------------------
-(put 'dired-find-alternate-file 'disabled nil)  ;; use single window
-(setq dired-dwim-target t  ;; dired copy to other pane
-      dired-auto-revert-buffer t
-      dired-recursive-copies 'always
-      dired-recursive-deletes 'always
-      dired-omit-verbose nil)  ;; dired refresh on change
-(add-hook 'dired-mode-hook 'auto-revert-mode)
-
-;; dired async
-(dired-async-mode)
-
-(use-package dired+
-  :config
-  (setq dired-listing-switches "-alh"  ;; show file sizes in kbytes, mbytes, gbytes....
-        diredp-hide-details-initially-flag nil
-        diredp-hide-details-propagate-flag nil)
-  (diredp-toggle-find-file-reuse-dir 1))  ;; do not open additional buffers
-
-(use-package dired-narrow)
-
-(use-package dired-du
-  :config
-  (setq dired-du-size-format t))
-
-(use-package dired-hacks-utils)
-
-;; (use-package dired-rainbow)
-
-(use-package dired-launch
-  :config
-  (dired-launch-enable)
-  (setq-default dired-launch-default-launcher '("xdg-open"))
-  (setf dired-launch-extensions-map nil))
-
-
-(load-file '"~/.emacs.d/dired-settings.el")  ;; load file colourings for dired and setup dired omit
-
-(add-hook 'dired-after-readin-hook (lambda () (setq truncate-partial-width-windows t
-                                                    truncate-lines t)))
+(load-file '"~/.emacs.d/dired-settings.el")
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; God mode and evil god-state
@@ -1038,7 +991,8 @@
   (custom-set-faces
    '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
    '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
-   '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))))
+   '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
+   '(default ((t (:inherit nil :stipple nil :background "#282c34" :foreground "#bbc2cf" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))))
 
 ;; (use-package kaolin-themes
 ;;   :config

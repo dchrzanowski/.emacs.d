@@ -88,7 +88,6 @@
 ;; ace window
 (global-set-key (kbd "M-d") 'ace-window)
 (define-key dired-mode-map (kbd "M-d") 'ace-window)
-(define-key sr-mode-map (kbd "M-d") 'ace-window)
 
 ;; changed recenter
 (define-key global-map (kbd "C-l") 'recenter)
@@ -232,37 +231,23 @@
 (define-key company-active-map [escape] 'my-keyboard-quit)
 
 ;; evilify dired and sunrise
-(define-key sr-mode-map (kbd "<f2>") 'evil-mode)
 (define-key dired-mode-map (kbd "TAB") 'other-window)
 (define-key dired-mode-map [tab] 'other-window)
-(define-key sr-mode-map (kbd "TAB") 'sr-change-window)
-(define-key sr-mode-map [tab] 'sr-change-window)
 
 (define-key dired-mode-map (kbd "RET") 'dired-find-file)
 (define-key dired-mode-map (kbd "<backspace>") 'dired-up-directory)
-(define-key sr-mode-map (kbd "(") 'sr-toggle-attributes)
 
 (define-key dired-mode-map (kbd "/") 'dired-narrow-fuzzy)
-(define-key sr-mode-map (kbd "/") 'dired-narrow-fuzzy)
 (define-key dired-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
-(define-key sr-mode-map (kbd "M-f") 'dired-narrow-fuzzy)
 (define-key dired-mode-map (kbd "M-e") 'avy-goto-char-timer)
-(define-key sr-mode-map (kbd "M-e") 'avy-goto-char-timer)
 (define-key dired-mode-map (kbd "M-j") 'avy-goto-word-or-subword-1)
-(define-key sr-mode-map (kbd "M-j") 'avy-goto-word-or-subword-1)
 
 (define-key dired-mode-map (kbd "j") 'diredp-next-line)
-(define-key sr-mode-map (kbd "j") 'diredp-next-line)
 (define-key dired-mode-map (kbd "C-j") 'scroll-up-command)
-(define-key sr-mode-map (kbd "C-j") 'scroll-up-command)
 (define-key dired-mode-map (kbd "k") 'diredp-previous-line)
-(define-key sr-mode-map (kbd "k") 'diredp-previous-line)
 (define-key dired-mode-map (kbd "C-k") 'scroll-down-command)
-(define-key sr-mode-map (kbd "C-k") 'scroll-down-command)
 (define-key dired-mode-map (kbd "h") 'diredp-up-directory-reuse-dir-buffer)
-(define-key sr-mode-map (kbd "h") 'sr-dired-prev-subdir)
 (define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
-(define-key sr-mode-map (kbd "l") 'sr-advertised-find-file)
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
 
