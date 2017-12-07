@@ -230,7 +230,7 @@
 (define-key company-active-map (kbd "M-k") 'company-select-previous)
 (define-key company-active-map [escape] 'my-keyboard-quit)
 
-;; evilify dired and sunrise
+;; evilify dired
 (define-key dired-mode-map (kbd "TAB") 'other-window)
 (define-key dired-mode-map [tab] 'other-window)
 
@@ -250,6 +250,8 @@
 (define-key dired-mode-map (kbd "l") 'diredp-find-file-reuse-dir-buffer)
 (define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-switch)
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-switch)
+
+(define-key dired-mode-map (kbd "I") 'dired-kill-subdir)
 
 (define-key dired-mode-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
 (define-key global-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
