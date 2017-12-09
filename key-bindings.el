@@ -196,10 +196,6 @@
 (define-key evil-normal-state-map (kbd "M-k") 'drag-stuff-up)
 (define-key evil-normal-state-map (kbd "M-j") 'drag-stuff-down)
 
-;; eclim
-;; (define-key eclim-mode-map (kbd "C-c C-e <f5>") 'eclim-run-class)
-;; (define-key eclim-mode-map (kbd "C-c C-e /") 'eclim-java-show-documentation-for-current-element)
-
 ;; yas expand
 ;; company ring map
 (define-prefix-command 'completion-ring-map)
@@ -214,6 +210,18 @@
 (global-set-key (kbd "M-<SPC> s") 'company-yasnippet)
 (global-set-key (kbd "M-<SPC> g") 'company-gtags)
 (global-set-key (kbd "M-<SPC> f") 'company-files)
+(global-set-key (kbd "M-<SPC> a") 'aya-create)
+(global-set-key (kbd "M-<SPC> e") 'aya-expand)
+(global-set-key (kbd "M-<SPC> o") 'aya-open-line)
+;;evil plus company synergy
+(define-key evil-insert-state-map (kbd "C-<SPC>") 'company-dabbrev-code)
+(define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-complete-common)
+(define-key evil-insert-state-map (kbd "M-<SPC> s") 'company-yasnippet)
+(define-key evil-insert-state-map (kbd "M-<SPC> g") 'company-gtags)
+(define-key evil-insert-state-map (kbd "M-<SPC> f") 'company-files)
+(define-key evil-insert-state-map (kbd "M-<SPC> a") 'aya-create)
+(define-key evil-insert-state-map (kbd "M-<SPC> e") 'aya-expand)
+(define-key evil-insert-state-map (kbd "M-<SPC> o") 'aya-open-line)
 
 (define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
 (define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
@@ -284,12 +292,6 @@
 ;; evil-jump-forward rebind
 (define-key evil-normal-state-map (kbd "C-S-o") 'evil-jump-forward)
 (define-key evil-visual-state-map (kbd "C-S-o") 'evil-jump-forward)
-;;evil plus company synergy
-(define-key evil-insert-state-map (kbd "C-<SPC>") 'company-dabbrev-code)
-(define-key evil-insert-state-map (kbd "M-<SPC> <SPC>") 'company-complete-common)
-(define-key evil-insert-state-map (kbd "M-<SPC> s") 'company-yasnippet)
-(define-key evil-insert-state-map (kbd "M-<SPC> g") 'company-gtags)
-(define-key evil-insert-state-map (kbd "M-<SPC> f") 'company-files)
 ;; scroll up/down with C-k, C-j
 (define-key evil-normal-state-map (kbd "C-k") (lambda ()
                                                 (interactive)
