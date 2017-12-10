@@ -11,7 +11,7 @@
 (define-key minibuffer-local-map (kbd "C-r") 'evil-paste-from-register)
 
 ;; neotree
-(global-set-key [f8] 'neotree-toggle)
+;; (global-set-key [f8] 'neotree-toggle)
 (define-key undo-tree-map (kbd "C-/") 'nil)
 (global-set-key (kbd "C-/") 'neotree-toggle)
 (defun neotree-enter-and-close-neotree ()
