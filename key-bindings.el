@@ -270,7 +270,6 @@
 ;; eyebrowse
 (evil-define-key 'normal eyebrowse-mode-map (kbd "gt") 'eyebrowse-next-window-config)
 (evil-define-key 'normal eyebrowse-mode-map (kbd "gT") 'eyebrowse-prev-window-config)
-(evil-define-key 'normal eyebrowse-mode-map (kbd "zx") 'eyebrowse-last-window-config)
 (evil-define-key 'normal eyebrowse-mode-map (kbd "gc") 'eyebrowse-close-window-config)
 (evil-define-key 'normal eyebrowse-mode-map (kbd "g.") 'eyebrowse-switch-to-window-config)
 
@@ -464,6 +463,10 @@
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
+
+(define-key evil-normal-state-map (kbd "z") 'hydra-window-boss/body)
+;; hydras
+
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
