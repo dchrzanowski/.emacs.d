@@ -13,7 +13,7 @@
 _h_/_j_/_k_/_l_ movement    _w_/_r_/_f_ buffers/bookmarks/files    _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs
 _H_/_J_/_K_/_L_ resize      _b_/_v_/_2_/_3_/_4_ splits                 _u_/_U_ undo/redo
 
-_d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_ balance
+_d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_ balance    _q_uit
 "
   ("h" windmove-left)
   ("l" windmove-right)
@@ -52,7 +52,7 @@ _d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_
   ("u" winner-undo)
   ("U" winner-redo)
   ("M-u" clean-buffer-list)
-  ("q" nil "Quit" :color blue))
+  ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Rare launcher hydra
@@ -73,7 +73,7 @@ _c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste 
   ("E" hydra-ediff/body :exit t)
   ("T" hydra-todo/body :exit t)
   ("b" hydra-beautify/body :exit t)
-  ("q" nil "Quit" :color blue))
+  ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Auto highlight hydra
@@ -86,7 +86,7 @@ _j_/_k_ next/prev    _e_ edit    _t_ toggle
   ("k" ahs-backward)
   ("e" ahs-edit-mode :exit t)
   ("t" auto-highlight-symbol-mode)
-  ("q" nil "Quit" :color blue))
+  ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Auto highlight hydra
@@ -98,7 +98,7 @@ _j_/_k_ next/prev    _o_ occur
   ("j" hl-todo-next)
   ("k" hl-todo-previous)
   ("o" hl-todo-occur :exit t)
-  ("q" nil "Quit" :color blue))
+  ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Web beautify hydra
@@ -112,7 +112,8 @@ _j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _w_ whitespace    _i_ indent
   ("c" web-beautify-css :exit t)
   ("w" whitespace-mode)
   ("i" cleanup-buffer :exit t)
-  ("u" untabify-buffer :exit t))
+  ("u" untabify-buffer :exit t)
+  ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Git-gutter hydra
@@ -149,7 +150,7 @@ Git gutter:
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defhydra hydra-flycheck (:color pink :hint nil)
   "
-_j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter
+_j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit
 "
   ("f"  flycheck-error-list-set-filter                            "Filter")
   ("j"  flycheck-next-error                                       "Next")
@@ -163,7 +164,7 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defhydra hydra-indent (:color pink :hint nil)
   "
-_h_ unindent    _l_ indent    _i_ auto indent
+_h_ unindent    _l_ indent    _i_ auto indent    _q_uit
 "
   ("h" custom-unindent-region)
   ("l" custom-indent-region)
@@ -202,7 +203,7 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
  _g_lobal  _d_irectory    _i_nsert
  _m_inor   _f_ile         _t_ryout
  _e_xtra   _l_ist         _n_ew
-         _a_ll
+         _a_ll     _q_uit
 "
   ("d" yas-load-directory)
   ("e" yas-activate-extra-mode)
@@ -213,7 +214,8 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
   ("l" yas-describe-tables)
   ("g" yas/global-mode)
   ("m" yas/minor-mode)
-  ("a" yas-reload-all))
+  ("a" yas-reload-all)
+  ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Org agenda hydra

@@ -941,11 +941,12 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; load powerline
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package powerline)
-(use-package powerline-evil
+(use-package powerline
   :config
-  (powerline-evil-center-color-theme)
-  (setq-default powerline-default-separator (quote wave)))
+  (use-package powerline-evil
+    :config
+    (powerline-evil-center-color-theme)
+    (setq-default powerline-default-separator (quote wave))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Keep emacs Custom-settings in separate file
