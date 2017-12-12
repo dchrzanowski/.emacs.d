@@ -53,7 +53,7 @@ two curly braces, otherwise do a regular newline and indent"
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Indent/Unindent
 ;; -------------------------------------------------------------------------------------------------------------------------
-(defun my-indent-region (N)
+(defun custom-indent-region (N)
   "Move a region 4 spaces right (indent) N."
   (interactive "p")
   (if (use-region-p)
@@ -61,7 +61,7 @@ two curly braces, otherwise do a regular newline and indent"
              (setq deactivate-mark nil))
     (self-insert-command N)))
 
-(defun my-unindent-region (N)
+(defun custom-unindent-region (N)
   "Move a region 4 spaces left (unindent) N."
   (interactive "p")
   (if (use-region-p)
@@ -150,5 +150,66 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (delete-other-windows)
   (split-window-right))
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Window splitter helpers
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun hydra-move-splitter-left (arg)
+  "Move window splitter left."
+  (interactive "p")
+  (if (let ((windmove-wrap-around))
+        (windmove-find-other-window 'right))
+      (shrink-window-horizontally arg)
+    (enlarge-window-horizontally arg)))
+
+(defun hydra-move-splitter-right (arg)
+  "Move window splitter right."
+  (interactive "p")
+  (if (let ((windmove-wrap-around))
+        (windmove-find-other-window 'right))
+      (enlarge-window-horizontally arg)
+    (shrink-window-horizontally arg)))
+
+(defun hydra-move-splitter-up (arg)
+  "Move window splitter up."
+  (interactive "p")
+  (if (let ((windmove-wrap-around))
+        (windmove-find-other-window 'up))
+      (enlarge-window arg)
+    (shrink-window arg)))
+
+(defun hydra-move-splitter-down (arg)
+  "Move window splitter down."
+  (interactive "p")
+  (if (let ((windmove-wrap-around))
+        (windmove-find-other-window 'up))
+      (shrink-window arg)
+    (enlarge-window arg)))
+
+(defun window-split-into-3-columns ()
+  "Split the window into three columns."
+  (interactive)
+  (delete-other-windows)
+  (split-window-horizontally)
+  (split-window-horizontally)
+  (balance-windows))
+
+(defun window-split-into-2-columns-and-a-row ()
+  "Split the window into two columns and split the second column into two rows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-right)
+  (other-window 1)
+  (split-window-below)
+  (balance-windows))
+
+(defun window-split-into-4 ()
+  "Split the window into two columns and split the second column into two rows."
+  (interactive)
+  (delete-other-windows)
+  (split-window-right)
+  (split-window-below)
+  (other-window 2)
+  (split-window-below)
+  (balance-windows))
 (provide 'custom-functions)
 ;;; custom-functions ends here

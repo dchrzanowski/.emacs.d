@@ -344,33 +344,6 @@
 (use-package ace-window
   :defer t
   :init
-  (defun window-split-into-3-columns ()
-    "Split the window into three columns."
-    (interactive)
-    (delete-other-windows)
-    (split-window-horizontally)
-    (split-window-horizontally)
-    (balance-windows))
-
-  (defun window-split-into-2-columns-and-a-row ()
-    "Split the window into two columns and split the second column into two rows."
-    (interactive)
-    (delete-other-windows)
-    (split-window-right)
-    (other-window 1)
-    (split-window-below)
-    (balance-windows))
-
-  (defun window-split-into-4 ()
-    "Split the window into two columns and split the second column into two rows."
-    (interactive)
-    (delete-other-windows)
-    (split-window-right)
-    (split-window-below)
-    (other-window 2)
-    (split-window-below)
-    (balance-windows))
-
   (setq-default aw-dispatch-always t
                 aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
@@ -384,9 +357,6 @@
       (?r delete-other-windows " Ace - Maximize Window")
       (?o delete-other-windows)
       (?w kill-this-buffer)
-      (?3 window-split-into-3-columns)
-      (?2 window-split-into-2-columns-and-a-row)
-      (?4 window-split-into-4)
       "List of actions for `aw-dispatch-default'.")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -869,16 +839,16 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; beacon
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package beacon
-  :diminish beacon-mode
-  :config
-  (setq-default beacon-blink-delay nil
-                beacon-color '"#FF0000"
-                beacon-size 30
-                beacon-blink-duration 0.2
-                beacon-blink-when-point-moves-horizontally nil
-                beacon-blink-when-point-moves-vertically 2)
-  (beacon-mode t))
+;; (use-package beacon
+;;   :diminish beacon-mode
+;;   :config
+;;   (setq-default beacon-blink-delay nil
+;;                 beacon-color '"#FF0000"
+;;                 beacon-size 30
+;;                 beacon-blink-duration 0.2
+;;                 beacon-blink-when-point-moves-horizontally nil
+;;                 beacon-blink-when-point-moves-vertically 2)
+;;   (beacon-mode t))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; GDB

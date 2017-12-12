@@ -161,10 +161,6 @@
 (global-set-key (kbd "M-;") 'emmet-expand-line)
 (define-key emmet-mode-keymap (kbd "C-j") 'my-fancy-newline)
 
-;; indent and unindent
-(global-set-key (kbd "M->") 'my-indent-region)
-(global-set-key (kbd "M-<") 'my-unindent-region)
-
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -332,6 +328,7 @@
   "F" 'helm-find-files
   "M-f" 'helm-multi-swoop-all
   "s" (lambda() (interactive) (save-some-buffers t))
+  "t" 'hydra-rare-launcher/body
   "pp" 'helm-projectile-switch-project
   "pf" 'helm-projectile-find-file
   "pF" 'helm-projectile-find-file-in-known-projects
@@ -339,7 +336,7 @@
   "pk" 'projectile-kill-buffers
   "pa" 'helm-projectile-ag
   "D" 'dired
-  "d" 'ace-window
+  "d" 'hydra-window-operations/body
   "q" 'winner-undo
   "Q" 'winner-redo
   "M-q" 'clean-buffer-list
@@ -357,11 +354,12 @@
   "kr" 'comment-or-uncomment-region
   "kv" 'evilnc-toggle-invert-comment-line-by-line
   "x" 'helm-M-x
-  "w" 'helm-buffers-list
+  "w" 'helm-mini
   "W" 'whitespace-mode
   "b" 'helm-filtered-bookmarks
   "m" 'helm-all-mark-rings
-  "n" 'cleanup-buffer
+  "i" 'cleanup-buffer
+  "I" 'hydra-indent/body
   "r" 'helm-semantic-or-imenu
   "R" 'helm-imenu-anywhere
   "lo" 'dumb-jump-go-other-window
@@ -369,8 +367,6 @@
   "lx" 'dumb-jump-go-prefer-external
   "lz" 'dumb-jump-go-prefer-external-other-window
   "lq" 'dumb-jump-quick-look
-  "ir" 'webpaste-paste-region
-  "ib" 'webpaste-paste-buffer
   "y" 'helm-show-kill-ring
   "Y" 'helm-register
   "hg" 'helm-do-grep-ag
@@ -378,8 +374,6 @@
   "ha" 'helm-do-ag
   "hl" 'helm-locate
   "hw" 'helm-do-ag-buffers
-  "hc" 'zenity-cp-color-at-point-dwim
-  "hC" 'insert-color-hex
   "hd" 'helm-dash
   "gs" 'magit-status
   "gi" 'magit-init
@@ -387,26 +381,10 @@
   "gr" 'magit-list-repositories
   "gm" 'git-messenger:popup-message
   "gM" 'git-messenger:popup-show-verbose
-  "gt" 'git-timemachine-toggle
-  "gg" 'git-gutter-mode
-  "gn" 'git-gutter:next-hunk
-  "gp" 'git-gutter:previous-hunk
-  "tn" 'ahs-forward
-  "tp" 'ahs-backward
-  "te" 'ahs-edit-mode
-  "Tn" 'hl-todo-next
-  "Tp" 'hl-todo-previous
-  "To" 'hl-todo-occur
-  "on" 'flycheck-next-error
-  "op" 'flycheck-previous-error
-  "Bj" 'web-beautify-js
-  "Bc" 'web-beautify-css
-  "Bh" 'web-beautify-html
-  "<SPC>c" 'org-capture
-  "<SPC>a" 'org-agenda
-  "<SPC>b" 'org-iswitchb
-  "<SPC>d" 'dired-jump
-  "<SPC>p" 'pomidor
+  "oc" 'org-capture
+  "ol" 'org-store-link
+  "oa" 'hydra-org-agenda/body
+  "ob" 'org-iswitchb
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
@@ -463,10 +441,6 @@
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
-
-(define-key evil-normal-state-map (kbd "z") 'hydra-window-boss/body)
-;; hydras
-
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
