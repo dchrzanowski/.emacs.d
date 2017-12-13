@@ -146,11 +146,6 @@
 ;; text operation
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 
-;; expand region
-(global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "M-RET") 'er/expand-region)
-(global-set-key (kbd "C--") 'er/contract-region)
-
 ;; web mode custom binds
 (define-key web-mode-map (kbd "C-t") 'web-mode-tag-match)  ; grab and toggle tags
 (define-key web-mode-map (kbd "C-<down>") 'web-mode-element-next)
