@@ -11,9 +11,9 @@
                                           :hint nil)
   "
 _h_/_j_/_k_/_l_ movement    _w_/_r_/_f_ buffers/bookmarks/files    _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs
-_H_/_J_/_K_/_L_ resize      _b_/_v_/_2_/_3_/_4_ splits                 _u_/_U_ undo/redo
-
+_H_/_J_/_K_/_L_ resize      _b_/_v_/_s2_/_s3_/_s4_ splits              _u_/_U_ undo/redo                  _0_-_9_ worspaces
 _d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_ balance    _q_uit
+============================================================================================================================
 "
   ("h" windmove-left)
   ("l" windmove-right)
@@ -45,13 +45,23 @@ _d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_
   ("=" balance-windows)
   ("C-w" kill-this-buffer)
   ("f" helm-find-files)
-  ("2" window-split-into-2-columns-and-a-row)
-  ("3" window-split-into-3-columns)
-  ("4" window-split-into-4)
+  ("s2" window-split-into-2-columns-and-a-row)
+  ("s3" window-split-into-3-columns)
+  ("s4" window-split-into-4)
   ("d" ace-window :exit t)
   ("u" winner-undo)
   ("U" winner-redo)
   ("M-u" clean-buffer-list)
+  ("0" eyebrowse-switch-to-window-config-0)
+  ("1" eyebrowse-switch-to-window-config-1)
+  ("2" eyebrowse-switch-to-window-config-2)
+  ("3" eyebrowse-switch-to-window-config-3)
+  ("4" eyebrowse-switch-to-window-config-4)
+  ("5" eyebrowse-switch-to-window-config-5)
+  ("6" eyebrowse-switch-to-window-config-6)
+  ("7" eyebrowse-switch-to-window-config-7)
+  ("8" eyebrowse-switch-to-window-config-8)
+  ("9" eyebrowse-switch-to-window-config-9)
   ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -61,6 +71,7 @@ _d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_
   "
 _g_ git-gutter    _t_ git-timemachine    _a_ auto-highlight    _T_ todo    _e_ errors    p_o_midor
 _c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste region/buffer
+============================================================================================================================
 "
   ("g" hydra-git-gutter/body :exit t)
   ("t" git-timemachine-toggle :exit t)
