@@ -162,6 +162,7 @@
 (define-key emmet-mode-keymap (kbd "C-j") 'my-fancy-newline)
 
 ;; org-mode
+(define-key org-mode-map (kbd "C-l") 'ace-link-org)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
@@ -440,6 +441,9 @@
 (evil-leader/set-key-for-mode 'message-mode
   "w" 'helm-buffer-list
   "d" 'ace-window)
+
+(evil-leader/set-key-for-mode 'pomidor-mode
+  "<SPC>" 'pomidor-break)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

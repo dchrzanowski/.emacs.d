@@ -113,10 +113,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (defun my-keyboard-quit()
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
-  (progn
-    (evil-mc-make-and-goto-first-cursor)
-    (evil-normal-state)
-    (keyboard-quit)))
+  (when evil-mc-cursor-state
+    (evil-mc-make-and-goto-first-cursor))
+  (evil-normal-state)
+  (keyboard-quit))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; insert hex color
@@ -154,7 +154,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Window splitter helpers
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun hydra-move-splitter-left (arg)
-  "Move window splitter left."
+  "Move window splitter left.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
         (windmove-find-other-window 'right))
@@ -162,7 +162,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (enlarge-window-horizontally arg)))
 
 (defun hydra-move-splitter-right (arg)
-  "Move window splitter right."
+  "Move window splitter right.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
         (windmove-find-other-window 'right))
@@ -170,7 +170,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (shrink-window-horizontally arg)))
 
 (defun hydra-move-splitter-up (arg)
-  "Move window splitter up."
+  "Move window splitter up.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
         (windmove-find-other-window 'up))
@@ -178,7 +178,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (shrink-window arg)))
 
 (defun hydra-move-splitter-down (arg)
-  "Move window splitter down."
+  "Move window splitter down.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
         (windmove-find-other-window 'up))

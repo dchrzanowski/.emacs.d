@@ -360,6 +360,13 @@
       "List of actions for `aw-dispatch-default'.")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; ace link
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package ace-link
+  :config
+  (ace-link-setup-default))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; anzu settings
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package anzu
@@ -699,6 +706,7 @@
   (setq evil-leader/in-all-states nil
         evil-leader/no-prefix-mode-rx '("dired-mode"
                                         "org-agenda-mode"
+                                        "pomidor-mode"
                                         "magit-repolist-mode"))  ;; list of modes where leader is forced in emacs mode
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>"))
