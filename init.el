@@ -239,12 +239,13 @@
   (setq org-log-done t
         org-startup-folded t
         ;; org dirs
-        org-directory '("~/org")
-        org-default-notes-file "~/org/refile.org"
-        org-agenda-files '("~/org/projects/myLectures")
+        org-directory '("~/Google Drive/org")
+        org-default-notes-file "~/Google Drive/org/refile.org"
+        org-agenda-files '("~/Google Drive/org/projects/myLectures")
         ;; org keywords
         org-todo-keywords '((sequence "VERIFY(v)"
                                       "TODO(t)"
+                                      "NEXT(n)"
                                       "IN-PROGRESS(i)"
                                       "|"
                                       "DONE(d)"
@@ -253,7 +254,7 @@
         ;; org capture
         org-refile-targets (quote ((nil :maxlevel . 9) (org-agenda-files :maxlevel . 9)))
         org-refile-use-outline-path t
-        org-capture-templates (quote (("t" "todo" entry (file "~/org/refile.org") "* TODO %?")))
+        org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")))
         ;; org agenda
         org-agenda-span 'week)
 
@@ -807,6 +808,16 @@
         evil-snipe-smart-case t)
   (evil-snipe-mode)
   (evil-snipe-override-mode))
+
+(use-package evil-exchange
+  :after evil
+  :init
+  (evil-exchange-install))
+
+(use-package evil-numbers
+  :after evil)
+
+(use-package evil-ediff)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor

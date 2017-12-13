@@ -277,6 +277,12 @@
 (evil-define-key 'insert evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (global-set-key (kbd "C-S-<mouse-1>") 'evil-mc-toggle-cursor-on-click)
 
+;; evil numbers
+(define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
+(define-key evil-normal-state-map (kbd "<kp-add>") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "<kp-subtract>") 'evil-numbers/dec-at-pt)
+
 ;; evil-mode
 (global-set-key (kbd "<f2>") 'evil-mode)
 (evil-define-key 'normal quickrun--mode-map (kbd "q") 'quit-window)
