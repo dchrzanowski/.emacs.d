@@ -811,13 +811,19 @@
 
 (use-package evil-exchange
   :after evil
-  :init
+  :config
   (evil-exchange-install))
 
 (use-package evil-numbers
   :after evil)
 
 (use-package evil-ediff)
+
+(use-package evil-indent-plus
+  :config
+  (evil-indent-plus-default-bindings))
+
+(use-package exato)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pomidor
