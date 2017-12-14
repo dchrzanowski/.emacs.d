@@ -59,7 +59,7 @@ _d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
-_g_ git-gutter    _t_ git-timemachine    _a_ auto-highlight    _T_ todo    _e_ errors    p_o_midor
+_g_ git-gutter    _t_ git-timemachine    _a_ auto-highlight    _T_ todo    _e_ errors    p_o_midor    e_d_iff
 _c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste region/buffer
 "
   ("g" hydra-git-gutter/body :exit t)
@@ -74,6 +74,7 @@ _c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste 
   ("T" hydra-todo/body :exit t)
   ("b" hydra-beautify/body :exit t)
   ("o" pomidor :exit t)
+  ("d" hydra-ediff/body :exit t)
   ("q" nil :color blue))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
