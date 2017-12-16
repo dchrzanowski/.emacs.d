@@ -434,6 +434,9 @@
 (evil-leader/set-key-for-mode 'org-mode
   "cf" 'helm-org-rifle)
 
+(evil-leader/set-key-for-mode 'org-agenda-mode
+  "oa" 'hydra-org-agenda/body)
+
 (evil-leader/set-key-for-mode 'js2-mode
   "ci" 'js-doc-insert-function-doc-snippet
   "cc" 'tern-get-type
