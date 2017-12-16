@@ -77,6 +77,9 @@
      (:name "all mail" :query "*" :key "a")
      (:name "trash" :query "tag:trash" :key "b")
      (:name "stash" :query "tag:stash" :key "t"))))
+ '(org-agenda-files
+   (quote
+    ("/home/grimscythe/Google Drive/org/notes.org" "/home/grimscythe/Google Drive/org/projects/myLectures/myLectures.org" "/home/grimscythe/Google Drive/org/projects/myLectures/myLecturesScalePlan.org" "/home/grimscythe/Google Drive/org/Calendar.org" "/home/grimscythe/Google Drive/org/refile.org")))
  '(org-from-is-user-regexp nil)
  '(org-log-done t)
  '(org-src-fontify-natively t)
