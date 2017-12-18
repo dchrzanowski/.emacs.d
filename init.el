@@ -241,7 +241,8 @@
         ;; org dirs
         org-directory '("~/Google Drive/org")
         org-default-notes-file "~/Google Drive/org/refile.org"
-        org-agenda-files '("~/Google Drive/org/projects/myLectures")
+        org-agenda-files '("~/Google Drive/org/projects/myLectures"
+                           "~/Google Drive/org")
         ;; org keywords
         org-todo-keywords '((sequence "VERIFY(v)"
                                       "TODO(t)"
