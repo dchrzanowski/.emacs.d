@@ -257,7 +257,7 @@
         org-refile-use-outline-path t
         org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")))
         ;; org agenda
-        org-agenda-span 'week)
+        org-agenda-span 'month)
 
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
