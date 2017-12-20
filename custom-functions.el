@@ -142,6 +142,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (helm-select-nth-action 4))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; Org-agenda full screen
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun org-agenda-list-and-delete-other-windows ()
+  "Display org agenda in full window."
+  (interactive)
+  (org-agenda-list)
+  (delete-other-windows))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; Delete other windows and split right
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun delete-other-windows-and-split-right ()
@@ -211,5 +220,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (other-window 2)
   (split-window-below)
   (balance-windows))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

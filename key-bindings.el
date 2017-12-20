@@ -393,8 +393,8 @@
   "gM" 'git-messenger:popup-show-verbose
   "oc" 'org-capture
   "ol" 'org-store-link
-  "oa" 'org-agenda-list
-  "oA" 'org-agenda
+  "oA" 'org-agenda-list
+  "oa" 'org-agenda-list-and-delete-other-windows
   "ob" 'org-iswitchb
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
