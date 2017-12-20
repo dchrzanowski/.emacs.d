@@ -418,7 +418,8 @@
 (use-package helm-swoop
   :config
   (setq helm-swoop-split-with-multiple-windows t
-        helm-swoop-use-fuzzy-match nil))
+        helm-swoop-use-fuzzy-match nil
+        helm-swoop-pre-input-function (lambda () "")))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; helm-dash
