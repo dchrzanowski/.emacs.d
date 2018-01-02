@@ -385,6 +385,7 @@
   "hl" 'helm-locate
   "hw" 'helm-do-ag-buffers
   "hd" 'helm-dash
+  "hs" 'helm-system-packages
   "gs" 'magit-status
   "gi" 'magit-init
   "gl" 'magit-log-popup
