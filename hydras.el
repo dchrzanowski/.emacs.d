@@ -12,7 +12,7 @@
   "
 _h_/_j_/_k_/_l_ movement    _w_/_r_/_f_ buffers/bookmarks/files    _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs
 _H_/_J_/_K_/_L_ resize      _b_/_v_/_s2_/_s3_/_s4_ splits              _u_/_U_ undo/redo                  _0_-_9_ worspaces
-_d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_ balance    _q_uit
+_d_ ace    _C-w_ kill buffer    _i_/_I_ jump other    _M-u_ clean    _z_ swap    _=_ balance    _q_uit
 ============================================================================================================================
 "
   ("h" windmove-left)
@@ -24,6 +24,7 @@ _d_ ace    _C-w_ kill buffer    _i_ jump other    _M-u_ clean    _z_ swap    _=_
   ("J" (lambda () (interactive) (hydra-move-splitter-down 8)))
   ("K" (lambda () (interactive) (hydra-move-splitter-up 8)))
   ("i" (lambda () (interactive) (other-window 1)) :exit t)
+  ("I" aw-flip-window :exit t)
   ("n" tabbar-forward)
   ("p" tabbar-backward)
   ("b" split-window-vertically)
