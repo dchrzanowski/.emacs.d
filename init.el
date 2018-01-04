@@ -352,8 +352,7 @@
   (defvar aw-dispatch-alist
     '((?x aw-delete-window " Ace - Delete Window")
       (?u aw-delete-window " Ace - Delete Window")
-      (?s aw-swap-window " Ace - Swap Window")
-      (?i aw-flip-window)
+      (?i aw-flip-window " Ace - Swap Window")
       (?b aw-split-window-vert " Ace - Split Vert Window")
       (?v aw-split-window-horz " Ace - Split Horz Window")
       (?r delete-other-windows " Ace - Maximize Window")
