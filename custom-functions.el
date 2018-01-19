@@ -221,5 +221,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (split-window-below)
   (balance-windows))
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Org babel
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun my/fix-inline-images ()
+  "Used with GraphViz to autorefresh the inserted image."
+  (when org-inline-image-overlays
+    (org-redisplay-inline-images)))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: graphviz
+# key: graph
+# --
+#+BEGIN_SRC dot :file ${1:file_name}.png :cmdline -Kdot -Tpng
+$0
+#+END_SRC

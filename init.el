@@ -259,7 +259,18 @@
         ;; org agenda
         org-agenda-span 'month)
 
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  ;; org-babel setup
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (dot . t)))
+
+  (setq org-confirm-babel-evaluate nil)  ; don't confirm eval
+
+  (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)  ;autorefresh images after org-babel dot evaluations
+  ;; org bullets hook
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
 
 ;; org-helm-rifle
 (use-package helm-org-rifle
@@ -931,6 +942,11 @@
 (use-package notmuch
   :config
   (load-file '"~/.emacs.d/notmuch-settings.el"))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; graphviz
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package graphviz-dot-mode)
 
 ;;; Code:
 
