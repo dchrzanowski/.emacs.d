@@ -259,7 +259,18 @@
         ;; org agenda
         org-agenda-span 'month)
 
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  ;; org-babel setup
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (dot . t)))
+
+  (setq org-confirm-babel-evaluate nil)  ; don't confirm eval
+
+  (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)  ;autorefresh images after org-babel dot evaluations
+  ;; org bullets hook
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  )
 
 ;; org-helm-rifle
 (use-package helm-org-rifle
@@ -352,7 +363,7 @@
   (defvar aw-dispatch-alist
     '((?x aw-delete-window " Ace - Delete Window")
       (?u aw-delete-window " Ace - Delete Window")
-      (?i aw-swap-window " Ace - Swap Window")
+      (?i aw-flip-window " Ace - Swap Window")
       (?b aw-split-window-vert " Ace - Split Vert Window")
       (?v aw-split-window-horz " Ace - Split Horz Window")
       (?r delete-other-windows " Ace - Maximize Window")
@@ -931,6 +942,11 @@
 (use-package notmuch
   :config
   (load-file '"~/.emacs.d/notmuch-settings.el"))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; graphviz
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package graphviz-dot-mode)
 
 ;;; Code:
 

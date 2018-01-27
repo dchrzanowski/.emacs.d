@@ -92,7 +92,7 @@
 (add-hook 'csharp-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-omnisharp company-semantic company-dabbrev-code company-yasnippet)))))
+                 '((company-omnisharp)))))
 
 ;; fix for yasnippets
 (defun check-expansion ()

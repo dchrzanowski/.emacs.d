@@ -75,6 +75,7 @@
     (tags)
     (filename . "~/Google Drive/org/notes.org")
     (buffer-name . "notes.org")
+<<<<<<< HEAD
     (front-context-string . "** Ecma 2015, ES")
     (rear-context-string . "17-d23eddd83f5\n\n")
     (front-context-region-string)
@@ -83,6 +84,16 @@
     (time . #2=(23117 21103 917556 307000))
     (created . #2#)
     (position . 929))
+=======
+    (front-context-string . "** Xmind\n\n Agile")
+    (rear-context-string . "_features.html\n\n")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 0)
+    (time . #2=(23128 56251 613425 510000))
+    (created . #2#)
+    (position . 1020))
+>>>>>>> e78ddbd092817322586a06ccf723176ef627e282
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)
@@ -148,8 +159,8 @@
 #1=(#("Home" 0 4
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 22936 10291 338386 980000)
-    (visits . 0)
+    (time 23128 50712 258897 368000)
+    (visits . 1)
     (filename . "/home/grimscythe")
     (position . 1)
     (created 22832 28455 797470 230000))

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Damian Chrzanowski
+# name: arrow
+# key: ar
+# --
+${1:From} -> ${2:To};$0
