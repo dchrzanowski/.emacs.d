@@ -319,16 +319,14 @@
   :defer t
   :config
   ;; override the neo's default function which is buggy when opening helm
-  ;; TODO Fix refreshing when in neo-tree window
   (defun neo-global--do-autorefresh ()
     "Do auto refresh."
     (interactive)
-    (when (neo-global--window-exists-p)
-      (progn
-        (let ((cw (selected-window)))
+    (let ((cw (selected-window)))
+      (when (and (not (eq cw neo-global--window)) (neo-global--window-exists-p))
+        (progn
           (neotree-find)
-          (select-window cw)
-          ))))
+          (select-window cw)))))
 
   (setq neo-theme 'icons
         neo-smart-open t
