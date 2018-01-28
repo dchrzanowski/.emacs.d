@@ -255,7 +255,9 @@
         ;; org capture
         org-refile-targets (quote ((nil :maxlevel . 9) (org-agenda-files :maxlevel . 9)))
         org-refile-use-outline-path t
-        org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")))
+        org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")
+                                      ("c" "calfw2org" entry (file "~/Google Drive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")
+                                      ))
         ;; org agenda
         org-agenda-span 'month)
 
@@ -727,7 +729,8 @@
         evil-leader/no-prefix-mode-rx '("dired-mode"
                                         "org-agenda-mode"
                                         "pomidor-mode"
-                                        "magit-repolist-mode"))  ;; list of modes where leader is forced in emacs mode
+                                        "magit-repolist-mode"
+                                        "cfw:calendar-mode"))  ;; list of modes where leader is forced in emacs mode
   (global-evil-leader-mode)
   (evil-leader/set-leader "<SPC>"))
 
@@ -756,6 +759,7 @@
   (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-repolist-mode)
   (add-to-list 'evil-emacs-state-modes 'org-brain-visualize-mode)
+  (add-to-list 'evil-emacs-state-modes 'cfw:details-mode)
 
   ;; force evil in modes
   (add-to-list 'evil-normal-state-modes 'notmuch-hello-mode)
@@ -958,6 +962,15 @@
 ;; graphviz
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package graphviz-dot-mode)
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; calfw
+;; -------------------------------------------------------------------------------------------------------------------------
+(use-package calfw
+  :config
+  (use-package calfw-org
+    :config
+    (setq cfw:org-capture-template '("c" "calfw2org" entry (file nil)  "* %?\n %(cfw:org-capture-day)"))))
 
 ;;; Code:
 

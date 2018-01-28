@@ -158,6 +158,10 @@
 (global-set-key (kbd "M-;") 'emmet-expand-line)
 (define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent-inside-of-brakcet)
 
+;; calfw
+(define-key cfw:calendar-mode-map (kbd "<SPC>") 'nil)
+(define-key cfw:calendar-mode-map (kbd "o") 'cfw:show-details-command)
+
 ;; org-mode
 (define-key org-mode-map (kbd "C-l") 'ace-link-org)
 (global-set-key (kbd "C-c l") 'org-store-link)
@@ -178,9 +182,7 @@
             (define-key org-agenda-mode-map (kbd "C-k") 'scroll-down-command)
             (define-key org-agenda-mode-map (kbd "C-j") 'scroll-up-command)
             (define-key org-agenda-mode-map (kbd "h") 'hydra-org-agenda/body)
-            (define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view))
-
-          )
+            (define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view)))
 
 ;; move text up and down
 (global-set-key (kbd "M-<up>") 'drag-stuff-up)
@@ -400,6 +402,7 @@
   "oA" 'org-agenda-list
   "oa" 'org-agenda-list-and-delete-other-windows
   "ob" 'org-iswitchb
+  "ok" 'cfw:open-org-calendar
   "'" 'eyebrowse-last-window-config
   "0" 'eyebrowse-switch-to-window-config-0
   "1" 'eyebrowse-switch-to-window-config-1
