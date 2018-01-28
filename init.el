@@ -820,15 +820,15 @@
   :config
   (evil-lion-mode))
 
-(use-package evil-goggles
-  :config
-  (setq evil-goggles-duration 0.050)
-  ;; (evil-goggles-mode)
-  (custom-set-faces
-   '(evil-goggles-default-face ((t (:inherit 'bmkp-no-local))))
-   '(evil-goggles-delete-face ((t (:inherit 'bmkp-su-or-sudo))))
-   '(evil-goggles-paste-face ((t (:inherit 'bmkp-sequence))))
-   '(evil-goggles-yank-face ((t (:inherit 'bmkp-non-file))))))
+;; (use-package evil-goggles
+;;   :config
+;;   (setq evil-goggles-duration 0.050)
+;;   (evil-goggles-mode)
+;;   (custom-set-faces
+;;    '(evil-goggles-default-face ((t (:inherit 'bmkp-no-local))))
+;;    '(evil-goggles-delete-face ((t (:inherit 'bmkp-su-or-sudo))))
+;;    '(evil-goggles-paste-face ((t (:inherit 'bmkp-sequence))))
+;;    '(evil-goggles-yank-face ((t (:inherit 'bmkp-non-file))))))
 
 (use-package evil-nerd-commenter
   :defer t)
