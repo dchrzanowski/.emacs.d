@@ -94,6 +94,14 @@
             (set (make-local-variable 'company-backends)
                  '((company-omnisharp)))))
 
+;; ------------------------------------------------------------------------------------------------
+;; NXML
+;; ------------------------------------------------------------------------------------------------
+(add-hook 'nxml-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '((company-nxml company-dabbrev-code)))))
+
 ;; fix for yasnippets
 (defun check-expansion ()
   (save-excursion

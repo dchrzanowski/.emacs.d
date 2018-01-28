@@ -156,7 +156,7 @@
 ;; emmet-mode
 (define-key web-mode-map (kbd "M-;") 'emmet-expand-line)
 (global-set-key (kbd "M-;") 'emmet-expand-line)
-(define-key emmet-mode-keymap (kbd "C-j") 'my-fancy-newline)
+(define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent-inside-of-brakcet)
 
 ;; org-mode
 (define-key org-mode-map (kbd "C-l") 'ace-link-org)
@@ -181,9 +181,6 @@
             (define-key org-agenda-mode-map (kbd "M") 'org-agenda-month-view))
 
           )
-
-;; Comment/uncomment block
-(global-set-key (kbd "C-;") 'dired-jump)
 
 ;; move text up and down
 (global-set-key (kbd "M-<up>") 'drag-stuff-up)
@@ -236,7 +233,7 @@
 ;; evilify company mode
 (define-key company-active-map (kbd "M-j") 'company-select-next)
 (define-key company-active-map (kbd "M-k") 'company-select-previous)
-(define-key company-active-map [escape] 'my-keyboard-quit)
+(define-key company-active-map [escape] 'keyboard-quit-and-remove-evil-mc)
 
 ;; evilify dired
 (define-key dired-mode-map (kbd "TAB") 'other-window)
@@ -264,8 +261,13 @@
 (define-key dired-mode-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
 (define-key global-map (kbd "C-<right>") 'delete-other-windows-and-split-right)
 
-;; better new line form inside of a bracket
-(global-set-key (kbd "C-j") 'my-fancy-newline)
+;; dired jump
+(global-set-key (kbd "C-;") 'dired-jump)
+;; dired sort
+(define-key dired-mode-map (kbd "s") 'xah-dired-sort)
+
+;; better new line from inside of a bracket
+(global-set-key (kbd "C-j") 'newline-and-indent-inside-of-brakcet)
 
 ;; eyebrowse
 (evil-define-key 'normal eyebrowse-mode-map (kbd "gt") 'eyebrowse-next-window-config)
@@ -281,6 +283,7 @@
 (evil-define-key 'visual evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (evil-define-key 'insert evil-mc-key-map (kbd "C-p") 'evil-paste-pop-next)
 (global-set-key (kbd "C-S-<mouse-1>") 'evil-mc-toggle-cursor-on-click)
+(evil-define-key 'normal helm-multi-swoop-edit-map (kbd "C-n") 'evil-mc-make-and-goto-next-match)
 
 ;; evil numbers
 (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
@@ -313,8 +316,8 @@
 (define-key evil-normal-state-map (kbd "SPC h") help-map)
 
 ;; esc anything
-(define-key evil-normal-state-map [escape] 'my-keyboard-quit)
-(define-key evil-visual-state-map [escape] 'my-keyboard-quit)
+(define-key evil-normal-state-map [escape] 'keyboard-quit-and-remove-evil-mc)
+(define-key evil-visual-state-map [escape] 'keyboard-quit-and-remove-evil-mc)
 (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)

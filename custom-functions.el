@@ -6,7 +6,7 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Cool new line maker  (makes a proper enter and indent)
 ;; ------------------------------------------------------------------------------------------------------------------------
-(defun my-fancy-newline ()
+(defun newline-and-indent-inside-of-brakcet ()
   "Add two newlines and put the cursor at the right indentation.
 Between them if a newline is attempted when the cursor is between
 two curly braces, otherwise do a regular newline and indent"
@@ -110,7 +110,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; custom keyboard quite to assits with evil as well
 ;; -------------------------------------------------------------------------------------------------------------------------
-(defun my-keyboard-quit()
+(defun keyboard-quit-and-remove-evil-mc ()
   "Removes the evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
   (when evil-mc-cursor-state
@@ -132,14 +132,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
                 (with-current-buffer ,buf
                   (insert (apply 'color-rgb-to-hex
                                  (color-name-to-rgb name))))))))
-
-;; -------------------------------------------------------------------------------------------------------------------------
-;; Launch dired from file under point
-;; -------------------------------------------------------------------------------------------------------------------------
-(defun helm-ff-open-dired-at-point ()
-  "Launch dired from file unde point."
-  (interactive)
-  (helm-select-nth-action 4))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Org-agenda full screen
@@ -224,10 +216,22 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Org babel
 ;; -------------------------------------------------------------------------------------------------------------------------
-(defun my/fix-inline-images ()
+(defun auto-refresh-inline-images ()
   "Used with GraphViz to autorefresh the inserted image."
   (when org-inline-image-overlays
     (org-redisplay-inline-images)))
+
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Only fundamental-mode in big files
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun fundamental-mode-in-big-files ()
+  "If a file is over a given size, make the buffer read only."
+  (when (> (buffer-size) (* 1024 1024))
+    (setq buffer-read-only t)
+    (buffer-disable-undo)
+    (fundamental-mode)))
+
+(add-hook 'find-file-hook 'fundamental-mode-in-big-files)
 
 (provide 'custom-functions)
 ;;; custom-functions ends here

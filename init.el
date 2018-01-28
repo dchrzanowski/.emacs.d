@@ -267,10 +267,9 @@
 
   (setq org-confirm-babel-evaluate nil)  ; don't confirm eval
 
-  (add-hook 'org-babel-after-execute-hook 'my/fix-inline-images)  ;autorefresh images after org-babel dot evaluations
+  (add-hook 'org-babel-after-execute-hook 'auto-refresh-inline-images)  ;autorefresh images after org-babel dot evaluations
   ;; org bullets hook
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  )
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; org-helm-rifle
 (use-package helm-org-rifle
@@ -279,8 +278,16 @@
 ;; org-brain
 (use-package org-brain
   :defer t
+  :init
+  (setq org-brain-path "~/Google Drive/org/")
   :config
-  (setq org-brain-path "/home/grimscythe/org/brain/"))
+  (setq org-id-track-globally t)
+  (setq org-id-locations-file "~/Google Drive/org/.org-id-locations")
+  (push '("b" "Brain" plain (function org-brain-goto-end)
+          "* %i%?" :empty-lines 1)
+        org-capture-templates)
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-title-max-length 12))
 
 ;; org-export to github markdown
 (use-package ox-gfm
@@ -748,10 +755,14 @@
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-repolist-mode)
+  (add-to-list 'evil-emacs-state-modes 'org-brain-visualize-mode)
+
   ;; force evil in modes
   (add-to-list 'evil-normal-state-modes 'notmuch-hello-mode)
   (add-to-list 'evil-normal-state-modes 'notmuch-search-mode)
   (add-to-list 'evil-normal-state-modes 'notmuch-show-mode)
+
+  (add-to-list 'evil-normal-state-modes 'fundamental-mode)
 
   (eval-after-load 'git-timemachine
     '(progn
@@ -808,7 +819,7 @@
 (use-package evil-goggles
   :config
   (setq evil-goggles-duration 0.050)
-  (evil-goggles-mode)
+  ;; (evil-goggles-mode)
   (custom-set-faces
    '(evil-goggles-default-face ((t (:inherit 'bmkp-no-local))))
    '(evil-goggles-delete-face ((t (:inherit 'bmkp-su-or-sudo))))
