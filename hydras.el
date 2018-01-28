@@ -7,8 +7,7 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Window operations hydra
 ;; -------------------------------------------------------------------------------------------------------------------------
-(defhydra hydra-window-operations (:color pink
-                                          :hint nil)
+(defhydra hydra-window-operations (:color pink :hint nil)
   "
 _h_/_j_/_k_/_l_ movement    _w_/_r_/_f_/_F_ buffers/bookmarks/files    _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs
 _H_/_J_/_K_/_L_ resize      _b_/_v_/_s2_/_s3_/_s4_ splits                _u_/_U_ undo/redo                  _0_-_9_ worspaces
@@ -349,9 +348,9 @@ _vr_ reset      ^^                       ^^                 ^^
 (defun hot-expand (str &optional mod header)
   "Expand org template.
 
-STR is a structure template string recognised by org like <s. MOD is a
+STR is a structure template string recognised by org like <s.  MOD is a
 string with additional parameters to add the begin line of the
-structure element. HEADER string includes more parameters that are
+structure element.  HEADER string includes more parameters that are
 prepended to the element after the #+HEADER: tag."
   (let (text)
     (when (region-active-p)

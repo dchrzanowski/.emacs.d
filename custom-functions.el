@@ -214,6 +214,16 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (balance-windows))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
+;; Hydra keyboard timeout function
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun hydra-quit-after (seconds)
+  "Hydra keyboard quit after SECONDS."
+  (let ((timer (timer-create)))
+    (timer-set-time timer (timer-relative-time (current-time) seconds))
+    (timer-set-function timer 'hydra-keyboard-quit)
+    (timer-activate timer)))
+
+;; -------------------------------------------------------------------------------------------------------------------------
 ;; Org babel
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun auto-refresh-inline-images ()

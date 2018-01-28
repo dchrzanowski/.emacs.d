@@ -80,12 +80,6 @@
     (buffer-name . "notes.org")
     (front-context-string . "** Glances on a ")
     (rear-context-string . "ing-tools.html\n\n")
-    (front-context-region-string)
-    (rear-context-region-string)
-    (visits . 0)
-    (time . #2=(23148 48372 834867 115000))
-    (created . #2#)
-    (position . 2057))
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)
