@@ -313,6 +313,7 @@
   :defer t
   :config
   ;; override the neo's default function which is buggy when opening helm
+  ;; TODO Fix refreshing when in neo-tree window
   (defun neo-global--do-autorefresh ()
     "Do auto refresh."
     (interactive)
