@@ -48,6 +48,12 @@
       kept-old-versions 5    ; and how many of the old
       )
 
+;; holidays disabled
+(setq holiday-bahai-holidays nil
+      holiday-hebrew-holidays nil
+      holiday-islamic-holidays nil
+      holiday-oriental-holidays nil)
+
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; personal data
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -971,12 +977,28 @@
   :config
   (use-package calfw-org
     :config
-    (setq cfw:org-capture-template '("c" "calfw2org" entry (file nil)  "* %?\n %(cfw:org-capture-day)"))))
+    (setq cfw:org-capture-template '("c" "calfw2org" entry (file nil)  "* %?\n %(cfw:org-capture-day)")))
+
+  (setq calendar-week-start-day 1
+        cfw:display-calendar-holidays t
+        cfw:fchar-junction ?╋
+        cfw:fchar-vertical-line ?┃
+        cfw:fchar-horizontal-line ?━
+        cfw:fchar-left-junction ?┣
+        cfw:fchar-right-junction ?┫
+        cfw:fchar-top-junction ?┯
+        cfw:fchar-top-left-corner ?┏
+        cfw:fchar-top-right-corner ?┓)
+
+  (custom-set-faces
+   '(cfw:face-toolbar-button-off ((t (:foreground "gray70"))))
+   '(cfw:face-toolbar-button-on ((t (:foreground "white" :weight bold))))
+   '(cfw:face-toolbar ((t (:foreground nil :background nil))))))
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; pdf-tools
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package pdf-tools)("c" "calfw2org" entry (file nil)  "* %?\n %(cfw:org-capture-day)")
+(use-package pdf-tools)
 ;;; Code:
 
 ;; -------------------------------------------------------------------------------------------------------------------------
