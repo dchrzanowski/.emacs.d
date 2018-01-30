@@ -243,5 +243,24 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (add-hook 'find-file-hook 'fundamental-mode-in-big-files)
 
+;; -------------------------------------------------------------------------------------------------------------------------
+;; Sacha's defun insert defun
+;; -------------------------------------------------------------------------------------------------------------------------
+(defun org-insert-defun-code (function)
+  "Insert an Org source block with the definition for FUNCTION."
+  (interactive (find-function-read))
+  (let* ((buffer-point (condition-case nil (find-definition-noselect function nil) (error nil)))
+         (new-buf (car buffer-point))
+         (new-point (cdr buffer-point))
+         definition)
+    (if buffer-point
+        (with-current-buffer new-buf ;; Try to get original definition
+          (save-excursion
+            (goto-char new-point)
+            (setq definition (buffer-substring-no-properties (point) (save-excursion (end-of-defun) (point))))))
+      ;; Fallback: Print function definition
+      (setq definition (concat (prin1-to-string (symbol-function function)) "\n")))
+    (insert "#+begin_src emacs-lisp\n" definition "#+end_src\n")))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here
