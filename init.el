@@ -54,6 +54,8 @@
       holiday-islamic-holidays nil
       holiday-oriental-holidays nil)
 
+;; initial height and width
+;; (setq default-frame-alist '((width . 140) (height . 40)))
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; personal data
 ;; -------------------------------------------------------------------------------------------------------------------------
@@ -192,6 +194,8 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package elpy
   :defer 2
+  :init
+  (use-package jedi)
   :config
   (progn
     ;; Use Flycheck instead of Flymake
