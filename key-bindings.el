@@ -49,6 +49,9 @@
 ;; notmuch
 (global-set-key [f10] 'notmuch)
 
+;; smartparens
+(define-key global-map (kbd "M-S") 'sp-split-sexp)
+
 (evil-define-key 'normal notmuch-hello-mode-map (kbd "h") 'widget-backward)
 (evil-define-key 'normal notmuch-hello-mode-map (kbd "l") 'widget-forward)
 (evil-define-key 'normal notmuch-hello-mode-map (kbd "f") 'notmuch-jump-search)
