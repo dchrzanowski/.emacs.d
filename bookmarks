@@ -21,8 +21,11 @@
     (defaults "(eintr) Parts of let Expression" "eintr" #2#))
 #1=(#("Documents" 0 9
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 23162 2708 709201 849000)
+    (visits . 0)
     (filename . "/home/grimscythe/Documents")
-    (position . 0)
+    (position . 1)
     (created 22999 58714 850523 563000))
 #1=(#("notmuch-settings.el" 0 19
       (bmkp-full-record #1#))
