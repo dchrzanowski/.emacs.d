@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ele
+# key: ele
+# --
+<!ELEMENT $1>$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: att
+# key: att
+# --
+<!ATTLIST ${1:element} ${2:attrName} ${3:value}>$0
