@@ -236,7 +236,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; -------------------------------------------------------------------------------------------------------------------------
 (defun fundamental-mode-in-big-files ()
   "If a file is over a given size, make the buffer read only."
-  (when (> (buffer-size) (* 1024 1024))
+  (when (> (buffer-size) (* 1024 10024))
     (setq buffer-read-only t)
     (buffer-disable-undo)
     (fundamental-mode)))
