@@ -9,7 +9,7 @@
 
 (use-package notmuch
   :defer t
-  :bind ("f10" . 'notmuch)
+  :bind ("<f10>" . 'notmuch)
   :config
   (require 'notmuch-settings-setup)
 

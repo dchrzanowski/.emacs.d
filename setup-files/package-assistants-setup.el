@@ -9,5 +9,5 @@
 ;; --------------------------------------------------------------------
 (use-package paradox)
 
-(provide 'package-assistant-setup)
+(provide 'package-assistants-setup)
 ;;; package-assistant-setup ends here
