@@ -53,7 +53,7 @@
 (define-key global-map (kbd "M-S") 'sp-split-sexp)
 
 ;; arc-mode
-(define-key archive-mode-map (kbd "F") #'archive-extract-marked-to-file)
+;;(define-key archive-mode-map (kbd "F") #'archive-extract-marked-to-file)
 
 (evil-define-key 'normal notmuch-hello-mode-map (kbd "h") 'widget-backward)
 (evil-define-key 'normal notmuch-hello-mode-map (kbd "l") 'widget-forward)

@@ -688,17 +688,17 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; Java mode hooks and eclim
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package eclim
-  :init
-  (require 'eclimd)
-  :config
-  (defun my-java-mode-hook()
-    (eclim-mode t)
-    (hl-todo-mode)
-    (setq-default help-at-pt-display-when-idle t
-                  help-at-pt-timer-delay 0.1)
-    (help-at-pt-set-timer))
-  (add-hook 'java-mode-hook 'my-java-mode-hook))
+;; (use-package eclim
+;;   :init
+;;   (require 'eclimd)
+;;   :config
+;;   (defun my-java-mode-hook()
+;;     (eclim-mode t)
+;;     (hl-todo-mode)
+;;     (setq-default help-at-pt-display-when-idle t
+;;                   help-at-pt-timer-delay 0.1)
+;;     (help-at-pt-set-timer))
+;;   (add-hook 'java-mode-hook 'my-java-mode-hook))
 
 ;; (use-package meghanada
 ;;   :config
@@ -731,11 +731,13 @@
 ;; God mode and evil god-state
 ;; -------------------------------------------------------------------------------------------------------------------------
 (use-package god-mode
+  :defer 15
   :config
   (setq god-exempt-major-modes nil
         god-exempt-predicates nil))
 
-(use-package evil-god-state)
+(use-package evil-god-state
+  :defer 20)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; EVIL MODE
@@ -814,6 +816,7 @@
   :after evil)
 
 (use-package evil-magit
+  :defer 10
   :after evil)
 
 (use-package evil-org
@@ -970,7 +973,8 @@
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; graphviz
 ;; -------------------------------------------------------------------------------------------------------------------------
-(use-package graphviz-dot-mode)
+(use-package graphviz-dot-mode
+  :defer 10)
 
 ;; -------------------------------------------------------------------------------------------------------------------------
 ;; calfw
