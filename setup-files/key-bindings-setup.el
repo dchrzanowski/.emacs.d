@@ -1,11 +1,11 @@
 ;;; package -- Summary
 ;;; Commentary:
-;; -------------------------------------------------------------------------------------------------------------------------
+;; --------------------------------------------------------------------
 ;;; Code:
-;; -------------------------------------------------------------------------------------------------------------------------
-;; -------------------------------------------------------------------------------------------------------------------------
+;; --------------------------------------------------------------------
+;; --------------------------------------------------------------------
 ;; key binds / shortcuts
-;; -------------------------------------------------------------------------------------------------------------------------
+;; --------------------------------------------------------------------
 
 ;; minibuffer allow to paste in the Evil register way
 (define-key minibuffer-local-map (kbd "C-r") 'evil-paste-from-register)
@@ -46,27 +46,11 @@
 ;; pomidor
 (global-set-key [f7] 'pomidor)
 
-;; notmuch
-(global-set-key [f10] 'notmuch)
-
 ;; smartparens
 (define-key global-map (kbd "M-S") 'sp-split-sexp)
 
 ;; arc-mode
 ;;(define-key archive-mode-map (kbd "F") #'archive-extract-marked-to-file)
-
-(evil-define-key 'normal notmuch-hello-mode-map (kbd "h") 'widget-backward)
-(evil-define-key 'normal notmuch-hello-mode-map (kbd "l") 'widget-forward)
-(evil-define-key 'normal notmuch-hello-mode-map (kbd "f") 'notmuch-jump-search)
-(evil-define-key 'normal notmuch-hello-mode-map (kbd "q") 'notmuch-bury-or-kill-this-buffer)
-(evil-define-key 'normal notmuch-hello-mode-map (kbd "RET") 'widget-button-press)
-
-(evil-define-key 'normal notmuch-search-mode-map (kbd "l") 'notmuch-search-show-thread)
-(evil-define-key 'normal notmuch-search-mode-map (kbd "h") 'notmuch-bury-or-kill-this-buffer)
-(evil-define-key 'normal notmuch-search-mode-map (kbd "f") 'notmuch-jump-search)
-
-(evil-define-key 'normal notmuch-show-mode-map (kbd "h") 'notmuch-bury-or-kill-this-buffer)
-(evil-define-key 'normal notmuch-show-mode-map (kbd "f") 'notmuch-jump-search)
 
 ;; packages
 (global-set-key (kbd "M-[") 'package-install)
@@ -472,5 +456,5 @@
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
 
-(provide 'key-bindings)
-;;; key-bindings.el ends here
+(provide 'key-bindings-setup)
+;;; key-bindings-setup.el ends here
