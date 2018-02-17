@@ -93,7 +93,7 @@
   :after evil)
 
 (use-package evil-magit
-  :defer 10
+  :defer 3
   :after evil)
 
 (use-package evil-org
