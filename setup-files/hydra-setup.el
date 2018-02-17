@@ -84,7 +84,7 @@ _c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste 
   ("p" webpaste-paste-region :exit t)
   ("P" webpaste-paste-buffer :exit t)
   ("c" zenity-cp-color-at-point-dwim :exit t)
-  ("C" inder-color-hex :exit t)
+  ("C" insert-color-hex :exit t)
   ("a" hydra-auto-highlight/body :exit t)
   ("e" hydra-flycheck/body :exit t)
   ("E" hydra-ediff/body :exit t)
@@ -378,6 +378,37 @@ prepended to the element after the #+HEADER: tag."
   '(cl-pushnew
     '("not" "#+BEGIN_NOTES\n?\n#+END_NOTES")
     org-structure-template-alist))
+
+;; --------------------------------------------------------------------
+;; Smerge hydra
+;; --------------------------------------------------------------------
+(defhydra hydra-smerge
+  (:color red :hint nil
+          :pre (smerge-mode 1))
+  "
+^Move^ ^Keep^ ^Diff^ ^Pair^
+------------------------------------------------------
+_n_ext _b_ase _R_efine _<_: base-mine
+_p_rev _m_ine _E_diff _=_: mine-other
+^ ^ _o_ther _C_ombine _>_: base-other
+^ ^ _a_ll _r_esolve
+_q_uit _RET_: current
+"
+  ("RET" smerge-keep-current)
+  ("C" smerge-combine-with-next)
+  ("E" smerge-ediff)
+  ("R" smerge-refine)
+  ("a" smerge-keep-all)
+  ("b" smerge-keep-base)
+  ("m" smerge-keep-mine)
+  ("n" smerge-next)
+  ("o" smerge-keep-other)
+  ("p" smerge-prev)
+  ("r" smerge-resolve)
+  ("<" smerge-diff-base-mine)
+  ("=" smerge-diff-mine-other)
+  (">" smerge-diff-base-other)
+  ("q" nil :color blue))
 
 (provide 'hydra-setup)
 ;;; hydra-setup.el ends here

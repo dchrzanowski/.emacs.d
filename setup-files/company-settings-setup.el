@@ -30,10 +30,6 @@
   :config
   (require 'company-web-html))
 
-;; (use-package company-emacs-eclim
-;;   :config
-;;   (setq company-emacs-eclim-ignore-case nil))
-
 (use-package company-jedi)
 
 (use-package company-tern)
@@ -41,6 +37,11 @@
 (use-package company-quickhelp
   :config
   (company-quickhelp-mode 1))
+
+(use-package company-statistics
+  :defer 2
+  :config
+  (company-statistics-mode))
 
 ;; --------------------------------------------------------------------
 ;; ORG

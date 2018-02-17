@@ -146,7 +146,11 @@
 ;; emmet-mode
 (define-key web-mode-map (kbd "M-;") 'emmet-expand-line)
 (global-set-key (kbd "M-;") 'emmet-expand-line)
-(define-key emmet-mode-keymap (kbd "C-j") 'newline-and-indent-inside-of-brakcet)
+(define-key emmet-mode-keymap (kbd "C-j") 'grim/newline-and-indent-inside-of-bracket)
+
+;; indent/unindent
+(global-set-key (kbd "M->") 'custom-indent-region)
+(global-set-key (kbd "M-<") 'custom-unindent-region)
 
 ;; calfw
 (define-key cfw:calendar-mode-map (kbd "<SPC>") 'nil)
@@ -259,7 +263,7 @@
 (define-key dired-mode-map (kbd "s") 'xah-dired-sort)
 
 ;; better new line from inside of a bracket
-(global-set-key (kbd "C-j") 'newline-and-indent-inside-of-brakcet)
+(global-set-key (kbd "C-j") 'grim/newline-and-indent-inside-of-bracket)
 
 ;; eyebrowse
 (evil-define-key 'normal eyebrowse-mode-map (kbd "gt") 'eyebrowse-next-window-config)
@@ -387,6 +391,7 @@
   "gr" 'magit-list-repositories
   "gm" 'git-messenger:popup-message
   "gM" 'git-messenger:popup-show-verbose
+  "gc" 'hydra-smerge/body
   "oc" 'org-capture
   "ol" 'org-store-link
   "oA" 'org-agenda-list

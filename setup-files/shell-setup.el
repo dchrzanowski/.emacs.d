@@ -7,6 +7,16 @@
 ;; --------------------------------------------------------------------
 ;; shell pop
 ;; --------------------------------------------------------------------
+(use-package eshell
+  :config
+
+  (add-hook 'eshell-mode-hook
+            (lambda ()
+              (bind-keys
+               :map eshell-mode-map
+               ("<tab>" . completion-at-point)
+               ("C-c M-o" . eshell-clear-buffer)))))
+
 (use-package shell-pop
   :defer t
   :config
