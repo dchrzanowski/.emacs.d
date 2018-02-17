@@ -30,6 +30,7 @@
 ;; diminish and bind-key for use-package extra awesomeness
 (use-package diminish)
 (use-package bind-key)
+(use-package general)
 
 ;; --------------------------------------------------------------------
 ;; setup directories
