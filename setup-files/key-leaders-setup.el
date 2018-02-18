@@ -7,8 +7,11 @@
 ;; --------------------------------------------------------------------
 ;; general leader
 ;; --------------------------------------------------------------------
+(general-define-key :states 'motion
+                    "SPC" 'nil)
+
 (general-define-key
- :states '(normal visual emacs)
+ :states '(normal visual motion emacs)
  :prefix "SPC"
  ;; show filename
  "`" 'show-file-name
@@ -31,6 +34,11 @@
  "hw" 'helm-do-ag-buffers
  "hd" 'helm-dash
  "hs" 'helm-system-packages
+ ;; help
+ "hv" 'describe-variable
+ "hf" 'describe-function
+ "hm" 'describe-mode
+ "hk" 'describe-key
  ;; projectile
  "pp" 'helm-projectile-switch-project
  "pf" 'helm-projectile-find-file
@@ -91,6 +99,7 @@
  "oa" 'org-agenda-list-and-delete-other-windows
  "ob" 'org-iswitchb
  "ok" 'cfw:open-org-calendar
+ "oK" 'calendar
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0

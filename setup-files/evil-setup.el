@@ -19,18 +19,9 @@
 ;; --------------------------------------------------------------------
 ;; EVIL MODE
 ;; --------------------------------------------------------------------
-;; (use-package evil-leader
-;;   :config
-;;   (setq evil-leader/in-all-states nil
-;;         evil-leader/no-prefix-mode-rx '("dired-mode"
-;;                                         "org-agenda-mode"
-;;                                         "pomidor-mode"
-;;                                         "magit-repolist-mode"
-;;                                         "cfw:calendar-mode"))  ;; list of modes where leader is forced in emacs mode
-;;   (global-evil-leader-mode)
-;;   (evil-leader/set-leader "<SPC>"))
-
 (use-package evil
+  :init
+  (setq evil-want-integration nil)
   ;; :after evil-leader
   :config
   (evil-mode 1)
@@ -48,26 +39,18 @@
   (evil-put-property 'evil-state-properties 'god      :tag " GOD-MODE ")
 
   ;; force emacs state in
-  (add-to-list 'evil-emacs-state-modes 'dired-mode)
-  ;; (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-repolist-mode)
   (add-to-list 'evil-emacs-state-modes 'org-brain-visualize-mode)
   (add-to-list 'evil-emacs-state-modes 'cfw:details-mode)
 
-  ;; force evil in modes
-  (add-to-list 'evil-normal-state-modes 'notmuch-hello-mode)
-  (add-to-list 'evil-normal-state-modes 'notmuch-search-mode)
-  (add-to-list 'evil-normal-state-modes 'notmuch-show-mode)
-
   (add-to-list 'evil-normal-state-modes 'fundamental-mode)
 
   (eval-after-load 'git-timemachine
     '(progn
        (evil-make-overriding-map git-timemachine-mode-map 'normal)
-       (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))  ;; git-timemachine, switch off evil
-  )
+       (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))))  ;; git-timemachine, switch off evil
 
 (use-package evil-anzu
   :after evil)
@@ -143,6 +126,23 @@
   (evil-indent-plus-default-bindings))
 
 (use-package exato)
+
+(use-package evil-collection
+  :after evil
+  :config
+  (setq evil-collection-mode-list nil)
+  (setq evil-collection-mode-list '(arc-mode
+                                    bookmark
+                                    calendar
+                                    dired
+                                    doc-view
+                                    eshell
+                                    (package-menu package)
+                                    popup
+                                    profiler
+                                    quickrun
+                                    realgud))
+  (evil-collection-init))
 
 (provide 'evil-setup)
 ;;; evil-setup ends here

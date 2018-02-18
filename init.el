@@ -63,7 +63,7 @@
 (require 'highlights-setup)
 (require 'hydra-setup)
 (require 'linting-setup)
-(require 'notmuch-settings-setup)
+;; (require 'notmuch-settings-setup)
 (require 'package-assistants-setup)
 (require 'pdf-setup)
 (require 'org-setup)

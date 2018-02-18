@@ -7,7 +7,7 @@
 ;; --------------------------------------------------------------------
 ;; bookmark plus
 ;; --------------------------------------------------------------------
-(use-package bookmark+
-  :defer t)
+(use-package bookmark+)
+
 (provide 'bookmarks-setup)
 ;;; bookmarks-setup ends here

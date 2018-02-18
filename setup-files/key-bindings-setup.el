@@ -77,7 +77,8 @@
                     "C-r" 'evil-paste-from-register)
 
 ;; archive mode
-(general-define-key :keymaps 'archive-mode-map
+(general-define-key :states 'normal
+                    :keymaps 'archive-mode-map
                     "F" 'archive-extract-marked-to-file)
 
 ;; magit
@@ -127,6 +128,11 @@
                     "<SPC>" 'nil
                     "o" 'cfw:show-details-command)
 
+;; cfw caldendar
+(general-define-key :states 'motion
+                    :keymaps '(pdf-view-mode-map doc-view-mode-map)
+                    "SPC" 'nil)
+
 ;; org
 (general-define-key :keymaps 'org-mode-map
                     "C-l" 'ace-link-org
@@ -165,7 +171,7 @@
                     "M-j" 'company-select-next
                     "M-k" 'company-select-previous
                     "TAB" 'expand-snippet-or-complete-selection
-                    "ESC" 'company-abort)
+                    "C-g" 'company-abort)
 
 ;; yasnippet
 (general-define-key :keymaps 'yas-minor-mode-map
@@ -175,21 +181,23 @@
                     "C-g" 'abort-company-or-yas)
 
 ;; dired
-(general-define-key :keymaps 'dired-mode-map
-                    "j" 'diredp-next-line
-                    "k" 'diredp-previous-line
+(general-define-key :states 'normal
+                    :keymaps 'dired-mode-map
+                    "SPC" 'nil
                     "C-j" 'scroll-up-command
                     "C-k" 'scroll-down-command
-                    "h" 'diredp-up-directory-reuse-dir-buffer
-                    "l" 'diredp-find-file-reuse-dir-buffer
-                    "RET" 'dired-find-file
+                    "h" '(lambda () (interactive) (dired-single-buffer ".."))
+                    "l" 'dired-single-buffer
+                    "RET" 'dired-advertised-find-file
                     "<backspace>" 'dired-up-directory
                     "TAB" 'other-window
                     "/" 'dired-narrow-fuzzy
-                    "C-o" 'dired-omit-switch
                     "I" 'dired-kill-subdir
                     "C-<right>" 'delete-other-windows-and-split-right
-                    "s" 'xah-dired-sort)
+                    "M-s" 'xah-dired-sort
+                    "r" 'revert-buffer
+                    "o" 'dired-hide-dotfiles-mode
+                    "J" 'dired-launch-command)
 
 ;; neotree
 (general-define-key :states 'normal
@@ -243,6 +251,16 @@
 (general-define-key :keymaps 'evil-outer-text-objects-map
                     "a" 'evil-outer-arg)
 
+;; pdf view
+(general-define-key :keymaps 'pdf-view-mode-map
+                    "j" 'pdf-view-next-line-or-next-page
+                    "k" 'pdf-view-previous-line-or-previous-page
+                    "C-j" 'pdf-view-previous-page-command
+                    "C-k" 'pdf-view-next-page-command
+                    "[" 'pdf-view-previous-page-command
+                    "]" 'pdf-view-next-page-command
+                    "g" 'pdf-view-first-page
+                    "G" 'pdf-view-last-page)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

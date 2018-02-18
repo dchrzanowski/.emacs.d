@@ -116,12 +116,7 @@
         cfw:fchar-right-junction ?┫
         cfw:fchar-top-junction ?┯
         cfw:fchar-top-left-corner ?┏
-        cfw:fchar-top-right-corner ?┓)
-
-  (custom-set-faces
-   '(cfw:face-toolbar-button-off ((t (:foreground "gray70"))))
-   '(cfw:face-toolbar-button-on ((t (:foreground "white" :weight bold))))
-   '(cfw:face-toolbar ((t (:foreground nil :background nil))))))
+        cfw:fchar-top-right-corner ?┓))
 
 ;; --------------------------------------------------------------------
 ;; pomidor

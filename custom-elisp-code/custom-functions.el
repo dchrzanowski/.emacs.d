@@ -312,5 +312,32 @@ DIR."
      items)))
 
 
+;; --------------------------------------------------------------------
+;; Launch dired from file under point
+;; --------------------------------------------------------------------
+(defun helm-ff-open-dired-at-point ()
+  "Launch dired from file unde point."
+  (interactive)
+  (helm-select-nth-action 4))
+
+;; --------------------------------------------------------------------
+;; Dired sort by name, size, date...
+;; --------------------------------------------------------------------
+(defun xah-dired-sort ()
+  "Sort dired dir listing in different ways.
+Prompt for a choice.
+URL `http://ergoemacs.org/emacs/dired_sort.html'
+Version 2015-07-30"
+  (interactive)
+  (let ($sort-by $arg)
+    (setq $sort-by (ido-completing-read "Sort by:" '( "date" "size" "name" "dir")))
+    (cond
+     ((equal $sort-by "name") (setq $arg "-Al --si --time-style long-iso "))
+     ((equal $sort-by "date") (setq $arg "-Al --si --time-style long-iso -t"))
+     ((equal $sort-by "size") (setq $arg "-Al --si --time-style long-iso -S"))
+     ((equal $sort-by "dir") (setq $arg "-Al --si --time-style long-iso --group-directories-first"))
+     (t (error "logic error 09535" )))
+    (dired-sort-other $arg )))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here
