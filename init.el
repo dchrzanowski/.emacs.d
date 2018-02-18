@@ -79,7 +79,6 @@
 (require 'typescript-setup)
 (require 'web-setup)
 
-(require 'theme-setup)
 (require 'key-bindings-setup)
 (require 'key-leaders-setup)
 (require 'which-key-setup)
@@ -90,6 +89,8 @@
 ;; --------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
+
+(require 'theme-setup)
 
 ;;; Commentary:
 (provide 'init)
