@@ -17,8 +17,8 @@
 (use-package dired+
   :config
   (setq dired-listing-switches "-alh"  ;; show file sizes in kbytes, mbytes, gbytes....
-        diredp-hide-details-initially-flag nil
-        diredp-hide-details-propagate-flag nil)
+        diredp-hide-details-initially-flag t
+        diredp-hide-details-propagate-flag t)
   (diredp-toggle-find-file-reuse-dir 1))  ;; do not open additional buffers
 
 (use-package dired-narrow)
