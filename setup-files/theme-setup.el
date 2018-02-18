@@ -57,6 +57,7 @@
    '(cursor ((t (:background "#FF0000"))))
    ;; dired
    '(dired-directory ((t (:foreground "deep sky blue" :weight bold))))
+   '(dired-header ((t (:height 110 :foreground "chartreuse3" :weight bold))))
    ;; evil
    '(evil-ex-lazy-highlight ((t (:background "black" :foreground "white"))))
    '(evil-ex-search ((t (:background "black" :foreground "white"))))
