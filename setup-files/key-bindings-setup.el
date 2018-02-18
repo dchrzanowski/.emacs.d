@@ -3,103 +3,74 @@
 ;; --------------------------------------------------------------------
 ;;; Code:
 ;; --------------------------------------------------------------------
+
 ;; --------------------------------------------------------------------
-;; key binds / shortcuts
+;; Global maps
+;; --------------------------------------------------------------------
+(general-emacs-define-key 'global
+  "<f5>" 'quickrun
+  "<f6>" '(lambda() (interactive)(find-file "~/.emacs.d/init.el"))
+  "<f7>" 'pomidor
+  "M-S" 'sp-split-sexp
+  "M-[" 'package-install
+  "M-]" 'paradox-list-packages
+  "M-u" 'upcase-dwim
+  "M-l" 'downcase-dwim
+  "M-d" 'ace-window
+  "M-x" 'helm-M-x
+  "M-w" 'helm-mini
+  "M-f" 'helm-swoop
+  "M-F" 'helm-multi-swoop-all
+  "C-c b" 'helm-bookmarks
+  "C-c C-b" 'helm-bookmarks
+  "M-e" 'avy-goto-char-timer
+  "M-j" 'avy-goto-word-or-subword-1
+  )
+;; --------------------------------------------------------------------
+;; Local maps
 ;; --------------------------------------------------------------------
 
-;; minibuffer allow to paste in the Evil register way
-(define-key minibuffer-local-map (kbd "C-r") 'evil-paste-from-register)
+(general-define-key :keymaps 'minibuffer-local-map
+                    "C-r" 'evil-paste-from-register)
+
+(general-define-key :keymaps 'archive-mode-map
+                    "F" 'archive-extract-marked-to-file)
+
+(general-define-key :keymaps 'magit-mode-map
+                    "M-x" 'helm-M-x)
+
 
 ;; neotree
 ;; (global-set-key [f8] 'neotree-toggle)
-(define-key undo-tree-map (kbd "C-/") 'nil)
-(global-set-key (kbd "C-/") 'neotree-toggle)
-(defun neotree-enter-and-close-neotree ()
-  "Open a file under point and close neotree."
-  (interactive)
-  (neotree-enter)
-  (neotree-hide))
+;; (define-key undo-tree-map (kbd "C-/") 'nil)
+;; (global-set-key (kbd "C-/") 'neotree-toggle)
+;; (defun neotree-enter-and-close-neotree ()
+;;   "Open a file under point and close neotree."
+;;   (interactive)
+;;   (neotree-enter)
+;;   (neotree-hide))
 
-(evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-and-close-neotree)
-(evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-quick-look)
-(evil-define-key 'normal neotree-mode-map (kbd "h") 'neotree-select-up-node)
-(evil-define-key 'normal neotree-mode-map (kbd "o") 'neotree-hidden-file-toggle)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
-(evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
-(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-enter-ace-window)
+;; (evil-define-key 'normal neotree-mode-map (kbd "L") 'neotree-enter-and-close-neotree)
+;; (evil-define-key 'normal neotree-mode-map (kbd "l") 'neotree-quick-look)
+;; (evil-define-key 'normal neotree-mode-map (kbd "h") 'neotree-select-up-node)
+;; (evil-define-key 'normal neotree-mode-map (kbd "o") 'neotree-hidden-file-toggle)
+;; (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+;; (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+;; (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-change-root)
+;; (evil-define-key 'normal neotree-mode-map (kbd "J") 'neotree-open-xdg-on-point)
+;; (evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-enter-ace-window)
 
-;; additional evil leader bindings for neotree
-(evil-leader/set-key-for-mode 'neotree-mode
-  "r" 'neotree-rename-node
-  "D" 'neotree-delete-node
-  "n" 'neotree-create-node
-  "c" 'neotree-copy-node)
+;; ;; additional evil leader bindings for neotree
+;; (evil-leader/set-key-for-mode 'neotree-mode
+;;   "r" 'neotree-rename-node
+;;   "D" 'neotree-delete-node
+;;   "n" 'neotree-create-node
+;;   "c" 'neotree-copy-node)
 
-;; sunrise
-(global-set-key [f9] 'sunrise)
 
-;; quickrun
-(global-set-key [f5] 'quickrun)
 
-;; pomidor
-(global-set-key [f7] 'pomidor)
+;; (define-key dired-mode-map (kbd "M-d") 'ace-window)
 
-;; smartparens
-(define-key global-map (kbd "M-S") 'sp-split-sexp)
-
-;; arc-mode
-;;(define-key archive-mode-map (kbd "F") #'archive-extract-marked-to-file)
-
-;; packages
-(global-set-key (kbd "M-[") 'package-install)
-(global-set-key (kbd "M-]") 'paradox-list-packages)
-
-;; upcase/downcase
-(global-set-key (kbd "M-u") 'upcase-dwim)
-(global-set-key (kbd "M-l") 'downcase-dwim)
-
-;; open init with F6
-(global-set-key (kbd "<f6>") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
-
-;;anzu binds
-(global-set-key (kbd "C-f") 'anzu-query-replace)
-(global-set-key (kbd "C-M-r") 'anzu-query-replace-at-cursor-thing)
-(global-set-key (kbd "C-M-s-r") 'anzu-query-replace-at-cursor)
-
-;; webpaste
-(global-set-key (kbd "C-c C-p C-b") 'webpaste-paste-buffer)
-(global-set-key (kbd "C-c C-p C-r") 'webpaste-paste-region)
-
-;;rainbow mode
-(global-set-key (kbd "C-c r") 'rainbow-mode)
-
-;; ace window
-(global-set-key (kbd "M-d") 'ace-window)
-(define-key dired-mode-map (kbd "M-d") 'ace-window)
-
-;; changed recenter
-(define-key global-map (kbd "C-l") 'recenter)
-
-;; helm bindings
-(global-set-key (kbd "M-x") 'helm-M-x)
-(with-eval-after-load 'magit-mode
-  (define-key magit-mode-map (kbd "M-x") 'helm-M-x))
-
-(global-set-key (kbd "M-w") 'helm-buffers-list)
-
-;; helm-swoop binds
-(global-set-key (kbd "M-f") 'helm-swoop)
-(global-set-key (kbd "M-F") 'helm-multi-swoop-all)
-
-;; avy
-(global-set-key (kbd "M-e") 'avy-goto-char-timer)
-(global-set-key (kbd "M-j") 'avy-goto-word-or-subword-1)
-
-;; helm bookmark
-(global-set-key (kbd "C-c b") 'helm-bookmarks)
-(global-set-key (kbd "C-c C-b") 'helm-bookmarks)
 
 ;; vim like helm movement
 (define-key helm-map (kbd "M-j") 'helm-next-line)
