@@ -81,6 +81,7 @@
 
 (require 'theme-setup)
 (require 'key-bindings-setup)
+(require 'key-leaders-setup)
 (require 'which-key-setup)
 (require 'diminish-setup)
 

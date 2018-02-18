@@ -52,7 +52,6 @@
   ;; (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
-  (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-repolist-mode)
   (add-to-list 'evil-emacs-state-modes 'org-brain-visualize-mode)
   (add-to-list 'evil-emacs-state-modes 'cfw:details-mode)

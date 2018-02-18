@@ -42,13 +42,19 @@ two curly braces, otherwise do a regular newline and indent"
     (replace-regexp re "" nil beg end)))
 
 ;; --------------------------------------------------------------------
-;; Neo tree open xdg on point helpers
+;; Neo tree helpers
 ;; --------------------------------------------------------------------
 (defun neotree-open-xdg-on-point ()
   "Open a file under point."
   (interactive)
   (call-process "xdg-open" nil 0 nil
                 (neo-buffer--get-filename-current-line)))
+
+(defun neotree-enter-and-close-neotree ()
+  "Open a file under point and close neotree."
+  (interactive)
+  (neotree-enter)
+  (neotree-hide))
 
 ;; --------------------------------------------------------------------
 ;; Indent/Unindent
@@ -304,6 +310,7 @@ DIR."
                                 (aref item 0) ; get the name from the descriptor
                                 command output-dir))
      items)))
+
 
 (provide 'custom-functions)
 ;;; custom-functions ends here
