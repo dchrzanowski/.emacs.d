@@ -19,19 +19,19 @@
 ;; --------------------------------------------------------------------
 ;; EVIL MODE
 ;; --------------------------------------------------------------------
-(use-package evil-leader
-  :config
-  (setq evil-leader/in-all-states nil
-        evil-leader/no-prefix-mode-rx '("dired-mode"
-                                        "org-agenda-mode"
-                                        "pomidor-mode"
-                                        "magit-repolist-mode"
-                                        "cfw:calendar-mode"))  ;; list of modes where leader is forced in emacs mode
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>"))
+;; (use-package evil-leader
+;;   :config
+;;   (setq evil-leader/in-all-states nil
+;;         evil-leader/no-prefix-mode-rx '("dired-mode"
+;;                                         "org-agenda-mode"
+;;                                         "pomidor-mode"
+;;                                         "magit-repolist-mode"
+;;                                         "cfw:calendar-mode"))  ;; list of modes where leader is forced in emacs mode
+;;   (global-evil-leader-mode)
+;;   (evil-leader/set-leader "<SPC>"))
 
 (use-package evil
-  :after evil-leader
+  ;; :after evil-leader
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
@@ -49,7 +49,7 @@
 
   ;; force emacs state in
   (add-to-list 'evil-emacs-state-modes 'dired-mode)
-  (add-to-list 'evil-emacs-state-modes 'sr-mode)
+  ;; (add-to-list 'evil-emacs-state-modes 'sr-mode)
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
   (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
