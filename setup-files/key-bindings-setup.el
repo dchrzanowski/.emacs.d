@@ -220,7 +220,6 @@
                     "q" 'quit-window)'
 ;; eyebrowse
 (general-define-key :states 'normal
-                    :keymaps 'eyebrowse-mode-map
                     "gt" 'eyebrowse-next-window-config
                     "gT" 'eyebrowse-prev-window-config
                     "gc" 'eyebrowse-close-window-config
