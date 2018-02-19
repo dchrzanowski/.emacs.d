@@ -17,8 +17,7 @@
 (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-(define-key company-mode-map [escape] 'company-abort)
-(global-set-key [escape] 'evil-exit-emacs-state)
+(define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 
 (general-emacs-define-key 'global
   ;; F's
@@ -172,6 +171,9 @@
                     "M-k" 'company-select-previous
                     "TAB" 'expand-snippet-or-complete-selection
                     "C-g" 'company-abort)
+
+(evil-make-intercept-map company-active-map 'insert)
+(general-def company-active-map [escape] 'company-abort)
 
 ;; yasnippet
 (general-define-key :keymaps 'yas-minor-mode-map
