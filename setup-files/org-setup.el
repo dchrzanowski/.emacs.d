@@ -21,6 +21,7 @@
    org-default-notes-file "~/Google Drive/org/refile.org"
    ;; org agenda files location
    org-agenda-files '("~/Google Drive/org/projects/myLectures"
+                      "~/Google Drive/org/projects"
                       "~/Google Drive/org")
    ;; org keywords
    org-todo-keywords '((sequence "VERIFY(v)"
@@ -83,6 +84,15 @@
           org-capture-templates)
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-title-max-length 12))
+
+  ;; org-projectile
+  (use-package org-projectile
+    :config
+    (progn
+      (setq org-projectile-projects-file
+            "~/Google Drive/org/projects/projects.org")
+      (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+      (push (org-projectile-project-todo-entry) org-capture-templates)))
 
   ;; org download
   (use-package org-download

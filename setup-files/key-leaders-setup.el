@@ -46,6 +46,7 @@
  "pi" 'projectile-invalidate-cache
  "pk" 'projectile-kill-buffers
  "pa" 'helm-projectile-ag
+ "pc" 'org-projectile-project-todo-completing-read
  ;; save all buffers
  "s" (lambda() (interactive) (save-some-buffers t))
  ;; hydras
