@@ -41,7 +41,8 @@
 (use-package dired-launch
   :config
   (dired-launch-enable)
-  (setq-default dired-launch-default-launcher '("xdg-open")))
+  (setq-default dired-launch-default-launcher '("xdg-open")
+                dired-launch-extensions-map nil))
 
 (use-package diredful
   :config
