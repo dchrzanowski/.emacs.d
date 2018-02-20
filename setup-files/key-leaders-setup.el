@@ -149,7 +149,9 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'org-mode-map
- "cf" 'helm-org-rifle)
+ "cf" 'helm-org-rifle
+ "cs" 'org-download-screenshot
+ "cy" 'org-download-yank)
 
 ;; --------------------------------------------------------------------
 ;; org agenda leader

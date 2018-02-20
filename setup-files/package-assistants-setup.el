@@ -7,7 +7,8 @@
 ;; --------------------------------------------------------------------
 ;; paradox
 ;; --------------------------------------------------------------------
-(use-package paradox)
+(use-package paradox
+  :defer 15)
 
 (provide 'package-assistants-setup)
 ;;; package-assistant-setup ends here

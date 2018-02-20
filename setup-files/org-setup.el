@@ -7,6 +7,7 @@
 ;; org-mode
 ;; --------------------------------------------------------------------
 (use-package org
+  :defer 1
   :config
   (setq
    ;; org log done headings
@@ -83,6 +84,11 @@
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-title-max-length 12))
 
+  ;; org download
+  (use-package org-download
+    :config
+    (setq-default org-download-image-dir "./images"))
+
   ;; org-export to github markdown
   (use-package ox-gfm
     :defer t
@@ -102,6 +108,7 @@
 ;; calendar
 ;; --------------------------------------------------------------------
 (use-package calfw
+  :defer 1
   :config
   (use-package calfw-org
     :config

@@ -13,6 +13,7 @@
 ;; js2 mode
 ;; --------------------------------------------------------------------
 (use-package js2-mode
+  :defer 5
   :config
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
 

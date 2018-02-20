@@ -32,7 +32,8 @@
 
 (use-package company-jedi)
 
-(use-package company-tern)
+(use-package company-tern
+  :defer 2)
 
 (use-package company-quickhelp
   :config

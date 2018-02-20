@@ -190,7 +190,11 @@
                     "C-l" 'ace-link-org
                     "<C-tab>" 'tabbar-forward-tab
                     "C-c C-r" 'org-refile
-                    "M-r" 'org-refile)
+                    "M-r" 'org-refile
+                    "<" '(lambda () (interactive)
+                           (if (or (region-active-p) (looking-back "^"))
+                               (hydra-org-template/body)
+                             (self-insert-command 1))))
 
 ;; org agenda
 (general-define-key :keymaps 'org-agenda-mode-map

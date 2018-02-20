@@ -8,13 +8,13 @@
 ;; God mode and evil god-state
 ;; --------------------------------------------------------------------
 (use-package god-mode
-  :defer 15
+  :defer 10
   :config
   (setq god-exempt-major-modes nil
         god-exempt-predicates nil))
 
 (use-package evil-god-state
-  :defer 20)
+  :defer 10)
 
 ;; --------------------------------------------------------------------
 ;; EVIL MODE
@@ -79,7 +79,9 @@
   :after evil)
 
 (use-package evil-org
+  :defer 4
   :after evil
+  :diminish 'evil-org-mode
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
   (evil-org-set-key-theme '(navigation insert textobjects additional shift todo heading)))
