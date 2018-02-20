@@ -59,6 +59,7 @@
   "C-c l" 'org-store-link
   ;; company
   "TAB" 'tab-indent-or-complete
+  "<tab>" 'tab-indent-or-complete
   "C-<SPC>" 'company-dabbrev-code
   ;; dired
   "C-;" 'dired-jump
@@ -67,6 +68,63 @@
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle)
+
+;; --------------------------------------------------------------------
+;; Evil insert/normal/visual
+;; --------------------------------------------------------------------
+(general-define-key :keymaps '(insert normal visual)
+                    ;; company completion
+                    "M-<SPC> <SPC>" 'company-complete-common
+                    "M-<SPC> j" 'company-complete
+                    "M-<SPC> y" 'hydra-yasnippet/body
+                    "M-<SPC> s" 'company-yasnippet
+                    "M-<SPC> g" 'company-gtags
+                    "M-<SPC> f" 'company-files
+                    "M-<SPC> a" 'aya-create
+                    "M-<SPC> e" 'aya-expand
+                    "M-<SPC> o" 'aya-open-line)
+
+;; --------------------------------------------------------------------
+;; Evil normal
+;; --------------------------------------------------------------------
+(general-define-key :keymaps 'normal
+                    ;; drag stuff
+                    "M-k" 'drag-stuff-up
+                    "M-j" 'drag-stuff-down
+                    ;; evil numbers
+                    "+" 'evil-numbers/inc-at-pt
+                    "-" 'evil-numbers/dec-at-pt
+                    "<kp-add>" 'evil-numbers/inc-at-pt
+                    "<kp-subtract>" 'evil-numbers/dec-at-pt)
+
+;; --------------------------------------------------------------------
+;; Evil normal and motion
+;; --------------------------------------------------------------------
+(general-define-key :keymaps '(normal motion)
+                    ;; eyebrowse
+                    "gt" 'eyebrowse-next-window-config
+                    "gT" 'eyebrowse-prev-window-config
+                    "gc" 'eyebrowse-close-window-config
+                    "g." 'eyebrowse-switch-to-window-config
+                    ;; motion
+                    "j" 'evil-next-visual-line
+                    "k" 'evil-previous-visual-line
+                    ;; jump back
+                    "C-S-o" 'evil-jump-forward
+                    ;; scroll
+                    "C-k" (lambda () (interactive) (evil-scroll-up nil))
+                    "C-j" (lambda () (interactive) (evil-scroll-down nil))
+                    ;; args
+                    "L" 'evil-forward-arg
+                    "H" 'evil-backward-arg
+                    "K" 'evil-jump-out-args)
+
+;; --------------------------------------------------------------------
+;; Evil visual
+;; --------------------------------------------------------------------
+(general-define-key :keymaps 'visual
+                    ;; evil jump
+                    "C-S-o" 'evil-jump-forward)
 
 ;; --------------------------------------------------------------------
 ;; Local maps
@@ -127,11 +185,6 @@
                     "<SPC>" 'nil
                     "o" 'cfw:show-details-command)
 
-;; cfw caldendar
-(general-define-key :states 'motion
-                    :keymaps '(pdf-view-mode-map doc-view-mode-map)
-                    "SPC" 'nil)
-
 ;; org
 (general-define-key :keymaps 'org-mode-map
                     "C-l" 'ace-link-org
@@ -147,29 +200,12 @@
                     "C-k" 'scroll-up-command
                     "h" 'hydra-org-agenda/body)
 
-;; drag stuff
-(general-define-key :keymaps 'normal
-                    "M-k" 'drag-stuff-up
-                    "M-j" 'drag-stuff-down)
-
-;; company completion prefix map
-(general-define-key :states '(normal insert emacs)
-                    :keymaps 'text-mode-map
-                    "M-<SPC> <SPC>" 'company-complete-common
-                    "M-<SPC> j" 'company-complete
-                    "M-<SPC> y" 'hydra-yasnippet/body
-                    "M-<SPC> s" 'company-yasnippet
-                    "M-<SPC> g" 'company-gtags
-                    "M-<SPC> f" 'company-files
-                    "M-<SPC> a" 'aya-create
-                    "M-<SPC> e" 'aya-expand
-                    "M-<SPC> o" 'aya-open-line)
-
 ;; company
 (general-define-key :keymaps 'company-active-map
                     "M-j" 'company-select-next
                     "M-k" 'company-select-previous
-                    "TAB" 'expand-snippet-or-complete-selection
+                    "TAB" 'tab-indent-or-complete
+                    "<tab>" 'tab-indent-or-complete
                     "C-g" 'company-abort)
 
 (evil-make-intercept-map company-active-map 'insert)
@@ -177,9 +213,12 @@
 
 ;; yasnippet
 (general-define-key :keymaps 'yas-minor-mode-map
-                    "TAB" 'nil)
+                    "TAB" 'nil
+                    "<tab>" 'nil)
+
 (general-define-key :keymaps 'yas-keymap
                     "TAB" 'yas-next-field-or-maybe-expand
+                    "<tab>" 'yas-next-field-or-maybe-expand
                     "C-g" 'abort-company-or-yas)
 
 ;; dired
@@ -218,33 +257,6 @@
 (general-define-key :states 'normal
                     :keymaps 'quickrun--mode-map
                     "q" 'quit-window)'
-;; eyebrowse
-(general-define-key :states 'normal
-                    "gt" 'eyebrowse-next-window-config
-                    "gT" 'eyebrowse-prev-window-config
-                    "gc" 'eyebrowse-close-window-config
-                    "g." 'eyebrowse-switch-to-window-config)
-;; evil numbers
-(general-define-key :keymaps 'normal
-                    "+" 'evil-numbers/inc-at-pt
-                    "-" 'evil-numbers/dec-at-pt
-                    "<kp-add>" 'evil-numbers/inc-at-pt
-                    "<kp-subtract>" 'evil-numbers/dec-at-pt)
-
-;; evil (normal and motion)
-(general-define-key :keymaps '(normal motion)
-                    "j" 'evil-next-visual-line
-                    "k" 'evil-previous-visual-line
-                    "C-S-o" 'evil-jump-forward
-                    "C-k" (lambda () (interactive) (evil-scroll-up nil))
-                    "C-j" (lambda () (interactive) (evil-scroll-down nil))
-                    "L" 'evil-forward-arg
-                    "H" 'evil-backward-arg
-                    "K" 'evil-jump-out-args)
-
-;; evil (visual)
-(general-define-key :keymaps 'visual
-                    "C-S-o" 'evil-jump-forward)
 
 ;; evil args
 (general-define-key :keymaps 'evil-inner-text-objects-map
@@ -262,6 +274,7 @@
                     "]" 'pdf-view-next-page-command
                     "g" 'pdf-view-first-page
                     "G" 'pdf-view-last-page)
+
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
