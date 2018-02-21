@@ -273,8 +273,8 @@
 (general-define-key :keymaps 'pdf-view-mode-map
                     "j" 'pdf-view-next-line-or-next-page
                     "k" 'pdf-view-previous-line-or-previous-page
-                    "C-j" 'pdf-view-previous-page-command
-                    "C-k" 'pdf-view-next-page-command
+                    "C-j" 'pdf-view-next-page-command
+                    "C-k" 'pdf-view-previous-page-command
                     "[" 'pdf-view-previous-page-command
                     "]" 'pdf-view-next-page-command
                     "g" 'pdf-view-first-page
