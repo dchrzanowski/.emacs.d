@@ -10,16 +10,21 @@
 (use-package helm
   :config
   (helm-mode t)
+
   (define-key global-map [remap find-file] 'helm-find-files)
   (define-key global-map [remap occur] 'helm-occur)
   (define-key global-map [remap list-buffers] 'helm-buffers-list)
   (define-key global-map [remap dabbrev-expand] 'helm-dabbrev)
+
   (unless (boundp 'completion-in-region-function)
     (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
     (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+
   (setq helm-split-window-in-side-p t
         helm-echo-input-in-header-line t
-        helm-move-to-line-cycle-in-source nil))
+        helm-move-to-line-cycle-in-source nil)
+  ;; remove magit from the buffer list
+  (add-to-list 'helm-boring-buffer-regexp-list "\\`\\magit"))
 
 ;; --------------------------------------------------------------------
 ;; helm-ag
