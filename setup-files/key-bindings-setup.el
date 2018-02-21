@@ -201,7 +201,7 @@
                     "j" 'org-agenda-next-line
                     "k" 'org-agenda-previous-line
                     "C-j" 'scroll-up-command
-                    "C-k" 'scroll-up-command
+                    "C-k" 'scroll-down-command
                     "h" 'hydra-org-agenda/body)
 
 ;; company
