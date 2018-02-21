@@ -21,5 +21,6 @@ places
 recentf
 tramp
 flycheck_init.el
+company-statistics-cache.el
 !.gitignore
 /server/server
