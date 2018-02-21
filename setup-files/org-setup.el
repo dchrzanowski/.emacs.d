@@ -98,6 +98,13 @@
       (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
       (push (org-projectile-project-todo-entry) org-capture-templates)))
 
+  (use-package org-alert
+    :defer 1
+    :config
+    (setq alert-default-style 'libnotify
+          org-alert-interval 3600)
+    (org-alert-enable))
+
   ;; org download
   (use-package org-download
     :config
