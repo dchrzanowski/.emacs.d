@@ -236,6 +236,7 @@
                     "RET" 'dired-advertised-find-file
                     "<backspace>" 'dired-up-directory
                     "TAB" 'other-window
+                    "<tab>" 'other-window
                     "/" 'dired-narrow-fuzzy
                     "I" 'dired-kill-subdir
                     "C-<right>" 'delete-other-windows-and-split-right

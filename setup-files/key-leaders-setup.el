@@ -98,9 +98,13 @@
  "ol" 'org-store-link
  "oA" 'org-agenda-list
  "oa" 'org-agenda-list-and-delete-other-windows
+ "oo" 'org-agenda
  "ob" 'org-iswitchb
  "ok" 'cfw:open-org-calendar
  "oK" 'calendar
+ "ot" '(lambda () (interactive) (org-agenda nil "t"))
+ "os" '(lambda () (interactive) (org-agenda nil "s"))
+ "om" '(lambda () (interactive) (org-agenda nil "m"))
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0

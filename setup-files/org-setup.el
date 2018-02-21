@@ -38,6 +38,7 @@
    org-refile-use-outline-path t
    ;; org capture templates
    org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")
+                                 ("n" "note" entry (file "~/Google Drive/org/refile.org") "* %?")
                                  ("c" "calfw2org" entry (file "~/Google Drive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")
                                  ))
    ;; org agenda initial span
@@ -84,6 +85,9 @@
           org-capture-templates)
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-title-max-length 12))
+
+  (use-package toc-org
+    :defer 1)
 
   ;; org-projectile
   (use-package org-projectile
