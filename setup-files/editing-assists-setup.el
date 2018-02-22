@@ -48,5 +48,9 @@
 (use-package webpaste
   :defer t)
 
+(use-package darkroom
+  :config
+  (setq darkroom-text-scale-increase 1.5))
+
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here

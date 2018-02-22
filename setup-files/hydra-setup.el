@@ -75,16 +75,16 @@ _d_ ace    _C-w_ kill buffer    _i_/_I_ jump other    _M-u_ clean    _z_ swap   
 ;; --------------------------------------------------------------------
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
-_g_ git-gutter    _t_ git-timemachine    _a_ auto-highlight    _T_ todo    _e_ errors    p_o_midor    e_d_iff
-_c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste region/buffer  _r_ainbow mode
+_g_it-gutter    gi_t_-timemachine    _a_uto-highlight    _T_odo      _D_arkroom    _r_ainbow mode    web_p_/_P_aste region/buffer
+_z_enity        insert he_x_         _b_eautify          _e_rrors    p_o_midor     e_d_iff
 ============================================================================================================================
 "
   ("g" hydra-git-gutter/body :exit t)
   ("t" git-timemachine-toggle :exit t)
   ("p" webpaste-paste-region :exit t)
   ("P" webpaste-paste-buffer :exit t)
-  ("c" zenity-cp-color-at-point-dwim :exit t)
-  ("C" insert-color-hex :exit t)
+  ("z" zenity-cp-color-at-point-dwim :exit t)
+  ("x" insert-color-hex :exit t)
   ("a" hydra-auto-highlight/body :exit t)
   ("e" hydra-flycheck/body :exit t)
   ("E" hydra-ediff/body :exit t)
@@ -93,6 +93,7 @@ _c_ zenity        _C_ insert hex         _b_ beautify          _p_/_P_ webpaste 
   ("o" pomidor :exit t)
   ("d" hydra-ediff/body :exit t)
   ("r" rainbow-mode :exit t)
+  ("D" darkroom-mode :exit t)
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------

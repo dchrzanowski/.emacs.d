@@ -12,7 +12,7 @@
   (use-package powerline-evil
     :config
     (powerline-evil-center-color-theme)
-    (setq-default powerline-default-separator (quote wave))))
+    (setq-default powerline-default-separator (quote slant))))
 
 ;; --------------------------------------------------------------------
 ;; load theme
@@ -93,6 +93,8 @@
    '(org-agenda-date-weekend ((t (:height 1.1))))
    ;; powerline
    '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
+   '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
+   '(powerline-evil-operator-face ((t (:background "cyan" :foreground "black"))))
    ;; rainbow delimiters
    '(rainbow-delimiters-depth-1-face ((t (:foreground "LavenderBlush1"))))
    '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))

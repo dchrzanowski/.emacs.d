@@ -109,5 +109,11 @@
 ;;   (add-hook 'org-mode-hook 'nlinum-relative-mode)
 ;;   (setq-default nlinum-relative-redisplay-delay 0.5))
 
+
+;; --------------------------------------------------------------------
+;; notifications
+;; --------------------------------------------------------------------
+(setq alert-default-style 'libnotify)
+
 (provide 'sane-defaults-setup)
 ;;; sane-defaults-setup.el ends here

@@ -121,17 +121,18 @@
 ;; --------------------------------------------------------------------
 ;; org-notify
 ;; --------------------------------------------------------------------
-(require 'org-notify)
-(setq alert-default-style 'libnotify)
+(with-eval-after-load 'org
 
-(org-notify-add 'default
-                '(:time "-1s" :period "1m" :duration 5 :actions -notify )
-                '(:time "30m" :period "10m" :duration 5 :actions -notify)
-                '(:time "4h" :period "1h" :duration 5 :actions -notify)
-                '(:time "1d" :period "2h" :duration 5 :actions -notify)
-                '(:time "7d" :period "5h":duration 10 :actions -notify))
+  (require 'org-notify)
 
-(org-notify-start)
+  (org-notify-add 'default
+                  '(:time "-1s" :period "1m" :duration 5 :actions -notify )
+                  '(:time "30m" :period "10m" :duration 5 :actions -notify)
+                  '(:time "4h" :period "1h" :duration 5 :actions -notify)
+                  '(:time "1d" :period "2h" :duration 5 :actions -notify)
+                  '(:time "7d" :period "5h":duration 10 :actions -notify))
+
+  (org-notify-start))
 
 ;; --------------------------------------------------------------------
 ;; calendar
