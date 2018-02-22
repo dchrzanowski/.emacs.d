@@ -225,6 +225,9 @@
                     "<tab>" 'yas-next-field-or-maybe-expand
                     "C-g" 'abort-company-or-yas)
 
+(general-define-key :keymaps 'Info-mode-map
+                    "SPC" 'nil
+                    "<SPC>" 'nil)
 ;; dired
 (general-define-key :states 'normal
                     :keymaps 'dired-mode-map

@@ -137,7 +137,7 @@
                                     bookmark
                                     calendar
                                     dired
-                                    doc-view
+                                    ;; doc-view
                                     eshell
                                     (package-menu package)
                                     popup

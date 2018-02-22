@@ -98,13 +98,6 @@
       (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
       (push (org-projectile-project-todo-entry) org-capture-templates)))
 
-  (use-package org-alert
-    :defer 1
-    :config
-    (setq alert-default-style 'libnotify
-          org-alert-interval 1800)
-    (org-alert-enable))
-
   ;; org download
   (use-package org-download
     :config
@@ -124,6 +117,21 @@
   (use-package ox-reveal
     :defer t
     :after org))
+
+;; --------------------------------------------------------------------
+;; org-notify
+;; --------------------------------------------------------------------
+(require 'org-notify)
+(setq alert-default-style 'libnotify)
+
+(org-notify-add 'default
+                '(:time "-1s" :period "1m" :duration 5 :actions -notify )
+                '(:time "30m" :period "10m" :duration 5 :actions -notify)
+                '(:time "4h" :period "1h" :duration 5 :actions -notify)
+                '(:time "1d" :period "2h" :duration 5 :actions -notify)
+                '(:time "7d" :period "5h":duration 10 :actions -notify))
+
+(org-notify-start)
 
 ;; --------------------------------------------------------------------
 ;; calendar

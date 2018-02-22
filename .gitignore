@@ -14,6 +14,7 @@ speed-type
 undo-tree
 url
 
+*.elc
 .emacs.desktop
 .emacs.desktop.lock
 .last-package-update-day
@@ -26,4 +27,3 @@ projectile-bookmarks.eld
 projectile.cache
 recentf
 tramp
-

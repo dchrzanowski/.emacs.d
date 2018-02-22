@@ -39,6 +39,7 @@
  "hf" 'describe-function
  "hm" 'describe-mode
  "hk" 'describe-key
+ "hi" 'info
  ;; projectile
  "pp" 'helm-projectile-switch-project
  "pf" 'helm-projectile-find-file
