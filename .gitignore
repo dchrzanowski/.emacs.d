@@ -1,4 +1,6 @@
 # Remove all
+.python-environments
+.cache
 anaconda-mode
 auto-save-list
 backup
@@ -7,20 +9,21 @@ emms
 eshell
 image-dired
 plugins
-.python-environments
 semanticdb
-settings
 speed-type
+undo-tree
 url
 
-*.*
-!*.el
-.mc-lists.el
+.emacs.desktop
+.emacs.desktop.lock
+.last-package-update-day
+.org-id-locations
+ac-comphist.dat
+company-statistics-cache.el
 history
 places
+projectile-bookmarks.eld
+projectile.cache
 recentf
 tramp
-flycheck_init.el
-company-statistics-cache.el
-!.gitignore
-/server/server
+

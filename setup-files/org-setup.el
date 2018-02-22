@@ -102,7 +102,7 @@
     :defer 1
     :config
     (setq alert-default-style 'libnotify
-          org-alert-interval 3600)
+          org-alert-interval 1800)
     (org-alert-enable))
 
   ;; org download
