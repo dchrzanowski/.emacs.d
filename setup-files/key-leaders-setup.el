@@ -192,6 +192,16 @@
  "c" 'tide-documentation-at-point)
 
 ;; --------------------------------------------------------------------
+;; elisp leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'emacs-lsp-mode-map
+ "ce" 'eval-last-sexp
+ "cb" 'eval-buffer)
+
+;; --------------------------------------------------------------------
 ;; pomidor leader
 ;; --------------------------------------------------------------------
 (general-define-key
@@ -211,6 +221,7 @@
  "D" 'neotree-delete-node
  "n" 'neotree-create-node
  "c" 'neotree-copy-node)
+
 
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here

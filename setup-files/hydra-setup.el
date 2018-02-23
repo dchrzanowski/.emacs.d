@@ -94,6 +94,8 @@ _z_enity        insert he_x_         _b_eautify          _e_rrors    p_o_midor  
   ("d" hydra-ediff/body :exit t)
   ("r" rainbow-mode :exit t)
   ("D" darkroom-mode :exit t)
+  ("=" text-scale-increase)
+  ("-" text-scale-decrease)
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------

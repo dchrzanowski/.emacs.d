@@ -22,7 +22,7 @@
   (load-theme 'doom-one t)
   (custom-set-faces
    ;; default
-   '(default ((t (:inherit nil :stipple nil :background "#282c34" :foreground "#bbc2cf" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+   '(default ((t (:background "#282c34" :foreground "#bbc2cf" :weight normal :height 90 :foundry "PfEd" :family "DejaVu Sans Mono"))))
    ;; auto highlight
    '(ahs-definition-face ((t (:background "black" :weight bold))))
    '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
