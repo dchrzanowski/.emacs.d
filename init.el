@@ -49,6 +49,7 @@
 
 ;; core and utils
 (require 'sane-defaults-setup)
+(require 'help-setup)
 (require 'custom-functions)
 (require 'company-settings-setup)
 (require 'eldoc-setup)

@@ -40,6 +40,13 @@
  "hm" 'describe-mode
  "hk" 'describe-key
  "hi" 'info
+ ;; helpful
+ "Hv" 'helpful-variable
+ "Hf" 'helpful-callable
+ "HF" 'helpful-function
+ "Hp" 'helpful-at-point
+ "Hc" 'helpful-command
+ "Hk" 'helpful-key
  ;; projectile
  "pp" 'helm-projectile-switch-project
  "pf" 'helm-projectile-find-file
