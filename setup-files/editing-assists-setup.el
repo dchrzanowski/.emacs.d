@@ -48,9 +48,19 @@
 (use-package webpaste
   :defer t)
 
+;; --------------------------------------------------------------------
+;; darkroom
+;; --------------------------------------------------------------------
 (use-package darkroom
   :config
   (setq darkroom-text-scale-increase 1.5))
+
+(use-package color-identifiers-mode
+  :defer 1
+  :diminish color-identifiers-mode
+  :config
+  (setq color-identifiers-coloring-method 'sequential)
+  (global-color-identifiers-mode))
 
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here
