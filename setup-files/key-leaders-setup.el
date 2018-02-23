@@ -197,7 +197,7 @@
 (general-define-key
  :states '(normal visual emacs)
  :prefix "SPC"
- :keymaps 'emacs-lsp-mode-map
+ :keymaps 'emacs-lisp-mode-map
  "ce" 'eval-last-sexp
  "cb" 'eval-buffer)
 

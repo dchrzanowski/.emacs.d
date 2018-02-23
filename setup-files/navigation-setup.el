@@ -108,5 +108,16 @@
   :config
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
+;; --------------------------------------------------------------------
+;; shackle
+;; --------------------------------------------------------------------
+(use-package shackle
+  :defer 3
+  :config
+  (setq shackle-default-rule '(:select t)
+        shackle-rules '(("\\`\\COMMIT_EDITMSG" :regexp t :ignore t)
+                        ("\\`\\magit-diff" :regexp t :select nil)))
+  (shackle-mode))
+
 (provide 'navigation-setup)
 ;;; navigation-setup ends here

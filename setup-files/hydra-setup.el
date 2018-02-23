@@ -75,8 +75,9 @@ _d_ ace    _C-w_ kill buffer    _i_/_I_ jump other    _M-u_ clean    _z_ swap   
 ;; --------------------------------------------------------------------
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
-_g_it-gutter    gi_t_-timemachine    _a_uto-highlight    _T_odo      _D_arkroom    _r_ainbow mode    web_p_/_P_aste region/buffer
-_z_enity        insert he_x_         _b_eautify          _e_rrors    p_o_midor     e_d_iff
+_g_it-gutter    gi_t_-timemachine    _a_uto-highlight    web_p_/_P_aste region/buffer    _=_/_-_ scale text
+_z_enity        insert he_x_         _b_eautify          _e_rrors                      _w_hitespace mode
+_T_odo          _D_arkroom           _r_ainbow mode      p_o_midor                     e_d_iff
 ============================================================================================================================
 "
   ("g" hydra-git-gutter/body :exit t)
@@ -94,6 +95,7 @@ _z_enity        insert he_x_         _b_eautify          _e_rrors    p_o_midor  
   ("d" hydra-ediff/body :exit t)
   ("r" rainbow-mode :exit t)
   ("D" darkroom-mode :exit t)
+  ("w" whitespace-mode)
   ("=" text-scale-increase)
   ("-" text-scale-decrease)
   ("q" nil :color blue))
@@ -128,12 +130,11 @@ _j_/_k_ next/prev    _o_ occur
 ;; --------------------------------------------------------------------
 (defhydra hydra-beautify (:color pink :hint nil)
   "
-_j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _w_ whitespace    _i_ indent
+_j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
 "
   ("j" web-beautify-js :exit t)
   ("h" web-beautify-html :exit t)
   ("c" web-beautify-css :exit t)
-  ("w" whitespace-mode)
   ("i" cleanup-buffer :exit t)
   ("u" untabify-buffer :exit t)
   ("q" nil :color blue))

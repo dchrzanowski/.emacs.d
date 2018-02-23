@@ -55,11 +55,15 @@
   :config
   (setq darkroom-text-scale-increase 1.5))
 
+;; --------------------------------------------------------------------
+;; color identifiers
+;; --------------------------------------------------------------------
 (use-package color-identifiers-mode
   :defer 1
   :diminish color-identifiers-mode
   :config
-  (setq color-identifiers-coloring-method 'sequential)
+  (setq color-identifiers-coloring-method 'sequential
+        color-identifiers:max-color-saturation 0.7)
   (global-color-identifiers-mode))
 
 (provide 'editing-assists-setup)
