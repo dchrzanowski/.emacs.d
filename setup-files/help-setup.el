@@ -8,6 +8,7 @@
 ;; Helpful
 ;; --------------------------------------------------------------------
 (use-package helpful
+  :after evil
   :config
   (evil-set-initial-state 'helpful-mode 'motion))
 
