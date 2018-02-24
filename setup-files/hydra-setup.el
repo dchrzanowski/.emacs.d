@@ -12,12 +12,12 @@
 ;; --------------------------------------------------------------------
 ;; Window operations hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-window-operations (:color blue :hint nil)
+(defhydra hydra-window-operations (:color pink :hint nil)
   "
 _h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/file/proj   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs
 _H_/_J_/_K_/_L_ resize   _b_/_v_/_s2_/_s3_/_s4_ splits         _u_/_U_ undo/redo                  _0_-_9_ workspaces
 _d_ ace            _C-w_ kill buffer             _i_/_I_ jump other                 _M-u_ clean
-_z_ swap           _=_ balance
+_z_ swap           _=_ balance                   _q_uit
 ============================================================================================================================
 "
   ("h" windmove-left)
@@ -74,7 +74,7 @@ _z_ swap           _=_ balance
 ;; --------------------------------------------------------------------
 ;; Rare launcher hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-rare-launcher (:color blue :hint nil)
+(defhydra hydra-rare-launcher (:color pink :hint nil)
   "
 _g_it-gutter    gi_t_-timemachine    _a_uto-highlight    web_p_/_P_aste region/buffer    _=_/_-_ scale text
 _z_enity        insert he_x_         _b_eautify          _e_rrors                      _w_hitespace mode
@@ -104,7 +104,7 @@ _T_odo          _D_arkroom           _r_ainbow mode      p_o_midor              
 ;; --------------------------------------------------------------------
 ;; Auto highlight hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-auto-highlight (:color blue :hint nil)
+(defhydra hydra-auto-highlight (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _e_ edit    _t_ toggle
 "
@@ -117,7 +117,7 @@ _j_/_k_ next/prev    _e_ edit    _t_ toggle
 ;; --------------------------------------------------------------------
 ;; Auto highlight hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-todo (:color blue :hint nil)
+(defhydra hydra-todo (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _o_ occur
 "
@@ -129,7 +129,7 @@ _j_/_k_ next/prev    _o_ occur
 ;; --------------------------------------------------------------------
 ;; Web beautify hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-beautify (:color blue :hint nil)
+(defhydra hydra-beautify (:color pink :hint nil)
   "
 _j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
 "
@@ -143,8 +143,9 @@ _j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
 ;; --------------------------------------------------------------------
 ;; Git-gutter hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-git-gutter (:pre (git-gutter-mode 1)
-                                 :hint nil)
+(defhydra hydra-git-gutter (:color pink
+                                   :pre (git-gutter-mode 1)
+                                   :hint nil)
   "
 Git gutter:
   _j_: next hunk        _s_tage hunk     _Q_uit
@@ -173,7 +174,7 @@ Git gutter:
 ;; --------------------------------------------------------------------
 ;; Flycheck hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-flycheck (:color blue :hint nil)
+(defhydra hydra-flycheck (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit
 "
@@ -187,7 +188,7 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit
 ;; --------------------------------------------------------------------
 ;; Indent hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-indent (:color blue :hint nil)
+(defhydra hydra-indent (:color pink :hint nil)
   "
 _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
 "
@@ -199,7 +200,7 @@ _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
 ;; --------------------------------------------------------------------
 ;; Ediff hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-ediff (:color blue :hint nil)
+(defhydra hydra-ediff (:color pink :hint nil)
   "
 ^Buffers           Files           VC                     Ediff regions
 ----------------------------------------------------------------------
@@ -221,7 +222,7 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
 ;; --------------------------------------------------------------------
 ;; Yasnippet hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-yasnippet (:color blue :hint nil)
+(defhydra hydra-yasnippet (:color pink :hint nil)
   "
  Modes:  Load/Visit:  Actions:
 
@@ -245,9 +246,10 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
 ;; --------------------------------------------------------------------
 ;; Org agenda hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-org-agenda (:pre (setq which-key-inhibit t)
-                                 :post (setq which-key-inhibit nil)
-                                 :hint none)
+(defhydra hydra-org-agenda (:color pink
+                                   :pre (setq which-key-inhibit t)
+                                   :post (setq which-key-inhibit nil)
+                                   :hint none)
   "
 Org agenda (_q_uit)
 
@@ -382,9 +384,9 @@ prepended to the element after the #+HEADER: tag."
 ;; --------------------------------------------------------------------
 ;; Smerge hydra
 ;; --------------------------------------------------------------------
-(defhydra hydra-smerge
-  (:color red :hint nil
-          :pre (smerge-mode 1))
+(defhydra hydra-smerge (:color pink
+                               :hint nil
+                               :pre (smerge-mode 1))
   "
 ^Move^ ^Keep^ ^Diff^ ^Pair^
 ------------------------------------------------------

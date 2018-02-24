@@ -185,6 +185,7 @@
  '(org-agenda-date ((t (:height 1.1))))
  '(org-agenda-date-today ((t (:height 1.2))))
  '(org-agenda-date-weekend ((t (:height 1.1))))
+ '(org-level-1 ((t (:weight black :height 1.2 :foreground "#51afef" :background nil))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
  '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
  '(powerline-evil-operator-face ((t (:background "cyan" :foreground "black"))))

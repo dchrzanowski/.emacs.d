@@ -87,6 +87,9 @@
    '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
    ;; neotree
    '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
+   ;; org
+   '(org-level-1 ((t (:weight black :height 1.2 :foreground "#51afef" :background nil))))
+   '(org-level-2 ((t (:weight extrabold :foreground "#a9a1e1" :background nil))))
    ;; org agenda
    '(org-agenda-date ((t (:height 1.1))))
    '(org-agenda-date-today ((t (:height 1.2))))
