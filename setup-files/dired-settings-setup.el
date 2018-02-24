@@ -45,6 +45,7 @@
                 dired-launch-extensions-map nil))
 
 (use-package diredful
+  :defer 1
   :config
   (diredful-mode 1))
 

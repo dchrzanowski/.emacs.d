@@ -13,14 +13,15 @@
 ;; realgud
 ;; --------------------------------------------------------------------
 (use-package realgud
-  :defer t
+  :defer 10
   :config
   (setq realgud:pdb-command-name "python -m pdb"))
 
 ;; --------------------------------------------------------------------
 ;; quickrun
 ;; --------------------------------------------------------------------
-(use-package quickrun)
+(use-package quickrun
+  :defer 2)
 
 (provide 'debuggers-setup)
 ;;; debuggers-setup ends here

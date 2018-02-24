@@ -15,6 +15,7 @@
 ;; git gutter
 ;; --------------------------------------------------------------------
 (use-package git-gutter-fringe
+  :defer 5
   :init
   (use-package fringe-helper)
   (fringe-helper-define 'git-gutter-fr:added nil
@@ -55,6 +56,7 @@
 ;; git messenger
 ;; --------------------------------------------------------------------
 (use-package git-messenger
+  :defer 5
   :init
   (custom-set-variables
    '(git-messenger:use-magit-popup t)
@@ -63,7 +65,8 @@
 ;; --------------------------------------------------------------------
 ;; git-timemachine
 ;; --------------------------------------------------------------------
-(use-package git-timemachine)
+(use-package git-timemachine
+  :defer 5)
 
 (provide 'git-setup)
 ;;; git-setup ends here

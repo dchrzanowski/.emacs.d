@@ -85,7 +85,7 @@
  "kr" 'comment-or-uncomment-region
  "kv" 'evilnc-toggle-invert-comment-line-by-line
  ;; whitespace mode
- "W" 'whitespace-mode
+ "W" 'ibuffer
  ;; editing assists
  "i" 'cleanup-buffer
  ;; dumb jump

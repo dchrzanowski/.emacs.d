@@ -8,6 +8,7 @@
 ;; web mode
 ;; --------------------------------------------------------------------
 (use-package web-mode
+  :defer 3
   :init
   (setq-default web-mode-enable-current-element-highlight t
                 web-mode-enable-current-column-highlight t)
@@ -63,17 +64,20 @@
 ;; --------------------------------------------------------------------
 ;; restclient
 ;; --------------------------------------------------------------------
-(use-package restclient)
+(use-package restclient
+  :defer 2)
 
 ;; --------------------------------------------------------------------
 ;; web-beautify
 ;; --------------------------------------------------------------------
-(use-package web-beautify)
+(use-package web-beautify
+  :defer 2)
 
 ;; --------------------------------------------------------------------
 ;; zenity
 ;; --------------------------------------------------------------------
-(use-package zenity-color-picker)
+(use-package zenity-color-picker
+  :defer 2)
 
 (provide 'web-setup)
 ;;; web-setup ends here

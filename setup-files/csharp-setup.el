@@ -8,7 +8,7 @@
 ;; c#
 ;; --------------------------------------------------------------------
 (use-package omnisharp
-  :defer 4
+  :defer 3
   :config
   (defun my-csharp-mode-setup ()
     (c-set-style "ellemtel")

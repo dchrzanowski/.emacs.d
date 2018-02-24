@@ -7,16 +7,16 @@
 ;; --------------------------------------------------------------------
 ;; ggtags
 ;; --------------------------------------------------------------------
-(use-package ggtags)
+(use-package ggtags
+  :defer 1)
 
 ;; --------------------------------------------------------------------
 ;; Python
 ;; --------------------------------------------------------------------
 (use-package elpy
-  :defer 6
+  :defer 4
   :init
-  (use-package jedi
-    :defer t)
+  (use-package jedi)
   :config
   (progn
     ;; Use Flycheck instead of Flymake

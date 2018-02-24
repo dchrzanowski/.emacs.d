@@ -52,6 +52,7 @@
 ;; darkroom
 ;; --------------------------------------------------------------------
 (use-package darkroom
+  :defer 1
   :config
   (setq darkroom-text-scale-increase 1.5))
 

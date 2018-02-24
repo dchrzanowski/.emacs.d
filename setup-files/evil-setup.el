@@ -75,11 +75,11 @@
   :after evil)
 
 (use-package evil-magit
-  :defer 3
+  :defer 2
   :after evil)
 
 (use-package evil-org
-  :defer 4
+  :defer 2
   :after evil
   :diminish 'evil-org-mode
   :config
@@ -105,6 +105,7 @@
   :defer t)
 
 (use-package evil-snipe
+  :after evil
   :diminish evil-snipe-local-mode
   :config
   (setq evil-snipe-scope 'buffer
@@ -121,13 +122,15 @@
 (use-package evil-numbers
   :after evil)
 
-(use-package evil-ediff)
+(use-package evil-ediff
+  :after evil)
 
 (use-package evil-indent-plus
   :config
   (evil-indent-plus-default-bindings))
 
-(use-package exato)
+(use-package exato
+  :after evil)
 
 (use-package evil-collection
   :after evil
@@ -139,6 +142,7 @@
                                     dired
                                     ;; doc-view
                                     eshell
+                                    ibuffer
                                     (package-menu package)
                                     popup
                                     profiler

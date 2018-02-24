@@ -13,9 +13,11 @@
   (require 'company-ispell)
   (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package web-completion-data)
+(use-package web-completion-data
+  :after company)
 
 (use-package ac-html-bootstrap
+  :after company
   :config
   (unless (assoc "Bootstrap" web-completion-data-sources)
     (setq web-completion-data-sources
@@ -27,19 +29,24 @@
                 web-completion-data-sources))))
 
 (use-package company-web
+  :after company
   :config
   (require 'company-web-html))
 
-(use-package company-jedi)
+(use-package company-jedi
+  :after company)
 
 (use-package company-tern
+  :after company
   :defer 2)
 
 (use-package company-quickhelp
+  :after company
   :config
   (company-quickhelp-mode 1))
 
 (use-package company-statistics
+  :after company
   :defer 2
   :config
   (company-statistics-mode))
