@@ -121,8 +121,8 @@
  '(tool-bar-mode nil)
  '(track-eol t)
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t)
- '(web-mode-enable-current-element-highlight t)
+ '(web-mode-enable-current-column-highlight t t)
+ '(web-mode-enable-current-element-highlight t t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
@@ -186,6 +186,7 @@
  '(org-agenda-date-today ((t (:height 1.2))))
  '(org-agenda-date-weekend ((t (:height 1.1))))
  '(org-level-1 ((t (:weight black :height 1.2 :foreground "#51afef" :background nil))))
+ '(org-level-2 ((t (:weight extrabold :foreground "#a9a1e1" :background nil))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
  '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
  '(powerline-evil-operator-face ((t (:background "cyan" :foreground "black"))))

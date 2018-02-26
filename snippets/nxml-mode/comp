@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: comp
+# key: comp
+# --
+<xsd:complexType>
+   $0
+</xsd:complexType>

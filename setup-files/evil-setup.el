@@ -137,6 +137,7 @@
   :config
   (setq evil-collection-mode-list nil)
   (setq evil-collection-mode-list '(arc-mode
+                                    avy
                                     bookmark
                                     calendar
                                     dired

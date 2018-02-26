@@ -21,6 +21,7 @@
    org-default-notes-file "~/Google Drive/org/refile.org"
    ;; org agenda files location
    org-agenda-files '("~/Google Drive/org/projects/myLectures"
+                      "~/Google Drive/org/projects/nds"
                       "~/Google Drive/org/projects"
                       "~/Google Drive/org")
    ;; org keywords

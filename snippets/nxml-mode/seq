@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: seq
+# key: seq
+# --
+<xsd:sequence>
+   $0
+</xsd:sequence>

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: elet
+# key: elet
+# --
+<xsd:element name="$1" type="$2"/>$0

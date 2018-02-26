@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: patt
+# key: patt
+# --
+<xsd:pattern value="$0"/>

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: sim
+# key: sim
+# --
+<xsd:simpleType name="$1">
+   $0
+</xsd:simpleType>

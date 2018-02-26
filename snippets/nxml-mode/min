@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: min
+# key: min
+# --
+<xsd:minInclusive value="$1"/>
+<xsd:maxInclusive value="$2"/>

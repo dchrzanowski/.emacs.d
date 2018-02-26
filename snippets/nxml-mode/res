@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: res
+# key: res
+# --
+<xsd:restriction base="$1">
+   $0
+</xsd:restriction>
