@@ -129,8 +129,8 @@
   :defer 3
   :config
   (setq shackle-default-rule '(:select t)
-        shackle-rules '(("\\`COMMIT_EDITMSG" :regexp t :ignore t)
-                        ("\\`\\*magit-diff" :regexp t :ignore nil)
+        shackle-rules '(("\\`COMMIT_EDITMSG" :regexp t :select t)
+                        ("\\`magit-diff" :regexp t :ignore nil)
                         ("\\`\\*magit" :regexp t :ignore nil)
                         ("\\`\\*Warnings*" :regexp t :select nil)))
   (shackle-mode))
