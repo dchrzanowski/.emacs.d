@@ -27,8 +27,8 @@
  "R" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
- "hg" 'helm-do-grep-ag
- "hG" 'helm-google-suggest
+ "hg" 'helm-google
+ "hG" 'helm-do-grep-ag
  "ha" 'helm-do-ag
  "hl" 'helm-locate
  "hw" 'helm-do-ag-buffers
