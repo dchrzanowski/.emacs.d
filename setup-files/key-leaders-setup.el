@@ -34,9 +34,11 @@
  "hw" 'helm-do-ag-buffers
  "hd" 'helm-dash
  "hs" 'helm-system-packages
+ "hf" 'helm-fzf
+ "hp" 'helm-fzf-project-root
  ;; help
  "hv" 'describe-variable
- "hf" 'describe-function
+ "hF" 'describe-function
  "hm" 'describe-mode
  "hk" 'describe-key
  "hi" 'info

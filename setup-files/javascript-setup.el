@@ -26,6 +26,9 @@
   (add-hook 'js2-mode-hook 'auto-highlight-symbol-mode)
   (add-hook 'js2-mode-hook (lambda() (tern-mode) (company-mode))))
 
+;; --------------------------------------------------------------------
+;; json mode
+;; --------------------------------------------------------------------
 (use-package json-mode
   :defer 3)
 

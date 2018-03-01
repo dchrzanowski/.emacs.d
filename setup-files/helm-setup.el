@@ -102,19 +102,11 @@
   (add-hook 'css-mode-hook 'css-dash-doc))
 
 ;; --------------------------------------------------------------------
-;; helm-flx (fuzzy match)
+;; helm-fzf
 ;; --------------------------------------------------------------------
-(use-package helm-flx
-  :init
-  (use-package flx)
-  :ensure helm
+(use-package fzf
   :config
-  (helm-flx-mode +1)
-  (setq helm-flx-for-helm-find-files t
-        helm-flx-for-helm-locate t
-        helm-buffers-fuzzy-matching nil
-        helm-recentf-fuzzy-match nil
-        helm-semantic-fuzzy-match t
-        helm-imenu-fuzzy-match t))
+  (require 'helm-fzf))
+
 (provide 'helm-setup)
 ;;; helm-setup ends here
