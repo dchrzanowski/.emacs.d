@@ -62,10 +62,14 @@
 ;; --------------------------------------------------------------------
 ;; PYTHON
 ;; --------------------------------------------------------------------
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-gtags company-jedi company-dabbrev company-yasnippet)))))
 (add-hook 'python-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-gtags company-jedi company-dabbrev company-yasnippet)))))
+                 '((company-jedi company-dabbrev)))))
 
 ;; --------------------------------------------------------------------
 ;; CPP

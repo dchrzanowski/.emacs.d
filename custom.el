@@ -121,8 +121,8 @@
  '(tool-bar-mode nil)
  '(track-eol t)
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t)
- '(web-mode-enable-current-element-highlight t)
+ '(web-mode-enable-current-column-highlight t t)
+ '(web-mode-enable-current-element-highlight t t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
