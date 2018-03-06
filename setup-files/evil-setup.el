@@ -145,7 +145,7 @@
                                     ;; doc-view
                                     eshell
                                     ibuffer
-                                    (package-menu package)
+                                    occur
                                     popup
                                     profiler
                                     quickrun
