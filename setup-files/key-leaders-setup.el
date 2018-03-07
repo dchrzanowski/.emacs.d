@@ -7,11 +7,9 @@
 ;; --------------------------------------------------------------------
 ;; general leader
 ;; --------------------------------------------------------------------
-(general-define-key :states 'motion
-                    "SPC" 'nil)
-
 (general-define-key
  :states '(normal visual motion emacs)
+ :keymaps 'override
  :prefix "SPC"
  ;; show filename
  "`" 'show-file-name

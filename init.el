@@ -32,6 +32,14 @@
 (use-package bind-key)
 (use-package general
   :config
+  (setq general-override-states '(insert
+                                  emacs
+                                  hybrid
+                                  normal
+                                  visual
+                                  motion
+                                  operator
+                                  replace))
   (general-override-mode))
 
 ;; --------------------------------------------------------------------

@@ -144,7 +144,6 @@
                                     dired
                                     eshell
                                     ibuffer
-                                    occur
                                     popup
                                     profiler
                                     quickrun
