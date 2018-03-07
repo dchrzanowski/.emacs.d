@@ -142,7 +142,6 @@
                                     bookmark
                                     calendar
                                     dired
-                                    ;; doc-view
                                     eshell
                                     ibuffer
                                     occur
@@ -150,7 +149,10 @@
                                     profiler
                                     quickrun
                                     realgud))
-  (evil-collection-init))
+  (evil-collection-init)
+  ;; bug in evil-collection-occur, does not start automatically
+  (require 'evil-collection-occur)
+  (evil-collection-occur-setup))
 
 (provide 'evil-setup)
 ;;; evil-setup ends here
