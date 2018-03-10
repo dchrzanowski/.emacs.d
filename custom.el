@@ -9,6 +9,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#1B2229" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#DFDFDF"])
  '(anzu-replace-to-string-separator " > ")
  '(async-shell-command-buffer (quote confirm-new-buffer))
  '(before-save-hook (quote (delete-trailing-whitespace)))
@@ -43,7 +45,7 @@
  '(cursor-type (quote bar))
  '(custom-safe-themes
    (quote
-    ("63b822ccd7a1928a7cbc88037dddf7b74b2f8a507e1bccd7281f20646f72cd0a" "6bde11b304427c7821b72a06a60e8d079b8f7ae10b407d8af37ed5e5d59b1324" "e91ca866d6cbb79786e314e0466f4f1b8892b72e77ed702e53bf7565e0dfd469" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "227e2c160b0df776257e1411de60a9a181f890cfdf9c1f45535fc83c9b34406b" "a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "1160f5fc215738551fce39a67b2bcf312ed07ef3568d15d53c87baa4fd1f4d4e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "02e30200f168b362d5e12cdef4afb2453aa9e00af11cc93c2bcd2a413251eac1" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "54ece5659cc7acdcd529dddd78675c2972a5ac69260af4a6aec517dcea16208b" "770181eda0f652ef9293e8db103a7e5ca629c516ca33dfa4709e2c8a0e7120f3" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" default)))
+    ("7c8d71a5848e12a8295c59f4be73d5df88f52cf843560f068780cdc1ddd215ae" "529dcacd99136187f21f624bf0306fe439e79a9b7087b4ee4007d0d843898384" "d45577a08dbf4451c434c28f7d9bb6b7be57e87825f7a41fccc4e9361e66c869" "90bd0eb20a1cb155b5a076f698b3c72cfe775aa7ea93b7bfbc171eb250db5e20" "a866134130e4393c0cad0b4f1a5b0dd580584d9cf921617eee3fd54b6f09ac37" "6dd2b995238b4943431af56c5c9c0c825258c2de87b6c936ee88d6bb1e577cb9" "3d20cf0dbc6465a02c468abf2d9b8c17e88b20fbc05a04205a829285da28799d" "bbb4a4d39ed6551f887b7a3b4b84d41a3377535ccccf901a3c08c7317fad7008" "e4a6fc5d9f4bc63b6ce9743396b68098ae7011d29e9876082ef3969c18b0ea93" "18eea36d8ecd6e236d25c4cc22d1a772cd34b32d83356a86d3eaf0865788c426" "a8c927cf1acf19ae27bd971894fa94c8114c31496c3d9cdfcc4d373dab34e4ef" "63b822ccd7a1928a7cbc88037dddf7b74b2f8a507e1bccd7281f20646f72cd0a" "6bde11b304427c7821b72a06a60e8d079b8f7ae10b407d8af37ed5e5d59b1324" "e91ca866d6cbb79786e314e0466f4f1b8892b72e77ed702e53bf7565e0dfd469" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "227e2c160b0df776257e1411de60a9a181f890cfdf9c1f45535fc83c9b34406b" "a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "1160f5fc215738551fce39a67b2bcf312ed07ef3568d15d53c87baa4fd1f4d4e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "02e30200f168b362d5e12cdef4afb2453aa9e00af11cc93c2bcd2a413251eac1" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "54ece5659cc7acdcd529dddd78675c2972a5ac69260af4a6aec517dcea16208b" "770181eda0f652ef9293e8db103a7e5ca629c516ca33dfa4709e2c8a0e7120f3" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" default)))
  '(default-frame-alist (quote ((vertical-scroll-bars))))
  '(dired-du-size-format t)
  '(eclimd-default-workspace "~/eclipse-workspace")
@@ -73,6 +75,9 @@
  '(holiday-oriental-holidays nil)
  '(holiday-other-holidays nil)
  '(holiday-solar-holidays nil)
+ '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(line-move-visual nil)
  '(mc/always-run-for-all t)
  '(menu-bar-mode nil)
@@ -120,6 +125,28 @@
  '(tabbar-separator (quote (1)))
  '(tool-bar-mode nil)
  '(track-eol t)
+ '(vc-annotate-background "#1B2229")
+ '(vc-annotate-color-map
+   (list
+    (cons 20 "#98be65")
+    (cons 40 "#b4be6c")
+    (cons 60 "#d0be73")
+    (cons 80 "#ECBE7B")
+    (cons 100 "#e6ab6a")
+    (cons 120 "#e09859")
+    (cons 140 "#da8548")
+    (cons 160 "#d38079")
+    (cons 180 "#cc7cab")
+    (cons 200 "#c678dd")
+    (cons 220 "#d974b7")
+    (cons 240 "#ec7091")
+    (cons 260 "#ff6c6b")
+    (cons 280 "#cf6162")
+    (cons 300 "#9f585a")
+    (cons 320 "#6f4e52")
+    (cons 340 "#5B6268")
+    (cons 360 "#5B6268")))
+ '(vc-annotate-very-old-color nil)
  '(web-mode-auto-close-style 2)
  '(web-mode-enable-current-column-highlight t)
  '(web-mode-enable-current-element-highlight t)

@@ -20,9 +20,12 @@
 (use-package doom-themes
   :config
   (load-theme 'doom-one t)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; if the doom theme is updated then override the default color to #131519
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (custom-set-faces
    ;; default
-   '(default ((t (:background "#282c34" :foreground "#bbc2cf" :weight normal :height 90 :foundry "PfEd" :family "DejaVu Sans Mono"))))
+   '(default ((t (:weight normal :height 90 :foundry "PfEd" :family "DejaVu Sans Mono"))))
    ;; auto highlight
    '(ahs-definition-face ((t (:background "black" :weight bold))))
    '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
@@ -74,13 +77,13 @@
    ;; helm
    '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
-   '(helm-selection ((t (:inherit bold :background "#101318"))))
+   '(helm-selection ((t (:inherit bold :background "#0b0c0e"))))
    ;; helm swoop
    '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
    '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
    '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
    ;; highlight line
-   '(hl-line ((t (:background "#20242A"))))
+   '(hl-line ((t (:background "#0b0c0e"))))
    ;; isearch
    '(isearch ((t (:background "black" :foreground "white"))))
    ;; lazy highlight
@@ -108,7 +111,7 @@
    '(show-paren-match ((t (:background "black" :foreground "#ff6c6b" :weight normal))))
    '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
    ;; tabbar
-   '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+   '(tabbar-selected ((t (:inherit tabbar-default :background "#131519" :foreground "lime green" :weight bold))))
    '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
    '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
    ;; tooltip
