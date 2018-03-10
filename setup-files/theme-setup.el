@@ -70,6 +70,8 @@
    ;; evil snipe
    '(evil-snipe-first-match-face ((t (:background "black" :foreground "green" :weight bold))))
    '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :underline t :weight bold))))
+   ;; evil visual mark mode
+ '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
    ;; eyebrowse
    '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
    ;; font lock variable name
@@ -91,8 +93,9 @@
    ;; neotree
    '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
    ;; org
-   '(org-level-1 ((t (:weight black :height 1.2 :foreground "#51afef" :background nil))))
-   '(org-level-2 ((t (:weight extrabold :foreground "#a9a1e1" :background nil))))
+   '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))
+   '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
+   '(org-level-3 ((t (:foreground "#bdb9da" :background nil))))
    ;; org agenda
    '(org-agenda-date ((t (:height 1.1))))
    '(org-agenda-date-today ((t (:height 1.2))))

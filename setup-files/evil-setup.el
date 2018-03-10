@@ -115,6 +115,11 @@
   (evil-snipe-mode)
   (evil-snipe-override-mode))
 
+(use-package evil-visual-mark-mode
+  :after evil
+  :config
+  (evil-visual-mark-mode))
+
 (use-package evil-exchange
   :after evil
   :config

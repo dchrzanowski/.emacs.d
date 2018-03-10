@@ -101,7 +101,7 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (helm-google helm-gitignore helm-flx flx fzf ibuffer-vc helpful shackle color-identifiers-mode darkroom org-notify org-alert toc-org org-projectile org-download diredful direful dired-hide-dotfiles dired-single evil-collection evil-colletion general company-statistics json-mode jedi virtualenv holiday holidays pdf-tools calfw-org calfw zenity-color-picker helm-system-packages exato evil-indent-plus evil-ediff evil-numbers evil-number evil-exchange ace-link git-messenger omnisharp omnisharp-emacs markdown-mode notmuch js-doc dired-du evil-snipe helm-dash company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet quickrun evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+    (evil-visual-mark-mode evil-visual-mark helm-google helm-gitignore helm-flx flx fzf ibuffer-vc helpful shackle color-identifiers-mode darkroom org-notify org-alert toc-org org-projectile org-download diredful direful dired-hide-dotfiles dired-single evil-collection evil-colletion general company-statistics json-mode jedi virtualenv holiday holidays pdf-tools calfw-org calfw zenity-color-picker helm-system-packages exato evil-indent-plus evil-ediff evil-numbers evil-number evil-exchange ace-link git-messenger omnisharp omnisharp-emacs markdown-mode notmuch js-doc dired-du evil-snipe helm-dash company-tern web-beautify which-key doom-themes paradox restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet quickrun evil-magit nlinum nlinum-relative evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update auto-highlight-symbol anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
@@ -197,6 +197,7 @@
  '(evil-ex-substitute-matches ((t (:background "black" :foreground "white"))))
  '(evil-snipe-first-match-face ((t (:background "black" :foreground "green" :weight bold))))
  '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :underline t :weight bold))))
+ '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
  '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
  '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
@@ -214,6 +215,7 @@
  '(org-agenda-date-weekend ((t (:height 1.1))))
  '(org-level-1 ((t (:weight black :height 1.2 :foreground "#51afef" :background nil))))
  '(org-level-2 ((t (:weight extrabold :foreground "#a9a1e1" :background nil))))
+ '(org-level-3 ((t (:foreground "#bdb9da" :background nil))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
  '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
  '(powerline-evil-operator-face ((t (:background "cyan" :foreground "black"))))
