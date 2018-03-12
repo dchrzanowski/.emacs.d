@@ -71,7 +71,7 @@
    '(evil-snipe-first-match-face ((t (:background "black" :foreground "green" :weight bold))))
    '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :underline t :weight bold))))
    ;; evil visual mark mode
- '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
+   '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
    ;; eyebrowse
    '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
    ;; font lock variable name
