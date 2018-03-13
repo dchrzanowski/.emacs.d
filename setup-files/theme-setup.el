@@ -21,7 +21,7 @@
   :config
   (load-theme 'doom-one t)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; if the doom theme is updated then override the default color to #131519
+  ;; if the doom theme is updated then override the default color to #181c24 (131519 laptop)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (custom-set-faces
    ;; default

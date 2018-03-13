@@ -20,6 +20,7 @@
  "F" 'helm-find-files
  "M-f" 'helm-multi-swoop-all
  "b" 'helm-filtered-bookmarks
+ "B" 'edit-bookmarks
  "m" 'helm-all-mark-rings
  "r" 'helm-semantic-or-imenu
  "R" 'helm-imenu-anywhere
