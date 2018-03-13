@@ -111,9 +111,9 @@
  "ob" 'org-iswitchb
  "ok" 'cfw:open-org-calendar
  "oK" 'calendar
- "ot" '(lambda () (interactive) (org-agenda nil "t"))
- "os" '(lambda () (interactive) (org-agenda nil "s"))
- "om" '(lambda () (interactive) (org-agenda nil "m"))
+ "ot" 'org-agenda-todo-items
+ "os" 'org-agenda-search-items
+ "om" 'org-agenda-match-tag-items
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0
@@ -174,7 +174,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'org-agenda-mode-map
- "oa" 'hydra-org-agenda/body)
+ "ca" 'hydra-org-agenda/body)
 
 ;; --------------------------------------------------------------------
 ;; js2 leader
@@ -207,7 +207,8 @@
  :prefix "SPC"
  :keymaps 'emacs-lisp-mode-map
  "ce" 'eval-last-sexp
- "cb" 'eval-buffer)
+ "cb" 'eval-buffer
+ "cr" 'eval-region)
 
 ;; --------------------------------------------------------------------
 ;; pomidor leader

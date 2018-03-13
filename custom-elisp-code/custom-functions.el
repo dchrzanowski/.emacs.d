@@ -148,6 +148,21 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (org-agenda-list)
   (delete-other-windows))
 
+(defun org-agenda-todo-items ()
+  "Org agenda show todo items."
+  (interactive)
+  (org-agenda nil "t"))
+
+(defun org-agenda-search-items ()
+  "Org agenda search for items."
+  (interactive)
+  (org-agenda nil "s"))
+
+(defun org-agenda-match-tag-items ()
+  "Org agenda search for tags."
+  (interactive)
+  (org-agenda nil "m"))
+
 ;; --------------------------------------------------------------------
 ;; Delete other windows and split right
 ;; --------------------------------------------------------------------
