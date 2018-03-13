@@ -93,6 +93,8 @@
    ;; neotree
    '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
    ;; org
+   '(org-block ((t (:background "#131519"))))
+   '(org-block-begin-line ((t (:background "#131519" :foreground "#5B6268"))))
    '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))
    '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
    '(org-level-3 ((t (:foreground "#bdb9da" :background nil))))
