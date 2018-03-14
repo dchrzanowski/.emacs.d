@@ -112,6 +112,8 @@
    '(rainbow-delimiters-depth-6-face ((t (:foreground "lime green"))))
    '(rainbow-delimiters-depth-9-face ((t (:foreground "dark orange"))))
    '(rainbow-delimiters-unmatched-face ((t (:foreground "red" :underline t))))
+   ;; region
+   '(region ((t (:background "#32343a"))))
    ;; parens
    '(show-paren-match ((t (:background "black" :foreground "#ff6c6b" :weight normal))))
    '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))

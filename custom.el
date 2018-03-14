@@ -226,6 +226,7 @@
  '(rainbow-delimiters-depth-6-face ((t (:foreground "lime green"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "dark orange"))))
  '(rainbow-delimiters-unmatched-face ((t (:foreground "red" :underline t))))
+ '(region ((t (:background "#32343a"))))
  '(show-paren-match ((t (:background "black" :foreground "#ff6c6b" :weight normal))))
  '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
  '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
