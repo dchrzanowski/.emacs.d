@@ -62,7 +62,7 @@
  "t" 'hydra-rare-launcher/body
  "d" 'hydra-window-operations/body
  "I" 'hydra-indent/body
- "gc" 'hydra-smerge/body
+ "gs" 'hydra-smerge/body
  ;; dired
  "D" 'dired
  ;; winner
@@ -98,6 +98,7 @@
  ;; git
  "gs" 'magit-status
  "gi" 'magit-init
+ "gc" 'magit-clone
  "gl" 'magit-log-popup
  "gr" 'magit-list-repositories
  "gm" 'git-messenger:popup-message
