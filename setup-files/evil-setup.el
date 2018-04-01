@@ -28,6 +28,10 @@
   (setq-default evil-move-cursor-back nil
                 evil-cross-lines t
                 evil-echo-state nil)
+
+  ;; treat symbols such as the dash and underscore as a part of a word
+  (defalias #'forward-evil-word #'forward-evil-symbol)
+
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
   (evil-put-property 'evil-state-properties 'insert   :tag " INSERT ")
