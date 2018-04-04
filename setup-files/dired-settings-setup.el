@@ -18,8 +18,6 @@
 ;; dired async
 (dired-async-mode)
 
-;; find files quicker
-(use-package dired-narrow)
 
 ;; show sizes of subdirs and dirs / file
 (use-package dired-du
@@ -27,10 +25,29 @@
   (setq dired-du-size-format t))
 
 ;; extras TODO
-(use-package dired-hacks-utils)
+(use-package dired-hacks-utils
+  :config
 
-;; reuse single dired buffer
-(use-package dired-single)
+  ;; find files quicker
+  (use-package dired-narrow)
+
+  ;; dired filters
+  (use-package dired-filter
+    :config
+    (setq dired-filter-saved-filters '(
+                                       ("Video" (extension "mkv" "mp4" "avi") (omit))
+                                       ("Audio" (extension "mp3" "ogg" "wave" "flac") (omit)))
+
+          dired-filter-group-saved-groups '(("default"
+                                             ("PDF" (extension . "pdf"))
+                                             ("LaTeX" (extension "tex" "bib"))
+                                             ("Video" (extension "mkv" "mp4" "avi") (omit))
+                                             ("Audio" (extension "mp3" "ogg" "wave" "flac") (omit))
+                                             ("Org" (extension . "org"))
+                                             ("Archives" (extension "zip" "rar" "gz" "bz2" "tar"))))))
+
+  ;; dired multistage copy/move/paste
+  (use-package dired-ranger))
 
 ;; show/hide dotfiles
 (use-package dired-hide-dotfiles

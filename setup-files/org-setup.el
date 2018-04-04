@@ -36,6 +36,7 @@
    org-refile-targets (quote ((nil :maxlevel . 9) (org-agenda-files :maxlevel . 9)))
    ;; org refile use outline path
    org-refile-use-outline-path t
+   org-outline-path-complete-in-steps nil
    ;; org capture templates
    org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")
                                  ("n" "note" entry (file "~/Google Drive/org/refile.org") "* %?")

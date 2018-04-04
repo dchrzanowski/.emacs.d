@@ -183,6 +183,8 @@
 ;; cfw caldendar
 (general-define-key :keymaps 'cfw:calendar-mode-map
                     "<SPC>" 'nil
+                    "n" 'next-line
+                    "p" 'previous-line
                     "o" 'cfw:show-details-command)
 
 ;; org
@@ -236,8 +238,8 @@
                     "SPC" 'nil
                     "C-j" 'scroll-up-command
                     "C-k" 'scroll-down-command
-                    "h" '(lambda () (interactive) (dired-single-buffer ".."))
-                    "l" 'dired-single-buffer
+                    "h" '(lambda () (interactive) (find-alternate-file ".."))
+                    "l" 'dired-find-alternate-file
                     "RET" 'dired-advertised-find-file
                     "<backspace>" 'dired-up-directory
                     "TAB" 'other-window

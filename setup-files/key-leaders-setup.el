@@ -62,7 +62,7 @@
  "t" 'hydra-rare-launcher/body
  "d" 'hydra-window-operations/body
  "I" 'hydra-indent/body
- "gc" 'hydra-smerge/body
+ "gs" 'hydra-smerge/body
  ;; dired
  "D" 'dired
  ;; winner
@@ -98,6 +98,7 @@
  ;; git
  "gs" 'magit-status
  "gi" 'magit-init
+ "gc" 'magit-clone
  "gl" 'magit-log-popup
  "gr" 'magit-list-repositories
  "gm" 'git-messenger:popup-message
@@ -114,6 +115,8 @@
  "ot" 'org-agenda-todo-items
  "os" 'org-agenda-search-items
  "om" 'org-agenda-match-tag-items
+ ;; special chars
+ "zz" 'ucs-insert
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0
@@ -231,6 +234,29 @@
  "n" 'neotree-create-node
  "c" 'neotree-copy-node)
 
+;; --------------------------------------------------------------------
+;; dired leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'dired-mode-map
+ ;; multistage copy
+ "cc" 'dired-ranger-copy
+ "cm" 'dired-ranger-move
+ "cp" 'dired-ranger-paste
+ ;; filter group toggles
+ "cg" 'dired-filter-group-mode
+ ;; filters
+ "cs" 'dired-filter-save-filters
+ "cl" 'dired-filter-load-saved-filters
+ "cP" 'dired-filter-pop
+ "ce" 'dired-filter-by-extension
+ "cn" 'dired-filter-by-name
+ "cr" 'dired-filter-by-regexp
+ "cd" 'dired-filter-by-directory
+ "cf" 'dired-filter-by-file
+ "ca" 'dired-filter-pop-all)
 
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here
