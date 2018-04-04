@@ -39,8 +39,8 @@
                                        ("Audio" (extension "mp3" "ogg" "wave" "flac") (omit)))
 
           dired-filter-group-saved-groups '(("default"
-                                             ("Docs" (extension "pdf" "doc" "docx" "odt"))
                                              ("Directory" (directory))
+                                             ("Docs" (extension "pdf" "doc" "docx" "odt"))
                                              ("Code" (extension "py" "cpp" "c" "java" "js" "jsx" "ts" "go" "sql" "cs" "lisp" "vala" "scala" "rs" "rb" "r" "php" "pas" "ml" "nim" "lua" "jl" "coffee" "clj" "dart" "d" "ex" "elm" "erl" "fs" "groovy" "hh" "hs"))
                                              ("LaTeX" (extension "tex" "bib"))
                                              ("Data" (extension "json" "dat" "data"))

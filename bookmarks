@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("Elisp Intro" 0 11
+(#1=(#("bin" 0 3
+      (bmkp-full-record #1#))
+    (filename . "/home/grimscythe/bin")
+    (position . 0)
+    (created 23237 23979 908434 402000))
+#1=(#("Elisp Intro" 0 11
       (bmkp-full-record #1#))
     (annotation)
     (tags)
@@ -11,8 +16,8 @@
     (rear-context-string . "sion,  Up: let\n\n")
     (front-context-region-string)
     (rear-context-region-string)
-    (visits . 4)
-    (time 23150 2778 381373 634000)
+    (visits . 5)
+    (time 23237 23766 921242 681000)
     (created 23024 23054 541330 828000)
     (position . 131871)
     (filename . "/usr/share/info/eintr")
@@ -66,8 +71,8 @@
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23182 46782 374399 813000)
-    (visits . 2)
+    (time 23237 22734 824246 742000)
+    (visits . 3)
     (filename . "/home/grimscythe/Downloads")
     (position . 1)
     (created 22832 28492 438942 538000))
@@ -82,8 +87,8 @@
 #1=(#("org" 0 3
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23073 51967 375268 419000)
-    (visits . 2)
+    (time 23237 23798 930046 82000)
+    (visits . 3)
     (filename . "/home/grimscythe/Google Drive/org/")
     (position . 1)
     (created 22832 28481 462877 604000))
@@ -98,8 +103,8 @@
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23231 49859 719315 22000)
-    (visits . 9)
+    (time 23237 24158 840253 816000)
+    (visits . 11)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))
