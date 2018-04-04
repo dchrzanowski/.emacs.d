@@ -39,12 +39,24 @@
                                        ("Audio" (extension "mp3" "ogg" "wave" "flac") (omit)))
 
           dired-filter-group-saved-groups '(("default"
-                                             ("PDF" (extension . "pdf"))
+                                             ("Docs" (extension "pdf" "doc" "docx" "odt"))
+                                             ("Directory" (directory))
+                                             ("Code" (extension "py" "cpp" "c" "java" "js" "jsx" "ts" "go" "sql" "cs" "lisp" "vala" "scala" "rs" "rb" "r" "php" "pas" "ml" "nim" "lua" "jl" "coffee" "clj" "dart" "d" "ex" "elm" "erl" "fs" "groovy" "hh" "hs"))
                                              ("LaTeX" (extension "tex" "bib"))
-                                             ("Video" (extension "mkv" "mp4" "avi") (omit))
-                                             ("Audio" (extension "mp3" "ogg" "wave" "flac") (omit))
+                                             ("Data" (extension "json" "dat" "data"))
+                                             ("Settings" (extension "sln" "csproj" "ini" "config" "csv" "conf"))
+                                             ("Markup" (extension "xml" "html" "xhtml" "iml" "ejs"))
+                                             ("Markdown" (extension "org" "md" "txt"))
+                                             ("Spreadsheets" (extension "xls" "xlsx"))
+                                             ("Presentation" (extension "ppt" "pptx"))
+                                             ("Elisp" (extension . "el"))
+                                             ("Shell" (extension . "sh"))
+                                             ("Video" (extension "mkv" "mp4" "avi" "mpg" "mpeg"))
+                                             ("Audio" (extension "mp3" "aiff" "ogg" "wave" "wav" "flac"))
                                              ("Org" (extension . "org"))
-                                             ("Archives" (extension "zip" "rar" "gz" "bz2" "tar"))))))
+                                             ("Stylesheets" (extension "css" "less" "sass" "scss"))
+                                             ("Images" (extension "jpg" "jpeg" "png" "bmp" "gif"))
+                                             ("Archives" (extension "zip" "tar" "gz" "7z" "xz" "jar" "iso" "pac" "pak" "rar" "bz2"))))))
 
   ;; dired multistage copy/move/paste
   (use-package dired-ranger))

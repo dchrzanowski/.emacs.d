@@ -187,7 +187,7 @@
  '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
  '(cursor ((t (:background "#FF0000"))))
  '(dired-directory ((t (:foreground "deep sky blue" :weight bold))))
- '(dired-filter-group-header ((t (:background "black" :foreground "olive drab" :weight bold))))
+ '(dired-filter-group-header ((t (:background "black" :foreground "orange" :box (:line-width 1 :color "orange") :weight bold))))
  '(dired-flagged ((t (:foreground "Red" :weight bold))))
  '(dired-header ((t (:height 110))))
  '(dired-marked ((t (:weight bold))))

@@ -43,17 +43,17 @@
    ;; ace window
    '(aw-leading-char-face ((t (:background "black" :foreground "red"))))
    ;; cal
-   '(cfw:face-toolbar-button-off ((t (:foreground "gray70"))))
-   '(cfw:face-toolbar-button-on ((t (:foreground "white" :weight bold))))
-   '(cfw:face-toolbar ((t (:foreground nil :background nil))))
-   '(cfw:face-header ((t (:foreground "#4ea1e9" :background nil :weight bold))))
-   '(cfw:face-saturday ((t (:foreground "#4ee979" :background nil :weight bold))))
-   '(cfw:face-sunday ((t (:foreground "#dbe94e" :background nil :weight bold))))
-   '(cfw:face-holiday ((t (:foreground "#e96c4e" :background "#080808"))))
    '(cfw:face-day-title ((t (:foreground "gray70" :background "#080808"))))
    '(cfw:face-grid ((t (:foreground "gray80" :background nil))))
+   '(cfw:face-header ((t (:foreground "#4ea1e9" :background nil :weight bold))))
+   '(cfw:face-holiday ((t (:foreground "#e96c4e" :background "#080808"))))
+   '(cfw:face-saturday ((t (:foreground "#4ee979" :background nil :weight bold))))
    '(cfw:face-select ((t (:foreground "white" :background "#4ea1e9"))))
+   '(cfw:face-sunday ((t (:foreground "#dbe94e" :background nil :weight bold))))
    '(cfw:face-today-title ((t (:foreground "white" :background "#D9534F"))))
+   '(cfw:face-toolbar ((t (:foreground nil :background nil))))
+   '(cfw:face-toolbar-button-off ((t (:foreground "gray70"))))
+   '(cfw:face-toolbar-button-on ((t (:foreground "white" :weight bold))))
    ;; company
    '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
    ;; cursor
@@ -63,6 +63,8 @@
    '(dired-header ((t (:height 110 :foreground "chartreuse3" :weight bold))))
    '(dired-flagged ((t (:foreground "red" :weight bold))))
    '(dired-marked ((t (:foreground "gold" :weight bold))))
+   ;; dired filter group
+   '(dired-filter-group-header ((t (:background "black" :foreground "orange" :box (:line-width 1 :color "orange") :weight bold))))
    ;; evil
    '(evil-ex-lazy-highlight ((t (:background "black" :foreground "white"))))
    '(evil-ex-search ((t (:background "black" :foreground "white"))))
