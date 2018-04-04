@@ -115,6 +115,8 @@
  "ot" 'org-agenda-todo-items
  "os" 'org-agenda-search-items
  "om" 'org-agenda-match-tag-items
+ ;; special chars
+ "zz" 'ucs-insert
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0
