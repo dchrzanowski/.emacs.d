@@ -234,6 +234,29 @@
  "n" 'neotree-create-node
  "c" 'neotree-copy-node)
 
+;; --------------------------------------------------------------------
+;; dired leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'dired-mode-map
+ ;; multistage copy
+ "cc" 'dired-ranger-copy
+ "cm" 'dired-ranger-move
+ "cp" 'dired-ranger-paste
+ ;; filter group toggles
+ "cg" 'dired-filter-group-mode
+ ;; filters
+ "cs" 'dired-filter-save-filters
+ "cl" 'dired-filter-load-saved-filters
+ "cP" 'dired-filter-pop
+ "ce" 'dired-filter-by-extension
+ "cn" 'dired-filter-by-name
+ "cr" 'dired-filter-by-regexp
+ "cd" 'dired-filter-by-directory
+ "cf" 'dired-filter-by-file
+ "ca" 'dired-filter-pop-all)
 
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here
