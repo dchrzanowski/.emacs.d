@@ -162,7 +162,7 @@
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(ahs-definition-face ((t (:background "black" :weight bold))))
  '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
- '(ahs-face ((t (:background "black"))))
+ '(ahs-face ((t (:background "black" :underline t))))
  '(ahs-plugin-defalt-face ((t nil)))
  '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
  '(anzu-replace-highlight ((t (:background "black" :foreground "green"))))

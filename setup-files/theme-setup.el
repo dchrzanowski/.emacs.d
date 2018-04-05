@@ -29,7 +29,7 @@
    ;; auto highlight
    '(ahs-definition-face ((t (:background "black" :weight bold))))
    '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
-   '(ahs-face ((t (:background "black"))))
+   '(ahs-face ((t (:background "black" :underline t))))
    '(ahs-plugin-defalt-face ((t nil)))
    '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
    ;; anzu
