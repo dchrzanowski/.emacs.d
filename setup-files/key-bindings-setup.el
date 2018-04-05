@@ -238,6 +238,8 @@
                     "SPC" 'nil
                     "C-j" 'scroll-up-command
                     "C-k" 'scroll-down-command
+                    "j" 'dired-hacks-next-file
+                    "k" 'dired-hacks-previous-file
                     "h" '(lambda () (interactive) (find-alternate-file ".."))
                     "l" 'dired-find-alternate-file
                     "RET" 'dired-advertised-find-file

@@ -117,7 +117,7 @@
    ;; region
    '(region ((t (:background "#32343a"))))
    ;; parens
-   '(show-paren-match ((t (:background "black" :foreground "#ff6c6b" :weight normal))))
+   '(show-paren-match ((t (:background "black" :foreground "red" :weight normal))))
    '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
    ;; tabbar
    '(tabbar-selected ((t (:inherit tabbar-default :background "#131519" :foreground "lime green" :weight bold))))
