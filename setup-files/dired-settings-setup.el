@@ -60,6 +60,9 @@
                                              ("Archive" (extension "zip" "tar" "gz" "7z" "xz" "jar" "iso" "pac" "pak" "rar" "bz2")))))
     (add-hook 'dired-mode-hook #'dired-filter-group-mode))
 
+  ;; dired subtree
+  (use-package dired-subtree)
+
   ;; dired multistage copy/move/paste
   (use-package dired-ranger))
 

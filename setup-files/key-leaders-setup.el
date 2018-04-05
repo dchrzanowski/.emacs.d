@@ -241,6 +241,9 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'dired-mode-map
+ ;; subtree
+ "ci" 'dired-maybe-insert-subdir
+ "cI" 'dired-kill-subdir
  ;; multistage copy
  "cc" 'dired-ranger-copy
  "cm" 'dired-ranger-move

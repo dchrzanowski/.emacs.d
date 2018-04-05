@@ -247,7 +247,8 @@
                     "TAB" 'other-window
                     "<tab>" 'other-window
                     "/" 'dired-narrow-fuzzy
-                    "I" 'dired-kill-subdir
+                    "i" 'dired-subtree-insert
+                    "I" 'dired-subtree-remove
                     "C-<right>" 'delete-other-windows-and-split-right
                     "M-s" 'xah-dired-sort
                     "r" 'revert-buffer
