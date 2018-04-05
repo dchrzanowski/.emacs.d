@@ -48,7 +48,7 @@
 (use-package helm-swoop
   :config
   (setq helm-swoop-split-with-multiple-windows t
-        helm-swoop-use-fuzzy-match nil
+        helm-swoop-use-fuzzy-match t
         helm-swoop-pre-input-function (lambda () "")))
 
 ;; --------------------------------------------------------------------
@@ -125,7 +125,7 @@
   (setq-default helm-flx-for-helm-find-files t
                 helm-flx-for-helm-locate t
                 helm-buffers-fuzzy-matching nil
-                helm-recentf-fuzzy-match nil
+                helm-recentf-fuzzy-match t
                 helm-semantic-fuzzy-match t
                 helm-imenu-fuzzy-match t))
 

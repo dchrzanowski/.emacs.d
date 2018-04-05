@@ -231,10 +231,12 @@
  '(region ((t (:background "#32343a"))))
  '(show-paren-match ((t (:background "black" :foreground "red" :weight normal))))
  '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
+ '(tabbar-default ((t (:background "#181c24" :foreground "#181c24" :height 1.0))))
  '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
  '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
  '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
  '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))
+ '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
  '(web-mode-html-tag-face ((t (:foreground "#db5762")))))
 (provide 'custom)
 ;;; custom.el ends here
