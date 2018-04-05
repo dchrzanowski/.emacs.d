@@ -2,7 +2,25 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("bin" 0 3
+(#1=(#("USB Drive" 0 9
+      (bmkp-full-record #1#))
+    (buffer-name . "media")
+    (front-context-string)
+    (rear-context-string . " Apr  5 17:50  ")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 1)
+    (time 23238 22310 339361 987000)
+    (created 23238 22210 370502 599000)
+    (position . 216)
+    (filename . #2="/run/media/")
+    (dired-directory . #2#)
+    (dired-marked)
+    (dired-switches . "-aBhl --group-directories-first")
+    (dired-subdirs)
+    (dired-hidden-dirs)
+    (handler . bmkp-jump-dired))
+#1=(#("bin" 0 3
       (bmkp-full-record #1#))
     (filename . "/home/grimscythe/bin")
     (position . 0)
@@ -71,8 +89,8 @@
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23237 22734 824246 742000)
-    (visits . 3)
+    (time 23238 21492 29457 459000)
+    (visits . 4)
     (filename . "/home/grimscythe/Downloads")
     (position . 1)
     (created 22832 28492 438942 538000))
@@ -95,8 +113,8 @@
 #1=(#("Google Drive" 0 12
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23223 31113 352504 910000)
-    (visits . 1)
+    (time 23238 985 396169 407000)
+    (visits . 2)
     (filename . "/home/grimscythe/Google Drive")
     (position . 1)
     (created 22832 28476 918717 928000))

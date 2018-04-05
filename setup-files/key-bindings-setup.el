@@ -65,6 +65,8 @@
   "C-;" 'dired-jump
   ;; evil-mc
   "C-S-<mouse-1>" 'evil-mc-toggle-cursor-on-click
+  ;; calc
+  "M-q" 'quick-calc
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle)

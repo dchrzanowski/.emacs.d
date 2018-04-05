@@ -116,7 +116,7 @@
  "os" 'org-agenda-search-items
  "om" 'org-agenda-match-tag-items
  ;; special chars
- "zz" 'ucs-insert
+ "zz" 'insert-char
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0
