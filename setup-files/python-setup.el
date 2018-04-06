@@ -5,12 +5,6 @@
 ;; --------------------------------------------------------------------
 
 ;; --------------------------------------------------------------------
-;; ggtags
-;; --------------------------------------------------------------------
-(use-package ggtags
-  :defer 1)
-
-;; --------------------------------------------------------------------
 ;; Python
 ;; --------------------------------------------------------------------
 (use-package elpy
@@ -24,7 +18,6 @@
       (remove-hook 'elpy-modules 'elpy-module-flymake)
       (remove-hook 'elpy-modules 'elpy-module-highlight-indentation)
       (add-hook 'elpy-mode-hook 'flycheck-mode)
-      (add-hook 'elpy-mode-hook 'ggtags-mode)
       (add-hook 'elpy-mode-hook 'hl-todo-mode))
     (elpy-enable)
     (setq elpy-rpc-backend "jedi")))

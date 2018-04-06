@@ -121,20 +121,5 @@
               (unless (eq ibuffer-sorting-mode 'alphabetic)
                 (ibuffer-do-sort-by-alphabetic)))))
 
-
-;; --------------------------------------------------------------------
-;; shackle
-;; --------------------------------------------------------------------
-;; (use-package shackle
-;;   :defer 3
-;;   :config
-;;   (setq shackle-default-rule '(:select t)
-;;         shackle-rules '(("\\`COMMIT_EDITMSG" :regexp t :select t)
-;;                         ("\\`magit-diff" :regexp t :ignore nil)
-;;                         ("\\`\\*magit" :regexp t :ignore nil)
-;;                         (" *NeoTree*" :regexp t :select t :align 'left :popup t)
-;;                         ("\\`\\*Warnings*" :regexp t :select nil)))
-;;   (shackle-mode))
-
 (provide 'navigation-setup)
 ;;; navigation-setup ends here

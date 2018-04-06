@@ -100,17 +100,6 @@
 (semantic-mode 1)
 
 ;; --------------------------------------------------------------------
-;; line numbering
-;; --------------------------------------------------------------------
-;; (use-package nlinum-relative
-;;   :config
-;;   (nlinum-relative-setup-evil)
-;;   (add-hook 'prog-mode-hook 'nlinum-relative-mode)
-;;   (add-hook 'org-mode-hook 'nlinum-relative-mode)
-;;   (setq-default nlinum-relative-redisplay-delay 0.5))
-
-
-;; --------------------------------------------------------------------
 ;; notifications
 ;; --------------------------------------------------------------------
 (setq alert-default-style 'libnotify)

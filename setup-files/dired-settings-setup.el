@@ -24,7 +24,7 @@
   :config
   (setq dired-du-size-format t))
 
-;; extras TODO
+;; dired hacks
 (use-package dired-hacks-utils
   :config
 

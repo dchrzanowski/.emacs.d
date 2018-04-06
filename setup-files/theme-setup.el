@@ -29,7 +29,7 @@
    ;; auto highlight
    '(ahs-definition-face ((t (:background "black" :weight bold))))
    '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
-   '(ahs-face ((t (:background "black" :underline t))))
+   '(ahs-face ((t (:background "black" :weight bold))))
    '(ahs-plugin-defalt-face ((t nil)))
    '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
    ;; anzu
@@ -71,7 +71,7 @@
    '(evil-ex-substitute-matches ((t (:background "black" :foreground "white"))))
    ;; evil snipe
    '(evil-snipe-first-match-face ((t (:background "black" :foreground "green" :weight bold))))
-   '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :underline t :weight bold))))
+   '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :weight bold))))
    ;; evil visual mark mode
    '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
    ;; eyebrowse
