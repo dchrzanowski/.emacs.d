@@ -261,5 +261,15 @@
  "cf" 'dired-filter-by-file
  "ca" 'dired-filter-pop-all)
 
+;; --------------------------------------------------------------------
+;; json leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'json-mode-map
+ ;; json print path
+ "cc" 'jsons-print-path)
+
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here

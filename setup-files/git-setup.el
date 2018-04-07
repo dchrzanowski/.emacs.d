@@ -68,5 +68,17 @@
 (use-package git-timemachine
   :defer 5)
 
+;; --------------------------------------------------------------------
+;; git-modes
+;; --------------------------------------------------------------------
+(use-package gitattributes-mode
+  :defer 5)
+
+(use-package gitconfig-mode
+  :defer 5)
+
+(use-package gitignore-mode
+  :defer 5)
+
 (provide 'git-setup)
 ;;; git-setup ends here
