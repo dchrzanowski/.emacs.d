@@ -76,8 +76,8 @@ _z_ swap           _=_ balance                   _q_uit
 ;; --------------------------------------------------------------------
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
-_g_it-gutter    gi_t_-timemachine    _a_uto-highlight    web_p_/_P_aste region/buffer    _=_/_-_ scale text    _l_oad theme
-_z_enity        insert he_x_         _b_eautify          _e_rrors                      _w_hitespace mode
+_g_it-gutter    gi_t_-timemachine    _a_uto-highlight    web_p_/_P_aste region/buffer    _=_/_-_ scale text     _l_oad theme
+_z_enity        insert he_x_         _b_eautify          _f_ycheck                     _w_hitespace mode    _e_ldoc
 _T_odo          _D_arkroom           _r_ainbow mode      p_o_midor                     e_d_iff
 ============================================================================================================================
 "
@@ -88,7 +88,8 @@ _T_odo          _D_arkroom           _r_ainbow mode      p_o_midor              
   ("z" zenity-cp-color-at-point-dwim :exit t)
   ("x" insert-color-hex :exit t)
   ("a" hydra-auto-highlight/body :exit t)
-  ("e" hydra-flycheck/body :exit t)
+  ("f" hydra-flycheck/body :exit t)
+  ("e" eldoc-overlay-mode :exit t)
   ("E" hydra-ediff/body :exit t)
   ("T" hydra-todo/body :exit t)
   ("b" hydra-beautify/body :exit t)

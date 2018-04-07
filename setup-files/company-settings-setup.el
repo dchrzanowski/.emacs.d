@@ -66,10 +66,10 @@
 ;;           (lambda ()
 ;;             (set (make-local-variable 'company-backends)
 ;;                  '((company-gtags company-jedi company-dabbrev company-yasnippet)))))
-(add-hook 'python-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-jedi company-dabbrev)))))
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-jedi company-dabbrev)))))
 
 ;; --------------------------------------------------------------------
 ;; CPP
@@ -77,7 +77,7 @@
 (add-hook 'c++-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-semantic company-dabbrev-code company-yasnippet)))))
+                 '((company-semantic)))))
 
 ;; --------------------------------------------------------------------
 ;; JAVA MODE
@@ -86,7 +86,7 @@
 (add-hook 'java-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-semantic company-dabbrev-code company-yasnippet)))))
+                 '((company-semantic)))))
 
 ;; setup for eclim (java)
 ;; (company-emacs-eclim-setup)
@@ -97,7 +97,7 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-tern company-semantic company-dabbrev-code company-yasnippet)))))
+                 '((company-tern company-semantic)))))
 
 ;; --------------------------------------------------------------------
 ;; C# MODE
@@ -113,7 +113,7 @@
 (add-hook 'nxml-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-nxml company-dabbrev-code)))))
+                 '((company-nxml)))))
 
 ;; --------------------------------------------------------------------
 ;; Fix collesion between expanding yasnippets and company
