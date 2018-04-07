@@ -36,7 +36,7 @@
 
 (defun helm-fzf--do-candidate-process ()
   (let* ((cmd-args (-filter 'identity (list helm-fzf-executable
-                                            "--no-sort"
+                                            ;; "--no-sort"
                                             "-f"
                                             helm-pattern)))
          (proc (apply 'start-file-process "helm-fzf" helm-buffer cmd-args)))
