@@ -64,8 +64,19 @@
   :diminish color-identifiers-mode
   :config
   (setq color-identifiers-coloring-method 'sequential
-        color-identifiers:max-color-saturation 0.7)
+        color-identifiers:num-colors '30
+        color-identifiers:color-luminance 0.6
+        color-identifiers:min-color-saturation 0.3
+        color-identifiers:max-color-saturation 1.0)
   (global-color-identifiers-mode))
+
+;; --------------------------------------------------------------------
+;; indent guide
+;; --------------------------------------------------------------------
+(use-package highlight-indentation
+  :config
+  (add-hook 'prog-mode-hook #'highlight-indentation-current-column-mode))
+
 
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here

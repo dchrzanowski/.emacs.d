@@ -7,10 +7,7 @@
 ;; --------------------------------------------------------------------
 ;; eldoc
 ;; --------------------------------------------------------------------
-(use-package eldoc-overlay
-  :config
-  (global-eldoc-mode)
-  (global-eldoc-overlay-disable))
+(global-eldoc-mode)
 
 (provide 'eldoc-setup)
 ;;; eldoc-setup ends here

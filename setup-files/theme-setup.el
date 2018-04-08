@@ -87,6 +87,8 @@
    '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
    '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
    ;; highlight line
+   '(highlight-indentation-current-column-face ((t (:background "#0b0c0e"))))
+   ;; highlight line
    '(hl-line ((t (:background "#0b0c0e"))))
    ;; isearch
    '(isearch ((t (:background "black" :foreground "white"))))
