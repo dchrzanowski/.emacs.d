@@ -73,9 +73,7 @@
 ;; --------------------------------------------------------------------
 ;; indent guide
 ;; --------------------------------------------------------------------
-(use-package highlight-indentation
-  :config
-  (add-hook 'prog-mode-hook #'highlight-indentation-current-column-mode))
+(use-package highlight-indentation)
 
 
 (provide 'editing-assists-setup)
