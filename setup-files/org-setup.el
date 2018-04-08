@@ -14,6 +14,8 @@
    org-log-done t
    ;; start folded, its cleaner
    org-startup-folded t
+   ;; don't ask to confirm elisp link launch
+   org-confirm-elisp-link-function nil
 
    ;; org main dir
    org-directory '("~/Google Drive/org")
@@ -38,10 +40,11 @@
    org-refile-use-outline-path t
    org-outline-path-complete-in-steps nil
    ;; org capture templates
-   org-capture-templates (quote (("t" "todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")
-                                 ("n" "note" entry (file "~/Google Drive/org/refile.org") "* %?")
-                                 ("c" "calfw2org" entry (file "~/Google Drive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")
-                                 ))
+   org-capture-templates (quote (("t" "Todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")
+                                 ("l" "Link" entry (file "~/Google Drive/org/refile.org") "* TODO %?\n  %a")
+                                 ("L" "Link with description" entry (file "~/Google Drive/org/refile.org") "* TODO %?\n  %A")
+                                 ("n" "Note" entry (file "~/Google Drive/org/refile.org") "* %?")
+                                 ("c" "Calfw2org" entry (file "~/Google Drive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")))
    ;; org agenda initial span
    org-agenda-span 'month
    ;; don't confirm babel eval
@@ -88,10 +91,11 @@
     (setq org-brain-title-max-length 12))
 
   (use-package toc-org
-    :defer 1)
+    :defer 2)
 
   ;; org-projectile
   (use-package org-projectile
+    :defer 2
     :config
     (progn
       (setq org-projectile-projects-file
@@ -101,6 +105,7 @@
 
   ;; org download
   (use-package org-download
+    :defer 2
     :config
     (setq-default org-download-image-dir "./images"))
 
