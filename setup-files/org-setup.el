@@ -32,7 +32,6 @@
                                  "IN-PROGRESS(i)"
                                  "|"
                                  "DONE(d)"
-                                 "DELEGATED(l)"
                                  "CANCELLED(c)"))
    ;; org refile depth search
    org-refile-targets (quote ((nil :maxlevel . 9) (org-agenda-files :maxlevel . 9)))
@@ -108,6 +107,12 @@
     :defer 2
     :config
     (setq-default org-download-image-dir "./images"))
+
+  ;; org edna
+  (use-package org-edna)
+
+  ;; org kanban
+  (use-package org-kanban)
 
   ;; org-export to github markdown
   (use-package ox-gfm
