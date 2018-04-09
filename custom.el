@@ -197,6 +197,7 @@
  '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :weight bold))))
  '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
  '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
+ '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
  '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
  '(helm-ff-directory ((t (:foreground "deep sky blue"))))

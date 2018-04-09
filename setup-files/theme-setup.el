@@ -78,6 +78,7 @@
    '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
    ;; font lock variable name
    '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
+   '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
    ;; helm
    '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
