@@ -67,6 +67,8 @@
   "C-S-<mouse-1>" 'evil-mc-toggle-cursor-on-click
   ;; calc
   "M-q" 'quick-calc
+  ;; insert unicode
+  "M-z" 'insert-char
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle)

@@ -33,13 +33,13 @@
    '(ahs-plugin-defalt-face ((t nil)))
    '(ahs-plugin-whole-buffer-face ((t (:foreground "orange" :underline t))))
    ;; anzu
-   '(anzu-replace-highlight ((t (:background "black" :foreground "green"))))
+   '(anzu-replace-highlight ((t (:background "black" :foreground "gold" :weight bold))))
    ;; avy
-   '(avy-goto-char-timer-face ((t (:background "black" :foreground "green"))))
-   '(avy-lead-face ((t (:background "black" :foreground "red"))))
-   '(avy-lead-face-0 ((t (:background "black" :foreground "green"))))
-   '(avy-lead-face-1 ((t (:background "black" :foreground "dark orange"))))
-   '(avy-lead-face-2 ((t (:background "black" :foreground "white"))))
+   '(avy-goto-char-timer-face ((t (:background "black" :foreground "gold" :weight bold))))
+   '(avy-lead-face ((t (:background "black" :foreground "gold" :weight bold))))
+   '(avy-lead-face-0 ((t (:background "black" :foreground "red" :weight bold))))
+   '(avy-lead-face-1 ((t (:background "black" :foreground "chartreuse3" :weight bold))))
+   '(avy-lead-face-2 ((t (:background "black" :foreground "white" :weight bold))))
    ;; ace window
    '(aw-leading-char-face ((t (:background "black" :foreground "red"))))
    ;; cal
@@ -70,8 +70,8 @@
    '(evil-ex-search ((t (:background "black" :foreground "white"))))
    '(evil-ex-substitute-matches ((t (:background "black" :foreground "white"))))
    ;; evil snipe
-   '(evil-snipe-first-match-face ((t (:background "black" :foreground "green" :weight bold))))
-   '(evil-snipe-matches-face ((t (:background "black" :foreground "green" :weight bold))))
+   '(evil-snipe-first-match-face ((t (:background "black" :foreground "gold" :weight bold))))
+   '(evil-snipe-matches-face ((t (:background "black" :foreground "gold" :weight bold))))
    ;; evil visual mark mode
    '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
    ;; eyebrowse
@@ -84,9 +84,9 @@
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
    '(helm-selection ((t (:inherit bold :background "#0b0c0e"))))
    ;; helm swoop
-   '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
+   '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "gold" :weight bold))))
    '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
-   '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
+   '(helm-swoop-target-word-face ((t (:background "black" :foreground "gold" :weigth bold))))
    ;; highlight line
    '(highlight-indentation-current-column-face ((t (:background "#0b0c0e"))))
    ;; highlight line
@@ -94,7 +94,7 @@
    ;; isearch
    '(isearch ((t (:background "black" :foreground "white"))))
    ;; lazy highlight
-   '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
+   '(lazy-highlight ((t (:background "black" :foreground "gold" :underline nil :weight bold))))
    ;; neotree
    '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
    ;; org

@@ -16,15 +16,12 @@
    org-startup-folded t
    ;; don't ask to confirm elisp link launch
    org-confirm-elisp-link-function nil
-
+   ;; don't confirm babel eval
+   org-confirm-babel-evaluate nil
    ;; org main dir
    org-directory '("~/Google Drive/org")
    ;; org refile location
    org-default-notes-file "~/Google Drive/org/refile.org"
-   ;; org agenda files location
-   org-agenda-files '("~/Google Drive/org/projects/myLectures"
-                      "~/Google Drive/org/projects"
-                      "~/Google Drive/org")
    ;; org keywords
    org-todo-keywords '((sequence "VERIFY(v)"
                                  "TODO(t)"
@@ -44,10 +41,16 @@
                                  ("L" "Link with description" entry (file "~/Google Drive/org/refile.org") "* TODO %?\n  %A")
                                  ("n" "Note" entry (file "~/Google Drive/org/refile.org") "* %?")
                                  ("c" "Calfw2org" entry (file "~/Google Drive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")))
+   ;; --------------------------------------------------------------------
+   ;; agenda
+   ;; --------------------------------------------------------------------
+   ;; org agenda files location
+   org-agenda-show-all-dates nil
+   org-agenda-files '("~/Google Drive/org/projects/myLectures"
+                      "~/Google Drive/org/projects"
+                      "~/Google Drive/org")
    ;; org agenda initial span
-   org-agenda-span 'month
-   ;; don't confirm babel eval
-   org-confirm-babel-evaluate nil)
+   org-agenda-span 'month)
 
   ;; org-babel setup
   (org-babel-do-load-languages
@@ -127,22 +130,41 @@
   ;; org-export reveal.js
   (use-package ox-reveal
     :defer t
-    :after org))
+    :after org)
+
+  ;; org-super-agenda
+  (use-package org-super-agenda
+    :defer 2
+    :config
+    (org-super-agenda-mode)
+    (setq org-super-agenda-groups
+          '((:name "Priority"
+                   :and (:tag "Priority" :todo t))
+            (:name "Exam"
+                   :and (:tag "Exam" :todo t))
+            (:name "Assignment"
+                   :and (:tag "Assignment" :todo t))
+            (:name "Study"
+                   :and (:tag "Study" :todo t))
+            (:name "Work"
+                   :and (:tag "Work" :todo t))
+            (:name "General"
+                   :and (:tag "General" :todo t))
+            (:name "Emacs"
+                   :and (:tag "Emacs"))
+            ))))
 
 ;; --------------------------------------------------------------------
 ;; org-notify
 ;; --------------------------------------------------------------------
 (with-eval-after-load 'org
-
   (require 'org-notify)
-
   (org-notify-add 'default
                   '(:time "-1s" :period "1m" :duration 5 :actions -notify )
                   '(:time "30m" :period "10m" :duration 5 :actions -notify)
                   '(:time "4h" :period "1h" :duration 5 :actions -notify)
                   '(:time "1d" :period "2h" :duration 5 :actions -notify)
                   '(:time "7d" :period "5h" :duration 10 :actions -notify))
-
   (org-notify-start))
 
 ;; --------------------------------------------------------------------
