@@ -41,6 +41,8 @@
  "hm" 'describe-mode
  "hk" 'describe-key
  "hi" 'info
+ "Df" 'describe-face
+ "DF" 'describe-font
  ;; helpful
  "Hv" 'helpful-variable
  "Hf" 'helpful-callable
@@ -63,8 +65,6 @@
  "d" 'hydra-window-operations/body
  "I" 'hydra-indent/body
  "gs" 'hydra-smerge/body
- ;; dired
- "D" 'dired
  ;; winner
  "q" 'winner-undo
  "Q" 'winner-redo

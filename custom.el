@@ -99,6 +99,7 @@
  '(org-from-is-user-regexp nil)
  '(org-log-done t)
  '(org-src-fontify-natively t)
+ '(org-super-agenda-mode t)
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
