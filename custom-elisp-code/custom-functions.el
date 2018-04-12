@@ -354,5 +354,13 @@ Version 2015-07-30"
      (t (error "logic error 09535" )))
     (dired-sort-other $arg )))
 
+;; --------------------------------------------------------------------
+;; Calc
+;; --------------------------------------------------------------------
+(defun calc-eval-string (x)
+  "Evaluate a raw string X for calc."
+  (interactive)
+  (calc-eval x 'raw))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here
