@@ -104,9 +104,9 @@
    '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
    '(org-level-3 ((t (:foreground "#84b585" :background nil))))
    ;; org agenda
-   '(org-agenda-date ((t (:height 1.1 :box (:line-width 1 :color "#a9a1e1")))))
-   '(org-agenda-date-today ((t (:foreground "#84b585" :height 1.2 :box (:line-width 1 :color "#84b585")))))
-   '(org-agenda-date-weekend ((t (:foreground "#ef5184" :height 1.1 :box (:line-width 1 :color "#ef5184")))))
+   '(org-agenda-date ((t (:background "black" :height 1.1 :box (:line-width 1 :color "#a9a1e1")))))
+   '(org-agenda-date-today ((t (:foreground "#84b585" :background "black" :height 1.2 :box (:line-width 1 :color "#84b585")))))
+   '(org-agenda-date-weekend ((t (:foreground "#ef5184" :background "black" :height 1.1 :box (:line-width 1 :color "#ef5184")))))
    ;; powerline
    '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
    '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
