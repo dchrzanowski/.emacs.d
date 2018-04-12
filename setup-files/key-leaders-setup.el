@@ -64,7 +64,7 @@
  "t" 'hydra-rare-launcher/body
  "d" 'hydra-window-operations/body
  "I" 'hydra-indent/body
- "gs" 'hydra-smerge/body
+ "gS" 'hydra-smerge/body
  ;; winner
  "q" 'winner-undo
  "Q" 'winner-redo
@@ -251,6 +251,8 @@
  "cc" 'dired-ranger-copy
  "cm" 'dired-ranger-move
  "cp" 'dired-ranger-paste
+ ;; marking
+ "c*" 'dired-mark-files-regexp
  ;; filter group toggles
  "cg" 'dired-filter-group-mode
  ;; filters
