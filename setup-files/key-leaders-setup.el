@@ -251,6 +251,8 @@
  "cc" 'dired-ranger-copy
  "cm" 'dired-ranger-move
  "cp" 'dired-ranger-paste
+ ;; marking
+ "c*" 'dired-mark-files-regexp
  ;; filter group toggles
  "cg" 'dired-filter-group-mode
  ;; filters
