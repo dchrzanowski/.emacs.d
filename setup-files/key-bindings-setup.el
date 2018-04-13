@@ -204,8 +204,7 @@
 
 ;; org agenda
 (general-define-key :keymaps 'org-agenda-mode-map
-                    "j" 'org-agenda-next-line
-                    "k" 'org-agenda-previous-line
+                    :states 'motion
                     "C-j" 'scroll-up-command
                     "C-k" 'scroll-down-command
                     "h" 'hydra-org-agenda/body)

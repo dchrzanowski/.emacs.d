@@ -84,15 +84,12 @@
   :after evil)
 
 (use-package evil-org
-  :defer 2
-  :after evil
   :diminish 'evil-org-mode
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
   (evil-org-set-key-theme '(navigation insert textobjects additional shift todo heading))
-  ;; (require 'evil-org-agenda)
-  ;; (evil-org-agenda-set-keys)
-  )
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 
 
 (use-package evil-mc
