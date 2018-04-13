@@ -362,5 +362,15 @@ Version 2015-07-30"
   (interactive)
   (calc-eval x 'raw))
 
+;; --------------------------------------------------------------------
+;; Frame
+;; --------------------------------------------------------------------
+(defun grim/new-frame ()
+  "Create a new frame with a preset 'default-frame-alist' size."
+  (interactive)
+  (add-to-list 'default-frame-alist '(height . 60))
+  (add-to-list 'default-frame-alist '(width . 160))
+  (make-frame))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

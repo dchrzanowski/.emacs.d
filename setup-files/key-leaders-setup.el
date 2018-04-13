@@ -118,7 +118,7 @@
  ;; special chars
  "zz" 'insert-char
  ;; frames
- "nn" 'new-frame
+ "nn" 'grim/new-frame
  "nd" 'delete-frame
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config

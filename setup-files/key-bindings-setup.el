@@ -261,6 +261,8 @@
 ;; neotree
 (general-define-key :states 'normal
                     :keymaps 'neotree-mode-map
+                    "gj" 'neotree-select-next-sibling-node
+                    "gk" 'neotree-select-previous-sibling-node
                     "L" 'neotree-enter-and-close-neotree
                     "l" 'neotree-quick-look
                     "h" 'neotree-select-up-node

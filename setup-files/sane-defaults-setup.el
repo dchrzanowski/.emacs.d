@@ -39,7 +39,6 @@
       holiday-oriental-holidays nil)
 
 ;; initial height and width
-;; (setq default-frame-alist '((width . 140) (height . 40)))
 ;; No splash screen
 (setq inhibit-startup-message t)
 ;; delete when region when starting to type inside
@@ -103,12 +102,6 @@
 ;; notifications
 ;; --------------------------------------------------------------------
 (setq alert-default-style 'libnotify)
-
-;; --------------------------------------------------------------------
-;; new frame size
-;; --------------------------------------------------------------------
-(add-to-list 'default-frame-alist '(height . 60))
-(add-to-list 'default-frame-alist '(width . 160))
 
 (provide 'sane-defaults-setup)
 ;;; sane-defaults-setup.el ends here
