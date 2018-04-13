@@ -275,13 +275,16 @@
 ;; quickrun
 (general-define-key :states 'normal
                     :keymaps 'quickrun--mode-map
-                    "q" 'quit-window)'
+                    "q" 'quit-window)
 
 ;; evil args
 (general-define-key :keymaps 'evil-inner-text-objects-map
                     "a" 'evil-inner-arg)
 (general-define-key :keymaps 'evil-outer-text-objects-map
                     "a" 'evil-outer-arg)
+
+;; (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+;; (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
 
 ;; pdf view
 (general-define-key :keymaps 'pdf-view-mode-map
