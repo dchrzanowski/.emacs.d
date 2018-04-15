@@ -191,6 +191,12 @@
                     "p" 'previous-line
                     "o" 'cfw:show-details-command)
 
+(general-define-key :keymaps 'cfw:details-mode-map
+                    "h" 'cfw:details-navi-prev-command
+                    "l" 'cfw:details-navi-next-command
+                    "j" 'cfw:details-navi-next-item-command
+                    "k" 'cfw:details-navi-prev-item-command)
+
 ;; org
 (general-define-key :keymaps 'org-mode-map
                     "C-l" 'ace-link-org

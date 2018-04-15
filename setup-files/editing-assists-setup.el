@@ -75,6 +75,14 @@
 ;; --------------------------------------------------------------------
 (use-package highlight-indentation)
 
+;; --------------------------------------------------------------------
+;; view large files
+;; --------------------------------------------------------------------
+(use-package vlf
+  :defer 4
+  :config
+  (require 'vlf-setup))
+
 
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here

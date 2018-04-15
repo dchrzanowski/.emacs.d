@@ -112,7 +112,10 @@
     (setq-default org-download-image-dir "./images"))
 
   ;; org edna
-  (use-package org-edna)
+  (use-package org-edna
+    :defer 2
+    :config
+    (org-edna-load))
 
   ;; org kanban
   (use-package org-kanban)
