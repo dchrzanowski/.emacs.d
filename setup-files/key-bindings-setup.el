@@ -71,7 +71,9 @@
   "M-z" 'insert-char
   ;; neotree
   "C-/" 'nil
-  "C-/" 'neotree-toggle)
+  "C-/" 'neotree-toggle
+  ;; ranger
+  "C-'" 'ranger)
 
 ;; --------------------------------------------------------------------
 ;; Evil insert/normal/visual
