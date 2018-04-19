@@ -44,6 +44,7 @@
   (setq ranger-cleanup-on-disable t
         ranger-footer-delay 0.2
         ranger-preview-delay 0.080
+        ranger-modify-header nil
         ranger-show-literal nil))
 
 ;; --------------------------------------------------------------------

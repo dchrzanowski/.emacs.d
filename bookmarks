@@ -2,7 +2,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("USB Drive" 0 9
+(#1=(#("Temp" 0 4
+      (bmkp-full-record #1#))
+    (annotation)
+    (tags)
+    (buffer-name . "Temp")
+    (front-context-string . ".\n  drwx------ 9")
+    (rear-context-string . "0K Apr 13 16:00 ")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 1)
+    (time 23256 19010 419670 549000)
+    (created 23256 19003 75949 583000)
+    (position . 143)
+    (filename . "/home/grimscythe/Temp/")
+    (dired-directory . "~/Temp/")
+    (dired-marked)
+    (dired-switches . "-aBhl --group-directories-first")
+    (dired-subdirs)
+    (dired-hidden-dirs)
+    (handler . bmkp-jump-dired))
+#1=(#("USB Drive" 0 9
       (bmkp-full-record #1#))
     (buffer-name . "media")
     (front-context-string)
@@ -89,8 +109,8 @@
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23238 21492 29457 459000)
-    (visits . 4)
+    (time 23256 18992 306277 748000)
+    (visits . 6)
     (filename . "/home/grimscythe/Downloads")
     (position . 1)
     (created 22832 28492 438942 538000))
@@ -121,8 +141,8 @@
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23237 24158 840253 816000)
-    (visits . 11)
+    (time 23256 17970 775594 799000)
+    (visits . 12)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))
