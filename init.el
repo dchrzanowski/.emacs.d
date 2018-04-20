@@ -70,6 +70,7 @@
 (require 'editing-assists-setup)
 (require 'evil-setup)
 (require 'git-setup)
+(require 'project-assist-setup)
 (require 'helm-setup)
 (require 'highlights-setup)
 (require 'hydra-setup)

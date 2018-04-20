@@ -117,7 +117,7 @@
     ("eshell" "*eshell*"
      (lambda nil
        (eshell shell-pop-term-shell)))))
- '(shell-pop-term-shell "/bin/bash")
+ '(shell-pop-term-shell "eshell")
  '(shell-pop-universal-key "C-`")
  '(shell-pop-window-position "bottom")
  '(shell-pop-window-size 30)

@@ -35,6 +35,7 @@
 ;; helm-projectile
 ;; --------------------------------------------------------------------
 (use-package helm-projectile
+  :after projectile
   :config
   (projectile-mode)
   ;; (setq projectile-indexing-method 'native)
