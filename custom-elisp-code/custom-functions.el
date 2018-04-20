@@ -255,14 +255,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; --------------------------------------------------------------------
 ;; Only fundamental-mode in big files
 ;; --------------------------------------------------------------------
-(defun fundamental-mode-in-big-files ()
-  "If a file is over a given size, make the buffer read only."
-  (when (> (buffer-size) (* 1024 50024))
-    (setq buffer-read-only t)
-    (buffer-disable-undo)
-    (fundamental-mode)))
+;; (defun fundamental-mode-in-big-files ()
+;;   "If a file is over a given size, make the buffer read only."
+;;   (when (> (buffer-size) (* 1024 50024))
+;;     (setq buffer-read-only t)
+;;     (buffer-disable-undo)
+;;     (fundamental-mode)))
 
-(add-hook 'find-file-hook 'fundamental-mode-in-big-files)
+;; (add-hook 'find-file-hook 'fundamental-mode-in-big-files)
 
 ;; --------------------------------------------------------------------
 ;; Sacha's defun insert defun
