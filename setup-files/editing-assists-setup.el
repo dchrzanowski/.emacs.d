@@ -83,6 +83,5 @@
   :config
   (require 'vlf-setup))
 
-
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here

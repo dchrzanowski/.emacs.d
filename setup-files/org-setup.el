@@ -31,7 +31,7 @@
                                  "DONE(d)"
                                  "CANCELLED(c)"))
    ;; org refile depth search
-   org-refile-targets (quote ((nil :maxlevel . 2) (org-agenda-files :maxlevel . 2)))
+   org-refile-targets (quote ((nil :maxlevel . 3) (org-agenda-files :maxlevel . 3)))
    ;; org refile use outline path
    org-refile-use-outline-path t
    org-outline-path-complete-in-steps nil

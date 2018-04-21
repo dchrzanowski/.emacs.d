@@ -30,6 +30,8 @@
 (diminish 'evil-org-mode)
 (diminish 'dired-async-mode)
 (diminish 'dired-hide-dotfiles-mode)
+(diminish 'flyspell-prog-mode)
+(diminish 'flyspell-mode)
 (diminish 'highlight-indentation-current-column-mode)
 (add-hook 'evil-god-state-entry-hook (lambda () (diminish 'god-local-mode)))
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))

@@ -117,6 +117,7 @@
  "om" 'org-agenda-match-tag-items
  ;; special chars
  "zz" 'insert-char
+ "zb" 'flyspell-buffer
  ;; frames
  "nn" 'grim/new-frame
  "nd" 'delete-frame
@@ -254,17 +255,17 @@
  ;; marking
  "c*" 'dired-mark-files-regexp
  ;; filter group toggles
- "cg" 'dired-filter-group-mode
+ "cfg" 'dired-filter-group-mode
  ;; filters
- "cs" 'dired-filter-save-filters
- "cl" 'dired-filter-load-saved-filters
- "cP" 'dired-filter-pop
- "ce" 'dired-filter-by-extension
- "cn" 'dired-filter-by-name
- "cr" 'dired-filter-by-regexp
- "cd" 'dired-filter-by-directory
- "cf" 'dired-filter-by-file
- "ca" 'dired-filter-pop-all)
+ "cfs" 'dired-filter-save-filters
+ "cfl" 'dired-filter-load-saved-filters
+ "cfP" 'dired-filter-pop
+ "cfe" 'dired-filter-by-extension
+ "cfn" 'dired-filter-by-name
+ "cfr" 'dired-filter-by-regexp
+ "cfd" 'dired-filter-by-directory
+ "cff" 'dired-filter-by-file
+ "cfa" 'dired-filter-pop-all)
 
 ;; --------------------------------------------------------------------
 ;; json leader

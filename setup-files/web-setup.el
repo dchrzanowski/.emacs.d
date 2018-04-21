@@ -71,6 +71,7 @@
 ;; web-beautify
 ;; --------------------------------------------------------------------
 (use-package web-beautify
+  :ensure-system-package (js-beautify . "sudo npm i -g js-beautify")
   :defer 2)
 
 ;; --------------------------------------------------------------------

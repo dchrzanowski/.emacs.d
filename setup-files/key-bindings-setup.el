@@ -135,6 +135,10 @@
 ;; --------------------------------------------------------------------
 ;; Local maps
 ;; --------------------------------------------------------------------
+;; flyspell
+(general-define-key :keymaps 'flyspell-mode-map
+                    "C-;" 'nil)
+
 ;; minibuffer
 (general-define-key :keymaps 'minibuffer-local-map
                     "C-r" 'evil-paste-from-register)
@@ -203,7 +207,7 @@
 (general-define-key :keymaps 'org-mode-map
                     "C-l" 'ace-link-org
                     "<C-tab>" 'tabbar-forward-tab
-                    "C-c C-r" 'org-refile
+                    "C-'" 'ranger
                     "M-r" 'org-refile
                     "<" '(lambda () (interactive)
                            (if (or (region-active-p) (looking-back "^"))
@@ -278,6 +282,7 @@
                     "q" 'neotree-hide
                     "RET" 'neotree-enter
                     "r" 'neotree-change-root
+                    "R" 'neo-buffer--rename-node
                     "J" 'neotree-open-xdg-on-point
                     "d" 'neotree-enter-ace-window)
 

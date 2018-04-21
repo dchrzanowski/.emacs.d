@@ -26,6 +26,7 @@
 (eval-when-compile
   (require 'use-package))
 (setq use-package-always-ensure t)
+(use-package use-package-ensure-system-package)
 
 ;; diminish and bind-key for use-package extra awesomeness
 (use-package diminish)
@@ -83,6 +84,7 @@
 (require 'smartparens-setup)
 (require 'tramp-setup)
 (require 'yasnippet-setup)
+(require 'spell-check-setup)
 
 ;; languages
 (require 'csharp-setup)
