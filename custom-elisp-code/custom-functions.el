@@ -336,6 +336,19 @@ DIR."
   (helm-select-nth-action 4))
 
 ;; --------------------------------------------------------------------
+;; Kill all dired buffers
+;; --------------------------------------------------------------------
+(defun kill-all-dired-buffers ()
+  "Kill all dired buffers."
+     (interactive)
+     (mapc (lambda (buffer)
+           (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
+             (kill-buffer buffer)))
+         (buffer-list)))
+
+;; (add-hook 'kill-emacs-hook #'kill-dired-buffers)
+
+;; --------------------------------------------------------------------
 ;; Dired sort by name, size, date...
 ;; --------------------------------------------------------------------
 (defun xah-dired-sort ()
