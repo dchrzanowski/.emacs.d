@@ -157,7 +157,8 @@
                                     popup
                                     profiler
                                     quickrun
-                                    realgud))
+                                    realgud
+                                    xref))
   (evil-collection-init)
   ;; bug in evil-collection-occur, does not start automatically
   (require 'evil-collection-occur)

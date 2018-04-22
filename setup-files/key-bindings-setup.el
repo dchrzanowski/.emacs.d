@@ -79,6 +79,8 @@
 ;; Evil insert/normal/visual
 ;; --------------------------------------------------------------------
 (general-define-key :keymaps '(insert normal visual)
+                    ;; xref
+                    "M-." 'xref-find-definitions
                     ;; company completion
                     "M-<SPC> <SPC>" 'company-complete-common
                     "M-<SPC> j" 'company-complete
