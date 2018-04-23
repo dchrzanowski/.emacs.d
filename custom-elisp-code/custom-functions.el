@@ -385,5 +385,14 @@ Version 2015-07-30"
   (add-to-list 'default-frame-alist '(width . 160))
   (make-frame))
 
+;; --------------------------------------------------------------------
+;; Byte recompile config files
+;; --------------------------------------------------------------------
+(defun byte-recompile-config-files ()
+  "Recompile all Emacs configuration files."
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d/setup-files")
+  (byte-recompile-directory "~/.emacs.d/custom-elisp-code"))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

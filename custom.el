@@ -93,9 +93,6 @@
      (:name "all mail" :query "*" :key "a")
      (:name "trash" :query "tag:trash" :key "b")
      (:name "stash" :query "tag:stash" :key "t"))))
- '(org-agenda-files
-   (quote
-    ("/home/grimscythe/Google Drive/org/notes.org" "/home/grimscythe/Google Drive/org/projects/myLectures/myLectures.org" "/home/grimscythe/Google Drive/org/projects/myLectures/myLecturesScalePlan.org" "/home/grimscythe/Google Drive/org/Calendar.org" "/home/grimscythe/Google Drive/org/refile.org")))
  '(org-from-is-user-regexp nil)
  '(org-log-done t)
  '(org-src-fontify-natively t)
@@ -150,8 +147,8 @@
     (cons 360 "#5B6268")))
  '(vc-annotate-very-old-color nil)
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t t)
- '(web-mode-enable-current-element-highlight t t)
+ '(web-mode-enable-current-column-highlight t)
+ '(web-mode-enable-current-element-highlight t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
@@ -211,9 +208,9 @@
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
  '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
- '(org-agenda-date ((t (:background "black" :height 1.1 :box (:line-width 1 :color "#a9a1e1")))))
- '(org-agenda-date-today ((t (:foreground "#84b585" :height 1.2))))
- '(org-agenda-date-weekend ((t (:foreground "#ef5184" :height 1.1))))
+ '(org-agenda-date ((t (:background "#173874" :foreground "white" :box (:line-width 4 :color "#173874") :weight ultra-bold :height 1.0))))
+ '(org-agenda-date-today ((t (:background "#276029" :foreground "white" :box (:line-width 4 :color "#276029") :weight ultra-bold :height 1.1))))
+ '(org-agenda-date-weekend ((t (:background "#913351" :foreground "white" :box (:line-width 4 :color "#913351") :weight ultra-bold :height 1.0))))
  '(org-block ((t (:background "#131519"))))
  '(org-block-begin-line ((t (:background "#131519" :foreground "#5B6268"))))
  '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))

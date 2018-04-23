@@ -80,6 +80,7 @@ _z_ swap           _=_ balance                   _q_uit                         
 _g_it-gutter    gi_t_-timemachine    _a_uto-highlight    web_p_/_P_aste region/buffer    _=_/_-_ scale text     _l_oad theme
 _z_enity        insert he_x_         _b_eautify          _f_ycheck                     _w_hitespace mode    _e_ldoc
 _T_odo          _D_arkroom           _r_ainbow mode      p_o_midor                     e_d_iff              _i_ndent hl
+_R_ecompile config
 ============================================================================================================================
 "
   ("g" hydra-git-gutter/body :exit t)
@@ -103,6 +104,7 @@ _T_odo          _D_arkroom           _r_ainbow mode      p_o_midor              
   ("w" whitespace-mode)
   ("=" text-scale-increase)
   ("-" text-scale-decrease)
+  ("R" byte-recompile-config-files :exit t)
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------

@@ -36,7 +36,12 @@
 (setq holiday-bahai-holidays nil
       holiday-hebrew-holidays nil
       holiday-islamic-holidays nil
-      holiday-oriental-holidays nil)
+      holiday-oriental-holidays nil
+      holiday-general-holidays nil
+      holiday-christian-holidays nil
+      holiday-local-holidays nil
+      holiday-other-holidays nil
+      holiday-solar-holidays nil)
 
 ;; initial height and width
 ;; No splash screen

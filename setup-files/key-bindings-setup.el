@@ -38,6 +38,7 @@
   "C-j" 'grim/newline-and-indent-inside-of-bracket
   ;; ace
   "M-d" 'ace-window
+  "C-l" 'ace-link
   ;; helm
   "M-x" 'helm-M-x
   "M-w" 'helm-mini
