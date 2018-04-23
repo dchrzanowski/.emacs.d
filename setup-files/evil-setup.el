@@ -22,7 +22,7 @@
 (use-package evil
   :init
   (setq evil-want-integration nil)
-  ;; :after evil-leader
+
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
@@ -73,6 +73,7 @@
 (use-package evil-visualstar
   :after evil
   :config
+  (setq evil-visualstar/persistent t)
   (global-evil-visualstar-mode))
 
 (use-package evil-args

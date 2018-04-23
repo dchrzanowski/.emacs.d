@@ -17,13 +17,13 @@
 ;; --------------------------------------------------------------------
 (use-package highlight-thing
   :defer 2
+  :diminish highlight-thing-mode
   :config
   (setq highlight-thing-case-sensitive-p t
         highlight-thing-exclude-thing-under-point nil
         highlight-thing-what-thing 'symbol
         highlight-thing-delay-seconds 1.0)
-
-  (global-highlight-thing-mode))
+  (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
 ;; --------------------------------------------------------------------
 ;; rainbow delimiters
@@ -56,6 +56,8 @@
         color-identifiers:min-color-saturation 0.3
         color-identifiers:max-color-saturation 1.0)
   (global-color-identifiers-mode))
+
+
 
 (provide 'highlights-setup)
 ;;; highlights-setup ends here
