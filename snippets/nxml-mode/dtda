@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dtda
+# key: dtda
+# --
+<!ATTLIST ${1:EleName} ${2:AttrName} ${3:data}>

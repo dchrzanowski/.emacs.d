@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dtde
+# key: dtde
+# --
+<!ELEMENT ${1:name} ($0)>

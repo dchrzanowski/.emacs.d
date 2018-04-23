@@ -57,23 +57,10 @@
   (setq darkroom-text-scale-increase 1.5))
 
 ;; --------------------------------------------------------------------
-;; color identifiers
+;; view large files
 ;; --------------------------------------------------------------------
-(use-package color-identifiers-mode
-  :defer 1
-  :diminish color-identifiers-mode
-  :config
-  (setq color-identifiers-coloring-method 'sequential
-        color-identifiers:num-colors '30
-        color-identifiers:color-luminance 0.6
-        color-identifiers:min-color-saturation 0.3
-        color-identifiers:max-color-saturation 1.0)
-  (global-color-identifiers-mode))
-
-;; --------------------------------------------------------------------
-;; indent guide
-;; --------------------------------------------------------------------
-(use-package highlight-indentation)
+(use-package speeddating
+  :defer t)
 
 ;; --------------------------------------------------------------------
 ;; view large files

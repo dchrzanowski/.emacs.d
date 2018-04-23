@@ -28,8 +28,7 @@
           web-mode-code-indent-offset 4
           web-mode-enable-auto-pairing t
           web-mode-enable-css-colorization t
-          web-mode-auto-close-style nil)
-    (auto-highlight-symbol-mode t))
+          web-mode-auto-close-style nil))
 
   (add-hook 'web-mode-hook
             (lambda ()

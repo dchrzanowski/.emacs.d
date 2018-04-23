@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: headx
+# key: headx
+# --
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://${1:namespace}"
+            xmlns="http://$1"
+            elementFormDefault="qualified">
+  $0
+</xsd:schema>

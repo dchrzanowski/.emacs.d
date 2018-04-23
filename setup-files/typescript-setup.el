@@ -15,7 +15,6 @@
     (interactive)
     (tide-setup)
     (flycheck-mode +1)
-    (auto-highlight-symbol-mode)
     (eldoc-mode +1)
     (company-mode +1))
 

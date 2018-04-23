@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dtd
+# key: dtd
+# --
+<!DOCTYPE ${1:name} [
+$0
+]>

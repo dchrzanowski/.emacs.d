@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: head
+# key: head
+# --
+<?xml version="1.0"?>
+<${1:rootEle} xmlns="http://${2:namespace}"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://$2 ${3:xsdFile}.xsd">
+  $0
+</$1>

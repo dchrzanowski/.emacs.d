@@ -15,11 +15,15 @@
 ;; --------------------------------------------------------------------
 ;; auto highlight mode
 ;; --------------------------------------------------------------------
-(use-package auto-highlight-symbol
-  :diminish auto-highlight-symbol-mode
+(use-package highlight-thing
+  :defer 2
   :config
-  (global-auto-highlight-symbol-mode t)
-  (add-hook 'prog-mode 'auto-highlight-symbol-mode))
+  (setq highlight-thing-case-sensitive-p t
+        highlight-thing-exclude-thing-under-point nil
+        highlight-thing-what-thing 'symbol
+        highlight-thing-delay-seconds 1.0)
+
+  (global-highlight-thing-mode))
 
 ;; --------------------------------------------------------------------
 ;; rainbow delimiters
@@ -33,6 +37,25 @@
 ;; --------------------------------------------------------------------
 (use-package rainbow-mode
   :defer t)
+
+;; --------------------------------------------------------------------
+;; indent guide
+;; --------------------------------------------------------------------
+(use-package highlight-indentation)
+
+;; --------------------------------------------------------------------
+;; color identifiers
+;; --------------------------------------------------------------------
+(use-package color-identifiers-mode
+  :defer 1
+  :diminish color-identifiers-mode
+  :config
+  (setq color-identifiers-coloring-method 'sequential
+        color-identifiers:num-colors '30
+        color-identifiers:color-luminance 0.6
+        color-identifiers:min-color-saturation 0.3
+        color-identifiers:max-color-saturation 1.0)
+  (global-color-identifiers-mode))
 
 (provide 'highlights-setup)
 ;;; highlights-setup ends here

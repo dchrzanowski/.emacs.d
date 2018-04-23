@@ -100,8 +100,11 @@
                     ;; drag stuff
                     "M-k" 'drag-stuff-up
                     "M-j" 'drag-stuff-down
+                    ;; date changers
+                    "+" 'speeddating-increase
+                    "_" 'speeddating-decrease
                     ;; evil numbers
-                    "+" 'evil-numbers/inc-at-pt
+                    "=" 'evil-numbers/inc-at-pt
                     "-" 'evil-numbers/dec-at-pt
                     "<kp-add>" 'evil-numbers/inc-at-pt
                     "<kp-subtract>" 'evil-numbers/dec-at-pt)
@@ -140,6 +143,7 @@
 ;; --------------------------------------------------------------------
 ;; flyspell
 (general-define-key :keymaps 'flyspell-mode-map
+                    "C-#" 'flyspell-auto-correct-previous-word
                     "C-;" 'nil)
 
 ;; minibuffer
