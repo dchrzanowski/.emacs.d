@@ -114,15 +114,24 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (buffer-string)))
 
 ;; --------------------------------------------------------------------
-;; custom keyboard quite to assits with evil as well
+;; custom keyboard quit to assits with evil as well
 ;; --------------------------------------------------------------------
 (defun keyboard-quit-and-remove-evil-mc ()
-  "Removes the evil-mc cursors first and then does a standard keyboard-quit."
+  "Remove evil-mc cursors first and then does a standard keyboard-quit."
   (interactive)
   (when evil-mc-cursor-state
     (evil-mc-make-and-goto-first-cursor))
   (evil-normal-state)
   (keyboard-quit))
+
+;; --------------------------------------------------------------------
+;; custom keyboard quit to assist with company abort
+;; --------------------------------------------------------------------
+(defun company-abort-and-switch-to-normal-state ()
+  "Abort company and switch no normal state."
+  (interactive)
+  (company-abort)
+  (evil-normal-state))
 
 ;; --------------------------------------------------------------------
 ;; insert hex color

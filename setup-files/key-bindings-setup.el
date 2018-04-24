@@ -237,7 +237,7 @@
                     "C-g" 'company-abort)
 
 (evil-make-intercept-map company-active-map 'insert)
-(general-def company-active-map [escape] 'company-abort)
+(general-def company-active-map [escape] 'company-abort-and-switch-to-normal-state)
 
 ;; yasnippet
 (general-define-key :keymaps 'yas-minor-mode-map
