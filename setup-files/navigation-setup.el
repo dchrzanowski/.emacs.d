@@ -107,6 +107,29 @@
   :config (setq dumb-jump-selector 'helm))
 
 ;; --------------------------------------------------------------------
+;; smart-jump
+;; --------------------------------------------------------------------
+(use-package smart-jump
+  :defer 1
+  :config
+  (smart-jump-setup-default-registers)
+
+  (smart-jump-register :modes 'emacs-lisp-mode
+                       :jump-fn 'xref-find-definitions
+                       :pop-fn 'pop-tag-mark
+                       :should-jump t
+                       :heuristic 'error
+                       :async nil)
+
+  (smart-jump-register :modes 'python-mode
+                       :jump-fn 'elpy-goto-definition
+                       :pop-fn 'pop-tag-mark
+                       :refs-fn 'elpy-xref--references
+                       :should-jump t
+                       :heuristic 'point
+                       :async nil))
+
+;; --------------------------------------------------------------------
 ;; imenu-anywhere
 ;; --------------------------------------------------------------------
 (use-package imenu-anywhere

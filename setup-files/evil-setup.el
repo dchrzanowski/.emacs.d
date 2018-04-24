@@ -148,7 +148,8 @@
   :after evil
   :config
   (setq evil-collection-mode-list nil)
-  (setq evil-collection-mode-list '(arc-mode
+  (setq evil-collection-mode-list '(ag
+                                    arc-mode
                                     avy
                                     bookmark
                                     calendar
