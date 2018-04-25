@@ -115,9 +115,11 @@
  "ot" 'org-agenda-todo-items
  "os" 'org-agenda-search-items
  "om" 'org-agenda-match-tag-items
- ;; special chars
+ ;; editing assist
  "zz" 'insert-char
  "zb" 'flyspell-buffer
+ "zd" 'define-word-at-point
+ "zD" 'define-word
  ;; frames
  "nn" 'grim/new-frame
  "nd" 'delete-frame

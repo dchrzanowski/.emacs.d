@@ -70,5 +70,11 @@
   :config
   (require 'vlf-setup))
 
+;; --------------------------------------------------------------------
+;; dictionary on point
+;; --------------------------------------------------------------------
+(use-package define-word
+  :defer t)
+
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here
