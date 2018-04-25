@@ -19,6 +19,7 @@
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
 
   (use-package tern
+    :ensure-system-package (tern . "sudo npm i -g tern")
     :diminish tern-mode "𝐓𝐞"
     :if (executable-find "tern"))
 

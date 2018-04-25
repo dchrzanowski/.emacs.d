@@ -97,7 +97,7 @@
 (add-hook 'js2-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-tern company-semantic)))))
+                 '((company-tern)))))
 
 ;; --------------------------------------------------------------------
 ;; C# MODE
