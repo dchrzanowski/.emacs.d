@@ -10,6 +10,8 @@
   :defer 1
   :config
   (setq
+   ;; open links in the same window
+   org-link-frame-setup '((file . find-file))
    ;; org log done headings
    org-log-done t
    ;; start folded, its cleaner
