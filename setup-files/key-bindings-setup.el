@@ -174,6 +174,7 @@
 ;; helm files
 (general-define-key :keymaps '(helm-find-files-map
                                helm-read-file-map
+                               helm-projectile-find-file-map
                                helm-generic-files-map)
                     "M-l" 'helm-execute-persistent-action
                     "M-h" 'helm-find-files-up-one-level
