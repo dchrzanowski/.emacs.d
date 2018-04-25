@@ -143,7 +143,7 @@
 ;; --------------------------------------------------------------------
 ;; flyspell
 (general-define-key :keymaps 'flyspell-mode-map
-                    "C-#" 'flyspell-auto-correct-previous-word
+                    "C-#" 'auto-correct-and-move-forward
                     "C-;" 'nil)
 
 ;; minibuffer

@@ -134,6 +134,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (evil-normal-state))
 
 ;; --------------------------------------------------------------------
+;; Auto correct previous word and move forward a word
+;; --------------------------------------------------------------------
+(defun auto-correct-and-move-forward ()
+  "Auto correct previous word and move forward a one word."
+  (interactive)
+  (flyspell-auto-correct-previous-word (point))
+  (forward-word))
+
+;; --------------------------------------------------------------------
 ;; insert hex color
 ;; --------------------------------------------------------------------
 (defun insert-color-hex ()
