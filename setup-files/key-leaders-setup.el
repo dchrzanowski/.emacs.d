@@ -123,6 +123,8 @@
  ;; frames
  "nn" 'grim/new-frame
  "nd" 'delete-frame
+ ;; multifiles
+ "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse
  "'" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0

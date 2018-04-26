@@ -76,5 +76,12 @@
 (use-package define-word
   :defer t)
 
+;; --------------------------------------------------------------------
+;; multifiles
+;; --------------------------------------------------------------------
+(use-package multifiles
+  :config
+  (require 'multifiles))
+
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here

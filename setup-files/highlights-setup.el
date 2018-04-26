@@ -22,7 +22,7 @@
   (setq highlight-thing-case-sensitive-p t
         highlight-thing-exclude-thing-under-point nil
         highlight-thing-what-thing 'symbol
-        highlight-thing-delay-seconds 1.0)
+        highlight-thing-delay-seconds 0.1)
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
 ;; --------------------------------------------------------------------
