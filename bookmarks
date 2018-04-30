@@ -96,8 +96,11 @@
     (handler . bmkp-jump-dired))
 #1=(#("bin" 0 3
       (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 23271 28964 628333 787000)
+    (visits . 0)
     (filename . "/home/grimscythe/bin")
-    (position . 0)
+    (position . 1)
     (created 23237 23979 908434 402000))
 #1=(#("Elisp Intro" 0 11
       (bmkp-full-record #1#))

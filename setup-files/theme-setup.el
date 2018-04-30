@@ -103,10 +103,15 @@
    '(org-agenda-date ((t (:background "#173874" :foreground "white" :box (:line-width 4 :color "#173874") :weight ultra-bold :height 1.0))))
    '(org-agenda-date-today ((t (:background "#276029" :foreground "white" :box (:line-width 4 :color "#276029") :weight ultra-bold :height 1.1))))
    '(org-agenda-date-weekend ((t (:background "#913351" :foreground "white" :box (:line-width 4 :color "#913351") :weight ultra-bold :height 1.0))))
-   ;; powerline
-   '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray6" :foreground "light gray"))))
+   ;; powerline and modeline
+   '(mode-line ((t (:background "gray12" :foreground "white" :box nil))))
+   '(mode-line-inactive ((t (:background "grey11" :foreground "#5B6268" :box nil))))
+   '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray4" :foreground "light gray"))))
+   '(powerline-active2 ((t (:inherit mode-line :background "grey20" :foreground "white"))))
    '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
    '(powerline-evil-operator-face ((t (:background "cyan" :foreground "black"))))
+   '(powerline-inactive0 ((t (:inherit mode-line-inactive :background "grey11"))))
+   '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "grey11"))))
    ;; rainbow delimiters
    '(rainbow-delimiters-depth-1-face ((t (:foreground "LavenderBlush1"))))
    '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
