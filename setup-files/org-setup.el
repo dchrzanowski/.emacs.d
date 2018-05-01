@@ -48,8 +48,7 @@
    ;; --------------------------------------------------------------------
    ;; org agenda files location
    org-agenda-show-all-dates nil
-   org-agenda-files '("~/Google Drive/org/projects/myLectures"
-                      "~/Google Drive/org/projects"
+   org-agenda-files '("~/Google Drive/org/projects"
                       "~/Google Drive/org")
    ;; org agenda initial span
    org-agenda-span 'month)
@@ -103,8 +102,8 @@
     :config
     (progn
       (setq org-projectile-projects-file
-            "~/Google Drive/org/projects/projects.org")
-      (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+            "~/Google Drive/org/projects/projects-refile.org")
+      ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
       (push (org-projectile-project-todo-entry) org-capture-templates)))
 
   ;; org download
