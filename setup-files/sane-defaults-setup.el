@@ -80,6 +80,7 @@
 ;; auto-focus help windows, easier to Q them
 (setq-default help-window-select t)
 ;; (global-subword-mode)  ;; iterate through camelcase
+(setq disabled-command-function nil)
 
 ;; --------------------------------------------------------------------
 ;; indents config
