@@ -258,6 +258,7 @@
  "cp" 'dired-ranger-paste
  ;; marking
  "c*" 'dired-mark-files-regexp
+ "c8" 'dired-mark-files-regexp
  ;; filter group toggles
  "cfg" 'dired-filter-group-mode
  ;; filters
