@@ -102,7 +102,7 @@
     :config
     (progn
       (setq org-projectile-projects-file
-            "~/Google Drive/org/projects/projects-refile.org")
+            "~/Google Drive/org/projects/projects_refile.org")
       ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
       (push (org-projectile-project-todo-entry) org-capture-templates)))
 
