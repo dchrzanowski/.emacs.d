@@ -241,10 +241,10 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'neotree-mode-map
- "r" 'neotree-rename-node
- "D" 'neotree-delete-node
- "n" 'neotree-create-node
- "c" 'neotree-copy-node)
+ "cr" 'neotree-rename-node
+ "cd" 'neotree-delete-node
+ "cn" 'neotree-create-node
+ "cc" 'neotree-copy-node)
 
 ;; --------------------------------------------------------------------
 ;; dired leader
