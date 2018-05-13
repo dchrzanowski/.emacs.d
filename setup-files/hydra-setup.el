@@ -168,12 +168,13 @@ Git gutter:
 ;; --------------------------------------------------------------------
 (defhydra hydra-flycheck (:color pink :hint nil)
   "
-_j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit
+_j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide Fix
 "
   ("f"  flycheck-error-list-set-filter                            "Filter")
   ("j"  flycheck-next-error                                       "Next")
   ("k"  flycheck-previous-error                                   "Previous")
   ("gg" flycheck-first-error                                      "First")
+  ("J"  tide-fix                                                  "Tide Fix")
   ("G"  (progn (goto-char (point-max)) (flycheck-previous-error)) "Last")
   ("q"  nil))
 

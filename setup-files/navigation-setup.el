@@ -121,6 +121,20 @@
                        :heuristic 'error
                        :async nil)
 
+  (smart-jump-register :modes 'typescript-mode
+                       :jump-fn 'tide-jump-to-definition
+                       :pop-fn 'tide-jump-back
+                       :should-jump t
+                       :heuristic 'error
+                       :async nil)
+
+  (smart-jump-register :modes 'js2-mode
+                       :jump-fn 'tern-find-definition
+                       :pop-fn 'tern-pop-find-definition
+                       :should-jump t
+                       :heuristic 'error
+                       :async nil)
+
   (smart-jump-register :modes 'python-mode
                        :jump-fn 'elpy-goto-definition
                        :pop-fn 'pop-tag-mark

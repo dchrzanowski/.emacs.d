@@ -197,8 +197,6 @@
  "ci" 'js-doc-insert-function-doc-snippet
  "cc" 'tern-get-type
  "cr" 'tern-rename-variable
- "c." 'tern-find-definition
- "c," 'tern-pop-find-definition
  "cd" 'tern-get-docs)
 
 ;; --------------------------------------------------------------------
@@ -208,7 +206,13 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'typescript-mode-map
- "c" 'tide-documentation-at-point)
+ "cd" 'tide-documentation-at-point
+ "cr" 'tide-refactor
+ "cR" 'tide-references
+ "ce" 'tide-project-errors
+ "cj" 'tide-jsdoc-template
+ "ci" 'tide-organize-imports
+ "cc" 'tide-fix)
 
 ;; --------------------------------------------------------------------
 ;; elisp leader
