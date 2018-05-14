@@ -2,4 +2,4 @@
 # name: Object key — key
 # key: kv
 # --
-${1:key}: ${2:'${3:value}'}${4:, }
+"${1:key}": ${2:"${3:value}"}${4:, }
