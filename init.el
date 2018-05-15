@@ -92,10 +92,14 @@
 (require 'python-setup)
 (require 'typescript-setup)
 (require 'web-setup)
+(require 'ligatures-setup)
 
+;; keybindings
 (require 'key-bindings-setup)
 (require 'key-leaders-setup)
 (require 'which-key-setup)
+
+;;diminish
 (require 'diminish-setup)
 
 ;; --------------------------------------------------------------------
