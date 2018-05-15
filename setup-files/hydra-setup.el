@@ -14,7 +14,7 @@
 ;; --------------------------------------------------------------------
 (defhydra hydra-window-operations (:color pink :hint nil)
   "
-_h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/file/proj   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs
+_h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/file/proj   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs          _D_ired kill all
 _H_/_J_/_K_/_L_ resize   _b_/_v_/_s2_/_s3_/_s4_ splits         _u_/_U_ undo/redo                  _0_-_9_ workspaces
 _d_ ace            _W_ kill buffer               _i_/_I_ jump other                 _M-u_ clean
 _z_ swap           _=_ balance                   _q_uit                           _R_evert buffer
@@ -51,6 +51,7 @@ _z_ swap           _=_ balance                   _q_uit                         
                    'hydra-window/body)))
   ("=" balance-windows)
   ("W" kill-this-buffer)
+  ("D" kill-all-dired-buffers :exit t)
   ("f" helm-find-files)
   ("F" helm-projectile-find-file)
   ("s2" window-split-into-2-columns-and-a-row)
@@ -77,9 +78,9 @@ _z_ swap           _=_ balance                   _q_uit                         
 ;; --------------------------------------------------------------------
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
-_g_it-gutter    gi_t_-timemachine    _R_ecompile config  web_p_/_P_aste region/buffer    _=_/_-_ scale text     _l_oad theme
-_z_enity        insert he_x_         _b_eautify          _f_ycheck                     _w_hitespace mode    _e_ldoc
-_T_odo          _D_arkroom           _r_ainbow mode      p_o_midor                     e_d_iff              _i_ndent hl
+_g_it-gutter    gi_t_-timemachine    _R_ecompile config    web_p_/_P_aste region/buffer    _=_/_-_ scale text     _l_oad theme
+_z_enity        insert he_x_         _b_eautify            _f_ycheck                     _w_hitespace mode    _e_ldoc
+_T_odo          _D_arkroom           _r_ainbow mode        p_o_midor                     e_d_iff              _i_ndent hl
 
 ============================================================================================================================
 "
