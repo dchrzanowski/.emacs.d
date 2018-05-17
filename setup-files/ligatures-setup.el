@@ -3,60 +3,48 @@
 ;; --------------------------------------------------------------------
 ;;; Code:
 ;; --------------------------------------------------------------------
-(defun prog-mode-style-ligatures ()
-  "C style languages ligatures."
-  (setq prettify-symbols-alist
-        '(("->" .     ?λ)
-          ("=>" .     ?λ)
-          ("lambda" . ?λ)
-          ("null" .   ?∅)
-          ("&&" .     ?∧)
-          ("||" .     ?∨)
-          ("==" .     ?≡)
-          ("===" .    ?≣)
-          ("!=" .     ?≠)
-          (">=" .     ?≥)
-          ("<=" .     ?≤))))
 
-(defun c-style-ligatures ()
-  "C style languages ligatures."
+;; ("return" . ?↲)
+;; ("for" . ?∀)
+;; ("if" . ?◆)
+;; ("else" . ?▶)
+;; ("this" . ?⅄)
+;; ("null" . ?∅)
+;; ("int" . ?ℤ)
+;; ("double" . ?ℝ)
+;; ("String" . ?ℾ)
+
+(defun prog-mode-style-ligatures ()
+  "General languages ligatures."
   (setq prettify-symbols-alist
-        '(("->" . ?λ)
-          ("return" . ?↲)
-          ("for" . ?∀)
-          ("if" . ?◆)
-          ("else" . ?→)
-          ("this" . ?⅄)
-          ("null" . ?∅)
-          ("int" . ?ℤ)
-          ("double" . ?ℝ)
-          ("String" . ?ℾ)
-          ("&&" . ?∧)
-          ("||" . ?∨)
-          ("==" . ?≡)
-          ("!=" . ?≠)
-          (">=" . ?≥)
-          ("<=" . ?≤))))
+        '(("lambda" . ?λ)
+          ("null"   . ?∅)
+          ("&&"     . ?∧)
+          ("||"     . ?∨)
+          ("=="     . ?≡)
+          ("==="    . ?≣)
+          ("!="     . ?≠)
+          (">="     . ?≥)
+          ("<="     . ?≤))))
+
+(defun java-style-ligatures ()
+  "Java style languages ligatures."
+  (push '("->" . ?λ) prettify-symbols-alist))
+
+(defun python-style-ligatures ()
+  "Java style languages ligatures."
+  (push '("def" . ?ƒ) prettify-symbols-alist))
 
 (defun js-style-ligatures ()
-  "C style languages ligatures."
-  (setq prettify-symbols-alist
-        '(("=>" . ?λ)
-          ("return" . ?↲)
-          ("for" . ?∀)
-          ("if" . ?◆)
-          ("else" . ?▶)
-          ("&&" . ?∧)
-          ("||" . ?∨)
-          ("==" . ?≡)
-          ("!=" . ?≠)
-          ("===" . ?≣)
-          ("!==" . ?≢)
-          (">=" . ?≥)
-          ("<=" . ?≤))))
+  "Js style languages ligatures."
+  (push '("=>"       . ?λ) prettify-symbols-alist)
+  (push '("function" . ?ƒ) prettify-symbols-alist))
 
-;; (add-hook 'java-mode-hook #'c-style-ligatures)
-(add-hook 'prog-mode-hook #'prog-mode-style-ligatures)
+(add-hook 'prog-mode-hook   #'prog-mode-style-ligatures)
+(add-hook 'java-mode-hook   #'java-style-ligatures)
+(add-hook 'python-mode-hook #'python-style-ligatures)
+(add-hook 'js2-mode-hook    #'js-style-ligatures)
+(add-hook 'tide-mode-hook   #'js-style-ligatures)
 
 (setq prettify-symbols-unprettify-at-point t)
 (global-prettify-symbols-mode)

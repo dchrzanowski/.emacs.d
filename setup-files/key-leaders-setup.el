@@ -195,6 +195,7 @@
  :prefix "SPC"
  :keymaps 'js2-mode-map
  "ci" 'js-doc-insert-function-doc-snippet
+ "cF" 'js-doc-insert-file-doc
  "cc" 'tern-get-type
  "cr" 'tern-rename-variable
  "cd" 'tern-get-docs)
@@ -206,9 +207,11 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'typescript-mode-map
+ "cF" 'js-doc-insert-file-doc
  "cd" 'tide-documentation-at-point
- "cr" 'tide-refactor
- "cR" 'tide-references
+ "cR" 'tide-refactor
+ "cr" 'tide-rename-symbol
+ "c." 'tide-references
  "ce" 'tide-project-errors
  "cj" 'tide-jsdoc-template
  "ci" 'tide-organize-imports
