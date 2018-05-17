@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: logv
+# key: logv
+# --
+console.log("----- $1 ----\n", $1);
