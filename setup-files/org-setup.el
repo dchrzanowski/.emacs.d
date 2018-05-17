@@ -119,7 +119,9 @@
     (org-edna-load))
 
   ;; org kanban
-  (use-package org-kanban)
+  (use-package org-kanban
+    :config
+    (setq org-kanban/abbreviation '("..." . 20)))
 
   ;; org-export to github markdown
   (use-package ox-gfm
