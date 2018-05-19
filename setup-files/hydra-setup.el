@@ -14,7 +14,7 @@
 ;; --------------------------------------------------------------------
 (defhydra hydra-window-operations (:color pink :hint nil)
   "
-_h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/file/proj   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs          _D_ired kill all
+_h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/proj/file   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs          _D_ired kill all
 _H_/_J_/_K_/_L_ resize   _b_/_v_/_s2_/_s3_/_s4_ splits         _u_/_U_ undo/redo                  _0_-_9_ workspaces
 _d_ ace            _W_ kill buffer               _i_/_I_ jump other                 _M-u_ clean
 _z_ swap           _=_ balance                   _q_uit                           _R_evert buffer
@@ -52,8 +52,8 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("=" balance-windows)
   ("W" kill-this-buffer)
   ("D" kill-all-dired-buffers :exit t)
-  ("f" helm-find-files)
-  ("F" helm-projectile-find-file)
+  ("F" helm-find-files)
+  ("f" helm-projectile-find-file)
   ("s2" window-split-into-2-columns-and-a-row)
   ("s3" window-split-into-3-columns)
   ("s4" window-split-into-4)
