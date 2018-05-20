@@ -33,6 +33,7 @@
 (diminish 'flyspell-mode)
 (diminish 'hi-lock-mode)
 (diminish 'highlight-thing-mode)
+(diminish 'docker-mode)
 (diminish 'highlight-indentation-current-column-mode)
 (add-hook 'evil-god-state-entry-hook (lambda () (diminish 'god-local-mode)))
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))

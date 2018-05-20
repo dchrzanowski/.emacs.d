@@ -15,5 +15,8 @@
   :config
   (docker-global-mode))
 
+(use-package yaml-mode
+  :mode ("\\.yml\\'" . yaml-mode))
+
 (provide 'docker-setup)
 ;;; docker-setup ends here
