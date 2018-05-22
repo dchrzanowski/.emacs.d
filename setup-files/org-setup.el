@@ -123,7 +123,7 @@
   ;; org kanban
   (use-package org-kanban
     :config
-    (setq-default org-kanban/abbreviation '("..." . 10)))
+    (setq-default org-kanban/abbreviation '("..." . 20)))
 
   ;; org-export to github markdown
   (use-package ox-gfm
