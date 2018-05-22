@@ -49,7 +49,9 @@
    ;; org agenda files location
    org-agenda-show-all-dates nil
    org-agenda-files '("~/Google Drive/org/projects"
+                      "~/Google Drive/org/projects/whiskey"
                       "~/Google Drive/org")
+
    ;; org agenda initial span
    org-agenda-span 'month)
 
@@ -121,7 +123,7 @@
   ;; org kanban
   (use-package org-kanban
     :config
-    (setq org-kanban/abbreviation '("..." . 20)))
+    (setq-default org-kanban/abbreviation '("..." . 10)))
 
   ;; org-export to github markdown
   (use-package ox-gfm

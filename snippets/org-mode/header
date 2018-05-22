@@ -6,4 +6,4 @@
 #+DATE: `(yas/org-get-time-stamp (current-time) t t)`
 #+AUTHOR: Damian Chrzanowski
 #+EMAIL: pjdamian.chrzanowski@gmail.com
-#+OPTIONS: H:${2:heading_depth}
+#+OPTIONS: TOC:2 num:2

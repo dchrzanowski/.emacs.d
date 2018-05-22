@@ -176,6 +176,7 @@
  :keymaps 'org-mode-map
  "cf" 'helm-org-rifle
  "cs" 'org-download-screenshot
+ "ck" 'org-kanban/shift
  "cy" 'org-download-yank)
 
 ;; --------------------------------------------------------------------
