@@ -98,7 +98,7 @@
    '(org-block-begin-line ((t (:background "#131519" :foreground "#5B6268"))))
    '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))
    '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
-   '(org-level-3 ((t (:foreground "#84b585" :background nil))))
+   '(org-level-3 ((t (:foreground "#c49e9e" :background nil))))
    ;; org agenda
    '(org-agenda-date ((t (:background "#173874" :foreground "white" :box (:line-width 4 :color "#173874") :weight ultra-bold :height 1.0))))
    '(org-agenda-date-today ((t (:background "#276029" :foreground "white" :box (:line-width 4 :color "#276029") :weight ultra-bold :height 1.1))))
