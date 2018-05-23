@@ -70,6 +70,9 @@
   "M-q" 'quick-calc
   ;; insert unicode
   "M-z" 'insert-char
+  ;; down/capitalize case word
+  "M-C" 'downcase-dwim
+  "M-c" 'capitalize-dwim
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle

@@ -2,7 +2,15 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("Music" 0 5
+(#1=(#("galway-whiskey" 0 14
+      (bmkp-full-record #1#))
+    (end-position . 1)
+    (time 23300 13027 235595 228000)
+    (visits . 0)
+    (filename . "/home/grimscythe/github/galway-whiskey")
+    (position . 1)
+    (created 23300 13021 919141 125000))
+#1=(#("Music" 0 5
       (bmkp-full-record #1#))
     (buffer-name . "Music")
     (front-context-string . ".\n  drwx------ 9")
@@ -131,16 +139,16 @@
       (bmkp-full-record #1#))
     (annotation)
     (tags)
-    (filename . "~/Google Drive/org/programming_notes.org")
-    (buffer-name . "programming_notes.org")
-    (front-context-string . "** [[https://dev")
-    (rear-context-string . "-14 Sun 00:19]\n\n")
+    (filename . "~/Google Drive/org/Calendar.org")
+    (buffer-name . "Calendar.org")
+    (front-context-string . "** TODO Assign a")
+    (rear-context-string . "ork list :Work:\n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(23295 61486 525181 82000))
+    (time . #2=(23299 64318 250879 158000))
     (created . #2#)
-    (position . 9330))
+    (position . 540))
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)
@@ -190,16 +198,16 @@
 #1=(#("Google Drive" 0 12
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23296 460 669678 448000)
-    (visits . 5)
+    (time 23300 13116 7151 913000)
+    (visits . 6)
     (filename . "/home/grimscythe/Google Drive")
     (position . 1)
     (created 22832 28476 918717 928000))
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23291 4227 56053 920000)
-    (visits . 15)
+    (time 23300 13054 649993 524000)
+    (visits . 17)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))
