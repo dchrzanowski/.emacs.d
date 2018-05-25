@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: api
+# key: api
+# --
+*~DESCRIPTION~* ~: ${1:Description}~
+*~VERB~* ~: ${2:GET}~
+*~ACCESS LEVEL~* ~: ${3:USER}~
+*~PATH~* ~: /api/${4:} ➜ $1~
+*~REQ OBJ~* ~: ${6:Requested Object}~
+*~RES OBJ~* ~: ${7:Response Object}~

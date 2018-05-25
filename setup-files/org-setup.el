@@ -59,7 +59,8 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
-     (dot . t)))
+     (dot . t)
+     (shell . t)))
 
   ;;autorefresh images after org-babel dot evaluations
   (add-hook 'org-babel-after-execute-hook 'auto-refresh-inline-images)
