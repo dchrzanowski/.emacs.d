@@ -203,7 +203,7 @@
  '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
  '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
  '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
- '(hi-yellow ((t (:background "black" :weight bold))))
+ '(hi-yellow ((t (:underline "chartreuse" :weight bold))))
  '(highlight-indentation-current-column-face ((t (:background "#0b0c0e"))))
  '(hl-line ((t (:background "#0b0c0e"))))
  '(isearch ((t (:background "black" :foreground "white"))))

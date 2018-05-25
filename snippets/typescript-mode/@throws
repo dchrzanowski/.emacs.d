@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: @throws
+# key: @t
+# --
+* @throws ${1:ExceptionType} ${2:Description}
