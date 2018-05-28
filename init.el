@@ -62,6 +62,7 @@
 (require 'sane-defaults-setup)
 (require 'help-setup)
 (require 'custom-functions)
+(require 'saved-macros)
 (require 'company-settings-setup)
 (require 'eldoc-setup)
 (require 'navigation-setup)
