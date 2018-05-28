@@ -299,6 +299,8 @@
  :keymaps 'restclient-mode-map
  ;; json prettify
  "ci" 'json-mode-beautify
+ "cu" 'get-user-bearer-token
+ "ca" 'get-admin-bearer-token
  "cc" 'restclient-http-send-current-stay-in-window)
 
 (provide 'key-leaders-setup)
