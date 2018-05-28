@@ -290,5 +290,16 @@
  ;; json print path
  "cc" 'jsons-print-path)
 
+;; --------------------------------------------------------------------
+;; restclient leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'restclient-mode-map
+ ;; json prettify
+ "ci" 'json-mode-beautify
+ "cc" 'restclient-http-send-current-stay-in-window)
+
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here
