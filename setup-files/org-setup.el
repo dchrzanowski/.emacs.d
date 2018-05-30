@@ -157,11 +157,12 @@
                    :and (:tag "Study" :todo t))
             (:name "Work"
                    :and (:tag "Work" :todo t))
+            (:name "Projects"
+                   :and (:tag "Projects" :todo t))
             (:name "General"
                    :and (:tag "General" :todo t))
             (:name "Emacs"
-                   :and (:tag "Emacs"))
-            ))))
+                   :and (:tag "Emacs"))))))
 
 ;; --------------------------------------------------------------------
 ;; org-notify
