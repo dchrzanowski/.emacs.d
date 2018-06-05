@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: post
+# key: np
+# --
+@Post('$1')

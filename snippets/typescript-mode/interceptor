@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: interceptor
+# key: nin
+# --
+@UseInterceptors(${1:AttachJwtInterceptor})

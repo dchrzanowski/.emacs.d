@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: put
+# key: np
+# --
+@Put('$1')

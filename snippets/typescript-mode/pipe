@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: pipe
+# key: npi
+# --
+@UsePipes(${1:new ValidationPipe({ transform: true })})

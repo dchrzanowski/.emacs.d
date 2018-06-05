@@ -16,6 +16,7 @@
     (tide-setup)
     (flycheck-mode +1)
     (eldoc-mode +1)
+    (hl-todo-mode)
     (company-mode +1))
 
   ;; formats the buffer before saving

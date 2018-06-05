@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: guards
+# key: ngu
+# --
+@UseGuards(${1:AuthGuard('jwt')})
