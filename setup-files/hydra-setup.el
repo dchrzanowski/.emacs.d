@@ -18,7 +18,7 @@ _h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/proj/file   _x_/_X_/_o_ delete 
 _H_/_J_/_K_/_L_ resize   _b_/_v_/_s2_/_s3_/_s4_ splits         _u_/_U_ undo/redo                  _0_-_9_ workspaces
 _d_ ace            _W_ kill buffer               _i_/_I_ jump other                 _M-u_ clean
 _z_ swap           _=_ balance                   _q_uit                           _R_evert buffer
-============================================================================================================================
+=
 "
   ("h" windmove-left)
   ("l" windmove-right)
@@ -81,8 +81,7 @@ _z_ swap           _=_ balance                   _q_uit                         
 _g_it-gutter    gi_t_-timemachine    _R_ecompile config    web_p_/_P_aste region/buffer    _=_/_-_ scale text     _l_oad theme
 _z_enity        insert he_x_         _b_eautify            _f_ycheck                     _w_hitespace mode    _e_ldoc
 _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor                     e_d_iff              _i_ndent hl
-
-============================================================================================================================
+=
 "
   ("g" hydra-git-gutter/body :exit t)
   ("t" git-timemachine-toggle :exit t)
@@ -114,7 +113,7 @@ _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor            
   "
 _j_ next    _k_ previous    _c_ run
 _U_/_u_  run/get user token   _A_/_a_ run/get admin token
-============================================================================================================================
+=
 "
   ("j" restclient-jump-next)
   ("k" restclient-jump-prev)
@@ -131,7 +130,7 @@ _U_/_u_  run/get user token   _A_/_a_ run/get admin token
 (defhydra hydra-todo (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _o_ occur
-============================================================================================================================
+=
 "
   ("j" hl-todo-next)
   ("k" hl-todo-previous)
@@ -144,7 +143,7 @@ _j_/_k_ next/prev    _o_ occur
 (defhydra hydra-beautify (:color pink :hint nil)
   "
 _j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
-============================================================================================================================
+=
 "
   ("j" web-beautify-js :exit t)
   ("h" web-beautify-html :exit t)
@@ -166,7 +165,7 @@ Git gutter:
   ^ ^                   _p_opup hunk
   _gg_: first hunk
   _G_: last hunk        set start _R_evision
-============================================================================================================================
+=
 "
   ("j" git-gutter:next-hunk)
   ("k" git-gutter:previous-hunk)
@@ -191,7 +190,7 @@ Git gutter:
 (defhydra hydra-flycheck (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide Fix
-============================================================================================================================
+=
 "
   ("f"  flycheck-error-list-set-filter                            "Filter")
   ("j"  flycheck-next-error                                       "Next")
@@ -207,7 +206,7 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide
 (defhydra hydra-indent (:color pink :hint nil)
   "
 _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
-============================================================================================================================
+=
 "
   ("h" custom-unindent-region)
   ("l" custom-indent-region)
@@ -220,7 +219,7 @@ _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
 (defhydra hydra-indent (:color pink :hint nil)
   "
 _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
-============================================================================================================================
+=
 "
   ("h" custom-unindent-region)
   ("l" custom-indent-region)
@@ -236,7 +235,7 @@ _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
 _b_uffers           _f_iles (_=_)       _r_evisions              _l_inewise
 _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
                   _c_urrent file    _q_uit
-============================================================================================================================
+=
 "
   ("b" ediff-buffers)
   ("B" ediff-buffers3)
@@ -260,7 +259,7 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
  _m_inor   _f_ile         _t_ryout
  _e_xtra   _l_ist         _n_ew
          _a_ll     _q_uit
-============================================================================================================================
+=
 "
   ("d" yas-load-directory)
   ("e" yas-activate-extra-mode)
@@ -367,7 +366,7 @@ _vr_ reset      ^^                       ^^                 ^^
  _a_scii   _v_erse     _P_erl tangled  _I_NCLUDE:
  _s_rc     _n_ote      plant_u_ml      _H_TML:
  _h_tml    ^ ^         ^ ^             _A_SCII:
-============================================================================================================================
+=
 "
   ("s" (hot-expand "<s"))
   ("E" (hot-expand "<e"))
@@ -427,7 +426,7 @@ _p_rev _m_ine _E_diff _=_: mine-other
 ^ ^ _o_ther _C_ombine _>_: base-other
 ^ ^ _a_ll _r_esolve
 _q_uit _RET_: current
-============================================================================================================================
+=
 "
   ("RET" smerge-keep-current)
   ("C" smerge-combine-with-next)
