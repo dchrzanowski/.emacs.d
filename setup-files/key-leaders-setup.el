@@ -299,9 +299,14 @@
  :keymaps 'restclient-mode-map
  ;; json prettify
  "ci" 'json-mode-beautify
+ "cj" 'restclient-jump-next
+ "ck" 'restclient-jump-prev
  "cu" 'get-user-bearer-token
  "ca" 'get-admin-bearer-token
- "cc" 'restclient-http-send-current-stay-in-window)
+ "cU" 'run-user-bearer-token
+ "cA" 'run-admin-bearer-token
+ "cc" 'restclient-http-send-current-stay-in-window
+ "ch" 'hydra-restclient/body)
 
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here

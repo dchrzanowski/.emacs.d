@@ -108,11 +108,30 @@ _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor            
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
+;; Restclient hydra
+;; --------------------------------------------------------------------
+(defhydra hydra-restclient (:color pink :hint nil)
+  "
+_j_ next    _k_ previous    _c_ run
+_U_/_u_  run/get user token   _A_/_a_ run/get admin token
+============================================================================================================================
+"
+  ("j" restclient-jump-next)
+  ("k" restclient-jump-prev)
+  ("u" get-user-bearer-token)
+  ("a" get-admin-bearer-token)
+  ("U" run-user-bearer-token)
+  ("A" run-admin-bearer-token)
+  ("c" restclient-http-send-current-stay-in-window)
+  ("q" nil :color blue))
+
+;; --------------------------------------------------------------------
 ;; Auto highlight hydra
 ;; --------------------------------------------------------------------
 (defhydra hydra-todo (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _o_ occur
+============================================================================================================================
 "
   ("j" hl-todo-next)
   ("k" hl-todo-previous)
@@ -125,6 +144,7 @@ _j_/_k_ next/prev    _o_ occur
 (defhydra hydra-beautify (:color pink :hint nil)
   "
 _j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
+============================================================================================================================
 "
   ("j" web-beautify-js :exit t)
   ("h" web-beautify-html :exit t)
@@ -146,6 +166,7 @@ Git gutter:
   ^ ^                   _p_opup hunk
   _gg_: first hunk
   _G_: last hunk        set start _R_evision
+============================================================================================================================
 "
   ("j" git-gutter:next-hunk)
   ("k" git-gutter:previous-hunk)
@@ -170,6 +191,7 @@ Git gutter:
 (defhydra hydra-flycheck (:color pink :hint nil)
   "
 _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide Fix
+============================================================================================================================
 "
   ("f"  flycheck-error-list-set-filter                            "Filter")
   ("j"  flycheck-next-error                                       "Next")
@@ -185,12 +207,25 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide
 (defhydra hydra-indent (:color pink :hint nil)
   "
 _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
+============================================================================================================================
 "
   ("h" custom-unindent-region)
   ("l" custom-indent-region)
   ("i" cleanup-buffer)
   ("q" nil :color blue))
 
+;; --------------------------------------------------------------------
+;; Indent hydra
+;; --------------------------------------------------------------------
+(defhydra hydra-indent (:color pink :hint nil)
+  "
+_h_ unindent    _l_ indent    _i_ auto indent    _q_uit
+============================================================================================================================
+"
+  ("h" custom-unindent-region)
+  ("l" custom-indent-region)
+  ("i" cleanup-buffer)
+  ("q" nil :color blue))
 ;; --------------------------------------------------------------------
 ;; Ediff hydra
 ;; --------------------------------------------------------------------
@@ -201,6 +236,7 @@ _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
 _b_uffers           _f_iles (_=_)       _r_evisions              _l_inewise
 _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
                   _c_urrent file    _q_uit
+============================================================================================================================
 "
   ("b" ediff-buffers)
   ("B" ediff-buffers3)
@@ -224,6 +260,7 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
  _m_inor   _f_ile         _t_ryout
  _e_xtra   _l_ist         _n_ew
          _a_ll     _q_uit
+============================================================================================================================
 "
   ("d" yas-load-directory)
   ("e" yas-activate-extra-mode)
@@ -330,6 +367,7 @@ _vr_ reset      ^^                       ^^                 ^^
  _a_scii   _v_erse     _P_erl tangled  _I_NCLUDE:
  _s_rc     _n_ote      plant_u_ml      _H_TML:
  _h_tml    ^ ^         ^ ^             _A_SCII:
+============================================================================================================================
 "
   ("s" (hot-expand "<s"))
   ("E" (hot-expand "<e"))
@@ -389,6 +427,7 @@ _p_rev _m_ine _E_diff _=_: mine-other
 ^ ^ _o_ther _C_ombine _>_: base-other
 ^ ^ _a_ll _r_esolve
 _q_uit _RET_: current
+============================================================================================================================
 "
   ("RET" smerge-keep-current)
   ("C" smerge-combine-with-next)
