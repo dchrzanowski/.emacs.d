@@ -70,6 +70,8 @@
    '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
    ;; eyebrowse
    '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
+   ;; flyspell
+   '(flyspell-incorrect ((t (:underline (:color "chocolate" :style wave)))))
    ;; font lock variable name
    '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
    '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
