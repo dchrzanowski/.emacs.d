@@ -220,7 +220,7 @@
  '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))
  '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
  '(org-level-3 ((t (:foreground "#c49e9e" :weight semi-bold))))
- '(org-todo ((t (:background "#d9534f" :foreground "white" :box (:line-width 1 :color "#d9534f" :style pressed-button) :weight bold))))
+ '(org-todo ((t (:background "#af231e" :foreground "white" :box (:line-width 1 :color "#af231e" :style pressed-button) :weight bold))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray4" :foreground "light gray"))))
  '(powerline-active2 ((t (:inherit mode-line :background "grey20" :foreground "white"))))
  '(powerline-evil-normal-face ((t (:background "dark green" :foreground "white"))))
