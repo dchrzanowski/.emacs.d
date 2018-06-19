@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: font awesome
-# key: fa
+# key: afa
 # --
 <fa name="${1:Name}"></fa>

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fa
+# key: fa
+# --
+<i class="fa fa-${1:icon}"></i>

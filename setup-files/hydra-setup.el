@@ -61,6 +61,7 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("u" winner-undo)
   ("U" winner-redo)
   ("M-u" clean-buffer-list)
+  ("S" window-toggle-split-direction)
   ("0" eyebrowse-switch-to-window-config-0)
   ("1" eyebrowse-switch-to-window-config-1)
   ("2" eyebrowse-switch-to-window-config-2)

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: nga
+# key: aa
+# --
+<a routerLink="${1:Link}" class="${2:Classes}">${3:Description}</a>
