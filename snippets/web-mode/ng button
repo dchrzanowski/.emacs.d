@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ng button
+# key: ab
+# --
+<button class="${1:Class}" (click)="${2:Method}">${3:Description}</button>
