@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ng if
+# key: ai
+# --
+*ngIf="${1:expression}"

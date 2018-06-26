@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: lambda
+# key: la
+# --
+(${1:Params}) => {
+    $0
+}

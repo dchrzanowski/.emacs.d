@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dependency injection
+# key: di
+# --
+${1:private} readonly ${2:varName}: ${3:dependency},

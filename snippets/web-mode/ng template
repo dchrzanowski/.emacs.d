@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ng template
+# key: at
+# --
+<ng-template #${1:templateName}>
+    ${2:content}
+</ng-template>

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ng if else
+# key: aie
+# --
+*ngIf="${1:expression}; else ${2:template}"

@@ -2,6 +2,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -9,8 +13,8 @@
 (#1=(#("galway-whiskey" 0 14
 (bmkp-full-record #1#))
 (end-position . 1)
-(time 23318 18178 748158 894000)
-(visits . 1)
+(time 23344 51406 887079 250000)
+(visits . 2)
 (filename . "/home/grimscythe/github/galway-whiskey")
 (position . 1)
 (created 23300 13021 919141 125000))
@@ -145,14 +149,14 @@
 (tags)
 (filename . "~/Google Drive/org/programming_notes.org")
 (buffer-name . "programming_notes.org")
-(front-context-string . "** see-mode\n* Li")
-(rear-context-string . "ab\n** prescient\n")
+(front-context-string . "** [[https://www")
+(rear-context-string . " screenshot app\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23318 18773 893099 717000))
+(time . #2=(23344 40123 24476 558000))
 (created . #2#)
-(position . 8557))
+(position . 11747))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
