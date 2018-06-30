@@ -16,7 +16,7 @@
   "
 _h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/proj/file   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs          _D_ired kill all
 _H_/_J_/_K_/_L_ resize   _b_/_v_/_s2_/_s3_/_s4_ splits         _u_/_U_ undo/redo                  _0_-_9_ workspaces    _S_plit toggle
-_d_ ace            _W_ kill buffer               _i_/_I_ jump other                 _M-u_ clean
+_d_ ace            _W_ kill buffer               _i_/_I_ jump other                 _M-u_ clean    _;_ Dired
 _z_ swap           _=_ balance                   _q_uit                           _R_evert buffer
 =
 "
@@ -28,8 +28,8 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("L" (lambda () (interactive) (hydra-move-splitter-right 8)))
   ("J" (lambda () (interactive) (hydra-move-splitter-down 4)))
   ("K" (lambda () (interactive) (hydra-move-splitter-up 4)))
-  ("i" (lambda () (interactive) (other-window 1)) :exit t)
-  ("I" aw-flip-window :exit t)
+  ("i" (lambda () (interactive) (other-window 1)))
+  ("I" aw-flip-window)
   ("n" tabbar-forward)
   ("p" tabbar-backward)
   ("b" split-window-vertically)
@@ -51,7 +51,8 @@ _z_ swap           _=_ balance                   _q_uit                         
                    'hydra-window/body)))
   ("=" balance-windows)
   ("W" kill-this-buffer)
-  ("D" kill-all-dired-buffers :exit t)
+  ("D" kill-all-dired-buffers)
+  (";" dired-jump :exit t)
   ("F" helm-find-files)
   ("f" helm-projectile-find-file)
   ("s2" window-split-into-2-columns-and-a-row)
