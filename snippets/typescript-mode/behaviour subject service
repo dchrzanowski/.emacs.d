@@ -1,0 +1,41 @@
+# -*- mode: snippet -*-
+# name: behaviour subject service
+# key: bss
+# --
+private data${1:Type} = new BehaviorSubject(null);
+
+private fetching$1: boolean;
+
+/**
+ * Return the observable
+ */
+private getObs() {
+    return this.data$1.asObservable();
+}
+
+/**
+ * Return the observable, but trigger data refresh if not yet available
+ */
+get$1() {
+    if (!this.data$1.getValue() && !this.fetching$1)
+        this.refresh$1();
+
+    return this.getObs();
+}
+
+/**
+ * Refresh data
+ */
+async refresh$1() {
+    this.fetching$1 = true;
+
+    const response = await this.${2:fetchDataServiceMethod};
+
+    this.fetching$1 = false;
+
+    if (!response) {
+        this.data$1.error(response);
+    } else {
+        this.data$1.next(response);
+    }
+}
