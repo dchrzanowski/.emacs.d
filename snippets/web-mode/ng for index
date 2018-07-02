@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ng for index
+# key: afi
+# --
+*ngFor="let ${1:each} of ${2:iterable}; let i = index;"
