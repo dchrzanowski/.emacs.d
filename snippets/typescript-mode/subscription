@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: subscription
+# key: sub
+# --
+$1Subscription: Subscription;
