@@ -71,7 +71,12 @@
 ;; --------------------------------------------------------------------
 ;; magit-todos
 ;; --------------------------------------------------------------------
-;; (use-package magit-todos)
+(use-package magit-todos
+  :defer 1
+  :config
+  (define-key magit-todos-section-map (kbd "jT") 'nil)
+  (define-key magit-todos-section-map (kbd "j") 'nil)
+  (magit-todos-mode))
 
 ;; --------------------------------------------------------------------
 ;; git-modes
