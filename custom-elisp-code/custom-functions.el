@@ -16,6 +16,19 @@ two curly braces, otherwise do a regular newline and indent"
          (indent-for-tab-command)))
 
 ;; --------------------------------------------------------------------
+;; Set tabs mode
+;; --------------------------------------------------------------------
+(defun grim/tabs-instead-of-spaces ()
+  "Set tabs instead of spaces."
+  (interactive)
+  (setq-default indent-tabs-mode t))
+
+(defun grim/spaces-instead-of-tabs ()
+  "Set spaces instead of tabs."
+  (interactive)
+  (setq-default indent-tabs-mode nil))
+
+;; --------------------------------------------------------------------
 ;; Beautifier
 ;; --------------------------------------------------------------------
 (defun untabify-buffer ()
@@ -23,16 +36,28 @@ two curly braces, otherwise do a regular newline and indent"
   (interactive)
   (untabify (point-min) (point-max)))
 
+(defun tabify-buffer ()
+  "Remove spaces."
+  (interactive)
+  (tabify (point-min) (point-max)))
+
 (defun indent-buffer ()
   "Fix indentation."
   (interactive)
   (indent-region (point-min) (point-max)))
 
-(defun cleanup-buffer ()
-  "Perform a bunch of operations on the whitespace content of a buffer."
+(defun cleanup-buffer-untabify ()
+  "Perform a bunch of operations on the whitespace content of a buffer and untabify buffer."
   (interactive)
   (indent-buffer)
   (untabify-buffer)
+  (delete-trailing-whitespace))
+
+(defun cleanup-buffer-tabify ()
+  "Perform a bunch of operations on the whitespace content of a buffer and tabify buffer."
+  (interactive)
+  (indent-buffer)
+  (tabify-buffer)
   (delete-trailing-whitespace))
 
 (defun cleanup-region (beg end)
@@ -358,11 +383,11 @@ DIR."
 ;; --------------------------------------------------------------------
 (defun kill-all-dired-buffers ()
   "Kill all dired buffers."
-     (interactive)
-     (mapc (lambda (buffer)
-           (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
-             (kill-buffer buffer)))
-         (buffer-list)))
+  (interactive)
+  (mapc (lambda (buffer)
+          (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
+            (kill-buffer buffer)))
+        (buffer-list)))
 
 ;; (add-hook 'kill-emacs-hook #'kill-dired-buffers)
 

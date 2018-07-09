@@ -63,7 +63,7 @@
  ;; hydras
  "t" 'hydra-rare-launcher/body
  "d" 'hydra-window-operations/body
- "I" 'hydra-indent/body
+ ;; "I" 'hydra-indent/body
  "gS" 'hydra-smerge/body
  ;; winner
  "q" 'winner-undo
@@ -88,7 +88,8 @@
  ;; whitespace mode
  "W" 'ibuffer
  ;; editing assists
- "i" 'cleanup-buffer
+ "i" 'cleanup-buffer-untabify
+ "I" 'cleanup-buffer-tabify
  ;; dumb jump
  "lo" 'dumb-jump-go-other-window
  "lj" 'dumb-jump-go
