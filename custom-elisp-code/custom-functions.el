@@ -351,7 +351,6 @@ DIR."
                `(:file ,output-file)    ;destination
                nil                      ;display
                (append (cdr command) (list archive-name item-name))))
-    ;; FIXME: add unwind forms
     nil))
 
 (defun archive-extract-marked-to-file (output-dir)
