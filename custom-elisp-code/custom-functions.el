@@ -466,5 +466,15 @@ i.e. change right window to bottom, or change bottom window to right."
                   (split-window-horizontally))
                 (set-window-buffer (windmove-find-other-window neighbour-dir) other-buf))))))))
 
+;; --------------------------------------------------------------------
+;; Toggle between line number modes
+;; --------------------------------------------------------------------
+(defun grim/toggle-line-number ()
+  "Toggle between line number modes."
+  (interactive)
+  (if display-line-numbers
+      (setq display-line-numbers 'nil)
+    (setq display-line-numbers 'relative)))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

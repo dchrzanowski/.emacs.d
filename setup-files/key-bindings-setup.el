@@ -25,14 +25,12 @@
   "<f5>" 'quickrun
   "<f6>" '(lambda() (interactive)(find-file "~/.emacs.d/init.el"))
   "<f7>" 'pomidor
-  ;; smartpares
+  ;; smartparens
   "M-S" 'sp-split-sexp
   ;; packages
   "M-[" 'package-install
   "M-]" 'paradox-list-packages
   ;; text manipulation
-  "M-u" 'upcase-dwim
-  "M-l" 'downcase-dwim
   "M->" 'custom-indent-region
   "M-<" 'custom-unindent-region
   "C-j" 'grim/newline-and-indent-inside-of-bracket
@@ -73,6 +71,9 @@
   ;; down/capitalize case word
   "M-C" 'downcase-dwim
   "M-c" 'capitalize-dwim
+  "M-u" 'upcase-dwim
+  ;; toggle line nubers
+  "M-l" 'grim/toggle-line-number
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle
