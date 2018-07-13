@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ejs code line
+# key: e
+# --
+<%$1 %>

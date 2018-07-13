@@ -6,11 +6,33 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("galway-whiskey" 0 14
+(#1=(#("Livestock" 0 9
+(bmkp-full-record #1#))
+(buffer-name . "Livestock")
+(front-context-string . "..\n  drwxr-xr-x ")
+(rear-context-string . "0K Jul  5 13:50 ")
+(front-context-region-string)
+(rear-context-region-string)
+(visits . 1)
+(time 23367 4798 803212 518000)
+(created 23367 4784 425391 610000)
+(position . 224)
+(filename . "/home/grimscythe/github/Quaternion-Agri/Livestock/")
+(dired-directory . "~/github/Quaternion-Agri/Livestock/")
+(dired-marked)
+(dired-switches . "-aBhl --group-directories-first")
+(dired-subdirs)
+(dired-hidden-dirs)
+(handler . bmkp-jump-dired))
+#1=(#("galway-whiskey" 0 14
 (bmkp-full-record #1#))
 (end-position . 1)
 (time 23344 51406 887079 250000)
@@ -138,8 +160,8 @@
 #1=(#("Documents" 0 9
 (bmkp-full-record #1#))
 (end-position . 1)
-(time 23278 61071 765436 643000)
-(visits . 1)
+(time 23367 4745 466324 801000)
+(visits . 2)
 (filename . "/home/grimscythe/Documents")
 (position . 1)
 (created 22999 58714 850523 563000))
@@ -149,14 +171,14 @@
 (tags)
 (filename . "~/Google Drive/org/programming_notes.org")
 (buffer-name . "programming_notes.org")
-(front-context-string . "** [[https://www")
-(rear-context-string . " screenshot app\n")
+(front-context-string . "*** MailChimp fo")
+(rear-context-string . "s Ledger tips]]\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23344 40123 24476 558000))
+(time . #2=(23367 4306 810006 201000))
 (created . #2#)
-(position . 11747))
+(position . 2672))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
@@ -214,8 +236,8 @@
 #1=(#("github" 0 6
 (bmkp-full-record #1#))
 (end-position . 1)
-(time 23300 13054 649993 524000)
-(visits . 17)
+(time 23367 4750 73580 219000)
+(visits . 18)
 (filename . "/home/grimscythe/github")
 (position . 1)
 (created 22832 28464 821874 763000))

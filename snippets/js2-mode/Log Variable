@@ -2,5 +2,4 @@
 # name: Log Variable
 # key: logv
 # --
-console.log("---- $1 ----");
-console.log($1);$0
+console.log("---- $1 ----", $1);$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: kvm
+# key: kvm
+# --
+${1:key}: { type: ${2:Number}, required: ${3:false} $0},
