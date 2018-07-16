@@ -74,6 +74,7 @@
 (use-package magit-todos
   :defer 1
   :config
+  (setq magit-todos-max-items 40)
   (define-key magit-todos-section-map (kbd "jT") 'nil)
   (define-key magit-todos-section-map (kbd "j") 'nil)
   (magit-todos-mode))
