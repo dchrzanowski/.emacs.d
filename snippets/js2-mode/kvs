@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: kvs
+# key: kvs
+# --
+${1:key}: { type: ${2:String}, required: ${3:false} $0},
