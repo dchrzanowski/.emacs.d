@@ -61,6 +61,7 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (dot . t)
+     (ledger . t)
      (shell . t)))
 
   ;;autorefresh images after org-babel dot evaluations

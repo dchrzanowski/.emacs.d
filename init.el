@@ -95,12 +95,15 @@
 (require 'web-setup)
 (require 'ligatures-setup)
 
+;; accounting
+(require 'accounting-setup)
+
 ;; keybindings
 (require 'key-bindings-setup)
 (require 'key-leaders-setup)
 (require 'which-key-setup)
 
-;;diminish
+;; diminish
 (require 'diminish-setup)
 
 ;; --------------------------------------------------------------------
