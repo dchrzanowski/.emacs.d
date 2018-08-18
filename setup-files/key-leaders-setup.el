@@ -292,16 +292,6 @@
  "cc" 'jsons-print-path)
 
 ;; --------------------------------------------------------------------
-;; leadger leader
-;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'ledger-mode-map
- ;; json print path
- "cc" 'ledger-add-entry)
-
-;; --------------------------------------------------------------------
 ;; restclient leader
 ;; --------------------------------------------------------------------
 (general-define-key

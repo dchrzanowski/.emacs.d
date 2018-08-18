@@ -476,25 +476,5 @@ i.e. change right window to bottom, or change bottom window to right."
       (setq display-line-numbers 'nil)
     (setq display-line-numbers 'relative)))
 
-;; --------------------------------------------------------------------
-;; Quick ledger addition
-;; --------------------------------------------------------------------
-(defun ledger-add-entry (title in amount out)
-  (interactive
-   (let ((accounts (mapcar 'list (ledger-accounts-list))))
-     (list (read-string "Entry: " (format-time-string "%Y/%m/%d " (current-time)))
-           (let ((completion-regexp-list "^Expenses:"))
-             (completing-read "What did you pay for? " accounts))
-           (read-string "How much did you pay? " "€")
-           (let ((completion-regexp-list "^Assets:"))
-             (completing-read "Where did the money come from? " accounts)))))
-  (insert title)
-  (newline)
-  (indent-to 4)
-  (insert in "  " amount)
-  (newline)
-  (indent-to 4)
-  (insert out))
-
 (provide 'custom-functions)
 ;;; custom-functions ends here
