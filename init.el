@@ -100,7 +100,7 @@
 (require 'key-leaders-setup)
 (require 'which-key-setup)
 
-;;diminish
+;; diminish
 (require 'diminish-setup)
 
 ;; --------------------------------------------------------------------
