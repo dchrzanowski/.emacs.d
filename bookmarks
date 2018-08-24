@@ -18,6 +18,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -111,8 +115,8 @@
 (rear-context-string . "0K Apr 13 16:00 ")
 (front-context-region-string)
 (rear-context-region-string)
-(visits . 4)
-(time 23290 63486 157369 341000)
+(visits . 5)
+(time 23411 59565 736585 700000)
 (created 23256 19003 75949 583000)
 (position . 143)
 (filename . "/home/grimscythe/Temp/")

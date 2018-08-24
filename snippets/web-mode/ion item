@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ion item
+# key: ii
+# --
+<ion-item>$0</ion-item>

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ion grid
+# key: ig
+# --
+<ion-grid>
+    $0
+</ion-grid>
