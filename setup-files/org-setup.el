@@ -9,6 +9,15 @@
 (use-package org
   :defer 1
   :config
+
+  ;; --------------------------------------------------------------------
+  ;; ob's
+  ;; --------------------------------------------------------------------
+  (use-package ob-mongo)
+
+  ;; --------------------------------------------------------------------
+  ;; vars
+  ;; --------------------------------------------------------------------
   (setq
    ;; open links in the same window
    org-link-frame-setup '((file . find-file))
@@ -61,6 +70,7 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (dot . t)
+     (mongo . t)
      (ledger . t)
      (shell . t)))
 
@@ -220,6 +230,7 @@
 ;; graphviz
 ;; --------------------------------------------------------------------
 (use-package graphviz-dot-mode)
+
 
 (provide 'org-setup)
 ;;; org-setup ends here
