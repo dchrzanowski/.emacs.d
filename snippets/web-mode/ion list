@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ion list
+# key: ili
+# --
+<ion-list>
+    $0
+</ion-list>

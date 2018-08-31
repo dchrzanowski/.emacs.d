@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ion input
+# key: iin
+# --
+<ion-input type="$1">$0</ion-input>
