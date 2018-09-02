@@ -33,14 +33,7 @@
 (use-package bind-key)
 (use-package general
   :config
-  (setq general-override-states '(insert
-                                  emacs
-                                  hybrid
-                                  normal
-                                  visual
-                                  motion
-                                  operator
-                                  replace))
+  (setq general-override-states '(insert emacs hybrid normal visual motion operator replace))
   (general-override-mode))
 
 ;; --------------------------------------------------------------------
@@ -57,7 +50,9 @@
 ;; --------------------------------------------------------------------
 (setq user-full-name "Damian Chrzanowski")
 
-
+;; --------------------------------------------------------------------
+;; load setup files
+;; --------------------------------------------------------------------
 ;; core and utils
 (require 'sane-defaults-setup)
 (require 'help-setup)
@@ -109,6 +104,9 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+;; --------------------------------------------------------------------
+;; theme setup
+;; --------------------------------------------------------------------
 (require 'theme-setup)
 
 ;;; Commentary:
