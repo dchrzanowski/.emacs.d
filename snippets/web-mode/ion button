@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ion button
+# key: ib
+# --
+<button ion-button (click)="${1:Method}()">${2:Name}</button>

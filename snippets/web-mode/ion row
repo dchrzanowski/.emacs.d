@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ion row
+# key: ir
+# --
+<ion-row>
+    $0
+</ion-row>
