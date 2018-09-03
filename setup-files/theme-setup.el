@@ -96,8 +96,8 @@
    ;; neotree
    '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
    ;; org
-   '(org-block ((t (:background "#131519"))))
-   '(org-block-begin-line ((t (:background "#131519" :foreground "#5B6268"))))
+   '(org-block ((t (:background "#181c24"))))
+   '(org-block-begin-line ((t (:background "#181c24" :foreground "#5B6268"))))
    '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))
    '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
    '(org-level-3 ((t (:foreground "#84b585" :background nil))))
@@ -127,8 +127,8 @@
    '(show-paren-match ((t (:background "black" :foreground "red" :weight normal))))
    '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
    ;; tabbar
-   '(tabbar-default ((t (:background "#181c24" :foreground "#181c24" :height 1.0))))
-   '(tabbar-selected ((t (:inherit tabbar-default :background "#21242b" :foreground "lime green" :weight bold))))
+   '(tabbar-default ((t (:background "#131519" :foreground "#131519" :height 1.0))))
+   '(tabbar-selected ((t (:inherit tabbar-default :background "#131519" :foreground "lime green" :weight bold))))
    '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
    '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
    ;; tooltip
