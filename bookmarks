@@ -22,6 +22,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -183,28 +191,28 @@
 (tags)
 (filename . "~/Google Drive/org/programming_notes.org")
 (buffer-name . "programming_notes.org")
-(front-context-string . "** [[https://lin")
-(rear-context-string . "d][epic conky]]\n")
+(front-context-string . "** doom-modeline")
+(rear-context-string . "idebar outline)\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23404 35493 98191 544000))
+(time . #2=(23469 20309 868920 570000))
 (created . #2#)
-(position . 12466))
+(position . 11474))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
 (tags)
-(filename . "~/Google Drive/org/projects/projects.org")
-(buffer-name . "projects.org")
-(front-context-string)
-(rear-context-string . "emacs.d\n  :END:\n")
+(filename . "~/Google Drive/org/refile.org")
+(buffer-name . "refile.org")
+(front-context-string . "* Emacs Layout S")
+(rear-context-string . "1-26 Mon 12:00>\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23272 63151 430062 767000))
+(time . #2=(23469 20264 510603 132000))
 (created . #2#)
-(position . 601))
+(position . 400))
 #1=(#(".emacs.d" 0 8
 (bmkp-full-record #1#))
 (end-position . 1)
