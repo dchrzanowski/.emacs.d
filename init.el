@@ -87,6 +87,7 @@
 (require 'javascript-setup)
 (require 'python-setup)
 (require 'typescript-setup)
+(require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)
 
