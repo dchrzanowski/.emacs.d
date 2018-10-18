@@ -83,8 +83,6 @@
    '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "gold" :weight bold))))
    '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
    '(helm-swoop-target-word-face ((t (:background "black" :foreground "gold" :weigth bold))))
-   ;; highlight indentation
-   '(highlight-indentation-current-column-face ((t (:background "#0b0c0e"))))
    ;; highlight line
    '(hl-line ((t (:background "#0b0c0e"))))
    ;; highlight thing

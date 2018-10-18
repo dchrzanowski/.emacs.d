@@ -96,7 +96,7 @@ _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor            
   ("E" hydra-ediff/body :exit t)
   ("T" hydra-todo/body :exit t)
   ("b" hydra-beautify/body :exit t)
-  ("i" highlight-indentation-current-column-mode :exit t)
+  ("i" highlight-indentation-mode :exit t)
   ("o" pomidor :exit t)
   ("d" hydra-ediff/body :exit t)
   ("r" rainbow-mode :exit t)

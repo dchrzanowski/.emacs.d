@@ -41,7 +41,13 @@
 ;; --------------------------------------------------------------------
 ;; indent guide
 ;; --------------------------------------------------------------------
-(use-package highlight-indentation)
+(use-package highlight-indentation
+  :defer 2
+  :config
+  (set-face-attribute 'highlight-indentation-face nil
+                      :stipple (list 7 1 (string 16)) :inherit nil :foreground "#1f232b")
+  (set-face-attribute 'highlight-indentation-current-column-face nil
+                      :stipple (list 7 1 (string 16)) :inherit nil :foreground "#1f232b"))
 
 ;; --------------------------------------------------------------------
 ;; color identifiers
