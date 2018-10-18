@@ -153,9 +153,21 @@
 ;; all the icons
 ;; --------------------------------------------------------------------
 (use-package all-the-icons)
-;; (use-package all-the-icons-dired
-;;   :config
-;;   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+(use-package all-the-icons-dired
+  :config
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Replace with the below snippet in all-the-icons.el, lines 811 - 818.
+;; Fixes incorrect font-lock mappings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         (let ((face (if other-face
+;;                         `(:family ,family :height ,height :inherit ,other-face)
+;;                       `(:family ,family :height ,height))))
+;;           (propertize icon
+;;                       'face face           ;so that this works without `font-lock-mode' enabled
+;;                       'font-lock-face face ;so that `font-lock-mode' leaves this alone
+;;                       'display `(raise ,v-adjust)
+;;                       'rear-nonsticky t))))
 
 ;; --------------------------------------------------------------------
 ;; ibuffer
