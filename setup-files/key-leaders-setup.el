@@ -43,6 +43,7 @@
  "hi" 'info
  "Df" 'describe-face
  "DF" 'describe-font
+ "Dt" 'describe-text-properties
  ;; helpful
  "Hv" 'helpful-variable
  "Hf" 'helpful-callable
