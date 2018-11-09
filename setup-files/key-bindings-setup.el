@@ -74,6 +74,7 @@
   "M-u" 'upcase-dwim
   ;; toggle line nubers
   "M-l" 'grim/toggle-line-number
+  "S-<return>" 'grim/toggle-line-number
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle

@@ -21,7 +21,8 @@
 ;; --------------------------------------------------------------------
 (use-package evil
   :init
-  (setq evil-want-integration nil)
+  (setq evil-want-integration nil
+        evil-want-keybinding nil)
 
   :config
   (evil-mode 1)
@@ -150,7 +151,6 @@
   (setq evil-collection-mode-list nil)
   (setq evil-collection-mode-list '(ag
                                     arc-mode
-                                    avy
                                     bookmark
                                     calendar
                                     dired

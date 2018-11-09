@@ -86,7 +86,7 @@
    ;; highlight line
    '(hl-line ((t (:background "#0b0c0e"))))
    ;; highlight thing
-   '(hi-yellow ((t (:underline "chartreuse" :weight bold))))
+   '(hi-yellow ((t (:background "#131519" :underline "chartreuse" :weight bold))))
    ;; isearch
    '(isearch ((t (:background "black" :foreground "white"))))
    ;; lazy highlight
