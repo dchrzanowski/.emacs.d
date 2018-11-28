@@ -232,6 +232,8 @@
                     :states 'motion
                     "C-j" 'scroll-up-command
                     "C-k" 'scroll-down-command
+                    "j" 'org-agenda-next-item
+                    "k" 'org-agenda-previous-item
                     "h" 'hydra-org-agenda/body)
 
 ;; company

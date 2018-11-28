@@ -46,6 +46,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -205,30 +213,30 @@
 (bmkp-full-record #1#))
 (annotation)
 (tags)
-(filename . "~/Google Drive/org/programming_notes.org")
-(buffer-name . "programming_notes.org")
-(front-context-string . "*** [[spin.atomi")
-(rear-context-string . "ps and tricks]]\n")
+(filename . "~/Google Drive/org/Calendar.org")
+(buffer-name . "Calendar.org")
+(front-context-string . "** TODO Amazon i")
+(rear-context-string . "-13 Tue 14:00>\n\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23500 53127 726066 663000))
+(time . #2=(23533 54409 651060 880000))
 (created . #2#)
-(position . 3229))
+(position . 1166))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
 (tags)
 (filename . "~/Google Drive/org/refile.org")
 (buffer-name . "refile.org")
-(front-context-string . "* [[https://gith")
-(rear-context-string . "dus documentary\n")
+(front-context-string . "* OS and Concurr")
+(rear-context-string . "=reddit-android\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23502 23546 134851 705000))
+(time . #2=(23532 41188 325687 568000))
 (created . #2#)
-(position . 50))
+(position . 1203))
 #1=(#(".emacs.d" 0 8
 (bmkp-full-record #1#))
 (end-position . 1)

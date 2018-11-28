@@ -83,10 +83,10 @@
 ;; JAVA MODE
 ;; select the raw-non-eclim-hook or the eclim setup
 ;; --------------------------------------------------------------------
-(add-hook 'java-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-semantic)))))
+;; (add-hook 'java-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-semantic)))))
 
 ;; setup for eclim (java)
 ;; (company-emacs-eclim-setup)
