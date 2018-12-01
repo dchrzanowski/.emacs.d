@@ -7,12 +7,23 @@
 ;; --------------------------------------------------------------------
 ;; load powerline
 ;; --------------------------------------------------------------------
-(use-package powerline
+;; (use-package powerline
+;;   :config
+;;   (use-package powerline-evil
+;;     :config
+;;     (powerline-evil-center-color-theme)
+;;     (setq-default powerline-default-separator (quote slant))))
+
+;; --------------------------------------------------------------------
+;; load doom-modeline
+;; --------------------------------------------------------------------
+(use-package doom-modeline
+  :ensure t
+  :defer t
+  :hook (after-init . doom-modeline-init)
   :config
-  (use-package powerline-evil
-    :config
-    (powerline-evil-center-color-theme)
-    (setq-default powerline-default-separator (quote slant))))
+  (setq doom-modeline-height 19
+        doom-modeline-bar-width 5))
 
 ;; --------------------------------------------------------------------
 ;; load theme
@@ -21,7 +32,7 @@
   :config
   (load-theme 'doom-one t)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; if the doom theme is updated then override the default color to #181c24 (131519 laptop)
+  ;; if the doom theme is updated then override the default color to #131519
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (custom-set-faces
    ;; default

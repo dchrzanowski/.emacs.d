@@ -31,7 +31,7 @@
                 evil-echo-state nil)
 
   ;; treat symbols such as the dash and underscore as a part of a word
-  (defalias #'forward-evil-word #'forward-evil-symbol)
+  ;; (defalias #'forward-evil-word #'forward-evil-symbol)
 
   ;; rename states
   (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
