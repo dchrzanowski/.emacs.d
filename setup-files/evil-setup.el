@@ -33,16 +33,6 @@
   ;; treat symbols such as the dash and underscore as a part of a word
   ;; (defalias #'forward-evil-word #'forward-evil-symbol)
 
-  ;; rename states
-  (evil-put-property 'evil-state-properties 'normal   :tag " NORMAL ")
-  (evil-put-property 'evil-state-properties 'insert   :tag " INSERT ")
-  (evil-put-property 'evil-state-properties 'visual   :tag " VISUAL ")
-  (evil-put-property 'evil-state-properties 'motion   :tag " MOTION ")
-  (evil-put-property 'evil-state-properties 'emacs    :tag " EMACS ")
-  (evil-put-property 'evil-state-properties 'replace  :tag " REPLACE ")
-  (evil-put-property 'evil-state-properties 'operator :tag " OPERTR ")
-  (evil-put-property 'evil-state-properties 'god      :tag " GOD-MODE ")
-
   ;; force emacs state in
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
