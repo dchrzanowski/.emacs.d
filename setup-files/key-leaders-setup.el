@@ -73,6 +73,7 @@
  ;; avy
  "e" 'avy-goto-char-timer
  "E" 'evil-avy-goto-char-2
+ "u" 'evil-avy-goto-char-2
  "j" 'evil-avy-goto-word-or-subword-1
  "J" 'evil-avy-goto-word-0
  ;; anzu

@@ -54,6 +54,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -215,28 +219,28 @@
 (tags)
 (filename . "~/Google Drive/org/Calendar.org")
 (buffer-name . "Calendar.org")
-(front-context-string . "** TODO Amazon i")
-(rear-context-string . "-13 Tue 14:00>\n\n")
+(front-context-string . "** TODO Finish w")
+(rear-context-string . "1-07 Mon 09:00>\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23533 54409 651060 880000))
+(time . #2=(23556 16603 715819 986000))
 (created . #2#)
-(position . 1166))
+(position . 1035))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
 (tags)
 (filename . "~/Google Drive/org/refile.org")
 (buffer-name . "refile.org")
-(front-context-string . "* OS and Concurr")
-(rear-context-string . "=reddit-android\n")
+(front-context-string . "* Start work at ")
+(rear-context-string . "2019-08-30 Fri>\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23532 41188 325687 568000))
+(time . #2=(23556 16479 635889 118000))
 (created . #2#)
-(position . 1203))
+(position . 1517))
 #1=(#(".emacs.d" 0 8
 (bmkp-full-record #1#))
 (end-position . 1)
