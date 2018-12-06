@@ -21,7 +21,9 @@
 ;; quickrun
 ;; --------------------------------------------------------------------
 (use-package quickrun
-  :defer 2)
+  :defer 2
+  :config
+  (setq quickrun-timeout-seconds 60))
 
 (provide 'debuggers-setup)
 ;;; debuggers-setup ends here
