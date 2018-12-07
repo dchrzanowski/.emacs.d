@@ -164,7 +164,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (defun auto-correct-and-move-forward ()
   "Auto correct previous word and move forward a one word."
   (interactive)
-  (flyspell-auto-correct-previous-word (point))
+  (backward-word)
+  (flyspell-auto-correct-word)
   (forward-word))
 
 ;; --------------------------------------------------------------------
