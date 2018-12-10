@@ -416,7 +416,7 @@ Version 2015-07-30"
 (defun calc-eval-string (x)
   "Evaluate a raw string X for calc."
   (interactive)
-  (calc-eval x 'raw))
+  (calc-eval x))
 
 ;; --------------------------------------------------------------------
 ;; Frame
