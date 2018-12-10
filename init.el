@@ -2,7 +2,7 @@
 ;;; Code:
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq gc-cons-threshold 100000000)
+(setq gc-cons-threshold 1000000000)
 
 (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
 
