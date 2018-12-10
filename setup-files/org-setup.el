@@ -30,9 +30,9 @@
    ;; don't confirm babel eval
    org-confirm-babel-evaluate nil
    ;; org main dir
-   org-directory '("~/Google Drive/org")
+   org-directory '("~/GoogleDrive/org")
    ;; org refile location
-   org-default-notes-file "~/Google Drive/org/refile.org"
+   org-default-notes-file "~/GoogleDrive/org/refile.org"
    ;; org keywords
    org-todo-keywords '((sequence "VERIFY(v)"
                                  "TODO(t)"
@@ -47,20 +47,20 @@
    org-refile-use-outline-path t
    org-outline-path-complete-in-steps nil
    ;; org capture templates
-   org-capture-templates (quote (("t" "Todo" entry (file "~/Google Drive/org/refile.org") "* TODO %?")
-                                 ("l" "Link" entry (file "~/Google Drive/org/refile.org") "* TODO %?\n  %a")
-                                 ("L" "Link with description" entry (file "~/Google Drive/org/refile.org") "* TODO %?\n  %A")
-                                 ("n" "Note" entry (file "~/Google Drive/org/refile.org") "* %?")
-                                 ("c" "Calfw2org" entry (file "~/Google Drive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")))
+   org-capture-templates (quote (("t" "Todo" entry (file "~/GoogleDrive/org/refile.org") "* TODO %?")
+                                 ("l" "Link" entry (file "~/GoogleDrive/org/refile.org") "* TODO %?\n  %a")
+                                 ("L" "Link with description" entry (file "~/GoogleDrive/org/refile.org") "* TODO %?\n  %A")
+                                 ("n" "Note" entry (file "~/GoogleDrive/org/refile.org") "* %?")
+                                 ("c" "Calfw2org" entry (file "~/GoogleDrive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")))
    ;; --------------------------------------------------------------------
    ;; agenda
    ;; --------------------------------------------------------------------
    ;; org agenda files location
    org-agenda-show-all-dates nil
-   org-agenda-files '("~/Google Drive/org/projects"
-                      "~/Google Drive/org/projects/prefarm"
-                      "~/Google Drive/org/projects/mtml"
-                      "~/Google Drive/org")
+   org-agenda-files '("~/GoogleDrive/org/projects"
+                      "~/GoogleDrive/org/projects/prefarm"
+                      "~/GoogleDrive/org/projects/mtml"
+                      "~/GoogleDrive/org")
 
    ;; org agenda initial span
    org-agenda-span 'month)
@@ -95,12 +95,12 @@
     :defer t
     :init
     ;; org brain main search path
-    (setq org-brain-path "~/Google Drive/org/")
+    (setq org-brain-path "~/GoogleDrive/org/")
     :config
     ;; track all files
     (setq org-id-track-globally t)
     ;; id locations path
-    (setq org-id-locations-file "~/Google Drive/org/.org-id-locations")
+    (setq org-id-locations-file "~/GoogleDrive/org/.org-id-locations")
     ;; org brain capture template
     (push '("b" "Brain" plain (function org-brain-goto-end)
             "* %i%?" :empty-lines 1)
@@ -117,7 +117,7 @@
     :config
     (progn
       (setq org-projectile-projects-file
-            "~/Google Drive/org/projects/projects_refile.org")
+            "~/GoogleDrive/org/projects/projects_refile.org")
       ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
       (push (org-projectile-project-todo-entry) org-capture-templates)))
 
