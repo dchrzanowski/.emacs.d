@@ -180,6 +180,7 @@
  "cf" 'helm-org-rifle
  "cs" 'org-download-screenshot
  "ck" 'org-kanban/shift
+ "ce" 'org-export-dispatch
  "cy" 'org-download-yank)
 
 ;; --------------------------------------------------------------------

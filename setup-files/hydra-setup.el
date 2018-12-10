@@ -81,8 +81,8 @@ _z_ swap           _=_ balance                   _q_uit                         
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
 _g_it-gutter    gi_t_-timemachine    _R_ecompile config    web_p_/_P_aste region/buffer    _=_/_-_ scale text     _L_oad theme    _l_ine number
-_z_enity        insert he_x_         _b_eautify            _f_ycheck                     _w_hitespace mode    _e_ldoc
-_T_odo          _D_arkroom           _r_ainbow mode        p_o_midor                     e_d_iff              _i_ndent hl
+_z_enity        insert he_x_         _b_eautify            _f_lycheck                    _w_hitespace mode    _e_ldoc
+_T_odo          _D_arkroom           _r_ainbow mode        p_o_midor                     e_d_iff              _i_ndent hl     _F_ont lock
 =
 "
   ("g" hydra-git-gutter/body :exit t)
@@ -92,6 +92,7 @@ _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor            
   ("z" zenity-cp-color-at-point-dwim :exit t)
   ("x" insert-color-hex :exit t)
   ("f" hydra-flycheck/body :exit t)
+  ("F" font-lock-mode :exit t)
   ("e" eldoc-overlay-mode :exit t)
   ("E" hydra-ediff/body :exit t)
   ("T" hydra-todo/body :exit t)
