@@ -51,7 +51,8 @@
 ;; mark follows the point
 (transient-mark-mode t)
 ;; share kill ring with the system's clipboard
-(setq select-enable-clipboard t)
+(setq select-enable-clipboard t
+      x-select-enable-clipboard-manager nil)
 ;; switch off bell
 (setq ring-bell-function 'ignore)
 ;; save history (minibuffer)

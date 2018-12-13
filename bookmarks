@@ -58,37 +58,15 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("Livestock" 0 9
-(bmkp-full-record #1#))
-(buffer-name . "Livestock")
-(front-context-string . "..\n  drwxr-xr-x ")
-(rear-context-string . "0K Jul  5 13:50 ")
-(front-context-region-string)
-(rear-context-region-string)
-(visits . 2)
-(time 23375 7163 867662 796000)
-(created 23367 4784 425391 610000)
-(position . 224)
-(filename . "/home/grimscythe/github/Quaternion-Agri/Livestock/")
-(dired-directory . "~/github/Quaternion-Agri/Livestock/")
-(dired-marked)
-(dired-switches . "-aBhl --group-directories-first")
-(dired-subdirs)
-(dired-hidden-dirs)
-(handler . bmkp-jump-dired))
-#1=(#("galway-whiskey" 0 14
-(bmkp-full-record #1#))
-(end-position . 1)
-(time 23344 51406 887079 250000)
-(visits . 2)
-(filename . "/home/grimscythe/github/galway-whiskey")
-(position . 1)
-(created 23300 13021 919141 125000))
-#1=(#("Music" 0 5
+(#1=(#("Music" 0 5
 (bmkp-full-record #1#))
 (buffer-name . "Music")
 (front-context-string . ".\n  drwx------ 9")
@@ -270,15 +248,15 @@
 (end-position . 1)
 (time 23296 464 457908 896000)
 (visits . 4)
-(filename . "/home/grimscythe/Google Drive/org/")
+(filename . "/home/grimscythe/GoogleDrive/org/")
 (position . 1)
 (created 22832 28481 462877 604000))
 #1=(#("Google Drive" 0 12
 (bmkp-full-record #1#))
 (end-position . 1)
-(time 23300 13116 7151 913000)
-(visits . 6)
-(filename . "/home/grimscythe/Google Drive")
+(time 23570 41069 507487 522000)
+(visits . 8)
+(filename . "/home/grimscythe/GoogleDrive")
 (position . 1)
 (created 22832 28476 918717 928000))
 #1=(#("github" 0 6
