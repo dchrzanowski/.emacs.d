@@ -14,12 +14,14 @@
 ;; --------------------------------------------------------------------
 (defhydra hydra-window-operations (:color pink :hint nil)
   "
-_h_/_j_/_k_/_l_ move     _w_/_r_/_f_/_F_ buf/bkm/proj/file   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs          _D_ired kill all
+_h_/_j_/_k_/_l_ move     _w_/_B_/_f_/_F_ buf/bkm/proj/file   _x_/_X_/_o_ delete ace/here/other    _n_/_p_ tabs          _D_ired kill all
 _H_/_J_/_K_/_L_ resize   _b_/_v_/_s2_/_s3_/_s4_ splits         _u_/_U_ undo/redo                  _0_-_9_ workspaces    _S_plit toggle
 _d_ ace            _W_ kill buffer               _i_/_I_ jump other                 _M-u_ clean         _;_ Dired jump
 _z_ swap           _=_ balance                   _q_uit                           _R_evert buffer
 =
 "
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("h" windmove-left)
   ("l" windmove-right)
   ("j" windmove-down)
@@ -36,7 +38,7 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("v" split-window-horizontally)
   ("o" delete-other-windows)
   ("w" helm-mini)
-  ("r" helm-filtered-bookmarks)
+  ("B" helm-filtered-bookmarks)
   ("R" revert-buffer)
   ("X" delete-window)
   ("x" (lambda ()

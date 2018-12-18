@@ -64,6 +64,7 @@
  ;; hydras
  "t" 'hydra-rare-launcher/body
  "d" 'hydra-window-operations/body
+ "SPC" 'hydra-window-operations/body
  ;; "I" 'hydra-indent/body
  "gS" 'hydra-smerge/body
  ;; winner
