@@ -22,8 +22,8 @@
   :defer t
   :hook (after-init . doom-modeline-init)
   :config
-  (setq doom-modeline-height 19
-        doom-modeline-bar-width 5))
+  (setq doom-modeline-height 21
+        doom-modeline-bar-width 6))
 
 ;; --------------------------------------------------------------------
 ;; load theme
@@ -116,7 +116,7 @@
    '(org-agenda-date-weekend ((t (:background "#913351" :foreground "white" :box (:line-width 4 :color "#913351") :weight ultra-bold :height 1.0))))
    '(org-todo ((t (:background "#af231e" :foreground "white" :box (:line-width 1 :color "#af231e" :style pressed-button) :weight bold))))
    ;; powerline and modeline
-   '(mode-line ((t (:background "gray12" :foreground "white" :box nil))))
+   '(mode-line ((t (:background "gray2" :foreground "white" :box nil))))
    '(mode-line-inactive ((t (:background "grey11" :foreground "#5B6268" :box nil))))
    '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray4" :foreground "light gray"))))
    '(powerline-active2 ((t (:inherit mode-line :background "grey20" :foreground "white"))))

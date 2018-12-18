@@ -208,7 +208,7 @@
  '(hl-line ((t (:background "#0b0c0e"))))
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
- '(mode-line ((t (:background "gray12" :foreground "white" :box nil))))
+ '(mode-line ((t (:background "gray2" :foreground "white"))))
  '(mode-line-inactive ((t (:background "grey11" :foreground "#5B6268" :box nil))))
  '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
  '(org-agenda-date ((t (:background "#173874" :foreground "white" :box (:line-width 4 :color "#173874") :weight ultra-bold :height 1.0))))
