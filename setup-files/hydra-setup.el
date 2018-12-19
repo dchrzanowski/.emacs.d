@@ -20,8 +20,6 @@ _d_ ace            _W_ kill buffer               _i_/_I_ jump other             
 _z_ swap           _=_ balance                   _q_uit                           _R_evert buffer     Split mo_V_e
 =
 "
-  ("RET" nil "Cancel")
-  ("SPC" nil "Cancel")
   ("h" windmove-left)
   ("l" windmove-right)
   ("j" windmove-down)
@@ -79,6 +77,8 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("7" eyebrowse-switch-to-window-config-7)
   ("8" eyebrowse-switch-to-window-config-8)
   ("9" eyebrowse-switch-to-window-config-9)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
@@ -91,8 +91,6 @@ _z_enity        insert he_x_         _b_eautify            _f_lycheck           
 _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor                     e_d_iff              _i_ndent hl     _F_ont lock
 =
 "
-  ("RET" nil "Cancel")
-  ("SPC" nil "Cancel")
   ("g" hydra-git-gutter/body :exit t)
   ("t" git-timemachine-toggle :exit t)
   ("p" webpaste-paste-region :exit t)
@@ -116,6 +114,8 @@ _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor            
   ("=" text-scale-increase)
   ("-" text-scale-decrease)
   ("R" byte-recompile-config-files :exit t)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
@@ -134,6 +134,8 @@ _U_/_u_  run/get user token   _A_/_a_ run/get admin token
   ("U" run-user-bearer-token)
   ("A" run-admin-bearer-token)
   ("c" restclient-http-send-current-stay-in-window)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
@@ -147,6 +149,8 @@ _j_/_k_ next/prev    _o_ occur
   ("j" hl-todo-next)
   ("k" hl-todo-previous)
   ("o" hl-todo-occur :exit t)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
@@ -162,6 +166,8 @@ _j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
   ("c" web-beautify-css :exit t)
   ("i" cleanup-buffer :exit t)
   ("u" untabify-buffer :exit t)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
@@ -190,6 +196,8 @@ Git gutter:
   ("p" git-gutter:popup-hunk)
   ("R" git-gutter:set-start-revision)
   ("Q" nil :color blue)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" (progn (git-gutter-mode -1)
               ;; git-gutter-fringe doesn't seem to
               ;; clear the markup right away
@@ -210,6 +218,8 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide
   ("gg" flycheck-first-error                                      "First")
   ("J"  tide-fix                                                  "Tide Fix")
   ("G"  (progn (goto-char (point-max)) (flycheck-previous-error)) "Last")
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q"  nil))
 
 ;; --------------------------------------------------------------------
@@ -223,19 +233,8 @@ _h_ unindent    _l_ indent    _i_ auto indent    _q_uit
   ("h" custom-unindent-region)
   ("l" custom-indent-region)
   ("i" cleanup-buffer)
-  ("q" nil :color blue))
-
-;; --------------------------------------------------------------------
-;; Indent hydra
-;; --------------------------------------------------------------------
-(defhydra hydra-indent (:color pink :hint nil)
-  "
-_h_ unindent    _l_ indent    _i_ auto indent    _q_uit
-=
-"
-  ("h" custom-unindent-region)
-  ("l" custom-indent-region)
-  ("i" cleanup-buffer)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 ;; --------------------------------------------------------------------
 ;; Ediff hydra
@@ -258,6 +257,8 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
   ("r" ediff-revision)
   ("l" ediff-regions-linewise)
   ("w" ediff-regions-wordwise)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil "Quit" :color blue))
 
 ;; --------------------------------------------------------------------
@@ -283,6 +284,8 @@ _B_uffers (3-way)   _F_iles (3-way)                          _w_ordwise
   ("g" yas/global-mode)
   ("m" yas/minor-mode)
   ("a" yas-reload-all)
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
@@ -316,6 +319,8 @@ _vr_ reset      ^^                       ^^                 ^^
 ^^              ^^                       ^^                 ^^
 "
   ;; Entry
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("hA" org-agenda-archive-default)
   ("hk" org-agenda-kill)
   ("hp" org-agenda-priority)
@@ -454,6 +459,7 @@ _q_uit _RET_: current
   ("<" smerge-diff-base-mine)
   ("=" smerge-diff-mine-other)
   (">" smerge-diff-base-other)
+  ("SPC" nil "Cancel")
   ("q" nil :color blue))
 
 (provide 'hydra-setup)
