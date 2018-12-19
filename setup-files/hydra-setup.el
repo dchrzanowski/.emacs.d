@@ -91,6 +91,8 @@ _z_enity        insert he_x_         _b_eautify            _f_lycheck           
 _T_odo          _D_arkroom           _r_ainbow mode        p_o_midor                     e_d_iff              _i_ndent hl     _F_ont lock
 =
 "
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
   ("g" hydra-git-gutter/body :exit t)
   ("t" git-timemachine-toggle :exit t)
   ("p" webpaste-paste-region :exit t)
