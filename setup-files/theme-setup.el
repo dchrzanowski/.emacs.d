@@ -81,6 +81,9 @@
    '(evil-visual-mark-face ((t (:background "black" :foreground "firebrick1" :box (:line-width 1 :color "firebrick1") :weight bold))))
    ;; eyebrowse
    '(eyebrowse-mode-line-active ((t (:foreground "chartreuse" :weight bold))))
+   ;; flycheck-posframe
+   '(flycheck-posframe-error-face ((t (:inherit flycheck-posframe-face :foreground "#ff6c6b" :box (:line-width 1 :color "#ff6c6b")))))
+   '(flycheck-posframe-warning-face ((t (:inherit flycheck-posframe-face :foreground "#ECBE7B" :box (:line-width 1 :color "#ECBE7B")))))
    ;; flyspell
    '(flyspell-incorrect ((t (:underline (:color "chocolate" :style wave)))))
    ;; font lock variable name

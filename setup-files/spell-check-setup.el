@@ -16,5 +16,13 @@
 ;; enable flyspell-prog-mode in prog-modes
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+;; --------------------------------------------------------------------
+;; flycheck-posframe
+;; --------------------------------------------------------------------
+(use-package flycheck-posframe
+  :ensure t
+  :after flycheck
+  :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
+
 (provide 'spell-check-setup)
 ;;; spell-check-setup ends here
