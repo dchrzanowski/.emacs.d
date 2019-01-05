@@ -19,14 +19,15 @@
  "f" 'helm-swoop-without-pre-input
  "F" 'helm-find-files
  "M-f" 'helm-multi-swoop-all
- "b" 'helm-filtered-bookmarks
+ "r" 'helm-filtered-bookmarks
  "B" 'edit-bookmarks
  "m" 'helm-all-mark-rings
- "r" 'helm-semantic-or-imenu
+ "b" 'helm-semantic-or-imenu
  "R" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
  "hg" 'helm-google
+ "hr" 'helm-chrome-bookmarks
  "hG" 'helm-do-grep-ag
  "ha" 'helm-do-ag
  "hl" 'helm-locate
