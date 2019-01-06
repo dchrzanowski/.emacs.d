@@ -40,6 +40,12 @@
   :after company
   :defer 2)
 
+(use-package company-restclient
+  :after company
+  :defer 2
+  :config
+  (add-to-list 'company-backends 'company-restclient))
+
 (use-package company-quickhelp
   :after company
   :config
