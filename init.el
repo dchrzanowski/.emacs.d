@@ -83,11 +83,11 @@
 (require 'spell-check-setup)
 
 ;; languages
-(require 'csharp-setup)
+;; (require 'csharp-setup)
 (require 'javascript-setup)
 (require 'python-setup)
 (require 'typescript-setup)
-(require 'php-setup)
+;; (require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)
 

@@ -8,6 +8,7 @@
 ;; flycheck linter for all
 ;; --------------------------------------------------------------------
 (use-package flycheck
+  :ensure-system-package (tidy . "sudo pacman -S tidy")
   :config
   (global-flycheck-mode)
   (setq-default flycheck-flake8-maximum-line-length 160)
