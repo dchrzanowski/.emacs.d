@@ -15,9 +15,10 @@
 ;; (setq dired-listing-switches "-alhvF --group-directories-first")
 (setq dired-listing-switches "-aBhl --group-directories-first")
 
-;; dired async
-(dired-async-mode)
-
+;; async
+(use-package async
+  :config
+  (dired-async-mode))
 
 ;; show sizes of subdirs and dirs / file
 (use-package dired-du
