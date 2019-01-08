@@ -426,7 +426,7 @@ prepended to the element after the #+HEADER: tag."
 
 (eval-after-load "org"
   '(cl-pushnew
-    '("not" "#+BEGIN_NOTES\n?\n#+END_NOTES")
+    '("not" . "#+BEGIN_NOTES\n?\n#+END_NOTES")
     org-structure-template-alist))
 
 ;; --------------------------------------------------------------------
