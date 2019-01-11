@@ -20,6 +20,9 @@
 (define-key evil-emacs-state-map [escape] 'evil-exit-emacs-state)
 
 (general-emacs-define-key 'global
+  ;; fix mouse
+  "C-M-)" '(lambda() (interactive)(scroll-up 6))
+  "C-M-(" '(lambda() (interactive)(scroll-down 6))
   ;; F's
   "<f2>" 'evil-mode
   "<f5>" 'quickrun
@@ -279,7 +282,7 @@
                     "/" 'dired-narrow-fuzzy
                     "i" 'dired-subtree-insert
                     "I" 'dired-subtree-remove
-                    "C-<right>" 'delete-other-windows-and-split-right
+                    "C-<right>" 'grim/delete-other-windows-and-split-right
                     "M-s" 'xah-dired-sort
                     "r" 'revert-buffer
                     "o" 'dired-hide-dotfiles-mode

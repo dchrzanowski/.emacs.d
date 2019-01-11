@@ -81,6 +81,7 @@
 (require 'tramp-setup)
 (require 'yasnippet-setup)
 (require 'spell-check-setup)
+(require 'docker-setup)
 
 ;; languages
 ;; (require 'csharp-setup)

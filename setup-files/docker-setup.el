@@ -11,9 +11,7 @@
   :mode ("Dockerfile\\'" . dockerfile-mode)
   :defer 2)
 
-(use-package docker
-  :config
-  (docker-global-mode))
+(use-package docker)
 
 (use-package yaml-mode
   :mode ("\\.yml\\'" . yaml-mode))
