@@ -43,7 +43,6 @@
       holiday-other-holidays nil
       holiday-solar-holidays nil)
 
-;; initial height and width
 ;; No splash screen
 (setq inhibit-startup-message t)
 ;; delete when region when starting to type inside
@@ -96,7 +95,8 @@
 ;; misc
 ;; --------------------------------------------------------------------
 ;; remove annoying minibuffer prompts
-(setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))
+;; (setq minibuffer-prompt-properties '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))
+(cursor-intangible-mode 1)
 ;; ask y/s  instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 

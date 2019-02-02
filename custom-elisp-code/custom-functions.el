@@ -169,21 +169,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (forward-word))
 
 ;; --------------------------------------------------------------------
-;; insert hex color
-;; --------------------------------------------------------------------
-(defun insert-color-hex ()
-  "Select a color and insert its hexadecimal format."
-  (interactive "*")
-  (let ((buf (current-buffer)))
-    (list-colors-display
-     nil nil `(lambda (name)
-                (interactive)
-                (quit-window)
-                (with-current-buffer ,buf
-                  (insert (apply 'color-rgb-to-hex
-                                 (color-name-to-rgb name))))))))
-
-;; --------------------------------------------------------------------
 ;; Org-agenda full screen
 ;; --------------------------------------------------------------------
 (defun org-agenda-list-and-delete-other-windows ()
