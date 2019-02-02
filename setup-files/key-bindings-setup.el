@@ -144,6 +144,7 @@
 ;; --------------------------------------------------------------------
 (general-define-key :keymaps 'visual
                     ;; evil jump
+                    "x" 'evil-exchange
                     "C-S-o" 'evil-jump-forward)
 
 ;; --------------------------------------------------------------------
@@ -273,10 +274,10 @@
                     "C-k" 'scroll-down-command
                     "j" 'dired-hacks-next-file
                     "k" 'dired-hacks-previous-file
-                    "h" '(lambda () (interactive) (find-alternate-file ".."))
-                    "l" 'dired-find-alternate-file
-                    "RET" 'dired-advertised-find-file
-                    "<backspace>" 'dired-up-directory
+                    "l" 'dired-advertised-find-file
+                    "h" 'dired-up-directory
+                    "<backspace>" '(lambda () (interactive) (find-alternate-file ".."))
+                    "RET" 'dired-find-alternate-file
                     "TAB" 'other-window
                     "<tab>" 'other-window
                     "/" 'dired-narrow-fuzzy
