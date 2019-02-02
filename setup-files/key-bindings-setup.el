@@ -287,7 +287,8 @@
                     "M-s" 'xah-dired-sort
                     "r" 'revert-buffer
                     "o" 'dired-hide-dotfiles-mode
-                    "J" 'dired-launch-command)
+                    "J" 'dired-launch-command
+                    "&" 'dired-start-process)
 
 ;; neotree
 (general-define-key :states 'normal

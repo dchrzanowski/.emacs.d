@@ -412,6 +412,29 @@ Version 2015-07-30"
     (dired-sort-other $arg )))
 
 ;; --------------------------------------------------------------------
+;; Dired start process async with marked files
+;; --------------------------------------------------------------------
+(defvar dired-filelist-cmd
+  '(("vlc" "-L")))
+
+(defun dired-start-process (cmd &optional file-list)
+  (interactive
+   (let ((files (dired-get-marked-files t current-prefix-arg)))
+     (list
+      (dired-read-shell-command "& on %s: " current-prefix-arg files)
+      files)))
+  (apply
+   #'start-process
+   (list cmd nil shell-file-name shell-command-switch
+         (format "nohup 1>/dev/null 2>/dev/null %s \"%s\""
+                 (if (> (length file-list) 1)
+                     (format "%s %s"
+                             cmd
+                             (cadr (assoc cmd dired-filelist-cmd)))
+                   cmd)
+                 (mapconcat #'expand-file-name file-list "\" \"")))))
+
+;; --------------------------------------------------------------------
 ;; Calc
 ;; --------------------------------------------------------------------
 (defun calc-eval-string (x)
