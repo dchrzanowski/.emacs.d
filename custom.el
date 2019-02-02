@@ -188,6 +188,7 @@
  '(dired-flagged ((t (:foreground "red" :weight bold))))
  '(dired-header ((t (:height 110 :foreground "chartreuse3" :weight bold))))
  '(dired-marked ((t (:foreground "gold" :weight bold))))
+ '(eldoc-box-border ((t (:background "#51afef"))))
  '(evil-ex-lazy-highlight ((t (:background "black" :foreground "white"))))
  '(evil-ex-search ((t (:background "black" :foreground "white"))))
  '(evil-ex-substitute-matches ((t (:background "black" :foreground "white"))))

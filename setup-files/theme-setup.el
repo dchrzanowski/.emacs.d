@@ -70,6 +70,8 @@
    '(dired-marked ((t (:foreground "gold" :weight bold))))
    ;; dired filter group
    '(dired-filter-group-header ((t (:background "black" :foreground "orange" :box (:line-width 1 :color "orange") :weight bold))))
+   ;; eldoc-box
+   '(eldoc-box-border ((t (:background "#51afef"))))
    ;; evil
    '(evil-ex-lazy-highlight ((t (:background "black" :foreground "white"))))
    '(evil-ex-search ((t (:background "black" :foreground "white"))))
