@@ -11,6 +11,13 @@
       dired-recursive-deletes 'always
       dired-omit-verbose nil)
 
+;; default launchers for certain file types
+(setq dired-guess-shell-alist-user
+      '(("\\.jpe?g\\'" "gimp")
+        ("\\.png\\'" "gimp")
+        ("\\.gif\\'" "gimp")
+        ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "vlc")))
+
 ;; sort files and show sizes
 ;; (setq dired-listing-switches "-alhvF --group-directories-first")
 (setq dired-listing-switches "-aBhl --group-directories-first")

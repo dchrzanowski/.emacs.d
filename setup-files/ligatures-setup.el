@@ -5,11 +5,9 @@
 ;; --------------------------------------------------------------------
 
 ;; ("return" . ?↲)
-;; ("for" . ?∀)
 ;; ("if" . ?◆)
 ;; ("else" . ?▶)
 ;; ("this" . ?⅄)
-;; ("null" . ?∅)
 ;; ("int" . ?ℤ)
 ;; ("double" . ?ℝ)
 ;; ("String" . ?ℾ)
@@ -19,6 +17,9 @@
   (setq prettify-symbols-alist
         '(("lambda" . ?λ)
           ("null"   . ?∅)
+          ("NULL"   . ?∅)
+          ("for"    . ?∀)
+          ("in"     . ?∈)
           ("&&"     . ?∧)
           ("||"     . ?∨)
           ("=="     . ?≡)
@@ -33,11 +34,13 @@
 
 (defun python-style-ligatures ()
   "Java style languages ligatures."
-  (push '("def" . ?ƒ) prettify-symbols-alist))
+  (push '("def"    . ?ƒ) prettify-symbols-alist)
+  (push '("not in" . ?∉) prettify-symbols-alist))
 
 (defun js-style-ligatures ()
   "Js style languages ligatures."
   (push '("=>"       . ?λ) prettify-symbols-alist)
+  (push '("forEach"  . ?∀) prettify-symbols-alist)
   (push '("function" . ?ƒ) prettify-symbols-alist))
 
 (add-hook 'prog-mode-hook   #'prog-mode-style-ligatures)

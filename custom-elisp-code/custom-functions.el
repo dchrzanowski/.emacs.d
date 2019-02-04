@@ -169,21 +169,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (forward-word))
 
 ;; --------------------------------------------------------------------
-;; insert hex color
-;; --------------------------------------------------------------------
-(defun insert-color-hex ()
-  "Select a color and insert its hexadecimal format."
-  (interactive "*")
-  (let ((buf (current-buffer)))
-    (list-colors-display
-     nil nil `(lambda (name)
-                (interactive)
-                (quit-window)
-                (with-current-buffer ,buf
-                  (insert (apply 'color-rgb-to-hex
-                                 (color-name-to-rgb name))))))))
-
-;; --------------------------------------------------------------------
 ;; Org-agenda full screen
 ;; --------------------------------------------------------------------
 (defun org-agenda-list-and-delete-other-windows ()
@@ -410,6 +395,29 @@ Version 2015-07-30"
      ((equal $sort-by "dir") (setq $arg "-Al --si --time-style long-iso --group-directories-first"))
      (t (error "logic error 09535" )))
     (dired-sort-other $arg )))
+
+;; --------------------------------------------------------------------
+;; Dired start process async with marked files
+;; --------------------------------------------------------------------
+(defvar dired-filelist-cmd
+  '(("vlc" "-L")))
+
+(defun dired-start-process (cmd &optional file-list)
+  (interactive
+   (let ((files (dired-get-marked-files t current-prefix-arg)))
+     (list
+      (dired-read-shell-command "& on %s: " current-prefix-arg files)
+      files)))
+  (apply
+   #'start-process
+   (list cmd nil shell-file-name shell-command-switch
+         (format "nohup 1>/dev/null 2>/dev/null %s \"%s\""
+                 (if (> (length file-list) 1)
+                     (format "%s %s"
+                             cmd
+                             (cadr (assoc cmd dired-filelist-cmd)))
+                   cmd)
+                 (mapconcat #'expand-file-name file-list "\" \"")))))
 
 ;; --------------------------------------------------------------------
 ;; Calc

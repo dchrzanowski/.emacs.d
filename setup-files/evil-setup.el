@@ -42,6 +42,7 @@
   (add-to-list 'evil-emacs-state-modes 'fzf-projectile)
 
   (add-to-list 'evil-normal-state-modes 'fundamental-mode)
+  (add-to-list 'evil-motion-state-modes 'tabulated-list-mode)
 
   (eval-after-load 'git-timemachine
     '(progn

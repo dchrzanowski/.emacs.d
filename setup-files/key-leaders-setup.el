@@ -108,6 +108,8 @@
  "gr" 'magit-list-repositories
  "gm" 'git-messenger:popup-message
  "gM" 'git-messenger:popup-show-verbose
+ "gt" 'git-timemachine-toggle
+ "gg" 'hydra-git-gutter/body
  ;; org
  "oc" 'org-capture
  "ol" 'org-store-link
