@@ -72,7 +72,9 @@
 ;; --------------------------------------------------------------------
 (use-package web-beautify
   :ensure-system-package (js-beautify . "sudo npm i -g js-beautify")
-  :defer 2)
+  :defer 2
+  :config
+  (defconst web-beautify-args '("-")))
 
 ;; --------------------------------------------------------------------
 ;; zenity
