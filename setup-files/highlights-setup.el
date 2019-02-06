@@ -58,6 +58,7 @@
   :config
   (setq color-identifiers-coloring-method 'sequential
         color-identifiers:num-colors '30
+        color-identifiers:timer (run-with-idle-timer 3 t 'color-identifiers:refresh)
         color-identifiers:color-luminance 0.6
         color-identifiers:min-color-saturation 0.3
         color-identifiers:max-color-saturation 1.0)
