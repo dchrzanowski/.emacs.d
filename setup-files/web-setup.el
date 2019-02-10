@@ -65,7 +65,9 @@
 ;; --------------------------------------------------------------------
 (use-package restclient
   :mode ("\\.rest\\'" . restclient-mode)
-  :defer 2)
+  :defer 2
+  :config
+  (setq restclient-inhibit-cookies t))
 
 ;; --------------------------------------------------------------------
 ;; web-beautify

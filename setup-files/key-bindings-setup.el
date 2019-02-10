@@ -23,6 +23,8 @@
   ;; fix mouse
   "C-M-)" '(lambda() (interactive)(scroll-up 6))
   "C-M-(" '(lambda() (interactive)(scroll-down 6))
+  "<mouse-5>" '(lambda() (interactive)(scroll-up 3))
+  "<mouse-4>" '(lambda() (interactive)(scroll-down 3))
   ;; F's
   "<f2>" 'evil-mode
   "<f5>" 'quickrun
