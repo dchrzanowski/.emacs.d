@@ -33,7 +33,6 @@
  "hl" 'helm-locate
  "hw" 'helm-do-ag-buffers
  "hd" 'helm-dash
- "hs" 'helm-system-packages
  "hf" 'helm-fzf
  "hp" 'helm-fzf-project-root
  ;; help

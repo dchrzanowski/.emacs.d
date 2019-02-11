@@ -53,7 +53,8 @@
         helm-swoop-pre-input-function (lambda () "")))
 
 ;; --------------------------------------------------------------------
-;; helm-dash
+;; helm-dash, visit https://github.com/Kapeli/feeds for a list of feeds
+;; if the installer fails
 ;; --------------------------------------------------------------------
 (use-package helm-dash
   :defer t
