@@ -188,11 +188,18 @@
                     "M-l" 'helm-execute-persistent-action
                     "M-h" 'helm-find-files-up-one-level
                     "M-J" 'helm-ff-run-open-file-with-default-tool
-                    "M-K" 'helm-ff-open-dired-at-point
                     "M-i" 'helm-select-action
                     "C-S-h" 'describe-key
                     "TAB" 'helm-execute-persistent-action
                     "C-r" 'evil-paste-from-register)
+;; helm-locate
+(general-define-key :keymaps '(helm-locate-map)
+                    "M-K" '(lambda () (interactive) (helm-select-nth-action 4)))
+
+;; helm find-files-map
+(general-define-key :keymaps '(helm-find-files-map
+                               helm-projectile-find-file-map)
+                    "M-K" '(lambda () (interactive) (helm-select-nth-action 1)))
 
 ;; helm swoop
 (general-define-key :states 'normal

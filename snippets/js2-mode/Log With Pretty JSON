@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Log With Pretty JSON
+# key: logvv
+# --
+console.log("---- $1 ----\n", JSON.stringify($1, null, 2));$0
