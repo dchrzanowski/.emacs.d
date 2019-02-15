@@ -33,7 +33,6 @@
  "hl" 'helm-locate
  "hw" 'helm-do-ag-buffers
  "hd" 'helm-dash
- "hs" 'helm-system-packages
  "hf" 'helm-fzf
  "hp" 'helm-fzf-project-root
  ;; help
@@ -89,6 +88,7 @@
  "kp" 'evilnc-comment-or-uncomment-paragraphs
  "kr" 'comment-or-uncomment-region
  "kv" 'evilnc-toggle-invert-comment-line-by-line
+ "kb" 'comment-box
  ;; whitespace mode
  "W" 'ibuffer
  ;; editing assists
