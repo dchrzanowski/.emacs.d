@@ -2,9 +2,9 @@
 ;;; Code:
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq gc-cons-threshold 1000000000)
+(setq gc-cons-threshold 10000000)
 
-(add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
+;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
 
 ;; --------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
