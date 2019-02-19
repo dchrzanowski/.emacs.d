@@ -24,6 +24,11 @@
   (setq evil-want-integration nil
         evil-want-keybinding nil)
 
+  :custom
+  (evil-kill-on-visual-paste
+   nil
+   "Stop `evil-visual-paste' from adding the replaced text to the kill ring.")
+
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil

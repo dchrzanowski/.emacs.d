@@ -427,6 +427,32 @@ Version 2015-07-30"
   (interactive)
   (calc-eval x))
 
+(defun calc-eval-region (arg)
+  "Evaluate an expression in calc and communicate the result.
+
+If the region is active evaluate that, otherwise search backwards
+to the first whitespace character to find the beginning of the
+expression.  By default, replace the expression with its value.  If
+called with the universal prefix argument, keep the expression
+and insert the result into the buffer after it.  If called with a
+negative prefix argument, just echo the result in the
+minibuffer."
+  (interactive "p")
+  (let (start end)
+    (if (use-region-p)
+        (setq start (region-beginning) end (region-end))
+      (setq end (point))
+      (setq start (search-backward-regexp "\\s-\\|\n" 0 1))
+      (setq start (1+ (if start start 0)))
+      (goto-char end))
+    (let ((value (calc-eval (buffer-substring-no-properties start end))))
+      (pcase arg
+        (1 (delete-region start end))
+        (4 (insert " = ")))
+      (pcase arg
+        ((or 1 4) (insert value))
+        (-1 (message value))))))
+
 ;; --------------------------------------------------------------------
 ;; Frame
 ;; --------------------------------------------------------------------
@@ -485,6 +511,49 @@ i.e. change right window to bottom, or change bottom window to right."
   (if display-line-numbers
       (setq display-line-numbers 'nil)
     (setq display-line-numbers 'relative)))
+
+;; --------------------------------------------------------------------
+;; Package info in Emacs
+;; --------------------------------------------------------------------
+(defun std::pacman-pkg-info ()
+  (interactive)
+  (let* ((completions (->> "pacman -Q"
+                           (shell-command-to-string)
+                           (s-trim)
+                           (s-lines)
+                           (--map (car (s-split " " it :no-nulls)))))
+         (name (completing-read "Package: " completions)))
+    (switch-to-buffer (get-buffer-create "*Package Info*"))
+    (erase-buffer)
+    (-> (format "pacman -Qi %s" name)
+        (shell-command-to-string)
+        (s-trim)
+        (insert))
+    (goto-char 0)
+    (conf-mode)))
+
+;; --------------------------------------------------------------------
+;; dakra's ipinfo
+;; --------------------------------------------------------------------
+(defun ipinfo (ip)
+  "Return ip info from ipinfo.io for IP."
+  (interactive "sEnter IP to query (blank for own IP): ")
+  (require 'request)
+  (request
+   (concat "https://ipinfo.io/" ip)
+   :headers '(("User-Agent" . "Emacs ipinfo.io Client")
+              ("Accept" . "application/json")
+              ("Content-Type" . "application/json;charset=utf-8"))
+   :parser 'json-read
+   :success (cl-function
+             (lambda (&key data &allow-other-keys)
+               (message
+                (mapconcat
+                 (lambda (e)
+                   (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
+                 data "\n"))))
+   :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
+                         (message "Can't receive ipinfo. Error %S " error-thrown)))))
 
 (provide 'custom-functions)
 ;;; custom-functions ends here
