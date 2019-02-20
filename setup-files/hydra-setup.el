@@ -133,6 +133,15 @@ _U_/_u_  run/get user token   _A_/_a_ run/get admin token
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
+;; Expand region hydra
+;; --------------------------------------------------------------------
+(defhydra hydra-expand-region ()
+  "region: "
+  ("SPC" nil "Cancel")
+  ("k" er/expand-region "expand")
+  ("j" er/contract-region "contract"))
+
+;; --------------------------------------------------------------------
 ;; Auto highlight hydra
 ;; --------------------------------------------------------------------
 (defhydra hydra-todo (:color pink :hint nil)

@@ -82,6 +82,7 @@
 (require 'yasnippet-setup)
 (require 'spell-check-setup)
 (require 'docker-setup)
+(require 'alerts-setup)
 
 ;; languages
 ;; (require 'csharp-setup)

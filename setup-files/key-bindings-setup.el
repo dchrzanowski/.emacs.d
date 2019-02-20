@@ -147,7 +147,15 @@
 (general-define-key :keymaps 'visual
                     ;; evil jump
                     "x" 'evil-exchange
+                    "v" 'hydra-expand-region/body
                     "C-S-o" 'evil-jump-forward)
+
+;; --------------------------------------------------------------------
+;; Evil visual
+;; --------------------------------------------------------------------
+(general-define-key :keymaps 'motion
+                    ;; evil jump
+                    "<escape>" 'keyboard-quit-and-remove-evil-mc)
 
 ;; --------------------------------------------------------------------
 ;; Local maps
@@ -297,7 +305,8 @@
                     "r" 'revert-buffer
                     "o" 'dired-hide-dotfiles-mode
                     "J" 'dired-launch-command
-                    "&" 'dired-start-process)
+                    "&" 'dired-start-process
+                    ")" 'dired-git-info-mode)
 
 ;; neotree
 (general-define-key :states 'normal

@@ -82,7 +82,7 @@
 ;; zenity
 ;; --------------------------------------------------------------------
 (use-package zenity-color-picker
-  :defer 2)
+  :defer 6)
 
 (provide 'web-setup)
 ;;; web-setup ends here

@@ -84,4 +84,7 @@ session.*
 speed-type/
 url/
 
+# transient
+transient
+
 # End of https://www.gitignore.io/api/emacs

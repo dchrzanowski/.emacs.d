@@ -5,16 +5,6 @@
 ;; --------------------------------------------------------------------
 
 ;; --------------------------------------------------------------------
-;; load powerline
-;; --------------------------------------------------------------------
-;; (use-package powerline
-;;   :config
-;;   (use-package powerline-evil
-;;     :config
-;;     (powerline-evil-center-color-theme)
-;;     (setq-default powerline-default-separator (quote slant))))
-
-;; --------------------------------------------------------------------
 ;; load doom-modeline
 ;; --------------------------------------------------------------------
 (use-package doom-modeline

@@ -555,5 +555,30 @@ i.e. change right window to bottom, or change bottom window to right."
    :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
                          (message "Can't receive ipinfo. Error %S " error-thrown)))))
 
+;; --------------------------------------------------------------------
+;; insert shell option from man pages
+;; --------------------------------------------------------------------
+(defun insert-shell-option (cmd)
+  (interactive "sCommand: ")
+  (let ((options ()))
+    (require 'pcmpl-args)
+    (require 'helm)
+    (dolist (item (pcmpl-args-extract-argspecs-from-manpage cmd))
+      (let ((option (plist-get item 'option))
+            (help (plist-get item :help)))
+        (push (cons (with-temp-buffer
+                      (insert help)
+                      (let ((fill-column 80))
+                        (fill-paragraph))
+                      (goto-char (point-min))
+                      (insert (format "%s\n" option))
+                      (buffer-string))
+                    (format "%s" option))
+              options)))
+    (helm (helm-build-sync-source "Options: "
+            :candidates (nreverse options)
+            :multiline t
+            :action #'insert))))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

@@ -22,6 +22,8 @@
 ;; (setq dired-listing-switches "-alhvF --group-directories-first")
 (setq dired-listing-switches "-aBhl --group-directories-first")
 
+(require 'dired-git-info)
+
 ;; async
 (use-package async
   :config
@@ -86,6 +88,7 @@
   (setq-default dired-launch-default-launcher '("xdg-open")
                 dired-launch-extensions-map nil))
 
+;; colored files by type
 (use-package diredful
   :defer 1
   :config

@@ -104,7 +104,9 @@
  "gs" 'magit-status
  "gi" 'magit-init
  "gc" 'magit-clone
- "gl" 'magit-log-popup
+ "gll" 'git-link
+ "glc" 'git-link-commit
+ "glh" 'git-link-homepage
  "gr" 'magit-list-repositories
  "gm" 'git-messenger:popup-message
  "gM" 'git-messenger:popup-show-verbose

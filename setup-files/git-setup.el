@@ -87,7 +87,13 @@
   (keychain-refresh-environment))
 
 ;; --------------------------------------------------------------------
-;; git-modes
+;; git-link Emacs package to get the GitHub/GitLab/... URL
+;; --------------------------------------------------------------------
+(use-package git-link
+  :defer t)
+
+;; --------------------------------------------------------------------
+;; git-modes for git config files
 ;; --------------------------------------------------------------------
 (use-package gitattributes-mode
   :defer 5)
