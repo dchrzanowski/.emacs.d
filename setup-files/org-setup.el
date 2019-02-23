@@ -235,6 +235,13 @@
         alert-default-style 'libnotify))
 
 ;; --------------------------------------------------------------------
+;; chronos
+;; --------------------------------------------------------------------
+(use-package chronos
+  :config
+  (setq chronos-expiry-functions '(chronos-desktop-notifications-notify)))
+
+;; --------------------------------------------------------------------
 ;; markdown
 ;; --------------------------------------------------------------------
 (use-package markdown-mode)
