@@ -65,6 +65,8 @@
   "TAB" 'tab-indent-or-complete
   "<tab>" 'tab-indent-or-complete
   "C-<SPC>" 'company-dabbrev-code
+  ;; eacl
+  "M-<RET>" 'eacl-complete-multiline
   ;; dired
   "C-;" 'dired-jump
   ;; evil-mc
@@ -101,7 +103,9 @@
                     "M-<SPC> f" 'company-files
                     "M-<SPC> a" 'aya-create
                     "M-<SPC> e" 'aya-expand
-                    "M-<SPC> o" 'aya-open-line)
+                    "M-<SPC> o" 'aya-open-line
+                    "M-<SPC> c" 'eacl-complete-line
+                    "M-<SPC> C" 'eacl-complete-multiline)
 
 ;; --------------------------------------------------------------------
 ;; Evil normal
@@ -303,10 +307,15 @@
                     "C-<right>" 'grim/delete-other-windows-and-split-right
                     "M-s" 'xah-dired-sort
                     "r" 'revert-buffer
-                    "o" 'dired-hide-dotfiles-mode
                     "J" 'dired-launch-command
                     "&" 'dired-start-process
                     ")" 'dired-git-info-mode)
+
+;; ivy
+(general-define-key :keymaps 'ivy-minibuffer-map
+                    "M-j" 'ivy-next-line
+                    "M-k" 'ivy-previous-line
+                    "<escape>" 'minibuffer-keyboard-quit)
 
 ;; neotree
 (general-define-key :states 'normal

@@ -76,11 +76,6 @@
   ;; dired multistage copy/move/paste
   (use-package dired-ranger))
 
-;; show/hide dotfiles
-(use-package dired-hide-dotfiles
-  :config
-  (add-hook 'dired-mode-hook #'dired-hide-dotfiles-mode))
-
 ;; launch dired from point
 (use-package dired-launch
   :config

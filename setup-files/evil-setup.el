@@ -21,7 +21,7 @@
 ;; --------------------------------------------------------------------
 (use-package evil
   :init
-  (setq evil-want-integration nil
+  (setq evil-want-integration t
         evil-want-keybinding nil)
 
   :custom
@@ -156,6 +156,7 @@
                                     profiler
                                     quickrun
                                     realgud
+                                    ivy
                                     xref))
   (evil-collection-init)
   ;; bug in evil-collection-occur, does not start automatically

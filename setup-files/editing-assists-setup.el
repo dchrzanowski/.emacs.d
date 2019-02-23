@@ -35,6 +35,26 @@
                 undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo-tree")))  ; save all undo history into a single folder
   (global-undo-tree-mode))
 
+;; --------------------------------------------------------------------
+;; emacs auto complete lines
+;; --------------------------------------------------------------------
+(use-package eacl
+  :defer t
+  :config
+  (eval-after-load 'grep
+    '(progn
+       (dolist (v '("node_modules"
+                    "bower_components"
+                    ".sass_cache"
+                    ".cache"
+                    ".npm"))
+         (add-to-list 'grep-find-ignored-directories v))
+       (dolist (v '("*.min.js"
+                    "*.bundle.js"
+                    "*.min.css"
+                    "*.json"
+                    "*.log"))
+         (add-to-list 'grep-find-ignored-files v)))))
 
 ;; --------------------------------------------------------------------
 ;; speed type
