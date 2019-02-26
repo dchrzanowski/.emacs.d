@@ -53,7 +53,7 @@
 ;; --------------------------------------------------------------------
 ;; load setup files
 ;; --------------------------------------------------------------------
-;; core and utils
+;; core
 (require 'sane-defaults-setup)
 (require 'help-setup)
 (require 'custom-functions)
@@ -66,23 +66,27 @@
 (require 'dired-settings-setup)
 (require 'editing-assists-setup)
 (require 'evil-setup)
-(require 'git-setup)
 (require 'project-assist-setup)
 (require 'helm-setup)
 (require 'highlights-setup)
 (require 'hydra-setup)
 (require 'linting-setup)
-;; (require 'notmuch-settings-setup)
 (require 'package-assistants-setup)
-(require 'pdf-setup)
-(require 'org-setup)
-(require 'shell-setup)
 (require 'smartparens-setup)
-(require 'tramp-setup)
 (require 'yasnippet-setup)
 (require 'spell-check-setup)
-(require 'docker-setup)
 (require 'alerts-setup)
+
+;; org
+(require 'org-setup)
+
+;; utils
+(require 'git-setup)
+(require 'shell-setup)
+(require 'tramp-setup)
+(require 'pdf-setup)
+(require 'docker-setup)
+(require 'system-utils-setup)
 
 ;; languages
 ;; (require 'csharp-setup)
