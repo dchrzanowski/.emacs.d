@@ -9,5 +9,5 @@
 ;; --------------------------------------------------------------------
 (use-package disk-usage)
 
-(provide 'system-utils-setup)
-;;; system-utils-setup ends here
+(provide 'os-utils-setup)
+;;; os-utils-setup ends here

@@ -88,3 +88,4 @@ url/
 transient
 
 # End of https://www.gitignore.io/api/emacs
+/.helm-chronos-recent-timers

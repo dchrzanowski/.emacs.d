@@ -86,7 +86,7 @@
 (require 'tramp-setup)
 (require 'pdf-setup)
 (require 'docker-setup)
-(require 'system-utils-setup)
+(require 'os-utils-setup)
 
 ;; languages
 ;; (require 'csharp-setup)
