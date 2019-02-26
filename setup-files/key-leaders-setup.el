@@ -188,7 +188,7 @@
  "ck" 'org-kanban/shift
  "ce" 'org-export-dispatch
  "cy" 'org-download-yank
- "cc" 'org-decrypt-entries)
+ "cd" 'org-decrypt-entries)
 
 ;; --------------------------------------------------------------------
 ;; org agenda leader
