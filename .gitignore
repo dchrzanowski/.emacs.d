@@ -87,7 +87,11 @@ url/
 # transient
 transient
 
-# End of https://www.gitignore.io/api/emacs
 
 # org trello
 .trello
+
+# helm-chronos
+/.helm-chronos-recent-timers
+
+# End of https://www.gitignore.io/api/emacs

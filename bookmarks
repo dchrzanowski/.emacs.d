@@ -78,6 +78,14 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -211,30 +219,30 @@
 (bmkp-full-record #1#))
 (annotation)
 (tags)
-(filename . "~/GoogleDrive/org/notes.org")
-(buffer-name . "notes.org")
-(front-context-string . "** Russian doll ")
-(rear-context-string . "rbon\n** Lucifer\n")
+(filename . "~/GoogleDrive/org/programming_notes.org")
+(buffer-name . "programming_notes.org")
+(front-context-string . "*** Emacs C++ [[")
+(rear-context-string . "/pub/magit.org\n\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23640 48335 661025 101000))
+(time . #2=(23669 42448 615378 796000))
 (created . #2#)
-(position . 1581))
+(position . 4252))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
 (tags)
 (filename . "~/GoogleDrive/org/refile.org")
 (buffer-name . "refile.org")
-(front-context-string . "* TODO Fix Helm ")
-(rear-context-string . "t fully unified\n")
+(front-context-string . "* Furbo Visit, P")
+(rear-context-string . "2019-03-01 Fri>\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23619 38373 558993 843000))
+(time . #2=(23669 41248 721521 783000))
 (created . #2#)
-(position . 349))
+(position . 659))
 #1=(#(".emacs.d" 0 8
 (bmkp-full-record #1#))
 (end-position . 1)
@@ -293,17 +301,17 @@
 (created 22832 28455 797470 230000))
 #1=(#("init.el" 0 7
 (bmkp-full-record #1#))
-(end-position . 1417)
+(end-position . 959)
 (filename . "~/.emacs.d/init.el")
 (buffer-name . "init.el")
 (front-context-string . ";; Python\n;; ---")
 (rear-context-string . "---------------\n")
 (front-context-region-string)
 (rear-context-region-string)
-(visits . 12)
-(time 23577 34077 963103 291000)
+(visits . 13)
+(time 23669 42785 375953 78000)
 (created 22819 15845 559399 480000)
-(position . 1417))
+(position . 959))
 #1=(#("custom.el" 0 9
 (bmkp-full-record #1#))
 (filename . "~/.emacs.d/custom.el")
