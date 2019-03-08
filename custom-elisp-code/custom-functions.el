@@ -580,5 +580,19 @@ i.e. change right window to bottom, or change bottom window to right."
             :multiline t
             :action #'insert))))
 
+;; --------------------------------------------------------------------
+;; org trello helpers
+;; --------------------------------------------------------------------
+(defun grim/org-trello-push ()
+  "Push the current buffer's content to trello."
+  (interactive)
+  (org-trello-sync-buffer))
+
+(defun grim/org-trello-pull ()
+  "Push the current buffer's content to trello."
+  (interactive)
+  (setq current-prefix-arg '(4))
+  (call-interactively 'org-trello-sync-buffer))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

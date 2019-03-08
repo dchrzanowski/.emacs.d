@@ -188,7 +188,22 @@
  "ck" 'org-kanban/shift
  "ce" 'org-export-dispatch
  "cy" 'org-download-yank
- "cd" 'org-decrypt-entries)
+ "cd" 'org-decrypt-entries
+ ;; trello (mimic magit keys)
+ "ctp" 'grim/org-trello-push
+ "ctF" 'grim/org-trello-pull
+ "cti" 'org-trello-install-board-metadata)
+
+;; --------------------------------------------------------------------
+;; org trello leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'org-trello-mode-map
+ "cp" 'grim/org-trello-push
+ "cf" 'grim/org-trello-pull
+ )
 
 ;; --------------------------------------------------------------------
 ;; org agenda leader
