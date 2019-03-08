@@ -88,3 +88,6 @@ url/
 transient
 
 # End of https://www.gitignore.io/api/emacs
+
+# org trello
+.trello

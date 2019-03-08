@@ -124,6 +124,12 @@
   (use-package toc-org
     :defer 2)
 
+  (use-package org-trello
+    :config
+    ;; set trello for specific files only
+    ;; (custom-set-variables '(org-trello-files '("/path/to/file0" "/path/to/file1")))
+    )
+
   ;; org-projectile
   (use-package org-projectile
     :defer 2
