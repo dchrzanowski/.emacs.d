@@ -85,6 +85,8 @@
    '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
    '(helm-selection ((t (:inherit bold :background "#0b0c0e"))))
+   ;; helm-posframe
+   '(internal-border ((t (:background "#51afef"))))
    ;; helm swoop
    '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "gold" :weight bold))))
    '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
