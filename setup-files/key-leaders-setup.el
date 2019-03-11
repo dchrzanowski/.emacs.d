@@ -195,17 +195,6 @@
  "cti" 'org-trello-install-board-metadata)
 
 ;; --------------------------------------------------------------------
-;; org trello leader
-;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'org-trello-mode-map
- "cp" 'grim/org-trello-push
- "cf" 'grim/org-trello-pull
- )
-
-;; --------------------------------------------------------------------
 ;; org agenda leader
 ;; --------------------------------------------------------------------
 (general-define-key
