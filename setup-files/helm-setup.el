@@ -33,7 +33,7 @@
   :config
   (helm-posframe-enable)
   (setq helm-posframe-poshandler 'posframe-poshandler-point-bottom-left-corner
-        helm-posframe-width '80
+        helm-posframe-width '110
         helm-posframe-parameters '((internal-border-width . 1)
                                    (left-fringe . 5)
                                    (right-fringe . 5))))
