@@ -20,7 +20,7 @@
     (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
     (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
 
-  (setq helm-split-window-in-side-p t
+  (setq helm-split-window-inside-p t
         helm-echo-input-in-header-line t
         helm-move-to-line-cycle-in-source nil)
   ;; remove magit from the buffer list
