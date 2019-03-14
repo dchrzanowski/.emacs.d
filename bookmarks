@@ -90,6 +90,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -237,16 +241,16 @@
 (bmkp-full-record #1#))
 (annotation)
 (tags)
-(filename . "~/GoogleDrive/org/refile.org")
-(buffer-name . "refile.org")
-(front-context-string . "* [[file:~/.emac")
-(rear-context-string . "* torus :Emacs:\n")
+(filename . "~/GoogleDrive/org/projects/projects_refile.org")
+(buffer-name . "projects_refile.org")
+(front-context-string . "** TODO Hello Wo")
+(rear-context-string . "emacs.d\n  :END:\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23682 63245 581525 938000))
+(time . #2=(23686 37875 621115 793000))
 (created . #2#)
-(position . 37))
+(position . 324))
 #1=(#(".emacs.d" 0 8
 (bmkp-full-record #1#))
 (end-position . 1)

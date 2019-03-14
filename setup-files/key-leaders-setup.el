@@ -191,6 +191,7 @@
  "cd" 'org-decrypt-entries
  ;; trello (mimic magit keys)
  "ctt" 'org-trello-mode
+ "ctc" 'org-trello-sync-card
  "ctp" 'grim/org-trello-push
  "ctF" 'grim/org-trello-pull
  "cti" 'org-trello-install-board-metadata)
