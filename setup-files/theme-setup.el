@@ -111,7 +111,7 @@
    '(org-agenda-date ((t (:background "#173874" :foreground "white" :box (:line-width 4 :color "#173874") :weight ultra-bold :height 1.0))))
    '(org-agenda-date-today ((t (:background "#276029" :foreground "white" :box (:line-width 4 :color "#276029") :weight ultra-bold :height 1.1))))
    '(org-agenda-date-weekend ((t (:background "#913351" :foreground "white" :box (:line-width 4 :color "#913351") :weight ultra-bold :height 1.0))))
-   '(org-todo ((t (:background "#85221f" :foreground "white" :box (:line-width 1 :color "#85221f" :style pressed-button) :weight bold))))
+   '(org-todo ((t (:foreground "#ff6655" :weight bold))))
    ;; powerline and modeline
    '(mode-line ((t (:background "gray2" :foreground "white" :box nil))))
    '(mode-line-inactive ((t (:background "grey11" :foreground "#5B6268" :box nil))))

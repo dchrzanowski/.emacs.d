@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: User Story
+# key: us
+# --
+* TODO $1
+  - [/] Acceptance Criteria
+    - [ ] $0
