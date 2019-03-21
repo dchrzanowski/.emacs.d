@@ -13,6 +13,10 @@
   ;; old org style template expand
   (require 'org-tempo)
 
+  ;; org-id for uuid creation
+  (require 'org-id)
+  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+
   ;; --------------------------------------------------------------------
   ;; ob's
   ;; --------------------------------------------------------------------
