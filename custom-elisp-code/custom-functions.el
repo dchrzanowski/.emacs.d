@@ -595,33 +595,34 @@ i.e. change right window to bottom, or change bottom window to right."
   (call-interactively 'org-trello-sync-buffer))
 
 ;; --------------------------------------------------------------------
-;; create uuid's for org headings
-;; thanks to https://writequit.org/articles/emacs-org-mode-generate-ids.html
+;; create id's for org headings, modified slightly from the original.
+;; Thanks to https://writequit.org/articles/emacs-org-mode-generate-ids.html
 ;; --------------------------------------------------------------------
-(defun eos/org-custom-id-get (&optional pom create prefix)
-  "Get the CUSTOM_ID property of the entry at point-or-marker POM.
+(defun grim/org-custom-id-get (&optional pom create prefix)
+  "Get the ID property of the entry at point-or-marker POM.
 
 If POM is nil, refer to the entry at point.  If the entry does
-not have an CUSTOM_ID, the function returns nil.  However, when
-CREATE is non nil, create a CUSTOM_ID if none is present already.
+not have an ID, the function returns nil.  However, when
+CREATE is non nil, create a ID if none is present already.
 PREFIX will be passed through to `org-id-new'.  In any
-case, the CUSTOM_ID of the entry is returned."
+case, the ID of the entry is returned."
   (interactive)
   (org-with-point-at pom
-    (let ((id (org-entry-get nil "CUSTOM_ID")))
+    (let ((id (org-entry-get nil "ID")))
       (cond
        ((and id (stringp id) (string-match "\\S-" id))
         id)
        (create
-        (setq id (org-id-new (concat prefix "")))
-        (org-entry-put pom "CUSTOM_ID" id)
+        (setq id (org-id-new prefix))
+        (org-entry-put pom "ID" id)
         (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
         id)))))
+(defun grim/org-add-ids-to-headlines-in-file (prefix)
+  "Add ID properties to all headlines in the current file.
 
-(defun eos/org-add-ids-to-headlines-in-file ()
-  "Add CUSTOM_ID properties to all headlines in the current file which do not already have one."
-  (interactive)
-  (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create))))
+PREFIX is added in front of each generated id."
+  (interactive "sPrefix[Enter for blank]: ")
+  (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create prefix))))
 
 (provide 'custom-functions)
 ;;; custom-functions ends here

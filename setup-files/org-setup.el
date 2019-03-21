@@ -15,7 +15,11 @@
 
   ;; org-id for uuid creation
   (require 'org-id)
-  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+  (setq
+   ;; use ID from the drawer for links in exports
+   org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
+   ;; short IDs
+   org-id-method 'org)
 
   ;; --------------------------------------------------------------------
   ;; ob's
