@@ -10,32 +10,6 @@
   :defer 1
   :config
 
-  ;; old org style template expand
-  (require 'org-tempo)
-
-  ;; org-id for uuid creation
-  (require 'org-id)
-  (setq
-   ;; use ID from the drawer for links in exports
-   org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
-   ;; short IDs
-   org-id-method 'org)
-
-  ;; --------------------------------------------------------------------
-  ;; ob's
-  ;; --------------------------------------------------------------------
-  (require 'org-crypt)
-  (org-crypt-use-before-save-magic)
-  (setq org-tags-exclude-from-inheritance (quote ("crypt")))
-  ;; GPG key to use for encryption
-  ;; Either the Key ID or set to nil to use symmetric encryption.
-  (setq org-crypt-key nil)
-
-  ;; --------------------------------------------------------------------
-  ;; ob's
-  ;; --------------------------------------------------------------------
-  (use-package ob-mongo)
-
   ;; --------------------------------------------------------------------
   ;; vars
   ;; --------------------------------------------------------------------
@@ -98,6 +72,38 @@
   ;;autorefresh images after org-babel dot evaluations
   (add-hook 'org-babel-after-execute-hook 'auto-refresh-inline-images)
 
+
+  ;; --------------------------------------------------------------------
+  ;; org-tempo
+  ;; --------------------------------------------------------------------
+  ;; old org style template expand
+  (require 'org-tempo)
+
+  ;; --------------------------------------------------------------------
+  ;; org-id
+  ;; --------------------------------------------------------------------
+  (require 'org-id)
+  (setq
+   ;; use ID from the drawer for links in exports
+   org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
+   ;; short IDs
+   org-id-method 'org)
+
+  ;; --------------------------------------------------------------------
+  ;; org-crypt
+  ;; --------------------------------------------------------------------
+  (require 'org-crypt)
+  (org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance (quote ("crypt")))
+  ;; GPG key to use for encryption
+  ;; Either the Key ID or set to nil to use symmetric encryption.
+  (setq org-crypt-key nil)
+
+  ;; --------------------------------------------------------------------
+  ;; ob's
+  ;; --------------------------------------------------------------------
+  (use-package ob-mongo)
+
   ;; --------------------------------------------------------------------
   ;; addons
   ;; --------------------------------------------------------------------
@@ -129,9 +135,11 @@
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-title-max-length 12))
 
+  ;; toc-org
   (use-package toc-org
     :defer 2)
 
+  ;; org-trello
   (use-package org-trello
     :config
     ;; set trello for specific files only
@@ -163,22 +171,7 @@
   ;; org kanban
   (use-package org-kanban
     :config
-    (setq-default org-kanban/abbreviation '("..." . 20)))
-
-  ;; org-export to github markdown
-  (use-package ox-gfm
-    :defer t
-    :after org)
-
-  ;; org-export to impress.js
-  (use-package ox-impress-js
-    :defer t
-    :after org)
-
-  ;; org-export reveal.js
-  (use-package ox-reveal
-    :defer t
-    :after org)
+    (setq-default org-kanban/layout '("..." . 30)))
 
   ;; org-super-agenda
   (use-package org-super-agenda
@@ -201,7 +194,25 @@
             (:name "General"
                    :and (:tag "General" :todo t))
             (:name "Emacs"
-                   :and (:tag "Emacs"))))))
+                   :and (:tag "Emacs")))))
+
+  ;; --------------------------------------------------------------------
+  ;; ox's
+  ;; --------------------------------------------------------------------
+  ;; org-export to github markdown
+  (use-package ox-gfm
+    :defer t
+    :after org)
+
+  ;; org-export to impress.js
+  (use-package ox-impress-js
+    :defer t
+    :after org)
+
+  ;; org-export reveal.js
+  (use-package ox-reveal
+    :defer t
+    :after org))
 
 ;; --------------------------------------------------------------------
 ;; org-notify
