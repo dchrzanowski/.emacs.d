@@ -73,6 +73,7 @@
   "C-S-<mouse-1>" 'evil-mc-toggle-cursor-on-click
   ;; calc
   "M-q" 'quick-calc
+  "M-Q" 'calc-eval-line
   ;; insert unicode
   "M-z" 'insert-char
   ;; down/capitalize case word

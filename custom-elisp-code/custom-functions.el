@@ -453,6 +453,19 @@ minibuffer."
         ((or 1 4) (insert value))
         (-1 (message value))))))
 
+(defun calc-eval-line ()
+  "Calculate math expression on current line using calc-eval."
+  (interactive)
+  (setq cLine
+      (buffer-substring-no-properties
+       (line-beginning-position)
+       (line-end-position)))
+  (save-excursion
+    (end-of-line)
+    (open-line 1))
+  (forward-line 1)
+  (insert (calc-eval '("evalv($)" calc-internal-prec 18) 'num cLine)))
+
 ;; --------------------------------------------------------------------
 ;; Frame
 ;; --------------------------------------------------------------------
