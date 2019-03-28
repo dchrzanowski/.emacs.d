@@ -54,6 +54,7 @@
    org-agenda-show-all-dates nil
    org-agenda-files '("~/GoogleDrive/org/projects"
                       "~/GoogleDrive/org/projects/prefarm"
+                      "~/GoogleDrive/org/projects/farm-focus"
                       "~/GoogleDrive/org/projects/mtml"
                       "~/GoogleDrive/org")
 

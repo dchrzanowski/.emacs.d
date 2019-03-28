@@ -622,7 +622,7 @@ case, the ID of the entry is returned."
 
 PREFIX is added in front of each generated id."
   (interactive "sPrefix[Enter for blank]: ")
-  (org-map-entries (lambda () (eos/org-custom-id-get (point) 'create prefix))))
+  (org-map-entries (lambda () (grim/org-custom-id-get (point) 'create prefix))))
 
 ;; --------------------------------------------------------------------
 ;; Utilize explainshell.com to provide an explanation of shell commands

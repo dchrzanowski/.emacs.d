@@ -98,6 +98,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -231,16 +235,16 @@
 (bmkp-full-record #1#))
 (annotation)
 (tags)
-(filename . "~/GoogleDrive/org/Calendar.org")
-(buffer-name . "Calendar.org")
-(front-context-string . "** Trip with Fur")
-(rear-context-string . " List :General:\n")
+(filename . "~/GoogleDrive/org/programming_notes.org")
+(buffer-name . "programming_notes.org")
+(front-context-string . "*** [[https://ww")
+(rear-context-string . "ewalld config]]\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23698 23521 795653 743000))
+(time . #2=(23705 63296 56541 946000))
 (created . #2#)
-(position . 696))
+(position . 6502))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
