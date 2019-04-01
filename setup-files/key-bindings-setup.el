@@ -30,6 +30,9 @@
   "<f5>" 'quickrun
   "<f6>" '(lambda() (interactive)(find-file "~/.emacs.d/init.el"))
   "<f7>" 'pomidor
+  "<f8>" 'profiler-start
+  "S-<f8>" 'profiler-report
+  "C-<f8>" 'profiler-stop
   ;; smartparens
   "M-S" 'sp-split-sexp
   ;; packages
