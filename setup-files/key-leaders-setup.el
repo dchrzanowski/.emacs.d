@@ -13,6 +13,7 @@
  :prefix "SPC"
  ;; show filename
  "`" 'show-file-name
+ "¬" 'file-metadata
  ;; helm
  "x" 'helm-M-x
  "w" 'helm-mini

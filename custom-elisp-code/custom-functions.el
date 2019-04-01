@@ -457,9 +457,9 @@ minibuffer."
   "Calculate math expression on current line using calc-eval."
   (interactive)
   (setq cLine
-      (buffer-substring-no-properties
-       (line-beginning-position)
-       (line-end-position)))
+        (buffer-substring-no-properties
+         (line-beginning-position)
+         (line-end-position)))
   (save-excursion
     (end-of-line)
     (open-line 1))
@@ -645,6 +645,28 @@ PREFIX is added in front of each generated id."
   (interactive (list (read-shell-command "Command: ")))
   (browse-url (format "http://explainshell.com/explain?cmd=%s"
                       (url-encode-url cmd))))
+
+;; --------------------------------------------------------------------
+;; Display the current buffer's file metadata
+;; --------------------------------------------------------------------
+(defun file-metadata ()
+  "Show info about the file associated with the currently opened buffer."
+  (interactive)
+  (let* ((fname (buffer-file-name))
+         (data (file-attributes fname))
+         (access (current-time-string (nth 4 data)))
+         (mod (current-time-string (nth 5 data)))
+         (change (current-time-string (nth 6 data)))
+         (size (nth 7 data))
+         (mode (nth 8 data)))
+    (message
+     "%s:
+  Accessed: %s
+  Modified: %s
+  Changed: %s
+  Size: %s bytes
+  Mode: %s"
+     fname access mod change size mode)))
 
 (provide 'custom-functions)
 ;;; custom-functions ends here
