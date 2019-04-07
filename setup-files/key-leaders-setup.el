@@ -21,10 +21,10 @@
  "F" 'helm-find-files
  "M-f" 'helm-multi-swoop-all
  "r" 'helm-filtered-bookmarks
- "B" 'edit-bookmarks
+ "R" 'edit-bookmarks
  "m" 'helm-all-mark-rings
  "b" 'helm-semantic-or-imenu
- "R" 'helm-imenu-anywhere
+ "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
  "hg" 'helm-google

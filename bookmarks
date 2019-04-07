@@ -102,11 +102,48 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("Music" 0 5
+(#1=(#(".cmus-lyrics.txt" 0 16
+(bmkp-full-record #1#))
+(end-position . 1)
+(time 23721 54553 429702 701000)
+(visits . 0)
+(filename . "/home/grimscythe/.cmus-lyrics.txt")
+(position . 1)
+(created 23721 54538 406276 258000))
+#1=(#("cmus lyrics" 0 11
+(bmkp-full-record #1#))
+(end-position . 35)
+(filename . "~/.cmus-lyrics.txt")
+(buffer-name . ".cmus-lyrics.txt")
+(front-context-string . "Sorry, We don't ")
+(rear-context-string . "wnsend - Empath\n")
+(front-context-region-string)
+(rear-context-region-string)
+(visits . 3)
+(time 23721 54387 993890 127000)
+(created 23721 54077 616469 561000)
+(position . 35))
+#1=(#("Music" 0 5
 (bmkp-full-record #1#))
 (buffer-name . "Music")
 (front-context-string . ".\n  drwx------ 9")
@@ -237,41 +274,41 @@
 (tags)
 (filename . "~/GoogleDrive/org/programming_notes.org")
 (buffer-name . "programming_notes.org")
-(front-context-string . "*** [[https://ww")
-(rear-context-string . "ewalld config]]\n")
+(front-context-string . "** [[https://git")
+(rear-context-string . "        :Emacs:\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23705 63296 56541 946000))
+(time . #2=(23717 51504 441145 953000))
 (created . #2#)
-(position . 6502))
+(position . 16839))
 #1=(#("org-capture-last-stored" 0 23
 (bmkp-full-record #1#))
 (annotation)
 (tags)
-(filename . "~/GoogleDrive/org/projects/projects_refile.org")
-(buffer-name . "projects_refile.org")
-(front-context-string . "** TODO Hello Wo")
-(rear-context-string . "emacs.d\n  :END:\n")
+(filename . "~/GoogleDrive/org/refile.org")
+(buffer-name . "refile.org")
+(front-context-string . "* [[https://gith")
+(rear-context-string . "        :Emacs:\n")
 (front-context-region-string)
 (rear-context-region-string)
 (visits . 0)
-(time . #2=(23686 37875 621115 793000))
+(time . #2=(23717 50988 47271 703000))
 (created . #2#)
-(position . 324))
+(position . 398))
 #1=(#(".emacs.d" 0 8
 (bmkp-full-record #1#))
 (end-position . 1)
-(time 23073 53420 201635 469000)
-(visits . 2)
+(time 23718 21943 606997 535000)
+(visits . 3)
 (filename . "/home/grimscythe/.emacs.d")
 (position . 1)
 (created 22832 28501 495797 134000))
 #1=(#("Downloads" 0 9
 (bmkp-full-record #1#))
 (end-position . 1)
-(time 23698 23951 518429 570000)
-(visits . 9)
+(time 23718 21917 331348 158000)
+(visits . 10)
 (filename . "/home/grimscythe/Downloads")
 (position . 1)
 (created 22832 28492 438942 538000))

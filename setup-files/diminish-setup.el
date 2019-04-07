@@ -28,7 +28,6 @@
 (diminish 'evil-mc-mode)
 (diminish 'evil-org-mode)
 (diminish 'dired-async-mode)
-(diminish 'dired-hide-dotfiles-mode)
 (diminish 'flyspell-prog-mode)
 (diminish 'flyspell-mode)
 (diminish 'hi-lock-mode)
