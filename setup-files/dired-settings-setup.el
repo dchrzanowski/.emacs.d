@@ -94,10 +94,22 @@
 ;; --------------------------------------------------------------------
 ;; truncate lines
 (add-hook 'dired-after-readin-hook (lambda () (progn
-                                                (dired-hide-details-mode)
-                                                (setq truncate-partial-width-windows t
-                                                      truncate-lines t))))
+                                           (dired-hide-details-mode)
+                                           (setq truncate-partial-width-windows t
+                                                 truncate-lines t))))
 (add-hook 'dired-mode-hook 'auto-revert-mode)
+
+;; --------------------------------------------------------------------
+;; Advices
+;; --------------------------------------------------------------------
+(defun remove-buffers--dired-kill-before-delete (file &rest rest)
+  "Do not ask to delete a buffer associated to a file being deleted, just delete it."
+  (if-let ((buf (get-file-buffer file)))
+      (kill-buffer buf)
+    (dolist (dired-buf (dired-buffers-for-dir file))
+      (kill-buffer dired-buf))))
+
+(advice-add 'dired-delete-file :before 'remove-buffers--dired-kill-before-delete)
 
 (provide 'dired-settings-setup)
 ;;; dired-settings-setup.el ends here

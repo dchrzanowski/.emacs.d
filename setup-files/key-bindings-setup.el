@@ -310,6 +310,7 @@
                     "I" 'dired-subtree-remove
                     "C-<right>" 'grim/delete-other-windows-and-split-right
                     "M-s" 'xah-dired-sort
+                    "M-u" 'disk-usage
                     "r" 'revert-buffer
                     "J" 'dired-launch-command
                     "&" 'dired-start-process
