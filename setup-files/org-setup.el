@@ -54,8 +54,6 @@
    org-agenda-show-all-dates nil
    org-agenda-files '("~/GoogleDrive/org/projects"
                       "~/GoogleDrive/org/projects/prefarm"
-                      "~/GoogleDrive/org/projects/farm-focus"
-                      "~/GoogleDrive/org/projects/mtml"
                       "~/GoogleDrive/org")
 
    ;; org agenda initial span
@@ -141,11 +139,11 @@
     :defer 2)
 
   ;; org-trello
-  (use-package org-trello
-    :config
-    ;; set trello for specific files only
-    ;; (custom-set-variables '(org-trello-files '("/path/to/file0" "/path/to/file1")))
-    )
+  ;; (use-package org-trello
+  ;;   :config
+  ;;   ;; set trello for specific files only
+  ;;   ;; (custom-set-variables '(org-trello-files '("/path/to/file0" "/path/to/file1")))
+  ;;   )
 
   ;; org-projectile
   (use-package org-projectile
