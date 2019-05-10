@@ -3,5 +3,8 @@
 # key: us
 # --
 * TODO $1
+  :PROPERTIES:
+  :TIME-DAYS: $2
+  :END:
   - [/] Acceptance Criteria
     - [ ] $0

@@ -102,7 +102,7 @@
                     "M-<SPC> <SPC>" 'company-complete-common
                     "M-<SPC> j" 'company-complete
                     "M-<SPC> y" 'hydra-yasnippet/body
-                    "M-<SPC> s" 'company-yasnippet
+                    "M-<SPC> s" 'yas-expand
                     "M-<SPC> g" 'company-gtags
                     "M-<SPC> f" 'company-files
                     "M-<SPC> a" 'aya-create
