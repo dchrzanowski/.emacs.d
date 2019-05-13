@@ -568,6 +568,24 @@ i.e. change right window to bottom, or change bottom window to right."
    :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
                          (message "Can't receive ipinfo. Error %S " error-thrown)))))
 
+;; ---------------------------------------------------------------------
+;; Sum up all TIME-DAYS properties and put them in the current heading's
+;; TIME-DAYS-SUM property.
+;; ---------------------------------------------------------------------
+(defun org-sum-time-days-in-file ()
+  "Add up all the TIME-DAYS properties of headings underneath the current one.
+The total is written to the TIME-DAYS-SUM property of this heading."
+  (interactive)
+  (org-entry-put (point) "TIME-DAYS-SUM"
+                 (number-to-string
+                  (let ((total 0))
+                    (org-map-entries
+                     (lambda ()
+                       (let ((n (org-entry-get (point) "TIME-DAYS")))
+                         (when (stringp n)
+                           (setq total (+ total (string-to-number n)))))))
+                    total))))
+
 ;; --------------------------------------------------------------------
 ;; insert shell option from man pages
 ;; --------------------------------------------------------------------
