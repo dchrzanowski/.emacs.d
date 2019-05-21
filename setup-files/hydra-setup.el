@@ -86,9 +86,9 @@ _z_ swap           _=_ balance                   _q_uit                         
 ;; --------------------------------------------------------------------
 (defhydra hydra-rare-launcher (:color pink :hint nil)
   "
-_L_oad theme    _=_/_-_ scale text    _r_ainbow mode    p_o_midor       _e_diff        _d_ocker
+_L_oad theme    _=_/_-_ scale text    _r_ainbow mode    p_o_midor       _e_diff        _D_ocker
 _z_enity        _b_eautify          _f_lycheck        _w_hitespace    _F_ont lock
-_T_odo          _D_arkroom          web_p_/_P_aste region/buffer      _i_ndent hl
+_T_odo          _d_arkroom          web_p_/_P_aste region/buffer      _i_ndent hl
 =
 "
   ("p" webpaste-paste-region :exit t)
@@ -102,9 +102,9 @@ _T_odo          _D_arkroom          web_p_/_P_aste region/buffer      _i_ndent h
   ("o" pomidor :exit t)
   ("e" hydra-ediff/body :exit t)
   ("r" rainbow-mode :exit t)
-  ("D" darkroom-mode :exit t)
+  ("d" darkroom-mode :exit t)
   ("L" load-theme :exit t)
-  ("d" docker :exit t)
+  ("D" docker :exit t)
   ("w" whitespace-mode)
   ("=" text-scale-increase)
   ("-" text-scale-decrease)

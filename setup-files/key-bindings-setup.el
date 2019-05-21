@@ -115,6 +115,8 @@
 ;; Evil normal
 ;; --------------------------------------------------------------------
 (general-define-key :keymaps 'normal
+                    ;; ace-window
+                    "<RET>" 'ace-window
                     ;; drag stuff
                     "M-k" 'drag-stuff-up
                     "M-j" 'drag-stuff-down
@@ -126,6 +128,13 @@
                     "-" 'evil-numbers/dec-at-pt
                     "<kp-add>" 'evil-numbers/inc-at-pt
                     "<kp-subtract>" 'evil-numbers/dec-at-pt)
+
+;; --------------------------------------------------------------------
+;; Evil insert
+;; --------------------------------------------------------------------
+(general-define-key :keymaps 'insert
+                    ;; ace-window
+                    "<RET>" 'evil-ret)
 
 ;; --------------------------------------------------------------------
 ;; Evil normal and motion
