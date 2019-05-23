@@ -115,8 +115,6 @@
 ;; Evil normal
 ;; --------------------------------------------------------------------
 (general-define-key :keymaps 'normal
-                    ;; ace-window
-                    "<RET>" 'ace-window
                     ;; drag stuff
                     "M-k" 'drag-stuff-up
                     "M-j" 'drag-stuff-down
@@ -133,7 +131,6 @@
 ;; Evil insert
 ;; --------------------------------------------------------------------
 (general-define-key :keymaps 'insert
-                    ;; ace-window
                     "<RET>" 'evil-ret)
 
 ;; --------------------------------------------------------------------
@@ -168,11 +165,20 @@
                     "C-S-o" 'evil-jump-forward)
 
 ;; --------------------------------------------------------------------
-;; Evil visual
+;; Evil motion
 ;; --------------------------------------------------------------------
 (general-define-key :keymaps 'motion
                     ;; evil jump
                     "<escape>" 'keyboard-quit-and-remove-evil-mc)
+
+;; --------------------------------------------------------------------
+;; Evil visual normal motion
+;; --------------------------------------------------------------------
+(general-define-key :keymaps '(visual normal motion)
+                    ;; avy
+                    "<RET>" 'evil-avy-goto-word-or-subword-1
+                    "S-<return>" 'evil-avy-goto-char-timer
+                    "C-<return>" 'evil-avy-goto-char-2)
 
 ;; --------------------------------------------------------------------
 ;; Local maps
