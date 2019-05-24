@@ -13,8 +13,9 @@
             (lambda ()
               (bind-keys
                :map eshell-mode-map
+               ("<return>" . eshell-send-input)
                ("<tab>" . completion-at-point)
-               ("C-c M-o" . eshell-clear-buffer)))))
+               ("C-c M-o" . eshell/clear)))))
 
 (use-package shell-pop
   :defer t

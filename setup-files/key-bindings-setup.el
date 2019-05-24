@@ -364,9 +364,6 @@
 (general-define-key :keymaps 'evil-outer-text-objects-map
                     "a" 'evil-outer-arg)
 
-;; (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-;; (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
-
 ;; pdf view
 (general-define-key :keymaps 'pdf-view-mode-map
                     "j" 'pdf-view-next-line-or-next-page
