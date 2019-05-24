@@ -358,6 +358,10 @@
                     :keymaps 'quickrun--mode-map
                     "q" 'quit-window)
 
+;; pomidor
+(general-define-key :keymaps 'pomidor-mode-map
+                    "b" 'pomidor-break)
+
 ;; evil args
 (general-define-key :keymaps 'evil-inner-text-objects-map
                     "a" 'evil-inner-arg)
