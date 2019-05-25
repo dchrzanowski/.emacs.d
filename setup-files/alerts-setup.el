@@ -37,7 +37,8 @@
     (when stay-healthy--timer
       (cancel-timer stay-healthy--timer)))
 
-  (stay-healthy-start-timer))
+  ;; (stay-healthy-start-timer)
+)
 
 (provide 'alerts-setup)
 ;;; alerts-setup ends here
