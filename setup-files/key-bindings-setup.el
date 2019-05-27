@@ -326,6 +326,7 @@
                     "C-<right>" 'grim/delete-other-windows-and-split-right
                     "M-s" 'xah-dired-sort
                     "M-u" 'disk-usage
+                    "o" 'dired-hide-dotfiles-mode
                     "r" 'revert-buffer
                     "J" 'dired-launch-command
                     "&" 'dired-start-process

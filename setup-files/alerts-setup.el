@@ -16,6 +16,5 @@
   :config
   (type-break-mode))
 
-
 (provide 'alerts-setup)
 ;;; alerts-setup ends here
