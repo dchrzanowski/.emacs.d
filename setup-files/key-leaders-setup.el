@@ -75,7 +75,6 @@
  ;; avy
  "e" 'avy-goto-char-timer
  "E" 'evil-avy-goto-char-2
- "u" 'evil-avy-goto-char-2
  "j" 'evil-avy-goto-word-or-subword-1
  "J" 'evil-avy-goto-word-0
  ;; anzu
@@ -133,6 +132,10 @@
  ;; frames
  "nn" 'grim/new-frame
  "nd" 'delete-frame
+ ;; utils
+ "up" 'prodigy
+ "ut" 'proced
+ "ud" 'docker
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse

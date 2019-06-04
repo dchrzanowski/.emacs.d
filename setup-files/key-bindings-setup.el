@@ -382,6 +382,21 @@
                     "g" 'pdf-view-first-page
                     "G" 'pdf-view-last-page)
 
+;; proced
+(general-define-key :states 'normal
+                    :keymaps 'proced-mode-map
+                    "R" 'revert-buffer)
+
+;; prodigy
+(general-define-key :states 'motion
+                    :keymaps 'prodigy-mode-map
+                    "u" 'prodigy-start
+                    "U" 'prodigy-stop
+                    "R" 'prodigy-restart
+                    "`" 'prodigy-display-process)
+(general-define-key :states 'motion
+                    :keymaps 'prodigy-view-mode-map
+                    "x" 'prodigy-view-clear-buffer)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

@@ -87,7 +87,7 @@
 (require 'shell-setup)
 (require 'tramp-setup)
 (require 'pdf-setup)
-;; (require 'docker-setup)
+(require 'docker-setup)
 (require 'os-utils-setup)
 
 ;; languages

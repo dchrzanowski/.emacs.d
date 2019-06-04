@@ -49,6 +49,7 @@
 
   (add-to-list 'evil-motion-state-modes 'fundamental-mode)
   (add-to-list 'evil-motion-state-modes 'tabulated-list-mode)
+  (add-to-list 'evil-motion-state-modes 'prodigy-view-mode)
 
   (eval-after-load 'git-timemachine
     '(progn
@@ -145,22 +146,21 @@
 (use-package evil-collection
   :after evil
   :config
-  (setq evil-collection-mode-list nil)
-  (setq evil-collection-mode-list '(ag
-                                    arc-mode
-                                    bookmark
-                                    calendar
-                                    dired
-                                    eshell
-                                    ibuffer
-                                    popup
-                                    profiler
-                                    proced
-                                    quickrun
-                                    realgud
-                                    ivy
-                                    xref))
-  (evil-collection-init)
+  (evil-collection-init 'ag)
+  (evil-collection-init 'arc-mode)
+  (evil-collection-init 'bookmark)
+  (evil-collection-init 'calendar)
+  (evil-collection-init 'dired)
+  (evil-collection-init 'eshell)
+  (evil-collection-init 'ibuffer)
+  (evil-collection-init 'popup)
+  (evil-collection-init 'proced)
+  (evil-collection-init 'profiler)
+  (evil-collection-init 'quickrun)
+  (evil-collection-init 'realgud)
+  (evil-collection-init 'ivy)
+  (evil-collection-init 'xref)
+
   ;; bug in evil-collection-occur, does not start automatically
   (require 'evil-collection-occur)
   (evil-collection-occur-setup))
