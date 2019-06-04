@@ -67,6 +67,7 @@
                                              ("Video" (extension "mkv" "mp4" "avi" "mpg" "mpeg"))
                                              ("Audio" (extension "mp3" "aiff" "ogg" "wave" "wav" "flac"))
                                              ("Image" (extension "jpg" "jpeg" "png" "bmp" "gif"))
+                                             ("Subtitles" (extension "srt" "sub" "sbv" "ttxt" "psb" "ssa" "ass" "svcd" "usf"))
                                              ("Archive" (extension "zip" "tar" "gz" "7z" "xz" "jar" "iso" "pac" "pak" "rar" "bz2")))))
     (add-hook 'dired-mode-hook #'dired-filter-group-mode))
 
