@@ -155,6 +155,7 @@
                                     ibuffer
                                     popup
                                     profiler
+                                    proced
                                     quickrun
                                     realgud
                                     ivy
