@@ -210,6 +210,7 @@
                     "M-h" 'helm-next-source
                     "M-l" (kbd "RET")
                     "TAB" 'helm-execute-persistent-action
+                    "<tab>" 'helm-execute-persistent-action
                     "C-S-h" 'describe-key
                     "M-i" 'helm-select-action)
 
@@ -224,6 +225,7 @@
                     "M-i" 'helm-select-action
                     "C-S-h" 'describe-key
                     "TAB" 'helm-execute-persistent-action
+                    "<tab>" 'helm-execute-persistent-action
                     "C-r" 'evil-paste-from-register)
 ;; helm-locate
 (general-define-key :keymaps '(helm-locate-map)

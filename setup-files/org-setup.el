@@ -53,7 +53,6 @@
    ;; org agenda files location
    org-agenda-show-all-dates nil
    org-agenda-files '("~/GoogleDrive/org/projects"
-                      "~/GoogleDrive/org/projects/prefarm"
                       "~/GoogleDrive/org")
 
    ;; org agenda initial span
