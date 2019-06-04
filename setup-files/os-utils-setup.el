@@ -29,19 +29,30 @@
 (use-package prodigy
   :config
   (prodigy-define-service
-    :name "Livestock App"
+    :name "Landing Page"
+    :cwd "/home/grimscythe/github/Quaternion-Agri/Efarmx"
     :command "docker-compose"
-    :cwd "/home/grimscythe/github/Quaternion-Agri/Livestock"
+    :ready-message "Running on port 8080"
     :args '("up")
-    :stop-signal 'sigkill
+    :stop-signal 'int
+    :kill-process-buffer-on-stop t)
+
+  (prodigy-define-service
+    :name "Livestock App"
+    :cwd "/home/grimscythe/github/Quaternion-Agri/Livestock"
+    :ready-message "Connected to mongo"
+    :command "docker-compose"
+    :args '("up")
+    :stop-signal 'int
     :kill-process-buffer-on-stop t)
 
   (prodigy-define-service
     :name "Arable App"
-    :command "docker-compose"
     :cwd "/home/grimscythe/github/Quaternion-Agri/Arable"
+    :ready-message "Connected to mongo"
+    :command "docker-compose"
     :args '("up")
-    :stop-signal 'sigkill
+    :stop-signal 'int
     :kill-process-buffer-on-stop t))
 
 (provide 'os-utils-setup)
