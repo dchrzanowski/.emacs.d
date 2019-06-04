@@ -36,49 +36,81 @@
 
 ;; dired hacks
 (use-package dired-hacks-utils
+  :after dired
   :config
-
+  ;; dired-hacks-utils dependent packages:
+  ;; dired subtree
+  (use-package dired-subtree)
+  ;; dired multistage copy/move/paste
+  (use-package dired-ranger)
   ;; find files quicker
   (use-package dired-narrow)
-
   ;; dired filters
   (use-package dired-filter
     :config
-    (setq dired-filter-saved-filters '(
-                                       ("Video" (extension "mkv" "mp4" "avi") (omit))
+    (setq dired-filter-saved-filters '(("Video" (extension "mkv" "mp4" "avi") (omit))
                                        ("Audio" (extension "mp3" "ogg" "wave" "flac") (omit)))
 
           dired-filter-group-saved-groups '(("default"
                                              ("Directory" (directory))
-                                             ("Code" (extension "py" "cpp" "c" "java" "gradle" "js" "jsx" "ts" "go" "sql" "cs" "lisp" "vala" "scala" "rs" "rb" "r" "php" "pas" "ml" "nim" "lua" "jl" "coffee" "clj" "dart" "d" "ex" "elm" "erl" "fs" "groovy" "hh" "hs"))
+                                             ("SQL" (extension "sql"))
+                                             ("C#" (extension "cs" "csharp"))
+                                             ("Lisp" (extension "lisp"))
+                                             ("Vala" (extension "vala"))
+                                             ("Scala" (extension "scala"))
+                                             ("Rust" (extension "rs"))
+                                             ("Ruby" (extension "rb"))
+                                             ("R" (extension "r"))
+                                             ("PHP" (extension "php"))
+                                             ("Pascal" (extension "pas"))
+                                             ("OCaml" (extension "ml"))
+                                             ("Nim" (extension "nim"))
+                                             ("Lua" (extension "lua"))
+                                             ("Julia" (extension "jl"))
+                                             ("CoffeeScript" (extension "coffee"))
+                                             ("Clojure" (extension "clj"))
+                                             ("Dart" (extension "dart"))
+                                             ("D" (extension "d"))
+                                             ("Elm" (extension "elm"))
+                                             ("Erlang" (extension "erl"))
+                                             ("Visual F#" (extension "fs"))
+                                             ("Groovy" (extension "groovy"))
+                                             ("Haskell" (extension "hs"))
+                                             ("Go" (extension "go"))
+                                             ("TypeScript" (extension "ts"))
+                                             ("JavaScript" (extension "js" "jsx"))
+                                             ("Java" (extension "java" "gradle" "class"))
+                                             ("Gradle" (extension "gradle"))
+                                             ("C" (extension "c"))
+                                             ("C++" (extension "cpp" "hpp" "hh"))
+                                             ("Python" (extension "py"))
                                              ("Elisp" (extension . "el"))
                                              ("Shell" (extension . "sh"))
-                                             ("Markup" (extension "xml" "html" "xhtml" "iml" "ejs"))
+                                             ("Markup" (extension "html" "xhtml" "iml" "ejs"))
+                                             ("XML" (extension "xml" "xhtml"))
                                              ("Stylesheet" (extension "css" "less" "sass" "scss"))
-                                             ("Data" (extension "json" "dat" "data"))
+                                             ("Data" (extension "dat" "data"))
+                                             ("JSON" (extension "json"))
+                                             ("CSON" (extension "cson"))
                                              ("Database" (extension "sqlite" "db"))
                                              ("Config" (extension "sln" "csproj" "ini" "config" "csv" "conf" "properties"))
-                                             ("Doc" (extension "pdf" "doc" "docx" "odt"))
+                                             ("Doc" (extension "pdf" "doc" "docx" "odt" "ott"))
                                              ("Org" (extension . "org"))
                                              ("LaTeX" (extension "tex" "bib"))
-                                             ("Markdown" (extension "md" "txt"))
-                                             ("Spreadsheet" (extension "xls" "xlsx"))
-                                             ("Presentation" (extension "ppt" "pptx"))
+                                             ("Markdown" (extension "md"))
+                                             ("Text" (extension "txt"))
+                                             ("Spreadsheet" (extension "xls" "xlsx" "ods" "ots"))
+                                             ("Presentation" (extension "ppt" "pptx" "odp" "otp"))
                                              ("Video" (extension "mkv" "mp4" "avi" "mpg" "mpeg"))
                                              ("Audio" (extension "mp3" "aiff" "ogg" "wave" "wav" "flac"))
                                              ("Image" (extension "jpg" "jpeg" "png" "bmp" "gif"))
                                              ("Subtitles" (extension "srt" "sub" "sbv" "ttxt" "psb" "ssa" "ass" "svcd" "usf"))
                                              ("Archive" (extension "zip" "tar" "gz" "7z" "xz" "jar" "iso" "pac" "pak" "rar" "bz2")))))
-    (add-hook 'dired-mode-hook #'dired-filter-group-mode))
-
-  ;; dired subtree
-  (use-package dired-subtree)
-
-  ;; dired multistage copy/move/paste
-  (use-package dired-ranger))
+    (add-hook 'dired-mode-hook #'dired-filter-group-mode)))
 
 ;; launch dired from point
 (use-package dired-launch
+  :after dired
   :config
   (dired-launch-enable)
   (setq-default dired-launch-default-launcher '("xdg-open")
@@ -86,12 +118,18 @@
 
 ;; colored files by type
 (use-package diredful
-  :defer 1
+  :after dired
   :config
   (diredful-mode 1))
 
 ;; show/hide dotfiles
-(use-package dired-hide-dotfiles)
+(use-package dired-hide-dotfiles
+  :after dired)
+
+;; disk-usage
+(use-package disk-usage
+  :after dired)
+
 
 ;; --------------------------------------------------------------------
 ;; Hooks
