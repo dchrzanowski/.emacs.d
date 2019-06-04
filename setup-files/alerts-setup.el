@@ -12,9 +12,9 @@
 ;; --------------------------------------------------------------------
 ;; type-break mode
 ;; --------------------------------------------------------------------
-(use-package type-break
-  :config
-  (type-break-mode))
+;; (use-package type-break
+;;   :config
+;;   (type-break-mode))
 
 (provide 'alerts-setup)
 ;;; alerts-setup ends here
