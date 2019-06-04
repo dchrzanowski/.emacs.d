@@ -133,8 +133,8 @@
  "nn" 'grim/new-frame
  "nd" 'delete-frame
  ;; utils
- "up" 'prodigy
- "ut" 'proced
+ "ux" 'prodigy
+ "up" 'proced
  "ud" 'docker
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
