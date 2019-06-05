@@ -63,10 +63,8 @@
  ;; save all buffers
  "s" (lambda() (interactive) (save-some-buffers t))
  ;; hydras
- "t" 'hydra-rare-launcher/body
  "d" 'hydra-window-operations/body
  "SPC" 'hydra-window-operations/body
- ;; "I" 'hydra-indent/body
  "gS" 'hydra-smerge/body
  ;; winner
  "q" 'winner-undo
@@ -136,6 +134,20 @@
  "ux" 'prodigy
  "up" 'proced
  "ud" 'docker
+ "uz" 'zenity-cp-color-at-point-dwim
+ ;; various modes
+ "tp" 'webpaste-paste-region
+ "tP" 'webpaste-paste-buffer
+ "tF" 'hydra-flycheck/body
+ "tf" 'font-lock-mode
+ "tT" 'hydra-todo/body
+ "ti" 'highlight-indentation-mode
+ "te" 'hydra-ediff/body
+ "tr" 'rainbow-mode
+ "td" 'darkroom-mode
+ "tL" 'load-theme
+ "tw" 'whitespace-mode
+ "t=" 'hydra-text-size/body
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse
@@ -158,6 +170,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'web-mode-map
+ "cb" 'web-beautify-html
  "cew" 'web-mode-element-wrap
  "ces" 'web-mode-element-select
  "cea" 'web-mode-element-content-select
@@ -179,6 +192,15 @@
  "ctp" 'web-mode-tag-previous
  "cdn" 'web-mode-dom-normalize
  "cdt" 'web-mode-dom-traverse)
+
+;; --------------------------------------------------------------------
+;; css mode leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'css-mode-map
+ "cb" 'web-beautify-css)
 
 ;; --------------------------------------------------------------------
 ;; org mode leader
@@ -217,6 +239,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'js2-mode-map
+ "cb" 'web-beautify-js
  "ci" 'js-doc-insert-function-doc-snippet
  "cF" 'js-doc-insert-file-doc
  "cc" 'tern-get-type
