@@ -390,9 +390,6 @@
 ;; prodigy
 (general-define-key :states 'motion
                     :keymaps 'prodigy-mode-map
-                    "u" 'prodigy-start
-                    "U" 'prodigy-stop
-                    "R" 'prodigy-restart
                     "`" 'prodigy-display-process)
 (general-define-key :states 'motion
                     :keymaps 'prodigy-view-mode-map

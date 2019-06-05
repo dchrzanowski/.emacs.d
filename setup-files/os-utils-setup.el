@@ -23,6 +23,7 @@
 ;; --------------------------------------------------------------------
 (use-package prodigy
   :config
+  (add-hook 'prodigy-mode-hook #'turn-off-evil-snipe-mode)
   (prodigy-define-service
     :name "Landing Page"
     :cwd "/home/grimscythe/github/Quaternion-Agri/Efarmx"
