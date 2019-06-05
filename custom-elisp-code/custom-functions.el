@@ -203,9 +203,19 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (windmove-right))
 
 ;; --------------------------------------------------------------------
+;;
+;; --------------------------------------------------------------------
+(defun grim/delete-other-windows-and-split-right ()
+  "Delete all other windows and split right."
+  (interactive)
+  (delete-other-windows)
+  (split-window-right)
+  (windmove-right))
+
+;; --------------------------------------------------------------------
 ;; Window splitter helpers
 ;; --------------------------------------------------------------------
-(defun hydra-move-splitter-left (arg)
+(defun hydra-move-window-splitter-left (arg)
   "Move window splitter left.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
@@ -213,7 +223,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (shrink-window-horizontally arg)
     (enlarge-window-horizontally arg)))
 
-(defun hydra-move-splitter-right (arg)
+(defun hydra-move-window-splitter-right (arg)
   "Move window splitter right.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
@@ -221,7 +231,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (enlarge-window-horizontally arg)
     (shrink-window-horizontally arg)))
 
-(defun hydra-move-splitter-up (arg)
+(defun hydra-move-window-splitter-up (arg)
   "Move window splitter up.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
@@ -229,7 +239,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (enlarge-window arg)
     (shrink-window arg)))
 
-(defun hydra-move-splitter-down (arg)
+(defun hydra-move-window-splitter-down (arg)
   "Move window splitter down.  ARG is the number of steps."
   (interactive "p")
   (if (let ((windmove-wrap-around))
