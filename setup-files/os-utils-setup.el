@@ -27,7 +27,7 @@
 
   (prodigy-define-service
     :name "Android Emulator"
-    :cwd "/home/grimscythe/Android/Sdk"
+    :cwd "~/Android/Sdk"
     :command "/home/grimscythe/Android/Sdk/emulator/emulator"
     :args '("@Nexus_5X_API_28_x86")
     :stop-signal 'int
@@ -36,7 +36,7 @@
 
   (prodigy-define-service
     :name "EFarmX Livestock Mobile"
-    :cwd "/home/grimscythe/github/prefarmm-mobile-app/src"
+    :cwd "~/github/prefarmm-mobile-app/src"
     :command "tns"
     :args '("debug" "android")
     :stop-signal 'int
@@ -45,7 +45,7 @@
 
   (prodigy-define-service
     :name "EFarmX Launchpad Web"
-    :cwd "/home/grimscythe/github/Quaternion-Agri/Efarmx"
+    :cwd "~/github/Quaternion-Agri/Efarmx"
     :command "docker-compose"
     :ready-message "Running on port 8080"
     :args '("up")
@@ -55,7 +55,7 @@
 
   (prodigy-define-service
     :name "EFarmX Livestock Web"
-    :cwd "/home/grimscythe/github/Quaternion-Agri/Livestock"
+    :cwd "~/github/Quaternion-Agri/Livestock"
     :ready-message "Connected to mongo"
     :command "docker-compose"
     :args '("up")
@@ -65,7 +65,7 @@
 
   (prodigy-define-service
     :name "EFarmX Arable Web"
-    :cwd "/home/grimscythe/github/Quaternion-Agri/Arable"
+    :cwd "~/github/Quaternion-Agri/Arable"
     :ready-message "Connected to mongo"
     :command "docker-compose"
     :args '("up")

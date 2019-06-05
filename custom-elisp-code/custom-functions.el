@@ -203,12 +203,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (windmove-right))
 
 ;; --------------------------------------------------------------------
-;;
+;; Split right and move right
 ;; --------------------------------------------------------------------
-(defun grim/delete-other-windows-and-split-right ()
+(defun grim/split-right-and-follow ()
   "Delete all other windows and split right."
   (interactive)
-  (delete-other-windows)
   (split-window-right)
   (windmove-right))
 

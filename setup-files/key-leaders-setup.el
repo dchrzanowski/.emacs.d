@@ -14,6 +14,8 @@
  ;; show filename
  "`" 'show-file-name
  "¬" 'file-metadata
+ ;; split right and follow
+ "v" 'grim/split-right-and-follow
  ;; helm
  "x" 'helm-M-x
  "w" 'helm-mini
@@ -66,9 +68,7 @@
  "d" 'hydra-window-operations/body
  "SPC" 'hydra-window-operations/body
  "gS" 'hydra-smerge/body
- ;; winner
- "q" 'winner-undo
- "Q" 'winner-redo
+ ;; clean buffers
  "M-q" 'clean-buffer-list
  ;; avy
  "e" 'avy-goto-char-timer
@@ -87,9 +87,9 @@
  "kr" 'comment-or-uncomment-region
  "kv" 'evilnc-toggle-invert-comment-line-by-line
  "kb" 'comment-box
- ;; whitespace mode
+ ;; ibuffer
  "W" 'ibuffer
- ;; editing assists
+ ;; cleanup buffer
  "i" 'cleanup-buffer-untabify
  "I" 'cleanup-buffer-tabify
  ;; dumb jump
@@ -98,7 +98,7 @@
  "lx" 'dumb-jump-go-prefer-external
  "lz" 'dumb-jump-go-prefer-external-other-window
  "lq" 'dumb-jump-quick-look
- ;; git
+ ;; git stuff
  "gs" 'magit-status
  "gi" 'magit-init
  "gc" 'magit-clone
@@ -130,12 +130,11 @@
  ;; frames
  "nn" 'grim/new-frame
  "nd" 'delete-frame
- ;; utils
+ ;; system utils
  "ux" 'prodigy
  "up" 'proced
  "ud" 'docker
- "uz" 'zenity-cp-color-at-point-dwim
- ;; various modes
+ ;; various modes and tools launchers
  "tp" 'webpaste-paste-region
  "tP" 'webpaste-paste-buffer
  "tF" 'hydra-flycheck/body
@@ -148,10 +147,11 @@
  "tL" 'load-theme
  "tw" 'whitespace-mode
  "t=" 'hydra-text-size/body
+ "tz" 'zenity-cp-color-at-point-dwim
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse
- "'" 'eyebrowse-last-window-config
+ "TAB" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0
  "1" 'eyebrowse-switch-to-window-config-1
  "2" 'eyebrowse-switch-to-window-config-2
