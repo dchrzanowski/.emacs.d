@@ -82,29 +82,13 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("q" nil :color blue))
 
 ;; --------------------------------------------------------------------
-;; Rare launcher hydra
+;; Text size
 ;; --------------------------------------------------------------------
-(defhydra hydra-rare-launcher (:color pink :hint nil)
+(defhydra hydra-text-size (:color pink :hint nil)
   "
-_L_oad theme    _=_/_-_ scale text    _r_ainbow mode    p_o_midor       _e_diff
-_z_enity        _b_eautify          _f_lycheck        _w_hitespace    _F_ont lock
-_T_odo          _d_arkroom          web_p_/_P_aste region/buffer      _i_ndent hl
+_=_/_-_ scale text
 =
 "
-  ("p" webpaste-paste-region :exit t)
-  ("P" webpaste-paste-buffer :exit t)
-  ("z" zenity-cp-color-at-point-dwim :exit t)
-  ("f" hydra-flycheck/body :exit t)
-  ("F" font-lock-mode :exit t)
-  ("T" hydra-todo/body :exit t)
-  ("b" hydra-beautify/body :exit t)
-  ("i" highlight-indentation-mode :exit t)
-  ("o" pomidor :exit t)
-  ("e" hydra-ediff/body :exit t)
-  ("r" rainbow-mode :exit t)
-  ("d" darkroom-mode :exit t)
-  ("L" load-theme :exit t)
-  ("w" whitespace-mode)
   ("=" text-scale-increase)
   ("-" text-scale-decrease)
   ("RET" nil "Cancel")
@@ -151,23 +135,6 @@ _j_/_k_ next/prev    _o_ occur
   ("j" hl-todo-next)
   ("k" hl-todo-previous)
   ("o" hl-todo-occur :exit t)
-  ("RET" nil "Cancel")
-  ("SPC" nil "Cancel")
-  ("q" nil :color blue))
-
-;; --------------------------------------------------------------------
-;; Web beautify hydra
-;; --------------------------------------------------------------------
-(defhydra hydra-beautify (:color pink :hint nil)
-  "
-_j_ JS    _h_ HTML    _c_ CSS    _u_ untabify    _i_ indent
-=
-"
-  ("j" web-beautify-js :exit t)
-  ("h" web-beautify-html :exit t)
-  ("c" web-beautify-css :exit t)
-  ("i" cleanup-buffer :exit t)
-  ("u" untabify-buffer :exit t)
   ("RET" nil "Cancel")
   ("SPC" nil "Cancel")
   ("q" nil :color blue))
@@ -224,20 +191,6 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide
   ("SPC" nil "Cancel")
   ("q"  nil))
 
-;; --------------------------------------------------------------------
-;; Indent hydra
-;; --------------------------------------------------------------------
-(defhydra hydra-indent (:color pink :hint nil)
-  "
-_h_ unindent    _l_ indent    _i_ auto indent    _q_uit
-=
-"
-  ("h" custom-unindent-region)
-  ("l" custom-indent-region)
-  ("i" cleanup-buffer)
-  ("RET" nil "Cancel")
-  ("SPC" nil "Cancel")
-  ("q" nil :color blue))
 ;; --------------------------------------------------------------------
 ;; Ediff hydra
 ;; --------------------------------------------------------------------
