@@ -24,6 +24,15 @@
 (use-package prodigy
   :config
   (add-hook 'prodigy-mode-hook #'turn-off-evil-snipe-mode)
+
+  (prodigy-define-service
+    :name "Android Emulator"
+    :cwd "/home/grimscythe/Android/Sdk"
+    :command "/home/grimscythe/Android/Sdk/emulator/emulator"
+    :args '("@Nexus_5X_API_28_x86")
+    :stop-signal 'int
+    :kill-process-buffer-on-stop t)
+
   (prodigy-define-service
     :name "Landing Page"
     :cwd "/home/grimscythe/github/Quaternion-Agri/Efarmx"
