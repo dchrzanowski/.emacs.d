@@ -146,6 +146,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -296,30 +300,30 @@
       (bmkp-full-record #1#))
     (annotation)
     (tags)
-    (filename . "~/GoogleDrive/org/notes.org")
-    (buffer-name . "notes.org")
-    (front-context-string . "** Wesele       ")
-    (rear-context-string . ", by Tim Burton\n")
+    (filename . "~/GoogleDrive/org/programming_notes.org")
+    (buffer-name . "programming_notes.org")
+    (front-context-string . "*** [[https://gi")
+    (rear-context-string . "][Dev helpers]]\n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(23798 10802 655959 802000))
+    (time . #2=(23800 4216 550069 459000))
     (created . #2#)
-    (position . 4445))
+    (position . 1508))
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)
     (tags)
     (filename . "~/GoogleDrive/org/refile.org")
     (buffer-name . "refile.org")
-    (front-context-string . "* [[https://gith")
-    (rear-context-string . "        :Emacs:\n")
+    (front-context-string . "* TODO Ask for h")
+    (rear-context-string . "and back ends]]\n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(23717 50988 47271 703000))
+    (time . #2=(23800 4134 30587 456000))
     (created . #2#)
-    (position . 398))
+    (position . 117))
 #1=(#(".emacs.d" 0 8
       (bmkp-full-record #1#))
     (end-position . 1)
@@ -331,8 +335,8 @@
 #1=(#("Downloads" 0 9
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23764 9529 253393 558000)
-    (visits . 14)
+    (time 23800 444 118785 909000)
+    (visits . 15)
     (filename . "/home/grimscythe/Downloads")
     (position . 1)
     (created 22832 28492 438942 538000))
@@ -363,8 +367,8 @@
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23790 40166 12364 809000)
-    (visits . 25)
+    (time 23800 11711 250915 33000)
+    (visits . 26)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))

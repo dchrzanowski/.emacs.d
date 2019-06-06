@@ -24,7 +24,14 @@
 
   (add-hook 'typescript-mode-hook #'setup-tide-mode)
   ;; format options
-  (setq-default tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil)))
+  (setq-default tide-format-options '(
+                                      :importmodulespecifierpreference "relative"
+                                      :importModuleSpecifier "relative"
+                                      :allowTextChangesInNewFiles t
+                                      :includeCompletionsForModuleExports t
+                                      :includeCompletionsWithInsertText t
+                                      :insertSpaceAfterFunctionKeywordForAnonymousFunctions t
+                                      :placeOpenBraceOnNewLineForFunctions nil)))
 
 (provide 'typescript-setup)
 ;;; typescript-setup ends here
