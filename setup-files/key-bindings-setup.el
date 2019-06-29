@@ -371,6 +371,11 @@
 (general-define-key :keymaps 'evil-outer-text-objects-map
                     "a" 'evil-outer-arg)
 
+;; image mode
+(general-define-key :keymaps 'image-mode-map
+                    "Q" 'image-kill-buffer
+                    "j" 'image-next-file
+                    "k" 'image-previous-file)
 ;; pdf view
 (general-define-key :keymaps 'pdf-view-mode-map
                     "j" 'pdf-view-next-line-or-next-page
