@@ -138,6 +138,8 @@
  "up" 'proced
  "ud" 'docker
  ;; various modes and tools launchers
+ "tc" 'chronos-add-timer
+ "tC" '(lambda() (interactive) (switch-to-buffer "*chronos*"))
  "tp" 'webpaste-paste-region
  "tP" 'webpaste-paste-buffer
  "tF" 'hydra-flycheck/body
