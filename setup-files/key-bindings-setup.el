@@ -376,6 +376,12 @@
                     "Q" 'image-kill-buffer
                     "j" 'image-next-file
                     "k" 'image-previous-file)
+
+;; chronos mode
+(general-define-key :keymaps 'chronos-mode-map
+                    "j" 'chronos-next-line
+                    "k" 'chronos-previous-line)
+
 ;; pdf view
 (general-define-key :keymaps 'pdf-view-mode-map
                     "j" 'pdf-view-next-line-or-next-page
