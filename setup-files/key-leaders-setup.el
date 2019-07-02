@@ -16,6 +16,10 @@
  "¬" 'file-metadata
  ;; split right and follow
  "v" 'grim/split-right-and-follow
+ ;; go to other window
+ "TAB" 'other-window
+ ;; ace window
+ "d" 'ace-window
  ;; helm
  "x" 'helm-M-x
  "w" 'helm-mini
@@ -65,7 +69,6 @@
  ;; save all buffers
  "s" (lambda() (interactive) (save-some-buffers t))
  ;; hydras
- "d" 'hydra-window-operations/body
  "SPC" 'hydra-window-operations/body
  "gS" 'hydra-smerge/body
  ;; clean buffers
@@ -135,6 +138,8 @@
  "up" 'proced
  "ud" 'docker
  ;; various modes and tools launchers
+ "tc" 'chronos-add-timer
+ "tC" '(lambda() (interactive) (switch-to-buffer "*chronos*"))
  "tp" 'webpaste-paste-region
  "tP" 'webpaste-paste-buffer
  "tF" 'hydra-flycheck/body
@@ -151,7 +156,7 @@
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse
- "TAB" 'eyebrowse-last-window-config
+ "RET" 'eyebrowse-last-window-config
  "0" 'eyebrowse-switch-to-window-config-0
  "1" 'eyebrowse-switch-to-window-config-1
  "2" 'eyebrowse-switch-to-window-config-2
