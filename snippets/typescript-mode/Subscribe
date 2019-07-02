@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Subscribe
+# key: .s
+# --
+.subscribe((${1:data}) => {
+    $0
+}, (error) => {
+    console.error(error);
+});

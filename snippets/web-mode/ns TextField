@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ns TextField
+# key: ntf
+# --
+<TextField class="$1" hint="$2"></TextField>

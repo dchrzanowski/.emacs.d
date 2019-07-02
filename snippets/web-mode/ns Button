@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ns Button
+# key: nb
+# --
+<Button class="btn btn-${1:primary}" text="${2:Tap}" (tap)="${3:Method}()"></Button>$0

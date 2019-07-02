@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ns Label
+# key: nl
+# --
+<Label class="$1" text="${2:Hello}"></Label>$0

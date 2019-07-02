@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ns WrapLayout
+# key: nwl
+# --
+<WrapLayout>
+    $0
+</WrapLayout>
