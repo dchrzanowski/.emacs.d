@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ns StackLayout
+# key: nsl
+# --
+<StackLayout orientation="${1:horizontal}">
+    $0
+</StackLayout>

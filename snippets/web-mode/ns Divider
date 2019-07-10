@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ns Divider
+# key: nd
+# --
+<StackLayout class="hr-light m-${1:10}"></StackLayout>$0
