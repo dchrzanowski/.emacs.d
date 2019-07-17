@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Log Error
+# key: loge
+# --
+console.error($0);
