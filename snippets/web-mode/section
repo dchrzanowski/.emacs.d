@@ -2,6 +2,6 @@
 # name: Section
 # key: section
 # --
-<section>
-    $1
+<section id="$1">
+    $0
 </section>

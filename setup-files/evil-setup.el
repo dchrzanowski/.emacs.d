@@ -47,6 +47,7 @@
   (add-to-list 'evil-emacs-state-modes 'fzf-projectile)
   (add-to-list 'evil-emacs-state-modes 'transmission-mode)
   (add-to-list 'evil-emacs-state-modes 'image-mode)
+  (add-to-list 'evil-emacs-state-modes 'chronos-mode)
 
   (add-to-list 'evil-motion-state-modes 'fundamental-mode)
   (add-to-list 'evil-motion-state-modes 'tabulated-list-mode)
