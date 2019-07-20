@@ -220,7 +220,8 @@
  "ck" 'org-kanban/shift
  "ce" 'org-export-dispatch
  "cy" 'org-download-yank
- "cd" 'org-decrypt-entries
+ "cD" 'org-decrypt-entries
+ "cd" 'org-decrypt-entry
  "ci" 'grim/org-add-ids-to-headlines-in-file
  ;; trello (mimic magit keys)
  "ctt" 'org-trello-mode
