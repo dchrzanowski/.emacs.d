@@ -100,3 +100,4 @@ transient
 /.extension
 workspace
 eclipse.jdt.ls
+eglot-eclipse-jdt-cache

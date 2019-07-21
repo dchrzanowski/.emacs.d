@@ -176,7 +176,7 @@
   :defer 1
   :config
   (setq ibuffer-expert t)
-  (remove-hook 'ibuffer-hook
+  (add-hook 'ibuffer-hook
                (lambda ()
                  (ibuffer-vc-set-filter-groups-by-vc-root)
                  ;; sort alphabetically

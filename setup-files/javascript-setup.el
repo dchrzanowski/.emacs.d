@@ -24,7 +24,9 @@
     :if (executable-find "tern"))
 
   (add-hook 'js2-mode-hook 'hl-todo-mode)
-  (add-hook 'js2-mode-hook (lambda() (tern-mode) (company-mode))))
+  (add-hook 'js2-mode-hook (lambda()
+                             ;; (tern-mode)
+                             (company-mode))))
 
 ;; --------------------------------------------------------------------
 ;; json mode

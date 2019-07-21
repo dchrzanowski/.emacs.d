@@ -98,6 +98,7 @@
 ;; (require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)
+(require 'lsp-setup)
 
 ;; keybindings
 (require 'key-bindings-setup)
