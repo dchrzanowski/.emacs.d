@@ -40,6 +40,7 @@
   :after lsp-mode
   :config
   (require 'company-lsp)
+  (add-hook 'lsp-ui-mode-hook #'(lambda () (lsp-ui-doc-mode -1)))
   (setq company-candidates-cache t)
   (push 'company-lsp company-backends))
 
