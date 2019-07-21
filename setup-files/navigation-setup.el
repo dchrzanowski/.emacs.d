@@ -136,9 +136,9 @@
                        :async nil)
 
   (smart-jump-register :modes 'python-mode
-                       :jump-fn 'elpy-goto-definition
+                       :jump-fn 'lsp-ui-peek-find-definitions
                        :pop-fn 'pop-tag-mark
-                       :refs-fn 'elpy-xref--references
+                       :refs-fn 'lsp-ui-peek-find-references
                        :should-jump t
                        :heuristic 'point
                        :async nil))
