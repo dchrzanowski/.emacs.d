@@ -96,3 +96,7 @@ transient
 
 # End of https://www.gitignore.io/api/emacs
 /type-break
+/.lsp-session-v1
+/.extension
+workspace
+eclipse.jdt.ls

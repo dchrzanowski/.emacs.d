@@ -176,11 +176,13 @@
   :defer 1
   :config
   (setq ibuffer-expert t)
-  (add-hook 'ibuffer-hook
-            (lambda ()
-              (ibuffer-vc-set-filter-groups-by-vc-root)
-              (unless (eq ibuffer-sorting-mode 'alphabetic)
-                (ibuffer-do-sort-by-alphabetic)))))
+  (remove-hook 'ibuffer-hook
+               (lambda ()
+                 (ibuffer-vc-set-filter-groups-by-vc-root)
+                 ;; sort alphabetically
+                 ;; (unless (eq ibuffer-sorting-mode 'alphabetic)
+                 ;;   (ibuffer-do-sort-by-alphabetic))
+                 )))
 
 (provide 'navigation-setup)
 ;;; navigation-setup ends here
