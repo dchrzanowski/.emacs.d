@@ -260,6 +260,8 @@
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
+ "cv" 'lsp-ui-sideline-mode
+ "cc" 'lsp-ui-sideline-apply-code-actions
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
@@ -273,6 +275,8 @@
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
+ "cv" 'lsp-ui-sideline-mode
+ "cc" 'lsp-ui-sideline-apply-code-actions
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
@@ -286,6 +290,8 @@
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
+ "cv" 'lsp-ui-sideline-mode
+ "cc" 'lsp-ui-sideline-apply-code-actions
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
@@ -299,6 +305,8 @@
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
+ "cv" 'lsp-ui-sideline-mode
+ "cc" 'lsp-ui-sideline-apply-code-actions
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
