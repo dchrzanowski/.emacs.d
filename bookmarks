@@ -158,6 +158,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -390,17 +394,17 @@
     (created 22832 28455 797470 230000))
 #1=(#("init.el" 0 7
       (bmkp-full-record #1#))
-    (end-position . 571)
+    (end-position . 457)
     (filename . "~/.emacs.d/init.el")
     (buffer-name . "init.el")
     (front-context-string . ";; Python\n;; ---")
     (rear-context-string . "---------------\n")
     (front-context-region-string)
     (rear-context-region-string)
-    (visits . 14)
-    (time 23859 13650 703437 11000)
+    (visits . 15)
+    (time 23860 44136 110145 509000)
     (created 22819 15845 559399 480000)
-    (position . 571))
+    (position . 457))
 #1=(#("custom.el" 0 9
       (bmkp-full-record #1#))
     (filename . "~/.emacs.d/custom.el")

@@ -169,6 +169,10 @@
  "8" 'eyebrowse-switch-to-window-config-8
  "9" 'eyebrowse-switch-to-window-config-9)
 
+;; ////////////////////////////////////////////////////////////////////
+;; LANGUAGES
+;; ////////////////////////////////////////////////////////////////////
+
 ;; --------------------------------------------------------------------
 ;; web mode leader
 ;; --------------------------------------------------------------------
@@ -200,6 +204,105 @@
  "cdt" 'web-mode-dom-traverse)
 
 ;; --------------------------------------------------------------------
+;; js2 leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'js2-mode-map
+ "cb" 'web-beautify-js
+ "ct" 'js-doc-insert-function-doc-snippet
+ "cF" 'js-doc-insert-file-doc
+ "cv" 'tern-get-type
+ "cr" 'tern-rename-variable
+ "cd" 'tern-get-docs)
+
+;; --------------------------------------------------------------------
+;; typescript leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'typescript-mode-map
+ "cF" 'js-doc-insert-file-doc
+ "cd" 'tide-documentation-at-point
+ "cR" 'tide-refactor
+ "cr" 'tide-rename-symbol
+ "c?" 'tide-references
+ "c." 'tide-jump-to-definition
+ "c," 'tide-jump-back
+ "ce" 'tide-project-errors
+ "ct" 'tide-jsdoc-template
+ "ci" 'tide-organize-imports
+ "cc" 'tide-fix)
+
+;; --------------------------------------------------------------------
+;; elisp leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'emacs-lisp-mode-map
+ "c?" 'xref-find-references
+ "c." 'xref-find-definitions
+ "c," 'pop-tag-mark
+ "cce" 'eval-last-sexp
+ "ccb" 'eval-buffer
+ "ccr" 'eval-region)
+
+;; --------------------------------------------------------------------
+;; java leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'java-mode-map
+ "c?" 'lsp-ui-peek-find-references
+ "c." 'lsp-ui-peek-find-definitions
+ "c," 'lsp-ui-peek-jump-backward
+ "cd" 'lsp-ui-doc-show
+ "cD" 'lsp-ui-doc-hide)
+
+;; --------------------------------------------------------------------
+;; python leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'python-mode-map
+ "c?" 'lsp-ui-peek-find-references
+ "c." 'lsp-ui-peek-find-definitions
+ "c," 'lsp-ui-peek-jump-backward
+ "cd" 'lsp-ui-doc-show
+ "cD" 'lsp-ui-doc-hide)
+
+;; --------------------------------------------------------------------
+;; go leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'go-mode-map
+ "c?" 'lsp-ui-peek-find-references
+ "c." 'lsp-ui-peek-find-definitions
+ "c," 'lsp-ui-peek-jump-backward
+ "cd" 'lsp-ui-doc-show
+ "cD" 'lsp-ui-doc-hide)
+
+;; --------------------------------------------------------------------
+;; c++ leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'c++-mode-map
+ "c?" 'lsp-ui-peek-find-references
+ "c." 'lsp-ui-peek-find-definitions
+ "c," 'lsp-ui-peek-jump-backward
+ "cd" 'lsp-ui-doc-show
+ "cD" 'lsp-ui-doc-hide)
+
+;; --------------------------------------------------------------------
 ;; css mode leader
 ;; --------------------------------------------------------------------
 (general-define-key
@@ -207,6 +310,10 @@
  :prefix "SPC"
  :keymaps 'css-mode-map
  "cb" 'web-beautify-css)
+
+;; ////////////////////////////////////////////////////////////////////
+;; MODES
+;; ////////////////////////////////////////////////////////////////////
 
 ;; --------------------------------------------------------------------
 ;; org mode leader
@@ -238,48 +345,6 @@
  :prefix "SPC"
  :keymaps 'org-agenda-mode-map
  "ca" 'hydra-org-agenda/body)
-
-;; --------------------------------------------------------------------
-;; js2 leader
-;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'js2-mode-map
- "cb" 'web-beautify-js
- "ci" 'js-doc-insert-function-doc-snippet
- "cF" 'js-doc-insert-file-doc
- "cc" 'tern-get-type
- "cr" 'tern-rename-variable
- "cd" 'tern-get-docs)
-
-;; --------------------------------------------------------------------
-;; typescript leader
-;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'typescript-mode-map
- "cF" 'js-doc-insert-file-doc
- "cd" 'tide-documentation-at-point
- "cR" 'tide-refactor
- "cr" 'tide-rename-symbol
- "c." 'tide-references
- "ce" 'tide-project-errors
- "cj" 'tide-jsdoc-template
- "ci" 'tide-organize-imports
- "cc" 'tide-fix)
-
-;; --------------------------------------------------------------------
-;; elisp leader
-;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'emacs-lisp-mode-map
- "ce" 'eval-last-sexp
- "cb" 'eval-buffer
- "cr" 'eval-region)
 
 ;; --------------------------------------------------------------------
 ;; neotree leader

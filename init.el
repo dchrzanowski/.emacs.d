@@ -95,6 +95,7 @@
 (require 'javascript-setup)
 (require 'python-setup)
 (require 'typescript-setup)
+(require 'go-setup)
 ;; (require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)

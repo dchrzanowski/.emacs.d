@@ -22,6 +22,7 @@
   ;; lang hooks
   (add-hook 'java-mode-hook #'lsp)
   (add-hook 'go-mode-hook #'lsp)
+  (add-hook 'c++-mode-hook #'lsp)
   ;; js and ts currently disabled, very slow. tern and tide are much faster
   ;; (add-hook 'js2-mode-hook #'lsp)
   ;; (add-hook 'typescript-mode-hook #'lsp)
@@ -31,8 +32,7 @@
 ;; java lsp
 ;; --------------------------------------------------------------------
 (use-package lsp-java
-  :config
-  (require 'lsp-java))
+  :config)
 
 ;; --------------------------------------------------------------------
 ;; company lsp
@@ -40,8 +40,6 @@
 (use-package company-lsp
   :after lsp-mode
   :config
-  (require 'company-lsp)
-  (add-hook 'lsp-ui-mode-hook #'(lambda () (lsp-ui-doc-mode -1)))
   (setq company-candidates-cache t)
   (push 'company-lsp company-backends))
 
@@ -52,7 +50,9 @@
   :after lsp-mode
   :commands lsp-ui-mode
   :config
-  (require 'lsp-ui)
+  (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
+                                        (lsp-ui-doc-mode -1)
+                                        (lsp-ui-sideline-mode -1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 ;; --------------------------------------------------------------------
@@ -66,7 +66,6 @@
 ;; --------------------------------------------------------------------
 (use-package dap-mode
   :after lsp-mode)
-
 
 (provide 'lsp-setup)
 ;;; lsp-setup ends here
