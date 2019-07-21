@@ -29,7 +29,7 @@
  "r" 'helm-filtered-bookmarks
  "R" 'edit-bookmarks
  "m" 'helm-all-mark-rings
- "b" 'helm-semantic-or-imenu
+ "b" 'imenu
  "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
@@ -263,6 +263,8 @@
  "c," 'lsp-ui-peek-jump-backward
  "cv" 'lsp-ui-sideline-mode
  "cc" 'lsp-ui-sideline-apply-code-actions
+ "cr" 'lsp-rename
+ "ci" 'lsp-organize-imports
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
