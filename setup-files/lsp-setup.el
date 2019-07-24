@@ -14,7 +14,7 @@
   :ensure-system-package ((pyls          . "yay -S python-language-server")
                           ;; (javascript-typescript-langserver . "yay -S javascript-typescript-langserver")
                           (jdtls         . "yay -S jdtls")
-                          (go-langserver . "yay -S go-langserver")
+                          ;; (go-langserver . "yay -S go-langserver")
                           (ccls          . "yay -S ccls"))
   :config
   (setq lsp-prefer-flymake nil
