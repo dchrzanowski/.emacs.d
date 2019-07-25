@@ -8,11 +8,10 @@
 ;; lsp mode
 ;; --------------------------------------------------------------------
 ;; (use-package eglot
-;;   :config)
+;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 
 (use-package lsp-mode
   :ensure-system-package ((pyls          . "yay -S python-language-server")
-                          ;; (javascript-typescript-langserver . "yay -S javascript-typescript-langserver")
                           (jdtls         . "yay -S jdtls")
                           ;; (go-langserver . "yay -S go-langserver")
                           (ccls          . "yay -S ccls"))
@@ -23,9 +22,6 @@
   (add-hook 'java-mode-hook #'lsp)
   (add-hook 'go-mode-hook #'lsp)
   (add-hook 'c++-mode-hook #'lsp)
-  ;; js and ts currently disabled, very slow. tern and tide are much faster
-  ;; (add-hook 'js2-mode-hook #'lsp)
-  ;; (add-hook 'typescript-mode-hook #'lsp)
   (add-hook 'python-mode-hook #'lsp))
 
 ;; --------------------------------------------------------------------

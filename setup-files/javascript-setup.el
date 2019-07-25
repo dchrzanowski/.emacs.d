@@ -14,7 +14,6 @@
 ;; js2 mode
 ;; --------------------------------------------------------------------
 (use-package js2-mode
-  :defer 3
   :config
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
 
@@ -23,9 +22,9 @@
     :diminish tern-mode "𝐓𝐞"
     :if (executable-find "tern"))
 
-  (add-hook 'js2-mode-hook 'hl-todo-mode)
   (add-hook 'js2-mode-hook (lambda()
-                             ;; (tern-mode)
+                             (hl-todo-mode)
+                             (tern-mode)
                              (company-mode))))
 
 ;; --------------------------------------------------------------------
