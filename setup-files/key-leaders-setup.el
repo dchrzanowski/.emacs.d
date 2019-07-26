@@ -18,6 +18,7 @@
  "v" 'grim/split-right-and-follow
  ;; go to other window
  "TAB" 'other-window
+ "X" 'kill-this-buffer
  ;; ace window
  "d" 'ace-window
  ;; helm
