@@ -162,11 +162,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("Calendar.org" 0 12
+(#1=(#("i3 config" 0 9
+      (bmkp-full-record #1#))
+    (filename . "~/.config/i3/config")
+    (buffer-name . "config")
+    (front-context-string . "################")
+    (rear-context-string)
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 1)
+    (time 23869 31567 942779 477000)
+    (created 23869 31559 899680 188000)
+    (position . 1))
+#1=(#("Calendar.org" 0 12
       (bmkp-full-record #1#))
     (end-position . 1)
     (time 23748 42541 730040 158000)
