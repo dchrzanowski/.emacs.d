@@ -166,11 +166,33 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("i3 config" 0 9
+(#1=(#("config" 0 6
+      (bmkp-full-record #1#))
+    (buffer-name . ".config")
+    (front-context-string . ".\n  drwx------ 8")
+    (rear-context-string . "0K Aug  5 10:49 ")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 1)
+    (time 23880 30292 120674 539000)
+    (created 23880 30284 365143 759000)
+    (position . 146)
+    (filename . "/home/grimscythe/.config/")
+    (dired-directory . "~/.config/")
+    (dired-marked)
+    (dired-switches . "-aBhl --group-directories-first")
+    (dired-subdirs)
+    (dired-hidden-dirs)
+    (handler . bmkp-jump-dired))
+#1=(#("i3 config" 0 9
       (bmkp-full-record #1#))
     (filename . "~/.config/i3/config")
     (buffer-name . "config")
@@ -395,16 +417,16 @@
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23800 11711 250915 33000)
-    (visits . 26)
+    (time 23880 41848 224334 704000)
+    (visits . 27)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))
 #1=(#("Home" 0 4
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23495 23034 422643 466000)
-    (visits . 6)
+    (time 23880 30267 939439 455000)
+    (visits . 7)
     (filename . "/home/grimscythe")
     (position . 1)
     (created 22832 28455 797470 230000))

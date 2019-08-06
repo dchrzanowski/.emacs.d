@@ -140,8 +140,8 @@
     (cons 360 "#5B6268")))
  '(vc-annotate-very-old-color nil)
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t t)
- '(web-mode-enable-current-element-highlight t t)
+ '(web-mode-enable-current-column-highlight t)
+ '(web-mode-enable-current-element-highlight t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
