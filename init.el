@@ -41,7 +41,8 @@
 ;; --------------------------------------------------------------------
 ;; setup directories
 ;; --------------------------------------------------------------------
-(defvar user-home-directory (concat (getenv "HOME") "/"))
+(defvar user-home-directory (concat (getenv "HOME") "/")
+  "Home directory location.")
 (setq user-emacs-directory (concat user-home-directory ".emacs.d/"))
 
 (add-to-list 'load-path (concat user-emacs-directory "setup-files/"))
