@@ -153,9 +153,10 @@
 ;; all the icons
 ;; --------------------------------------------------------------------
 (use-package all-the-icons)
-(use-package all-the-icons-dired
-  :config
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+;; (use-package all-the-icons-dired
+;;   :config
+;;   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Replace with the below snippet in all-the-icons.el, lines 811 - 818.
 ;; Fixes incorrect font-lock mappings
