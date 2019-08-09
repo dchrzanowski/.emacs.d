@@ -160,6 +160,7 @@
   (evil-collection-init 'profiler)
   (evil-collection-init 'quickrun)
   (evil-collection-init 'realgud)
+  (evil-collection-init 'mu4e)
   (evil-collection-init 'ivy)
   (evil-collection-init 'xref)
 

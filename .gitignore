@@ -102,3 +102,4 @@ workspace
 eclipse.jdt.ls
 eglot-eclipse-jdt-cache
 .dap-breakpoints
+/network-security.data
