@@ -39,6 +39,9 @@
   ;; don't save message to Sent Messages, IMAP takes care of this
   (setq mu4e-sent-messages-behavior 'delete)
 
+  ;; no threaded view on startup
+  (setq mu4e-headers-show-threads 'nil)
+
   (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
 
   ;; <tab> to navigate to links, <RET> to open them in browser
@@ -57,7 +60,8 @@
               (setq mu4e-headers-fields
                     `((:date           . 18) ;; alternatively, use :date
                       (:flags          . 6)
-                      (:from           . 22)
+                      (:from           . 15)
+                      (:to             . 15)
                       (:thread-subject . ,(- (window-body-width) 60)) ;; alternatively, use :subject
                       ;; (:size . 7)
                       ))))
@@ -73,6 +77,13 @@
               (org-mu4e-compose-org-mode)
               (use-hard-newlines -1)
               (flyspell-mode)))
+
+  ;; bookmarks
+  (add-to-list 'mu4e-bookmarks
+               (make-mu4e-bookmark
+                :name  "Inbox Quick"
+                :query "maildir:/pjdamian-chrzanowski-gmail/INBOX"
+                :key ?i))
 
   (require 'smtpmail)
 
@@ -176,10 +187,10 @@
 ;; mu4e-alert
 ;; --------------------------------------------------------------------
 (use-package mu4e-alert
-    :after mu4e
-    :hook ((after-init . mu4e-alert-enable-mode-line-display)
-           (after-init . mu4e-alert-enable-notifications))
-    :config (mu4e-alert-set-default-style 'libnotify))
+  :after mu4e
+  :hook ((after-init . mu4e-alert-enable-mode-line-display)
+         (after-init . mu4e-alert-enable-notifications))
+  :config (mu4e-alert-set-default-style 'libnotify))
 
 (provide 'mu4e-setup)
 ;;; mu4e-setup ends here
