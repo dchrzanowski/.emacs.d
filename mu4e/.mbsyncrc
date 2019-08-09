@@ -72,6 +72,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel pjdamian-chrzanowski-gmail-stash
+Master :pjdamian-chrzanowski-gmail-remote:"Stash"
+Slave :pjdamian-chrzanowski-gmail-local:"[pjdamian-chrzanowski].Stash"
+Create Both
+Expunge Both
+SyncState *
+
 # GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
 # MBSYNC ON A GROUP TO SYNC ALL CHANNELS
 #
@@ -84,6 +91,7 @@ Channel pjdamian-chrzanowski-gmail-sent
 Channel pjdamian-chrzanowski-gmail-trash
 Channel pjdamian-chrzanowski-gmail-all
 Channel pjdamian-chrzanowski-gmail-starred
+Channel pjdamian-chrzanowski-gmail-stash
 
 
 # ================================================================================

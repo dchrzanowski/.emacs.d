@@ -9,6 +9,8 @@
 (use-package org-mime
   :after org
   :config
+  ;; set the right time locale
+  (setenv "TZ" "GMT-1")
   (require 'mu4e)
 
   (setq mu4e-maildir (expand-file-name "~/.Maildir"))
@@ -26,24 +28,28 @@
   (add-to-list 'mu4e-view-actions
                '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
-  ;; enable inline images
-  (setq mu4e-view-show-images t)
 
   ;; use imagemagick, if available
   (when (fboundp 'imagemagick-register-types)
     (imagemagick-register-types))
 
   ;; every new email composition gets its own frame!
-  (setq mu4e-compose-in-new-frame t)
+  (setq mu4e-compose-in-new-frame t
 
-  ;; don't save message to Sent Messages, IMAP takes care of this
-  (setq mu4e-sent-messages-behavior 'delete)
+        ;; enable inline images
+        mu4e-view-show-images t
 
-  ;; no threaded view on startup
-  (setq mu4e-headers-show-threads 'nil)
+        ;; don't save message to Sent Messages, IMAP takes care of this
+        mu4e-sent-messages-behavior 'delete
 
-  ;; don't show related messages
-  (setq mu4e-headers-include-related 'nil)
+        ;; no threaded view on startup
+        mu4e-headers-show-threads 'nil
+
+        ;; don't show related messages
+        mu4e-headers-include-related 'nil
+
+        ;; view data format
+        mu4e-view-date-format "%c")
 
   (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
 
@@ -151,6 +157,7 @@
                                               ("/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Trash"     . ?t)
                                               ("/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].All Mail"  . ?a)
                                               ("/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Starred"   . ?r)
+                                              ("/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Stash"     . ?h)
                                               ("/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].drafts"    . ?d)
                                               ))))
          (make-mu4e-context
