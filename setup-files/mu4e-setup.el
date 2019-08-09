@@ -42,11 +42,17 @@
         ;; don't save message to Sent Messages, IMAP takes care of this
         mu4e-sent-messages-behavior 'delete
 
+        ;; show update in modeline
+        mu4e-display-update-status-in-modeline 't
+
         ;; no threaded view on startup
         mu4e-headers-show-threads 'nil
 
         ;; don't show related messages
         mu4e-headers-include-related 'nil
+
+        ;; use fancy chars
+        mu4e-use-fancy-chars 't
 
         ;; view data format
         mu4e-view-date-format "%c")
