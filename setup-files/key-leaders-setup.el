@@ -29,7 +29,7 @@
  "M-f" 'helm-multi-swoop-all
  "r" 'helm-filtered-bookmarks
  "R" 'edit-bookmarks
- "m" 'helm-all-mark-rings
+ "M" 'helm-all-mark-rings
  "b" 'imenu
  "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
@@ -93,6 +93,8 @@
  "kb" 'comment-box
  ;; ibuffer
  "W" 'ibuffer
+ ;; mu4e
+ "m" 'mu4e
  ;; cleanup buffer
  "i" 'cleanup-buffer-untabify
  "I" 'cleanup-buffer-tabify
