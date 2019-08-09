@@ -4,7 +4,7 @@
 ;;; Code:
 ;; --------------------------------------------------------------------
 ;; --------------------------------------------------------------------
-;; mu4e-setup
+;; mu4e
 ;; --------------------------------------------------------------------
 (use-package org-mime
   :after org
@@ -121,7 +121,7 @@
                   (mu4e-sent-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Sent Mail")
                   (mu4e-drafts-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].drafts")
                   (mu4e-trash-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Trash")
-                  (mu4e-compose-signature . (concat "Regards,\nDamian Chrzanowski\n" "Emacs 27, org-mode 20190722, mu4e 1.3.4\n"))
+                  (mu4e-compose-signature . (concat "Regards,\nDamian Chrzanowski\n"))
                   (mu4e-compose-format-flowed . t)
                   (smtpmail-queue-dir . "~/.Maildir/pjdamian-chrzanowski-gmail/queue/cur")
                   (message-send-mail-function . smtpmail-send-it)
@@ -153,7 +153,7 @@
                   (mu4e-sent-folder . "/starlyon-gmail/[starlyon].Sent Mail")
                   (mu4e-drafts-folder . "/starlyon-gmail/[starlyon].drafts")
                   (mu4e-trash-folder . "/starlyon-gmail/[starlyon].Trash")
-                  (mu4e-compose-signature . (concat "Regards,\nStarlyon Digital\n" "Emacs 27, org-mode 20190722, mu4e 1.3.4\n"))
+                  (mu4e-compose-signature . (concat "Regards,\nStarlyon Digital\n"))
                   (mu4e-compose-format-flowed . t)
                   (smtpmail-queue-dir . "~/.Maildir/starlyon-gmail/queue/cur")
                   (message-send-mail-function . smtpmail-send-it)
@@ -172,6 +172,14 @@
                                               ("/starlyon-gmail/[starlyon].Starred"   . ?r)
                                               ("/starlyon-gmail/[starlyon].drafts"    . ?d)
                                               )))))))
+;; --------------------------------------------------------------------
+;; mu4e-alert
+;; --------------------------------------------------------------------
+(use-package mu4e-alert
+    :after mu4e
+    :hook ((after-init . mu4e-alert-enable-mode-line-display)
+           (after-init . mu4e-alert-enable-notifications))
+    :config (mu4e-alert-set-default-style 'libnotify))
 
 (provide 'mu4e-setup)
 ;;; mu4e-setup ends here
