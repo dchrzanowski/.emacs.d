@@ -42,6 +42,9 @@
   ;; no threaded view on startup
   (setq mu4e-headers-show-threads 'nil)
 
+  ;; don't show related messages
+  (setq mu4e-headers-include-related 'nil)
+
   (add-hook 'mu4e-view-mode-hook #'visual-line-mode)
 
   ;; <tab> to navigate to links, <RET> to open them in browser
@@ -60,8 +63,7 @@
               (setq mu4e-headers-fields
                     `((:date           . 18) ;; alternatively, use :date
                       (:flags          . 6)
-                      (:from           . 15)
-                      (:to             . 15)
+                      (:from           . 25)
                       (:thread-subject . ,(- (window-body-width) 60)) ;; alternatively, use :subject
                       ;; (:size . 7)
                       ))))
