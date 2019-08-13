@@ -52,7 +52,7 @@
         mu4e-headers-include-related 'nil
 
         ;; use fancy chars
-        mu4e-use-fancy-chars 't
+        mu4e-use-fancy-chars 'nil
 
         ;; view data format
         mu4e-view-date-format "%c")
@@ -146,6 +146,7 @@
                   (mu4e-sent-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Sent Mail")
                   (mu4e-drafts-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].drafts")
                   (mu4e-trash-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Trash")
+                  (mu4e-refile-folder . "/pjdamian-chrzanowski-gmail/[pjdamian-chrzanowski].Stash")
                   (mu4e-compose-signature . (concat "Regards,\nDamian Chrzanowski\n"))
                   (mu4e-compose-format-flowed . t)
                   (smtpmail-queue-dir . "~/.Maildir/pjdamian-chrzanowski-gmail/queue/cur")
@@ -179,6 +180,7 @@
                   (mu4e-sent-folder . "/starlyon-gmail/[starlyon].Sent Mail")
                   (mu4e-drafts-folder . "/starlyon-gmail/[starlyon].drafts")
                   (mu4e-trash-folder . "/starlyon-gmail/[starlyon].Trash")
+                  (mu4e-refile-folder . "/starlyon-gmail/[starlyon].Stash")
                   (mu4e-compose-signature . (concat "Regards,\nStarlyon Digital\n"))
                   (mu4e-compose-format-flowed . t)
                   (smtpmail-queue-dir . "~/.Maildir/starlyon-gmail/queue/cur")
@@ -196,6 +198,7 @@
                                               ("/starlyon-gmail/[starlyon].Trash"     . ?t)
                                               ("/starlyon-gmail/[starlyon].All Mail"  . ?a)
                                               ("/starlyon-gmail/[starlyon].Starred"   . ?r)
+                                              ("/starlyon-gmail/[starlyon].Stash"     . ?r)
                                               ("/starlyon-gmail/[starlyon].drafts"    . ?d)
                                               )))))))
 ;; --------------------------------------------------------------------
@@ -206,6 +209,13 @@
   :hook ((after-init . mu4e-alert-enable-mode-line-display)
          (after-init . mu4e-alert-enable-notifications))
   :config (mu4e-alert-set-default-style 'libnotify))
+
+;; --------------------------------------------------------------------
+;; mu4e-maildirs-extension
+;; --------------------------------------------------------------------
+(use-package mu4e-maildirs-extension
+  :config
+  (mu4e-maildirs-extension))
 
 (provide 'mu4e-setup)
 ;;; mu4e-setup ends here

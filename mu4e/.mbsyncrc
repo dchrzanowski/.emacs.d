@@ -167,6 +167,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel starlyon-gmail-stash
+Master :starlyon-gmail-remote:"Stash"
+Slave :starlyon-gmail-local:"[starlyon].Stash"
+Create Both
+Expunge Both
+SyncState *
+
 # GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
 # MBSYNC ON A GROUP TO SYNC ALL CHANNELS
 #

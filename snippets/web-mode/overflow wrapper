@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: overflow wrapper
+# key: ow
+# --
+<div style="overflow: auto;">
+    $0
+</div> <!-- overflow wrapper ends here -->
