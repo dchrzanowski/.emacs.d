@@ -10,7 +10,7 @@
   :diminish global-hl-todo-mode
   :config
   (global-hl-todo-mode)
-  (add-hook 'prog-mode 'hl-todo-mode))  ;; just in case
+  (add-hook 'prog-mode-hook 'hl-todo-mode))  ;; just in case
 
 ;; --------------------------------------------------------------------
 ;; auto highlight mode
@@ -63,6 +63,14 @@
         color-identifiers:min-color-saturation 0.3
         color-identifiers:max-color-saturation 1.0)
   (global-color-identifiers-mode))
+
+;; --------------------------------------------------------------------
+;; highlight-numbers
+;; --------------------------------------------------------------------
+(use-package highlight-numbers
+  :config
+  (add-hook 'prog-mode-hook 'highlight-numbers-mode))
+
 
 
 
