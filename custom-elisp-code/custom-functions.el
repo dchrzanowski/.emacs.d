@@ -695,5 +695,25 @@ PREFIX is added in front of each generated id."
   Mode: %s"
      fname access mod change size mode)))
 
+;; --------------------------------------------------------------------
+;; Call func when y
+;; --------------------------------------------------------------------
+(defun chrzan/call-func-on-y (prompt func)
+  "PROMPT user with a y or n question, on y call FUNC."
+  (if (string= "y" (downcase
+                    (read-from-minibuffer
+                     (concat prompt " (y or n) "))))
+      (funcall func)
+    nil))
+
+;; --------------------------------------------------------------------
+;; Mu4e
+;; --------------------------------------------------------------------
+(defun chrzan/delete-other-windows-and-mu4e ()
+  "Delete all other windows and switch to Mu4e."
+  (interactive)
+  (delete-other-windows)
+  (mu4e))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

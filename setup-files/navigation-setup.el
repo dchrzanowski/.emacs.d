@@ -60,6 +60,17 @@
 ;; --------------------------------------------------------------------
 (use-package eyebrowse
   :config
+  (defun chrzan/eyebrowse-post-switch-handler ()
+    "Run after eyebrowse window config switch."
+    (let ((eyebrowse-slot (eyebrowse--get 'current-slot)))
+      ;; on 8th workspace always show mu4e
+      (cond ((= eyebrowse-slot 8)
+             (chrzan/call-func-on-y "Switch to Mu4e?" 'chrzan/delete-other-windows-and-mu4e))
+            ;; on 6th workspace do something else
+            ((= eyebrowse-slot 6)
+             (message "Workspace 6")))))
+
+  (add-hook 'eyebrowse-post-window-switch-hook 'chrzan/eyebrowse-post-switch-handler)
   (setq-default eyebrowse-wrap-around t)
   (eyebrowse-mode t))
 
@@ -178,12 +189,12 @@
   :config
   (setq ibuffer-expert t)
   (add-hook 'ibuffer-hook
-               (lambda ()
-                 (ibuffer-vc-set-filter-groups-by-vc-root)
-                 ;; sort alphabetically
-                 ;; (unless (eq ibuffer-sorting-mode 'alphabetic)
-                 ;;   (ibuffer-do-sort-by-alphabetic))
-                 )))
+            (lambda ()
+              (ibuffer-vc-set-filter-groups-by-vc-root)
+              ;; sort alphabetically
+              ;; (unless (eq ibuffer-sorting-mode 'alphabetic)
+              ;;   (ibuffer-do-sort-by-alphabetic))
+              )))
 
 (provide 'navigation-setup)
 ;;; navigation-setup ends here
