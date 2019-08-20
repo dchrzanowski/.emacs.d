@@ -62,17 +62,22 @@
   :config
   (defun chrzan/eyebrowse-post-switch-handler ()
     "Handles post eyebrowse window config switch."
-    (let ((eyebrowse-slot (eyebrowse--get 'current-slot)))
+    (let* ((eyebrowse-slot (eyebrowse--get 'current-slot))
+           (switch-config (assoc eyebrowse-slot chrzan/eyebrowse-post-switch-config)))
+      (when switch-config
+        (funcall (cdr switch-config)))))
+
+  (defvar chrzan/eyebrowse-post-switch-config
+    ;; on 6th workspace ask to switch to dual pane dired
+    '((6 . (lambda() (chrzan/call-func-when-mode-not-in-windows
+                 'dired-mode
+                 '(lambda() (chrzan/call-func-on-y "Switch to Dired? " 'chrzan/switch-to-dired-two-panel)))))
       ;; on 8th workspace always show mu4e
-      (cond ((= eyebrowse-slot 8)
-             (chrzan/call-func-when-mode-not-in-windows
-              'mu4e-main-mode
-              'chrzan/delete-other-windows-and-mu4e))
-            ;; on 6th workspace ask to show dired
-            ((= eyebrowse-slot 6)
-             (chrzan/call-func-when-mode-not-in-windows
-              'dired-mode
-              '(lambda() (chrzan/call-func-on-y "Switch to Dired? " 'chrzan/switch-to-dired-two-panel)))))))
+      (8 . (lambda() (chrzan/call-func-when-mode-not-in-windows
+                 'mu4e-main-mode
+                 'chrzan/delete-other-windows-and-mu4e))))
+    "Association List of functions to call after switching to certain workspaces.
+ALIST keys represent the eyebrowse-slot names and and the ALIST values are the functions to call.")
 
   (add-hook 'eyebrowse-post-window-switch-hook 'chrzan/eyebrowse-post-switch-handler)
   (setq-default eyebrowse-wrap-around t)
