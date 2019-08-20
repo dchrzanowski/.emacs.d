@@ -700,20 +700,44 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 (defun chrzan/call-func-on-y (prompt func)
   "PROMPT user with a y or n question, on y call FUNC."
-  (if (string= "y" (downcase
-                    (read-from-minibuffer
-                     (concat prompt " (y or n) "))))
+  (if (y-or-n-p prompt)
       (funcall func)
     nil))
 
 ;; --------------------------------------------------------------------
-;; Mu4e
+;; Switch to Mu4e
 ;; --------------------------------------------------------------------
 (defun chrzan/delete-other-windows-and-mu4e ()
   "Delete all other windows and switch to Mu4e."
   (interactive)
   (delete-other-windows)
   (mu4e))
+
+;; --------------------------------------------------------------------
+;; Switch to Dired
+;; --------------------------------------------------------------------
+(defun chrzan/switch-to-dired-two-panel ()
+  "Delete all other windows and switch to Dired two panel setup."
+  (interactive)
+  (delete-other-windows)
+  (dired "~/")
+  (split-window-horizontally)
+  (other-window 1)
+  (dired "~/Downloads"))
+
+;; --------------------------------------------------------------------
+;; Call a function when mode not active
+;; --------------------------------------------------------------------
+(defun chrzan/call-func-when-mode-not-in-windows (mode func)
+  "Call FUNC when MODE is not active on any currently opened windows."
+  (let ((windows (window-list))
+        (has-desired-mode nil))
+    (dolist (window windows)
+      (with-current-buffer (window-buffer window)
+        (when (eq major-mode mode)
+          (setq has-desired-mode t))))
+    (unless has-desired-mode
+      (funcall func))))
 
 (provide 'custom-functions)
 ;;; custom-functions ends here

@@ -61,14 +61,18 @@
 (use-package eyebrowse
   :config
   (defun chrzan/eyebrowse-post-switch-handler ()
-    "Run after eyebrowse window config switch."
+    "Handles post eyebrowse window config switch."
     (let ((eyebrowse-slot (eyebrowse--get 'current-slot)))
       ;; on 8th workspace always show mu4e
       (cond ((= eyebrowse-slot 8)
-             (chrzan/call-func-on-y "Switch to Mu4e?" 'chrzan/delete-other-windows-and-mu4e))
-            ;; on 6th workspace do something else
+             (chrzan/call-func-when-mode-not-in-windows
+              'mu4e-main-mode
+              'chrzan/delete-other-windows-and-mu4e))
+            ;; on 6th workspace ask to show dired
             ((= eyebrowse-slot 6)
-             (message "Workspace 6")))))
+             (chrzan/call-func-when-mode-not-in-windows
+              'dired-mode
+              '(lambda() (chrzan/call-func-on-y "Switch to Dired? " 'chrzan/switch-to-dired-two-panel)))))))
 
   (add-hook 'eyebrowse-post-window-switch-hook 'chrzan/eyebrowse-post-switch-handler)
   (setq-default eyebrowse-wrap-around t)

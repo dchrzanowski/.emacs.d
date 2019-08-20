@@ -170,6 +170,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -350,30 +354,30 @@
       (bmkp-full-record #1#))
     (annotation)
     (tags)
-    (filename . "~/GoogleDrive/org/programming_notes.org")
-    (buffer-name . "programming_notes.org")
-    (front-context-string . "** [[https://git")
-    (rear-context-string . "jic/hercules.el\n")
+    (filename . "~/GoogleDrive/org/Calendar.org")
+    (buffer-name . "Calendar.org")
+    (front-context-string . "** TODO Phone O'")
+    (rear-context-string . "List :Priority:\n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(23859 45296 820329 464000))
+    (time . #2=(23898 35294 362261 341000))
     (created . #2#)
-    (position . 20937))
+    (position . 197))
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)
     (tags)
     (filename . "~/GoogleDrive/org/refile.org")
     (buffer-name . "refile.org")
-    (front-context-string . "* TODO Ask for h")
-    (rear-context-string . "and back ends]]\n")
+    (front-context-string . "* TODO Phone O'd")
+    (rear-context-string . "        :Emacs:\n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(23800 4134 30587 456000))
+    (time . #2=(23898 35257 944050 482000))
     (created . #2#)
-    (position . 117))
+    (position . 438))
 #1=(#(".emacs.d" 0 8
       (bmkp-full-record #1#))
     (end-position . 1)
