@@ -233,9 +233,9 @@
   :hook
   (org-mode . org-fancy-priorities-mode)
   :config
-  (setq org-fancy-priorities-list '("╼ ❗ ╾"
-                                    "╼ ▲ ╾"
-                                    "╼ ▼ ╾"
+  (setq org-fancy-priorities-list '("╼ ➊ ╾"
+                                    "╼ ➋ ╾"
+                                    "╼ ➌ ╾"
                                     "╼ ▬ ╾")
         org-priority-faces        '((?A . "#ff2e2e")
                                     (?B . "#ffbf00")
