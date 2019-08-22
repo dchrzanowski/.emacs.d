@@ -73,20 +73,23 @@
      'mu4e-main-mode
      'chrzan/delete-other-windows-and-mu4e))
 
-  (defvar chrzan/eyebrowse-post-switch-config
-    '((6 . chrzan/eyebrowse-6th-slot-handler)
-      (8 . chrzan/eyebrowse-8th-slot-handler))
+  (defvar chrzan/eyebrowse-post-slot-switch-configs nil
     "Association List that provides functions that will be executed on specified eyebrowse slots.
 ALIST key value pairs represent the eyebrowse-slot and the functions to call, respectively.")
 
-  (defun chrzan/eyebrowse-post-switch-handler ()
+  ;; Configure what to do on after switching to certain workspace sots
+  (setq chrzan/eyebrowse-post-slot-switch-configs
+    '((6 . chrzan/eyebrowse-6th-slot-handler)
+      (8 . chrzan/eyebrowse-8th-slot-handler)))
+
+  (defun chrzan/eyebrowse-post-slot-switch-handler ()
     "Handles post eyebrowse window config switch."
     (let* ((eyebrowse-slot (eyebrowse--get 'current-slot))
-           (switch-config (assoc eyebrowse-slot chrzan/eyebrowse-post-switch-config)))
-      (when switch-config
-        (funcall (cdr switch-config)))))
+           (post-slot-switch-config (assoc eyebrowse-slot chrzan/eyebrowse-post-slot-switch-configs)))
+      (when (consp post-slot-switch-config)
+        (funcall (cdr post-slot-switch-config)))))
 
-  (add-hook 'eyebrowse-post-window-switch-hook 'chrzan/eyebrowse-post-switch-handler)
+  (add-hook 'eyebrowse-post-window-switch-hook 'chrzan/eyebrowse-post-slot-switch-handler)
   (setq-default eyebrowse-wrap-around t)
   (eyebrowse-mode t))
 
