@@ -79,6 +79,9 @@
     :kill-process-buffer-on-stop t)
   )
 
+;; --------------------------------------------------------------------
+;; engine-mode
+;; --------------------------------------------------------------------
 (use-package engine-mode
   :config
   (defengine amazon

@@ -226,6 +226,23 @@
   (org-notify-start))
 
 ;; --------------------------------------------------------------------
+;; org-fancy-priorities
+;; --------------------------------------------------------------------
+(use-package org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("╼ ❗ ╾"
+                                    "╼ ▲ ╾"
+                                    "╼ ▼ ╾"
+                                    "╼ ▬ ╾")
+        org-priority-faces        '((?A . "#ff2e2e")
+                                    (?B . "#ffbf00")
+                                    (?C . "#86ff00")
+                                    (?D . "#000dff"))))
+
+;; --------------------------------------------------------------------
 ;; calendar
 ;; --------------------------------------------------------------------
 (use-package calfw
