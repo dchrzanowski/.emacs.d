@@ -99,6 +99,8 @@
    '(isearch ((t (:background "black" :foreground "white"))))
    ;; lazy highlight
    '(lazy-highlight ((t (:background "black" :foreground "gold" :underline nil :weight bold))))
+   ;; mu4e
+   '(mu4e-flagged-face ((t (:inherit font-lock-string-face :weight bold))))
    ;; neotree
    '(neo-dir-link-face ((t (:foreground "#51afef" :weight bold))))
    ;; org
