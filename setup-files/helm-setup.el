@@ -29,14 +29,14 @@
 ;; --------------------------------------------------------------------
 ;; helm-posframe
 ;; --------------------------------------------------------------------
-(use-package helm-posframe
-  :config
-  (helm-posframe-enable)
-  (setq helm-posframe-poshandler 'posframe-poshandler-point-bottom-left-corner
-        helm-posframe-width '150
-        helm-posframe-parameters '((internal-border-width . 1)
-                                   (left-fringe . 5)
-                                   (right-fringe . 5))))
+;; (use-package helm-posframe
+;;   :config
+;;   (helm-posframe-enable)
+;;   (setq helm-posframe-poshandler 'posframe-poshandler-point-bottom-left-corner
+;;         helm-posframe-width '150
+;;         helm-posframe-parameters '((internal-border-width . 1)
+;;                                    (left-fringe . 5)
+;;                                    (right-fringe . 5))))
 
 ;; --------------------------------------------------------------------
 ;; helm-ag

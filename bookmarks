@@ -174,6 +174,10 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8 -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -370,14 +374,14 @@
     (tags)
     (filename . "~/GoogleDrive/org/refile.org")
     (buffer-name . "refile.org")
-    (front-context-string . "* TODO Phone O'd")
-    (rear-context-string . "        :Emacs:\n")
+    (front-context-string . "* TODO Leprous :")
+    (rear-context-string . "elina Zawadzka \n")
     (front-context-region-string)
     (rear-context-region-string)
     (visits . 0)
-    (time . #2=(23898 35257 944050 482000))
+    (time . #2=(23932 18478 508270 685000))
     (created . #2#)
-    (position . 438))
+    (position . 585))
 #1=(#(".emacs.d" 0 8
       (bmkp-full-record #1#))
     (end-position . 1)
