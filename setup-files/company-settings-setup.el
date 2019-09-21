@@ -72,10 +72,10 @@
 ;;           (lambda ()
 ;;             (set (make-local-variable 'company-backends)
 ;;                  '((company-gtags company-jedi company-dabbrev company-yasnippet)))))
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-jedi company-dabbrev)))))
+(add-hook 'python-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '((company-jedi company-dabbrev)))))
 
 ;; --------------------------------------------------------------------
 ;; CPP

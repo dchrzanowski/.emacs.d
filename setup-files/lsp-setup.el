@@ -22,7 +22,8 @@
   (add-hook 'java-mode-hook #'lsp)
   (add-hook 'go-mode-hook #'lsp)
   (add-hook 'c++-mode-hook #'lsp)
-  (add-hook 'python-mode-hook #'lsp))
+  ;; (add-hook 'python-mode-hook #'lsp)
+)
 
 ;; --------------------------------------------------------------------
 ;; java lsp
