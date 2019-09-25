@@ -80,10 +80,10 @@
 ;; --------------------------------------------------------------------
 ;; CPP
 ;; --------------------------------------------------------------------
-(add-hook 'c++-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-semantic)))))
+;; (add-hook 'c++-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '((company-semantic)))))
 
 ;; --------------------------------------------------------------------
 ;; JAVA MODE
