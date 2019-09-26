@@ -698,7 +698,7 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 ;; Call func when y
 ;; --------------------------------------------------------------------
-(defun chrzan/call-func-on-y (prompt func)
+(defun dchrzan/call-func-on-y (prompt func)
   "PROMPT user with a y or n question, on y call FUNC."
   (if (y-or-n-p prompt)
       (funcall func)
@@ -707,7 +707,7 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 ;; Switch to Mu4e
 ;; --------------------------------------------------------------------
-(defun chrzan/delete-other-windows-and-mu4e ()
+(defun dchrzan/delete-other-windows-and-mu4e ()
   "Delete all other windows and switch to Mu4e."
   (interactive)
   (delete-other-windows)
@@ -716,7 +716,7 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 ;; Switch to Dired
 ;; --------------------------------------------------------------------
-(defun chrzan/switch-to-dired-two-panel ()
+(defun dchrzan/switch-to-dired-two-panel ()
   "Delete all other windows and switch to Dired two panel setup."
   (interactive)
   (delete-other-windows)
@@ -728,8 +728,8 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 ;; Call a function when mode not active
 ;; --------------------------------------------------------------------
-(defun chrzan/call-func-when-mode-not-in-windows (mode func)
-  "Call FUNC when MODE is not active on any currently opened windows."
+(defun dchrzan/call-func-when-mode-not-in-windows (mode func)
+  "Call FUNC when MODE is not active in any currently opened windows."
   (let ((windows (window-list))
         (has-desired-mode nil))
     (dolist (window windows)

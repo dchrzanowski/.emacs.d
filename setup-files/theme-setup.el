@@ -26,7 +26,7 @@
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (custom-set-faces
    ;; default
-   '(default ((t (:weight normal :height 90 :foundry "PfEd" :family "DejaVu Sans Mono"))))
+   '(default ((t (:weight normal :height 108 :foundry "PfEd" :family "DejaVu Sans Mono"))))
    ;; anzu
    '(anzu-replace-highlight ((t (:background "black" :foreground "gold" :weight bold))))
    ;; avy

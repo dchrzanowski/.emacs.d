@@ -61,35 +61,35 @@
 (use-package eyebrowse
   :config
 
-  (defun chrzan/eyebrowse-6th-slot-handler ()
+  (defun dchrzan/eyebrowse-6th-slot-handler ()
     "Handle switch to the 6th slot. Dired."
-    (chrzan/call-func-when-mode-not-in-windows
+    (dchrzan/call-func-when-mode-not-in-windows
      'dired-mode
-     '(lambda() (chrzan/call-func-on-y "Switch to Dired? " 'chrzan/switch-to-dired-two-panel))))
+     '(lambda() (dchrzan/call-func-on-y "Switch to Dired? " 'dchrzan/switch-to-dired-two-panel))))
 
-  (defun chrzan/eyebrowse-8th-slot-handler ()
+  (defun dchrzan/eyebrowse-8th-slot-handler ()
     "Handle switch to the 8th slot. Mu4e."
-    (chrzan/call-func-when-mode-not-in-windows
+    (dchrzan/call-func-when-mode-not-in-windows
      'mu4e-main-mode
-     'chrzan/delete-other-windows-and-mu4e))
+     'dchrzan/delete-other-windows-and-mu4e))
 
-  (defvar chrzan/eyebrowse-post-slot-switch-configs nil
+  (defvar dchrzan/eyebrowse-post-slot-switch-configs nil
     "Association List that provides functions that will be executed on specified eyebrowse slots.
 ALIST key value pairs represent the eyebrowse-slot and the functions to call, respectively.")
 
-  ;; Configure what to do on after switching to certain workspace sots
-  (setq chrzan/eyebrowse-post-slot-switch-configs
-    '((6 . chrzan/eyebrowse-6th-slot-handler)
-      (8 . chrzan/eyebrowse-8th-slot-handler)))
+  ;; Configure what to do after switching to certain workspace slots
+  (setq dchrzan/eyebrowse-post-slot-switch-configs
+    '((6 . dchrzan/eyebrowse-6th-slot-handler)
+      (8 . dchrzan/eyebrowse-8th-slot-handler)))
 
-  (defun chrzan/eyebrowse-post-slot-switch-handler ()
+  (defun dchrzan/eyebrowse-post-slot-switch-handler ()
     "Handles post eyebrowse window config switch."
     (let* ((eyebrowse-slot (eyebrowse--get 'current-slot))
-           (post-slot-switch-config (assoc eyebrowse-slot chrzan/eyebrowse-post-slot-switch-configs)))
+           (post-slot-switch-config (assoc eyebrowse-slot dchrzan/eyebrowse-post-slot-switch-configs)))
       (when (consp post-slot-switch-config)
         (funcall (cdr post-slot-switch-config)))))
 
-  (add-hook 'eyebrowse-post-window-switch-hook 'chrzan/eyebrowse-post-slot-switch-handler)
+  (add-hook 'eyebrowse-post-window-switch-hook 'dchrzan/eyebrowse-post-slot-switch-handler)
   (setq-default eyebrowse-wrap-around t)
   (eyebrowse-mode t))
 
