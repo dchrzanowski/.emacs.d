@@ -118,7 +118,7 @@
  '(tool-bar-mode nil)
  '(track-eol t)
  '(vc-annotate-background "#1B2229")
- '(vc-annotate-color-map
+ '(vckannotate-color-map
    (list
     (cons 20 "#98be65")
     (cons 40 "#b4be6c")
