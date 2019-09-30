@@ -71,7 +71,7 @@
     "Handle switch to the 8th slot. Mu4e."
     (dchrzan/call-func-when-mode-not-in-windows
      'mu4e-main-mode
-     'dchrzan/delete-other-windows-and-mu4e))
+     'dchrzan/switch-to-mu4e))
 
   (defvar dchrzan/eyebrowse-post-slot-switch-configs nil
     "Association List that provides functions that will be executed on specified eyebrowse slots.

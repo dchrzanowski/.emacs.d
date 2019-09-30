@@ -707,7 +707,7 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 ;; Switch to Mu4e
 ;; --------------------------------------------------------------------
-(defun dchrzan/delete-other-windows-and-mu4e ()
+(defun dchrzan/switch-to-mu4e ()
   "Delete all other windows and switch to Mu4e."
   (interactive)
   (delete-other-windows)
@@ -724,6 +724,16 @@ PREFIX is added in front of each generated id."
   (split-window-horizontally)
   (other-window 1)
   (dired "~/Downloads"))
+
+;; --------------------------------------------------------------------
+;; Switch to Calendar.org
+;; --------------------------------------------------------------------
+(defun dchrzan/switch-to-calendar-org ()
+  "Delete all other windows and open Calendar.org."
+  (interactive)
+  (eyebrowse-switch-to-window-config 0)
+  (delete-other-windows)
+  (find-file "~/GoogleDrive/org/Calendar.org"))
 
 ;; --------------------------------------------------------------------
 ;; Call a function when mode not active

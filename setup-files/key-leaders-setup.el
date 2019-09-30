@@ -118,6 +118,7 @@
  "gg" 'hydra-git-gutter/body
  ;; org
  "oc" 'org-capture
+ "oC" 'dchrzan/switch-to-calendar-org
  "ol" 'org-store-link
  "oA" 'org-agenda-list
  "oa" 'org-agenda-list-and-delete-other-windows
