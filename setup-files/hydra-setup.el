@@ -29,7 +29,7 @@ _z_ swap           _=_ balance                   _q_uit                         
   ("J" (lambda () (interactive) (hydra-move-window-splitter-down 4)))
   ("K" (lambda () (interactive) (hydra-move-window-splitter-up 4)))
   ("i" (lambda () (interactive) (other-window 1)) :exit t)
-  ("v" grim/split-right-and-follow)
+  ("v" dchrzan/split-right-and-follow)
   ("I" aw-flip-window)
   ("n" tabbar-forward)
   ("p" tabbar-backward)

@@ -6,7 +6,7 @@
 ;; --------------------------------------------------------------------
 ;; Cool new line maker  (makes a proper enter and indent)
 ;; --------------------------------------------------------------------
-(defun grim/newline-and-indent-inside-of-bracket ()
+(defun dchrzan/newline-and-indent-inside-of-bracket ()
   "Add two newlines and put the cursor at the right indentation.
 Between them if a newline is attempted when the cursor is between
 two curly braces, otherwise do a regular newline and indent"
@@ -18,12 +18,12 @@ two curly braces, otherwise do a regular newline and indent"
 ;; --------------------------------------------------------------------
 ;; Set tabs mode
 ;; --------------------------------------------------------------------
-(defun grim/tabs-instead-of-spaces ()
+(defun dchrzan/tabs-instead-of-spaces ()
   "Set tabs instead of spaces."
   (interactive)
   (setq-default indent-tabs-mode t))
 
-(defun grim/spaces-instead-of-tabs ()
+(defun dchrzan/spaces-instead-of-tabs ()
   "Set spaces instead of tabs."
   (interactive)
   (setq-default indent-tabs-mode nil))
@@ -195,7 +195,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; --------------------------------------------------------------------
 ;; Delete other windows and split right
 ;; --------------------------------------------------------------------
-(defun grim/delete-other-windows-and-split-right ()
+(defun dchrzan/delete-other-windows-and-split-right ()
   "Delete all other windows and split right."
   (interactive)
   (delete-other-windows)
@@ -205,7 +205,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; --------------------------------------------------------------------
 ;; Split right and move right
 ;; --------------------------------------------------------------------
-(defun grim/split-right-and-follow ()
+(defun dchrzan/split-right-and-follow ()
   "Delete all other windows and split right."
   (interactive)
   (split-window-right)
@@ -478,7 +478,7 @@ minibuffer."
 ;; --------------------------------------------------------------------
 ;; Frame
 ;; --------------------------------------------------------------------
-(defun grim/new-frame ()
+(defun dchrzan/new-frame ()
   "Create a new frame with a preset 'default-frame-alist' size."
   (interactive)
   (add-to-list 'default-frame-alist '(height . 60))
@@ -527,7 +527,7 @@ i.e. change right window to bottom, or change bottom window to right."
 ;; --------------------------------------------------------------------
 ;; Toggle between line number modes
 ;; --------------------------------------------------------------------
-(defun grim/toggle-line-number ()
+(defun dchrzan/toggle-line-number ()
   "Toggle between line number modes."
   (interactive)
   (if display-line-numbers
@@ -623,12 +623,12 @@ The total is written to the TIME-DAYS-SUM property of this heading."
 ;; --------------------------------------------------------------------
 ;; org trello helpers
 ;; --------------------------------------------------------------------
-(defun grim/org-trello-push ()
+(defun dchrzan/org-trello-push ()
   "Push the current buffer's content to trello."
   (interactive)
   (org-trello-sync-buffer))
 
-(defun grim/org-trello-pull ()
+(defun dchrzan/org-trello-pull ()
   "Push the current buffer's content to trello."
   (interactive)
   (setq current-prefix-arg '(4))
@@ -638,7 +638,7 @@ The total is written to the TIME-DAYS-SUM property of this heading."
 ;; create id's for org headings, modified slightly from the original.
 ;; Thanks to https://writequit.org/articles/emacs-org-mode-generate-ids.html
 ;; --------------------------------------------------------------------
-(defun grim/org-custom-id-get (&optional pom create prefix)
+(defun dchrzan/org-custom-id-get (&optional pom create prefix)
   "Get the ID property of the entry at point-or-marker POM.
 
 If POM is nil, refer to the entry at point.  If the entry does
@@ -657,12 +657,12 @@ case, the ID of the entry is returned."
         (org-entry-put pom "ID" id)
         (org-id-add-location id (buffer-file-name (buffer-base-buffer)))
         id)))))
-(defun grim/org-add-ids-to-headlines-in-file (prefix)
+(defun dchrzan/org-add-ids-to-headlines-in-file (prefix)
   "Add ID properties to all headlines in the current file.
 
 PREFIX is added in front of each generated id."
   (interactive "sPrefix[Enter for blank]: ")
-  (org-map-entries (lambda () (grim/org-custom-id-get (point) 'create prefix))))
+  (org-map-entries (lambda () (dchrzan/org-custom-id-get (point) 'create prefix))))
 
 ;; --------------------------------------------------------------------
 ;; Utilize explainshell.com to provide an explanation of shell commands
