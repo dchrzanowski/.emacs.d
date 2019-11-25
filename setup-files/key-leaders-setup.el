@@ -15,7 +15,7 @@
  "`" 'show-file-name
  "¬" 'file-metadata
  ;; split right and follow
- "v" 'grim/split-right-and-follow
+ "v" 'dchrzan/split-right-and-follow
  ;; go to other window
  "TAB" 'other-window
  "X" 'kill-this-buffer
@@ -136,7 +136,7 @@
  "zd" 'define-word-at-point
  "zD" 'define-word
  ;; frames
- "nn" 'grim/new-frame
+ "nn" 'dchrzan/new-frame
  "nd" 'delete-frame
  ;; system utils
  "ux" 'prodigy
@@ -300,12 +300,12 @@
  "cy" 'org-download-yank
  "cD" 'org-decrypt-entries
  "cd" 'org-decrypt-entry
- "ci" 'grim/org-add-ids-to-headlines-in-file
+ "ci" 'dchrzan/org-add-ids-to-headlines-in-file
  ;; trello (mimic magit keys)
  "ctt" 'org-trello-mode
  "ctc" 'org-trello-sync-card
- "ctp" 'grim/org-trello-push
- "ctF" 'grim/org-trello-pull
+ "ctp" 'dchrzan/org-trello-push
+ "ctF" 'dchrzan/org-trello-pull
  "cti" 'org-trello-install-board-metadata)
 
 ;; --------------------------------------------------------------------

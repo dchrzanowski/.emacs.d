@@ -41,7 +41,7 @@
   ;; text manipulation
   "M->" 'custom-indent-region
   "M-<" 'custom-unindent-region
-  "C-j" 'grim/newline-and-indent-inside-of-bracket
+  "C-j" 'dchrzan/newline-and-indent-inside-of-bracket
   ;; ace
   "M-d" 'ace-window
   "C-l" 'ace-link
@@ -84,8 +84,8 @@
   "M-c" 'capitalize-dwim
   "M-u" 'upcase-dwim
   ;; toggle line nubers
-  "M-l" 'grim/toggle-line-number
-  "S-<return>" 'grim/toggle-line-number
+  "M-l" 'dchrzan/toggle-line-number
+  "S-<return>" 'dchrzan/toggle-line-number
   ;; neotree
   "C-/" 'nil
   "C-/" 'neotree-toggle
@@ -265,7 +265,7 @@
 ;; emmet
 (general-define-key
  :keymaps 'emmet-mode-keymap
- "C-j" 'grim/newline-and-indent-inside-of-bracket)
+ "C-j" 'dchrzan/newline-and-indent-inside-of-bracket)
 
 ;; cfw caldendar
 (general-define-key
@@ -352,7 +352,7 @@
  "/" 'dired-narrow-fuzzy
  "i" 'dired-subtree-insert
  "I" 'dired-subtree-remove
- "C-<right>" 'grim/delete-other-windows-and-split-right
+ "C-<right>" 'dchrzan/delete-other-windows-and-split-right
  "M-s" 'xah-dired-sort
  "M-u" 'disk-usage
  "o" 'dired-hide-dotfiles-mode
