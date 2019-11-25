@@ -32,6 +32,7 @@
   :config
   (evil-mode 1)
   (setq-default evil-move-cursor-back nil
+                evil-move-beyond-eol t
                 evil-cross-lines t
                 evil-echo-state nil)
 
@@ -163,10 +164,12 @@
   (evil-collection-init 'mu4e)
   (evil-collection-init 'ivy)
   (evil-collection-init 'xref)
+  (evil-collection-init 'occur)
 
   ;; bug in evil-collection-occur, does not start automatically
-  (require 'evil-collection-occur)
-  (evil-collection-occur-setup))
+  ;; (require 'evil-collection-occur)
+  ;; (evil-collection-occur-setup)
+  )
 
 (provide 'evil-setup)
 ;;; evil-setup ends here
