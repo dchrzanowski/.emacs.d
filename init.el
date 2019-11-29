@@ -84,7 +84,7 @@
 (require 'org-setup)
 
 ;; mail
-(require 'mu4e-setup)
+;; (require 'mu4e-setup)
 
 ;; utils
 (require 'git-setup)

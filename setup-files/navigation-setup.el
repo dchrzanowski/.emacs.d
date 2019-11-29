@@ -79,8 +79,9 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 
   ;; Configure what to do after switching to certain workspace slots
   (setq dchrzan/eyebrowse-post-slot-switch-configs
-    '((6 . dchrzan/eyebrowse-6th-slot-handler)
-      (8 . dchrzan/eyebrowse-8th-slot-handler)))
+        '((6 . dchrzan/eyebrowse-6th-slot-handler)
+          ;; (8 . dchrzan/eyebrowse-8th-slot-handler)
+          ))
 
   (defun dchrzan/eyebrowse-post-slot-switch-handler ()
     "Handles post eyebrowse window config switch."
