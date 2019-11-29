@@ -7,7 +7,7 @@
 ;; --------------------------------------------------------------------
 ;; bookmark plus
 ;; --------------------------------------------------------------------
-(use-package bookmark+)
+(require 'bookmark+)
 
 (provide 'bookmarks-setup)
 ;;; bookmarks-setup ends here

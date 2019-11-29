@@ -47,6 +47,7 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "setup-files/"))
 (add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code"))
+(add-to-list 'load-path (concat user-emacs-directory "elpa/bookmark-plus"))
 
 ;; --------------------------------------------------------------------
 ;; personal data
