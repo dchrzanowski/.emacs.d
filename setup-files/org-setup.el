@@ -75,7 +75,8 @@
   ;; org-tempo
   ;; --------------------------------------------------------------------
   ;; old org style template expand
-  (require 'org-tempo)
+  ;; NOTE: does not seem to be needed anymore
+  ;; (require 'org-tempo)
 
   ;; --------------------------------------------------------------------
   ;; org-id
