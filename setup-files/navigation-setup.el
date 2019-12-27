@@ -112,6 +112,7 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
       (?r delete-other-windows " Ace - Maximize Window")
       (?o delete-other-windows)
       (?w kill-this-buffer)
+      (?X delete-window)
       "List of actions for `aw-dispatch-default'.")))
 
 ;; --------------------------------------------------------------------
