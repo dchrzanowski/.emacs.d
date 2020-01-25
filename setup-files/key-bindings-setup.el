@@ -446,6 +446,12 @@
  :states 'motion
  "x" 'prodigy-view-clear-buffer)
 
+;; transmission
+(general-define-key
+ :keymaps 'transmission-mode-map
+ "j" 'next-line
+ "k" 'previous-line)
+
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
