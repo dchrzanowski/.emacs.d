@@ -57,7 +57,7 @@
    '(dired-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(dired-header ((t (:height 110 :foreground "chartreuse3" :weight bold))))
    '(dired-flagged ((t (:foreground "red" :weight bold))))
-   '(dired-marked ((t (:foreground "gold" :weight bold))))
+   '(dired-marked ((t (:foreground "gold" :inverse-video nil :weight bold))))
    ;; dired filter group
    '(dired-filter-group-header ((t (:background "black" :foreground "orange" :box (:line-width 1 :color "orange") :weight bold))))
    ;; eldoc-box
