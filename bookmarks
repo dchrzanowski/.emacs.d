@@ -164,8 +164,13 @@
     (rear-context-string . "0K Apr 18 14:00 ")
     (front-context-region-string)
     (rear-context-region-string)
+<<<<<<< HEAD
+    (visits . 5)
+    (time 24204 35389 943948 165000)
+=======
     (visits . 6)
     (time 24058 29782 251554 471000)
+>>>>>>> 7566719ef9f1c8261ea83373a8764d51964a1566
     (created 23261 34846 201885 915000)
     (position . 145)
     (filename . "/home/grimscythe/Videos/")
@@ -317,8 +322,8 @@
 #1=(#("github" 0 6
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 24058 26374 409308 152000)
-    (visits . 28)
+    (time 24204 35464 137356 581000)
+    (visits . 29)
     (filename . "/home/grimscythe/github")
     (position . 1)
     (created 22832 28464 821874 763000))
