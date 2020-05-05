@@ -30,7 +30,7 @@
  "r" 'helm-filtered-bookmarks
  "R" 'edit-bookmarks
  "M" 'helm-all-mark-rings
- "b" 'imenu
+ "b" 'helm-imenu
  "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
