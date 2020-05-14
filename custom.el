@@ -14,7 +14,7 @@
  '(anzu-replace-to-string-separator " > ")
  '(async-shell-command-buffer (quote confirm-new-buffer))
  '(before-save-hook (quote (delete-trailing-whitespace)))
- '(bmkp-last-as-first-bookmark-file "/home/grimscythe/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(browse-url-browser-function (quote browse-url-chromium))
  '(column-number-mode t)
  '(company-auto-complete-chars (quote (32 41 46)))
