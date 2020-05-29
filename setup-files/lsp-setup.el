@@ -48,8 +48,8 @@
   :commands lsp-ui-mode
   :config
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                        (lsp-ui-doc-mode -1)
-                                        (lsp-ui-sideline-mode -1))))
+                                        (lsp-ui-doc-mode 1)
+                                        (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 ;; --------------------------------------------------------------------
