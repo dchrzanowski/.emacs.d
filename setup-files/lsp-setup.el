@@ -11,19 +11,27 @@
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 
 (use-package lsp-mode
-  :ensure-system-package ((pyls          . "yay -S python-language-server")
-                          (jdtls         . "yay -S jdtls")
-                          (go-langserver . "yay -S go-langserver")
-                          (ccls          . "yay -S ccls"))
+  :ensure-system-package ((pyls  . "yay -S python-language-server")
+                          (jdtls . "yay -S jdtls")
+                          (gopls . "yay -S gopls")
+                          (ccls  . "yay -S ccls"))
   :config
   (setq lsp-prefer-flymake nil
         lsp-log-io nil)
   ;; lang hooks
+  ;; java
   (add-hook 'java-mode-hook #'lsp)
-  (add-hook 'go-mode-hook #'lsp)
+  ;; c++
   (add-hook 'c++-mode-hook #'lsp)
-  ;; (add-hook 'python-mode-hook #'lsp)
-)
+
+  ;; go
+  ;; Set up before-save hooks to format buffer and add/delete imports.
+  ;; Make sure you don't have other gofmt/goimports hooks enabled.
+  (defun lsp-go-install-save-hooks ()
+    (add-hook 'before-save-hook #'lsp-format-buffer t t)
+    (add-hook 'before-save-hook #'lsp-organize-imports t t))
+  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+  (add-hook 'go-mode-hook #'lsp))
 
 ;; --------------------------------------------------------------------
 ;; java lsp
@@ -48,7 +56,7 @@
   :commands lsp-ui-mode
   :config
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                        (lsp-ui-doc-mode 1)
+                                        (lsp-ui-doc-mode -1)
                                         (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
