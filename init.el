@@ -1,8 +1,14 @@
 ;;; package --- Summary
 ;;; Code:
+;; Helper
+(defun megabytes-to-bytes (megabytes)
+  "Convert megabytes to bytes.  Express the value as MEGABYTES."
+  (* megabytes 1024 1024))
+
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq gc-cons-threshold 1200000)
+(setq gc-cons-threshold (megabytes-to-bytes 5))
+(setq read-process-output-max (megabytes-to-bytes 1))
 
 ;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
 
