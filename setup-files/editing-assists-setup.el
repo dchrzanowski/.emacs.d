@@ -114,7 +114,13 @@
 ;; --------------------------------------------------------------------
 (use-package electric-operator
   :config
-  (add-hook 'prog-mode-hook #'electric-operator-mode))
+  (add-hook 'python-mode-hook #'electric-operator-mode)
+  (add-hook 'js2-mode-hook #'electric-operator-mode)
+  (add-hook 'go-mode-hook #'electric-operator-mode)
+  (add-hook 'typescript-mode-hook #'electric-operator-mode)
+  (add-hook 'java-mode-hook #'electric-operator-mode)
+  (add-hook 'c++-mode-hook #'electric-operator-mode)
+  (add-hook 'c-mode-hook #'electric-operator-mode))
 
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup ends here
