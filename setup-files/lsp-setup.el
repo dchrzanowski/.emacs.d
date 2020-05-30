@@ -11,10 +11,11 @@
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 
 (use-package lsp-mode
-  :ensure-system-package ((pyls  . "yay -S python-language-server")
-                          (jdtls . "yay -S jdtls")
-                          (gopls . "yay -S gopls")
-                          (ccls  . "yay -S ccls"))
+  :ensure-system-package ((pyls                       . "yay -S python-language-server")
+                          (jdtls                      . "yay -S jdtls")
+                          (gopls                      . "yay -S gopls")
+                          (typescript-language-server . "yay -S typescript-language-server")
+                          (ccls                       . "yay -S ccls"))
   :config
   (setq lsp-prefer-flymake nil
         lsp-log-io nil)
@@ -23,6 +24,8 @@
   (add-hook 'java-mode-hook #'lsp)
   ;; c++
   (add-hook 'c++-mode-hook #'lsp)
+  ;; js
+  (add-hook 'js2-mode-hook #'lsp)
 
   ;; go
   ;; Set up before-save hooks to format buffer and add/delete imports.

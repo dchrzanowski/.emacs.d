@@ -36,10 +36,6 @@
 (use-package company-jedi
   :after company)
 
-(use-package company-tern
-  :after company
-  :defer 2)
-
 (use-package company-restclient
   :after company
   :defer 2
@@ -64,46 +60,6 @@
           (lambda ()
             (set (make-local-variable 'company-backends)
                  '((company-dabbrev company-files)))))
-
-;; --------------------------------------------------------------------
-;; PYTHON
-;; --------------------------------------------------------------------
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-gtags company-jedi company-dabbrev company-yasnippet)))))
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-jedi company-dabbrev)))))
-
-;; --------------------------------------------------------------------
-;; CPP
-;; --------------------------------------------------------------------
-;; (add-hook 'c++-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-semantic)))))
-
-;; --------------------------------------------------------------------
-;; JAVA MODE
-;; select the raw-non-eclim-hook or the eclim setup
-;; --------------------------------------------------------------------
-;; (add-hook 'java-mode-hook
-;;           (lambda ()
-;;             (set (make-local-variable 'company-backends)
-;;                  '((company-semantic)))))
-
-;; setup for eclim (java)
-;; (company-emacs-eclim-setup)
-
-;; --------------------------------------------------------------------
-;; JS2 MODE
-;; --------------------------------------------------------------------
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (set (make-local-variable 'company-backends)
-                 '((company-tern)))))
 
 ;; --------------------------------------------------------------------
 ;; C# MODE
