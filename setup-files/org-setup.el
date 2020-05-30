@@ -96,122 +96,132 @@
   (setq org-tags-exclude-from-inheritance (quote ("crypt")))
   ;; GPG key to use for encryption
   ;; Either the Key ID or set to nil to use symmetric encryption.
-  (setq org-crypt-key nil)
+  (setq org-crypt-key nil))
 
-  ;; --------------------------------------------------------------------
-  ;; ob's
-  ;; --------------------------------------------------------------------
-  (use-package ob-mongo)
 
-  ;; --------------------------------------------------------------------
-  ;; addons
-  ;; --------------------------------------------------------------------
-  ;; org bullets
-  (use-package org-bullets
-    :config
-    ;; org bullets hook
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+;; --------------------------------------------------------------------
+;; ob's
+;; --------------------------------------------------------------------
+(use-package ob-mongo)
 
-  ;; org-helm-rifle
-  (use-package helm-org-rifle
-    :defer t)
+;; --------------------------------------------------------------------
+;; addons
+;; --------------------------------------------------------------------
+;; org bullets
+(use-package org-bullets
+  :after org
+  :config
+  ;; org bullets hook
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-  ;; org-brain
-  (use-package org-brain
-    :defer t
-    :init
-    ;; org brain main search path
-    (setq org-brain-path "~/GoogleDrive/org/")
-    :config
-    ;; track all files
-    (setq org-id-track-globally t)
-    ;; id locations path
-    (setq org-id-locations-file "~/GoogleDrive/org/.org-id-locations")
-    ;; org brain capture template
-    (push '("b" "Brain" plain (function org-brain-goto-end)
-            "* %i%?" :empty-lines 1)
-          org-capture-templates)
-    (setq org-brain-visualize-default-choices 'all)
-    (setq org-brain-title-max-length 12))
+;; org-helm-rifle
+(use-package helm-org-rifle
+  :after org
+  :defer t)
 
-  ;; toc-org
-  (use-package toc-org
-    :defer 2)
+;; org-brain
+(use-package org-brain
+  :after org
+  :defer t
+  :init
+  ;; org brain main search path
+  (setq org-brain-path "~/GoogleDrive/org/")
+  :config
+  ;; track all files
+  (setq org-id-track-globally t)
+  ;; id locations path
+  (setq org-id-locations-file "~/GoogleDrive/org/.org-id-locations")
+  ;; org brain capture template
+  (push '("b" "Brain" plain (function org-brain-goto-end)
+          "* %i%?" :empty-lines 1)
+        org-capture-templates)
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-title-max-length 12))
 
-  ;; org-trello
-  ;; (use-package org-trello
-  ;;   :config
-  ;;   ;; set trello for specific files only
-  ;;   ;; (custom-set-variables '(org-trello-files '("/path/to/file0" "/path/to/file1")))
-  ;;   )
+;; toc-org
+(use-package toc-org
+  :after org
+  :defer 2)
 
-  ;; org-projectile
-  (use-package org-projectile
-    :defer 2
-    :config
-    (progn
-      (setq org-projectile-projects-file
-            "~/GoogleDrive/org/projects/projects_refile.org")
-      ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-      (push (org-projectile-project-todo-entry) org-capture-templates)))
+;; org-trello
+;; (use-package org-trello
+;;   :config
+;;   ;; set trello for specific files only
+;;   ;; (custom-set-variables '(org-trello-files '("/path/to/file0" "/path/to/file1")))
+;;   )
 
-  ;; org download
-  (use-package org-download
-    :defer 2
-    :config
-    (setq-default org-download-image-dir "./images"))
+;; org-projectile
+(use-package org-projectile
+  :after org
+  :defer 2
+  :config
+  (progn
+    (setq org-projectile-projects-file
+          "~/GoogleDrive/org/projects/projects_refile.org")
+    ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+    (push (org-projectile-project-todo-entry) org-capture-templates)))
 
-  ;; org edna
-  (use-package org-edna
-    :defer 2
-    :config
-    (org-edna-load))
+;; org download
+(use-package org-download
+  :after org
+  :defer 2
+  :config
+  (setq-default org-download-image-dir "./images"))
 
-  ;; org kanban
-  (use-package org-kanban
-    :config
-    (setq-default org-kanban/layout '("..." . 30)))
+;; org edna
+(use-package org-edna
+  :after org
+  :defer 2
+  :config
+  (org-edna-load))
 
-  ;; org-super-agenda
-  (use-package org-super-agenda
-    :defer 2
-    :config
-    (org-super-agenda-mode)
-    (setq org-super-agenda-groups
-          '((:name "Priority"
-                   :and (:tag "Priority" :todo t))
-            (:name "Exam"
-                   :and (:tag "Exam" :todo t))
-            (:name "Assignment"
-                   :and (:tag "Assignment" :todo t))
-            (:name "Study"
-                   :and (:tag "Study" :todo t))
-            (:name "Work"
-                   :and (:tag "Work" :todo t))
-            (:name "Projects"
-                   :and (:tag "Projects" :todo t))
-            (:name "General"
-                   :and (:tag "General" :todo t))
-            (:name "Emacs"
-                   :and (:tag "Emacs")))))
+;; org kanban
+(use-package org-kanban
+  :after org
+  :config
+  (setq-default org-kanban/layout '("..." . 30)))
 
-  ;; --------------------------------------------------------------------
-  ;; ox's
-  ;; --------------------------------------------------------------------
-  ;; org-export to github markdown
-  (use-package ox-gfm
-    :defer t
-    :after org)
+;; org-super-agenda
+(use-package org-super-agenda
+  :after org
+  :defer 2
+  :config
+  (org-super-agenda-mode)
+  (setq org-super-agenda-groups
+        '((:name "Priority"
+                 :and (:tag "Priority" :todo t))
+          (:name "Exam"
+                 :and (:tag "Exam" :todo t))
+          (:name "Assignment"
+                 :and (:tag "Assignment" :todo t))
+          (:name "Study"
+                 :and (:tag "Study" :todo t))
+          (:name "Work"
+                 :and (:tag "Work" :todo t))
+          (:name "Projects"
+                 :and (:tag "Projects" :todo t))
+          (:name "General"
+                 :and (:tag "General" :todo t))
+          (:name "Emacs"
+                 :and (:tag "Emacs")))))
 
-  ;; org-export to impress.js
-  (use-package ox-impress-js
-    :defer t
-    :after org)
+;; --------------------------------------------------------------------
+;; ox's
+;; --------------------------------------------------------------------
+;; org-export to github markdown
+(use-package ox-gfm
+  :defer t
+  :after org)
 
-  ;; org-export reveal.js
-  (use-package ox-reveal
-    :defer t
-    :after org))
+;; org-export to impress.js
+(use-package ox-impress-js
+  :defer t
+  :after org)
+
+;; org-export reveal.js
+(use-package ox-reveal
+  :defer t
+  :after org)
 
 ;; --------------------------------------------------------------------
 ;; org-notify
