@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Var
+# key: vv
+# --
+var ${1:name} ${2:type}

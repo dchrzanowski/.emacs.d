@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Print
+# key: p
+# --
+fmt.Print($0)

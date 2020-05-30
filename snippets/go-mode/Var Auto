@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Var Auto
+# key: v
+# --
+${1:name} := ${2:value}

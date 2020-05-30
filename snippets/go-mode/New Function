@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: New Function
+# key: f
+# --
+func ${1:name}($2) $3 {
+    $4
+}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Var with Init
+# key: vi
+# --
+var ${1:name} ${2:type} = ${3:value}

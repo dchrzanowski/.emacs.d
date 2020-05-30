@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Printf
+# key: pf
+# --
+fmt.Printf($0)
