@@ -12,45 +12,40 @@
  '(ansi-color-names-vector
    ["#1B2229" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#DFDFDF"])
  '(anzu-replace-to-string-separator " > ")
- '(async-shell-command-buffer (quote confirm-new-buffer))
- '(before-save-hook (quote (delete-trailing-whitespace)))
+ '(async-shell-command-buffer 'confirm-new-buffer)
+ '(before-save-hook '(delete-trailing-whitespace))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
- '(browse-url-browser-function (quote browse-url-chromium))
+ '(browse-url-browser-function 'browse-url-chromium)
  '(column-number-mode t)
- '(company-auto-complete-chars (quote (32 41 46)))
+ '(company-auto-complete-chars '(32 41 46))
  '(company-backends
-   (quote
-    (company-tide company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
+   '(company-tide company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
                   (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
-                  company-oddmuse company-tern)))
+                  company-oddmuse company-tern))
  '(company-begin-commands
-   (quote
-    (self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash)))
+   '(self-insert-command org-self-insert-command orgtbl-self-insert-command c-scope-operator c-electric-colon c-electric-lt-gt c-electric-slash))
  '(company-dabbrev-code-everywhere t)
  '(company-dabbrev-code-modes
-   (quote
-    (prog-mode batch-file-mode csharp-mode css-mode erlang-mode haskell-mode jde-mode lua-mode python-mode web-mode js2-mode java-mode typescript-mode)))
- '(company-dabbrev-code-other-buffers (quote all))
+   '(prog-mode batch-file-mode csharp-mode css-mode erlang-mode haskell-mode jde-mode lua-mode python-mode web-mode js2-mode java-mode typescript-mode))
+ '(company-dabbrev-code-other-buffers 'all)
  '(company-dabbrev-downcase nil)
  '(company-frontends
-   (quote
-    (company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend company-quickhelp-frontend)))
- '(company-gtags-modes (quote (prog-mode jde-mode python-mode)))
+   '(company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend company-quickhelp-frontend))
+ '(company-gtags-modes '(prog-mode jde-mode python-mode))
  '(company-idle-delay 0.2)
  '(company-minimum-prefix-length 2)
  '(company-show-numbers t)
  '(company-tooltip-align-annotations t)
  '(company-tooltip-minimum-width 40)
  '(cua-rectangle-mark-key [C-M-return])
- '(cursor-type (quote bar))
+ '(cursor-type 'bar)
  '(custom-safe-themes
-   (quote
-    ("97efd958634d07db50dee52cfb3beac47531f758944959621b46419de571e27f" "0e7070ac09aa6532ac385acd7696f08821f8e23945b11bcf362cfbfd9dce2c86" "18f7bb2906ccc1e75bd3a025ce4aa6529f37b867453fb2c3d37d14ad097c6e84" "bce3ae31774e626dce97ed6d7781b4c147c990e48a35baedf67e185ebc544a56" "9e0071e8088c8c5ca67d40c715c95ee53fe18d9102b3d215a945e4390acc8085" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "5715d3b4b071d33af95e9ded99a450aad674e308abb06442a094652a33507cd2" "013c62a1fcee7c8988c831027b1c38ae215f99722911b69e570f21fc19cb662e" "242ed4611e9e78142f160e9a54d7e108750e973064cee4505bfcfc22cc7c61b1" "4597d1e9bbf1db2c11d7cf9a70204fa42ffc603a2ba5d80c504ca07b3e903770" "c5d320f0b5b354b2be511882fc90def1d32ac5d38cccc8c68eab60a62d1621f2" "4724d21018ba8825cddbb9964f6170c71021f5339c1b13d206e9a3119825ccf0" "7c8d71a5848e12a8295c59f4be73d5df88f52cf843560f068780cdc1ddd215ae" "602000d05b871ac0fca42fbd382ad3f7c9ec9879a060876434fe7aae0be5141b" "ae6daa8afd8c6808f8c09aeb4c6f8b47060d2ac2fb8f3531575a37948eb5f8bf" "f854444f12b854ec81c456c273b02566c1c0520b6053c243959b98da9597c220" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "2a1b4531f353ec68f2afd51b396375ac2547c078d035f51242ba907ad8ca19da" "b5ecb5523d1a1e119dfed036e7921b4ba00ef95ac408b51d0cd1ca74870aeb14" "7666b079fc1493b74c1f0c5e6857f3cf0389696f2d9b8791c892c696ab4a9b64" "2af26301bded15f5f9111d3a161b6bfb3f4b93ec34ffa95e42815396da9cb560" "63b822ccd7a1928a7cbc88037dddf7b74b2f8a507e1bccd7281f20646f72cd0a" "6bde11b304427c7821b72a06a60e8d079b8f7ae10b407d8af37ed5e5d59b1324" "e91ca866d6cbb79786e314e0466f4f1b8892b72e77ed702e53bf7565e0dfd469" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "227e2c160b0df776257e1411de60a9a181f890cfdf9c1f45535fc83c9b34406b" "a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "1160f5fc215738551fce39a67b2bcf312ed07ef3568d15d53c87baa4fd1f4d4e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "02e30200f168b362d5e12cdef4afb2453aa9e00af11cc93c2bcd2a413251eac1" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "54ece5659cc7acdcd529dddd78675c2972a5ac69260af4a6aec517dcea16208b" "770181eda0f652ef9293e8db103a7e5ca629c516ca33dfa4709e2c8a0e7120f3" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" default)))
+   '("97efd958634d07db50dee52cfb3beac47531f758944959621b46419de571e27f" "0e7070ac09aa6532ac385acd7696f08821f8e23945b11bcf362cfbfd9dce2c86" "18f7bb2906ccc1e75bd3a025ce4aa6529f37b867453fb2c3d37d14ad097c6e84" "bce3ae31774e626dce97ed6d7781b4c147c990e48a35baedf67e185ebc544a56" "9e0071e8088c8c5ca67d40c715c95ee53fe18d9102b3d215a945e4390acc8085" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "5715d3b4b071d33af95e9ded99a450aad674e308abb06442a094652a33507cd2" "013c62a1fcee7c8988c831027b1c38ae215f99722911b69e570f21fc19cb662e" "242ed4611e9e78142f160e9a54d7e108750e973064cee4505bfcfc22cc7c61b1" "4597d1e9bbf1db2c11d7cf9a70204fa42ffc603a2ba5d80c504ca07b3e903770" "c5d320f0b5b354b2be511882fc90def1d32ac5d38cccc8c68eab60a62d1621f2" "4724d21018ba8825cddbb9964f6170c71021f5339c1b13d206e9a3119825ccf0" "7c8d71a5848e12a8295c59f4be73d5df88f52cf843560f068780cdc1ddd215ae" "602000d05b871ac0fca42fbd382ad3f7c9ec9879a060876434fe7aae0be5141b" "ae6daa8afd8c6808f8c09aeb4c6f8b47060d2ac2fb8f3531575a37948eb5f8bf" "f854444f12b854ec81c456c273b02566c1c0520b6053c243959b98da9597c220" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "2a1b4531f353ec68f2afd51b396375ac2547c078d035f51242ba907ad8ca19da" "b5ecb5523d1a1e119dfed036e7921b4ba00ef95ac408b51d0cd1ca74870aeb14" "7666b079fc1493b74c1f0c5e6857f3cf0389696f2d9b8791c892c696ab4a9b64" "2af26301bded15f5f9111d3a161b6bfb3f4b93ec34ffa95e42815396da9cb560" "63b822ccd7a1928a7cbc88037dddf7b74b2f8a507e1bccd7281f20646f72cd0a" "6bde11b304427c7821b72a06a60e8d079b8f7ae10b407d8af37ed5e5d59b1324" "e91ca866d6cbb79786e314e0466f4f1b8892b72e77ed702e53bf7565e0dfd469" "9f3181dc1fabe5d58bbbda8c48ef7ece59b01bed606cfb868dd147e8b36af97c" "227e2c160b0df776257e1411de60a9a181f890cfdf9c1f45535fc83c9b34406b" "a0dc0c1805398db495ecda1994c744ad1a91a9455f2a17b59b716f72d3585dde" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "08b8807d23c290c840bbb14614a83878529359eaba1805618b3be7d61b0b0a32" "6254372d3ffe543979f21c4a4179cd819b808e5dd0f1787e2a2a647f5759c1d1" "1160f5fc215738551fce39a67b2bcf312ed07ef3568d15d53c87baa4fd1f4d4e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "02e30200f168b362d5e12cdef4afb2453aa9e00af11cc93c2bcd2a413251eac1" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "54ece5659cc7acdcd529dddd78675c2972a5ac69260af4a6aec517dcea16208b" "770181eda0f652ef9293e8db103a7e5ca629c516ca33dfa4709e2c8a0e7120f3" "12b4427ae6e0eef8b870b450e59e75122d5080016a9061c9696959e50d578057" default))
  '(dired-du-size-format t)
  '(dired-filter-saved-filters nil)
  '(eclimd-default-workspace "~/eclipse-workspace")
  '(evil-kill-on-visual-paste nil)
- '(expand-region-preferred-python-mode (quote fgallina-python))
+ '(expand-region-preferred-python-mode 'fgallina-python)
  '(expand-region-smart-cursor t)
  '(fci-rule-color "#3E4451")
  '(flycheck-flake8-maximum-line-length 120)
@@ -66,7 +61,7 @@
  '(global-semantic-decoration-mode nil)
  '(global-semantic-idle-scheduler-mode t)
  '(global-semanticdb-minor-mode t)
- '(helm-external-programs-associations (quote (("html" . "chromium"))))
+ '(helm-external-programs-associations '(("html" . "chromium")))
  '(helm-swoop-split-with-multiple-windows t)
  '(holiday-bahai-holidays nil)
  '(holiday-christian-holidays nil)
@@ -85,36 +80,33 @@
  '(menu-bar-mode nil)
  '(message-directory "~/Mail/maestrosartori69/[Gmail].Sent Mail")
  '(notmuch-saved-searches
-   (quote
-    ((:name "inbox" :query "tag:inbox" :key "i")
+   '((:name "inbox" :query "tag:inbox" :key "i")
      (:name "unread" :query "tag:unread" :key "u")
      (:name "flagged" :query "tag:flagged" :key "f")
      (:name "sent" :query "tag:sent" :key "s")
      (:name "drafts" :query "tag:draft" :key "d")
      (:name "all mail" :query "*" :key "a")
      (:name "trash" :query "tag:trash" :key "b")
-     (:name "stash" :query "tag:stash" :key "t"))))
+     (:name "stash" :query "tag:stash" :key "t")))
  '(org-link-from-user-regexp nil)
  '(org-log-done t)
  '(org-src-fontify-natively t)
  '(org-super-agenda-mode t)
  '(org-support-shift-select t)
  '(package-selected-packages
-   (quote
-    (bookmark+ ess engine-mode org-fancy-priorities highlight-numbers mu4e-maildirs-extension mu4e-alert mu4e org-mime python-mode typescript treemacs-evil treemacs go-mode nginx-mode frog-jump-buffer frog-menu prodigy dired-hide-dotfiles quelpa-use-package quelpa transmission which-key-posframe electric-operator helm-posframe helm-chronos chronos eacl pcmpl-args git-link expand-region disk-usage eldoc-box company-restclient helm-chrome flycheck-posframe doom-modeline all-the-icons-dired ob-mongo keychain-environment exec-path-from-shell company-tern tern kv a magit-todos yaml-mode dockerfile-mode moody minions multifiles define-word smart-jump highlight-thing speeddating use-package-ensure-system-package zerodark-theme ranger vlf vlfi org-super-agenda org-kanban org-edna gitattributes-mode gitconfig-mode dired-subtree dired-filter dired-ranger helm-google helm-gitignore helm-flx flx fzf ibuffer-vc helpful color-identifiers-mode darkroom org-notify org-alert toc-org org-projectile org-download diredful direful evil-collection evil-colletion general company-statistics json-mode jedi virtualenv holiday holidays pdf-tools calfw-org calfw zenity-color-picker helm-system-packages exato evil-indent-plus evil-ediff evil-numbers evil-number evil-exchange ace-link git-messenger omnisharp omnisharp-emacs markdown-mode notmuch js-doc dired-du evil-snipe helm-dash web-beautify which-key doom-themes restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet quickrun evil-magit evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update anaphora ac-html-bootstrap ac-dabbrev undo-tree)))
+   '(helm-org-rifle bookmark+ ess engine-mode org-fancy-priorities highlight-numbers mu4e-maildirs-extension mu4e-alert mu4e org-mime python-mode typescript treemacs-evil treemacs go-mode nginx-mode frog-jump-buffer frog-menu prodigy dired-hide-dotfiles quelpa-use-package quelpa transmission which-key-posframe electric-operator helm-posframe helm-chronos chronos eacl pcmpl-args git-link expand-region disk-usage eldoc-box company-restclient helm-chrome flycheck-posframe doom-modeline all-the-icons-dired ob-mongo keychain-environment exec-path-from-shell company-tern tern kv a magit-todos yaml-mode dockerfile-mode moody minions multifiles define-word smart-jump highlight-thing speeddating use-package-ensure-system-package zerodark-theme ranger vlf vlfi org-super-agenda org-kanban org-edna gitattributes-mode gitconfig-mode dired-subtree dired-filter dired-ranger helm-google helm-gitignore helm-flx flx fzf ibuffer-vc helpful color-identifiers-mode darkroom org-notify org-alert toc-org org-projectile org-download diredful direful evil-collection evil-colletion general company-statistics json-mode jedi virtualenv holiday holidays pdf-tools calfw-org calfw zenity-color-picker helm-system-packages exato evil-indent-plus evil-ediff evil-numbers evil-number evil-exchange ace-link git-messenger omnisharp omnisharp-emacs markdown-mode notmuch js-doc dired-du evil-snipe helm-dash web-beautify which-key doom-themes restclient realgud evil-nerd-commenter eyebrowse emmet-mode emmet ox-reveal ox-impress-js org-impress-js ox-gfm org-brain company-ispell hl-todo imenu-anywhere pomidor company-yasnippet eclimd evil-lion git-gutter-fringe git-timemachine lice dired-launch auto-yasnippet quickrun evil-magit evil-god-state god-mode evil-args evil-visualstar evil-matchit evil-anzu evil-surround evil-leader powerline-evil powerline htmlize latex-extra tabbar rainbow-mode rainbow-delimiters org-bullets helm-swoop company-web company-jedi auto-package-update anaphora ac-html-bootstrap ac-dabbrev undo-tree))
  '(palette-hex-rgb-digits 2)
  '(paradox-github-token t)
  '(powerline-gui-use-vcs-glyph nil)
- '(python-shell-completion-native-disabled-interpreters (quote ("pypy" "python")))
+ '(python-shell-completion-native-disabled-interpreters '("pypy" "python"))
  '(save-place-mode t)
  '(scroll-preserve-screen-position 1)
- '(send-mail-function (quote mailclient-send-it))
+ '(send-mail-function 'mailclient-send-it)
  '(shell-pop-full-span t)
  '(shell-pop-shell-type
-   (quote
-    ("eshell" "*eshell*"
+   '("eshell" "*eshell*"
      (lambda nil
-       (eshell shell-pop-term-shell)))))
+       (eshell shell-pop-term-shell))))
  '(shell-pop-term-shell "eshell")
  '(shell-pop-universal-key "C-`")
  '(shell-pop-window-position "bottom")
@@ -122,7 +114,7 @@
  '(show-paren-mode t)
  '(split-height-threshold 5)
  '(split-width-threshold 5)
- '(tabbar-separator (quote (1)))
+ '(tabbar-separator '(1))
  '(tool-bar-mode nil)
  '(track-eol t)
  '(vc-annotate-background "#1B2229")
@@ -148,8 +140,8 @@
     (cons 340 "#5B6268")
     (cons 360 "#5B6268")))
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t)
- '(web-mode-enable-current-element-highlight t)
+ '(web-mode-enable-current-column-highlight t t)
+ '(web-mode-enable-current-element-highlight t t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
