@@ -114,7 +114,8 @@
   :config
   (dired-launch-enable)
   (setq-default dired-launch-default-launcher '("xdg-open")
-                dired-launch-extensions-map '(("pdf" ("evince")))))
+                dired-launch-extensions-map '(("html" ("chromium"))
+                                              ("pdf" ("evince")))))
 
 ;; colored files by type
 (use-package diredful
