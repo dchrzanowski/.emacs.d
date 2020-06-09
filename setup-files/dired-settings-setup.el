@@ -16,6 +16,7 @@
       '(("\\.jpe?g\\'" "gimp")
         ("\\.png\\'" "gimp")
         ("\\.gif\\'" "gimp")
+        ("\\.html\\'" "chromium")
         ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "vlc")))
 
 ;; sort files and show sizes
