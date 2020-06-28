@@ -367,6 +367,7 @@
  :prefix "SPC"
  :keymaps 'json-mode-map
  ;; json print path
+ "cb" 'json-mode-beautify
  "cc" 'jsons-print-path)
 
 ;; --------------------------------------------------------------------
