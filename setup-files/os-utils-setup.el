@@ -15,6 +15,11 @@
 (use-package transmission)
 
 ;; --------------------------------------------------------------------
+;; password generator
+;; --------------------------------------------------------------------
+(use-package password-generator)
+
+;; --------------------------------------------------------------------
 ;; proced
 ;; --------------------------------------------------------------------
 (use-package proced
@@ -40,41 +45,22 @@
     :kill-process-buffer-on-stop t)
 
   (prodigy-define-service
-    :name "EFarmX Livestock Mobile"
-    :cwd "~/github/prefarmm-mobile-app/src"
-    :command "tns"
-    :args '("debug" "android")
-    :stop-signal 'int
-    :tags '(EFarmX)
-    :kill-process-buffer-on-stop t)
-
-  (prodigy-define-service
-    :name "EFarmX Launchpad Web"
-    :cwd "~/github/Quaternion-Agri/Efarmx"
-    :command "docker-compose"
-    :ready-message "Running on port 8080"
-    :args '("up")
-    :tags '(EFarmX)
+    :name "comand.ie local Angular server"
+    :cwd "~/github/sri-comand-websites/comand.ie"
+    :command "ng"
+    :ready-message "** Angular Live Development Server"
+    :args '("serve")
+    :tags '(COMAND)
     :stop-signal 'int
     :kill-process-buffer-on-stop t)
 
   (prodigy-define-service
-    :name "EFarmX Livestock Web"
-    :cwd "~/github/Quaternion-Agri/Livestock"
-    :ready-message "Connected to mongo"
-    :command "docker-compose"
-    :args '("up")
-    :tags '(EFarmX)
-    :stop-signal 'int
-    :kill-process-buffer-on-stop t)
-
-  (prodigy-define-service
-    :name "EFarmX Arable Web"
-    :cwd "~/github/Quaternion-Agri/Arable"
-    :ready-message "Connected to mongo"
-    :command "docker-compose"
-    :args '("up")
-    :tags '(EFarmX)
+    :name "sri.ait.ie local Angular server"
+    :cwd "~/github/sri-comand-websites/sri.ie"
+    :command "ng"
+    :ready-message "** Angular Live Development Server"
+    :args '("serve")
+    :tags '(SRI)
     :stop-signal 'int
     :kill-process-buffer-on-stop t)
   )

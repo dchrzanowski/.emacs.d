@@ -34,7 +34,7 @@
  "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
- "hg" 'engine/search-google
+ "hg" 'engine/search-duckduckgo
  "hr" 'helm-chrome-bookmarks
  "hG" 'helm-do-grep-ag
  "ha" 'helm-do-ag
