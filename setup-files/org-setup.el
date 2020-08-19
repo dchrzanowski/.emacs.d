@@ -70,7 +70,6 @@
   ;;autorefresh images after org-babel dot evaluations
   (add-hook 'org-babel-after-execute-hook 'auto-refresh-inline-images)
 
-
   ;; --------------------------------------------------------------------
   ;; org-tempo
   ;; --------------------------------------------------------------------

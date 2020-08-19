@@ -417,16 +417,15 @@ Version 2015-07-30"
      (list
       (dired-read-shell-command "& on %s: " current-prefix-arg files)
       files)))
-  (apply
-   #'start-process
-   (list cmd nil shell-file-name shell-command-switch
-         (format "nohup 1>/dev/null 2>/dev/null %s \"%s\""
-                 (if (> (length file-list) 1)
-                     (format "%s %s"
-                             cmd
-                             (cadr (assoc cmd dired-filelist-cmd)))
-                   cmd)
-                 (mapconcat #'expand-file-name file-list "\" \"")))))
+  (let ((execution-flag (cadr (assoc cmd dired-filelist-cmd))))
+    (apply
+     #'start-process
+     (list cmd nil shell-file-name shell-command-switch
+           (format "nohup 1>/dev/null 2>/dev/null %s \"%s\""
+                   (if (and (> (length file-list) 1) execution-flag)
+                       (format "%s %s" cmd execution-flag)
+                     cmd)
+                   (mapconcat #'expand-file-name file-list "\" \""))))))
 
 ;; --------------------------------------------------------------------
 ;; Calc
@@ -562,20 +561,20 @@ i.e. change right window to bottom, or change bottom window to right."
   (interactive "sEnter IP to query (blank for own IP): ")
   (require 'request)
   (request
-   (concat "https://ipinfo.io/" ip)
-   :headers '(("User-Agent" . "Emacs ipinfo.io Client")
-              ("Accept" . "application/json")
-              ("Content-Type" . "application/json;charset=utf-8"))
-   :parser 'json-read
-   :success (cl-function
-             (lambda (&key data &allow-other-keys)
-               (message
-                (mapconcat
-                 (lambda (e)
-                   (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
-                 data "\n"))))
-   :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
-                         (message "Can't receive ipinfo. Error %S " error-thrown)))))
+    (concat "https://ipinfo.io/" ip)
+    :headers '(("User-Agent" . "Emacs ipinfo.io Client")
+               ("Accept" . "application/json")
+               ("Content-Type" . "application/json;charset=utf-8"))
+    :parser 'json-read
+    :success (cl-function
+              (lambda (&key data &allow-other-keys)
+                (message
+                 (mapconcat
+                  (lambda (e)
+                    (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
+                  data "\n"))))
+    :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
+                          (message "Can't receive ipinfo. Error %S " error-thrown)))))
 
 ;; ---------------------------------------------------------------------
 ;; Sum up all TIME-DAYS properties and put them in the current heading's

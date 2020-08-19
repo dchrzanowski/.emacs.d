@@ -17,7 +17,7 @@
         ("\\.png\\'" "gimp")
         ("\\.gif\\'" "gimp")
         ("\\.html\\'" "chromium")
-        ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "vlc")))
+        ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "celluloid")))
 
 ;; sort files and show sizes
 ;; (setq dired-listing-switches "-alhvF --group-directories-first")
