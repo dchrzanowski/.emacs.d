@@ -15,9 +15,9 @@
  '(async-shell-command-buffer 'confirm-new-buffer)
  '(before-save-hook '(delete-trailing-whitespace))
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
- '(browse-url-browser-function 'browse-url-chromium)
+ '(browse-url-browser-function 'browse-url-firefox)
  '(column-number-mode t)
- '(company-auto-complete-chars '(32 41 46))
+ '(company-auto-commit-chars '(32 41 46))
  '(company-backends
    '(company-tide company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
                   (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
@@ -140,8 +140,8 @@
     (cons 340 "#5B6268")
     (cons 360 "#5B6268")))
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t t)
- '(web-mode-enable-current-element-highlight t t)
+ '(web-mode-enable-current-column-highlight t)
+ '(web-mode-enable-current-element-highlight t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
