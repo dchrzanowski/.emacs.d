@@ -34,15 +34,20 @@
  "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
- "hg" 'engine/search-duckduckgo
  "hr" 'helm-chrome-bookmarks
- "hG" 'helm-do-grep-ag
+ "hg" 'helm-do-grep-ag
  "ha" 'helm-do-ag
  "hl" 'helm-locate
  "hw" 'helm-do-ag-buffers
  "hd" 'helm-dash
  "hf" 'helm-fzf
  "hp" 'helm-fzf-project-root
+ ;; engine
+ "/d" 'engine/search-duckduckgo
+ "/g" 'engine/search-google
+ "/G" 'engine/search-github
+ "/a" 'engine/search-amazon
+ "/s" 'engine/search-stack-overflow
  ;; help
  "hv" 'describe-variable
  "hF" 'describe-function
