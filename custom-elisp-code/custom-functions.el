@@ -713,6 +713,15 @@ PREFIX is added in front of each generated id."
   (mu4e))
 
 ;; --------------------------------------------------------------------
+;; Switch to init.el
+;; --------------------------------------------------------------------
+(defun dchrzan/switch-to-init-el ()
+  "Delete all other windows and switch to init.el."
+  (interactive)
+  (delete-other-windows)
+  (find-file "~/.emacs.d/init.el"))
+
+;; --------------------------------------------------------------------
 ;; Switch to Dired
 ;; --------------------------------------------------------------------
 (defun dchrzan/switch-to-dired-two-panel ()

@@ -71,7 +71,7 @@
 (use-package engine-mode
   :config
   (defengine amazon
-    "http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=%s")
+    "https://www.amazon.co.uk/s?k=%s&ref=nb_sb_noss_2")
 
   (defengine duckduckgo
     "https://duckduckgo.com/?q=%s"

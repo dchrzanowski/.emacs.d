@@ -73,6 +73,12 @@
      'mu4e-main-mode
      'dchrzan/switch-to-mu4e))
 
+  (defun dchrzan/eyebrowse-9th-slot-handler ()
+    "Handle switch to the 9th slot. Mu4e."
+    (dchrzan/call-func-when-mode-not-in-windows
+     'elisp-mode
+     '(lambda() (dchrzan/call-func-on-y "Switch to init.el? " 'dchrzan/switch-to-init-el))))
+
   (defvar dchrzan/eyebrowse-post-slot-switch-configs nil
     "Association List that provides functions that will be executed on specified eyebrowse slots.
 ALIST key value pairs represent the eyebrowse-slot and the functions to call, respectively.")
@@ -81,6 +87,7 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
   (setq dchrzan/eyebrowse-post-slot-switch-configs
         '((6 . dchrzan/eyebrowse-6th-slot-handler)
           ;; (8 . dchrzan/eyebrowse-8th-slot-handler)
+          (9 . dchrzan/eyebrowse-9th-slot-handler)
           ))
 
   (defun dchrzan/eyebrowse-post-slot-switch-handler ()
