@@ -771,5 +771,24 @@ Value is automatically inserted as a side effect."
       (message "Input value should be in between 0 and 255")
     (insert (format "%.3f" (/ rgb-val 255.0)))))
 
+;; --------------------------------------------------------------------
+;; HEX numbers
+;; --------------------------------------------------------------------
+(defun dchrzan/hex-string-to-num-string (hex)
+  "Convert HEX as string to decimal."
+  (calc-eval (format "16#%s" hex)))
+
+(defun dchrzan/hex-color-to-rgb (hex-color)
+  "Convert a 6 digit HEX-COLOR e.g. '#FF00FF to a formatted 'rgb(255, 0, 255)' string and insert it."
+  (interactive "sColor as 6 digit HEX:")
+  (let ((red (dchrzan/hex-string-to-num-string
+              (substring hex-color 1 3)))
+        (blue (dchrzan/hex-string-to-num-string
+               (substring hex-color 3 5)))
+        (green (dchrzan/hex-string-to-num-string
+                (substring hex-color 5 7))))
+    ;; format and insert
+    (insert (format "rgb(%s, %s, %s)" red green blue))))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here
