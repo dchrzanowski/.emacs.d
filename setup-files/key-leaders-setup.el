@@ -18,7 +18,9 @@
  "v" 'dchrzan/split-right-and-follow
  ;; go to other window
  "TAB" 'other-window
- "X" 'kill-this-buffer
+ ;; window operations
+ "X" 'delete-window
+ "W" 'kill-this-buffer
  ;; ace window
  "d" 'ace-window
  ;; helm
@@ -97,7 +99,7 @@
  "kv" 'evilnc-toggle-invert-comment-line-by-line
  "kb" 'comment-box
  ;; ibuffer
- "W" 'ibuffer
+ "M-w" 'ibuffer
  ;; mu4e
  "m" 'mu4e
  ;; cleanup buffer
