@@ -757,5 +757,19 @@ PREFIX is added in front of each generated id."
     (unless has-desired-mode
       (funcall func))))
 
+;; --------------------------------------------------------------------
+;; RGB value to percent
+;; --------------------------------------------------------------------
+(defun dchrzan/rgb-to-percent-scale (rgb-val)
+  "Convert a value in between 0 and 255 to a 0.000 - 1.000 scale.
+
+Provide the RGB value as the RGB-VAL parameter or enter the value interactively.
+Value is automatically inserted as a side effect."
+
+  (interactive "nRGB Value:")
+  (if (or (< rgb-val 0) (> rgb-val 255))
+      (message "Input value should be in between 0 and 255")
+    (insert (format "%.3f" (/ rgb-val 255.0)))))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here
