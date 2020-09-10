@@ -76,7 +76,7 @@
   (defun dchrzan/eyebrowse-9th-slot-handler ()
     "Handle switch to the 9th slot. Mu4e."
     (dchrzan/call-func-when-mode-not-in-windows
-     'elisp-mode
+     'emacs-lisp-mode
      '(lambda() (dchrzan/call-func-on-y "Switch to init.el? " 'dchrzan/switch-to-init-el))))
 
   (defvar dchrzan/eyebrowse-post-slot-switch-configs nil
