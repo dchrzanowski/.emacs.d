@@ -27,6 +27,11 @@
   ;; js
   (add-hook 'js2-mode-hook #'lsp)
 
+  ;; fix for company to force usage of completion-at-point
+  (add-hook 'lsp-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   '((company-capf)))))
   ;; go
   ;; Set up before-save hooks to format buffer and add/delete imports.
   ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -45,11 +50,11 @@
 ;; --------------------------------------------------------------------
 ;; company lsp
 ;; --------------------------------------------------------------------
-(use-package company-lsp
-  :after lsp-mode
-  :config
-  (setq company-candidates-cache t)
-  (push 'company-lsp company-backends))
+;; (use-package company-lsp
+;;   :after lsp-mode
+;;   :config
+;;   (setq company-candidates-cache t)
+;;   (push 'company-lsp company-backends))
 
 ;; --------------------------------------------------------------------
 ;; lsp up

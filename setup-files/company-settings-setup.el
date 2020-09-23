@@ -76,7 +76,6 @@
           (lambda ()
             (set (make-local-variable 'company-backends)
                  '((company-nxml)))))
-
 ;; --------------------------------------------------------------------
 ;; Fix collesion between expanding yasnippets and company
 ;; --------------------------------------------------------------------
