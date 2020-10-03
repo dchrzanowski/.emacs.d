@@ -7,7 +7,7 @@
 ;; magit
 ;; --------------------------------------------------------------------
 (use-package magit
-  :defer t
+  :defer 3
   :config
   (setq magit-repository-directories '( ("~/github" . 1) )))
 
@@ -72,7 +72,8 @@
 ;; magit-todos
 ;; --------------------------------------------------------------------
 (use-package magit-todos
-  :defer 1
+  :defer t
+  :after magit
   :config
   (setq magit-todos-max-items 40)
   (define-key magit-todos-section-map (kbd "jT") 'nil)
