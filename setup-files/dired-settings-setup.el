@@ -17,6 +17,8 @@
         ("\\.png\\'" "gimp")
         ("\\.gif\\'" "gimp")
         ("\\.html\\'" "chromium")
+        ("\\.doc\\'" "lowriter")
+        ("\\.docx\\'" "lowriter")
         ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "celluloid")))
 
 ;; sort files and show sizes

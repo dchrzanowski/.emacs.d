@@ -130,7 +130,7 @@
  "oA" 'org-agenda-list
  "oa" 'org-agenda-list-and-delete-other-windows
  "oo" 'org-agenda
- "or" 'helm-org-rifle
+ "of" 'helm-org-rifle
  "ob" 'org-iswitchb
  "ok" 'cfw:open-org-calendar
  "oK" 'calendar

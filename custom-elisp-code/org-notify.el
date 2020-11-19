@@ -392,5 +392,4 @@ terminal an emacs window."
                                  :period "2m" :duration 60))
 
 (provide 'org-notify)
-
 ;;; org-notify.el ends here
