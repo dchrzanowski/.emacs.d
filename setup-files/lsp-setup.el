@@ -19,6 +19,12 @@
   :config
   (setq lsp-prefer-flymake nil
         lsp-log-io nil)
+  ;; fix for company to force usage of completion-at-point
+  (add-hook 'lsp-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   '((company-capf)))))
+
   ;; lang hooks
   ;; java
   (add-hook 'java-mode-hook #'lsp)
@@ -26,12 +32,8 @@
   (add-hook 'c++-mode-hook #'lsp)
   ;; js
   (add-hook 'js2-mode-hook #'lsp)
-
-  ;; fix for company to force usage of completion-at-point
-  (add-hook 'lsp-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends)
-                   '((company-capf)))))
+  ;; typescript
+  (add-hook 'typescript-mode-hook #'lsp)
   ;; go
   ;; Set up before-save hooks to format buffer and add/delete imports.
   ;; Make sure you don't have other gofmt/goimports hooks enabled.
