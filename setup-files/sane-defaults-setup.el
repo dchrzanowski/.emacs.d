@@ -26,6 +26,7 @@
 ;; backup config
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))   ; create a special folder for backup files
       backup-by-copying t    ; Don't delink hardlinks
+      create-lockfiles nil   ; Don't create lock files
       version-control t      ; Use version numbers on backups
       delete-old-versions t  ; Automatically delete excess backups
       kept-new-versions 20   ; how many of the newest versions to keep
