@@ -232,21 +232,21 @@
 ;; --------------------------------------------------------------------
 ;; typescript leader
 ;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'typescript-mode-map
- "cF" 'js-doc-insert-file-doc
- "cd" 'tide-documentation-at-point
- "cR" 'tide-refactor
- "cr" 'tide-rename-symbol
- "c?" 'tide-references
- "c." 'tide-jump-to-definition
- "c," 'tide-jump-back
- "ce" 'tide-project-errors
- "ct" 'tide-jsdoc-template
- "ci" 'tide-organize-imports
- "cc" 'tide-fix)
+;; (general-define-key
+;;  :states '(normal visual emacs)
+;;  :prefix "SPC"
+;;  :keymaps 'typescript-mode-map
+;;  "cF" 'js-doc-insert-file-doc
+;;  "cd" 'tide-documentation-at-point
+;;  "cR" 'tide-refactor
+;;  "cr" 'tide-rename-symbol
+;;  "c?" 'tide-references
+;;  "c." 'tide-jump-to-definition
+;;  "c," 'tide-jump-back
+;;  "ce" 'tide-project-errors
+;;  "ct" 'tide-jsdoc-template
+;;  "ci" 'tide-organize-imports
+;;  "cc" 'tide-fix)
 
 ;; --------------------------------------------------------------------
 ;; elisp leader
@@ -269,7 +269,7 @@
 (general-define-key
  :states '(normal visual emacs)
  :prefix "SPC"
- :keymaps '(java-mode-map python-mode-map c++-mode-map go-mode-map)
+ :keymaps '(java-mode-map python-mode-map c++-mode-map go-mode-map typescript-mode-map)
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
