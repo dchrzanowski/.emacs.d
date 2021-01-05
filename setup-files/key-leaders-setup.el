@@ -216,21 +216,21 @@
  "cdt" 'web-mode-dom-traverse)
 
 ;; --------------------------------------------------------------------
-;; js2 leader
+;; js2 leader (CURRENTLY REPLACED BY LSP)
 ;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'js2-mode-map
- "cb" 'web-beautify-js
- "ct" 'js-doc-insert-function-doc-snippet
- "cF" 'js-doc-insert-file-doc
- "cv" 'tern-get-type
- "cr" 'tern-rename-variable
- "cd" 'tern-get-docs)
+;; (general-define-key
+;;  :states '(normal visual emacs)
+;;  :prefix "SPC"
+;;  :keymaps 'js2-mode-map
+;;  "cb" 'web-beautify-js
+;;  "ct" 'js-doc-insert-function-doc-snippet
+;;  "cF" 'js-doc-insert-file-doc
+;;  "cv" 'tern-get-type
+;;  "cr" 'tern-rename-variable
+;;  "cd" 'tern-get-docs)
 
 ;; --------------------------------------------------------------------
-;; typescript leader
+;; typescript leader (CURRENTLY REPLACED BY LSP)
 ;; --------------------------------------------------------------------
 ;; (general-define-key
 ;;  :states '(normal visual emacs)
@@ -269,7 +269,12 @@
 (general-define-key
  :states '(normal visual emacs)
  :prefix "SPC"
- :keymaps '(java-mode-map python-mode-map c++-mode-map go-mode-map typescript-mode-map)
+ :keymaps '(java-mode-map
+            python-mode-map
+            c++-mode-map
+            go-mode-map
+            typescript-mode-map
+            js2-mode-map)
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
