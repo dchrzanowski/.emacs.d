@@ -10,6 +10,7 @@
 (setq gc-cons-threshold (megabytes-to-bytes 5))
 (setq read-process-output-max (megabytes-to-bytes 1))
 
+;; change gc threshold post init (if needed)
 ;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
 
 ;; --------------------------------------------------------------------
@@ -54,7 +55,7 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "setup-files/"))
 (add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code"))
-(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code/bookmark-plus"))
+;;(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code/bookmark-plus"))
 
 ;; --------------------------------------------------------------------
 ;; personal data
@@ -109,6 +110,7 @@
 (require 'typescript-setup)
 (require 'go-setup)
 (require 'r-setup)
+(require 'dart-setup)
 ;; (require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)

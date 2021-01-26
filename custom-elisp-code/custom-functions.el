@@ -790,5 +790,13 @@ Value is automatically inserted as a side effect."
     ;; format and insert
     (insert (format "rgb(%s, %s, %s)" red green blue))))
 
+;; --------------------------------------------------------------------
+;; Native compile packages
+;; --------------------------------------------------------------------
+(defun dchrzan/native-compile-packages ()
+  "Native compilation of the elpa folder."
+  (interactive)
+  (native-compile-async (concat user-emacs-directory "elpa/") 'recursively))
+
 (provide 'custom-functions)
 ;;; custom-functions ends here

@@ -15,6 +15,7 @@
                           (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
                           (typescript-language-server . "yay -S typescript-language-server")
+                          (flutter                    . "yay -S flutter")
                           (ccls                       . "yay -S ccls"))
   :config
   (setq lsp-prefer-flymake nil
@@ -25,15 +26,19 @@
               (set (make-local-variable 'company-backends)
                    '((company-capf)))))
 
-  ;; lang hooks
+  ;; lang hooks that don't need their own elisp packages
   ;; java
   (add-hook 'java-mode-hook #'lsp)
+
   ;; c++
   (add-hook 'c++-mode-hook #'lsp)
+
   ;; js
   (add-hook 'js2-mode-hook #'lsp)
+
   ;; typescript
   (add-hook 'typescript-mode-hook #'lsp)
+
   ;; go
   ;; Set up before-save hooks to format buffer and add/delete imports.
   ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -50,16 +55,13 @@
   :config)
 
 ;; --------------------------------------------------------------------
-;; company lsp
+;; dart lsp
 ;; --------------------------------------------------------------------
-;; (use-package company-lsp
-;;   :after lsp-mode
-;;   :config
-;;   (setq company-candidates-cache t)
-;;   (push 'company-lsp company-backends))
+(use-package lsp-dart
+  :hook (dart-mode . lsp))
 
 ;; --------------------------------------------------------------------
-;; lsp up
+;; lsp ui
 ;; --------------------------------------------------------------------
 (use-package lsp-ui
   :after lsp-mode
@@ -77,7 +79,7 @@
   :after lsp-mode)
 
 ;; --------------------------------------------------------------------
-;; lsp mode
+;; lsp dap mode (debugging)
 ;; --------------------------------------------------------------------
 (use-package dap-mode
   :after lsp-mode)
