@@ -264,16 +264,17 @@
 
 ;; --------------------------------------------------------------------
 ;; lsp leader
-;; currently for: java python c++ go
+;; currently for: java =python= c++ go typescript js dart
 ;; --------------------------------------------------------------------
 (general-define-key
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps '(java-mode-map
-            python-mode-map
+            ;; python-mode-map
             c++-mode-map
             go-mode-map
             typescript-mode-map
+            dart-mode-map
             js2-mode-map)
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
