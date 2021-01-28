@@ -16,7 +16,7 @@
       '(("\\.jpe?g\\'" "gimp")
         ("\\.png\\'" "gimp")
         ("\\.gif\\'" "gimp")
-        ("\\.html\\'" "chromium")
+        ("\\.html\\'" "firefox")
         ("\\.doc\\'" "lowriter")
         ("\\.docx\\'" "lowriter")
         ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "celluloid")))
