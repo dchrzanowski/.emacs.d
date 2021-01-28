@@ -57,7 +57,7 @@
 ;;
 ;;    (The commentary links in #1 and #3 work only if you have library
 ;;    `bookmark+-doc.el' in your `load-path'.)
- 
+
 ;;(@> "Index")
 ;;
 ;;  Index
@@ -89,7 +89,7 @@
 ;;    (@> "Indirect Bookmarking Functions")
 ;;    (@> "Other Bookmark+ Functions (`bmkp-*')")
 ;;  (@> "Keymaps")
- 
+
 ;;(@* "Things Defined Here")
 ;;
 ;;  Things Defined Here
@@ -921,7 +921,7 @@
 (defvar zz-izones)                      ; In `zones.el'
 (defvar zz-izones-var)                  ; In `zones.el'
 (defvar woman-last-file-name)           ; In `woman.el'
- 
+
 ;;(@* "User Options (Customizable)")
 ;;; User Options (Customizable) --------------------------------------
 
@@ -1608,7 +1608,7 @@ is enabled.  Set this to nil or \"\" if you do not want any lighter."
 ;; works for newer Emacs too.
 ;;;###autoload (autoload 'bmkp-w3m-allow-multiple-buffers-flag "bookmark+")
 (defalias 'bmkp-w3m-allow-multi-tabs-flag 'bmkp-w3m-allow-multiple-buffers-flag)
-(make-obsolete 'bmkp-w3m-allow-multi-tabs-flag 'bmkp-w3m-allow-multiple-buffers-flag)
+(make-obsolete 'bmkp-w3m-allow-multi-tabs-flag 'bmkp-w3m-allow-multiple-buffers-flag "2018-12-23")
 (defcustom bmkp-w3m-allow-multiple-buffers-flag t
   "*Non-nil means jump to a W3M bookmark in a new buffer."
   :type 'boolean :group 'bookmark-plus)
@@ -1619,7 +1619,7 @@ is enabled.  Set this to nil or \"\" if you do not want any lighter."
 Each function should accept the bookmark file name as first argument.
 Used after `after-save-hook'."
   :type 'hook :group 'bookmark-plus)
- 
+
 ;;(@* "Internal Variables")
 ;;; Internal Variables -----------------------------------------------
 
@@ -1966,7 +1966,7 @@ the state of buffer `*Bookmark List*' at the time it is created:
  (bookmark-list . STATE)
 
  STATE records the sort order, filter function, omit list, and title.")
- 
+
 ;;(@* "Compatibility Code for Older Emacs Versions")
 ;;; Compatibility Code for Older Emacs Versions ----------------------
 
@@ -2064,7 +2064,7 @@ See `bookmark-jump-other-window'."
     (interactive "e")
     (bookmark-popup-menu-and-apply-function 'bookmark-jump-other-window
                                             "Jump to Bookmark (Other Window)" event)))
- 
+
 ;;(@* "Core Replacements (`bookmark-*' except `bookmark-bmenu-*')")
 ;;; Core Replacements (`bookmark-*' except `bookmark-bmenu-*') -------
 
@@ -3797,7 +3797,7 @@ that option is non-nil."
                (sit-for 4))
              nil)))
   (bmkp-save-menu-list-state))
- 
+
 ;;(@* "Bookmark+ Functions (`bmkp-*')")
 ;;; Bookmark+ Functions (`bmkp-*') -----------------------------------
 
@@ -4541,7 +4541,8 @@ DO NOT MODIFY the header comment lines, which begin with `;;'."
         (bmkp-bmenu-goto-bookmark-named bname)))))
 
 (defalias 'bmkp-bookmark-type 'bmkp-bookmark-valid-p)
-(make-obsolete 'bmkp-bookmark-type 'bmkp-bookmark-valid-p) ; 2018-12-23
+(make-obsolete 'bmkp-bookmark-type 'bmkp-bookmark-valid-p "2018-12-23") ; 2018-12-23
+
 
 (defun bmkp-record-visit (bookmark &optional batchp)
   "Update the data recording a visit to BOOKMARK.
@@ -4735,7 +4736,7 @@ Non-interactively, non-nil MSG-P means display a status message."
   (unless (or bmkp-last-save-flag-value  bookmark-save-flag)
     (error "Cannot toggle: initial value of `bookmark-save-flag' is nil"))
   ;; One of the two vars should be nil.  If both are non-nil, set `*-last-*' to nil before toggling.
-  (when (and bmkp-last-save-flag-value  bookmark-save-flag) (setq bmkp-last-save-flag-value  nil))  
+  (when (and bmkp-last-save-flag-value  bookmark-save-flag) (setq bmkp-last-save-flag-value  nil))
   (setq bmkp-last-save-flag-value  (prog1 bookmark-save-flag
                                      (setq bookmark-save-flag  bmkp-last-save-flag-value)))
   (when msg-p (message (if bookmark-save-flag
@@ -6693,7 +6694,7 @@ A new list is returned (no side effects)."
   "`bookmark-alist', filtered to retain only sequence bookmarks.
 A new list is returned (no side effects)."
   (bookmark-maybe-load-default-file)
-  (bmkp-remove-if-not #'bmkp-sequence-bookmark-p bookmark-alist))  
+  (bmkp-remove-if-not #'bmkp-sequence-bookmark-p bookmark-alist))
 
 (defun bmkp-snippet-alist-only ()
   "`bookmark-alist', filtered to retain only snippet bookmarks.
@@ -7557,7 +7558,7 @@ If either is a record then it need not belong to `bookmark-alist'."
 
 ;; Keep the alias for a while, in case someone has it referenced in a state file.
 (defalias 'bmkp-info-cp 'bmkp-info-node-name-cp)
-(make-obsolete 'bmkp-info-cp 'bmkp-info-node-name-cp)
+(make-obsolete 'bmkp-info-cp 'bmkp-info-node-name-cp "2018-12-23")
 
 (defun bmkp-info-node-name-cp (b1 b2)
   "True if bookmark B1 sorts as an Info bookmark before B2.
@@ -9385,7 +9386,7 @@ you can yank it using `C-y'."
                                               (handler . bmkp-jump-snippet))))
           (bname                          (and (not promptp)  (car (split-string text "[\n]")))))
       (bookmark-set bname 99 'INTERACTIVEP)
-      ;; `bookmark-set does the prompting, providing default names.  
+      ;; `bookmark-set does the prompting, providing default names.
       (when msgp (message "Region text bookmarked%s" (if bname (format " as `%s'" bname) ""))))))
 
 (defun bmkp-jump-snippet (bookmark)
@@ -12977,7 +12978,7 @@ the node was bookmarked."
     "Toggle the value of option `bmkp-info-auto-type'."
     (interactive "p")
     (setq bmkp-info-auto-type  (if (eq bmkp-info-auto-type 'create-or-update) 'update-only 'create-or-update))
-    (when msgp (message "`bmkp-info-auto-bookmark-mode' now %s" 
+    (when msgp (message "`bmkp-info-auto-bookmark-mode' now %s"
                         (if (eq bmkp-info-auto-type 'create-or-update)
                             "CREATES, as well as updates, Info bookmarks"
                           "only UPDATES EXISTING Info bookmarks"))))
@@ -13237,7 +13238,7 @@ Non-interactively:
 ;; Because of Emacs bug #19915, we need to use `advice-add' for `org-store-link', so this feature
 ;; is available only for Emacs 24.4+.
 (when (fboundp 'advice-add)
-             
+
   (defvar bmkp-store-org-link-checking-p nil
     "Whether `bmkp-(bmenu-)store-org-link(-1)' call is checking applicability.")
 
