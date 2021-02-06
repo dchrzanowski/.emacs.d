@@ -283,6 +283,7 @@
  "cc" 'lsp-ui-sideline-apply-code-actions
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
+ "cf" 'lsp-format-buffer
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
