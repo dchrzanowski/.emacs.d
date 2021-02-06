@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: dispose
+# --
+@override
+void dispose() {
+  super.dispose();
+  $0
+}

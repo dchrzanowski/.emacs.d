@@ -35,10 +35,16 @@
   (require 'use-package))
 (setq use-package-always-ensure t)
 (use-package use-package-ensure-system-package)
+
+;; --------------------------------------------------------------------
+;; allow to install packages directly from git repos for use-package
+;; --------------------------------------------------------------------
 (use-package quelpa)
 (use-package quelpa-use-package)
 
+;; --------------------------------------------------------------------
 ;; diminish and bind-key for use-package extra awesomeness
+;; --------------------------------------------------------------------
 (use-package diminish)
 (use-package bind-key)
 (use-package general
@@ -55,7 +61,7 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "setup-files/"))
 (add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code"))
-;;(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code/bookmark-plus"))
+(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code/bookmark-plus"))
 
 ;; --------------------------------------------------------------------
 ;; personal data

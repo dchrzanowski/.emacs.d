@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: fun
+# key: m
+# --
+${1:Type} ${2:Name}($3) {
+  $0
+}

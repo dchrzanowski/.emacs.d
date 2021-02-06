@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: main
+# group: dart
+# --
+main(List<String> args) {
+  $0
+}

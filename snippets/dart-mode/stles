@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: StatelessWidget
+# --
+class $1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      $2
+    );
+  }
+}

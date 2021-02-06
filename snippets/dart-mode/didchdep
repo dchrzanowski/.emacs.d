@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: didChangeDependencies
+# key: dcd
+# --
+@override
+void didChangeDependencies() {
+  super.didChangeDependencies();
+  $0
+}

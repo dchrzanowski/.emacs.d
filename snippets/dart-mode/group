@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: group
+# --
+group('$1', () {
+  $0
+});

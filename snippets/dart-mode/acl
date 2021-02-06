@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: abstract class
+# --
+abstract class ${1:Name} {
+  $0
+}

@@ -120,6 +120,7 @@
   (add-hook 'typescript-mode-hook #'electric-operator-mode)
   (add-hook 'java-mode-hook #'electric-operator-mode)
   (add-hook 'c++-mode-hook #'electric-operator-mode)
+  (add-hook 'lsp-mode-hook #'electric-operator-mode)
   (add-hook 'c-mode-hook #'electric-operator-mode))
 
 (provide 'editing-assists-setup)

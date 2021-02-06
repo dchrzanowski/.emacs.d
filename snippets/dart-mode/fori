@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: for-in
+# --
+for (var ${1:item} in ${2:items}) {
+  $0
+}

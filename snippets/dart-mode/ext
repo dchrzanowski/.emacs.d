@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: ext
+# --
+extends ${1:Name}$0
