@@ -17,6 +17,10 @@
                           (typescript-language-server . "yay -S typescript-language-server")
                           (flutter                    . "yay -S flutter")
                           (ccls                       . "yay -S ccls"))
+  :hook ((c++-mode . lsp)
+         (js2-mode . lsp)
+         (typescript-mode . lsp)
+         (go-mode . lsp))
   :config
   (setq lsp-prefer-flymake nil
         lsp-log-io nil)
@@ -25,34 +29,22 @@
             (lambda ()
               (set (make-local-variable 'company-backends)
                    '((company-capf)))))
-
   ;; lang hooks that don't need their own elisp packages
-  ;; java
-  (add-hook 'java-mode-hook #'lsp)
-
   ;; c++
-  (add-hook 'c++-mode-hook #'lsp)
-
+  ;; (add-hook 'c++-mode-hook #'lsp)
   ;; js
-  (add-hook 'js2-mode-hook #'lsp)
-
+  ;; (add-hook 'js2-mode-hook #'lsp)
   ;; typescript
-  (add-hook 'typescript-mode-hook #'lsp)
-
+  ;; (add-hook 'typescript-mode-hook #'lsp)
   ;; go
-  ;; Set up before-save hooks to format buffer and add/delete imports.
-  ;; Make sure you don't have other gofmt/goimports hooks enabled.
-  (defun lsp-go-install-save-hooks ()
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
-    (add-hook 'before-save-hook #'lsp-organize-imports t t))
-  (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
-  (add-hook 'go-mode-hook #'lsp))
+  ;; (add-hook 'go-mode-hook #'lsp)
+  )
 
 ;; --------------------------------------------------------------------
 ;; java lsp
 ;; --------------------------------------------------------------------
 (use-package lsp-java
-  :config)
+  :hook (java-mode . lsp))
 
 ;; --------------------------------------------------------------------
 ;; dart lsp
