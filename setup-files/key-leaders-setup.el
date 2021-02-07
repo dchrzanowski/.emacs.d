@@ -249,6 +249,16 @@
 ;;  "cc" 'tide-fix)
 
 ;; --------------------------------------------------------------------
+;; dart leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'dart-mode-map
+ "cX" 'flutter-hot-restart
+ "cx" 'flutter-run-or-hot-reload)
+
+;; --------------------------------------------------------------------
 ;; elisp leader
 ;; --------------------------------------------------------------------
 (general-define-key
