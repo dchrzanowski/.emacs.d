@@ -25,10 +25,10 @@
   (setq lsp-prefer-flymake nil
         lsp-log-io nil)
   ;; fix for company to force usage of completion-at-point
-  (add-hook 'lsp-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends)
-                   '((company-capf)))))
+  ;; (add-hook 'lsp-mode-hook
+  ;;           (lambda ()
+  ;;             (set (make-local-variable 'company-backends)
+  ;;                  '((company-capf)))))
   ;; lang hooks that don't need their own elisp packages
   ;; c++
   ;; (add-hook 'c++-mode-hook #'lsp)

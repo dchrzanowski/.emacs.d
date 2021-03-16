@@ -278,9 +278,9 @@
   :defer t
   :config
   (setq pomidor-sound-tick nil
-        pomidor-seconds 3000
+        pomidor-seconds 900
         pomidor-break-seconds 600
-        pomidor-long-break-seconds 2400
+        pomidor-long-break-seconds 3600
         pomidor-sound-tack nil
         pomidor-sound-overwork nil
         alert-default-style 'libnotify))
