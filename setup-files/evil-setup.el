@@ -82,10 +82,6 @@
   :defer t
   :after evil)
 
-(use-package evil-magit
-  :defer 2
-  :after evil)
-
 (use-package evil-org
   :diminish 'evil-org-mode
   :config
@@ -165,6 +161,7 @@
   (evil-collection-init 'ivy)
   (evil-collection-init 'xref)
   (evil-collection-init 'occur)
+  (evil-collection-init 'magit)
 
   ;; bug in evil-collection-occur, does not start automatically
   ;; (require 'evil-collection-occur)

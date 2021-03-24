@@ -7,7 +7,7 @@
 
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq gc-cons-threshold (megabytes-to-bytes 1))
+(setq gc-cons-threshold (megabytes-to-bytes 3))
 (setq read-process-output-max (megabytes-to-bytes 1))
 
 ;; change gc threshold post init (if needed)
