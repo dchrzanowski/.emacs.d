@@ -88,7 +88,7 @@
 (require 'helm-setup)
 (require 'highlights-setup)
 (require 'hydra-setup)
-(require 'linting-setup)
+;; (require 'linting-setup)  ; TODO: temp disable flycheck, its currently very slow
 (require 'package-assistants-setup)
 (require 'smartparens-setup)
 (require 'yasnippet-setup)
@@ -145,6 +145,16 @@
 ;; Emacs server
 ;; --------------------------------------------------------------------
 (add-hook 'after-init-hook #'server-start)
+
+;; --------------------------------------------------------------------
+;; Open goals on startup
+;; --------------------------------------------------------------------
+(progn (eyebrowse-switch-to-window-config 0)
+       (find-file "~/GoogleDrive/org/goals.org")
+       (split-window-horizontally)
+       (other-window 1)
+       (find-file "~/GoogleDrive/org/Calendar.org"))
+
 
 ;;; Commentary:
 (provide 'init)

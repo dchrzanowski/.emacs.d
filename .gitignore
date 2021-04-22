@@ -106,3 +106,4 @@ eglot-eclipse-jdt-cache
 /elpy/
 /project-list
 /eln-cache/
+/async-bytecomp.log

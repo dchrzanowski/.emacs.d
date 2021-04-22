@@ -12,10 +12,11 @@
 ;; --------------------------------------------------------------------
 ;; realgud
 ;; --------------------------------------------------------------------
-(use-package realgud
-  :defer 10
-  :config
-  (setq realgud:pdb-command-name "python -m pdb"))
+;; TODO: temp disable causing compile errors
+;; (use-package realgud
+;;   :defer 10
+;;   :config
+;;   (setq realgud:pdb-command-name "python -m pdb"))
 
 ;; --------------------------------------------------------------------
 ;; quickrun
