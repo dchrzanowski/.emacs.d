@@ -192,6 +192,21 @@ _j_/_k_ next/prev    _gg_/_G_ first/last    _f_ set filter    _q_uit    _J_ tide
   ("q"  nil))
 
 ;; --------------------------------------------------------------------
+;; Flymake hydra
+;; --------------------------------------------------------------------
+(defhydra hydra-flymake (:color pink :hint nil)
+  "
+_j_/_k_ next/prev   _l_ error list   _q_uit
+=
+"
+  ("j"  flymake-goto-next-error         "Next")
+  ("k"  flymake-goto-previous-error     "Previous")
+  ("l"  flymake-show-diagnostics-buffer "List")
+  ("RET" nil "Cancel")
+  ("SPC" nil "Cancel")
+  ("q"  nil))
+
+;; --------------------------------------------------------------------
 ;; Ediff hydra
 ;; --------------------------------------------------------------------
 (defhydra hydra-ediff (:color pink :hint nil)

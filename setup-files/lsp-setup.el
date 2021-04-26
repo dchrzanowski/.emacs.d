@@ -23,22 +23,13 @@
          (go-mode . lsp))
   :config
   (setq lsp-prefer-flymake t
+        lsp-headerline-breadcrumb-segments '(file symbols)
         lsp-log-io nil)
   ;; fix for company to force usage of completion-at-point
   (add-hook 'lsp-mode-hook
             (lambda ()
               (set (make-local-variable 'company-backends)
-                   '((company-capf)))))
-  ;; lang hooks that don't need their own elisp packages
-  ;; c++
-  ;; (add-hook 'c++-mode-hook #'lsp)
-  ;; js
-  ;; (add-hook 'js2-mode-hook #'lsp)
-  ;; typescript
-  ;; (add-hook 'typescript-mode-hook #'lsp)
-  ;; go
-  ;; (add-hook 'go-mode-hook #'lsp)
-  )
+                   '((company-capf))))))
 
 ;; --------------------------------------------------------------------
 ;; java lsp
@@ -59,6 +50,7 @@
   :after lsp-mode
   :commands lsp-ui-mode
   :config
+  (setq lsp-ui-doc-delay 0.5)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
                                         (lsp-ui-doc-mode -1)
                                         (lsp-ui-sideline-mode 1))))
@@ -68,7 +60,8 @@
 ;; helm-lsp
 ;; --------------------------------------------------------------------
 (use-package helm-lsp
-  :after lsp-mode)
+  :after lsp-mode
+  :commands helm-lsp-workspace-symbol)
 
 ;; --------------------------------------------------------------------
 ;; lsp dap mode (debugging)

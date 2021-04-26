@@ -82,8 +82,6 @@
  ;; clean buffers
  "M-q" 'clean-buffer-list
  ;; avy
- "e" 'avy-goto-char-timer
- "E" 'evil-avy-goto-char-2
  "j" 'evil-avy-goto-word-or-subword-1
  "J" 'evil-avy-goto-word-0
  ;; anzu
@@ -149,12 +147,17 @@
  "ux" 'prodigy
  "up" 'proced
  "ud" 'docker
+ ;; flymake
+ "e" 'flymake-goto-next-error
+ "E" 'flymake-show-diagnostics-buffer
+ "M-e" 'lsp-treemacs-errors-list
+ "tF" 'hydra-flymake/body
  ;; various modes and tools launchers
  "tc" 'chronos-add-timer
  "tC" '(lambda() (interactive) (switch-to-buffer "*chronos*"))
  "tp" 'webpaste-paste-region
  "tP" 'webpaste-paste-buffer
- "tF" 'hydra-flycheck/body
+ ;; "tF" 'hydra-flycheck/body
  "tf" 'font-lock-mode
  "tT" 'hydra-todo/body
  "ti" 'highlight-indentation-mode
