@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: log variable
+# key: logv
+# --
+print('--------------------------');
+print('--> ' + DateTime.now().toString());
+print('--> ${1:var}');
+print($1);
