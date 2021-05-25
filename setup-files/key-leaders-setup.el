@@ -259,6 +259,7 @@
  :prefix "SPC"
  :keymaps 'dart-mode-map
  "cX" 'flutter-hot-restart
+ "cg" 'lsp-dart-flutter-widget-guides-mode
  "cx" 'flutter-run-or-hot-reload)
 
 ;; --------------------------------------------------------------------

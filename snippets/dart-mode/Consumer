@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Consumer
+# key: con
+# --
+Consumer<${1:Model}>(
+  builder: (ctx, model$2, child) => ${3:Container()},
+)

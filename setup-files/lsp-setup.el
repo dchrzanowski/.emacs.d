@@ -28,6 +28,7 @@
   ;; fix for company to force usage of completion-at-point
   (add-hook 'lsp-mode-hook
             (lambda ()
+              (setq lsp-dart-flutter-widget-guides nil)
               (set (make-local-variable 'company-backends)
                    '((company-capf))))))
 
@@ -41,7 +42,8 @@
 ;; dart lsp
 ;; --------------------------------------------------------------------
 (use-package lsp-dart
-  :hook (dart-mode . lsp))
+  :hook (dart-mode . lsp)
+  :config ())
 
 ;; --------------------------------------------------------------------
 ;; lsp ui
