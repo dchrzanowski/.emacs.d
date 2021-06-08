@@ -76,8 +76,10 @@
   :after magit
   :config
   (setq magit-todos-max-items 40)
-  (define-key magit-todos-section-map (kbd "jT") 'nil)
-  (define-key magit-todos-section-map (kbd "j") 'nil)
+  (add-hook 'magit-todos-mode-hook
+            (lambda ()
+              (define-key magit-todos-item-section-map (kbd "jT") 'nil)
+              (define-key magit-todos-item-section-map (kbd "j") 'nil)))
   (magit-todos-mode))
 
 ;; --------------------------------------------------------------------
