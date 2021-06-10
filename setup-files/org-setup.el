@@ -262,14 +262,14 @@
 
   (setq calendar-week-start-day 1
         cfw:display-calendar-holidays t
-        cfw:fchar-junction ?╋
-        cfw:fchar-vertical-line ?┃
-        cfw:fchar-horizontal-line ?━
-        cfw:fchar-left-junction ?┣
-        cfw:fchar-right-junction ?┫
-        cfw:fchar-top-junction ?┯
-        cfw:fchar-top-left-corner ?┏
-        cfw:fchar-top-right-corner ?┓))
+        cfw:fchar-junction ?╬
+        cfw:fchar-vertical-line ?┋
+        cfw:fchar-horizontal-line ?┅
+        cfw:fchar-left-junction ?╠
+        cfw:fchar-right-junction ?╣
+        cfw:fchar-top-junction ?╦
+        cfw:fchar-top-left-corner ?╔
+        cfw:fchar-top-right-corner ?╗))
 
 ;; --------------------------------------------------------------------
 ;; pomidor
