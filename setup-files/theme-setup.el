@@ -135,11 +135,12 @@
    ;; parens
    '(show-paren-match ((t (:background "black" :foreground "red" :weight normal))))
    '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
-   ;; tabbar
-   '(tabbar-default ((t (:background "#131519" :foreground "#131519" :height 1.0))))
-   '(tabbar-selected ((t (:inherit tabbar-default :background "#131519" :foreground "lime green" :weight bold))))
-   '(tabbar-selected-modified ((t (:inherit tabbar-selected :foreground "lime green" :underline (:color foreground-color :style wave)))))
-   '(tabbar-unselected ((t (:inherit tabbar-default :foreground "#9B9FA6"))))
+   ;; tab-line
+   '(tab-line ((t (:background "#131519" :foreground "#131519" :box nil))))
+   '(tab-line-close-highlight ((t (:foreground "#51afef"))))
+   '(tab-line-tab ((t (:background "#131519" :foreground "lime green" :box (:line-width (4 . 4) :color "#131519")))))
+   '(tab-line-tab-current ((t (:background "#131519" :foreground "coral" :box (:line-width (6 . 4) :color "#131519")))))
+   '(tab-line-tab-inactive ((t (:inherit tab-line-tab :background "#131519" :foreground "#5B6268" :box (:line-width (1 . 4) :color "#131519")))))
    ;; tooltip
    '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))
    ;; window border

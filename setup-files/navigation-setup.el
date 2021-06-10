@@ -133,9 +133,10 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 ;; --------------------------------------------------------------------
 ;; tabbar
 ;; --------------------------------------------------------------------
-(use-package tabbar
-  :config
-  (tabbar-mode))
+;; (use-package tabbar
+;;   :config
+;;   (tabbar-mode))
+(global-tab-line-mode)
 
 
 ;; --------------------------------------------------------------------

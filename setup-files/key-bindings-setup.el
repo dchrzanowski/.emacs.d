@@ -55,8 +55,9 @@
   ;; avy
   "M-e" 'avy-goto-char-timer
   "M-j" 'avy-goto-word-or-subword-1
-  ;; tabbar
-  "<C-tab>" 'tabbar-forward-tab
+  ;; tab-line
+  "<C-tab>" 'next-buffer
+  "C-<iso-lefttab>" 'previous-buffer
   ;; buffer related
   "C-w" 'kill-this-buffer
   "C-a" 'mark-whole-buffer
@@ -286,7 +287,8 @@
 (general-define-key
  :keymaps 'org-mode-map
  "C-l" 'ace-link-org
- "<C-tab>" 'tabbar-forward-tab
+ "<C-tab>" 'next-buffer
+ "C-<iso-lefttab>" 'previous-buffer
  "C-'" 'ranger
  "M-r" 'org-refile
  "<" '(lambda () (interactive)
