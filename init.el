@@ -88,7 +88,7 @@
 (require 'helm-setup)
 (require 'highlights-setup)
 (require 'hydra-setup)
-;; (require 'linting-setup)  ; TODO: temp disable flycheck, its currently very slow
+(require 'linting-setup)
 (require 'package-assistants-setup)
 (require 'smartparens-setup)
 (require 'yasnippet-setup)
