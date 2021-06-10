@@ -419,8 +419,8 @@ Version 2015-07-30"
       files)))
   (let ((execution-flag (cadr (assoc cmd dired-filelist-cmd))))
     (apply
-     #'start-process
-     (list cmd nil shell-file-name shell-command-switch
+     #'call-process
+     (list shell-file-name nil 0 nil shell-command-switch
            (format "nohup 1>/dev/null 2>/dev/null %s \"%s\""
                    (if (and (> (length file-list) 1) execution-flag)
                        (format "%s %s" cmd execution-flag)
