@@ -24,6 +24,7 @@
   :config
   (setq lsp-prefer-flymake t
         lsp-headerline-breadcrumb-segments '(file symbols)
+        lsp-headerline-breadcrumb-enable nil
         lsp-log-io nil)
   ;; fix for company to force usage of completion-at-point
   (add-hook 'lsp-mode-hook
