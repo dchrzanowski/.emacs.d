@@ -22,7 +22,7 @@
 
   (setq neo-theme 'icons
         neo-smart-open t
-        neo-autorefresh t
+        neo-autorefresh nil
         neo-force-change-root t
         neo-window-width 35)
 

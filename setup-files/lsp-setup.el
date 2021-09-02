@@ -19,7 +19,7 @@
                           (ccls                       . "yay -S ccls"))
   :hook ((c++-mode . lsp)
          (js2-mode . lsp)
-         (typescript-mode . lsp)
+         ;; (typescript-mode . lsp)
          (go-mode . lsp))
   :config
   (setq lsp-prefer-flymake t

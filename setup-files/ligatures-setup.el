@@ -48,12 +48,12 @@
   (push '("forEach"  . ?∀) prettify-symbols-alist)
   (push '("function" . ?ƒ) prettify-symbols-alist))
 
-(add-hook 'prog-mode-hook   #'prog-mode-style-ligatures)
-(add-hook 'go-mode-hook     #'go-style-ligatures)
-(add-hook 'java-mode-hook   #'java-style-ligatures)
-(add-hook 'python-mode-hook #'python-style-ligatures)
-(add-hook 'js2-mode-hook    #'js-style-ligatures)
-(add-hook 'tide-mode-hook   #'js-style-ligatures)
+(add-hook 'prog-mode-hook       #'prog-mode-style-ligatures)
+(add-hook 'go-mode-hook         #'go-style-ligatures)
+(add-hook 'java-mode-hook       #'java-style-ligatures)
+(add-hook 'python-mode-hook     #'python-style-ligatures)
+(add-hook 'js2-mode-hook        #'js-style-ligatures)
+(add-hook 'typescript-mode-hook #'js-style-ligatures)
 
 (setq prettify-symbols-unprettify-at-point t)
 (global-prettify-symbols-mode)

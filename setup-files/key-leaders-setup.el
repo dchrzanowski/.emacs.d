@@ -233,23 +233,23 @@
 ;;  "cd" 'tern-get-docs)
 
 ;; --------------------------------------------------------------------
-;; typescript leader (CURRENTLY REPLACED BY LSP)
+;; typescript leader
 ;; --------------------------------------------------------------------
-;; (general-define-key
-;;  :states '(normal visual emacs)
-;;  :prefix "SPC"
-;;  :keymaps 'typescript-mode-map
-;;  "cF" 'js-doc-insert-file-doc
-;;  "cd" 'tide-documentation-at-point
-;;  "cR" 'tide-refactor
-;;  "cr" 'tide-rename-symbol
-;;  "c?" 'tide-references
-;;  "c." 'tide-jump-to-definition
-;;  "c," 'tide-jump-back
-;;  "ce" 'tide-project-errors
-;;  "ct" 'tide-jsdoc-template
-;;  "ci" 'tide-organize-imports
-;;  "cc" 'tide-fix)
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'typescript-mode-map
+ "cF" 'js-doc-insert-file-doc
+ "cd" 'tide-documentation-at-point
+ "cR" 'tide-refactor
+ "cr" 'tide-rename-symbol
+ "c?" 'tide-references
+ "c." 'tide-jump-to-definition
+ "c," 'tide-jump-back
+ "ce" 'tide-project-errors
+ "ct" 'tide-jsdoc-template
+ "ci" 'tide-organize-imports
+ "cc" 'tide-fix)
 
 ;; --------------------------------------------------------------------
 ;; dart leader
@@ -287,7 +287,7 @@
             ;; python-mode-map
             c++-mode-map
             go-mode-map
-            typescript-mode-map
+            ;; typescript-mode-map
             dart-mode-map
             js2-mode-map)
  "c?" 'lsp-ui-peek-find-references

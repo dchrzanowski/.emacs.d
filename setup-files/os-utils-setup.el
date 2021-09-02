@@ -37,32 +37,61 @@
 
   (prodigy-define-service
     :name "Android Emulator"
-    :cwd "~/Android/Sdk"
+    :cwd "~/Android/Sdk/emulator/"
     :command "/home/grimscythe/Android/Sdk/emulator/emulator"
-    :args '("@Nexus_5X_API_28_x86")
+    :args '("@Pixel_3a_API_30_x86")
     :stop-signal 'int
     :tags '(Android)
     :kill-process-buffer-on-stop t)
 
   (prodigy-define-service
-    :name "comand.ie local Angular server"
-    :cwd "~/github/sri-comand-websites/comand.ie"
-    :command "ng"
-    :ready-message "** Angular Live Development Server"
-    :args '("serve")
-    :tags '(COMAND)
+    :name "Android Emulator Wipe Data"
+    :cwd "~/Android/Sdk/emulator/"
+    :command "/home/grimscythe/Android/Sdk/emulator/emulator"
+    :args '("@Pixel_3a_API_30_x86" "-wipe-data")
     :stop-signal 'int
+    :tags '(Android AndroidWipe)
     :kill-process-buffer-on-stop t)
 
   (prodigy-define-service
-    :name "sri.ait.ie local Angular server"
-    :cwd "~/github/sri-comand-websites/sri.ie"
-    :command "ng"
-    :ready-message "** Angular Live Development Server"
-    :args '("serve")
-    :tags '(SRI)
+    :name "CORE API Server"
+    :cwd "~/github/idaso/core-api/"
+    :sudo t
+    :command "./start.sh"
     :stop-signal 'int
+    :tags '(Server)
+    :ready-message "Nest application successfully started"
     :kill-process-buffer-on-stop t)
+
+  (prodigy-define-service
+    :name "CORE API Website"
+    :cwd "~/github/idaso/core-website"
+    :command "ng"
+    :args '("serve")
+    :stop-signal 'int
+    :tags '(Webapp)
+    :ready-message "** Angular Live Development Server"
+    :kill-process-buffer-on-stop t)
+
+  ;; (prodigy-define-service
+  ;;   :name "comand.ie local Angular server"
+  ;;   :cwd "~/github/sri-comand-websites/comand.ie"
+  ;;   :command "ng"
+  ;;   :ready-message "** Angular Live Development Server"
+  ;;   :args '("serve")
+  ;;   :tags '(COMAND)
+  ;;   :stop-signal 'int
+  ;;   :kill-process-buffer-on-stop t)
+
+  ;; (prodigy-define-service
+  ;;   :name "sri.ait.ie local Angular server"
+  ;;   :cwd "~/github/sri-comand-websites/sri.ie"
+  ;;   :command "ng"
+  ;;   :ready-message "** Angular Live Development Server"
+  ;;   :args '("serve")
+  ;;   :tags '(SRI)
+  ;;   :stop-signal 'int
+  ;;   :kill-process-buffer-on-stop t)
   )
 
 ;; --------------------------------------------------------------------
