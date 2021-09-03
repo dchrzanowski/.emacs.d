@@ -454,6 +454,14 @@
  "j" 'next-line
  "k" 'previous-line)
 
+;; flycheck
+(general-define-key
+ :keymaps 'flycheck-error-list-mode-map
+ "RET" 'flycheck-error-list-goto-error
+ "TAB" 'forward-button
+ "<tab>" 'forward-button)
+
+
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)

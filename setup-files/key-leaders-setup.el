@@ -147,17 +147,21 @@
  "ux" 'prodigy
  "up" 'proced
  "ud" 'docker
- ;; flymake
- "e" 'flymake-goto-next-error
- "E" 'flymake-show-diagnostics-buffer
+ ;; Treemacs
  "M-e" 'lsp-treemacs-errors-list
- "tF" 'hydra-flymake/body
+ ;; flymake
+ ;; "e" 'flymake-goto-next-error
+ ;; "E" 'flymake-show-diagnostics-buffer
+ ;; "tF" 'hydra-flymake/body
+ ;; flycheck
+ "e" 'flycheck-next-error
+ "E" 'flycheck-list-errors
+ "tF" 'hydra-flycheck/body
  ;; various modes and tools launchers
  "tc" 'chronos-add-timer
  "tC" '(lambda() (interactive) (switch-to-buffer "*chronos*"))
  "tp" 'webpaste-paste-region
  "tP" 'webpaste-paste-buffer
- ;; "tF" 'hydra-flycheck/body
  "tf" 'font-lock-mode
  "tT" 'hydra-todo/body
  "ti" 'highlight-indentation-mode
