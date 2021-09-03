@@ -263,6 +263,15 @@
  "cx" 'flutter-run-or-hot-reload)
 
 ;; --------------------------------------------------------------------
+;; rust leader
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'rustic-mode-map
+ "cC" 'rustic-cargo)
+
+;; --------------------------------------------------------------------
 ;; elisp leader
 ;; --------------------------------------------------------------------
 (general-define-key
@@ -288,6 +297,7 @@
             c++-mode-map
             go-mode-map
             ;; typescript-mode-map
+            rustic-mode-map
             dart-mode-map
             js2-mode-map)
  "c?" 'lsp-ui-peek-find-references
@@ -298,6 +308,7 @@
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
  "cf" 'lsp-format-buffer
+ "cF" 'lsp-ui-doc-focus-frame
  "cd" 'lsp-ui-doc-show
  "cD" 'lsp-ui-doc-hide)
 
