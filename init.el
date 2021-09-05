@@ -117,6 +117,7 @@
 (require 'go-setup)
 (require 'r-setup)
 (require 'dart-setup)
+(require 'rust-setup)
 ;; (require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)
