@@ -162,6 +162,7 @@
   (evil-collection-init 'xref)
   (evil-collection-init 'occur)
   (evil-collection-init 'magit)
+  (evil-collection-init 'magit-todos)
 
   ;; bug in evil-collection-occur, does not start automatically
   ;; (require 'evil-collection-occur)

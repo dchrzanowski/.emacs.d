@@ -2,7 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("Personal Website" 0 16
+(#1=(#("orb" 0 3
+      (bmkp-full-record #1#))
+    (filename . "~/github/idaso/mytrafficcounts-web/src/main.ts")
+    (buffer-name . "main.ts")
+    (front-context-string . " enableProdMode(")
+    (rear-context-string . ".production) {\n ")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 0)
+    (time . #2=(24914 53688 994060 982000))
+    (created . #2#)
+    (position . 262))
+#1=(#("Personal Website" 0 16
       (bmkp-full-record #1#))
     (buffer-name . "dchrzanowski")
     (front-context-string . ".\n  drwxr-xr-x 1")
@@ -293,16 +305,16 @@
 #1=(#("Projects" 0 8
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 23790 25332 470373 606000)
-    (visits . 1)
+    (time 24914 57168 547659 301000)
+    (visits . 2)
     (filename . "/home/grimscythe/Projects")
     (position . 1)
     (created 22832 28485 158713 862000))
 #1=(#("org" 0 3
       (bmkp-full-record #1#))
     (end-position . 1)
-    (time 24883 41082 194588 541000)
-    (visits . 9)
+    (time 24914 53702 119386 219000)
+    (visits . 10)
     (filename . "/home/grimscythe/GoogleDrive/org/")
     (position . 1)
     (created 22832 28481 462877 604000))

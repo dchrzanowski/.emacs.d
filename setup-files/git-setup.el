@@ -76,10 +76,11 @@
   :after magit
   :config
   (setq magit-todos-max-items 40)
-  (add-hook 'magit-todos-mode-hook
-            (lambda ()
-              (define-key magit-todos-item-section-map (kbd "jT") 'nil)
-              (define-key magit-todos-item-section-map (kbd "j") 'nil)))
+  ;; (add-hook 'magit-todos-mode-hook
+  ;;           (lambda ()
+  ;;             (define-key magit-todos-item-section-map (kbd "jT") 'evil-next-visual-line)
+  ;;             (define-key magit-todos-item-section-map (kbd "jl") 'evil-next-visual-line)
+  ;;             (define-key magit-todos-item-section-map (kbd "j") 'evil-next-visual-line)))
   (magit-todos-mode))
 
 ;; --------------------------------------------------------------------

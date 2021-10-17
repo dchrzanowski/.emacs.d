@@ -213,6 +213,12 @@
  :keymaps 'magit-mode-map
  "M-x" 'helm-M-x)
 
+;; magit-todos
+(general-define-key
+ :keymaps 'magit-todos-item-section-map
+ "j" 'evil-next-visual-line
+ "k" 'evil-previous-visual-line)
+
 ;; helm
 (general-define-key
  :keymaps 'helm-map
