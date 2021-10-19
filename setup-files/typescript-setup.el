@@ -21,7 +21,8 @@
     (flycheck-mode +1)
     (eldoc-mode +1)
     (hl-todo-mode)
-    (company-mode +1))
+    (company-mode +1)
+    (flycheck-add-next-checker 'typescript-tide '(t . typescript-tslint) 'append))
 
   ;; formats the buffer before saving
   ;; (add-hook 'before-save-hook 'tide-format-before-save)

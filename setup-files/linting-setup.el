@@ -17,6 +17,7 @@
   :config
   (global-flycheck-mode)
   (setq-default flycheck-flake8-maximum-line-length 160)
+  (flycheck-add-mode 'typescript-tslint 'typescript-mode)
   (flycheck-add-mode 'html-tidy 'web-mode))
 
 ;; --------------------------------------------------------------------
