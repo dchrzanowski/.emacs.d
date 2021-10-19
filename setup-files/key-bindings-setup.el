@@ -66,8 +66,6 @@
   ;; org
   "C-c l" 'org-store-link
   ;; company
-  "TAB" 'tab-indent-or-complete
-  "<tab>" 'tab-indent-or-complete
   "C-<SPC>" 'company-dabbrev-code
   ;; eacl
   "M-<RET>" 'eacl-complete-multiline
@@ -191,6 +189,13 @@
 ;; --------------------------------------------------------------------
 ;; Local maps
 ;; --------------------------------------------------------------------
+;; prog-mode specific
+(general-define-key
+ :keymaps 'prog-mode-map
+ ;; company
+ "TAB" 'tab-indent-or-complete
+ "<tab>" 'tab-indent-or-complete)
+
 ;; flyspell
 (general-define-key
  :keymaps 'flyspell-mode-map
