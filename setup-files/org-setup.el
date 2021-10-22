@@ -14,6 +14,8 @@
   ;; vars
   ;; --------------------------------------------------------------------
   (setq
+   ;; new indentation setup
+   org-adapt-indentation t
    ;; open links in the same window
    org-link-frame-setup '((file . find-file))
    ;; org log done headings
@@ -59,16 +61,15 @@
    org-agenda-span 'month)
 
   ;; ;; org-babel setup
-  ;; (org-babel-do-load-languages
-  ;;  'org-babel-load-languages
-  ;;  '((emacs-lisp . t)
-  ;;    (dot . t)
-  ;;    (mongo . t)
-  ;;    (ledger . t)
-  ;;    (shell . t)))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (dot . t)
+     (mongo . t)
+     (shell . t)))
 
   ;; ;;autorefresh images after org-babel dot evaluations
-  ;; (add-hook 'org-babel-after-execute-hook 'auto-refresh-inline-images)
+  (add-hook 'org-babel-after-execute-hook 'auto-refresh-inline-images)
 
   ;; --------------------------------------------------------------------
   ;; org-tempo

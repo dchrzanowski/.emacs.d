@@ -99,13 +99,7 @@
 ;; --------------------------------------------------------------------
 ;; git-modes for git config files
 ;; --------------------------------------------------------------------
-(use-package gitattributes-mode
-  :defer 5)
-
-(use-package gitconfig-mode
-  :defer 5)
-
-(use-package gitignore-mode
+(use-package git-modes
   :defer 5)
 
 (provide 'git-setup)
