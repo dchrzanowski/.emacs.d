@@ -90,7 +90,8 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
-
+;; NOTE: In evil-mc-vars.el remove 'register-alist' from evil-mc-cursor-variables
+;; to disable the annoying register cleaning bug
 (use-package evil-mc
   :after evil
   :config
