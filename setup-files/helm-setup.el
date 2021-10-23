@@ -112,8 +112,10 @@
 ;; --------------------------------------------------------------------
 ;; helm-gitignore
 ;; --------------------------------------------------------------------
-(use-package helm-gitignore
-  :defer t)
+;; TEMP: disabled waiting for PR https://github.com/jupl/helm-gitignore/pull/6 to be merged
+;; due to gitattributes-mode gitconfig-mode gitignore-mode getting merged into a single package
+;; (use-package helm-gitignore
+;;   :defer t)
 
 ;; --------------------------------------------------------------------
 ;; helm-chrome (provides chrome bookmarks search)
