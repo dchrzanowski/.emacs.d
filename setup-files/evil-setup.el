@@ -90,17 +90,25 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
-;; NOTE: In evil-mc-vars.el remove 'register-alist' from evil-mc-cursor-variables
-;; to disable the annoying register cleaning bug
 (use-package evil-mc
   :after evil
   :config
   (setq evil-mc-undo-cursors-on-keyboard-quit t)
+  ;; NOTE: this is a temp fix to deal with evil-mc messing up registers
+  ;; issue is described here https://github.com/gabesoft/evil-mc/issues/83
+  (setq evil-mc-cursor-variables
+        (mapcar
+         (lambda (s)
+           (remove 'register-alist
+                   (remove 'evil-markers-alist
+                           (remove evil-was-yanked-without-register s))))
+         evil-mc-cursor-variables))
   (add-hook 'evil-mc-before-cursors-created (lambda () (setq-default evil-move-cursor-back t)))
   (add-hook 'evil-mc-after-cursors-deleted (lambda () (setq-default evil-move-cursor-back nil)))
   (advice-add 'helm-swoop--edit :after #'evil-mc-mode)
   (advice-add 'helm-ag--edit :after #'evil-mc-mode)
   (global-evil-mc-mode 1))
+
 
 (use-package evil-lion
   :ensure t
