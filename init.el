@@ -154,8 +154,8 @@
        (find-file "~/GoogleDrive/org/goals.org")
        (split-window-horizontally)
        (other-window 1)
-       (find-file "~/GoogleDrive/org/Calendar.org"))
-
+       (find-file "~/GoogleDrive/org/Calendar.org")
+       (eyebrowse--delete-window-config 1))
 
 ;;; Commentary:
 (provide 'init)
