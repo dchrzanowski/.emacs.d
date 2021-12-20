@@ -151,6 +151,18 @@
 (use-package exato
   :after evil)
 
+(use-package vimish-fold
+  :ensure
+  :after evil)
+
+(use-package evil-vimish-fold
+  :ensure
+  :after vimish-fold
+  :init
+  (setq evil-vimish-fold-target-modes '(prog-mode conf-mode text-mode))
+  :config
+  (global-evil-vimish-fold-mode))
+
 (use-package evil-collection
   :after evil
   :config
