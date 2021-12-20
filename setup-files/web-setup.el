@@ -14,10 +14,12 @@
                 web-mode-enable-current-column-highlight t)
   :config
   ;;auto load web mode
-  (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html$"   . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.htm$"    . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.svelte$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'"  . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'"  . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.ejs\\'"  . web-mode))
 
   ;; hooks
   (defun my-web-mode-hook ()
@@ -30,6 +32,10 @@
           web-mode-enable-css-colorization t
           web-mode-auto-close-style nil))
 
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "svelte" (file-name-extension buffer-file-name))
+                (js2-mode))))
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "jsx" (file-name-extension buffer-file-name))
