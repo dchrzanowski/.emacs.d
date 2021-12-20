@@ -112,7 +112,7 @@ two curly braces, otherwise do a regular newline and indent"
 ;; Always paste from zero for evil
 ;; --------------------------------------------------------------------
 (defun always-paste-from-j()
-  "Always paste in from the zero register"
+  "Always paste in from the zero register."
   (interactive)
   (evil-paste-after 1 ?j))
 
@@ -142,7 +142,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; custom keyboard quit to assits with evil as well
 ;; --------------------------------------------------------------------
 (defun keyboard-quit-and-remove-evil-mc ()
-  "Remove evil-mc cursors first and then does a standard keyboard-quit."
+  "Remove evil-mc cursors first and then does a standard `keyboard-quit'."
   (interactive)
   (when evil-mc-cursor-state
     (evil-mc-make-and-goto-first-cursor))
@@ -326,8 +326,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Extract from archive
 ;; --------------------------------------------------------------------
 (defun archive-extract-to-file (archive-name item-name command dir)
-  "Extract ITEM-NAME from ARCHIVE-NAME using COMMAND. Save to
-DIR."
+  "Extract ITEM-NAME from ARCHIVE-NAME using COMMAND.  Save to DIR."
   (unwind-protect
       ;; remove the leading / from the file name to force
       ;; expand-file-name to interpret its path as relative to dir
@@ -369,7 +368,7 @@ DIR."
 ;; Launch dired from file under point
 ;; --------------------------------------------------------------------
 (defun helm-ff-open-dired-at-point ()
-  "Launch dired from file unde point."
+  "Launch Dired from file unde point."
   (interactive)
   (helm-select-nth-action 4))
 
@@ -377,7 +376,7 @@ DIR."
 ;; Kill all dired buffers
 ;; --------------------------------------------------------------------
 (defun kill-all-dired-buffers ()
-  "Kill all dired buffers."
+  "Kill all Dired buffers."
   (interactive)
   (mapc (lambda (buffer)
           (when (eq 'dired-mode (buffer-local-value 'major-mode buffer))
@@ -390,7 +389,7 @@ DIR."
 ;; Dired sort by name, size, date...
 ;; --------------------------------------------------------------------
 (defun xah-dired-sort ()
-  "Sort dired dir listing in different ways.
+  "Sort Dired dir listing in different ways.
 Prompt for a choice.
 URL `http://ergoemacs.org/emacs/dired_sort.html'
 Version 2015-07-30"
@@ -402,7 +401,7 @@ Version 2015-07-30"
      ((equal $sort-by "date") (setq $arg "-Al --si --time-style long-iso -t"))
      ((equal $sort-by "size") (setq $arg "-Al --si --time-style long-iso -S"))
      ((equal $sort-by "dir") (setq $arg "-Al --si --time-style long-iso --group-directories-first"))
-     (t (error "logic error 09535" )))
+     (t (error "Logic error 09535" )))
     (dired-sort-other $arg )))
 
 ;; --------------------------------------------------------------------
@@ -462,7 +461,7 @@ minibuffer."
         (-1 (message value))))))
 
 (defun calc-eval-line ()
-  "Calculate math expression on current line using calc-eval."
+  "Calculate math expression on current line using `calc-eval'."
   (interactive)
   (setq cLine
         (buffer-substring-no-properties
@@ -561,20 +560,20 @@ i.e. change right window to bottom, or change bottom window to right."
   (interactive "sEnter IP to query (blank for own IP): ")
   (require 'request)
   (request
-    (concat "https://ipinfo.io/" ip)
-    :headers '(("User-Agent" . "Emacs ipinfo.io Client")
-               ("Accept" . "application/json")
-               ("Content-Type" . "application/json;charset=utf-8"))
-    :parser 'json-read
-    :success (cl-function
-              (lambda (&key data &allow-other-keys)
-                (message
-                 (mapconcat
-                  (lambda (e)
-                    (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
-                  data "\n"))))
-    :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
-                          (message "Can't receive ipinfo. Error %S " error-thrown)))))
+   (concat "https://ipinfo.io/" ip)
+   :headers '(("User-Agent" . "Emacs ipinfo.io Client")
+              ("Accept" . "application/json")
+              ("Content-Type" . "application/json;charset=utf-8"))
+   :parser 'json-read
+   :success (cl-function
+             (lambda (&key data &allow-other-keys)
+               (message
+                (mapconcat
+                 (lambda (e)
+                   (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
+                 data "\n"))))
+   :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
+                         (message "Can't receive ipinfo. Error %S " error-thrown)))))
 
 ;; ---------------------------------------------------------------------
 ;; Sum up all TIME-DAYS properties and put them in the current heading's
@@ -799,4 +798,5 @@ Value is automatically inserted as a side effect."
   (native-compile-async (concat user-emacs-directory "elpa/") 'recursively))
 
 (provide 'custom-functions)
-;;; custom-functions ends here
+
+;;; custom-functions.el ends here
