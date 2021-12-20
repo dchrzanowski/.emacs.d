@@ -334,7 +334,6 @@
  :keymaps 'yas-minor-mode-map
  "TAB" 'nil
  "<tab>" 'nil)
-
 (general-define-key
  :keymaps 'yas-keymap
  "TAB" 'yas-next-field-or-maybe-expand
@@ -347,6 +346,7 @@
  :states 'motion
  "SPC" 'nil
  "<SPC>" 'nil)
+
 ;; dired
 (general-define-key
  :keymaps 'dired-mode-map
