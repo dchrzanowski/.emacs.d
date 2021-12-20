@@ -22,8 +22,7 @@
         ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "celluloid")))
 
 ;; sort files and show sizes
-;; (setq dired-listing-switches "-alhvF --group-directories-first")
-(setq dired-listing-switches "-aBhl --group-directories-first")
+(setq dired-listing-switches "-AGhlv --group-directories-first --time-style=long-iso")
 
 (require 'dired-git-info)
 
