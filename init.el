@@ -110,7 +110,7 @@
 (require 'os-utils-setup)
 
 ;; languages
-;; (require 'csharp-setup)
+(require 'csharp-setup)
 (require 'javascript-setup)
 (require 'python-setup)
 (require 'typescript-setup)
@@ -118,7 +118,7 @@
 (require 'r-setup)
 (require 'dart-setup)
 (require 'rust-setup)
-;; (require 'php-setup)
+(require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)
 (require 'lsp-setup)
