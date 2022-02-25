@@ -17,7 +17,6 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(browse-url-browser-function 'browse-url-firefox)
  '(column-number-mode t)
- '(company-auto-commit-chars '(32 41 46))
  '(company-backends
    '(company-tide company-bbdb company-css company-semantic company-clang company-xcode company-cmake company-capf company-files
                   (company-dabbrev-code company-gtags company-etags company-keywords company-web-html)
@@ -33,6 +32,7 @@
    '(company-pseudo-tooltip-unless-just-one-frontend company-echo-metadata-frontend company-preview-if-just-one-frontend company-quickhelp-frontend))
  '(company-gtags-modes '(prog-mode jde-mode python-mode))
  '(company-idle-delay 0.2)
+ '(company-insertion-triggers '(32 41 46))
  '(company-minimum-prefix-length 2)
  '(company-show-quick-access t)
  '(company-tooltip-align-annotations t)
@@ -55,7 +55,6 @@
  '(ggtags-use-project-gtagsconf nil)
  '(git-messenger:show-detail t)
  '(git-messenger:use-magit-popup t)
- '(global-eldoc-overlay-mode nil)
  '(global-flycheck-mode t)
  '(global-hl-line-mode t)
  '(global-semantic-decoration-mode nil)
@@ -115,6 +114,7 @@
  '(split-height-threshold 5)
  '(split-width-threshold 5)
  '(tabbar-separator '(1))
+ '(tide-filter-out-warning-completions nil)
  '(tool-bar-mode nil)
  '(track-eol t)
  '(vc-annotate-background "#1B2229")

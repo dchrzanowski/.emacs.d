@@ -34,7 +34,10 @@
   (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
   ;; format options
-  (setq tide-format-options '(
+  (setq tide-completion-show-source t
+        tide-completion-detailed t
+        tide-always-show-documentation t
+        tide-format-options '(
                               :importmodulespecifierpreference "relative"
                               :importModuleSpecifier "relative"
                               :quotePreference "single"

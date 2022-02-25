@@ -6,4 +6,7 @@
 #+DATE: `(yas/org-get-time-stamp (current-time) t t)`
 #+AUTHOR: Damian Chrzanowski
 #+EMAIL: pjdamian.chrzanowski@gmail.com
-#+OPTIONS: TOC:2 num:2
+#+OPTIONS: TOC:1 num:2
+#+latex_header: \hypersetup{colorlinks=true,linkcolor=black}
+#+latex_header: \usepackage[margin=1in]{geometry}
+#+latex_header: \usepackage[scaled]{helvet} \renewcommand\familydefault{\sfdefault}

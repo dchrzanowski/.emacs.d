@@ -275,6 +275,7 @@
     (created 22999 58714 850523 563000))
 #1=(#("org-refile-last-stored" 0 22
       (bmkp-full-record #1#))
+    (end-position . 37668)
     (annotation)
     (tags)
     (filename . "~/GoogleDrive/org/programming_notes.org")
@@ -283,10 +284,10 @@
     (rear-context-string . "ual assistant]]\n")
     (front-context-region-string)
     (rear-context-region-string)
-    (visits . 0)
-    (time . #2=(24883 53261 760356 435000))
-    (created . #2#)
-    (position . 37470))
+    (visits . 1)
+    (time 25078 1672 887639 864000)
+    (created 24883 53261 760356 435000)
+    (position . 37668))
 #1=(#("org-capture-last-stored" 0 23
       (bmkp-full-record #1#))
     (annotation)

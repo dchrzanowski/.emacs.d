@@ -242,13 +242,13 @@
   :hook
   (org-mode . org-fancy-priorities-mode)
   :config
-  (setq org-fancy-priorities-list '("╼ ➊ ╾"
-                                    "╼ ➋ ╾"
-                                    "╼ ➌ ╾"
-                                    "╼ ▬ ╾")
-        org-priority-faces        '((?A . "#ff2e2e")
-                                    (?B . "#ffbf00")
-                                    (?C . "#86ff00")
+  (setq org-fancy-priorities-list '("╾ ➊ ╼"
+                                    "╾ ➋ ╼"
+                                    "╾ ➌ ╼"
+                                    "╾ ▬ ╼")
+        org-priority-faces        '((?A . "#fd1a1a")
+                                    (?B . "#faff12")
+                                    (?C . "#99ff34")
                                     (?D . "#000dff"))))
 
 ;; --------------------------------------------------------------------

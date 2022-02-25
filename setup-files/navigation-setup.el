@@ -65,7 +65,7 @@
     "Handle switch to the 6th slot. Dired."
     (dchrzan/call-func-when-mode-not-in-windows
      'dired-mode
-     '(lambda() (dchrzan/call-func-on-y "Switch to Dired? " 'dchrzan/switch-to-dired-two-panel))))
+     '(lambda() (dchrzan/call-func-on-y "Switch to Dired?" 'dchrzan/switch-to-dired-two-panel))))
 
   (defun dchrzan/eyebrowse-8th-slot-handler ()
     "Handle switch to the 8th slot. Mu4e."
@@ -77,7 +77,7 @@
     "Handle switch to the 9th slot. Mu4e."
     (dchrzan/call-func-when-mode-not-in-windows
      'emacs-lisp-mode
-     '(lambda() (dchrzan/call-func-on-y "Switch to init.el? " 'dchrzan/switch-to-init-el))))
+     '(lambda() (dchrzan/call-func-on-y "Switch to init.el?" 'dchrzan/switch-to-init-el))))
 
   (defvar dchrzan/eyebrowse-post-slot-switch-configs nil
     "Association List that provides functions that will be executed on specified eyebrowse slots.

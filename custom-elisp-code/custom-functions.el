@@ -698,9 +698,8 @@ PREFIX is added in front of each generated id."
 ;; --------------------------------------------------------------------
 (defun dchrzan/call-func-on-y (prompt func)
   "PROMPT user with a y or n question, on y call FUNC."
-  (if (y-or-n-p prompt)
-      (funcall func)
-    nil))
+  (when (y-or-n-p (format "%s " prompt))
+    (funcall func)))
 
 ;; --------------------------------------------------------------------
 ;; Switch to Mu4e
