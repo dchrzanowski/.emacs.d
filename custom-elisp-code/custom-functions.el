@@ -781,9 +781,9 @@ Value is automatically inserted as a side effect."
   (interactive "sColor as 6 digit HEX:")
   (let ((red (dchrzan/hex-string-to-num-string
               (substring hex-color 1 3)))
-        (blue (dchrzan/hex-string-to-num-string
-               (substring hex-color 3 5)))
         (green (dchrzan/hex-string-to-num-string
+               (substring hex-color 3 5)))
+        (blue (dchrzan/hex-string-to-num-string
                 (substring hex-color 5 7))))
     ;; format and insert
     (insert (format "rgb(%s, %s, %s)" red green blue))))

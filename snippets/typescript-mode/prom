@@ -2,6 +2,6 @@
 # name: new Promise
 # key: prom
 # --
-new Promise(function(resolve, reject) {
+new Promise((resolve, reject) => {
     $1
 });$0
