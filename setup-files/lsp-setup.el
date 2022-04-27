@@ -11,7 +11,7 @@
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 
 (use-package lsp-mode
-  :ensure-system-package ((pyls                       . "yay -S python-language-server")
+  :ensure-system-package ((pylsp                      . "yay -S python-lsp-server")
                           (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
                           (typescript-language-server . "yay -S typescript-language-server")
