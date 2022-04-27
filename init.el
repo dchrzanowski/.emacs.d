@@ -151,10 +151,10 @@
 ;; Open goals on startup
 ;; --------------------------------------------------------------------
 (progn (eyebrowse-switch-to-window-config 0)
-       (find-file "~/GoogleDrive/org/goals.org")
+       (find-file "~/GoogleDrive/org/work_calendar.org")
        (split-window-horizontally)
        (other-window 1)
-       (find-file "~/GoogleDrive/org/Calendar.org")
+       (find-file "~/GoogleDrive/org/calendar.org")
        (eyebrowse--delete-window-config 1))
 
 ;;; Commentary:
