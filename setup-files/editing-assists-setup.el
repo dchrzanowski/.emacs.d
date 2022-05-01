@@ -114,6 +114,20 @@
 ;; --------------------------------------------------------------------
 (use-package electric-operator
   :config
+  (apply #'electric-operator-add-rules-for-mode 'go-mode
+         (electric-operator-get-rules-for-mode 'prog-mode))
+  (electric-operator-add-rules-for-mode
+   'go-mode
+   (cons ":=" " := ")
+   (cons "<-" "<-")
+   (cons "*" #'electric-operator-c-mode-*)
+   (cons "&" #'electric-operator-c-mode-&)
+   (cons "++" #'electric-operator-c-mode-++)
+   (cons "--" #'electric-operator-c-mode---)
+   (cons "/*" " /* ")
+   (cons "//" " // ")
+   (cons "<<" " << ")
+   (cons ">>" " >> "))
   (add-hook 'python-mode-hook #'electric-operator-mode)
   (add-hook 'js2-mode-hook #'electric-operator-mode)
   (add-hook 'go-mode-hook #'electric-operator-mode)
