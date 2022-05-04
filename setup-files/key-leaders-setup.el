@@ -104,6 +104,7 @@
  "i" 'cleanup-buffer-untabify
  "I" 'cleanup-buffer-tabify
  ;; dumb jump
+ ;; TODO remove dump jump. Made obsolete by xref
  "lo" 'dumb-jump-go-other-window
  "lj" 'dumb-jump-go
  "lx" 'dumb-jump-go-prefer-external
@@ -330,7 +331,7 @@
 ;; ////////////////////////////////////////////////////////////////////
 
 ;; --------------------------------------------------------------------
-;; org agenda leader
+;; magit
 ;; --------------------------------------------------------------------
 (general-define-key
  :states '(normal visual emacs)
