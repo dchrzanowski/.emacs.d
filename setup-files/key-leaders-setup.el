@@ -421,6 +421,7 @@
  :keymaps 'json-mode-map
  ;; json print path
  "cb" 'json-mode-beautify
+ "cj" 'jq-interactively
  "cc" 'jsons-print-path)
 
 ;; --------------------------------------------------------------------
