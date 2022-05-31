@@ -36,7 +36,7 @@
  "B" 'helm-imenu-anywhere
  "y" 'helm-show-kill-ring
  "Y" 'helm-register
- "hr" 'helm-chrome-bookmarks
+ "hr" 'helm-firefox-bookmarks
  "hg" 'helm-do-grep-ag
  "ha" 'helm-do-ag
  "hl" 'helm-locate
@@ -421,6 +421,7 @@
  :keymaps 'json-mode-map
  ;; json print path
  "cb" 'json-mode-beautify
+ "cj" 'jq-interactively
  "cc" 'jsons-print-path)
 
 ;; --------------------------------------------------------------------

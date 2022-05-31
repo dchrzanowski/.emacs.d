@@ -31,5 +31,8 @@
 (use-package json-snatcher
   :defer 3)
 
+(use-package jq-mode
+  :defer 3)
+
 (provide 'javascript-setup)
 ;;; javascript-setup ends here

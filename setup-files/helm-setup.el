@@ -118,12 +118,10 @@
 ;;   :defer t)
 
 ;; --------------------------------------------------------------------
-;; helm-chrome (provides chrome bookmarks search)
+;; helm-firefox (provides firefox bookmarks search)
 ;; --------------------------------------------------------------------
-(use-package helm-chrome
-  :defer t
-  :config
-  (setq helm-chrome-use-urls t))
+(use-package helm-firefox
+  :defer t)
 
 ;; --------------------------------------------------------------------
 ;; helm-flx (fuzzy match)
