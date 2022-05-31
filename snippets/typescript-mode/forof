@@ -2,6 +2,6 @@
 # name: for of
 # key: forof
 # --
-for (${1:variable} of ${2:iterable}) {
-    $3
+for (${1:const} ${2:variable} of ${3:iterable}) {
+    $4
 }
