@@ -150,7 +150,7 @@
 ;; --------------------------------------------------------------------
 ;; Open goals on startup
 ;; --------------------------------------------------------------------
-(progn (eyebrowse-switch-to-window-config 8)
+(progn (eyebrowse-switch-to-window-config 7)
        (find-file "~/GoogleDrive/org/work_calendar.org")
        (split-window-horizontally)
        (other-window 1)

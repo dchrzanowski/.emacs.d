@@ -61,14 +61,14 @@
 (use-package eyebrowse
   :config
 
-  (defun dchrzan/eyebrowse-6th-slot-handler ()
-    "Handle switch to the 6th slot. Dired."
+  (defun dchrzan/eyebrowse-8th-slot-handler ()
+    "Handle switch to the 8th slot. Dired."
     (dchrzan/call-func-when-mode-not-in-windows
      'dired-mode
      '(lambda() (dchrzan/call-func-on-y "Switch to Dired?" 'dchrzan/switch-to-dired-two-panel))))
 
-  (defun dchrzan/eyebrowse-8th-slot-handler ()
-    "Handle switch to the 8th slot. Mu4e."
+  (defun dchrzan/eyebrowse-7th-slot-handler ()
+    "Handle switch to the 7th slot. Mu4e."
     (dchrzan/call-func-when-mode-not-in-windows
      'mu4e-main-mode
      'dchrzan/switch-to-mu4e))
@@ -85,8 +85,8 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 
   ;; Configure what to do after switching to certain workspace slots
   (setq dchrzan/eyebrowse-post-slot-switch-configs
-        '((6 . dchrzan/eyebrowse-6th-slot-handler)
-          ;; (8 . dchrzan/eyebrowse-8th-slot-handler)
+        '((8 . dchrzan/eyebrowse-8th-slot-handler)
+          ;; (7 . dchrzan/eyebrowse-7th-slot-handler)
           (9 . dchrzan/eyebrowse-9th-slot-handler)
           ))
 
