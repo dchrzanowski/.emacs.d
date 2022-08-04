@@ -19,10 +19,10 @@
                           (ccls                       . "yay -S ccls"))
   :hook ((c++-mode . lsp)
          (js2-mode . lsp)
-         ;; (typescript-mode . lsp)
+         (typescript-mode . lsp)
          (go-mode . lsp))
   :config
-  (setq lsp-prefer-flymake t
+  (setq lsp-prefer-flymake nil
         lsp-headerline-breadcrumb-segments '(file symbols)
         lsp-headerline-breadcrumb-enable nil
         lsp-log-io nil)

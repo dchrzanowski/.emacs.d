@@ -301,7 +301,7 @@
             ;; python-mode-map
             c++-mode-map
             go-mode-map
-            ;; typescript-mode-map
+            typescript-mode-map
             rustic-mode-map
             dart-mode-map
             js2-mode-map)
@@ -313,9 +313,7 @@
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
  "cf" 'lsp-format-buffer
- "cF" 'lsp-ui-doc-focus-frame
- "cd" 'lsp-ui-doc-show
- "cD" 'lsp-ui-doc-hide)
+ "cd" 'lsp-ui-doc-glance)
 
 ;; --------------------------------------------------------------------
 ;; css mode leader
