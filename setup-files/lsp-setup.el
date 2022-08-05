@@ -23,9 +23,13 @@
          (go-mode         . lsp))
   :config
   (setq lsp-prefer-flymake nil
+        lsp-enable-symbol-highlighting nil
+        lsp-references-exclude-definition t
+        lsp-signature-doc-lines 40
         lsp-headerline-breadcrumb-segments '(file symbols)
         lsp-headerline-breadcrumb-enable nil
-        lsp-log-io nil)
+        lsp-log-io nil
+        lsp-use-plists t)
 
   ;; disabled lsp clients
   (add-to-list 'lsp-disabled-clients '(typescript-mode . angular-ls))

@@ -76,8 +76,9 @@
           (lambda ()
             (set (make-local-variable 'company-backends)
                  '((company-nxml)))))
+
 ;; --------------------------------------------------------------------
-;; Fix collesion between expanding yasnippets and company
+;; Fix collision between expanding yasnippets and company
 ;; --------------------------------------------------------------------
 ;; fix for yasnippets
 (defun check-expansion ()
