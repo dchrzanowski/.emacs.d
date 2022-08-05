@@ -371,6 +371,7 @@
  "o" 'dired-hide-dotfiles-mode
  "r" 'revert-buffer
  "J" 'dired-launch-command
+ "K" 'dired-launch-with-prompt-command
  "&" 'dired-start-process
  ")" 'dired-git-info-mode)
 

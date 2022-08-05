@@ -13,12 +13,14 @@
 
 ;; default launchers for certain file types
 (setq dired-guess-shell-alist-user
-      '(("\\.jpe?g\\'" "gimp")
-        ("\\.png\\'" "gimp")
-        ("\\.gif\\'" "gimp")
+      '(("\\.\\(?:jpg\\|jpeg\\|gif\\|tif\\|tiff\\|png\\|ogv\\)\\'" "gimp")
         ("\\.html\\'" "firefox")
-        ("\\.doc\\'" "lowriter")
-        ("\\.docx\\'" "lowriter")
+        ("\\.pdf\\'" "evince")
+        ("\\.\\(?:zip\\|tar\\.gz\\)\\'" "file-roller")
+        ("\\.\\(?:doc\\|docx\\)\\'" "freeoffice-textmaker")
+        ("\\.\\(?:doc\\|docx\\)\\'" "lowriter")
+        ("\\.\\(?:xlsx\\|xls\\|csv\\)\\'" "freeoffice-planmaker")
+        ("\\.\\(?:xlsx\\|xls\\|csv\\)\\'" "localc")
         ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "celluloid")))
 
 ;; sort files and show sizes
