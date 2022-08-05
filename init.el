@@ -7,8 +7,8 @@
 
 ;; set a much higher GC collection threshold
 ;; (setq-default garbage-collection-messages t)
-(setq gc-cons-threshold (megabytes-to-bytes 4))
-(setq read-process-output-max (megabytes-to-bytes 1))
+(setq gc-cons-threshold (megabytes-to-bytes 8))
+(setq read-process-output-max (megabytes-to-bytes 4))
 
 ;; change gc threshold post init (if needed)
 ;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))

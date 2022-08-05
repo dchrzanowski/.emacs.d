@@ -17,10 +17,10 @@
                           (typescript-language-server . "yay -S typescript-language-server")
                           (flutter                    . "yay -S flutter")
                           (ccls                       . "yay -S ccls"))
-  :hook ((c++-mode . lsp)
-         (js2-mode . lsp)
+  :hook ((c++-mode        . lsp)
+         (js2-mode        . lsp)
          (typescript-mode . lsp)
-         (go-mode . lsp))
+         (go-mode         . lsp))
   :config
   (setq lsp-prefer-flymake nil
         lsp-headerline-breadcrumb-segments '(file symbols)
