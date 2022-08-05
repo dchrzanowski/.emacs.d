@@ -26,6 +26,10 @@
         lsp-headerline-breadcrumb-segments '(file symbols)
         lsp-headerline-breadcrumb-enable nil
         lsp-log-io nil)
+
+  ;; disabled lsp clients
+  (add-to-list 'lsp-disabled-clients '(typescript-mode . angular-ls))
+
   ;; fix for company to force usage of completion-at-point
   (add-hook 'lsp-mode-hook
             (lambda ()
