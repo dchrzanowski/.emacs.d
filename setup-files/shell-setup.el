@@ -17,6 +17,17 @@
                ("<tab>" . completion-at-point)
                ("C-c M-o" . eshell/clear)))))
 
+;; --------------------------------------------------------------------
+;; Eshell syntax highlight
+;; --------------------------------------------------------------------
+(use-package eshell-syntax-highlighting
+  :after eshell
+  :ensure t
+  :init
+  ;; Enable in all Eshell buffers.
+  (eshell-syntax-highlighting-global-mode +1))
+
+
 (use-package shell-pop
   :defer t
   :config
@@ -29,4 +40,4 @@
    '(shell-pop-window-position "bottom")))
 
 (provide 'shell-setup)
-;;; shell-setup ends here
+;;; shell-setup.el ends here
