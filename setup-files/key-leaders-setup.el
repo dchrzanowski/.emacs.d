@@ -309,7 +309,7 @@
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
  "cv" 'lsp-ui-sideline-mode
- "cc" 'lsp-ui-sideline-apply-code-actions
+ "cc" 'helm-lsp-code-actions
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
  "cf" 'lsp-format-buffer
