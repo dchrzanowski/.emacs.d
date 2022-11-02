@@ -2,6 +2,10 @@
 # name: StatelessWidget
 # --
 class $1 extends StatelessWidget {
+  const $1({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
