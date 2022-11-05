@@ -387,6 +387,8 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'dired-mode-map
+ ;; bookmark
+ "cr" 'bmkp-autofile-set
  ;; subtree
  "ci" 'dired-maybe-insert-subdir
  "cI" 'dired-kill-subdir
