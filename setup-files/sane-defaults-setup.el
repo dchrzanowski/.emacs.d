@@ -46,7 +46,7 @@
 
 ;; No splash screen
 (setq inhibit-startup-message t)
-;; delete when region when starting to type inside
+;; delete region when starting to type inside
 (delete-selection-mode t)
 ;; mark follows the point
 (transient-mark-mode t)
@@ -67,7 +67,7 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 ;; save opened buffers (and window config)
-(desktop-save-mode t)
+;; (desktop-save-mode t)
 ;; auto indent
 (electric-indent-mode t)
 ;; show matching brackets
