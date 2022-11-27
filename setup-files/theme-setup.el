@@ -146,9 +146,14 @@
    ;; tooltip
    '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))
    ;; tree-sitter-hl
+   '(tree-sitter-hl-face:constant\.builtin ((t (:inherit font-lock-constant-face))))
+   '(tree-sitter-hl-face:constructor ((t (:inherit font-lock-keyword-face :slant normal))))
+   '(tree-sitter-hl-face:function\.call ((t (:inherit font-lock-function-name-face :underline nil))))
+   '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:function :slant normal :weight bold))))
    '(tree-sitter-hl-face:number ((t (:inherit highlight-numbers-number))))
    '(tree-sitter-hl-face:operator ((t (:inherit default))))
    '(tree-sitter-hl-face:type\.builtin ((t (:inherit font-lock-type-face))))
+   '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
    ;; window border
    '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
    ;; webmode
