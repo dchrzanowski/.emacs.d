@@ -22,6 +22,19 @@
          (typescript-mode . lsp)
          (go-mode         . lsp))
   :config
+  ;; same definition as mentioned earlier
+  (advice-add 'json-parse-string :around
+              (lambda (orig string &rest rest)
+                (apply orig (s-replace "\\u0000" "" string)
+                       rest)))
+
+  ;; minor changes: saves excursion and uses search-forward instead of re-search-forward
+  (advice-add 'json-parse-buffer :around
+              (lambda (oldfn &rest args)
+                (save-excursion
+                  (while (search-forward "\\u0000" nil t)
+                    (replace-match "" nil t)))
+                (apply oldfn args)))
   (setq lsp-prefer-flymake nil
         lsp-enable-symbol-highlighting nil
         lsp-references-exclude-definition t
