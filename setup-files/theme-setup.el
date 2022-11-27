@@ -143,6 +143,10 @@
    '(tab-line-tab-inactive ((t (:inherit tab-line-tab :background "#131519" :foreground "#6a727a" :box (:line-width (1 . 4) :color "#131519")))))
    ;; tooltip
    '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))
+   ;; tree-sitter-hl
+   '(tree-sitter-hl-face:number ((t (:inherit highlight-numbers-number))))
+   '(tree-sitter-hl-face:operator ((t (:inherit default))))
+   '(tree-sitter-hl-face:type\.builtin ((t (:inherit font-lock-type-face))))
    ;; window border
    '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
    ;; webmode
