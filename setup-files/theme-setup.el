@@ -100,6 +100,8 @@
    '(isearch ((t (:background "black" :foreground "white"))))
    ;; lazy highlight
    '(lazy-highlight ((t (:background "black" :foreground "gold" :underline nil :weight bold))))
+   ;; lsp
+   '(lsp-flycheck-info-unnecessary-face ((t (:underline (:color "#98be65" :style wave)))) t)
    ;; mu4e
    '(mu4e-flagged-face ((t (:inherit font-lock-string-face :weight bold))))
    ;; neotree

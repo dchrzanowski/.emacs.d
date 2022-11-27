@@ -213,6 +213,7 @@
  '(internal-border ((t (:background "#51afef"))))
  '(isearch ((t (:background "black" :foreground "white"))))
  '(lazy-highlight ((t (:background "black" :foreground "chartreuse3" :underline nil :weight normal))))
+ '(lsp-flycheck-info-unnecessary-face ((t (:underline (:color "#98be65" :style wave)))) t)
  '(mode-line ((t (:background "gray2" :foreground "white"))))
  '(mode-line-inactive ((t (:background "grey11" :foreground "#5B6268" :box nil))))
  '(mu4e-flagged-face ((t (:inherit font-lock-string-face :weight bold))))
