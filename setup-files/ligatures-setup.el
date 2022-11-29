@@ -29,6 +29,10 @@
           (">="     . ?≥)
           ("<="     . ?≤))))
 
+(defun rust-style-ligatures ()
+  "Rust style languages ligatures."
+  (push '("fn" . ?ƒ) prettify-symbols-alist))
+
 (defun go-style-ligatures ()
   "Golang style languages ligatures."
   (push '("func" . ?ƒ) prettify-symbols-alist))
@@ -50,6 +54,7 @@
 
 (add-hook 'prog-mode-hook       #'prog-mode-style-ligatures)
 (add-hook 'go-mode-hook         #'go-style-ligatures)
+(add-hook 'rust-mode-hook       #'rust-style-ligatures)
 (add-hook 'java-mode-hook       #'java-style-ligatures)
 (add-hook 'python-mode-hook     #'python-style-ligatures)
 (add-hook 'js2-mode-hook        #'js-style-ligatures)

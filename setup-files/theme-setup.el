@@ -26,7 +26,7 @@
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (custom-set-faces
    ;; default
-   '(default ((t (:weight normal :height 108 :foundry "PfEd" :family "DejaVu Sans Mono"))))
+   '(default ((t (:weight normal :height 108 :foundry "PfEd" :foreground "#bbc2cf" :family "DejaVu Sans Mono"))))
    ;; anzu
    '(anzu-replace-highlight ((t (:background "black" :foreground "gold" :weight bold))))
    ;; avy
@@ -151,7 +151,8 @@
    '(tree-sitter-hl-face:function\.call ((t (:inherit font-lock-function-name-face :underline nil))))
    '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:function :slant normal :weight bold))))
    '(tree-sitter-hl-face:number ((t (:inherit highlight-numbers-number))))
-   '(tree-sitter-hl-face:operator ((t (:inherit default))))
+   '(tree-sitter-hl-face:operator ((t (:foreground "#bbc2cf"))))
+   '(tree-sitter-hl-face:punctuation ((t (:foreground "#bbc2cf"))))
    '(tree-sitter-hl-face:type\.builtin ((t (:inherit font-lock-type-face))))
    '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
    ;; window border

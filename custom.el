@@ -150,7 +150,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#131519" :foreground "#bbc2cf" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 108 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :foreground "#bbc2cf" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(ahs-definition-face ((t (:background "black" :weight bold))))
  '(ahs-edit-mode-face ((t (:background "black" :foreground "dark orange"))))
  '(ahs-face ((t (:background "black" :weight bold))))
@@ -221,11 +221,11 @@
  '(org-agenda-date ((t (:background "#173874" :foreground "white" :box (:line-width 4 :color "#173874") :weight ultra-bold :height 1.0))))
  '(org-agenda-date-today ((t (:background "#276029" :foreground "white" :box (:line-width 4 :color "#276029") :weight ultra-bold :height 1.1))))
  '(org-agenda-date-weekend ((t (:background "#913351" :foreground "white" :box (:line-width 4 :color "#913351") :weight ultra-bold :height 1.0))))
- '(org-block ((t (:background "#131519"))))
- '(org-block-begin-line ((t (:background "#131519" :foreground "#5B6268"))))
+ '(org-block ((t (:extend t :background "#181c24"))))
+ '(org-block-begin-line ((t (:inherit org-block :extend t :background "#181c24" :foreground "#5B6268"))))
  '(org-level-1 ((t (:height 1.2 :foreground "#51afef" :background nil))))
  '(org-level-2 ((t (:foreground "#a9a1e1" :background nil))))
- '(org-level-3 ((t (:foreground "#c49e9e" :weight semi-bold))))
+ '(org-level-3 ((t (:extend nil :foreground "#84b585"))))
  '(org-todo ((t (:foreground "#ff6655" :weight bold))))
  '(powerline-active1 ((t (:inherit mode-line-emphasis :background "gray4" :foreground "light gray"))))
  '(powerline-active2 ((t (:inherit mode-line :background "grey20" :foreground "white"))))
@@ -252,7 +252,8 @@
  '(tree-sitter-hl-face:function\.call ((t (:inherit font-lock-function-name-face :underline nil))))
  '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:function :slant normal :weight bold))))
  '(tree-sitter-hl-face:number ((t (:inherit highlight-numbers-number))))
- '(tree-sitter-hl-face:operator ((t (:inherit default))))
+ '(tree-sitter-hl-face:operator ((t (:foreground "#bbc2cf"))))
+ '(tree-sitter-hl-face:punctuation ((t (:foreground "#bbc2cf"))))
  '(tree-sitter-hl-face:type\.builtin ((t (:inherit font-lock-type-face))))
  '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
  '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
