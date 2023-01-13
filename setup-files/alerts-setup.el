@@ -48,4 +48,4 @@
 ;;   (type-break-mode))
 
 (provide 'alerts-setup)
-;;; alerts-setup ends here
+;;; alerts-setup.el ends here

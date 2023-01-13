@@ -17,4 +17,4 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (provide 'spell-check-setup)
-;;; spell-check-setup ends here
+;;; spell-check-setup.el ends here

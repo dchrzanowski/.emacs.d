@@ -16,4 +16,4 @@
   (evil-set-initial-state 'esup-mode 'motion))
 
 (provide 'package-assistants-setup)
-;;; package-assistant-setup ends here
+;;; package-assistants-setup.el ends here

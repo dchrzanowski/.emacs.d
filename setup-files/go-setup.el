@@ -10,4 +10,4 @@
 (use-package go-mode)
 
 (provide 'go-setup)
-;;; go-setup ends here
+;;; go-setup.el ends here

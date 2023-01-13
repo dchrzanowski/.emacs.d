@@ -138,4 +138,4 @@
   (add-hook 'c-mode-hook #'electric-operator-mode))
 
 (provide 'editing-assists-setup)
-;;; editing-assists-setup ends here
+;;; editing-assists-setup.el ends here

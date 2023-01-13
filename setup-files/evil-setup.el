@@ -192,4 +192,4 @@
   )
 
 (provide 'evil-setup)
-;;; evil-setup ends here
+;;; evil-setup.el ends here

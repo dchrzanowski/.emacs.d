@@ -13,4 +13,4 @@
   (flutter-sdk-path "/opt/flutter/"))
 
 (provide 'dart-setup)
-;;; dart-setup ends here
+;;; dart-setup.el ends here

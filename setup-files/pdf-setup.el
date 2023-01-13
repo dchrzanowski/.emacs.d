@@ -13,4 +13,4 @@
   (pdf-tools-install))
 
 (provide 'pdf-setup)
-;;; pdf-setup ends here
+;;; pdf-setup.el ends here

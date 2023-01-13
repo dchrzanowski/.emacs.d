@@ -48,4 +48,4 @@
 ;;                               :placeOpenBraceOnNewLineForFunctions nil)))
 
 (provide 'typescript-setup)
-;;; typescript-setup ends here
+;;; typescript-setup.el ends here

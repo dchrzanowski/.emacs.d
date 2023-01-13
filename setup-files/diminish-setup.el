@@ -38,4 +38,4 @@
 (add-hook 'evil-god-state-exit-hook (lambda () (diminish-undo 'god-local-mode)))
 
 (provide 'diminish-setup)
-;;; diminish-setup ends here
+;;; diminish-setup.el ends here

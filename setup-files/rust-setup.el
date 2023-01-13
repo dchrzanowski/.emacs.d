@@ -12,4 +12,4 @@
   :after lsp-mode)
 
 (provide 'rust-setup)
-;;; rust-setup ends here
+;;; rust-setup.el ends here

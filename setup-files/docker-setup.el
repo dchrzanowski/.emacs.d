@@ -29,4 +29,4 @@
   :mode ("\\.yml\\'" . yaml-mode))
 
 (provide 'docker-setup)
-;;; docker-setup ends here
+;;; docker-setup.el ends here

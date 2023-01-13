@@ -20,4 +20,4 @@
                  (add-to-list 'company-backends 'company-ac-php-backend)))))
 
 (provide 'php-setup)
-;;; php-setup ends here
+;;; php-setup.el ends here

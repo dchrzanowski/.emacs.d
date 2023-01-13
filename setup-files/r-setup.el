@@ -6,4 +6,4 @@
 (use-package ess)
 
 (provide 'r-setup)
-;;; r-setup ends here
+;;; r-setup.el ends here

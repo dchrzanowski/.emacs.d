@@ -29,4 +29,4 @@
 ;;   :config (add-hook 'flycheck-mode-hook #'flycheck-posframe-mode))
 
 (provide 'linting-setup)
-;;; linting-setup ends here
+;;; linting-setup.el ends here

@@ -10,4 +10,4 @@
 (require 'bookmark+)
 
 (provide 'bookmarks-setup)
-;;; bookmarks-setup ends here
+;;; bookmarks-setup.el ends here

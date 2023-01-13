@@ -226,4 +226,4 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
               )))
 
 (provide 'navigation-setup)
-;;; navigation-setup ends here
+;;; navigation-setup.el ends here

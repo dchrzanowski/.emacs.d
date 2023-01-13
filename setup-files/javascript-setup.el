@@ -35,4 +35,4 @@
   :defer 3)
 
 (provide 'javascript-setup)
-;;; javascript-setup ends here
+;;; javascript-setup.el ends here

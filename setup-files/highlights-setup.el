@@ -84,4 +84,4 @@
   (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 
 (provide 'highlights-setup)
-;;; highlights-setup ends here
+;;; highlights-setup.el ends here

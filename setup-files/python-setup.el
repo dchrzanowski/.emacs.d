@@ -29,4 +29,4 @@
     (setq elpy-rpc-backend "jedi")))
 
 (provide 'python-setup)
-;;; python-setup ends here
+;;; python-setup.el ends here

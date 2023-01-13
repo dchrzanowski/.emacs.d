@@ -218,4 +218,4 @@
   (mu4e-maildirs-extension))
 
 (provide 'mu4e-setup)
-;;; mu4e-setup ends here
+;;; mu4e-setup.el ends here

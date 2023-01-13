@@ -91,4 +91,4 @@
   :defer 6)
 
 (provide 'web-setup)
-;;; web-setup ends here
+;;; web-setup.el ends here

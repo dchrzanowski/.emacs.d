@@ -14,4 +14,4 @@
   (add-hook 'prog-mode-hook 'eldoc-box-hover-mode))
 
 (provide 'eldoc-setup)
-;;; eldoc-setup ends here
+;;; eldoc-setup.el ends here

@@ -13,4 +13,4 @@
   (which-key-add-key-based-replacements "SPC h" "C-h"))
 
 (provide 'which-key-setup)
-;;; which-key-setup ends here
+;;; which-key-setup.el ends here

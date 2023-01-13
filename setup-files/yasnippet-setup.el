@@ -15,4 +15,4 @@
 (use-package auto-yasnippet)
 
 (provide 'yasnippet-setup)
-;;; yasnippet-setup ends here
+;;; yasnippet-setup.el ends here

@@ -162,4 +162,4 @@
 
 
 (provide 'theme-setup)
-;;; theme-setup ends here
+;;; theme-setup.el ends here

@@ -24,4 +24,4 @@
   (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t))
 
 (provide 'csharp-setup)
-;;; csharp-setup ends here
+;;; csharp-setup.el ends here

@@ -14,4 +14,4 @@
   (smartparens-global-mode 1))
 
 (provide 'smartparens-setup)
-;;; smartparens-setup ends here
+;;; smartparens-setup.el ends here

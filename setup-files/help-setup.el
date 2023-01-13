@@ -13,4 +13,4 @@
   (evil-set-initial-state 'helpful-mode 'motion))
 
 (provide 'help-setup)
-;;; help-setup ends here
+;;; help-setup.el ends here

@@ -103,4 +103,4 @@
   :defer 5)
 
 (provide 'git-setup)
-;;; git-setup ends here
+;;; git-setup.el ends here

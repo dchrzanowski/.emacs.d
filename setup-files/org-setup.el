@@ -316,4 +316,4 @@
 
 
 (provide 'org-setup)
-;;; org-setup ends here
+;;; org-setup.el ends here

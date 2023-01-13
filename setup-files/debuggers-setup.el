@@ -27,4 +27,4 @@
   (setq quickrun-timeout-seconds 60))
 
 (provide 'debuggers-setup)
-;;; debuggers-setup ends here
+;;; debuggers-setup.el ends here

@@ -147,4 +147,4 @@
   (require 'helm-fzf))
 
 (provide 'helm-setup)
-;;; helm-setup ends here
+;;; helm-setup.el ends here
