@@ -777,7 +777,7 @@ Value is automatically inserted as a side effect."
   (calc-eval (format "16#%s" hex)))
 
 (defun dchrzan/hex-color-to-rgb (hex-color)
-  "Convert a 6 digit HEX-COLOR e.g. '#FF00FF to a formatted 'rgb(255, 0, 255)' string and insert it."
+  "Convert a 6 digit HEX-COLOR e.g. '#FF00FF to a formatted '255, 0, 255' string and insert it into the buffer."
   (interactive "sColor as 6 digit HEX:")
   (let ((red (dchrzan/hex-string-to-num-string
               (substring hex-color 1 3)))
@@ -786,7 +786,7 @@ Value is automatically inserted as a side effect."
         (blue (dchrzan/hex-string-to-num-string
                 (substring hex-color 5 7))))
     ;; format and insert
-    (insert (format "rgb(%s, %s, %s)" red green blue))))
+    (insert (format "%s, %s, %s" red green blue))))
 
 ;; --------------------------------------------------------------------
 ;; Native compile packages
