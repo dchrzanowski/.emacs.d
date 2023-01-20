@@ -31,8 +31,6 @@
   :config
   (setq dgi-auto-hide-details-p nil))
 
-(use-package diredfl)
-
 ;; async
 (use-package async
   :config
