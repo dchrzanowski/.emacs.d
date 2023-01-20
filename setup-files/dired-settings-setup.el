@@ -26,7 +26,12 @@
 ;; sort files and show sizes
 (setq dired-listing-switches "-AGhlv --group-directories-first --time-style=long-iso")
 
-(require 'dired-git-info)
+;; provide git info in dired (last commit time and message)
+(use-package dired-git-info
+  :config
+  (setq dgi-auto-hide-details-p nil))
+
+(use-package diredfl)
 
 ;; async
 (use-package async
