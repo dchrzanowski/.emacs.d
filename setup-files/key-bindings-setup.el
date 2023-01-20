@@ -473,6 +473,19 @@
  "TAB" 'forward-button
  "<tab>" 'forward-button)
 
+;; tabulated list mode
+(general-define-key
+ :keymaps 'tabulated-list-mode-map
+ :states 'normal
+ "q" 'quit-window
+ "r" 'revert-buffer)
+
+;; magit repolist mode
+(general-define-key
+ :keymaps 'magit-repolist-mode-map
+ :states 'normal
+ "F" 'magit-repolist-find-file-other-frame)
+
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

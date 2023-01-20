@@ -9,7 +9,7 @@
 (use-package magit
   :defer 3
   :config
-  (setq magit-repository-directories '( ("~/github" . 1) )))
+  (setq magit-repository-directories '(("~/github" . 3))))
 
 ;; --------------------------------------------------------------------
 ;; git gutter
