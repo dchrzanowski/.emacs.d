@@ -149,12 +149,12 @@
     (time 25001 63187 331138 853000)
     (created 23869 31559 899680 188000)
     (position . 1))
-#1=(#("Calendar.org" 0 12
+#1=(#("calendar.org" 0 12
       (bmkp-full-record #1#))
     (end-position . 1)
     (time 25002 18512 253795 872000)
     (visits . 2)
-    (filename . "/home/grimscythe/GoogleDrive/org/Calendar.org")
+    (filename . "/home/grimscythe/GoogleDrive/org/calendar.org")
     (position . 1)
     (created 23748 42530 309591 223000))
 #1=(#("cmus lyrics" 0 11

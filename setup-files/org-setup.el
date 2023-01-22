@@ -52,8 +52,9 @@
    ;; --------------------------------------------------------------------
    ;; agenda
    ;; --------------------------------------------------------------------
-   ;; org agenda files location
+
    org-agenda-show-all-dates nil
+   ;; org agenda files location
    org-agenda-files '("~/GoogleDrive/org/projects"
                       "~/GoogleDrive/org")
 
@@ -81,6 +82,10 @@
   ;; --------------------------------------------------------------------
   (require 'org-id)
   (setq
+   ;; location of org ids
+   org-id-locations-file "~/GoogleDrive/org/.org-id-locations"
+   ;; ids to work across files
+   org-id-track-globally t
    ;; use ID from the drawer for links in exports
    org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id
    ;; short IDs
@@ -95,12 +100,6 @@
   ;; GPG key to use for encryption
   ;; Either the Key ID or set to nil to use symmetric encryption.
   (setq org-crypt-key nil))
-
-
-;; --------------------------------------------------------------------
-;; ob's
-;; --------------------------------------------------------------------
-(use-package ob-mongo)
 
 ;; --------------------------------------------------------------------
 ;; addons
@@ -117,36 +116,10 @@
   :after org
   :defer t)
 
-;; org-brain
-(use-package org-brain
-  :after org
-  :defer t
-  :init
-  ;; org brain main search path
-  (setq org-brain-path "~/GoogleDrive/org/")
-  :config
-  ;; track all files
-  (setq org-id-track-globally t)
-  ;; id locations path
-  (setq org-id-locations-file "~/GoogleDrive/org/.org-id-locations")
-  ;; org brain capture template
-  (push '("b" "Brain" plain (function org-brain-goto-end)
-          "* %i%?" :empty-lines 1)
-        org-capture-templates)
-  (setq org-brain-visualize-default-choices 'all)
-  (setq org-brain-title-max-length 12))
-
 ;; toc-org
 (use-package toc-org
   :after org
   :defer 2)
-
-;; org-trello
-;; (use-package org-trello
-;;   :config
-;;   ;; set trello for specific files only
-;;   ;; (custom-set-variables '(org-trello-files '("/path/to/file0" "/path/to/file1")))
-;;   )
 
 ;; org-projectile
 (use-package org-projectile
@@ -156,7 +129,6 @@
   (progn
     (setq org-projectile-projects-file
           "~/GoogleDrive/org/projects/projects_refile.org")
-    ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
     (push (org-projectile-project-todo-entry) org-capture-templates)))
 
 ;; org download
@@ -222,12 +194,18 @@
   :after org)
 
 ;; --------------------------------------------------------------------
+;; ob's
+;; --------------------------------------------------------------------
+(use-package ob-mongo)
+
+
+;; --------------------------------------------------------------------
 ;; org-notify
 ;; --------------------------------------------------------------------
 (with-eval-after-load 'org
   (require 'org-notify)
   (org-notify-add 'default
-                  '(:time "-1s" :period "1m" :duration 5 :actions -notify )
+                  '(:time "-1s" :period "1m" :duration 5 :actions -notify)
                   '(:time "30m" :period "10m" :duration 5 :actions -notify)
                   '(:time "4h" :period "1h" :duration 5 :actions -notify)
                   '(:time "1d" :period "2h" :duration 5 :actions -notify)
