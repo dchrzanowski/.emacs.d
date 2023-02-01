@@ -480,6 +480,12 @@
  "q" 'quit-window
  "r" 'revert-buffer)
 
+;; special mode (like he warnings window, etc.)
+(general-define-key
+ :keymaps 'special-mode-map
+ :states 'normal
+ "q" 'quit-window)
+
 ;; magit repolist mode
 (general-define-key
  :keymaps 'magit-repolist-mode-map

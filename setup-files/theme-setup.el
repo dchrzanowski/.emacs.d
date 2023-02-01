@@ -160,6 +160,5 @@
    ;; webmode
    '(web-mode-html-tag-face ((t (:foreground "#db5762"))))))
 
-
 (provide 'theme-setup)
 ;;; theme-setup.el ends here
