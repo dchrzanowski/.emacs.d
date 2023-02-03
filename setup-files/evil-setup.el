@@ -52,6 +52,7 @@
 
   (add-to-list 'evil-motion-state-modes 'fundamental-mode)
   (add-to-list 'evil-motion-state-modes 'tabulated-list-mode)
+  (add-to-list 'evil-normal-state-modes 'disk-usage-mode)
   (add-to-list 'evil-motion-state-modes 'prodigy-view-mode)
 
   (eval-after-load 'git-timemachine
@@ -171,6 +172,7 @@
   (evil-collection-init 'bookmark)
   (evil-collection-init 'calendar)
   (evil-collection-init 'dired)
+  (evil-collection-init 'disk-usage)
   (evil-collection-init 'eshell)
   (evil-collection-init 'ibuffer)
   (evil-collection-init 'info)
