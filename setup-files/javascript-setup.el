@@ -22,17 +22,5 @@
                              (hl-todo-mode)
                              (company-mode))))
 
-;; --------------------------------------------------------------------
-;; json mode
-;; --------------------------------------------------------------------
-(use-package json-mode
-  :defer 3)
-
-(use-package json-snatcher
-  :defer 3)
-
-(use-package jq-mode
-  :defer 3)
-
 (provide 'javascript-setup)
 ;;; javascript-setup.el ends here

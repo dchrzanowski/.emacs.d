@@ -71,7 +71,7 @@
         color-identifiers:num-colors '30
         color-identifiers:timer (run-with-idle-timer 1 t 'color-identifiers:refresh)
         color-identifiers:color-luminance 0.6
-        color-identifiers:recoloring-delay 1
+        color-identifiers:recoloring-delay 2
         color-identifiers:min-color-saturation 0.3
         color-identifiers:max-color-saturation 1.0)
   (global-color-identifiers-mode))

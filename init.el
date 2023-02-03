@@ -123,6 +123,9 @@
 (require 'ligatures-setup)
 (require 'lsp-setup)
 
+;; file specific (json, yaml, dot, etc)
+(require 'file-specific-setup)
+
 ;; keybindings
 (require 'key-bindings-setup)
 (require 'key-leaders-setup)
