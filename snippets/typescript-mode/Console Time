@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Console Time
+# key: logt
+# --
+console.time('$1');
+$0
+console.timeEnd('$1');
