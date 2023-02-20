@@ -33,6 +33,7 @@
   "<f8>" 'profiler-start
   "S-<f8>" 'profiler-report
   "C-<f8>" 'profiler-stop
+  "<f12>" '(lambda() (interactive)(find-file "~/GoogleDrive/org/work_calendar.org"))
   ;; smartparens
   "M-S" 'sp-split-sexp
   ;; packages

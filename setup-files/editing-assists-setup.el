@@ -66,7 +66,9 @@
 ;; webpaste
 ;; --------------------------------------------------------------------
 (use-package webpaste
-  :defer t)
+  :defer t
+  :config
+  (setq webpaste-provider-priority '("dpaste.org" "ix.io")))
 
 ;; --------------------------------------------------------------------
 ;; darkroom
