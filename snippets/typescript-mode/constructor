@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: constructor
-# key: co
+# key: con
 # --
 constructor(
     $1
