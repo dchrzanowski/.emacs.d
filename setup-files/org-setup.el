@@ -180,10 +180,11 @@
 (use-package org-rainbow-tags
   :ensure t
   :custom
-  (org-rainbow-tags-hash-start-index 5)
-  (org-rainbow-tags-extra-face-attributes
+  (org-rainbow-tags-hash-start-index 1)
+  (org-rainbow-tags-adjust-color-percent 1)
    ;; Default is '(:weight 'bold)
-   '(:inverse-video t :box t :weight 'bold))
+  ;; (org-rainbow-tags-extra-face-attributes
+  ;;  '(:inverse-video t :box nil :weight 'bold))
   :hook
   (org-mode . org-rainbow-tags-mode))
 
