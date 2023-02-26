@@ -181,7 +181,7 @@
   :ensure t
   :custom
   (org-rainbow-tags-hash-start-index 1)
-  (org-rainbow-tags-adjust-color-percent 1)
+  (org-rainbow-tags-adjust-color-percent 10)
    ;; Default is '(:weight 'bold)
   ;; (org-rainbow-tags-extra-face-attributes
   ;;  '(:inverse-video t :box nil :weight 'bold))
