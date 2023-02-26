@@ -493,6 +493,14 @@
  :states 'normal
  "F" 'magit-repolist-find-file-other-frame)
 
+;; lsp ui peek
+(general-define-key
+ :keymaps 'lsp-ui-peek-mode-map
+ "l" 'lsp-ui-peek--goto-xref
+ "h" 'lsp-ui-peek--toggle-file
+ "k" 'lsp-ui-peek--select-prev
+ "j" 'lsp-ui-peek--select-next)
+
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
