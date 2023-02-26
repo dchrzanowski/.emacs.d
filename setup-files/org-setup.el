@@ -176,6 +176,32 @@
           (:name "Emacs"
                  :and (:tag "Emacs")))))
 
+;; org rainbow tags
+(use-package org-rainbow-tags
+  :ensure t
+  :custom
+  (org-rainbow-tags-hash-start-index 5)
+  (org-rainbow-tags-extra-face-attributes
+   ;; Default is '(:weight 'bold)
+   '(:inverse-video t :box t :weight 'bold))
+  :hook
+  (org-mode . org-rainbow-tags-mode))
+
+;; org-fancy-priorities
+(use-package org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("╾ ➊ ╼"
+                                    "╾ ➋ ╼"
+                                    "╾ ➌ ╼"
+                                    "╾ ▬ ╼")
+        org-priority-faces        '((?A . "#fd1a1a")
+                                    (?B . "#faff12")
+                                    (?C . "#99ff34")
+                                    (?D . "#000dff"))))
+
 ;; --------------------------------------------------------------------
 ;; ox's
 ;; --------------------------------------------------------------------
@@ -211,23 +237,6 @@
                   '(:time "1d" :period "2h" :duration 5 :actions -notify)
                   '(:time "7d" :period "5h" :duration 10 :actions -notify))
   (org-notify-start))
-
-;; --------------------------------------------------------------------
-;; org-fancy-priorities
-;; --------------------------------------------------------------------
-(use-package org-fancy-priorities
-  :ensure t
-  :hook
-  (org-mode . org-fancy-priorities-mode)
-  :config
-  (setq org-fancy-priorities-list '("╾ ➊ ╼"
-                                    "╾ ➋ ╼"
-                                    "╾ ➌ ╼"
-                                    "╾ ▬ ╼")
-        org-priority-faces        '((?A . "#fd1a1a")
-                                    (?B . "#faff12")
-                                    (?C . "#99ff34")
-                                    (?D . "#000dff"))))
 
 ;; --------------------------------------------------------------------
 ;; calendar
