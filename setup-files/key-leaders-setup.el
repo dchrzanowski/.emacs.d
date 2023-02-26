@@ -201,6 +201,7 @@
  :prefix "SPC"
  :keymaps 'web-mode-map
  "cb" 'web-beautify-html
+ "c'" 'separedit
  "cew" 'web-mode-element-wrap
  "ces" 'web-mode-element-select
  "cea" 'web-mode-element-content-select
@@ -238,23 +239,23 @@
 ;;  "cd" 'tern-get-docs)
 
 ;; --------------------------------------------------------------------
-;; typescript leader
+;; typescript leader (CURRENTLY REPLACED BY LSP)
 ;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'typescript-mode-map
- "cF" 'js-doc-insert-file-doc
- "cd" 'tide-documentation-at-point
- "cR" 'tide-refactor
- "cr" 'tide-rename-symbol
- "c?" 'tide-references
- "c." 'tide-jump-to-definition
- "c," 'tide-jump-back
- "ce" 'tide-project-errors
- "ct" 'tide-jsdoc-template
- "ci" 'tide-organize-imports
- "cc" 'tide-fix)
+;; (general-define-key
+;;  :states '(normal visual emacs)
+;;  :prefix "SPC"
+;;  :keymaps 'typescript-mode-map
+;;  "cF" 'js-doc-insert-file-doc
+;;  "cd" 'tide-documentation-at-point
+;;  "cR" 'tide-refactor
+;;  "cr" 'tide-rename-symbol
+;;  "c?" 'tide-references
+;;  "c." 'tide-jump-to-definition
+;;  "c," 'tide-jump-back
+;;  "ce" 'tide-project-errors
+;;  "ct" 'tide-jsdoc-template
+;;  "ci" 'tide-organize-imports
+;;  "cc" 'tide-fix)
 
 ;; --------------------------------------------------------------------
 ;; dart leader
@@ -263,6 +264,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'dart-mode-map
+ "c'" 'separedit
  "cX" 'flutter-hot-restart
  "cg" 'lsp-dart-flutter-widget-guides-mode
  "cx" 'flutter-run-or-hot-reload)
@@ -274,6 +276,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'rustic-mode-map
+ "c'" 'separedit
  "cC" 'rustic-cargo)
 
 ;; --------------------------------------------------------------------
@@ -283,6 +286,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'emacs-lisp-mode-map
+ "c'" 'separedit
  "c?" 'xref-find-references
  "c." 'xref-find-definitions
  "c," 'pop-tag-mark
@@ -305,6 +309,7 @@
             rustic-mode-map
             dart-mode-map
             js2-mode-map)
+ "c'" 'separedit
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
@@ -322,6 +327,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'css-mode-map
+ "c'" 'separedit
  "cb" 'web-beautify-css)
 
 ;; ////////////////////////////////////////////////////////////////////
@@ -419,7 +425,6 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'json-mode-map
- ;; json print path
  "cb" 'json-mode-beautify
  "cj" 'jq-interactively
  "cc" 'jsons-print-path)
@@ -431,7 +436,6 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'restclient-mode-map
- ;; json prettify
  "ci" 'json-mode-beautify
  "cj" 'restclient-jump-next
  "ck" 'restclient-jump-prev

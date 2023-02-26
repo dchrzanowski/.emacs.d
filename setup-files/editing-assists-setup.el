@@ -139,5 +139,16 @@
   ;; (add-hook 'lsp-mode-hook #'electric-operator-mode)
   (add-hook 'c-mode-hook #'electric-operator-mode))
 
+;; --------------------------------------------------------------------
+;; separedit - edit code block, comments, etc in a separate window
+;; --------------------------------------------------------------------
+(use-package separedit
+  :config
+  (setq separedit-default-mode 'org-mode)
+  (setq separedit-preserve-string-indentation t)
+  ;; (setq separedit-continue-fill-column t)
+  ;; (setq separedit-write-file-when-execute-save t)
+  (setq separedit-remove-trailing-spaces-in-comment t))
+
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup.el ends here
