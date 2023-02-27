@@ -33,6 +33,7 @@
   "<f8>" 'profiler-start
   "S-<f8>" 'profiler-report
   "C-<f8>" 'profiler-stop
+  "<f12>" '(lambda() (interactive)(find-file "~/GoogleDrive/org/work_calendar.org"))
   ;; smartparens
   "M-S" 'sp-split-sexp
   ;; packages
@@ -491,6 +492,14 @@
  :keymaps 'magit-repolist-mode-map
  :states 'normal
  "F" 'magit-repolist-find-file-other-frame)
+
+;; lsp ui peek
+(general-define-key
+ :keymaps 'lsp-ui-peek-mode-map
+ "l" 'lsp-ui-peek--goto-xref
+ "h" 'lsp-ui-peek--toggle-file
+ "k" 'lsp-ui-peek--select-prev
+ "j" 'lsp-ui-peek--select-next)
 
 
 ;; evil god state
