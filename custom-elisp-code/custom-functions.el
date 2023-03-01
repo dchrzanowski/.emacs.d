@@ -732,14 +732,24 @@ PREFIX is added in front of each generated id."
   (dired "~/Downloads"))
 
 ;; --------------------------------------------------------------------
-;; Switch to Calendar.org
+;; Switch to calendar.org
 ;; --------------------------------------------------------------------
 (defun dchrzan/switch-to-calendar-org ()
-  "Delete all other windows and open Calendar.org."
+  "Delete all other windows and open calendar.org."
   (interactive)
-  (eyebrowse-switch-to-window-config 0)
+  (eyebrowse-switch-to-window-config 7)
   (delete-other-windows)
-  (find-file "~/GoogleDrive/org/Calendar.org"))
+  (find-file "~/GoogleDrive/org/calendar.org"))
+
+;; --------------------------------------------------------------------
+;; Switch to work_calendar.org
+;; --------------------------------------------------------------------
+(defun dchrzan/switch-to-work-calendar-org ()
+  "Delete all other windows and open work_calendar.org."
+  (interactive)
+  (eyebrowse-switch-to-window-config 7)
+  (delete-other-windows)
+  (find-file "~/GoogleDrive/org/work_calendar.org"))
 
 ;; --------------------------------------------------------------------
 ;; Call a function when mode not active
