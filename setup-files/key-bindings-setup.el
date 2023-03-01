@@ -449,17 +449,6 @@
  :states 'normal
  "R" 'revert-buffer)
 
-;; prodigy
-(general-define-key
- :keymaps 'prodigy-mode-map
- :states 'motion
- "R" 'prodigy-refresh
- "`" 'prodigy-display-process)
-(general-define-key
- :keymaps 'prodigy-view-mode-map
- :states 'motion
- "x" 'prodigy-view-clear-buffer)
-
 ;; transmission
 (general-define-key
  :keymaps 'transmission-mode-map

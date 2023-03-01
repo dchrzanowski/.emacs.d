@@ -146,7 +146,6 @@
  "nn" 'dchrzan/new-frame
  "nd" 'delete-frame
  ;; system utils
- "ux" 'prodigy
  "up" 'proced
  "ud" 'docker
  ;; Treemacs
