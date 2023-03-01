@@ -24,7 +24,7 @@
         ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|ogv\\)\\'" "celluloid")))
 
 ;; sort files and show sizes
-(setq dired-listing-switches "-AGhlv --group-directories-first --time-style=long-iso")
+(setq dired-listing-switches "-AGhl --group-directories-first --time-style=long-iso")
 
 ;; provide git info in dired (last commit time and message)
 (use-package dired-git-info
