@@ -485,6 +485,10 @@
  "k" 'lsp-ui-peek--select-prev
  "j" 'lsp-ui-peek--select-next)
 
+;; lsp ui doc
+(general-define-key
+ :keymaps 'lsp-ui-doc-frame-mode-map
+ "q" 'dchrzan/lsp-ui-doc-unfocus-and-hide)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

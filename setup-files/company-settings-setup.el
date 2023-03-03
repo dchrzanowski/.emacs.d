@@ -13,6 +13,9 @@
   (require 'company-ispell)
   (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
 (use-package web-completion-data
   :after company)
 
@@ -41,11 +44,6 @@
   :defer 2
   :config
   (add-to-list 'company-backends 'company-restclient))
-
-(use-package company-quickhelp
-  :after company
-  :config
-  (company-quickhelp-mode 1))
 
 (use-package company-statistics
   :after company

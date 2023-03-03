@@ -38,7 +38,7 @@
   (setq lsp-prefer-flymake nil
         lsp-enable-symbol-highlighting nil
         lsp-references-exclude-definition t
-        lsp-signature-doc-lines 40
+        lsp-signature-doc-lines 10
         lsp-headerline-breadcrumb-segments '(file symbols)
         lsp-headerline-breadcrumb-enable nil
         lsp-log-io nil
@@ -74,9 +74,14 @@
   :after lsp-mode
   :commands lsp-ui-mode
   :config
-  (setq lsp-ui-doc-delay 0.5)
+  (setq lsp-ui-doc-delay 0.5
+        lsp-ui-doc-max-height 40
+        lsp-ui-doc-alignment 'frame
+        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-position 'bottom
+        lsp-ui-sideline-diagnostic-max-lines 4)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                        (lsp-ui-doc-mode -1)
+                                        (lsp-ui-doc-mode 1)
                                         (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 

@@ -560,20 +560,20 @@ i.e. change right window to bottom, or change bottom window to right."
   (interactive "sEnter IP to query (blank for own IP): ")
   (require 'request)
   (request
-   (concat "https://ipinfo.io/" ip)
-   :headers '(("User-Agent" . "Emacs ipinfo.io Client")
-              ("Accept" . "application/json")
-              ("Content-Type" . "application/json;charset=utf-8"))
-   :parser 'json-read
-   :success (cl-function
-             (lambda (&key data &allow-other-keys)
-               (message
-                (mapconcat
-                 (lambda (e)
-                   (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
-                 data "\n"))))
-   :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
-                         (message "Can't receive ipinfo. Error %S " error-thrown)))))
+    (concat "https://ipinfo.io/" ip)
+    :headers '(("User-Agent" . "Emacs ipinfo.io Client")
+               ("Accept" . "application/json")
+               ("Content-Type" . "application/json;charset=utf-8"))
+    :parser 'json-read
+    :success (cl-function
+              (lambda (&key data &allow-other-keys)
+                (message
+                 (mapconcat
+                  (lambda (e)
+                    (format "%10s: %s" (capitalize (symbol-name (car e))) (cdr e)))
+                  data "\n"))))
+    :error (cl-function (lambda (&rest args &key error-thrown &allow-other-keys)
+                          (message "Can't receive ipinfo. Error %S " error-thrown)))))
 
 ;; ---------------------------------------------------------------------
 ;; Sum up all TIME-DAYS properties and put them in the current heading's
@@ -792,9 +792,9 @@ Value is automatically inserted as a side effect."
   (let ((red (dchrzan/hex-string-to-num-string
               (substring hex-color 1 3)))
         (green (dchrzan/hex-string-to-num-string
-               (substring hex-color 3 5)))
+                (substring hex-color 3 5)))
         (blue (dchrzan/hex-string-to-num-string
-                (substring hex-color 5 7))))
+               (substring hex-color 5 7))))
     ;; format and insert
     (insert (format "%s, %s, %s" red green blue))))
 
@@ -805,6 +805,15 @@ Value is automatically inserted as a side effect."
   "Native compilation of the elpa folder."
   (interactive)
   (native-compile-async (concat user-emacs-directory "elpa/") 'recursively))
+
+;; --------------------------------------------------------------------
+;; LSP Helpers
+;; --------------------------------------------------------------------
+(defun dchrzan/lsp-ui-doc-unfocus-and-hide ()
+  "Unfocus the UI Doc window and hide automatically."
+  (interactive)
+  (lsp-ui-doc-unfocus-frame)
+  (lsp-ui-doc-hide))
 
 (provide 'custom-functions)
 

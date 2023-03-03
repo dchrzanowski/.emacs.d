@@ -318,7 +318,8 @@
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
  "cf" 'lsp-format-buffer
- "cd" 'lsp-ui-doc-glance)
+ "cd" 'lsp-ui-doc-focus-frame
+ "cD" 'lsp-ui-doc-toggle)
 
 ;; --------------------------------------------------------------------
 ;; css mode leader
