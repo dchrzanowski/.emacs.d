@@ -124,22 +124,6 @@
   :defer t)
 
 ;; --------------------------------------------------------------------
-;; helm-flx (fuzzy match)
-;; --------------------------------------------------------------------
-(use-package helm-flx
-  :init
-  (use-package flx)
-  :ensure helm
-  :config
-  (helm-flx-mode +1)
-  (setq-default helm-flx-for-helm-find-files t
-                helm-flx-for-helm-locate t
-                helm-buffers-fuzzy-matching nil
-                helm-recentf-fuzzy-match t
-                helm-semantic-fuzzy-match t
-                helm-imenu-fuzzy-match t))
-
-;; --------------------------------------------------------------------
 ;; helm-fzf
 ;; --------------------------------------------------------------------
 (use-package fzf
