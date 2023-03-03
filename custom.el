@@ -45,6 +45,7 @@
  '(dired-filter-saved-filters nil)
  '(eclimd-default-workspace "~/eclipse-workspace")
  '(evil-kill-on-visual-paste nil)
+ '(evil-undo-system 'undo-tree)
  '(expand-region-preferred-python-mode 'fgallina-python)
  '(expand-region-smart-cursor t)
  '(fci-rule-color "#3E4451")
