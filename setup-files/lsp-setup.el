@@ -74,10 +74,10 @@
   :after lsp-mode
   :commands lsp-ui-mode
   :config
-  (setq lsp-ui-doc-delay 0.5
-        lsp-ui-doc-max-height 40
+  (setq lsp-ui-doc-delay 1
+        lsp-ui-doc-max-height 50
         lsp-ui-doc-alignment 'frame
-        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-show-with-cursor nil
         lsp-ui-doc-position 'bottom
         lsp-ui-sideline-diagnostic-max-lines 4)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn

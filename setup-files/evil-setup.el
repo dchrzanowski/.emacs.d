@@ -53,6 +53,7 @@
   (add-to-list 'evil-motion-state-modes 'fundamental-mode)
   (add-to-list 'evil-motion-state-modes 'tabulated-list-mode)
   (add-to-list 'evil-normal-state-modes 'disk-usage-mode)
+  (add-to-list 'evil-normal-state-modes 'lsp-ui-doc-frame-mode)
 
   (eval-after-load 'git-timemachine
     '(progn

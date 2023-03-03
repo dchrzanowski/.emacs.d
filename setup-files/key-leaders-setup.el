@@ -290,13 +290,13 @@
  "c?" 'xref-find-references
  "c." 'xref-find-definitions
  "c," 'pop-tag-mark
+ "cd" 'helpful-at-point
  "cce" 'eval-last-sexp
  "ccb" 'eval-buffer
  "ccr" 'eval-region)
 
 ;; --------------------------------------------------------------------
 ;; lsp leader
-;; currently for: java =python= c++ go typescript js dart
 ;; --------------------------------------------------------------------
 (general-define-key
  :states '(normal visual emacs)
@@ -318,8 +318,8 @@
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
  "cf" 'lsp-format-buffer
- "cd" 'lsp-ui-doc-focus-frame
- "cD" 'lsp-ui-doc-toggle)
+ "cd" 'lsp-ui-doc-toggle
+ "cD" 'lsp-ui-doc-focus-frame)
 
 ;; --------------------------------------------------------------------
 ;; css mode leader

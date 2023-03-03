@@ -488,6 +488,7 @@
 ;; lsp ui doc
 (general-define-key
  :keymaps 'lsp-ui-doc-frame-mode-map
+ :states 'normal
  "q" 'dchrzan/lsp-ui-doc-unfocus-and-hide)
 
 ;; evil god state
