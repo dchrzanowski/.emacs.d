@@ -67,8 +67,6 @@
   "C-c l" 'org-store-link
   ;; company
   "C-<SPC>" 'company-dabbrev-code
-  ;; eacl
-  "M-<RET>" 'eacl-complete-multiline
   ;; dired
   "C-;" 'dired-jump
   ;; evil-mc
@@ -107,9 +105,7 @@
  "M-<SPC> f" 'company-files
  "M-<SPC> a" 'aya-create
  "M-<SPC> e" 'aya-expand
- "M-<SPC> o" 'aya-open-line
- "M-<SPC> c" 'eacl-complete-line
- "M-<SPC> C" 'eacl-complete-multiline)
+ "M-<SPC> o" 'aya-open-line)
 
 ;; --------------------------------------------------------------------
 ;; Evil normal
