@@ -78,12 +78,12 @@ function to be used to cycle visibility of current element."
   (setq cycle-function (or cycle-function #'org-cycle))
   `(["Navigate"
      ,@(when check-for-heading '(:if org-at-heading-p))
-     ("p" "prev" org-previous-visible-heading :transient t)
-     ("n" "next" org-next-visible-heading :transient t)
+     ("k" "prev" org-previous-visible-heading :transient t)
+     ("j" "next" org-next-visible-heading :transient t)
      ("c" "cycle" ,cycle-function :transient t)
      ("u" "parent" outline-up-heading :transient t)
-     ("M-p" "prev (same level)" org-backward-heading-same-level :transient t)
-     ("M-n" "next (same level)" org-forward-heading-same-level :transient t)
+     ("M-k" "prev (same level)" org-backward-heading-same-level :transient t)
+     ("M-j" "next (same level)" org-forward-heading-same-level :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
      ("C-_" "undo" undo :transient t)]))
 
@@ -530,10 +530,10 @@ Will add an ':if org-menu-at-text-p' criteria if `CHECK-FOR-TABLE' is true."
   (list
    `["Navigate"
      ,@(when check-for-table '(:if org-menu-at-text-p))
-     ("p" "up" previous-line :transient t)
-     ("n" "down" next-line :transient t)
-     ("b" "left" backward-word :transient t)
-     ("f" "right" forward-word :transient t)
+     ("k" "up" previous-line :transient t)
+     ("j" "down" next-line :transient t)
+     ("h" "left" backward-word :transient t)
+     ("l" "right" forward-word :transient t)
      ("u" "parent" org-up-element :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
      ("C-_" "undo" undo :transient t)
@@ -717,12 +717,12 @@ Conditions have been adapted from `org-insert-link'"
 
     ["Move heading"
      :if org-at-heading-p
-     ("P" "up" org-metaup :transient t)
-     ("N" "down" org-metadown :transient t)
-     ("B" "left" org-shiftmetaleft :transient t)
-     ("F" "right" org-shiftmetaright :transient t)
-     ("b" "left (line)" org-metaleft :transient t)
-     ("f" "right (line)" org-metaright :transient t)
+     ("K" "up" org-metaup :transient t)
+     ("J" "down" org-metadown :transient t)
+     ("H" "left" org-shiftmetaleft :transient t)
+     ("L" "right" org-shiftmetaright :transient t)
+     ("h" "left (line)" org-metaleft :transient t)
+     ("l" "right (line)" org-metaright :transient t)
      ("r" "refile" org-refile :transient t)]
     ["Change heading"
      :if org-at-heading-p
@@ -751,19 +751,19 @@ Conditions have been adapted from `org-insert-link'"
     ;; Items for tables
     ["Navigate"
      :if org-at-table-p
-     ("p" "up" previous-line :transient t)
-     ("n" "down" next-line :transient t)
-     ("b" "left" org-table-previous-field :transient t)
-     ("f" "right" org-table-next-field :transient t)
+     ("k" "up" previous-line :transient t)
+     ("j" "down" next-line :transient t)
+     ("h" "left" org-table-previous-field :transient t)
+     ("l" "right" org-table-next-field :transient t)
      ("u" "parent" outline-up-heading :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
      ("C-_" "undo" undo :transient t)]
     ["Move r/c"
      :if org-at-table-p
-     ("P" "up" org-table-move-row-up :transient t)
-     ("N" "down" org-table-move-row-down :transient t)
-     ("B" "left" org-table-move-column-left :transient t)
-     ("F" "right" org-table-move-column-right :transient t)]
+     ("K" "up" org-table-move-row-up :transient t)
+     ("J" "down" org-table-move-row-down :transient t)
+     ("H" "left" org-table-move-column-left :transient t)
+     ("L" "right" org-table-move-column-right :transient t)]
     ["Field"
      :if org-at-table-p
      ("'" "edit" org-table-edit-field)
@@ -794,20 +794,20 @@ Conditions have been adapted from `org-insert-link'"
     ;; Items for lists
     ["Navigate"
      :if org-in-item-p
-     ("p" "prev" previous-line :transient t)
-     ("n" "next" next-line :transient t)
+     ("k" "prev" previous-line :transient t)
+     ("j" "next" next-line :transient t)
      ("c" "cycle" org-cycle :transient t)
      ("u" "parent" org-up-element :transient t)
-     ("M-p" "prev (same level)" org-backward-element :transient t)
-     ("M-n" "next (same level)" org-forward-element :transient t)
+     ("M-k" "prev (same level)" org-backward-element :transient t)
+     ("M-j" "next (same level)" org-forward-element :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
      ("C-_" "undo" undo :transient t)]
     ["Move list"
      :if org-in-item-p
-     ("P" "up" org-metaup :transient t)
-     ("N" "down" org-metadown :transient t)
-     ("B" "left" org-shiftmetaleft :transient t)
-     ("F" "right" org-shiftmetaright :transient t)
+     ("K" "up" org-metaup :transient t)
+     ("J" "down" org-metadown :transient t)
+     ("H" "left" org-shiftmetaleft :transient t)
+     ("L" "right" org-shiftmetaright :transient t)
      ("b" "left (line)" org-metaleft :transient t)
      ("f" "right (line)" org-metaright :transient t)]
     ["List"
