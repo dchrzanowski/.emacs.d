@@ -39,6 +39,9 @@
   ;; treat symbols such as the dash and underscore as a part of a word
   ;; (defalias #'forward-evil-word #'forward-evil-symbol)
 
+  ;; fix for evil local mode undo/redo
+  (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
+
   ;; force emacs state in
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
@@ -108,7 +111,10 @@
   (add-hook 'evil-mc-after-cursors-deleted (lambda () (setq-default evil-move-cursor-back nil)))
   (advice-add 'helm-swoop--edit :after #'evil-mc-mode)
   (advice-add 'helm-ag--edit :after #'evil-mc-mode)
-  (global-evil-mc-mode 1))
+  (global-evil-mc-mode 1)
+
+  (add-to-list 'evil-mc-custom-known-commands
+               '(wdired--self-insert . ((:default . evil-mc-execute-default-call)))))
 
 
 (use-package evil-lion

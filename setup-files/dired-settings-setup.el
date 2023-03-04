@@ -149,6 +149,9 @@
                                                  truncate-lines t))))
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
+;; provide undo tree in wdired which doesn't kick in by itself for whatever reason
+(add-hook 'wdired-mode-hook 'undo-tree-mode)
+
 ;; --------------------------------------------------------------------
 ;; Advices
 ;; --------------------------------------------------------------------
