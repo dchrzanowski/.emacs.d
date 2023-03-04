@@ -295,17 +295,19 @@
 ;; modified slightly  to use org-get-outline-path and a custom root icon
 ;; TODO: rewrite to use run-with-idle-timer
 ;;
+(defvar dchrzan/breadcrumb-head "◉")
+(put-text-property 0 (length dchrzan/breadcrumb-head) 'face 'org-level-1 dchrzan/breadcrumb-head)
+
 (defun dchrzan/org-breadcrumbs ()
   "Get the chain of headings from the top level down to the current heading."
-  (let ((breadcrumbs (org-format-outline-path
-                      (org-get-outline-path 1)
-                      (1- (frame-width))
-                      nil " > "))
-        (head "◉"))
-    (put-text-property 0 (length head) 'face 'org-level-1 head)
-    (if (string-empty-p breadcrumbs)
-        ""
-      (format " %s %s" head breadcrumbs))))
+  (if (org-before-first-heading-p)
+      ""
+    (let ((breadcrumbs (org-format-outline-path
+                        (org-get-outline-path 1)
+                        (1- (frame-width))
+                        nil " > "))
+          (head "◉"))
+      (format " %s %s" dchrzan/breadcrumb-head breadcrumbs))))
 
 (defun dchrzan/set-header-line-format()
   "Show breadcrumbs to the current point location in org mode."
