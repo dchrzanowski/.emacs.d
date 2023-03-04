@@ -298,6 +298,7 @@
  "C-<iso-lefttab>" 'previous-buffer
  "C-'" 'ranger
  "M-r" 'org-refile
+ "M-m" 'org-menu
  "<" '(lambda () (interactive)
         (if (or (region-active-p) (looking-back "^"))
             (hydra-org-template/body)

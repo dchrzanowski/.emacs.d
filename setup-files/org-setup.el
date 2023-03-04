@@ -204,6 +204,40 @@
                                     (?D . "#000dff"))))
 
 ;; --------------------------------------------------------------------
+;; org breadcrumbs
+;; --------------------------------------------------------------------
+;; written by the kind NickD at (https://emacs.stackexchange.com/questions/61101/keep-displaying-current-org-heading-info-in-some-way)
+;; modified slightly  to use org-get-outline-path and a custom root icon
+;; TODO: rewrite to use run-with-idle-timer
+;;
+(defvar dchrzan/breadcrumb-head "◉")
+(put-text-property 0 (length dchrzan/breadcrumb-head) 'face 'org-level-1 dchrzan/breadcrumb-head)
+
+(defun dchrzan/org-breadcrumbs ()
+  "Get the chain of headings from the top level down to the current heading."
+  (if (org-before-first-heading-p)
+      ""
+    (let ((breadcrumbs (org-format-outline-path
+                        (org-get-outline-path 1)
+                        (1- (frame-width))
+                        nil " > "))
+          (head "◉"))
+      (format " %s %s" dchrzan/breadcrumb-head breadcrumbs))))
+
+(defun dchrzan/set-header-line-format()
+  "Show breadcrumbs to the current point location in org mode."
+  (setq header-line-format '(:eval (dchrzan/org-breadcrumbs))))
+
+(add-hook 'org-mode-hook #'dchrzan/set-header-line-format)
+
+
+;; --------------------------------------------------------------------
+;; org menu
+;; --------------------------------------------------------------------
+(with-eval-after-load 'org
+  (require 'org-menu))
+
+;; --------------------------------------------------------------------
 ;; ox's
 ;; --------------------------------------------------------------------
 ;; org-export to github markdown
@@ -285,35 +319,6 @@
 ;; htmlize
 ;; --------------------------------------------------------------------
 (use-package htmlize)
-
-;; --------------------------------------------------------------------
-;; org breadcrumbs
-;;
-;; --------------------------------------------------------------------
-;;
-;; written by the kind NickD at (https://emacs.stackexchange.com/questions/61101/keep-displaying-current-org-heading-info-in-some-way)
-;; modified slightly  to use org-get-outline-path and a custom root icon
-;; TODO: rewrite to use run-with-idle-timer
-;;
-(defvar dchrzan/breadcrumb-head "◉")
-(put-text-property 0 (length dchrzan/breadcrumb-head) 'face 'org-level-1 dchrzan/breadcrumb-head)
-
-(defun dchrzan/org-breadcrumbs ()
-  "Get the chain of headings from the top level down to the current heading."
-  (if (org-before-first-heading-p)
-      ""
-    (let ((breadcrumbs (org-format-outline-path
-                        (org-get-outline-path 1)
-                        (1- (frame-width))
-                        nil " > "))
-          (head "◉"))
-      (format " %s %s" dchrzan/breadcrumb-head breadcrumbs))))
-
-(defun dchrzan/set-header-line-format()
-  "Show breadcrumbs to the current point location in org mode."
-  (setq header-line-format '(:eval (dchrzan/org-breadcrumbs))))
-
-(add-hook 'org-mode-hook #'dchrzan/set-header-line-format)
 
 (provide 'org-setup)
 ;;; org-setup.el ends here

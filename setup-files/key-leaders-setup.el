@@ -351,6 +351,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'org-mode-map
+ "cm" 'org-menu
  "cf" 'helm-org-rifle
  "cs" 'org-download-screenshot
  "ck" 'org-kanban/shift
