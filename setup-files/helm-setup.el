@@ -65,51 +65,6 @@
         helm-swoop-pre-input-function (lambda () "")))
 
 ;; --------------------------------------------------------------------
-;; helm-dash, visit https://github.com/Kapeli/feeds for a list of feeds
-;; if the installer fails
-;; --------------------------------------------------------------------
-(use-package helm-dash
-  :defer t
-  :config
-  (setq helm-dash-min-length 2
-        helm-dash-enable-debugging nil)
-
-  (defun javascript-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("JavaScript")))
-  (add-hook 'js2-mode-hook 'javascript-dash-doc)
-
-  (defun java-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("Java")))
-  (add-hook 'java-mode-hook 'java-dash-doc)
-
-  (defun typescript-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("TypeScript" "AngularTS")))
-  (add-hook 'typescript-mode-hook 'typescript-dash-doc)
-
-  (defun python3-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("Python 3")))
-  (add-hook 'python-mode-hook 'python3-dash-doc)
-
-  (defun html-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("HTML")))
-  (add-hook 'web-mode-hook 'html-dash-doc)
-
-  (defun elisp-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("Emacs Lisp")))
-  (add-hook 'emacs-lisp-mode-hook 'elisp-dash-doc)
-
-  (defun css-dash-doc ()
-    (interactive)
-    (setq-local helm-dash-docsets '("CSS")))
-  (add-hook 'css-mode-hook 'css-dash-doc))
-
-;; --------------------------------------------------------------------
 ;; helm-gitignore
 ;; --------------------------------------------------------------------
 ;; TEMP: disabled waiting for PR https://github.com/jupl/helm-gitignore/pull/6 to be merged

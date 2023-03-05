@@ -41,7 +41,6 @@
  "ha" 'helm-do-ag
  "hl" 'helm-locate
  "hw" 'helm-do-ag-buffers
- "hd" 'helm-dash
  "hf" 'helm-fzf
  "hp" 'helm-fzf-project-root
  ;; engine
@@ -194,6 +193,16 @@
 ;; ////////////////////////////////////////////////////////////////////
 
 ;; --------------------------------------------------------------------
+;; prog mode
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'prog-mode-map
+ "c'" 'separedit
+ "cz" 'zeal-at-point)
+
+;; --------------------------------------------------------------------
 ;; web mode leader
 ;; --------------------------------------------------------------------
 (general-define-key
@@ -201,7 +210,6 @@
  :prefix "SPC"
  :keymaps 'web-mode-map
  "cb" 'web-beautify-html
- "c'" 'separedit
  "cew" 'web-mode-element-wrap
  "ces" 'web-mode-element-select
  "cea" 'web-mode-element-content-select
@@ -264,7 +272,6 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'dart-mode-map
- "c'" 'separedit
  "cX" 'flutter-hot-restart
  "cg" 'lsp-dart-flutter-widget-guides-mode
  "cx" 'flutter-run-or-hot-reload)
@@ -276,7 +283,6 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'rustic-mode-map
- "c'" 'separedit
  "cC" 'rustic-cargo)
 
 ;; --------------------------------------------------------------------
@@ -286,7 +292,6 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'emacs-lisp-mode-map
- "c'" 'separedit
  "c?" 'xref-find-references
  "c." 'xref-find-definitions
  "c," 'pop-tag-mark
@@ -309,7 +314,6 @@
             rustic-mode-map
             dart-mode-map
             js2-mode-map)
- "c'" 'separedit
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
@@ -328,7 +332,6 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'css-mode-map
- "c'" 'separedit
  "cb" 'web-beautify-css)
 
 ;; ////////////////////////////////////////////////////////////////////
