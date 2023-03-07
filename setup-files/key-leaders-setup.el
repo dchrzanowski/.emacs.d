@@ -196,7 +196,7 @@
 ;; prog mode
 ;; --------------------------------------------------------------------
 (general-define-key
- :states '(normal visual emacs)
+ :states '(normal)
  :prefix "SPC"
  :keymaps 'prog-mode-map
  "c'" 'separedit
