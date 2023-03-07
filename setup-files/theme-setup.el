@@ -81,6 +81,8 @@
    ;; font lock variable name
    '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
    '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
+   ;; header-line
+   '(header-line ((t (:background "#1b1e24" :foreground "white"))))
    ;; helm
    '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
