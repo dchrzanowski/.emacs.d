@@ -82,7 +82,7 @@
    '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
    '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
    ;; header-line
-   '(header-line ((t (:background "#131519" :foreground "white" :box (:line-width (1 . 1) :color "#131519" :style released-button)))))
+   '(header-line ((t (:inherit mode-line :background "#131519" :foreground "white" :box (:line-width (1 . 1) :color "#000000" :style released-button)))))
    ;; helm
    '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
