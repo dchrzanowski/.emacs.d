@@ -202,7 +202,7 @@
  '(flyspell-incorrect ((t (:underline (:color "chocolate" :style wave)))))
  '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
- '(header-line ((t (:inherit mode-line :background "#131519" :foreground "white" :box (:line-width (1 . 1) :color "#000000" :style released-button)))))
+ '(header-line ((t (:inherit mode-line :background "#242830" :foreground "white" :box (:line-width (2 . 3) :color "#242830")))))
  '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
  '(helm-ff-directory ((t (:foreground "deep sky blue"))))
  '(helm-selection ((t (:inherit bold :background "#0b0c0e"))))
