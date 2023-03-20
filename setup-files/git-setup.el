@@ -12,6 +12,14 @@
   (setq magit-repository-directories '(("~/github" . 3))))
 
 ;; --------------------------------------------------------------------
+;; magit delta
+;; --------------------------------------------------------------------
+(use-package magit-delta
+  :hook (magit-mode . magit-delta-mode)
+  :config
+  (setq magit-delta-default-dark-theme "OneHalfDark" ))
+
+;; --------------------------------------------------------------------
 ;; git gutter
 ;; --------------------------------------------------------------------
 (use-package git-gutter-fringe
