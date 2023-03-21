@@ -350,12 +350,12 @@ _vr_ reset      ^^                       ^^                 ^^
                                :hint nil
                                :pre (smerge-mode 1))
   "
-^Move^ ^Keep^ ^Diff^ ^Pair^
+^Move^  ^Keep^   ^Diff^     ^Pair^
 ------------------------------------------------------
-_n_ext _b_ase _R_efine _<_: base-mine
-_p_rev _m_ine _E_diff _=_: mine-other
-^ ^ _o_ther _C_ombine _>_: base-other
-^ ^ _a_ll _r_esolve
+_n_ext  _b_ase   _R_efine   _<_: base-mine
+_p_rev  _m_ine   _E_diff    _=_: mine-other
+^ ^     _o_ther  _C_ombine  _>_: base-other
+^ ^     _a_ll    _r_esolve
 _q_uit _RET_: current
 =
 "
