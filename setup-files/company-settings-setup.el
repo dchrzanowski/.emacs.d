@@ -70,6 +70,14 @@
                  '((company-nxml)))))
 
 ;; --------------------------------------------------------------------
+;; LSP mode
+;; --------------------------------------------------------------------
+(add-hook 'lsp-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '((company-capf)))))
+
+;; --------------------------------------------------------------------
 ;; Fix collision between expanding yasnippets and company
 ;; --------------------------------------------------------------------
 ;; fix for yasnippets
