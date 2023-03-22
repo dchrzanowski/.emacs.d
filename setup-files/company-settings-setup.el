@@ -45,12 +45,6 @@
   :config
   (add-to-list 'company-backends 'company-restclient))
 
-(use-package company-statistics
-  :after company
-  :defer 2
-  :config
-  (company-statistics-mode))
-
 ;; --------------------------------------------------------------------
 ;; ORG
 ;; --------------------------------------------------------------------

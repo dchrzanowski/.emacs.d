@@ -36,7 +36,9 @@
  '(company-minimum-prefix-length 2)
  '(company-show-quick-access t)
  '(company-tooltip-align-annotations t)
+ '(company-tooltip-idle-delay 0.2)
  '(company-tooltip-minimum-width 40)
+ '(company-transformers '(company-sort-by-backend-importance))
  '(cua-rectangle-mark-key [C-M-return])
  '(cursor-type 'bar)
  '(custom-safe-themes
