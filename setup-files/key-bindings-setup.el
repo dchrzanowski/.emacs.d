@@ -234,6 +234,11 @@
  "C-S-h" 'describe-key
  "M-i" 'helm-select-action)
 
+;; helm projectile
+(general-define-key
+ :keymaps 'helm-projectile-find-file-map
+ "M-k" 'helm-previous-line)
+
 ;; helm files
 (general-define-key
  :keymaps '(helm-find-files-map
