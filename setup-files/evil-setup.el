@@ -177,6 +177,7 @@
   (evil-collection-init 'dired)
   (evil-collection-init 'disk-usage)
   (evil-collection-init 'eshell)
+  (evil-collection-init 'ediff)
   (evil-collection-init 'ibuffer)
   (evil-collection-init 'info)
   (evil-collection-init 'ivy)
