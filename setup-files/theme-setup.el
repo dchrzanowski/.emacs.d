@@ -82,7 +82,7 @@
    '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
    '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
    ;; header-line
-   '(header-line ((t (:inherit mode-line :background "#242830" :foreground "white" :box (:line-width (2 . 3) :color "#242830")))))
+   '(header-line ((t (:inherit mode-line :background "#131519" :foreground "white" :box (:line-width (6 . 1) :color "#242830")))))
    ;; helm
    '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
    '(helm-ff-directory ((t (:foreground "deep sky blue"))))
@@ -140,11 +140,11 @@
    '(show-paren-match ((t (:background "black" :foreground "red" :weight normal))))
    '(show-paren-mismatch ((t (:background "black" :foreground "red" :underline t :weight normal))))
    ;; tab-line
-   '(tab-line ((t (:background "#131519" :foreground "#131519" :box nil))))
+   '(tab-line ((t (:background "#08090a" :foreground "#08090a" :box nil))))
    '(tab-line-close-highlight ((t (:foreground "#51afef"))))
-   '(tab-line-tab ((t (:background "#131519" :foreground "lime green" :box (:line-width (6 . 4) :color "#131519")))))
-   '(tab-line-tab-current ((t (:background "#23272e" :foreground "lime green" :box (:line-width (6 . 4) :color "#131519" :style flat-button)))))
-   '(tab-line-tab-inactive ((t (:inherit tab-line-tab :background "#131519" :foreground "#6a727a" :box (:line-width (1 . 4) :color "#131519")))))
+   '(tab-line-tab ((t (:background "#08090a" :foreground "lime green" :box (:line-width (6 . 4) :color "#08090a")))))
+   '(tab-line-tab-current ((t (:background "#131519" :foreground "lime green" :box (:line-width (6 . 4) :color "#08090a" :style flat-button)))))
+   '(tab-line-tab-inactive ((t (:inherit tab-line-tab :background "#08090a" :foreground "#6a727a" :box (:line-width (1 . 4) :color "#08090a")))))
    ;; tooltip
    '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))
    ;; tree-sitter-hl
