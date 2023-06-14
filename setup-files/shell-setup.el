@@ -20,12 +20,13 @@
 ;; --------------------------------------------------------------------
 ;; Eshell syntax highlight
 ;; --------------------------------------------------------------------
-(use-package eshell-syntax-highlighting
-  :after eshell
-  :ensure t
-  :init
-  ;; Enable in all Eshell buffers.
-  (eshell-syntax-highlighting-global-mode +1))
+;; FIXME: fails to native compile, but works
+;; (use-package eshell-syntax-highlighting
+;;   :after eshell
+;;   :ensure t
+;;   :init
+;;   ;; Enable in all Eshell buffers.
+;;   (eshell-syntax-highlighting-global-mode +1))
 
 
 (use-package shell-pop
