@@ -148,9 +148,6 @@
 (use-package evil-numbers
   :after evil)
 
-(use-package evil-ediff
-  :after evil)
-
 (use-package evil-indent-plus
   :config
   (evil-indent-plus-default-bindings))
