@@ -73,7 +73,10 @@
 ;; show matching brackets
 (show-paren-mode t)
 ;; highlight current line
-(global-hl-line-mode)
+;; (global-hl-line-mode)
+;; cursor blink speed
+(setq blink-cursor-delay 0.35
+      blink-cursor-interval 0.35)
 ;; auto refresh file when changed on disk
 (global-auto-revert-mode t)
 ;; keep auto revert quiet

@@ -2,8 +2,8 @@
 # name: for in
 # key: forin
 # --
-for (var ${1:variable} in ${2:object}) {
-    ${3:if (${2:object}.hasOwnProperty(${1:variable})) {
-        $4
-    }}
+for (const ${1:variable} in ${2:object}) {
+    if ($2.hasOwnProperty($1)) {
+        $3
+    }
 }
