@@ -220,8 +220,7 @@
     (let ((breadcrumbs (org-format-outline-path
                         (org-get-outline-path 1)
                         (1- (frame-width))
-                        nil " > "))
-          (head "◉"))
+                        nil " > ")))
       (format " %s %s" dchrzan/breadcrumb-head breadcrumbs))))
 
 (defun dchrzan/set-header-line-format()
