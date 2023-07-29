@@ -121,6 +121,7 @@
 (require 'php-setup)
 (require 'web-setup)
 (require 'ligatures-setup)
+(require 'gdscript-setup)
 (require 'lsp-setup)
 
 ;; file specific (json, yaml, dot, etc)

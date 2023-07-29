@@ -20,6 +20,7 @@
   :hook ((c++-mode        . lsp)
          (js2-mode        . lsp)
          (typescript-mode . lsp)
+         (gdscript-mode   . lsp)
          (go-mode         . lsp))
   :config
   ;; same definition as mentioned earlier

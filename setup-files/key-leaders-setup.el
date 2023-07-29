@@ -313,6 +313,7 @@
             typescript-mode-map
             rustic-mode-map
             dart-mode-map
+            gdscript-mode-map
             js2-mode-map)
  "c?" 'lsp-ui-peek-find-references
  "c." 'lsp-ui-peek-find-definitions

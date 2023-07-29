@@ -51,7 +51,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-dabbrev company-files)))))
+                 '(company-dabbrev company-files))))
 
 ;; --------------------------------------------------------------------
 ;; C# MODE
@@ -67,7 +67,7 @@
 (add-hook 'nxml-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-nxml)))))
+                 '(company-nxml))))
 
 ;; --------------------------------------------------------------------
 ;; LSP mode
@@ -75,7 +75,7 @@
 (add-hook 'lsp-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-capf)))))
+                 '(company-capf))))
 
 ;; --------------------------------------------------------------------
 ;; Fix collision between expanding yasnippets and company
