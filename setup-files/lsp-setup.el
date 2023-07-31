@@ -21,6 +21,8 @@
          (js2-mode        . lsp)
          (typescript-mode . lsp)
          (gdscript-mode   . lsp)
+         (csharp-mode     . lsp)
+         (python-mode     . lsp)
          (go-mode         . lsp))
   :config
   ;; same definition as mentioned earlier
@@ -76,8 +78,8 @@
         lsp-ui-doc-position 'bottom
         lsp-ui-sideline-diagnostic-max-lines 4)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                        (lsp-ui-doc-mode 1)
-                                        (lsp-ui-sideline-mode 1))))
+                                             (lsp-ui-doc-mode 1)
+                                             (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 ;; --------------------------------------------------------------------
