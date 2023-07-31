@@ -16,11 +16,5 @@
 ;; --------------------------------------------------------------------
 (use-package docker)
 
-;; --------------------------------------------------------------------
-;; Allow Tramp to ssh into docker containers
-;; --------------------------------------------------------------------
-(use-package docker-tramp
-  :after docker)
-
 (provide 'docker-setup)
 ;;; docker-setup.el ends here
