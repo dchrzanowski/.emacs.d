@@ -59,7 +59,7 @@
 (add-hook 'csharp-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-omnisharp)))))
+                 '(company-omnisharp))))
 
 ;; --------------------------------------------------------------------
 ;; NXML
