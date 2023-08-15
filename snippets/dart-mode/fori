@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: for-in
 # --
-for (final ${1:item} in ${2:items}) {
+for ($1`(popup-menu* '("final" "var"))` ${2:item} in ${3:items}) {
   $0
 }

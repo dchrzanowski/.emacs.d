@@ -457,6 +457,16 @@
  "j" 'next-line
  "k" 'previous-line)
 
+;; popup
+(general-define-key
+ :keymaps 'popup-menu-keymap
+ "M-l" 'popup-select
+ "l" 'popup-select
+ "M-j" 'popup-next
+ "j" 'popup-next
+ "M-k" 'popup-previous
+ "k" 'popup-previous)
+
 ;; flycheck
 (general-define-key
  :keymaps 'flycheck-error-list-mode-map

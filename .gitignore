@@ -108,3 +108,4 @@ eglot-eclipse-jdt-cache
 /eln-cache/
 /async-bytecomp.log
 /projects
+/tree-sitter

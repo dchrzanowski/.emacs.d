@@ -142,8 +142,8 @@
    ;; tab-line
    '(tab-line ((t (:background "#08090a" :foreground "#08090a" :box nil))))
    '(tab-line-close-highlight ((t (:foreground "#51afef"))))
-   '(tab-line-tab ((t (:background "#08090a" :foreground "lime green" :box (:line-width (6 . 4) :color "#08090a")))))
-   '(tab-line-tab-current ((t (:background "#131519" :foreground "lime green" :box (:line-width (6 . 4) :color "#08090a" :style flat-button)))))
+   '(tab-line-tab ((t (:background "#131519" :foreground "lime green" :box (:line-width (1 . 2) :color "#131519" :style flat-button)))))
+   '(tab-line-tab-current ((t (:background "#131519" :foreground "lime green" :box (:line-width (1 . 2) :color "#131519" :style flat-button)))))
    '(tab-line-tab-inactive ((t (:inherit tab-line-tab :background "#08090a" :foreground "#6a727a" :box (:line-width (1 . 4) :color "#08090a")))))
    ;; tooltip
    '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))

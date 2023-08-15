@@ -10,6 +10,7 @@
 (use-package yasnippet
   :defer t
   :config
+  (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
   (yas-global-mode 1))
 
 (use-package auto-yasnippet)
