@@ -48,6 +48,9 @@
                                  ("l" "Link" entry (file "~/GoogleDrive/org/refile.org") "* TODO %?\n  %a")
                                  ("L" "Link with description" entry (file "~/GoogleDrive/org/refile.org") "* TODO %?\n  %A")
                                  ("n" "Note" entry (file "~/GoogleDrive/org/refile.org") "* %?")
+                                 ;; ("j" "Journal Note" entry (file+datetree "~/GoogleDrive/org/journal.org") "**** %T %^{Note Title}")
+                                 ("j" "Journal Note" entry (file+datetree "~/GoogleDrive/org/journal.org") "* %U %?")
+                                 ("w" "Work Journal Note" entry (file+datetree "~/GoogleDrive/org/journal-work.org") "* %U %?")
                                  ("c" "Calfw2org" entry (file "~/GoogleDrive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")))
    ;; --------------------------------------------------------------------
    ;; agenda
