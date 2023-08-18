@@ -92,34 +92,34 @@
 ;; --------------------------------------------------------------------
 ;; lsp dap mode (debugging)
 ;; --------------------------------------------------------------------
-(use-package dap-mode
-  :after lsp-mode
-  :config
-  ;; --------------------------------------------------------------------
-  ;; Set up Node debugging
-  ;; --------------------------------------------------------------------
-  ;; The vsextension necessary that talks to DAP is now depracated
-  ;; However, it can be grabbed manually from https://github.com/microsoft/vscode-node-debug2
-  ;; clone the repo and run npm i && npm run package
-  ;; and unzip the vsix file into ~/.emacs.d/.extension/vscode/ms-vscode.node-debug2
-  ;;
-  ;; TODO:
-  ;; FIXME;
-  ;; The new extension is https://github.com/microsoft/vscode-js-debug
-  ;; Might be worthwile looking into setting this one up instead
-  ;; It offers more features.
-  ;; After looking into it it works out that they've built something
-  ;; that doesn't comply with their own DAP protocol...
-  ;; So now DAP protocol will be amended (PR in progress) to enable
-  ;; multiple sessions over a single adapter to support what they've done
-  ;; with vscode-js-debug which is mostly based on Chrome's Devtools debugger...
-  ;; Perhaps take a look again at the progess in about a half a year...
-  (require 'dap-node)
-  (dap-node-setup)
+;; (use-package dap-mode
+;;   :after lsp-mode
+;;   :config
+;;   ;; --------------------------------------------------------------------
+;;   ;; Set up Node debugging
+;;   ;; --------------------------------------------------------------------
+;;   ;; The vsextension necessary that talks to DAP is now depracated
+;;   ;; However, it can be grabbed manually from https://github.com/microsoft/vscode-node-debug2
+;;   ;; clone the repo and run npm i && npm run package
+;;   ;; and unzip the vsix file into ~/.emacs.d/.extension/vscode/ms-vscode.node-debug2
+;;   ;;
+;;   ;; TODO:
+;;   ;; FIXME;
+;;   ;; The new extension is https://github.com/microsoft/vscode-js-debug
+;;   ;; Might be worthwile looking into setting this one up instead
+;;   ;; It offers more features.
+;;   ;; After looking into it it works out that they've built something
+;;   ;; that doesn't comply with their own DAP protocol...
+;;   ;; So now DAP protocol will be amended (PR in progress) to enable
+;;   ;; multiple sessions over a single adapter to support what they've done
+;;   ;; with vscode-js-debug which is mostly based on Chrome's Devtools debugger...
+;;   ;; Perhaps take a look again at the progess in about a half a year...
+;;   (require 'dap-node)
+;;   (dap-node-setup)
 
-  ;; show dap hydra automatically when dap hits a breakpoint
-  (add-hook 'dap-stopped-hook
-            (lambda (arg) (call-interactively #'dap-hydra))))
+;;   ;; show dap hydra automatically when dap hits a breakpoint
+;;   (add-hook 'dap-stopped-hook
+;;             (lambda (arg) (call-interactively #'dap-hydra))))
 
 (provide 'lsp-setup)
 ;;; lsp-setup.el ends here
