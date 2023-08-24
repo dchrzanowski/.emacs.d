@@ -3,7 +3,9 @@
 ;; --------------------------------------------------------------------
 ;;; Code:
 ;; --------------------------------------------------------------------
-(use-package dart-mode)
+(use-package dart-mode
+  :config
+  (add-hook 'dart-mode-hook #'(lambda () (tree-sitter-hl-mode -1))))
 
 (use-package flutter
   :after dart-mode

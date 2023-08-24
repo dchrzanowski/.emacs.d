@@ -815,6 +815,12 @@ Value is automatically inserted as a side effect."
   (lsp-ui-doc-unfocus-frame)
   (lsp-ui-doc-hide))
 
+(defun dchrzan/split-and-navigate-to-symbol ()
+  "Deletes all other windows, splits the screen and navigates to symbol."
+  (interactive)
+  (dchrzan/delete-other-windows-and-split-right)
+  (lsp-ui-peek-find-definitions))
+
 (provide 'custom-functions)
 
 ;;; custom-functions.el ends here
