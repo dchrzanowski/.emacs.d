@@ -30,6 +30,9 @@
 (use-package tree-sitter-langs
   :after tree-sitter
   :config
+  (setq tree-sitter-major-mode-language-alist (remove
+                                               '(dart-mode . dart)
+                                               tree-sitter-major-mode-language-alist))
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
