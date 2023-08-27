@@ -37,6 +37,10 @@
    '(avy-lead-face-2 ((t (:background "black" :foreground "white" :weight bold))))
    ;; ace window
    '(aw-leading-char-face ((t (:background "black" :foreground "red"))))
+   ;; binky
+   '(binky-preview-mode ((t (:inherit font-lock-function-name-face :weight bold))))
+   '(binky-preview-name ((t (:inherit default :weight bold))))
+   '(binky-preview-name-same ((t (:inherit binky-preview-name :underline t :weight bold))))
    ;; cal
    '(cfw:face-day-title ((t (:foreground "gray70" :background "#080808"))))
    '(cfw:face-grid ((t (:foreground "gray80" :background nil))))

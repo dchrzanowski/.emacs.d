@@ -102,13 +102,8 @@
  ;; cleanup buffer
  "i" 'cleanup-buffer-untabify
  "I" 'cleanup-buffer-tabify
- ;; dumb jump
- ;; TODO remove dump jump. Made obsolete by xref
- "lo" 'dumb-jump-go-other-window
- "lj" 'dumb-jump-go
- "lx" 'dumb-jump-go-prefer-external
- "lz" 'dumb-jump-go-prefer-external-other-window
- "lq" 'dumb-jump-quick-look
+ ;; binky
+ "l" 'binky-binky
  ;; git stuff
  "gs" 'magit-status
  "gi" 'magit-init

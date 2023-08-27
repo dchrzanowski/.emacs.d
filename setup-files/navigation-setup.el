@@ -43,6 +43,17 @@
   :after (treemacs evil))
 
 ;; --------------------------------------------------------------------
+;; binky
+;; --------------------------------------------------------------------
+(use-package binky
+  :defer t
+  :config
+  (setq binky-preview-delay 0
+        binky-preview-in-groups nil
+        binky-preview-side 'bottom)
+  (binky-mode))
+
+;; --------------------------------------------------------------------
 ;; ranger
 ;; --------------------------------------------------------------------
 (use-package ranger
@@ -143,11 +154,11 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 
 
 ;; --------------------------------------------------------------------
-;; dumb-jump
+;; dumb-jump (replaced by xref+lsp and other navigation options)
 ;; --------------------------------------------------------------------
-(use-package dumb-jump
-  :defer 5
-  :config (setq dumb-jump-selector 'helm))
+;; (use-package dumb-jump
+;;   :defer 5
+;;   :config (setq dumb-jump-selector 'helm))
 
 ;; --------------------------------------------------------------------
 ;; smart-jump

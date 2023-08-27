@@ -54,7 +54,6 @@
   "C-c C-y" 'helm-show-kill-ring
   ;; avy
   "M-e" 'avy-goto-char-timer
-  "M-j" 'avy-goto-word-or-subword-1
   ;; tab-line
   "<C-tab>" 'next-buffer
   "C-<iso-lefttab>" 'previous-buffer
@@ -169,6 +168,8 @@
 ;; --------------------------------------------------------------------
 (general-define-key
  :keymaps 'motion
+ ;; binky
+ "M" 'binky-binky
  ;; evil jump
  "<escape>" 'keyboard-quit-and-remove-evil-mc)
 
