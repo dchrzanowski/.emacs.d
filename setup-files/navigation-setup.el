@@ -50,6 +50,8 @@
   :config
   (setq binky-preview-delay 0
         binky-preview-in-groups nil
+        ;; binky-preview-order '(back manual recent)
+        binky-preview-order '(back manual)
         binky-preview-side 'bottom)
   (binky-mode))
 
