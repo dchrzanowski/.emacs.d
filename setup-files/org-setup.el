@@ -244,23 +244,31 @@
 ;; --------------------------------------------------------------------
 ;; org-export to github markdown
 (use-package ox-gfm
-  :defer t
-  :after org)
+  :defer 4
+  :after org
+  :config
+  (require 'ox-gfm nil t))
 
 ;; org-export to impress.js
 (use-package ox-impress-js
-  :defer t
-  :after org)
+  :defer 4
+  :after org
+  :config
+  (require 'ox-impress-js))
 
 ;; org-export reveal.js
 (use-package ox-reveal
-  :defer t
-  :after org)
+  :defer 4
+  :after org
+  :config
+  (require 'ox-reveal))
 
 ;; org-export to json
 (use-package ox-json
-  :defer t
-  :after org)
+  :defer 4
+  :after org
+  :config
+  (require 'ox-json))
 
 ;; --------------------------------------------------------------------
 ;; ob's
