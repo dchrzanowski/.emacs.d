@@ -823,6 +823,17 @@ Value is automatically inserted as a side effect."
   (balance-windows)
   (lsp-ui-peek-find-definitions))
 
-(provide 'custom-functions)
+;; --------------------------------------------------------------------
+;; hledger Helpers
+;; --------------------------------------------------------------------
+(defun hledger-popup-balance-at-point ()
+  "Show balance for account at point in a popup."
+  (interactive)
+  ;; (if-let ((account (thing-at-point 'hledger-account)))
+  (if-let ((account (symbol-at-point)))
+      (message (hledger-shell-command-to-string
+                (format " balance -N %s " account)))
+    (message "No account at point")))
 
+(provide 'custom-functions)
 ;;; custom-functions.el ends here
