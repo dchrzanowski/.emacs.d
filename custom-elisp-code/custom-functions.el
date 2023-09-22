@@ -818,7 +818,9 @@ Value is automatically inserted as a side effect."
 (defun dchrzan/split-and-navigate-to-symbol ()
   "Deletes all other windows, splits the screen and navigates to symbol."
   (interactive)
-  (dchrzan/delete-other-windows-and-split-right)
+  (split-window-right)
+  (windmove-right)
+  (balance-windows)
   (lsp-ui-peek-find-definitions))
 
 (provide 'custom-functions)

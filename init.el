@@ -97,6 +97,7 @@
 
 ;; org
 (require 'org-setup)
+(require 'finance-setup)
 
 ;; mail
 ;; (require 'mu4e-setup)

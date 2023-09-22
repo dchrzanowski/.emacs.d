@@ -11,6 +11,8 @@
  :states '(normal visual motion emacs)
  :keymaps 'override
  :prefix "SPC"
+ "=" 'balance-windows
+ "`" 'show-file-name
  ;; show filename
  "`" 'show-file-name
  "¬" 'file-metadata

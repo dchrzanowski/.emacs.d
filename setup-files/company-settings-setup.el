@@ -48,10 +48,23 @@
 ;; --------------------------------------------------------------------
 ;; ORG
 ;; --------------------------------------------------------------------
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'company-backends)
+;;                  '(company-ispell company-dabbrev company-files))))
 (add-hook 'org-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '(company-dabbrev company-files))))
+                 '((company-dabbrev company-ispell :separate)
+                   company-files))))
+
+;; --------------------------------------------------------------------
+;; hledger
+;; --------------------------------------------------------------------
+(add-hook 'hledger-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 '(hledger-company))))
 
 ;; --------------------------------------------------------------------
 ;; NXML
@@ -67,6 +80,7 @@
 (add-hook 'lsp-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
+                 ;; '((company-capf :with company-yasnippet)))))
                  '(company-capf))))
 
 ;; --------------------------------------------------------------------
