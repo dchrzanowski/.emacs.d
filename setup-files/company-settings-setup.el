@@ -64,7 +64,7 @@
 (add-hook 'hledger-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '(hledger-company))))
+                 '((company-dabbrev :with hledger-company)))))
 
 ;; --------------------------------------------------------------------
 ;; NXML
@@ -72,7 +72,7 @@
 (add-hook 'nxml-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '(company-nxml))))
+                 '((company-nxml)))))
 
 ;; --------------------------------------------------------------------
 ;; LSP mode
