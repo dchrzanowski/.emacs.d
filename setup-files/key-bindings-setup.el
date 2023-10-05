@@ -448,6 +448,14 @@
  "g" 'pdf-view-first-page
  "G" 'pdf-view-last-page)
 
+;; pdf outline
+(general-define-key
+ :keymaps 'pdf-outline-buffer-mode-map
+ "j" 'next-line
+ "k" 'previous-line
+ "C-j" 'scroll-up-command
+ "C-k" 'scroll-down-command)
+
 ;; proced
 (general-define-key
  :keymaps 'proced-mode-map
