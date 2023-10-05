@@ -739,7 +739,11 @@ PREFIX is added in front of each generated id."
   (interactive)
   (eyebrowse-switch-to-window-config 7)
   (delete-other-windows)
-  (find-file "~/GoogleDrive/org/calendar.org"))
+  (find-file "~/GoogleDrive/org/work_calendar.org")
+  (split-window-horizontally)
+  (other-window 1)
+  (find-file "~/GoogleDrive/org/calendar.org")
+  (other-window 1))
 
 ;; --------------------------------------------------------------------
 ;; Switch to work_calendar.org
