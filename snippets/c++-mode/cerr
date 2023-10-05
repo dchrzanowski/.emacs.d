@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: cerr
-# key: cerr
+# key: err
 # --
-std::cerr << "${1:/* error message */}" << '
-';
+cerr << $0;
