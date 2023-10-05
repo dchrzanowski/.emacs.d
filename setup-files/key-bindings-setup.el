@@ -437,6 +437,8 @@
 ;; pdf view
 (general-define-key
  :keymaps 'pdf-view-mode-map
+ "f" 'pdf-view-goto-page
+ "F" 'pdf-view-goto-label
  "j" 'pdf-view-next-line-or-next-page
  "k" 'pdf-view-previous-line-or-previous-page
  "C-j" 'pdf-view-next-page-command
@@ -507,6 +509,15 @@
  :keymaps 'lsp-ui-doc-frame-mode-map
  :states 'normal
  "q" 'dchrzan/lsp-ui-doc-unfocus-and-hide)
+
+;; hledger
+(general-define-key
+ :keymaps 'hledger-mode-map
+ :states 'normal
+ "-" 'hledger-decrement-entry-date
+ "=" 'hledger-increment-entry-date
+ "H" 'hledger-prev-entry
+ "L" 'hledger-next-entry)
 
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)

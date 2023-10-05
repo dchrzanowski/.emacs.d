@@ -835,5 +835,17 @@ Value is automatically inserted as a side effect."
                 (format " balance -N %s " account)))
     (message "No account at point")))
 
+(defun hledger-next-entry ()
+  "Move to next entry and pulse."
+  (interactive)
+  (hledger-next-or-new-entry)
+  (hledger-pulse-momentary-current-entry))
+
+(defun hledger-prev-entry ()
+  "Move to last entry and pulse."
+  (interactive)
+  (hledger-backward-entry)
+  (hledger-pulse-momentary-current-entry))
+
 (provide 'custom-functions)
 ;;; custom-functions.el ends here
