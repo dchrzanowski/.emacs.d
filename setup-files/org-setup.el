@@ -250,11 +250,11 @@
   (require 'ox-gfm nil t))
 
 ;; org-export to impress.js
-(use-package ox-impress-js
-  :defer 4
-  :after org
-  :config
-  (require 'ox-impress-js))
+;; (use-package ox-impress-js
+;;   :defer 4
+;;   :after org
+;;   :config
+;;   (require 'ox-impress-js))
 
 ;; org-export reveal.js
 (use-package ox-reveal
