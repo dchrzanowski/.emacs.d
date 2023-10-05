@@ -127,7 +127,7 @@
  "oa" 'org-agenda-list-and-delete-other-windows
  "oo" 'org-agenda
  "of" 'helm-org-rifle
- "ob" 'org-iswitchb
+ "ob" 'org-switchb
  "ok" 'cfw:open-org-calendar
  "oK" 'calendar
  "ot" 'org-agenda-todo-items

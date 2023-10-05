@@ -253,6 +253,7 @@
  '(tab-line-tab ((t (:background "#131519" :foreground "lime green" :box (:line-width (1 . 2) :color "#131519" :style flat-button)))))
  '(tab-line-tab-current ((t (:background "#131519" :foreground "lime green" :box (:line-width (1 . 2) :color "#131519" :style flat-button)))))
  '(tab-line-tab-inactive ((t (:inherit tab-line-tab :background "#08090a" :foreground "#6a727a" :box (:line-width (1 . 4) :color "#08090a")))))
+ '(tab-line-tab-modified ((t (:inherit font-lock-variable-name-face))))
  '(tooltip ((t (:background "#080c14" :foreground "#bbc2cf"))))
  '(tree-sitter-hl-face:constant.builtin ((t (:inherit font-lock-constant-face))))
  '(tree-sitter-hl-face:constructor ((t (:inherit font-lock-keyword-face :slant normal))))
