@@ -305,6 +305,7 @@
  :prefix "SPC"
  :keymaps '(java-mode-map
             ;; python-mode-map
+            c-mode-map
             c++-mode-map
             go-mode-map
             typescript-mode-map
@@ -336,18 +337,6 @@
 ;; ////////////////////////////////////////////////////////////////////
 ;; MODES
 ;; ////////////////////////////////////////////////////////////////////
-
-;; --------------------------------------------------------------------
-;; hledger
-;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'hledger-mode-map
- "cc" 'hledger-run-command
- "ca" 'hledger-capture
- "ce" 'hledger-jentry
- "cb" 'hledger-popup-balance-at-point)
 
 ;; --------------------------------------------------------------------
 ;; magit
@@ -461,6 +450,29 @@
  "cA" 'run-admin-bearer-token
  "cc" 'restclient-http-send-current-stay-in-window
  "ch" 'hydra-restclient/body)
+
+;; --------------------------------------------------------------------
+;; hledger
+;; --------------------------------------------------------------------
+(general-define-key
+ :states '(normal visual emacs)
+ :prefix "SPC"
+ :keymaps 'hledger-mode-map
+ "cr" 'hledger-refresh-buffer
+ "co" 'hledger-overall-report
+ "cd" 'hledger-daily-report
+ "cm" 'hledger-monthly-incomestatement
+ "ce" 'hledger-edit-amount
+ "cc" 'hledger-run-command
+ "ca" 'hledger-capture
+ "cj" 'hledger-jentry
+ "cb" 'hledger-popup-balance-at-point)
+
+;; (general-define-key
+;;  :states '(normal visual emacs)
+;;  :prefix "SPC"
+;;  :keymaps 'hledger-input-mode-map
+;;  "cb" 'hledger-popup-balance-at-point)
 
 (provide 'key-leaders-setup)
 ;;; key-leaders-setup.el ends here
