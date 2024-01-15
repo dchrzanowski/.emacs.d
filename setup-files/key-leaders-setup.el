@@ -169,7 +169,7 @@
  "tw" 'whitespace-mode
  "t=" 'hydra-text-size/body
  "tz" 'zenity-cp-color-at-point-dwim
- "tt" 'transmission
+ ;; "tt" 'transmission
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse

@@ -8,6 +8,7 @@
 ;; Python
 ;; --------------------------------------------------------------------
 (use-package php-mode
+  :defer 10
   :config
   (use-package company-php
     :config

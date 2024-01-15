@@ -3,7 +3,8 @@
 ;; --------------------------------------------------------------------
 ;;; Code:
 ;; --------------------------------------------------------------------
-(use-package dart-mode)
+(use-package dart-mode
+  :defer 4)
 
 (use-package flutter
   :after dart-mode

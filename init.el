@@ -18,6 +18,7 @@
 ;; --------------------------------------------------------------------
 (require 'package)
 
+(setq use-package-compute-statistics nil) ;; toggle to t if you want use-package to compute stats on load
 (setq package-enable-at-startup nil)
 (setq package-native-compile t) ;; native compilation
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))

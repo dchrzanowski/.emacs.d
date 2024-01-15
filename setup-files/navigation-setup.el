@@ -38,7 +38,8 @@
 ;; --------------------------------------------------------------------
 ;; treemacs
 ;; --------------------------------------------------------------------
-(use-package treemacs)
+(use-package treemacs
+  :defer t)
 (use-package treemacs-evil
   :after (treemacs evil))
 

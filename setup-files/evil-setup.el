@@ -49,7 +49,7 @@
   (add-to-list 'evil-emacs-state-modes 'org-brain-visualize-mode)
   (add-to-list 'evil-emacs-state-modes 'cfw:details-mode)
   (add-to-list 'evil-emacs-state-modes 'fzf-projectile)
-  (add-to-list 'evil-emacs-state-modes 'transmission-mode)
+  ;; (add-to-list 'evil-emacs-state-modes 'transmission-mode)
   (add-to-list 'evil-emacs-state-modes 'image-mode)
   (add-to-list 'evil-emacs-state-modes 'chronos-mode)
 
@@ -118,11 +118,12 @@
 
 
 (use-package evil-lion
-  :ensure t
+  :after evil
   :config
   (evil-lion-mode))
 
 (use-package evil-nerd-commenter
+  :after evil
   :defer t)
 
 (use-package evil-snipe
@@ -149,6 +150,7 @@
   :after evil)
 
 (use-package evil-indent-plus
+  :after evil
   :config
   (evil-indent-plus-default-bindings))
 
@@ -156,12 +158,10 @@
   :after evil)
 
 (use-package vimish-fold
-  :ensure
   :after evil)
 
 (use-package evil-vimish-fold
-  :ensure
-  :after vimish-fold
+  :after (evil vimish-fold)
   :init
   (setq evil-vimish-fold-target-modes '(prog-mode conf-mode text-mode))
   :config
