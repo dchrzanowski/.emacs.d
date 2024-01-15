@@ -76,14 +76,17 @@
 ;; (global-hl-line-mode)
 ;; cursor blink speed
 (setq blink-cursor-delay 0.35
-      blink-cursor-interval 0.35)
+      blink-cursor-interval 0.35
+      blink-cursor-blinks 0) ;; don't stop blinking
 ;; auto refresh file when changed on disk
 (global-auto-revert-mode t)
 ;; keep auto revert quiet
 (setq-default auto-revert-verbose nil)
 ;; auto-focus help windows, easier to Q them
 (setq-default help-window-select t)
-;; (global-subword-mode)  ;; iterate through camelcase
+;; iterate through camelcase
+;; (global-subword-mode)
+;; keep quiet on using disabled commands
 (setq disabled-command-function nil)
 
 ;; --------------------------------------------------------------------
