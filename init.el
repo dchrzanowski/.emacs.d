@@ -153,14 +153,15 @@
 (add-hook 'after-init-hook #'server-start)
 
 ;; --------------------------------------------------------------------
-;; Open goals on startup
+;; Open home screen setup
 ;; --------------------------------------------------------------------
-(progn (eyebrowse-switch-to-window-config 7)
-       (find-file "~/GoogleDrive/org/work_calendar.org")
-       (split-window-horizontally)
-       (other-window 1)
-       (find-file "~/GoogleDrive/org/calendar.org")
-       (eyebrowse--delete-window-config 1))
+(add-hook 'after-init-hook
+          #'(lambda () (progn (eyebrowse-switch-to-window-config 7)
+                         (find-file "~/GoogleDrive/org/work_calendar.org")
+                         (split-window-horizontally)
+                         (other-window 1)
+                         (find-file "~/GoogleDrive/org/calendar.org")
+                         (eyebrowse--delete-window-config 1))))
 
 ;;; Commentary:
 (provide 'init)

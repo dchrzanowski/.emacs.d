@@ -489,8 +489,14 @@ minibuffer."
 (defun byte-recompile-config-files ()
   "Recompile all Emacs configuration files."
   (interactive)
-  (byte-recompile-directory "~/.emacs.d/setup-files")
-  (byte-recompile-directory "~/.emacs.d/custom-elisp-code"))
+  (byte-recompile-file "~/.emacs.d/custom-elisp-code/custom-functions.el" 1 0)
+  (byte-recompile-file "~/.emacs.d/custom-elisp-code/helm-fzf.el" 1 0)
+  (byte-recompile-file "~/.emacs.d/custom-elisp-code/magit-pretty-graph.el" 1 0)
+  (byte-recompile-file "~/.emacs.d/custom-elisp-code/org-menu.el" 1 0)
+  (byte-recompile-file "~/.emacs.d/custom-elisp-code/org-notify.el" 1 0)
+  (byte-recompile-file "~/.emacs.d/custom-elisp-code/saved-macros.el" 1 0)
+  (byte-recompile-directory "~/.emacs.d/custom-elisp-code/bookmark-plus" 0 1)
+  (byte-recompile-directory "~/.emacs.d/setup-files" 0 1))
 
 ;; --------------------------------------------------------------------
 ;; Toggle between a vertical and horizontal window split
