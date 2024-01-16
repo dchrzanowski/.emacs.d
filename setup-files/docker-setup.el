@@ -9,12 +9,13 @@
 ;; --------------------------------------------------------------------
 (use-package dockerfile-mode
   :mode ("Dockerfile\\'" . dockerfile-mode)
-  :defer 2)
+  :defer 4)
 
 ;; --------------------------------------------------------------------
 ;; Docker management
 ;; --------------------------------------------------------------------
-(use-package docker)
+(use-package docker
+  :defer 3)
 
 (provide 'docker-setup)
 ;;; docker-setup.el ends here

@@ -5,19 +5,20 @@
   "Convert megabytes to bytes.  Express the value as MEGABYTES."
   (* megabytes 1024 1024))
 
-;; set a much higher GC collection threshold
-;; (setq-default garbage-collection-messages t)
-(setq gc-cons-threshold (megabytes-to-bytes 16))
-(setq read-process-output-max (megabytes-to-bytes 4))
+;; (setq-default garbage-collection-messages t) ;; toggle to print GC collection messages
+;; set a much higher GC collection threshold than the default setting
+(setq gc-cons-threshold (megabytes-to-bytes 32))
+(setq read-process-output-max (megabytes-to-bytes 8))
 
 ;; change gc threshold post init (if needed)
-;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 10000000)))
+;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold (megabytes-to-bytes 32))))
 
 ;; --------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
 ;; --------------------------------------------------------------------
 (require 'package)
 
+(setq use-package-compute-statistics nil) ;; toggle to t if you want use-package to compute stats on load
 (setq package-enable-at-startup nil)
 (setq package-native-compile t) ;; native compilation
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))

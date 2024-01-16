@@ -8,6 +8,7 @@
 ;; helm
 ;; --------------------------------------------------------------------
 (use-package helm
+  :defer 2
   :config
   (helm-mode t)
 
@@ -41,13 +42,14 @@
 ;; --------------------------------------------------------------------
 ;; helm-ag
 ;; --------------------------------------------------------------------
-(use-package helm-ag)
+(use-package helm-ag
+  :after helm)
 
 ;; --------------------------------------------------------------------
 ;; helm-projectile
 ;; --------------------------------------------------------------------
 (use-package helm-projectile
-  :after projectile
+  :after (helm projectile)
   :config
   (projectile-mode)
   ;; (setq projectile-indexing-method 'native)
@@ -59,6 +61,7 @@
 ;; helm-swoop
 ;; --------------------------------------------------------------------
 (use-package helm-swoop
+  :after helm
   :config
   (setq helm-swoop-split-with-multiple-windows t
         helm-swoop-use-fuzzy-match nil
@@ -82,6 +85,7 @@
 ;; helm-fzf
 ;; --------------------------------------------------------------------
 (use-package fzf
+  :defer 4
   :config
   (require 'helm-fzf))
 

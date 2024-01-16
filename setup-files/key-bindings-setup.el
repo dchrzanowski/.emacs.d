@@ -463,10 +463,10 @@
  "R" 'revert-buffer)
 
 ;; transmission
-(general-define-key
- :keymaps 'transmission-mode-map
- "j" 'next-line
- "k" 'previous-line)
+;; (general-define-key
+;;  :keymaps 'transmission-mode-map
+;;  "j" 'next-line
+;;  "k" 'previous-line)
 
 ;; popup
 (general-define-key

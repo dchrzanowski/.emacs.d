@@ -10,9 +10,9 @@
 (use-package sudo-edit)
 
 ;; --------------------------------------------------------------------
-;; transmission
+;; transmission (I don't use transmission currently)
 ;; --------------------------------------------------------------------
-(use-package transmission)
+;; (use-package transmission)
 
 ;; --------------------------------------------------------------------
 ;; password generator
