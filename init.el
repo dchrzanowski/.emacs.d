@@ -14,26 +14,32 @@
 ;; (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold (megabytes-to-bytes 32))))
 
 ;; --------------------------------------------------------------------
+;; setup directories
+;; --------------------------------------------------------------------
+(defvar user-home-directory (concat (getenv "HOME") "/")
+  "Home directory location.")
+(setq user-emacs-directory (concat user-home-directory ".emacs.d/"))
+
+(add-to-list 'load-path (concat user-emacs-directory "setup-files/"))
+(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code"))
+(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code/bookmark-plus"))
+
+;; --------------------------------------------------------------------
 ;; initialize package repos and make sure that use-package is installed
 ;; --------------------------------------------------------------------
 (require 'package)
 
-(setq use-package-compute-statistics nil) ;; toggle to t if you want use-package to compute stats on load
 (setq package-enable-at-startup nil)
 (setq package-native-compile t) ;; native compilation
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org"   . "https://orgmode.org/elpa/") t)
 (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 ;; --------------------------------------------------------------------
 ;; use-package config
 ;; --------------------------------------------------------------------
-(eval-when-compile
-  (require 'use-package))
+(require 'use-package)
+(setq use-package-compute-statistics nil) ;; toggle to t if you want to use M-x use-package-report
 (setq use-package-always-ensure t)
 (use-package use-package-ensure-system-package)
 
@@ -52,17 +58,6 @@
   :config
   (setq general-override-states '(insert emacs hybrid normal visual motion operator replace))
   (general-override-mode))
-
-;; --------------------------------------------------------------------
-;; setup directories
-;; --------------------------------------------------------------------
-(defvar user-home-directory (concat (getenv "HOME") "/")
-  "Home directory location.")
-(setq user-emacs-directory (concat user-home-directory ".emacs.d/"))
-
-(add-to-list 'load-path (concat user-emacs-directory "setup-files/"))
-(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code"))
-(add-to-list 'load-path (concat user-emacs-directory "custom-elisp-code/bookmark-plus"))
 
 ;; --------------------------------------------------------------------
 ;; personal data
