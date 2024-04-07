@@ -106,6 +106,7 @@
  "I" 'cleanup-buffer-tabify
  ;; binky
  "l" 'binky-binky
+ "L" 'binky-delete
  ;; git stuff
  "gs" 'magit-status
  "gi" 'magit-init
