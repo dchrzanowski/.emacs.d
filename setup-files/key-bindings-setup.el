@@ -37,6 +37,7 @@
   "M-S" 'sp-split-sexp
   ;; packages
   "M-[" 'package-install
+  "M-]" 'package-list-packages
   ;; text manipulation
   "M->" 'custom-indent-region
   "M-<" 'custom-unindent-region
