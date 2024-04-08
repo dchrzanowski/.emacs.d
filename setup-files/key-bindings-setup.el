@@ -37,7 +37,6 @@
   "M-S" 'sp-split-sexp
   ;; packages
   "M-[" 'package-install
-  "M-]" 'paradox-list-packages
   ;; text manipulation
   "M->" 'custom-indent-region
   "M-<" 'custom-unindent-region
@@ -461,12 +460,6 @@
  :keymaps 'proced-mode-map
  :states 'normal
  "R" 'revert-buffer)
-
-;; transmission
-;; (general-define-key
-;;  :keymaps 'transmission-mode-map
-;;  "j" 'next-line
-;;  "k" 'previous-line)
 
 ;; popup
 (general-define-key
