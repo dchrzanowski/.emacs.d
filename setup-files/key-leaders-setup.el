@@ -183,7 +183,8 @@
  "6" 'eyebrowse-switch-to-window-config-6
  "7" 'eyebrowse-switch-to-window-config-7
  "8" 'eyebrowse-switch-to-window-config-8
- "9" 'eyebrowse-switch-to-window-config-9)
+ "9" 'eyebrowse-switch-to-window-config-9
+ "-" 'eyebrowse-switch-to-window-config)
 
 ;; ////////////////////////////////////////////////////////////////////
 ;; LANGUAGES

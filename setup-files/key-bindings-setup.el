@@ -139,7 +139,6 @@
  "gt" 'eyebrowse-next-window-config
  "gT" 'eyebrowse-prev-window-config
  "gc" 'eyebrowse-close-window-config
- "g." 'eyebrowse-switch-to-window-config
  ;; motion
  "j" 'evil-next-visual-line
  "k" 'evil-previous-visual-line
@@ -424,6 +423,7 @@
 ;; image mode
 (general-define-key
  :keymaps 'image-mode-map
+ :states 'normal
  "Q" 'image-kill-buffer
  "j" 'image-next-file
  "k" 'image-previous-file)
