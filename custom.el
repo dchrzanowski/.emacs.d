@@ -64,6 +64,7 @@
  '(global-semantic-idle-scheduler-mode t)
  '(global-semanticdb-minor-mode t)
  '(helm-external-programs-associations '(("html" . "chromium")))
+ '(helm-minibuffer-history-key "M-p")
  '(helm-swoop-split-with-multiple-windows t)
  '(holiday-bahai-holidays nil)
  '(holiday-christian-holidays nil)
@@ -142,8 +143,8 @@
     (cons 340 "#5B6268")
     (cons 360 "#5B6268")))
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t)
- '(web-mode-enable-current-element-highlight t)
+ '(web-mode-enable-current-column-highlight t t)
+ '(web-mode-enable-current-element-highlight t t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 

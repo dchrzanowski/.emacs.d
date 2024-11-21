@@ -601,3 +601,4 @@
  '(sp-show-pair-mismatch-face ((((class color) (min-colors 257)) (:foreground "#1B2229" :background "#ff6c6b" :weight ultra-bold)) (((class color) (min-colors 256)) (:foreground "black" :background "#ff6655" :weight ultra-bold)) (((class color) (min-colors 16)) (:foreground "black" :background "red" :weight ultra-bold)))))
 
 (provide-theme 'doom-one-darker)
+;;; doom-one-darker-theme.el ends here

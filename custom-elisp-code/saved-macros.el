@@ -16,4 +16,4 @@
    [?g ?g ?/ ?l ?o ?g ?i ?n ?  ?A ?D ?M ?I ?N return ?j ?\C-c ?\C-v])
 
 (provide 'saved-macros)
-;;; saved-macros ends here
+;;; saved-macros.el ends here
