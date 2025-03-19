@@ -53,7 +53,7 @@ _z_ swap           _=_ balance                   _q_uit                         
          (add-hook 'ace-window-end-once-hook
                    'hydra-window/body)))
   ("=" balance-windows)
-  ("W" kill-this-buffer)
+  ("W" kill-current-buffer)
   ("D" kill-all-dired-buffers)
   (";" dired-jump :exit t)
   ("F" helm-find-files)

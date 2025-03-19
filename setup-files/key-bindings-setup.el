@@ -58,7 +58,7 @@
   "<C-tab>" 'next-buffer
   "C-<iso-lefttab>" 'previous-buffer
   ;; buffer related
-  "C-w" 'kill-this-buffer
+  "C-w" 'kill-current-buffer
   "C-a" 'mark-whole-buffer
   ;; emmet
   "M-;" 'emmet-expand-line

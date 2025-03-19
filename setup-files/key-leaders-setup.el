@@ -22,7 +22,7 @@
  "TAB" 'other-window
  ;; window operations
  "X" 'delete-window
- "W" 'kill-this-buffer
+ "W" 'kill-current-buffer
  ;; ace window
  "d" 'ace-window
  ;; helm

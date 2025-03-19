@@ -138,7 +138,7 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
       (?v aw-split-window-horz " Ace - Split Horz Window")
       (?r delete-other-windows " Ace - Maximize Window")
       (?o delete-other-windows)
-      (?w kill-this-buffer)
+      (?w kill-current-buffer)
       (?X delete-window)
       "List of actions for `aw-dispatch-default'.")))
 
