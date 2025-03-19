@@ -41,7 +41,6 @@
 (require 'use-package)
 (setq use-package-compute-statistics nil) ;; toggle to t if you want to use M-x use-package-report
 (setq use-package-always-ensure t)
-(use-package use-package-ensure-system-package)
 
 ;; --------------------------------------------------------------------
 ;; allow to install packages directly from git repos for use-package

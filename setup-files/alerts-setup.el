@@ -21,7 +21,7 @@
       (unless (string= hours "0")
         (alert
          ;; (format "You've been working for %s hour(s)!" hours)
-         "Drink some water and get up for a minute :)"
+         "Drink some water and get up for a minute."
          :title "Stay Healthy!"
          ))))
 
