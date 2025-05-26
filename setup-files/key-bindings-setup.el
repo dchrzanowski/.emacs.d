@@ -177,6 +177,8 @@
 ;; --------------------------------------------------------------------
 (general-define-key
  :keymaps '(visual normal motion)
+ ;; evil-mc
+ "C-n" 'evil-mc-make-and-goto-next-match
  ;; avy
  "<RET>" 'evil-avy-goto-word-or-subword-1
  "S-<return>" 'evil-avy-goto-char-timer
