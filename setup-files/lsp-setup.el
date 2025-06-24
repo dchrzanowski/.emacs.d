@@ -15,7 +15,7 @@
                           (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
                           (typescript-language-server . "yay -S typescript-language-server")
-                          (flutter                    . "yay -S flutter")
+                          ;; (flutter                    . "yay -S flutter")
                           (clangd                     . "yay -S clang"))
   :hook ((c-mode          . lsp)
          (c++-mode        . lsp)
