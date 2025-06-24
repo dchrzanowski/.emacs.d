@@ -308,7 +308,7 @@
  "M-m" 'org-menu
  "<" '(lambda () (interactive)
         (if (or (region-active-p) (looking-back "^"))
-            (hydra-org-template/body)
+            (org-insert-structure-template)
           (self-insert-command 1))))
 
 ;; org agenda

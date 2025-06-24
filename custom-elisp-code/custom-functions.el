@@ -625,20 +625,6 @@ The total is written to the TIME-DAYS-SUM property of this heading."
             :action #'insert))))
 
 ;; --------------------------------------------------------------------
-;; org trello helpers
-;; --------------------------------------------------------------------
-(defun dchrzan/org-trello-push ()
-  "Push the current buffer's content to trello."
-  (interactive)
-  (org-trello-sync-buffer))
-
-(defun dchrzan/org-trello-pull ()
-  "Push the current buffer's content to trello."
-  (interactive)
-  (setq current-prefix-arg '(4))
-  (call-interactively 'org-trello-sync-buffer))
-
-;; --------------------------------------------------------------------
 ;; create id's for org headings, modified slightly from the original.
 ;; Thanks to https://writequit.org/articles/emacs-org-mode-generate-ids.html
 ;; --------------------------------------------------------------------

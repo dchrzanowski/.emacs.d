@@ -364,12 +364,7 @@
  "cD" 'org-decrypt-entries
  "cd" 'org-decrypt-entry
  "ci" 'dchrzan/org-add-ids-to-headlines-in-file
- ;; trello (mimic magit keys)
- "ctt" 'org-trello-mode
- "ctc" 'org-trello-sync-card
- "ctp" 'dchrzan/org-trello-push
- "ctF" 'dchrzan/org-trello-pull
- "cti" 'org-trello-install-board-metadata)
+ "ct" 'org-insert-structure-template)
 
 ;; --------------------------------------------------------------------
 ;; org agenda leader
