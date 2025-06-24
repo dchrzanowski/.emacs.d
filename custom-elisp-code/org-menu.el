@@ -1,6 +1,6 @@
-;;; org-menu.el --- A discoverable menu for org-mode using transient -*- lexical-binding: t; coding: utf-8 -*-
+;;; org-menu.el --- A discoverable menu for org-mode using transient -*- lexical-binding: t -*-
 ;;
-;; Copyright 2021 Jan Rehders
+;; Copyright 2021  Jan Rehders
 ;;
 ;; Author: Jan Rehders <nospam@sheijk.net>
 ;; Version: 0.1alpha
@@ -30,18 +30,19 @@
 ;;
 ;; (with-eval-after-load 'org
 ;;   (require 'org-menu) ;; not needed if installing by package manager
-;;   (define-key org-mode-map (kbd "C-c m") 'org-menu))
+;;   (define-key org-mode-map (kbd "C-c m") #'org-menu))
 ;;
 ;; The menu should be pretty self-explanatory.  It is context dependent and
 ;; offers different commands for headlines, tables, timestamps, etc.
 ;; The task menu provides entry points for task that work from anywhere.
-;;
+
 ;;; Code:
 
 (require 'org)
 (require 'transient)
 (require 'org-capture)
 (require 'org-timer)
+(require 'cl-lib)
 
 (defgroup org-menu nil
   "Options for `org-menu'."
@@ -52,22 +53,75 @@
 
 Use this if you prefer to be consistent with magit.  It will also
 change some other bindings to use Q instead of q."
-  :group 'org-menu
   :type 'boolean)
 
 (defcustom org-menu-global-toc-depth 10
   "The number of heading levels to show when displaying the global content."
-  :group 'org-menu
-  :type 'integer)
+  :type 'natnum)
 
-(defcustom org-menu-expand-snippet-function 'org-menu-expand-snippet-default
+(defcustom org-menu-expand-snippet-function #'org-menu-expand-snippet-default
   "The function used to expand a snippet.
 
 See `org-menu-expand-snippet-default' for a list of snippet ids
 which need to be supported.  `org-menu-expand-snippet-yasnippet'
 shows how to invoke snippets."
-  :group 'org-menu
   :type 'function)
+
+(defun org-menu-show-columns-view-options-p ()
+  "Return whether `org-columns' mode is active."
+  (bound-and-true-p org-columns-overlays))
+
+(defun org-menu-show-heading-options-p ()
+  "Whether to show commands operating on headings."
+  (unless (org-menu-show-columns-view-options-p)
+    (org-at-heading-p)))
+
+(defun org-menu-show-table-options-p ()
+  "Whether to show commands operating on tables."
+  (unless (org-menu-show-columns-view-options-p)
+    (org-at-table-p)))
+
+(defun org-menu-show-list-options-p ()
+  "Whether to show commands operating on lists."
+  (unless (org-menu-show-columns-view-options-p)
+    (org-at-item-p)))
+
+(defun org-menu-show-text-options-p ()
+  "Whether to show commands operating on text."
+  (not (or (org-menu-show-columns-view-options-p)
+           (org-at-heading-p)
+           (org-at-table-p)
+           (org-in-item-p)
+           (org-in-src-block-p))))
+
+(defun org-menu-show-src-options-p ()
+  "Whether to show commands operating on src blocks."
+  (unless (org-menu-show-columns-view-options-p)
+    (org-in-src-block-p)))
+
+(defun org-menu-show-link-options-p ()
+  "Whether to show commands operating on links.
+
+Conditions have been adapted from `org-insert-link'"
+  (unless (org-menu-show-columns-view-options-p)
+    (or
+     ;; Use variable from org-compat to support Emacs 26
+     (org-in-regexp (symbol-value 'org-bracket-link-regexp) 1)
+     (when (boundp 'org-link-angle-re)
+       (org-in-regexp org-link-angle-re))
+     (when (boundp 'org-link-plain-re)
+       (org-in-regexp org-link-plain-re)))))
+
+(defun org-menu-show-timestamp-options-p ()
+  "Whether to show commands operating on timestamps."
+  (unless (org-menu-show-columns-view-options-p)
+    (org-at-timestamp-p 'lax)))
+
+(defun org-menu-show-footnote-options-p ()
+  "Whether to show commands operating on footnotes."
+  (unless (org-menu-show-columns-view-options-p)
+    (or (org-footnote-at-definition-p)
+        (org-footnote-at-reference-p))))
 
 (defun org-menu-heading-navigate-items (check-for-heading &optional cycle-function)
   "Items to navigate headings.
@@ -77,15 +131,16 @@ true the items will only be added if on a heading.  `CYCLE-FUNCTION' is the
 function to be used to cycle visibility of current element."
   (setq cycle-function (or cycle-function #'org-cycle))
   `(["Navigate"
-     ,@(when check-for-heading '(:if org-at-heading-p))
-     ("k" "prev" org-previous-visible-heading :transient t)
-     ("j" "next" org-next-visible-heading :transient t)
+     :pad-keys t
+     ,@(and check-for-heading '(:if org-menu-show-heading-options-p))
+     ("p" "prev" org-previous-visible-heading :transient t)
+     ("n" "next" org-next-visible-heading :transient t)
      ("c" "cycle" ,cycle-function :transient t)
-     ("h" "parent" outline-up-heading :transient t)
-     ("K" "prev (same level)" org-backward-heading-same-level :transient t)
-     ("J" "next (same level)" org-forward-heading-same-level :transient t)
+     ("u" "parent" outline-up-heading :transient t)
+     ("M-p" "prev (same level)" org-backward-heading-same-level :transient t)
+     ("M-n" "next (same level)" org-forward-heading-same-level :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
-     ("u" "undo" undo :transient t)]))
+     ("C-_" "undo" undo :transient t)]))
 
 (defun org-menu-expand-snippet-default (snippet-id)
   "Insert a fixed text for each `SNIPPET-ID'."
@@ -106,30 +161,29 @@ function to be used to cycle visibility of current element."
 #+attr_org: :width 400px
 [[file:plot.svg]]
 "))
-    (_ (insert (format "unknown snippet type %s" snippet-id)))))
+    (_ (error "Unknown snippet type %s" snippet-id))))
 
 (autoload 'yas-expand-snippet "yasnippet")
 (autoload 'yas-expand-from-trigger-key "yasnippet")
 
 (defun org-menu-expand-snippet-yasnippet (snippet-id)
   "Expand a yasnippet for each `SNIPPET-ID'."
-  (if (not (require 'yasnippet nil 'noerror))
-      (message "error: yasnippet not installed, could not expand %s" snippet-id)
-
-    (pcase snippet-id
-      ('block
-          (insert "beg")
-        (yas-expand-from-trigger-key))
-      ('option
-       (insert "opt")
-       (yas-expand-from-trigger-key))
-      ('subscript
-       (yas-expand-snippet "${1:text}_{${2:sub}}"))
-      ('superscript
-       (yas-expand-snippet "${1:text}^{${2:super}}"))
-      ('plot
-       (yas-expand-snippet
-        "#+plot: type:${1:2d} file:\"${2:plot.svg}\"
+  (unless (require 'yasnippet nil 'noerror)
+    (error "Yasnippet not installed, could not expand %s" snippet-id))
+  (pcase snippet-id
+    ('block
+     (insert "beg")
+     (yas-expand-from-trigger-key))
+    ('option
+     (insert "opt")
+     (yas-expand-from-trigger-key))
+    ('subscript
+     (yas-expand-snippet "${1:text}_{${2:sub}}"))
+    ('superscript
+     (yas-expand-snippet "${1:text}^{${2:super}}"))
+    ('plot
+     (yas-expand-snippet
+      "#+plot: type:${1:2d} file:\"${2:plot.svg}\"
 | A |  B |
 |---+----|
 | 1 | 10 |
@@ -139,8 +193,8 @@ function to be used to cycle visibility of current element."
 #+attr_org: :width ${3:400px}
 [[file:$2]]
 "))
-      (_
-       (insert (format "unknown snippet type %s" snippet-id))))))
+    (_
+     (error "Unknown snippet type %s" snippet-id))))
 
 ;; If yasnippet gets loaded it will be used automatically
 (with-eval-after-load 'yasnippet
@@ -156,7 +210,8 @@ function to be used to cycle visibility of current element."
   (interactive)
   (save-excursion
     (outline-hide-subtree)
-    (org-show-children 4)
+    (with-no-warnings
+      (org-show-children 4))
     (org-goto-first-child)
     (org-reveal '(4))))
 
@@ -173,12 +228,14 @@ function to be used to cycle visibility of current element."
     ("h" "hide" org-hide-block-toggle :if org-at-block-p :transient t)
     ("r" "reveal" (lambda () (interactive) (org-reveal t)) :if-not org-at-block-p :transient t)]
    ["Global"
+    :pad-keys t
     ("C" "cycle global" org-global-cycle :transient t)
     ("go" "overview" org-overview)
     ("gt" "content" (lambda () (interactive) (org-content org-menu-global-toc-depth)))
     ("ga" "all" org-show-all)
     ("gd" "default" (lambda () (interactive) (org-set-startup-visibility)))]
    ["Narrow"
+    :pad-keys t
     ("nn" "toggle" org-toggle-narrow-to-subtree)
     ("nb" "to block" org-narrow-to-block :if org-at-block-p)
     ("ns" "to sub tree" org-narrow-to-subtree)
@@ -188,11 +245,23 @@ function to be used to cycle visibility of current element."
     :if-non-nil org-menu-use-q-for-quit
     ("q" "quit" transient-quit-all)]])
 
+(transient-define-prefix org-menu-visibility-columns ()
+  "A menu to control visibility of `org-mode' items in `org-columns' mode."
+  ["Visibility"
+   ["Columns view"
+    :if org-menu-show-columns-view-options-p
+    ("t" "content" org-columns-content :transient t)
+    ("o" "overview" org-overview :transient t)
+    ("g" "refresh" org-columns-redo :transient t)]
+   ["Quit"
+    :if-non-nil org-menu-use-q-for-quit
+    ("q" "quit" transient-quit-all)]])
+
 (defun org-menu-eval-src-items ()
   "Return the items to evaluate a source block."
   (list
    ["Source"
-    :if org-in-src-block-p
+    :if org-menu-show-src-options-p
     ("e" "run block" org-babel-execute-src-block)
     ("c" "check headers" org-babel-check-src-block)
     ("k" "clear results" org-babel-remove-result-one-or-many)
@@ -460,13 +529,17 @@ Named `NAME' with `DEFINITION'."
   (interactive)
   (save-excursion (comment-line 1)))
 
+(defun org-menu-fix-timestamp ()
+  "Fix the timestamp at `(point)'."
+  (interactive)
+  (org-timestamp-change 0 'day))
+
 (defun org-menu-insert-text (left right &optional surround-whitespace)
   "Will insert left|right and put the curser at |.
 
 If region is active it will be surrounded by `LEFT' and `RIGHT' and
 the point will be at end of region.  Will add spaces before/after text if
 `SURROUND-WHITESPACE' is true and it's needed."
-
   (let ((start (point))
         (end (point)))
     (when (region-active-p)
@@ -474,8 +547,8 @@ the point will be at end of region.  Will add spaces before/after text if
             end (region-end))
       (deactivate-mark))
     (when (> start end)
-      ;; swap variables w/o importing cl-lib
-      (setq start (prog1 end (setq end start))))
+      (cl-psetq start end
+                end start))
 
     (goto-char start)
     (when (and surround-whitespace
@@ -493,17 +566,6 @@ the point will be at end of region.  Will add spaces before/after text if
                  (not (looking-at " +")))
         (insert " ")))))
 
-(defun org-menu-in-time-p ()
-  "Return whether we're at a time stamp or similar.
-
-Adapted from `org-goto-calendar'"
-  (org-at-timestamp-p 'lax))
-
-(defun org-menu-in-footnote-p ()
-  "Return whether we're at a footnote."
-  (or (org-footnote-at-definition-p)
-      (org-footnote-at-reference-p)))
-
 ;;;###autoload (autoload 'org-menu-goto "org-menu" nil t)
 (transient-define-prefix org-menu-goto ()
   "Menu to go to different places by name."
@@ -511,42 +573,49 @@ Adapted from `org-goto-calendar'"
     ("h" "heading" imenu)
     ("s" "source block" org-babel-goto-named-src-block)
     ("r" "result block" org-babel-goto-named-result)
-    ("." "calendar" org-goto-calendar :if org-menu-in-time-p)]
+    ("." "calendar" org-goto-calendar :if org-menu-show-timestamp-options-p)]
    ["Quit"
     :if-non-nil org-menu-use-q-for-quit
     ("q" "quit" transient-quit-all)]])
 
-(defun org-menu-at-text-p ()
-  "Return whether point is at text."
-  (not (or (org-at-heading-p)
-           (org-at-table-p)
-           (org-in-item-p)
-           (org-in-src-block-p))))
+(defun org-menu-toggle-zwspace ()
+  "Will remove zero-width space before/after point or insert it if none found."
+  (interactive)
+  (let ((zww (string ?\N{ZERO WIDTH SPACE})))
+    (save-excursion
+      (skip-chars-backward zww)
+      (if (looking-at (rx (+ (literal zww))))
+      (replace-match "")
+    (insert zww)))))
 
 (defun org-menu-text-format-items (check-for-table)
   "Items to format text.
 
-Will add an ':if org-menu-at-text-p' criteria if `CHECK-FOR-TABLE' is true."
+Will add an ':if org-menu-show-text-options-p' criteria if
+`CHECK-FOR-TABLE' is true."
   (list
    `["Navigate"
-     ,@(when check-for-table '(:if org-menu-at-text-p))
-     ("k" "up" previous-line :transient t)
-     ("j" "down" next-line :transient t)
-     ("h" "left" backward-word :transient t)
-     ("l" "right" forward-word :transient t)
+     ,@(when check-for-table '(:if org-menu-show-text-options-p))
+     :pad-keys t
+     ("p" "up" previous-line :transient t)
+     ("n" "down" next-line :transient t)
+     ("b" "left" backward-word :transient t)
+     ("f" "right" forward-word :transient t)
      ("u" "parent" org-up-element :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
      ("C-_" "undo" undo :transient t)
      ("SPC" "mark" set-mark-command :transient t)
      ("C-x C-x" "exchange" exchange-point-and-mark :transient t)]
    `["Formatting"
-     ,@(when check-for-table '(:if org-menu-at-text-p))
+     ,@(when check-for-table '(:if org-menu-show-text-options-p))
+     :pad-keys t
      ("*" "Bold" (lambda nil (interactive) (org-menu-toggle-format ?*)) :transient t)
      ("/" "italic" (lambda nil (interactive) (org-menu-toggle-format ?/)) :transient t)
      ("_" "underline" (lambda nil (interactive) (org-menu-toggle-format ?_)) :transient t)
-     ("+" "strikethrough" (lambda nil (interactive) (org-menu-toggle-format ?+)) :transient t)]
+     ("+" "strikethrough" (lambda nil (interactive) (org-menu-toggle-format ?+)) :transient t)
+     ("S-SPC" "zero-width space" org-menu-toggle-zwspace :transient t)]
    `["Source"
-     ,@(when check-for-table '(:if org-menu-at-text-p))
+     ,@(when check-for-table '(:if org-menu-show-text-options-p))
      ("~" "code" (lambda nil (interactive) (org-menu-toggle-format ?~)) :transient t)
      ("=" "verbatim" (lambda nil (interactive) (org-menu-toggle-format ?=)) :transient t)]))
 
@@ -575,19 +644,6 @@ Will add an ':if org-menu-at-text-p' criteria if `CHECK-FOR-TABLE' is true."
     :if-non-nil org-menu-use-q-for-quit
     ("q" "quit" transient-quit-all)]])
 
-(defun org-menu-in-link-p ()
-  "Return whether we are inside a link.
-
-Conditions have been adapted from `org-insert-link'"
-  (or
-   ;; Use variable from org-compat to support Emacs 26
-   ;; this produces a warning in newer Emacs which we can't avoid
-   (org-in-regexp org-bracket-link-regexp 1)
-   (when (boundp 'org-link-angle-re)
-     (org-in-regexp org-link-angle-re))
-   (when (boundp 'org-link-plain-re)
-     (org-in-regexp org-link-plain-re))))
-
 (defun org-menu-toggle-has-checkbox ()
   "Toggle whether the current list item has a checkbox."
   (interactive)
@@ -614,6 +670,7 @@ Conditions have been adapted from `org-insert-link'"
 (transient-define-prefix org-menu-clock ()
   "Time management using org-modes clock."
   [["Clock"
+    :pad-keys t
     ("<tab>" "in" org-clock-in :if-not org-clock-is-active)
     ("TAB" "in" org-clock-in :if-not org-clock-is-active)
     ("o" "out" org-clock-out :if org-clock-is-active)
@@ -642,6 +699,11 @@ Conditions have been adapted from `org-insert-link'"
     :if-non-nil org-menu-use-q-for-quit
     ("q" "quit" transient-quit-all)]])
 
+(defun org-menu-columns-globally ()
+  "Turn on `org-columns' globally."
+  (interactive)
+  (org-columns t))
+
 (transient-define-prefix org-menu-search-and-filter ()
   "A menu to search and filter `org-mode' documents."
   ["Search and filter"
@@ -651,11 +713,16 @@ Conditions have been adapted from `org-insert-link'"
     ("Q" "tags" org-tags-sparse-tree :if-non-nil org-menu-use-q-for-quit)
     ("t" "todos" org-show-todo-tree)
     ("d" "deadlines" org-check-deadlines)
-    ("b" "before date" org-check-before-date)
-    ("a" "after date" org-check-after-date)
-    ("D" "dates range" org-check-dates-range)]
-   ["Agenda"
-    ("A" "open" org-agenda)]
+    ("r" "remove highlights" org-remove-occur-highlights :if-non-nil org-occur-highlights)]
+   ["Dates"
+    ("b" "before" org-check-before-date)
+    ("a" "after" org-check-after-date)
+    ("D" "range" org-check-dates-range)]
+   ["Views"
+    ("A" "agenda" org-agenda)
+    ("c" "columns" org-columns :if-nil org-columns-current-fmt)
+    ("c" "columns off" org-columns-quit :if-non-nil org-columns-current-fmt)
+    ("gc" "whole buffer" org-menu-columns-globally :if-nil org-columns-current-fmt)]
    ["Quit"
     :if-non-nil org-menu-use-q-for-quit
     ("q" "quit" transient-quit-all)]])
@@ -692,9 +759,15 @@ Conditions have been adapted from `org-insert-link'"
   "A menu to archive items."
   ["dummy"])
 
+(defun org-menu-force-cycle-archived ()
+  "Wrapper around deprecated `org-force-cycle-archived' to fix warning."
+  (interactive)
+  (with-no-warnings
+    (org-force-cycle-archived)))
+
 (transient-insert-suffix 'org-menu-archive (list 0)
   `["Archive"
-    ,@(org-menu-heading-navigate-items nil #'org-force-cycle-archived)
+    ,@(org-menu-heading-navigate-items nil #'org-menu-force-cycle-archived)
     ["Archive to"
      ("t" "tree" org-archive-subtree :transient t)
      ("s" "sibling" org-archive-to-archive-sibling :transient t)
@@ -716,16 +789,16 @@ Conditions have been adapted from `org-insert-link'"
     ,@(org-menu-heading-navigate-items t)
 
     ["Move heading"
-     :if org-at-heading-p
-     ("M-k" "up" org-metaup :transient t)
-     ("M-j" "down" org-metadown :transient t)
-     ("M-h" "left" org-shiftmetaleft :transient t)
-     ("M-l" "right" org-shiftmetaright :transient t)
-     ("M-H" "left (line)" org-metaleft :transient t)
-     ("M-L" "right (line)" org-metaright :transient t)
+     :if org-menu-show-heading-options-p
+     ("P" "up" org-metaup :transient t)
+     ("N" "down" org-metadown :transient t)
+     ("B" "left" org-shiftmetaleft :transient t)
+     ("F" "right" org-shiftmetaright :transient t)
+     ("b" "left (line)" org-metaleft :transient t)
+     ("f" "right (line)" org-metaright :transient t)
      ("r" "refile" org-refile :transient t)]
     ["Change heading"
-     :if org-at-heading-p
+     :if org-menu-show-heading-options-p
      ("*" "toggle" org-ctrl-c-star :if-not org-at-table-p :transient t)
      ("t" "todo" org-todo :transient t)
      ("q" "tags" org-set-tags-command :transient t :if-nil org-menu-use-q-for-quit)
@@ -736,42 +809,47 @@ Conditions have been adapted from `org-insert-link'"
      ("D" "deadline" org-deadline :transient t)
      ("S" "schedule" org-schedule :transient t)
      ("/" "comment" org-toggle-comment :transient t)
-     ("C-w" "cut tree" org-cut-special :transient t)
-     ("C-y" "yank tree" org-paste-special :transient t)]
+     ("mn" "add note" org-add-note)]
     ["Make new/delete"
-     :if org-at-heading-p
+     :if org-menu-show-heading-options-p
+     :pad-keys t
      ("mh" "make heading (before)" org-insert-heading)
      ("mH" "make heading (after)" org-insert-heading-after-current)
      ("mt" "make todo (before)" org-insert-todo-heading)
      ("mT" "make todo (after)" org-menu-insert-todo-heading-after-current)
+     ("mc" "clone with time shift" org-clone-subtree-with-time-shift)
      ("dh" "delete heading" org-cut-subtree :transient t)
      ("dy" "delete property" org-delete-property :transient t)
-     ("a" "attachments" org-menu-attachments :transient t)]
+     ("a" "attachments" org-menu-attachments)
+     ("C-w" "cut tree" org-cut-special :transient t)
+     ("C-y" "yank tree" org-paste-special :transient t)]
 
     ;; Items for tables
     ["Navigate"
-     :if org-at-table-p
-     ("k" "up" previous-line :transient t)
-     ("j" "down" next-line :transient t)
-     ("h" "left" org-table-previous-field :transient t)
-     ("l" "right" org-table-next-field :transient t)
+     :if org-menu-show-table-options-p
+     :pad-keys t
+     ("p" "up" previous-line :transient t)
+     ("n" "down" next-line :transient t)
+     ("b" "left" org-table-previous-field :transient t)
+     ("f" "right" org-table-next-field :transient t)
      ("u" "parent" outline-up-heading :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
      ("C-_" "undo" undo :transient t)]
     ["Move r/c"
-     :if org-at-table-p
-     ("K" "up" org-table-move-row-up :transient t)
-     ("J" "down" org-table-move-row-down :transient t)
-     ("H" "left" org-table-move-column-left :transient t)
-     ("L" "right" org-table-move-column-right :transient t)]
+     :if org-menu-show-table-options-p
+     ("P" "up" org-table-move-row-up :transient t)
+     ("N" "down" org-table-move-row-down :transient t)
+     ("B" "left" org-table-move-column-left :transient t)
+     ("F" "right" org-table-move-column-right :transient t)]
     ["Field"
-     :if org-at-table-p
+     :if org-menu-show-table-options-p
+     :pad-keys t
      ("'" "edit" org-table-edit-field)
      ("SPC" "blank" org-table-blank-field :transient t)
      ("RET" "from above" org-table-copy-down :transient t)
      ("t" "text formatting" org-menu-text-in-element)]
     ["Formulas"
-     :if org-at-table-p
+     :if org-menu-show-table-options-p
      ("E" "edit all" org-table-edit-formulas :transient t)
      ("=" "field" (lambda () (interactive) (org-table-eval-formula '(4))) :transient t)
      ("+" "in place" (lambda () (interactive) (org-table-eval-formula '(16))))
@@ -779,7 +857,8 @@ Conditions have been adapted from `org-insert-link'"
      ("h" "coordinates" org-table-toggle-coordinate-overlays :transient t)
      ("D" "debug" org-table-toggle-formula-debugger :transient t)]
     ["Table"
-     :if org-at-table-p
+     :if org-menu-show-table-options-p
+     :pad-keys t
      ("dr" "delete row" org-shiftmetaup :transient t)
      ("dc" "delete column" org-shiftmetaleft :transient t)
      ("m" "make" org-menu-insert-table)
@@ -793,40 +872,45 @@ Conditions have been adapted from `org-insert-link'"
 
     ;; Items for lists
     ["Navigate"
-     :if org-in-item-p
-     ("k" "prev" previous-line :transient t)
-     ("j" "next" next-line :transient t)
+     :if org-menu-show-list-options-p
+     :pad-keys t
+     ("p" "prev" previous-line :transient t)
+     ("n" "next" next-line :transient t)
      ("c" "cycle" org-cycle :transient t)
-     ("h" "parent" org-up-element :transient t)
-     ("K" "prev (same level)" org-backward-element :transient t)
-     ("J" "next (same level)" org-forward-element :transient t)
+     ("u" "parent" org-up-element :transient t)
+     ("M-p" "prev (same level)" org-backward-element :transient t)
+     ("M-n" "next (same level)" org-forward-element :transient t)
      ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
-     ("u" "undo" undo :transient t)]
+     ("C-_" "undo" undo :transient t)]
     ["Move list"
-     :if org-in-item-p
-     ("M-k" "up" org-metaup :transient t)
-     ("M-j" "down" org-metadown :transient t)
-     ("M-h" "left" org-shiftmetaleft :transient t)
-     ("M-l" "right" org-shiftmetaright :transient t)
-     ("M-H" "left (line)" org-metaleft :transient t)
-     ("M-L" "right (line)" org-metaright :transient t)]
+     :if org-menu-show-list-options-p
+     ("P" "up" org-metaup :transient t)
+     ("N" "down" org-metadown :transient t)
+     ("B" "left" org-shiftmetaleft :transient t)
+     ("F" "right" org-shiftmetaright :transient t)
+     ("b" "left (line)" org-metaleft :transient t)
+     ("f" "right (line)" org-metaright :transient t)]
     ["List"
-     :if org-in-item-p
+     :if org-menu-show-list-options-p
      ("R" "repair" org-list-repair)
      ("*" "turn into tree" org-list-make-subtree)
      ("S" "sort" org-sort-list :transient t)
      ("t" "text formatting" org-menu-text-in-element)]
     ["Toggle"
-     :if org-in-item-p
+     :if org-menu-show-list-options-p
      ("-" "list item" org-toggle-item :if-not org-at-table-p :transient t)
      ("+" "list style" org-cycle-list-bullet :if-not org-at-table-p :transient t)
      ("d" "done" org-toggle-checkbox :transient t)
+     ("h" "half-done"
+      (lambda () (interactive) (org-toggle-checkbox '(16)))
+      :transient t)
      ("m" "checkbox" org-menu-toggle-has-checkbox :transient t)]
 
     ;; Items for text
     ,@(org-menu-text-format-items t)
     ["Line"
-     :if org-menu-at-text-p
+     :if org-menu-show-text-options-p
+     :pad-keys t
      (":" "fixed width" org-toggle-fixed-width :transient t)
      (";" "comment" org-menu-comment-line :transient t)
      ("--" "list" org-toggle-item :transient t)
@@ -836,16 +920,17 @@ Conditions have been adapted from `org-insert-link'"
     ,@(org-menu-eval-src-items)
 
     ["Link"
-     :if org-menu-in-link-p
+     :if org-menu-show-link-options-p
      ("e" "edit" org-insert-link :transient t)]
 
     ["Timestamp"
-     :if org-menu-in-time-p
+     :if org-menu-show-timestamp-options-p
      ("." "type" org-toggle-timestamp-type :transient t)
-     ("e" "edit" org-time-stamp :transient t)]
+     ("e" "edit" org-time-stamp :transient t)
+     ("R" "repair" org-menu-fix-timestamp :transient t)]
 
     ["Footnote"
-     :if org-menu-in-footnote-p
+     :if org-menu-show-footnote-options-p
      ("ed" "delete" (lambda () (interactive) (org-footnote-delete)))
      ("es" "sort" (lambda () (interactive) (org-footnote-sort)))
      ("er" "renumber" (lambda () (interactive) (org-footnote-renumber-fn:N)))
@@ -854,8 +939,38 @@ Conditions have been adapted from `org-insert-link'"
                 (org-footnote-sort)))
      ("en" "normalize" (lambda () (interactive) (org-footnote-normalize)))]
 
+    ;; Items for column view
+    ["Navigate"
+     :if org-menu-show-columns-view-options-p
+     :pad-keys t
+     ("p" "prev" org-columns-move-up :transient t)
+     ("n" "next" org-columns-move-down :transient t)
+     ("f" "forward" forward-char :transient t)
+     ("b" "backward" backward-char :transient t)
+     ("M-w" "store link" org-store-link :transient t :if-not region-active-p)
+     ("C-_" "undo" undo :transient t)]
+    ["Value"
+     :if org-menu-show-columns-view-options-p
+     :pad-keys t
+     ("e" "edit" org-columns-edit-value :transient t)
+     ("V" "show" org-columns-show-value :transient t)
+     ("M-n" "next" org-columns-next-allowed-value :transient t)
+     ("M-p" "previous" org-columns-previous-allowed-value :transient t)
+     ("a" "edit allowed" org-columns-edit-allowed :transient t)]
+    ["Column"
+     :if org-menu-show-columns-view-options-p
+     :pad-keys t
+     ("E" "edit column" org-columns-edit-attributes :transient t)
+     ("{" "narrow" org-columns-narrow :transient t)
+     ("}" "widen" org-columns-widen :transient t)
+     ("M-<right>" "move right" org-columns-move-right :transient t)
+     ("M-<left>" "move left" org-columns-move-left :transient t)
+     ("M-S-<right>" "new" org-columns-new :transient t)
+     ("M-S-<left>" "delete" org-columns-delete :transient t)]
+
     ["Tasks"
-     ("v" "visibility" org-menu-visibility)
+     ("v" "visibility" org-menu-visibility :if-not org-menu-show-columns-view-options-p)
+     ("v" "visibility" org-menu-visibility-columns :if org-menu-show-columns-view-options-p)
      ("x" "evaluation" org-menu-eval)
      ("i" "insert" org-menu-insert)
      ("g" "go to" org-menu-goto)
@@ -867,9 +982,8 @@ Conditions have been adapted from `org-insert-link'"
          (list '("C-c C-c" "confirm capture" org-capture-finalize :if-non-nil org-capture-mode)))
      ,@(when (fboundp #'org-capture-kill)
          (list '("C-c C-k" "abort capture" org-capture-kill :if-non-nil org-capture-mode)))
-     ("" "" transient-noop)
-     ("q" "quit" transient-quit-all :if-non-nil org-menu-use-q-for-quit)
-     ]])
+     ""
+     ("q" "quit" transient-quit-all :if-non-nil org-menu-use-q-for-quit)]])
 
 (provide 'org-menu)
 ;;; org-menu.el ends here
