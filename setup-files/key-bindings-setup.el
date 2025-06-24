@@ -307,8 +307,8 @@
  "M-r" 'org-refile
  "M-m" 'org-menu
  "<" '(lambda () (interactive)
-        (if (or (region-active-p) (looking-back "^"))
-            (org-insert-structure-template)
+        (if (looking-back "^")
+            (call-interactively 'org-insert-structure-template)
           (self-insert-command 1))))
 
 ;; org agenda
