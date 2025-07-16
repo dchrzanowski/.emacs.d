@@ -43,7 +43,10 @@
 ;; helm-ag
 ;; --------------------------------------------------------------------
 (use-package helm-ag
-  :after helm)
+  :after helm
+  :load-path "custom-elisp-code"
+  :config
+  (require 'helm-ag))
 
 ;; --------------------------------------------------------------------
 ;; helm-projectile
@@ -62,7 +65,9 @@
 ;; --------------------------------------------------------------------
 (use-package helm-swoop
   :after helm
+  :load-path "custom-elisp-code"
   :config
+  (require 'helm-swoop)
   (setq helm-swoop-split-with-multiple-windows t
         helm-swoop-use-fuzzy-match nil
         helm-swoop-pre-input-function (lambda () "")))
