@@ -12,10 +12,10 @@
 
 (use-package lsp-mode
   :ensure-system-package ((pylsp                      . "yay -S python-lsp-server")
-                          (jdtls                      . "yay -S jdtls")
+;;                          (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
                           (typescript-language-server . "yay -S typescript-language-server")
-                          ;; (flutter                    . "yay -S flutter")
+                          (flutter                    . "yay -S flutter")
                           (clangd                     . "yay -S clang"))
   :hook ((c-mode          . lsp)
          (c++-mode        . lsp)
@@ -54,8 +54,8 @@
 ;; --------------------------------------------------------------------
 ;; java lsp
 ;; --------------------------------------------------------------------
-;; (use-package lsp-java
-;;   :hook (java-mode . lsp))
+(use-package lsp-java
+  :hook (java-mode . lsp))
 
 ;; --------------------------------------------------------------------
 ;; dart lsp
