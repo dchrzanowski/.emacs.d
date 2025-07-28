@@ -12,7 +12,7 @@
 
 (use-package lsp-mode
   :ensure-system-package ((pylsp                      . "yay -S python-lsp-server")
-;;                          (jdtls                      . "yay -S jdtls")
+                          ;; (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
                           (typescript-language-server . "yay -S typescript-language-server")
                           (flutter                    . "yay -S flutter")
@@ -79,8 +79,8 @@
         lsp-ui-doc-position 'bottom
         lsp-ui-sideline-diagnostic-max-lines 4)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                             (lsp-ui-doc-mode 1)
-                                             (lsp-ui-sideline-mode 1))))
+                                        (lsp-ui-doc-mode 1)
+                                        (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 ;; --------------------------------------------------------------------
