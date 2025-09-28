@@ -3,4 +3,4 @@
 # name: node
 # key: no
 # --
-${1:name} [shape=${2:ellipse}, style=${3:filled}, color=${4:black}, fillcolor=${5:white}, label="$1$0"];
+${1:name} [shape=${2:$$(yas-choose-value '("ellipse" "box" "diamond" "parallelogram"))}, style=${3:$$(yas-choose-value '("filled" "rounded" "diagonals" "invisible" "dashed" "dotted" "solid" "bold"))}, color=${4:black}, fillcolor=${5:white}, label="$1$0"];
