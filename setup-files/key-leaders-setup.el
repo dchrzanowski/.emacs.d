@@ -305,7 +305,7 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps '(java-mode-map
-            ;; python-mode-map
+            python-mode-map
             c-mode-map
             c++-mode-map
             go-mode-map
