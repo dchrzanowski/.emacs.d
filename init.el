@@ -118,6 +118,7 @@
 (require 'web-setup)
 (require 'ligatures-setup)
 (require 'gdscript-setup)
+(require 'lua-setup)
 (require 'lsp-setup)
 
 ;; file specific (json, yaml, dot, etc)
