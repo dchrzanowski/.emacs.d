@@ -24,6 +24,7 @@
          (gdscript-mode   . lsp)
          (csharp-mode     . lsp)
          (python-mode     . lsp)
+         (lua-mode        . lsp)
          (go-mode         . lsp))
   :config
   ;; same definition as mentioned earlier
