@@ -247,6 +247,8 @@
             helm-read-file-map
             helm-projectile-find-file-map
             helm-generic-files-map)
+ "M-j" 'helm-next-line
+ "M-k" 'helm-previous-line
  "M-l" 'helm-execute-persistent-action
  "M-h" 'helm-find-files-up-one-level
  "M-J" 'helm-ff-run-open-file-with-default-tool

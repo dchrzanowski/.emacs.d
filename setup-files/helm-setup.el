@@ -90,7 +90,7 @@
 ;; helm-fzf
 ;; --------------------------------------------------------------------
 (use-package fzf
-  :defer 4
+  :after helm
   :config
   (require 'helm-fzf))
 
