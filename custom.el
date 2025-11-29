@@ -169,8 +169,8 @@
                        flycheck-hledger fzf gdscript-mode general
                        git-gutter-fringe git-link git-messenger
                        git-modes git-timemachine gnuplot gnuplot-mode
-                       go-mode graphviz-dot-mode helm-firefox helm-lsp
-                       helm-org-rifle helm-projectile helpful
+                       go-mode gptel graphviz-dot-mode helm-firefox
+                       helm-lsp helm-org-rifle helm-projectile helpful
                        highlight-indentation highlight-numbers
                        highlight-thing hledger-mode ibuffer-vc
                        imenu-anywhere jq-mode js-doc js2-mode

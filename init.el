@@ -104,6 +104,7 @@
 (require 'pdf-setup)
 (require 'docker-setup)
 (require 'os-utils-setup)
+(require 'llm-setup)
 
 ;; languages
 (require 'csharp-setup)

@@ -167,6 +167,7 @@
  "tr" 'rainbow-mode
  "td" 'darkroom-mode
  "tL" 'load-theme
+ "tl" 'gptel
  "tw" 'whitespace-mode
  "t=" 'hydra-text-size/body
  "tz" 'zenity-cp-color-at-point-dwim
