@@ -43,12 +43,6 @@
 (setq use-package-always-ensure t)
 
 ;; --------------------------------------------------------------------
-;; allow to install packages directly from git repos for use-package
-;; --------------------------------------------------------------------
-(use-package quelpa)
-(use-package quelpa-use-package)
-
-;; --------------------------------------------------------------------
 ;; diminish and bind-key for use-package extra awesomeness
 ;; --------------------------------------------------------------------
 (use-package diminish)
