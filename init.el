@@ -1,10 +1,16 @@
 ;;; package --- Summary
 ;;; Code:
+
+;; --------------------------------------------------------------------
 ;; Helper
+;; --------------------------------------------------------------------
 (defun megabytes-to-bytes (megabytes)
   "Convert megabytes to bytes.  Express the value as MEGABYTES."
   (* megabytes 1024 1024))
 
+;; --------------------------------------------------------------------
+;; Early setup of garbage collection thresholds and read process max
+;; --------------------------------------------------------------------
 ;; (setq-default garbage-collection-messages t) ;; toggle to print GC collection messages
 ;; set a much higher GC collection threshold than the default setting
 (setq gc-cons-threshold (megabytes-to-bytes 32))
@@ -33,7 +39,7 @@
 (setq package-native-compile t) ;; native compilation
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org"   . "https://orgmode.org/elpa/") t)
-(package-initialize)
+;; (package-initialize)  ;; use-package will deal with this instead
 
 ;; --------------------------------------------------------------------
 ;; use-package config
