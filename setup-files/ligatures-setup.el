@@ -12,6 +12,8 @@
 ;; ("double" . ?ℝ)
 ;; ("String" . ?ℾ)
 
+;; TODO: might want to grab some more from here https://github.com/doomemacs/doomemacs/blob/master/modules/ui/ligatures/config.el
+
 (defun prog-mode-style-ligatures ()
   "General languages ligatures."
   (setq prettify-symbols-alist
