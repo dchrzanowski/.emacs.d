@@ -139,6 +139,25 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (buffer-string)))
 
 ;; --------------------------------------------------------------------
+;; insert timestamps
+;; --------------------------------------------------------------------
+(defun insert-date-time ()
+  "Insert date time."
+  (interactive)
+  (insert (concat
+           "["
+           (format-time-string "%d %b %Y %H:%M:%S" (current-time))
+           "]")))
+
+(defun insert-time ()
+  "Insert time."
+  (interactive)
+  (insert (concat
+           "["
+           (format-time-string "%H:%M:%S" (current-time))
+           "]")))
+
+;; --------------------------------------------------------------------
 ;; custom keyboard quit to assits with evil as well
 ;; --------------------------------------------------------------------
 (defun keyboard-quit-and-remove-evil-mc ()

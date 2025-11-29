@@ -94,16 +94,16 @@
   (magit-todos-mode))
 
 ;; --------------------------------------------------------------------
-;; keychain (using ssh-agency instead)
+;; keychain
 ;; --------------------------------------------------------------------
-;; (use-package keychain-environment
-;;   :config
-;;   (keychain-refresh-environment))
+(use-package keychain-environment
+  :config
+  (keychain-refresh-environment))
 
 ;; --------------------------------------------------------------------
-;; ssh-agency
+;; ssh-agency (if keychain-environment doesn't work using ssh-agency instead)
 ;; --------------------------------------------------------------------
-(use-package ssh-agency)
+;; (use-package ssh-agency)
 
 ;; --------------------------------------------------------------------
 ;; git-link Emacs package to get the GitHub/GitLab/... URL

@@ -86,7 +86,7 @@
   (defconst web-beautify-args '("-")))
 
 ;; --------------------------------------------------------------------
-;; zenity
+;; zenity color picker
 ;; --------------------------------------------------------------------
 (use-package zenity-color-picker
   :defer 6)

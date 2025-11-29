@@ -36,8 +36,9 @@
   :config
   (require 'company-web-html))
 
-(use-package company-jedi
-  :after company)
+;; Not needed anymore due to lsp mode for python [29 Nov 2025 17:26:58]
+;; (use-package company-jedi
+;;   :after company)
 
 (use-package company-restclient
   :after company

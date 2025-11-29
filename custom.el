@@ -174,17 +174,17 @@
                        highlight-indentation highlight-numbers
                        highlight-thing hledger-mode ibuffer-vc
                        imenu-anywhere jq-mode js-doc js2-mode
-                       json-mode lsp-dart lsp-java lsp-ui lua-mode
-                       magit-delta magit-todos multifiles neotree
-                       nginx-mode ob-mongo org-bullets org-download
-                       org-edna org-fancy-priorities org-kanban
-                       org-projectile org-rainbow-tags
-                       org-super-agenda ox-gfm ox-json ox-reveal
-                       password-generator pdf-tools pomidor
-                       python-mode quelpa-use-package quickrun
-                       rainbow-delimiters rainbow-mode ranger rustic
-                       separedit shell-pop smartparens speed-type
-                       speeddating ssh-agency sudo-edit toc-org
+                       json-mode keychain-environment lsp-dart
+                       lsp-java lsp-ui lua-mode magit magit-delta
+                       magit-todos multifiles neotree nginx-mode
+                       ob-mongo org-bullets org-download org-edna
+                       org-fancy-priorities org-kanban org-projectile
+                       org-rainbow-tags org-super-agenda ox-gfm
+                       ox-json ox-reveal password-generator pdf-tools
+                       pomidor quelpa-use-package quickrun
+                       rainbow-delimiters rainbow-mode ranger rg
+                       rustic separedit shell-pop smartparens
+                       speed-type speeddating sudo-edit tldr toc-org
                        tree-sitter-langs treemacs-evil typescript-mode
                        undo-tree vlf web-beautify web-mode webpaste
                        yaml-mode zeal-at-point zenity-color-picker))

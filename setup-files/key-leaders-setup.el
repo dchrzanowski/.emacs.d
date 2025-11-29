@@ -170,6 +170,9 @@
  "tw" 'whitespace-mode
  "t=" 'hydra-text-size/body
  "tz" 'zenity-cp-color-at-point-dwim
+ ;; insert timestamp
+ "M-i" 'insert-date-time
+ "M-I" 'insert-time
  ;; multifiles
  "M-m" 'mf/mirror-region-in-multifile
  ;; eyebrowse
