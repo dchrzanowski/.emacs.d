@@ -211,8 +211,6 @@
 ;; --------------------------------------------------------------------
 ;; written by the kind NickD at (https://emacs.stackexchange.com/questions/61101/keep-displaying-current-org-heading-info-in-some-way)
 ;; modified slightly  to use org-get-outline-path and a custom root icon
-;; TODO: rewrite to use run-with-idle-timer
-;;
 (defvar dchrzan/breadcrumb-head "◉")
 (put-text-property 0 (length dchrzan/breadcrumb-head) 'face 'org-level-1 dchrzan/breadcrumb-head)
 
@@ -227,11 +225,13 @@
       (format " %s %s" dchrzan/breadcrumb-head breadcrumbs))))
 
 (defun dchrzan/set-header-line-format()
-  "Show breadcrumbs to the current point location in org mode."
-  (setq header-line-format '(:eval (dchrzan/org-breadcrumbs))))
+  "Show breadcrumbs if the current mode is `org-mode`."
+  (with-current-buffer (current-buffer)
+    (when (eq major-mode 'org-mode)
+      (setq header-line-format (dchrzan/org-breadcrumbs)))))
 
-(add-hook 'org-mode-hook #'dchrzan/set-header-line-format)
-
+;; start the timer
+(run-with-idle-timer 0.3 t 'dchrzan/set-header-line-format)
 
 ;; --------------------------------------------------------------------
 ;; org menu
