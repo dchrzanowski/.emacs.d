@@ -148,7 +148,46 @@
  '(org-src-fontify-natively t)
  '(org-super-agenda-mode t)
  '(org-support-shift-select t)
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(ac-html-bootstrap ace-link all-the-icons-dired auto-yasnippet binky
+                       calfw-org chronos color-identifiers-mode
+                       company-box company-jedi company-php
+                       company-restclient company-web css-eldoc
+                       csv-mode darkroom define-word diminish dired-du
+                       dired-filter dired-git-info dired-hide-dotfiles
+                       dired-launch dired-narrow dired-ranger
+                       dired-subtree diredful disk-usage docker
+                       dockerfile-mode doom-modeline doom-themes
+                       drag-stuff electric-operator emmet-mode
+                       engine-mode ess esup evil-anzu evil-args
+                       evil-collection evil-exchange evil-god-state
+                       evil-indent-plus evil-lion evil-matchit evil-mc
+                       evil-nerd-commenter evil-numbers evil-org
+                       evil-snipe evil-surround evil-vimish-fold
+                       evil-visual-mark-mode evil-visualstar exato
+                       expand-region eyebrowse flutter
+                       flycheck-hledger fzf gdscript-mode general
+                       git-gutter-fringe git-link git-messenger
+                       git-modes git-timemachine gnuplot gnuplot-mode
+                       go-mode gptel graphviz-dot-mode helm-firefox
+                       helm-lsp helm-org-rifle helm-projectile helpful
+                       highlight-indentation highlight-numbers
+                       highlight-thing hledger-mode ibuffer-vc
+                       imenu-anywhere jq-mode js-doc js2-mode
+                       json-mode keychain-environment lsp-dart
+                       lsp-java lsp-ui lua-mode magit-delta
+                       magit-todos multifiles neotree nginx-mode
+                       ob-mongo org-bullets org-download org-edna
+                       org-fancy-priorities org-kanban org-projectile
+                       org-rainbow-tags org-super-agenda ox-gfm
+                       ox-json ox-reveal password-generator pdf-tools
+                       pomidor python-mode quelpa-use-package quickrun
+                       rainbow-delimiters rainbow-mode ranger rustic
+                       separedit shell-pop smartparens speed-type
+                       speeddating ssh-agency sudo-edit toc-org
+                       tree-sitter-langs treemacs-evil typescript-mode
+                       undo-tree vlf web-beautify web-mode webpaste
+                       yaml-mode zeal-at-point zenity-color-picker))
  '(palette-hex-rgb-digits 2)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters '("pypy" "python"))
@@ -181,8 +220,8 @@
          (cons 300 "#9f585a") (cons 320 "#6f4e52")
          (cons 340 "#5B6268") (cons 360 "#5B6268")))
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t t)
- '(web-mode-enable-current-element-highlight t t)
+ '(web-mode-enable-current-column-highlight t)
+ '(web-mode-enable-current-element-highlight t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
@@ -207,17 +246,17 @@
  '(binky-preview-mode ((t (:inherit font-lock-function-name-face :weight bold))))
  '(binky-preview-name ((t (:inherit default :weight bold))))
  '(binky-preview-name-same ((t (:inherit binky-preview-name :underline t :weight bold))))
- '(cfw:face-day-title ((t (:foreground "gray70" :background "#080808"))))
- '(cfw:face-grid ((t (:foreground "gray80" :background nil))))
- '(cfw:face-header ((t (:foreground "#4ea1e9" :background nil :weight bold))))
- '(cfw:face-holiday ((t (:foreground "#e96c4e" :background "#080808"))))
- '(cfw:face-saturday ((t (:foreground "#4ee979" :background nil :weight bold))))
- '(cfw:face-select ((t (:foreground "white" :background "#4ea1e9"))))
- '(cfw:face-sunday ((t (:foreground "#dbe94e" :background nil :weight bold))))
- '(cfw:face-today-title ((t (:foreground "white" :background "#D9534F"))))
- '(cfw:face-toolbar ((t (:foreground nil :background nil))))
- '(cfw:face-toolbar-button-off ((t (:foreground "gray70"))))
- '(cfw:face-toolbar-button-on ((t (:foreground "white" :weight bold))))
+ '(calfw-face-day-title ((t (:foreground "gray70" :background "#080808"))))
+ '(calfw-face-grid ((t (:foreground "gray80" :background nil))))
+ '(calfw-face-header ((t (:foreground "#4ea1e9" :background nil :weight bold))))
+ '(calfw-face-holiday ((t (:foreground "#e96c4e" :background "#080808"))))
+ '(calfw-face-saturday ((t (:foreground "#4ee979" :background nil :weight bold))))
+ '(calfw-face-select ((t (:foreground "white" :background "#4ea1e9"))))
+ '(calfw-face-sunday ((t (:foreground "#dbe94e" :background nil :weight bold))))
+ '(calfw-face-today-title ((t (:foreground "white" :background "#D9534F"))))
+ '(calfw-face-toolbar ((t (:foreground nil :background nil))))
+ '(calfw-face-toolbar-button-off ((t (:foreground "gray70"))))
+ '(calfw-face-toolbar-button-on ((t (:foreground "white" :weight bold))))
  '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
  '(cursor ((t (:background "#FF0000"))))
  '(dired-directory ((t (:foreground "deep sky blue" :weight bold))))

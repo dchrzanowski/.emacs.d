@@ -46,7 +46,6 @@
   (add-to-list 'evil-emacs-state-modes 'pomidor-mode)
   (add-to-list 'evil-emacs-state-modes 'magit-repolist-mode)
   (add-to-list 'evil-emacs-state-modes 'org-brain-visualize-mode)
-  (add-to-list 'evil-emacs-state-modes 'cfw:details-mode)
   (add-to-list 'evil-emacs-state-modes 'fzf-projectile)
   (add-to-list 'evil-emacs-state-modes 'image-mode)
   (add-to-list 'evil-emacs-state-modes 'chronos-mode)

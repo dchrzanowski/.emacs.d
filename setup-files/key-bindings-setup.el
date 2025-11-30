@@ -286,18 +286,28 @@
 
 ;; cfw caldendar
 (general-define-key
- :keymaps 'cfw:calendar-mode-map
+ :keymaps 'calfw-calendar-mode-map
+ :states 'normal
  "<SPC>" 'nil
+ "h" 'calfw-navi-previous-day-command
+ "l" 'calfw-navi-next-day-command
+ "j" 'calfw-navi-next-week-command
+ "k" 'calfw-navi-previous-week-command
+ "J" 'calfw-navi-next-month-command
+ "K" 'calfw-navi-previous-month-command
  "n" 'next-line
  "p" 'previous-line
- "o" 'cfw:show-details-command)
+ "q" 'bury-buffer
+ "o" 'calfw-show-details-command)
 
 (general-define-key
- :keymaps 'cfw:details-mode-map
- "h" 'cfw:details-navi-prev-command
- "l" 'cfw:details-navi-next-command
- "j" 'cfw:details-navi-next-item-command
- "k" 'cfw:details-navi-prev-item-command)
+ :keymaps 'calfw-details-mode-map
+ :states 'normal
+ "q" 'calfw-details-kill-buffer-command
+ "h" 'calfw-details-navi-prev-command
+ "l" 'calfw-details-navi-next-command
+ "j" 'calfw-details-navi-next-item-command
+ "k" 'calfw-details-navi-prev-item-command)
 
 ;; org
 (general-define-key

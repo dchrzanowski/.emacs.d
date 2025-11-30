@@ -129,7 +129,7 @@
  "oo" 'org-agenda
  "of" 'helm-org-rifle
  "ob" 'org-switchb
- "ok" 'cfw:open-org-calendar
+ "ok" 'calfw-org-open-calendar
  "oK" 'calendar
  "ot" 'org-agenda-todo-items
  "os" 'org-agenda-search-items

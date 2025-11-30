@@ -51,7 +51,7 @@
                                  ;; ("j" "Journal Note" entry (file+datetree "~/GoogleDrive/org/journal.org") "**** %T %^{Note Title}")
                                  ("j" "Journal Note" entry (file+datetree "~/GoogleDrive/org/journal.org") "* %U %?")
                                  ("w" "Work Journal Note" entry (file+datetree "~/GoogleDrive/org/journal-work.org") "* %U %?")
-                                 ("c" "Calfw2org" entry (file "~/GoogleDrive/org/refile.org")  "* %?\n %(cfw:org-capture-day)")))
+                                 ("c" "Calfw2org" entry (file "~/GoogleDrive/org/refile.org")  "* %?\n %(calfw-org-capture-day)")))
    ;; --------------------------------------------------------------------
    ;; agenda
    ;; --------------------------------------------------------------------
@@ -292,22 +292,22 @@
 ;; calendar
 ;; --------------------------------------------------------------------
 (use-package calfw
-  :defer 1
+  :after org
   :config
   (use-package calfw-org
     :config
-    (setq cfw:org-capture-template '("c" "calfw2org" entry (file nil)  "* %?\n %(cfw:org-capture-day)")))
-
+    (setq calfw-org-capture-template '("c" "calfw2org" entry (file nil)  "* %?\n %(calfw-org-capture-day)")))
   (setq calendar-week-start-day 1
-        cfw:display-calendar-holidays t
-        cfw:fchar-junction ?╬
-        cfw:fchar-vertical-line ?┋
-        cfw:fchar-horizontal-line ?┅
-        cfw:fchar-left-junction ?╠
-        cfw:fchar-right-junction ?╣
-        cfw:fchar-top-junction ?╦
-        cfw:fchar-top-left-corner ?╔
-        cfw:fchar-top-right-corner ?╗))
+        calfw-display-calendar-holidays t
+        calfw-fchar-junction ?╬
+        calfw-fchar-vertical-line ?┋
+        calfw-fchar-horizontal-line ?┅
+        calfw-fchar-left-junction ?╠
+        calfw-fchar-right-junction ?╣
+        calfw-fchar-top-junction ?╦
+        calfw-fchar-top-left-corner ?╔
+        calfw-fchar-top-right-corner ?╗))
+
 
 ;; --------------------------------------------------------------------
 ;; pomidor
