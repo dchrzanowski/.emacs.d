@@ -98,6 +98,7 @@
 ;; (require 'mu4e-setup)
 
 ;; utils
+(require 'search-setup)
 (require 'git-setup)
 (require 'shell-setup)
 (require 'tramp-setup)

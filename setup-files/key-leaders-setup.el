@@ -75,8 +75,11 @@
  "pk" 'projectile-kill-buffers
  "pa" 'helm-projectile-ag
  "pc" 'org-projectile-project-todo-completing-read
+ "pr" 'projectile-run-project
+ "pt" 'projectile-test-project
  ;; save all buffers
  "s" (lambda() (interactive) (save-some-buffers t))
+ "S" 'rg-menu
  ;; hydras
  "SPC" 'hydra-window-operations/body
  "gS" 'hydra-smerge/body

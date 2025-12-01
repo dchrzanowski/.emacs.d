@@ -182,16 +182,19 @@
                        org-rainbow-tags org-super-agenda ox-gfm
                        ox-json ox-reveal password-generator pdf-tools
                        pomidor python-mode quelpa-use-package quickrun
-                       rainbow-delimiters rainbow-mode ranger rustic
-                       separedit shell-pop smartparens speed-type
-                       speeddating ssh-agency sudo-edit toc-org
-                       tree-sitter-langs treemacs-evil typescript-mode
-                       undo-tree vlf web-beautify web-mode webpaste
-                       yaml-mode zeal-at-point zenity-color-picker
-                       zoxide))
+                       rainbow-delimiters rainbow-mode ranger rg
+                       rustic separedit shell-pop smartparens
+                       speed-type speeddating ssh-agency sudo-edit
+                       toc-org tree-sitter-langs treemacs-evil
+                       typescript-mode undo-tree vlf web-beautify
+                       web-mode webpaste yaml-mode zeal-at-point
+                       zenity-color-picker zoxide))
  '(palette-hex-rgb-digits 2)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters '("pypy" "python"))
+ '(safe-local-variable-values
+   '((projectile-project-test-cmd . "mvn clean compile test")
+     (projectile-project-run-cmd . "mvn clean compile exec:java")))
  '(save-place-mode t)
  '(scroll-preserve-screen-position 1)
  '(send-mail-function 'mailclient-send-it)
