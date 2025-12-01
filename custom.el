@@ -176,7 +176,7 @@
                        imenu-anywhere jq-mode js-doc js2-mode
                        json-mode keychain-environment lsp-dart
                        lsp-java lsp-ui lua-mode magit-delta
-                       magit-todos multifiles neotree nginx-mode
+                       magit-todos mason multifiles neotree nginx-mode
                        ob-mongo org-bullets org-download org-edna
                        org-fancy-priorities org-kanban org-projectile
                        org-rainbow-tags org-super-agenda ox-gfm

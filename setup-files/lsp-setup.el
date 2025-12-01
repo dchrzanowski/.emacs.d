@@ -5,6 +5,14 @@
 ;; --------------------------------------------------------------------
 
 ;; --------------------------------------------------------------------
+;; mason (manager for lsps)
+;; --------------------------------------------------------------------
+(use-package mason
+  :defer 2
+  :config
+  (mason-ensure))
+
+;; --------------------------------------------------------------------
 ;; lsp mode
 ;; --------------------------------------------------------------------
 ;; (use-package eglot
@@ -14,7 +22,7 @@
   :ensure-system-package ((pylsp                      . "yay -S python-lsp-server")
                           ;; (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
-                          (typescript-language-server . "yay -S typescript-language-server")
+                          ;; (typescript-language-server . "yay -S typescript-language-server")
                           ;; (flutter                    . "yay -S flutter")
                           (clangd                     . "yay -S clang"))
   :hook ((c-mode          . lsp)

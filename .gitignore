@@ -109,3 +109,4 @@ eglot-eclipse-jdt-cache
 /async-bytecomp.log
 /projects
 /tree-sitter
+/mason
