@@ -187,7 +187,8 @@
                        speeddating ssh-agency sudo-edit toc-org
                        tree-sitter-langs treemacs-evil typescript-mode
                        undo-tree vlf web-beautify web-mode webpaste
-                       yaml-mode zeal-at-point zenity-color-picker))
+                       yaml-mode zeal-at-point zenity-color-picker
+                       zoxide))
  '(palette-hex-rgb-digits 2)
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters '("pypy" "python"))

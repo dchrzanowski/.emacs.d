@@ -89,7 +89,6 @@
  "a" 'anzu-query-replace
  "A" 'anzu-query-replace-at-cursor
  ;; evil comment
- ";" 'evilnc-comment-or-uncomment-lines
  "kk" 'evilnc-comment-or-uncomment-lines
  "kl" 'evilnc-quick-comment-or-uncomment-to-the-line
  "kc" 'evilnc-copy-and-comment-lines
@@ -134,6 +133,9 @@
  "ot" 'org-agenda-todo-items
  "os" 'org-agenda-search-items
  "om" 'org-agenda-match-tag-items
+ ;; zoxide
+ ";" 'zoxide-travel
+ "'" 'zoxide-find-file
  ;; editing assist
  "zz" 'insert-char
  "zb" 'flyspell-buffer

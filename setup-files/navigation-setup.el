@@ -155,50 +155,13 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 ;; --------------------------------------------------------------------
 (global-tab-line-mode)
 
-
 ;; --------------------------------------------------------------------
-;; dumb-jump (replaced by xref+lsp and other navigation options)
+;; zoxide
 ;; --------------------------------------------------------------------
-;; (use-package dumb-jump
-;;   :defer 5
-;;   :config (setq dumb-jump-selector 'helm))
-
-;; --------------------------------------------------------------------
-;; smart-jump
-;; --------------------------------------------------------------------
-;; (use-package smart-jump
-;;   :defer 1
-;;   :config
-;;   (smart-jump-setup-default-registers)
-
-;;   (smart-jump-register :modes 'emacs-lisp-mode
-;;                        :jump-fn 'xref-find-definitions
-;;                        :pop-fn 'pop-tag-mark
-;;                        :should-jump t
-;;                        :heuristic 'error
-;;                        :async nil)
-
-;;   (smart-jump-register :modes 'typescript-mode
-;;                        :jump-fn 'tide-jump-to-definition
-;;                        :pop-fn 'tide-jump-back
-;;                        :should-jump t
-;;                        :heuristic 'error
-;;                        :async nil)
-
-;;   (smart-jump-register :modes 'js2-mode
-;;                        :jump-fn 'tern-find-definition
-;;                        :pop-fn 'tern-pop-find-definition
-;;                        :should-jump t
-;;                        :heuristic 'error
-;;                        :async nil)
-
-;;   (smart-jump-register :modes 'python-mode
-;;                        :jump-fn 'lsp-ui-peek-find-definitions
-;;                        :pop-fn 'pop-tag-mark
-;;                        :refs-fn 'lsp-ui-peek-find-references
-;;                        :should-jump t
-;;                        :heuristic 'point
-;;                        :async t))
+(use-package zoxide
+  :after dired
+  :config
+  (add-hook 'dired-after-readin-hook (lambda () (zoxide-add (dired-current-directory)))))
 
 ;; --------------------------------------------------------------------
 ;; imenu-anywhere
