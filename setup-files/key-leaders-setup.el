@@ -40,7 +40,6 @@
  "Y" 'helm-register
  "hr" 'helm-firefox-bookmarks
  "hg" 'helm-do-grep-ag
- "ha" 'helm-do-ag
  "hl" 'helm-locate
  "hw" 'helm-do-ag-buffers
  "hf" 'helm-fzf
