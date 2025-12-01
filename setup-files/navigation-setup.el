@@ -161,7 +161,12 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 (use-package zoxide
   :after dired
   :config
-  (add-hook 'dired-after-readin-hook (lambda () (zoxide-add (dired-current-directory)))))
+  (defun dchrzan/add-to-zoxide-excluding ()
+    (let ((dirname (dired-current-directory)))
+      (unless (string-match-p "\\(node_modules\\|Downloads\\)" dirname)
+        (zoxide-add (dired-current-directory)))))
+
+  (add-hook 'dired-after-readin-hook (lambda () (dchrzan/add-to-zoxide-excluding))))
 
 ;; --------------------------------------------------------------------
 ;; imenu-anywhere
