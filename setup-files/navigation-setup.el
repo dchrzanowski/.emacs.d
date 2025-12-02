@@ -161,46 +161,8 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 (use-package zoxide
   :after dired
   :config
-  (defvar zoxide-list-of-ignored-dirs nil
-    "List of directories as strings to ignore for zoxide.")
-
-  (defvar zoxide-dir-ignore-regex nil
-    "Regex for Zoxide of directories to ignore.")
-
-  (setq zoxide-list-of-ignored-dirs '("node_modules"
-                                      "Downloads"
-                                      "target"
-                                      ".git"
-                                      ".idea"
-                                      ".mvn"
-                                      ".vscode"
-                                      ".angular"
-                                      ".godot"
-                                      ".dart_tool"
-                                      ".github"
-                                      ".venv"
-                                      ".settings"))
-
-  (defun dchrzan/construct-ignore-regex-for-zoxide (list-of-dirs)
-    (let ((first t)
-          (result "\\("))
-      (dolist (s list-of-dirs result)
-        (if first
-            (progn
-              (setq result (concat result s)) ;; treat the first one as is
-              (setq first nil))
-          (setq result (concat result "\\|" s)))) ;; treat any other with a prepended \\|
-      (setq result (concat result "\\)")) ;; append \\) at the end
-      result))
-
-  (setq zoxide-dir-ignore-regex (dchrzan/construct-ignore-regex-for-zoxide zoxide-list-of-ignored-dirs))
-
-  (defun dchrzan/add-to-zoxide-excluding ()
-    (let ((dirname (dired-current-directory)))
-      (unless (string-match-p zoxide-dir-ignore-regex dirname)
-        (zoxide-add (dired-current-directory)))))
-
-  (add-hook 'dired-after-readin-hook (lambda () (dchrzan/add-to-zoxide-excluding))))
+  (add-hook 'dired-after-readin-hook
+            #'(lambda () (zoxide-add (dired-current-directory)))))
 
 ;; --------------------------------------------------------------------
 ;; imenu-anywhere
