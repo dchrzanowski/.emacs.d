@@ -11,6 +11,8 @@
   :config
   (require 'company-yasnippet)
   (require 'company-ispell)
+  (setq company-ispell-dictionary (concat user-emacs-directory "word-dict/en_GB-large.txt"))
+  (setq ispell-alternate-dictionary (concat user-emacs-directory "word-dict/en_GB-large.txt"))
   (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package company-box
@@ -56,7 +58,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
-                 '((company-dabbrev company-ispell :separate)
+                 '((company-capf company-dabbrev company-ispell :separate)
                    company-files))))
 
 ;; --------------------------------------------------------------------
