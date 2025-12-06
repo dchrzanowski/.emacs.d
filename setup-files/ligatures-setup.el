@@ -54,6 +54,13 @@
   (push '("forEach"  . ?∀) prettify-symbols-alist)
   (push '("function" . ?ƒ) prettify-symbols-alist))
 
+(defun sql-style-ligatures ()
+  "SQL style languages ligatures."
+  (push '("RETURN" . ?⮐) prettify-symbols-alist)
+  (push '("IN"     . ?∈) prettify-symbols-alist)
+  (push '("not in" . ?∉) prettify-symbols-alist)
+  (push '("NOT IN" . ?∉) prettify-symbols-alist))
+
 (add-hook 'prog-mode-hook       #'prog-mode-style-ligatures)
 (add-hook 'go-mode-hook         #'go-style-ligatures)
 (add-hook 'rust-mode-hook       #'rust-style-ligatures)
@@ -61,6 +68,7 @@
 (add-hook 'python-mode-hook     #'python-style-ligatures)
 (add-hook 'js2-mode-hook        #'js-style-ligatures)
 (add-hook 'typescript-mode-hook #'js-style-ligatures)
+(add-hook 'sql-mode-hook        #'sql-style-ligatures)
 
 (setq prettify-symbols-unprettify-at-point t)
 (global-prettify-symbols-mode)
