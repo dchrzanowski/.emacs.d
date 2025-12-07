@@ -366,9 +366,10 @@
  "cm" 'org-menu
  "cf" 'helm-org-rifle
  "cs" 'org-download-screenshot
+ "cy" 'org-download-yank
+ "cv" 'org-download-clipboard
  "ck" 'org-kanban/shift
  "ce" 'org-export-dispatch
- "cy" 'org-download-yank
  "cD" 'org-decrypt-entries
  "cd" 'org-decrypt-entry
  "ci" 'dchrzan/org-add-ids-to-headlines-in-file
