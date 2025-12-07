@@ -102,6 +102,7 @@
  "M-<SPC> s" 'yas-expand
  "M-<SPC> g" 'company-gtags
  "M-<SPC> f" 'company-files
+ "M-<SPC> i" 'company-ispell
  "M-<SPC> a" 'aya-create
  "M-<SPC> e" 'aya-expand
  "M-<SPC> o" 'aya-open-line)
