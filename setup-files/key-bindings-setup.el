@@ -443,6 +443,13 @@
  "j" 'image-next-file
  "k" 'image-previous-file)
 
+;; doc-view mode
+(general-define-key
+ :keymaps 'doc-view-mode-map
+ :states 'normal
+ "j" 'doc-view-next-page
+ "k" 'doc-view-previous-page)
+
 ;; chronos mode
 (general-define-key
  :keymaps 'chronos-mode-map
