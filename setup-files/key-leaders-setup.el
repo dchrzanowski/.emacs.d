@@ -363,11 +363,12 @@
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'org-mode-map
+ "cci" 'org-toggle-inline-images
  "cm" 'org-menu
  "cf" 'helm-org-rifle
- "cs" 'org-download-screenshot
- "cy" 'org-download-yank
- "cv" 'org-download-clipboard
+ "css" 'org-download-screenshot
+ "csy" 'org-download-yank
+ "csv" 'org-download-clipboard
  "ck" 'org-kanban/shift
  "ce" 'org-export-dispatch
  "cD" 'org-decrypt-entries
