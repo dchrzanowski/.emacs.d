@@ -161,6 +161,32 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
 (use-package zoxide
   :after dired
   :config
+
+  ;; Override the default behaviour of zoxide.
+  ;; This especially helps when we're calling zoxide-travel so that
+  ;; the order is preserved by the scoring system of zoxide and is
+  ;; not sorted alphabetically, like in the package by default
+  (defun zoxide-open-with (query callback &optional noninteractive)
+    "Search QUERY and run CALLBACK function with a selected path.
+
+If NONINTERACTIVE is non-nil, the callback is always called
+directly with the selected path as its first argument.
+
+This is a help function to define interactive commands like
+`zoxide-find-file'.  If you want to do things noninteractive, please use
+`zoxide-query', filter results and pass it to your function manually instead."
+    (let* ((results (if query
+                        (zoxide-query-with query)
+                      (zoxide-query)))
+           ;; Preserve zoxide's score-based ordering
+           (completion-extra-properties
+            '(:display-sort-function identity))
+           (default-directory (completing-read "path: " results nil t)))
+      (if (and (not noninteractive) (commandp callback))
+          (call-interactively callback)
+        (funcall callback default-directory))))
+
+  ;; add directories browsed via dired to zoxide
   (add-hook 'dired-after-readin-hook
             #'(lambda () (zoxide-add (dired-current-directory)))))
 
