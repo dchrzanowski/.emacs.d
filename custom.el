@@ -151,17 +151,17 @@
  '(package-selected-packages
    '(ac-html-bootstrap ace-link all-the-icons-dired auto-yasnippet binky
                        calfw-org chronos color-identifiers-mode
-                       company-box company-jedi company-php
-                       company-restclient company-web css-eldoc
-                       csv-mode darkroom define-word diminish dired-du
-                       dired-filter dired-git-info dired-hide-dotfiles
-                       dired-launch dired-narrow dired-ranger
-                       dired-subtree diredful disk-usage docker
-                       dockerfile-mode doom-modeline doom-themes
-                       drag-stuff electric-operator emmet-mode
-                       engine-mode ess esup evil-anzu evil-args
-                       evil-collection evil-exchange evil-god-state
-                       evil-indent-plus evil-lion evil-matchit evil-mc
+                       company-box company-php company-restclient
+                       company-web css-eldoc csv-mode darkroom
+                       define-word diminish dired-du dired-filter
+                       dired-git-info dired-hide-dotfiles dired-launch
+                       dired-narrow dired-ranger dired-subtree
+                       diredful disk-usage docker dockerfile-mode
+                       doom-modeline doom-themes drag-stuff
+                       electric-operator emmet-mode engine-mode ess
+                       esup evil-anzu evil-args evil-collection
+                       evil-exchange evil-god-state evil-indent-plus
+                       evil-lion evil-matchit evil-mc
                        evil-nerd-commenter evil-numbers evil-org
                        evil-snipe evil-surround evil-vimish-fold
                        evil-visual-mark-mode evil-visualstar exato
