@@ -153,7 +153,8 @@
  '(powerline-gui-use-vcs-glyph nil)
  '(python-shell-completion-native-disabled-interpreters '("pypy" "python"))
  '(safe-local-variable-values
-   '((projectile-project-test-cmd . "mvn clean compile test")
+   '((projectile-project-run-cmd . "mvn spring-boot:run")
+     (projectile-project-test-cmd . "mvn clean compile test")
      (projectile-project-run-cmd . "mvn clean compile exec:java")))
  '(save-place-mode t)
  '(scroll-preserve-screen-position 1)
@@ -184,8 +185,8 @@
          (cons 300 "#9f585a") (cons 320 "#6f4e52")
          (cons 340 "#5B6268") (cons 360 "#5B6268")))
  '(web-mode-auto-close-style 2)
- '(web-mode-enable-current-column-highlight t t)
- '(web-mode-enable-current-element-highlight t t)
+ '(web-mode-enable-current-column-highlight t)
+ '(web-mode-enable-current-element-highlight t)
  '(which-key-hide-alt-key-translations nil)
  '(which-key-mode t))
 
