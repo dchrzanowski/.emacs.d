@@ -373,7 +373,7 @@
  "C-k" 'scroll-down-command
  "j" 'dired-hacks-next-file
  "k" 'dired-hacks-previous-file
- "l" 'dired-advertised-find-file
+ "l" 'dired-find-file
  "h" 'dired-up-directory
  "<backspace>" '(lambda () (interactive) (find-alternate-file ".."))
  "RET" 'dired-find-alternate-file
