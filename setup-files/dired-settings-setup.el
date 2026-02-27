@@ -49,7 +49,8 @@
   ;; dired subtree
   (use-package dired-subtree)
   ;; dired multistage copy/move/paste
-  (use-package dired-ranger)
+  (use-package dired-ranger
+    (setq dired-ranger-copy-ring-size 100))
   ;; find files quicker
   (use-package dired-narrow)
   ;; dired filters
@@ -144,9 +145,9 @@
 ;; --------------------------------------------------------------------
 ;; truncate lines
 (add-hook 'dired-after-readin-hook (lambda () (progn
-                                           (dired-hide-details-mode)
-                                           (setq truncate-partial-width-windows t
-                                                 truncate-lines t))))
+                                                (dired-hide-details-mode)
+                                                (setq truncate-partial-width-windows t
+                                                      truncate-lines t))))
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
 ;; provide undo tree in wdired which doesn't kick in by itself for whatever reason
