@@ -52,13 +52,13 @@
   ;; dired multistage copy/move/paste
   (use-package dired-ranger
     :init
-
     (defun my/dired-ranger-copy-flip-arg (orig-fun arg)
       "Invert the meaning of ARG for `dired-ranger-copy'.
 No prefix adds to the current selection
 Prefix (C-u) creates a new selection."
       (let ((arg (not arg)))
         (funcall orig-fun arg)))
+
     :config
     (setq dired-ranger-copy-ring-size 100)
     (advice-add 'dired-ranger-copy :around #'my/dired-ranger-copy-flip-arg))
