@@ -446,6 +446,17 @@ Version 2015-07-30"
                    (mapconcat #'expand-file-name file-list "\" \""))))))
 
 ;; --------------------------------------------------------------------
+;; Dired async completed message
+;; --------------------------------------------------------------------
+(defun dired-async-message-function-notify-os (text face &rest args)
+  "Notify end of operation in through OS notify."
+  (message nil)
+  (let* ((msg-string (if args (apply #'format text args) text)))
+    (notifications-notify
+     :title "Emacs file operation completed"
+     :body msg-string)))
+
+;; --------------------------------------------------------------------
 ;; Calc
 ;; --------------------------------------------------------------------
 (defun calc-eval-string (x)

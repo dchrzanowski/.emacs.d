@@ -34,6 +34,7 @@
 ;; async
 (use-package async
   :config
+  (setq dired-async-message-function #'dired-async-message-function-notify-os)
   (dired-async-mode))
 
 ;; show sizes of subdirs and dirs / file
