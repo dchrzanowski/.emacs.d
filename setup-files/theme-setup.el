@@ -13,7 +13,9 @@
   :hook (after-init . doom-modeline-mode)
   :config
   (setq doom-modeline-height 21
-        doom-modeline-bar-width 6))
+        doom-modeline-bar-width 6
+        doom-modeline-modal-icon t
+        doom-modeline-modal-modern-icon t))
 
 ;; --------------------------------------------------------------------
 ;; load theme
