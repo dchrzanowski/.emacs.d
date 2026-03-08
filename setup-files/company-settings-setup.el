@@ -14,7 +14,7 @@
   (require 'company-ispell)
   (setq company-ispell-dictionary (concat user-emacs-directory "word-dict/en_GB-large_cleaned.txt"))
   (setq ispell-alternate-dictionary (concat user-emacs-directory "word-dict/en_GB-large_cleaned.txt"))
-  (add-hook 'after-init-hook 'global-company-mode))
+  (add-hook 'elpaca-after-init-hook 'global-company-mode))
 
 (use-package company-box
   :hook (company-mode . company-box-mode))

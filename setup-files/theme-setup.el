@@ -10,7 +10,7 @@
 (use-package doom-modeline
   :ensure t
   :defer t
-  :hook (after-init . doom-modeline-mode)
+  :hook (elpaca-after-init-hook . doom-modeline-mode)
   :config
   (setq doom-modeline-height 21
         doom-modeline-bar-width 6
