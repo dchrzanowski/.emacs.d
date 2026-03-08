@@ -44,6 +44,7 @@
  "hw" 'helm-do-ag-buffers
  "hf" 'helm-fzf
  "hp" 'helm-fzf-project-root
+ "M-c" 'helm-calcul-expression
  ;; engine
  "/d" 'engine/search-duckduckgo
  "/g" 'engine/search-google
