@@ -55,5 +55,11 @@
 (use-package nginx-mode
   :defer 5)
 
+;; --------------------------------------------------------------------
+;; jenkins file
+;; --------------------------------------------------------------------
+(use-package jenkinsfile-mode
+  :defer 4)
+
 (provide 'file-specific-setup)
 ;;; file-specific-setup.el ends here
