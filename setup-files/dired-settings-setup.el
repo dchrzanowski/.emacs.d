@@ -35,7 +35,9 @@
 (use-package async
   :config
   (setq dired-async-message-function #'dired-async-message-function-notify-os)
-  (dired-async-mode))
+  (add-to-list 'global-mode-string '(:eval (dchrzan/dired-async-modeline-string)) t)
+  (dired-async-mode)
+  (dired-async--modeline-mode -1))
 
 ;; show sizes of subdirs and dirs / file
 (use-package dired-du

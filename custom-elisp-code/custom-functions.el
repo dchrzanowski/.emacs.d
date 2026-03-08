@@ -457,6 +457,16 @@ Version 2015-07-30"
      :body msg-string)))
 
 ;; --------------------------------------------------------------------
+;; Dired async modeline info
+;; --------------------------------------------------------------------
+(defun dchrzan/dired-async-modeline-string ()
+  (let ((n (length (dired-async-processes))))
+    (when (> n 0)
+      (propertize
+       (format " [%s Async job%s running]" n (if (= n 1) "" "s"))
+       'face 'dired-async-mode-message))))
+
+;; --------------------------------------------------------------------
 ;; Calc
 ;; --------------------------------------------------------------------
 (defun calc-eval-string (x)
