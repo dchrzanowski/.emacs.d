@@ -270,7 +270,14 @@
             helm-locate-map)
  "DEL" 'helm-delete-char-backward
  "<backspace>" 'helm-delete-char-backward)
-
+;; add a common way to enter editable grep buffer
+(general-define-key
+ :keymaps '(helm-grep-map)
+ "C-c C-e" 'helm-grep-run-save-buffer)
+(general-define-key
+ :states 'normal
+ :keymaps '(helm-grep-mode-map)
+ "i" 'wgrep-change-to-wgrep-mode)
 
 ;; helm find-files-map
 (general-define-key
