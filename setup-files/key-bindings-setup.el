@@ -262,6 +262,15 @@
 (general-define-key
  :keymaps '(helm-locate-map)
  "M-K" '(lambda () (interactive) (helm-select-nth-action 4)))
+;; helm grep/pdfgrep/locate snap-back fix (we don't need to wait 1s for update, it is fast anyway)
+;; otherwise we get the point snap-back behaviour which sux a lot
+(general-define-key
+ :keymaps '(helm-grep-map
+            helm-pdfgrep-map
+            helm-locate-map)
+ "DEL" 'helm-delete-char-backward
+ "<backspace>" 'helm-delete-char-backward)
+
 
 ;; helm find-files-map
 (general-define-key

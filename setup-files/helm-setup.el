@@ -21,6 +21,9 @@
     (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
     (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
 
+  (setq helm-grep-input-idle-delay 0.3
+        helm-input-idle-delay 0.1)
+
   (setq helm-split-window-inside-p t
         helm-echo-input-in-header-line t
         helm-move-to-line-cycle-in-source nil)
