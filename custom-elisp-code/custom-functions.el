@@ -883,5 +883,48 @@ Value is automatically inserted as a side effect."
   (hledger-backward-entry)
   (hledger-pulse-momentary-current-entry))
 
+;; --------------------------------------------------------------------
+;; gptel helpers
+;; --------------------------------------------------------------------
+(defun dchrzan/allproject-files-as-buffer (extension)
+  "Collect current Projectile project files with EXTENSION into one buffer.
+
+The output buffer is named `*projectile-all-files*` and uses
+`fundamental-mode`.
+
+Each file is inserted in the format:
+
+---===--- Filename: path/to/file
+
+<file contents>"
+  (interactive
+   (list (read-string "File extension (e.g. el or .el): ")))
+  (require 'projectile)
+  (let* ((project-root (projectile-project-root))
+         (normalized-ext (if (string-prefix-p "." extension)
+                             extension
+                           (concat "." extension)))
+         (files (seq-filter
+                 (lambda (file)
+                   (string-suffix-p normalized-ext file t))
+                 (projectile-current-project-files)))
+         (output-buffer (get-buffer-create "*projectile-all-files*")))
+    (with-current-buffer output-buffer
+      (let ((inhibit-read-only t))
+        (erase-buffer)
+        (fundamental-mode)
+        (dolist (file files)
+          (let ((full-path (expand-file-name file project-root)))
+            (goto-char (point-max))
+            (insert (format "---===--- Filename: %s\n\n" file))
+            (if (file-readable-p full-path)
+                (progn
+                  (insert-file-contents full-path)
+                  (goto-char (point-max)))
+              (insert "[File is not readable]"))
+            (insert "\n\n"))))
+      (goto-char (point-min)))
+    (pop-to-buffer output-buffer)))
+
 (provide 'custom-functions)
 ;;; custom-functions.el ends here
