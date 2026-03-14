@@ -886,7 +886,7 @@ Value is automatically inserted as a side effect."
 ;; --------------------------------------------------------------------
 ;; gptel helpers
 ;; --------------------------------------------------------------------
-(defun dchrzan/allproject-files-as-buffer (path extension name-contains)
+(defun dchrzan/allproject-files-as-buffer (path extension name-contains erase-previous)
   "Collect current Projectile project files into one Markdown buffer.
 
 If EXTENSION is empty, include all files provided by Projectile.
@@ -895,7 +895,10 @@ If PATH is non-empty, include only files whose relative path contains PATH.
 Matching is case-sensitive.
 
 If NAME-CONTAINS is non-empty, include only files whose file name contains
-NAME-CONTAINS. Matching is case-sensitive.
+NAME-CONTAINS.  Matching is case-sensitive.
+
+If ERASE-PREVIOUS is non-empty, erase the output buffer before inserting.
+If ERASE-PREVIOUS is empty, append to the existing buffer contents.
 
 The output buffer is named `** PROJECT_NAME **` and uses `markdown-mode`.
 
@@ -909,8 +912,9 @@ Each file is inserted in the format:
   (interactive
    (list
     (read-string "Path Contains (case-sensitive, empty for all): ")
-    (read-string "File extension (e.g. el or .el, empty for all): ")
-    (read-string "Name Contains (case-sensitive, empty for all): ")))
+    (read-string "File Extension (e.g. el or .el, empty for all): ")
+    (read-string "Name Contains (case-sensitive, empty for all): ")
+    (read-string "Erase previous buffer? (Enter - no, anything else - yes): ")))
   (require 'projectile)
   (require 'seq)
   (require 'markdown-mode)
@@ -926,6 +930,8 @@ Each file is inserted in the format:
          (name-filter
           (unless (string-empty-p name-contains)
             name-contains))
+         (should-erase
+          (not (string-empty-p erase-previous)))
          (files
           (seq-filter
            (lambda (file)
@@ -943,7 +949,8 @@ Each file is inserted in the format:
            (format "** %s **" (projectile-project-name)))))
     (with-current-buffer output-buffer
       (let ((inhibit-read-only t))
-        (erase-buffer)
+        (when should-erase
+          (erase-buffer))
         (markdown-mode)
         (dolist (file files)
           (let* ((full-path (expand-file-name file project-root))
