@@ -886,6 +886,76 @@ Value is automatically inserted as a side effect."
 ;; --------------------------------------------------------------------
 ;; gptel helpers
 ;; --------------------------------------------------------------------
+(defun dchrzan/allproject-files-as-buffer (path extension name-contains)
+  "Collect current Projectile project files into one buffer.
+
+If EXTENSION is empty, include all files provided by Projectile.
+
+If PATH is non-empty, include only files whose relative path contains PATH.
+Matching is case-sensitive.
+
+If NAME-CONTAINS is non-empty, include only files whose file path contains
+NAME-CONTAINS. Matching is case-sensitive.
+
+The output buffer is named `** PROJECT_NAME **` and uses
+`fundamental-mode`.
+
+Each file is inserted in the format:
+
+---===--- Filename: path/to/file
+
+<file contents>"
+  (interactive
+   (list
+    (read-string "Path Contains (case-sensitive, empty for all): ")
+    (read-string "File extension (e.g. el or .el, empty for all): ")
+    (read-string "Name Contains (case-sensitive, empty for all): ")))
+  (require 'projectile)
+  (require 'seq)
+  (let* ((project-root (projectile-project-root))
+         (path-filter
+          (unless (string-empty-p path)
+            path))
+         (normalized-ext
+          (cond
+           ((string-empty-p extension) nil)
+           ((string-prefix-p "." extension) extension)
+           (t (concat "." extension))))
+         (name-filter
+          (unless (string-empty-p name-contains)
+            name-contains))
+         (files
+          (seq-filter
+           (lambda (file)
+             (and
+              (or (null path-filter) ;; check path
+                  (string-search path-filter file))
+              (or (null normalized-ext) ;; check extension
+                  (string-suffix-p normalized-ext file t))
+              (or (null name-filter) ;; check filename
+                  (string-search name-filter (file-name-nondirectory file)))))
+           (projectile-current-project-files)))
+         (output-buffer
+          (get-buffer-create
+           (format "** %s **" (projectile-project-name)))))
+    (with-current-buffer output-buffer
+      (let ((inhibit-read-only t))
+        (erase-buffer)
+        (fundamental-mode)
+        (dolist (file files)
+          (let ((full-path (expand-file-name file project-root)))
+            (goto-char (point-max))
+            (insert (format "---===--- Filename: %s\n\n" file))
+            (if (file-readable-p full-path)
+                (progn
+                  (insert-file-contents full-path)
+                  (goto-char (point-max)))
+              (insert "[File is not readable]"))
+            (insert "\n\n"))))
+      (goto-char (point-min)))
+    (pop-to-buffer output-buffer)))
+
+
 (defun dchrzan/allproject-files-as-buffer (extension)
   "Collect current Projectile project files with EXTENSION into one buffer.
 
