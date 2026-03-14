@@ -889,7 +889,9 @@ Value is automatically inserted as a side effect."
 (defun dchrzan/allproject-files-as-buffer (extension)
   "Collect current Projectile project files with EXTENSION into one buffer.
 
-The output buffer is named `*projectile-all-files*` and uses
+If EXTENSION is nil then all files provided by projectile will be included.
+
+The output buffer is named `** PROJECT_NAME **` and uses
 `fundamental-mode`.
 
 Each file is inserted in the format:
@@ -901,17 +903,20 @@ Each file is inserted in the format:
    (list (read-string "File extension (e.g. el or .el): ")))
   (require 'projectile)
   (let* ((project-root (projectile-project-root))
-         (normalized-ext (if (string-prefix-p "." extension)
-                             extension
-                           (concat "." extension)))
-         (files (seq-filter
-                 (lambda (file)
-                   (string-suffix-p normalized-ext file t))
-                 (projectile-current-project-files)))
-         (output-buffer (get-buffer-create "*projectile-all-files*")))
+         (normalized-ext
+          (cond
+           ((string-empty-p extension) nil)
+           ((string-prefix-p "." extension) extension)
+           (t (concat "." extension))))
+         (files (if normalized-ext
+                    (seq-filter
+                     (lambda (file)
+                       (string-suffix-p normalized-ext file t))
+                     (projectile-current-project-files))
+                  (projectile-current-project-files)))
+         (output-buffer (get-buffer-create (format "** %s **" (projectile-project-name)))))
     (with-current-buffer output-buffer
       (let ((inhibit-read-only t))
-        (erase-buffer)
         (fundamental-mode)
         (dolist (file files)
           (let ((full-path (expand-file-name file project-root)))
