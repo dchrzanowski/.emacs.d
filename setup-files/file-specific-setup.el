@@ -61,5 +61,11 @@
 (use-package jenkinsfile-mode
   :defer 4)
 
+;; --------------------------------------------------------------------
+;; gherkin file
+;; --------------------------------------------------------------------
+(use-package gherkin-mode
+  :defer 4)
+
 (provide 'file-specific-setup)
 ;;; file-specific-setup.el ends here
