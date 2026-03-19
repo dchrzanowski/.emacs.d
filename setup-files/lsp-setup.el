@@ -63,8 +63,19 @@
 ;; --------------------------------------------------------------------
 ;; java lsp
 ;; --------------------------------------------------------------------
+;; (use-package lsp-java
+;;   :hook (java-mode . lsp))
 (use-package lsp-java
-  :hook (java-mode . lsp))
+  :hook (java-mode . lsp)
+  :config
+  (setq lsp-java-vmargs
+        (list
+         "-noverify"
+         "-Xmx1G"
+         (concat "-javaagent:"
+                 (expand-file-name
+                  "~/.m2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar")))))
+
 
 ;; --------------------------------------------------------------------
 ;; dart lsp
