@@ -886,6 +886,20 @@ Value is automatically inserted as a side effect."
 ;; --------------------------------------------------------------------
 ;; gptel helpers
 ;; --------------------------------------------------------------------
+(defvar allproject-files-as-buffer--ignore-paths nil
+  "List of path substrings to ignore in `dchrzan/allproject-files-as-buffer'.
+
+Each element should be a string.  A file is excluded when any string in this
+list is found in its relative path using `string-search'.  Matching is
+case-sensitive.")
+
+(setq allproject-files-as-buffer--ignore-paths '(".git/"
+                                                 ".idea"
+                                                 ".mvn"
+                                                 "/images"
+                                                 "/static/css"
+                                                 "/static/js/libs"))
+
 (defun dchrzan/allproject-files-as-buffer (path extension name-contains erase-previous)
   "Collect current Projectile project files into one Markdown buffer.
 
@@ -899,6 +913,9 @@ NAME-CONTAINS.  Matching is case-sensitive.
 
 If ERASE-PREVIOUS is non-empty, erase the output buffer before inserting.
 If ERASE-PREVIOUS is empty, append to the existing buffer contents.
+
+Paths matching any entry in `allproject-files-as-buffer--ignore-paths' are
+excluded.  Matching is done with `string-search' and is case-sensitive.
 
 The output buffer is named `** PROJECT_NAME **` and uses `markdown-mode`.
 
@@ -942,7 +959,12 @@ Each file is inserted in the format:
                   (string-suffix-p normalized-ext file t))
               (or (null name-filter)
                   (string-search name-filter
-                                 (file-name-nondirectory file)))))
+                                 (file-name-nondirectory file)))
+              (not
+               (seq-some
+                (lambda (ignored-path)
+                  (string-search ignored-path file))
+                allproject-files-as-buffer--ignore-paths))))
            (projectile-current-project-files)))
          (output-buffer
           (get-buffer-create
