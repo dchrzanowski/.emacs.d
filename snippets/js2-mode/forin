@@ -2,8 +2,8 @@
 # name: for in
 # key: forin
 # --
-for (var ${1:variable} in ${2:object}) {
-    ${3:if (${2:object}.hasOwnProperty(${1:variable})) {
+for (${1:$$(yas-choose-value '("const" "let"))} ${2:variable} of ${3:iterable}) {
+    ${3:if (${3:object}.hasOwnProperty(${2:variable})) {
         $4
     }}
 }

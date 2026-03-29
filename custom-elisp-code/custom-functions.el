@@ -898,7 +898,7 @@ case-sensitive.")
                                                  ".mvn"
                                                  "/images"
                                                  "/static/css"
-                                                 "/static/js/libs"))
+                                                 "/static/js"))
 
 (defun dchrzan/allproject-files-as-buffer (path extension name-contains erase-previous)
   "Collect current Projectile project files into one Markdown buffer.
