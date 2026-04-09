@@ -133,7 +133,6 @@
  '(line-move-visual nil)
  '(mc/always-run-for-all t)
  '(menu-bar-mode nil)
- '(message-directory "~/Mail/maestrosartori69/[Gmail].Sent Mail")
  '(notmuch-saved-searches
    '((:name "inbox" :query "tag:inbox" :key "i")
      (:name "unread" :query "tag:unread" :key "u")
@@ -143,6 +142,10 @@
      (:name "all mail" :query "*" :key "a")
      (:name "trash" :query "tag:trash" :key "b")
      (:name "stash" :query "tag:stash" :key "t")))
+ '(org-file-apps
+   '((auto-mode . emacs) (directory . emacs) ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . default) ("\\.pdf\\'" . default)
+     ("\\.drawio.svg\\'" . "drawio %s")))
  '(org-link-from-user-regexp nil)
  '(org-log-done t)
  '(org-src-fontify-natively t)
