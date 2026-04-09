@@ -192,13 +192,13 @@
  (filename . "/home/grimscythe") (position . 1)
  (created 22832 28455 797470 230000))
 #1=
-(#("init.el" 0 7 (bmkp-full-record #1#)) (end-position . 314)
+(#("init.el" 0 7 (bmkp-full-record #1#)) (end-position . 190)
  (filename . "~/.emacs.d/init.el") (buffer-name . "init.el")
  (front-context-string . ";; Python\n;; ---")
  (rear-context-string . "---------------\n")
  (front-context-region-string) (rear-context-region-string)
- (visits . 20) (time 24369 6952 53820 36000)
- (created 22819 15845 559399 480000) (position . 314))
+ (visits . 21) (time 27096 8218 91738 297000)
+ (created 22819 15845 559399 480000) (position . 190))
 #1=
 (#("custom.el" 0 9 (bmkp-full-record #1#))
  (filename . "~/.emacs.d/custom.el") (buffer-name . "custom.el")

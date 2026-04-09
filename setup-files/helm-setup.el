@@ -64,6 +64,7 @@
   (require 'helm-swoop)
   (setq helm-swoop-split-with-multiple-windows t
         helm-swoop-use-fuzzy-match nil
+        helm-swoop-min-overlay-length 1
         helm-swoop-pre-input-function (lambda () "")))
 
 ;; --------------------------------------------------------------------
