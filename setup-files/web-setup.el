@@ -80,7 +80,7 @@
 ;; web-beautify
 ;; --------------------------------------------------------------------
 (use-package web-beautify
-  :ensure-system-package (js-beautify . "sudo npm i -g js-beautify")
+  :ensure-system-package (js-beautify . "yay -S js-beautify")
   :defer 2
   :config
   (defconst web-beautify-args '("-")))
