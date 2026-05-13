@@ -25,26 +25,24 @@
  "W" 'kill-current-buffer
  ;; ace window
  "d" 'ace-window
- ;; helm
- "x" 'helm-M-x
- "w" 'helm-mini
- "f" 'helm-swoop-without-pre-input
- "F" 'helm-find-files
- "M-f" 'helm-multi-swoop-all
- "r" 'helm-filtered-bookmarks
+ ;; consult / vertico
+ "x" 'execute-extended-command
+ "w" 'consult-buffer
+ "f" 'consult-line
+ "F" 'find-file
+ "M-f" 'consult-line-multi
+ "r" 'consult-bookmark
  "R" 'edit-bookmarks
- "M" 'helm-all-mark-rings
- "b" 'helm-imenu
- "B" 'helm-imenu-anywhere
- "y" 'helm-show-kill-ring
- "Y" 'helm-register
- "hr" 'helm-firefox-bookmarks
- "hg" 'helm-do-grep-ag
- "hl" 'helm-locate
- "hw" 'helm-do-ag-buffers
- "hf" 'helm-fzf
- "hp" 'helm-fzf-project-root
- "M-c" 'helm-calcul-expression
+ "M" 'consult-mark
+ "b" 'consult-imenu
+ "B" 'consult-imenu-multi
+ "y" 'consult-yank-pop
+ "Y" 'consult-register
+ "hg" 'consult-ripgrep
+ "hl" 'consult-find
+ "hw" 'consult-grep
+ "hf" 'consult-find
+ "hp" 'consult-projectile
  ;; engine
  "/d" 'engine/search-duckduckgo
  "/g" 'engine/search-google
@@ -68,12 +66,12 @@
  "Hc" 'helpful-command
  "Hk" 'helpful-key
  ;; projectile
- "pp" 'helm-projectile-switch-project
- "pf" 'helm-projectile-find-file
- "pF" 'helm-projectile-find-file-in-known-projects
+ "pp" 'consult-projectile-switch-project
+ "pf" 'consult-projectile-find-file
+ "pF" 'projectile-find-file-in-known-projects
  "pi" 'projectile-invalidate-cache
  "pk" 'projectile-kill-buffers
- "pa" 'helm-projectile-ag
+ "pa" 'consult-ripgrep
  "pc" 'org-projectile-project-todo-completing-read
  "pr" 'projectile-run-project
  "pt" 'projectile-test-project
@@ -129,7 +127,7 @@
  "oA" 'org-agenda-list
  "oa" 'org-agenda-list-and-delete-other-windows
  "oo" 'org-agenda
- "of" 'helm-org-rifle
+ "of" 'consult-org-heading
  "ob" 'org-switchb
  "ok" 'calfw-org-open-calendar
  "oK" 'calendar
@@ -328,7 +326,7 @@
  "c." 'lsp-ui-peek-find-definitions
  "c," 'lsp-ui-peek-jump-backward
  "cv" 'lsp-ui-sideline-mode
- "cc" 'helm-lsp-code-actions
+ "cc" 'lsp-execute-code-action
  "cr" 'lsp-rename
  "ci" 'lsp-organize-imports
  "cf" 'lsp-format-buffer
@@ -366,7 +364,7 @@
  :keymaps 'org-mode-map
  "cci" 'org-toggle-inline-images
  "cm" 'org-menu
- "cf" 'helm-org-rifle
+ "cf" 'consult-org-heading
  "css" 'org-download-screenshot
  "csy" 'org-download-yank
  "csv" 'org-download-clipboard
