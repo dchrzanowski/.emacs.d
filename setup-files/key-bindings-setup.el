@@ -237,6 +237,12 @@
  "C-S-h" 'describe-key
  "M-i" 'helm-select-action)
 
+;; vertico
+(general-define-key
+ :keymaps 'vertico-map
+ "M-j" 'vertico-next
+ "M-k" 'vertico-previous)
+
 ;; helm projectile
 (general-define-key
  :keymaps 'helm-projectile-find-file-map
