@@ -69,24 +69,5 @@
 (use-package consult-projectile
   :after (consult projectile))
 
-;; --------------------------------------------------------------------
-;; wgrep (editable grep buffers, used with embark-export)
-;; --------------------------------------------------------------------
-(use-package wgrep
-  :defer t)
-
-;; --------------------------------------------------------------------
-;; savehist (persists minibuffer history, used by vertico/consult)
-;; --------------------------------------------------------------------
-(use-package savehist
-  :ensure nil
-  :config
-  (savehist-mode 1))
-
-;; --------------------------------------------------------------------
-;; enable recursive minibuffers (needed for consult-history etc.)
-;; --------------------------------------------------------------------
-(setq enable-recursive-minibuffers t)
-
 (provide 'vompecc-setup)
 ;;; vompecc-setup.el ends here

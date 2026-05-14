@@ -117,5 +117,10 @@
 ;; --------------------------------------------------------------------
 (setq alert-default-style 'libnotify)
 
+;; --------------------------------------------------------------------
+;; enable recursive minibuffers (needed for consult-history etc.)
+;; --------------------------------------------------------------------
+(setq enable-recursive-minibuffers t)
+
 (provide 'sane-defaults-setup)
 ;;; sane-defaults-setup.el ends here
