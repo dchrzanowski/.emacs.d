@@ -114,6 +114,7 @@
 (require 'typescript-setup)
 (require 'go-setup)
 (require 'r-setup)
+(require 'java-setup)
 (require 'dart-setup)
 (require 'rust-setup)
 (require 'php-setup)

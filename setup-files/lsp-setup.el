@@ -68,6 +68,12 @@
 (use-package lsp-java
   :hook (java-mode . lsp)
   :config
+  (require 'lsp-java-boot)
+
+  ;; to enable the lenses
+  (add-hook 'lsp-mode-hook #'lsp-lens-mode)
+  (add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
+
   (setq lsp-java-vmargs
         (list
          "-noverify"
@@ -113,6 +119,9 @@
 ;; --------------------------------------------------------------------
 ;; lsp dap mode (debugging)
 ;; --------------------------------------------------------------------
+(use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+(use-package dap-java :ensure nil)
+
 ;; (use-package dap-mode
 ;;   :after lsp-mode
 ;;   :config
