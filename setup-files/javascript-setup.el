@@ -18,10 +18,8 @@
   :config
   (add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))  ;; attach js2 mode to js files
 
-
   (add-hook 'js2-mode-hook (lambda()
-                             (hl-todo-mode)
-                             (company-mode))))
+                             (hl-todo-mode))))
 
-(provide 'javascript-setup)
+  (provide 'javascript-setup)
 ;;; javascript-setup.el ends here

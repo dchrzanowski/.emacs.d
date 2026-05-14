@@ -9,11 +9,9 @@
 ;; --------------------------------------------------------------------
 (diminish 'visual-line-mode)
 (diminish 'which-key-mode)
-(diminish 'company-mode)
 (diminish 'undo-tree-mode)
 (diminish 'undo-tree-visualizer-selection-mode)
 (diminish 'drag-stuff-mode)
-(diminish 'helm-mode)
 (diminish 'yas-minor-mode)
 (diminish 'projectile-mode)
 (diminish 'anzu-mode)

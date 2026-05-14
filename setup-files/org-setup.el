@@ -115,11 +115,6 @@
   ;; org bullets hook
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;; org-helm-rifle
-(use-package helm-org-rifle
-  :after org
-  :defer t)
-
 ;; toc-org
 (use-package toc-org
   :after org

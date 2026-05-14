@@ -72,6 +72,7 @@
 (require 'custom-functions)
 (require 'saved-macros)
 (require 'corfu-cape-setup)
+;; (require 'company-settings-setup) ;; replaced by corfu-cape-setup
 (require 'eldoc-setup)
 (require 'navigation-setup)
 (require 'bookmarks-setup)

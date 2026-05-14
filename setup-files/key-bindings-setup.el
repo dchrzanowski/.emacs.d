@@ -45,13 +45,13 @@
   ;; ace
   "M-d" 'ace-window
   "C-l" 'ace-link
-  ;; helm
-  "M-x" 'helm-M-x
-  "M-w" 'helm-mini
-  "M-f" 'helm-swoop
-  "M-F" 'helm-multi-swoop-all
-  "C-c C-b" 'helm-bookmarks
-  "C-c C-y" 'helm-show-kill-ring
+  ;; consult / vertico
+  "M-x" 'consult-M-x
+  "M-w" 'consult-buffer
+  "M-f" 'consult-line
+  "M-F" 'consult-line-multi
+  "C-c C-b" 'consult-bookmark
+  "C-c C-y" 'consult-yank-pop
   ;; avy
   "M-e" 'avy-goto-char-timer
   ;; tab-line
@@ -64,8 +64,6 @@
   "M-;" 'emmet-expand-line
   ;; org
   "C-c l" 'org-store-link
-  ;; company
-  "C-<SPC>" 'company-dabbrev-code
   ;; dired
   "C-;" 'dired-jump
   ;; evil-mc
@@ -95,14 +93,9 @@
  :keymaps '(insert normal visual)
  ;; xref
  "M-." 'xref-find-definitions
- ;; company completion
- "M-<SPC> <SPC>" 'company-complete-common
- "M-<SPC> j" 'company-complete
+ ;; completion
  "M-<SPC> y" 'hydra-yasnippet/body
  "M-<SPC> s" 'yas-expand
- "M-<SPC> g" 'company-gtags
- "M-<SPC> f" 'company-files
- "M-<SPC> i" 'company-ispell
  "M-<SPC> a" 'aya-create
  "M-<SPC> e" 'aya-expand
  "M-<SPC> o" 'aya-open-line)
@@ -191,9 +184,9 @@
 ;; prog-mode specific
 (general-define-key
  :keymaps 'prog-mode-map
- ;; company
- "TAB" 'tab-indent-or-complete
- "<tab>" 'tab-indent-or-complete)
+ ;; corfu: TAB just indents; corfu popup handles completion via corfu-auto
+ "TAB" 'indent-for-tab-command
+ "<tab>" 'indent-for-tab-command)
 
 ;; flyspell
 (general-define-key
@@ -212,90 +205,17 @@
  :states 'normal
  "F" 'archive-extract-marked-to-file)
 
-;; magit
-(general-define-key
- :keymaps 'magit-mode-map
- "M-x" 'helm-M-x)
-
 ;; magit-todos
 (general-define-key
  :keymaps 'magit-todos-item-section-map
  "j" 'evil-next-visual-line
  "k" 'evil-previous-visual-line)
 
-;; helm
-(general-define-key
- :keymaps 'helm-map
- "M-j" 'helm-next-line
- "M-k" 'helm-previous-line
- "C-j" 'helm-next-page
- "C-k" 'helm-previous-page
- "M-h" 'helm-next-source
- "M-l" (kbd "RET")
- "TAB" 'helm-execute-persistent-action
- "<tab>" 'helm-execute-persistent-action
- "C-S-h" 'describe-key
- "M-i" 'helm-select-action)
-
 ;; vertico
 (general-define-key
  :keymaps 'vertico-map
  "M-j" 'vertico-next
  "M-k" 'vertico-previous)
-
-;; helm projectile
-(general-define-key
- :keymaps 'helm-projectile-find-file-map
- "M-k" 'helm-previous-line)
-
-;; helm files
-(general-define-key
- :keymaps '(helm-find-files-map
-            helm-read-file-map
-            helm-projectile-find-file-map
-            helm-generic-files-map)
- "M-j" 'helm-next-line
- "M-k" 'helm-previous-line
- "M-l" 'helm-execute-persistent-action
- "M-h" 'helm-find-files-up-one-level
- "M-J" 'helm-ff-run-open-file-with-default-tool
- "M-i" 'helm-select-action
- "C-S-h" 'describe-key
- "TAB" 'helm-execute-persistent-action
- "<tab>" 'helm-execute-persistent-action
- "C-r" 'evil-paste-from-register)
-;; helm-locate
-(general-define-key
- :keymaps '(helm-locate-map)
- "M-K" '(lambda () (interactive) (helm-select-nth-action 4)))
-;; helm grep/pdfgrep/locate snap-back fix (we don't need to wait 1s for update, it is fast anyway)
-;; otherwise we get the point snap-back behaviour which sux a lot
-(general-define-key
- :keymaps '(helm-grep-map
-            helm-pdfgrep-map
-            helm-locate-map)
- "DEL" 'helm-delete-char-backward
- "<backspace>" 'helm-delete-char-backward)
-;; add a common way to enter editable grep buffer
-(general-define-key
- :keymaps '(helm-grep-map)
- "C-c C-e" 'helm-grep-run-save-buffer)
-(general-define-key
- :states 'normal
- :keymaps '(helm-grep-mode-map)
- "i" 'wgrep-change-to-wgrep-mode)
-
-;; helm find-files-map
-(general-define-key
- :keymaps '(helm-find-files-map
-            helm-projectile-find-file-map)
- "M-K" '(lambda () (interactive) (helm-select-nth-action 1)))
-
-;; helm swoop
-(general-define-key
- :keymaps 'helm-mutli-swoop-edit-map
- :states 'normal
- "C-n" 'evil-mc-make-and-goto-next-match)
 
 ;; web mode
 (general-define-key
@@ -356,17 +276,12 @@
  "k" 'org-agenda-previous-item
  "h" 'hydra-org-agenda/body)
 
-;; company
+;; corfu
 (general-define-key
- :keymaps 'company-active-map
- "M-j" 'company-select-next
- "M-k" 'company-select-previous
- "TAB" 'tab-indent-or-complete
- "<tab>" 'tab-indent-or-complete
- "C-g" 'company-abort)
-
-(evil-make-intercept-map company-active-map 'insert)
-(general-def company-active-map [escape] 'company-abort-and-switch-to-normal-state)
+ :keymaps 'corfu-map
+ "M-j" 'corfu-next
+ "M-k" 'corfu-previous
+ "C-g" 'corfu-quit)
 
 ;; yasnippet
 (general-define-key
@@ -377,7 +292,7 @@
  :keymaps 'yas-keymap
  "TAB" 'yas-next-field-or-maybe-expand
  "<tab>" 'yas-next-field-or-maybe-expand
- "C-g" 'abort-company-or-yas)
+ "C-g" 'yas-abort-snippet)
 
 ;; info mode
 (general-define-key
@@ -413,13 +328,6 @@
  "K" 'dired-launch-with-prompt-command
  "&" 'dired-start-process
  ")" 'dired-git-info-mode)
-
-;; ivy
-(general-define-key
- :keymaps 'ivy-minibuffer-map
- "M-j" 'ivy-next-line
- "M-k" 'ivy-previous-line
- "<escape>" 'minibuffer-keyboard-quit)
 
 ;; neotree
 (general-define-key
