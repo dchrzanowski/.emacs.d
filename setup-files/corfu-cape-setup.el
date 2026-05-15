@@ -53,9 +53,9 @@
           (lambda ()
             (setq-local completion-at-point-functions
                         (list (cape-capf-super
+                               #'cape-dict
                                #'cape-dabbrev
-                               (cape-capf-case-fold #'cape-ispell))
-                              #'cape-file))))
+                               #'cape-file)))))
 
 ;; --------------------------------------------------------------------
 ;; hledger

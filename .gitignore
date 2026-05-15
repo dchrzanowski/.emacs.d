@@ -111,3 +111,4 @@ eglot-eclipse-jdt-cache
 /tree-sitter
 /mason
 /var
+/var/*
