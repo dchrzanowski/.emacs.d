@@ -559,6 +559,12 @@
  "H" 'hledger-prev-entry
  "L" 'hledger-next-entry)
 
+;; eshell
+(general-define-key
+ :keymaps 'eshell-mode-map
+ :states '(normal insert)
+ "C-r" 'eshell-atuin-history)
+
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
