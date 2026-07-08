@@ -167,25 +167,25 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
   ;; the order is preserved by the scoring system of zoxide and is
   ;; not sorted alphabetically, like in the package by default
 
-;;   (defun zoxide-open-with (query callback &optional noninteractive)
-;;     "Search QUERY and run CALLBACK function with a selected path.
+  ;;   (defun zoxide-open-with (query callback &optional noninteractive)
+  ;;     "Search QUERY and run CALLBACK function with a selected path.
 
-;; If NONINTERACTIVE is non-nil, the callback is always called
-;; directly with the selected path as its first argument.
+  ;; If NONINTERACTIVE is non-nil, the callback is always called
+  ;; directly with the selected path as its first argument.
 
-;; This is a help function to define interactive commands like
-;; `zoxide-find-file'.  If you want to do things noninteractive, please use
-;; `zoxide-query', filter results and pass it to your function manually instead."
-;;     (let* ((results (if query
-;;                         (zoxide-query-with query)
-;;                       (zoxide-query)))
-;;            ;; Preserve zoxide's score-based ordering
-;;            (completion-extra-properties
-;;             '(:display-sort-function identity))
-;;            (default-directory (completing-read "path: " results nil t)))
-;;       (if (and (not noninteractive) (commandp callback))
-;;           (call-interactively callback)
-;;         (funcall callback default-directory))))
+  ;; This is a help function to define interactive commands like
+  ;; `zoxide-find-file'.  If you want to do things noninteractive, please use
+  ;; `zoxide-query', filter results and pass it to your function manually instead."
+  ;;     (let* ((results (if query
+  ;;                         (zoxide-query-with query)
+  ;;                       (zoxide-query)))
+  ;;            ;; Preserve zoxide's score-based ordering
+  ;;            (completion-extra-properties
+  ;;             '(:display-sort-function identity))
+  ;;            (default-directory (completing-read "path: " results nil t)))
+  ;;       (if (and (not noninteractive) (commandp callback))
+  ;;           (call-interactively callback)
+  ;;         (funcall callback default-directory))))
 
   ;; add directories browsed via dired to zoxide
   (add-hook 'dired-after-readin-hook
@@ -232,6 +232,25 @@ ALIST key value pairs represent the eyebrowse-slot and the functions to call, re
               ;; (unless (eq ibuffer-sorting-mode 'alphabetic)
               ;;   (ibuffer-do-sort-by-alphabetic))
               )))
+
+;; --------------------------------------------------------------------
+;; pulsar (visual indicator when moving point about)
+;; --------------------------------------------------------------------
+(use-package pulsar
+  :ensure t
+  :init
+  (pulsar-global-mode 1)
+  :config
+  (setq pulsar-delay 0.055)
+  (setq pulsar-iterations 5)
+  (setq pulsar-face 'pulsar-green)
+  (setq pulsar-region-face 'pulsar-yellow)
+  (setq pulsar-highlight-face 'pulsar-magenta)
+  (add-to-list 'pulsar-pulse-functions 'evil-avy-goto-word-or-subword-1 t)
+  (add-to-list 'pulsar-pulse-functions 'pop-tag-mark t)
+  (add-to-list 'pulsar-pulse-functions 'xref-find-definitions t)
+  (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-green)
+  )
 
 (provide 'navigation-setup)
 ;;; navigation-setup.el ends here
