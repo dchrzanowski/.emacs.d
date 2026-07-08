@@ -19,7 +19,9 @@
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 
 (use-package lsp-mode
-  :ensure-system-package ((pylsp                      . "yay -S python-lsp-server")
+  :ensure-system-package (
+                          ;; (pylsp                      . "yay -S python-lsp-server")
+                          (pyright                    . "yay -S pyright")
                           ;; (jdtls                      . "yay -S jdtls")
                           (gopls                      . "yay -S gopls")
                           ;; (typescript-language-server . "yay -S typescript-language-server")
@@ -31,7 +33,7 @@
          (typescript-mode . lsp)
          (gdscript-mode   . lsp)
          (csharp-mode     . lsp)
-         (python-mode     . lsp)
+         ;; (python-mode     . lsp)
          (lua-mode        . lsp)
          (go-mode         . lsp))
   :config
@@ -90,6 +92,16 @@
   :hook (dart-mode . lsp)
   :config
   (setq lsp-dart-flutter-widget-guides nil))
+
+;; --------------------------------------------------------------------
+;; python lsp (pyright)
+;; --------------------------------------------------------------------
+(use-package lsp-pyright
+  :ensure t
+  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
 
 ;; --------------------------------------------------------------------
 ;; lsp ui
