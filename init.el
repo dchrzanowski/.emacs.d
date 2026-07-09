@@ -8,6 +8,10 @@
   "Convert megabytes to bytes.  Express the value as MEGABYTES."
   (* megabytes 1024 1024))
 
+(defun gigabytes-to-bytes (gigabytes)
+  "Convert gigabytes to bytes.  Express the value as GIGABYTES."
+  (megabytes-to-bytes (* gigabytes 1024)))
+
 ;; --------------------------------------------------------------------
 ;; Early setup of garbage collection thresholds and read process max
 ;; --------------------------------------------------------------------
