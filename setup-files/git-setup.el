@@ -16,7 +16,6 @@
 ;; --------------------------------------------------------------------
 (use-package magit-delta
   :after magit
-  :ensure-system-package ((delta . "yay -S git-delta"))
   :hook (magit-mode . magit-delta-mode)
   :config
   (setq magit-delta-default-dark-theme "OneHalfDark" ))

@@ -380,11 +380,11 @@
 ;; --------------------------------------------------------------------
 ;; org agenda leader
 ;; --------------------------------------------------------------------
-(general-define-key
- :states '(normal visual emacs)
- :prefix "SPC"
- :keymaps 'org-agenda-mode-map
- "ca" 'hydra-org-agenda/body)
+;(general-define-key
+; :states '(normal visual emacs)
+; :prefix "SPC"
+; :keymaps 'org-agenda-mode-map
+; "ca" 'hydra-org-agenda/body)
 
 ;; --------------------------------------------------------------------
 ;; neotree leader

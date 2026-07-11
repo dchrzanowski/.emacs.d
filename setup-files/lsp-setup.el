@@ -19,12 +19,6 @@
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 
 (use-package lsp-mode
-  :ensure-system-package ((pylsp                      . "yay -S python-lsp-server")
-                          ;; (jdtls                      . "yay -S jdtls")
-                          (gopls                      . "yay -S gopls")
-                          ;; (typescript-language-server . "yay -S typescript-language-server")
-                          ;; (flutter                    . "yay -S flutter")
-                          (clangd                     . "yay -S clang"))
   :hook ((c-mode          . lsp)
          (c++-mode        . lsp)
          (js2-mode        . lsp)
@@ -120,7 +114,7 @@
 ;; lsp dap mode (debugging)
 ;; --------------------------------------------------------------------
 (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
-(use-package dap-java :ensure nil)
+;; (use-package dap-java :ensure nil)
 
 ;; (use-package dap-mode
 ;;   :after lsp-mode

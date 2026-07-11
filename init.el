@@ -36,7 +36,7 @@
 (require 'package)
 
 (setq package-enable-at-startup nil)
-(setq package-native-compile t) ;; native compilation
+(setq package-native-compile nil) ;; native compilation
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org"   . "https://orgmode.org/elpa/") t)
 ;; (package-initialize)  ;; use-package will deal with this instead
@@ -46,7 +46,7 @@
 ;; --------------------------------------------------------------------
 (require 'use-package)
 (setq use-package-compute-statistics nil) ;; toggle to t if you want to use M-x use-package-report
-(setq use-package-always-ensure t)
+;; (setq use-package-always-ensure t)
 
 ;; --------------------------------------------------------------------
 ;; diminish and bind-key for use-package extra awesomeness
@@ -149,18 +149,7 @@
 ;; --------------------------------------------------------------------
 ;; Emacs server
 ;; --------------------------------------------------------------------
-(add-hook 'after-init-hook #'server-start)
-
-;; --------------------------------------------------------------------
-;; Open home screen setup
-;; --------------------------------------------------------------------
-(add-hook 'after-init-hook
-          #'(lambda () (progn (eyebrowse-switch-to-window-config 7)
-                         (find-file "~/GoogleDrive/org/work_calendar.org")
-                         (split-window-horizontally)
-                         (other-window 1)
-                         (find-file "~/GoogleDrive/org/calendar.org")
-                         (eyebrowse--delete-window-config 1))))
+;; (add-hook 'after-init-hook #'server-start)
 
 ;;; Commentary:
 (provide 'init)
