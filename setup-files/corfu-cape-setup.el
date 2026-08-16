@@ -13,6 +13,7 @@
         corfu-auto-delay 0.2
         corfu-auto-prefix 2
         corfu-cycle t
+        corfu-preview-current nil
         corfu-quit-no-match 'separator)
   (global-corfu-mode 1)
   ;; show documentation popup next to corfu
@@ -34,17 +35,23 @@
 ;; --------------------------------------------------------------------
 (use-package cape
   :config
-  (setq cape-dabbrev-check-other-buffers nil)
+  (setq cape-dabbrev-check-other-buffers t)
   ;; global fallback backends
   (add-hook 'completion-at-point-functions #'cape-dabbrev t)
   (add-hook 'completion-at-point-functions #'cape-file t))
 
 ;; --------------------------------------------------------------------
-;; ispell dictionary (reuse existing word-dict)
+;; capf for yasnippet
 ;; --------------------------------------------------------------------
-(require 'ispell)
-(setq ispell-alternate-dictionary
-      (concat user-emacs-directory "word-dict/en_GB-large_cleaned.txt"))
+(use-package yasnippet-capf
+  :after (cape yasnippet)
+  :config
+  (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+
+;; (use-package yasnippet-capf
+;;   :after (cape yasnippet)
+;;   :config
+;;   (add-hook 'completion-at-point-functions #'yasnippet-capf t))
 
 ;; --------------------------------------------------------------------
 ;; ORG: dabbrev + ispell + file
@@ -53,9 +60,17 @@
           (lambda ()
             (setq-local completion-at-point-functions
                         (list (cape-capf-super
+                               #'cape-file
                                #'cape-dict
-                               #'cape-dabbrev
-                               #'cape-file)))))
+                               #'cape-dabbrev)))))
+
+;; (add-hook 'emacs-lisp-mode-hook
+;;           (lambda ()
+;;             (setq-local completion-at-point-functions
+;;                         (list (cape-capf-super
+;;                                #'cape-file
+;;                                #'yasnippet-capf
+;;                                #'cape-dabbrev)))))
 
 ;; --------------------------------------------------------------------
 ;; hledger
@@ -68,28 +83,21 @@
 ;; --------------------------------------------------------------------
 ;; LSP mode: capf only (lsp-mode registers its own capf)
 ;; --------------------------------------------------------------------
-(add-hook 'lsp-mode-hook
-          (lambda ()
-            (setq-local completion-at-point-functions
-                        (list #'lsp-completion-at-point
-                              #'cape-dabbrev))))
-
-;; --------------------------------------------------------------------
-;; yasnippet cape adapter (replaces company-yasnippet)
-;; --------------------------------------------------------------------
-(with-eval-after-load 'yasnippet
-  (add-hook 'completion-at-point-functions
-            (cape-company-to-capf #'company-yasnippet) t))
+;; (add-hook 'lsp-mode-hook
+;;           (lambda ()
+;;             (setq-local completion-at-point-functions
+;;                         (list #'lsp-completion-at-point
+;;                               #'cape-dabbrev))))
 
 ;; --------------------------------------------------------------------
 ;; restclient cape adapter (replaces company-restclient)
 ;; --------------------------------------------------------------------
-(with-eval-after-load 'restclient
-  (add-hook 'restclient-mode-hook
-            (lambda ()
-              (setq-local completion-at-point-functions
-                          (list (cape-company-to-capf #'company-restclient)
-                                #'cape-dabbrev)))))
+;; (with-eval-after-load 'restclient
+;;   (add-hook 'restclient-mode-hook
+;;             (lambda ()
+;;               (setq-local completion-at-point-functions
+;;                           (list (cape-company-to-capf #'company-restclient)
+;;                                 #'cape-dabbrev)))))
 
 (provide 'corfu-cape-setup)
 ;;; corfu-cape-setup.el ends here

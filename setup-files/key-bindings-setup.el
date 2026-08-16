@@ -279,6 +279,11 @@
 ;; corfu
 (general-define-key
  :keymaps 'corfu-map
+ "M-l" 'corfu-complete
+ "<RET>" 'corfu-insert
+ "<return>" 'corfu-insert
+ "M-i" 'corfu-quick-jump
+ "M-e" 'corfu-expand
  "M-j" 'corfu-next
  "M-k" 'corfu-previous
  "C-g" 'corfu-quit)

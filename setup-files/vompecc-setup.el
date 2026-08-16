@@ -10,7 +10,8 @@
 (use-package vertico
   :config
   (vertico-mode 1)
-  (setq vertico-cycle t))
+  (setq vertico-cycle t
+        vertico-count 15))
 
 ;; --------------------------------------------------------------------
 ;; orderless
