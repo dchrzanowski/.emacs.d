@@ -381,6 +381,12 @@
 ;; org agenda leader
 ;; --------------------------------------------------------------------
 (general-define-key
+ :keymaps 'org-agenda-mode-map
+ :states '(normal visual emacs)
+ "SPC" 'nil
+ "<SPC>" 'nil)
+
+(general-define-key
  :states '(normal visual emacs)
  :prefix "SPC"
  :keymaps 'org-agenda-mode-map
