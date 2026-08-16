@@ -10,7 +10,7 @@
 (use-package gptel
   :defer 6
   :config
-  (setq gptel-model 'gpt-5.4))
+  (setq gptel-model 'gpt-5.6-sol))
 
 (provide 'llm-setup)
 ;;; llm-setup.el ends here

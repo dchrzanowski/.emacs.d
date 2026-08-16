@@ -110,5 +110,7 @@ eglot-eclipse-jdt-cache
 /projects
 /tree-sitter
 /mason
+
 /var
-/var/*
+
+/projectile-frecency.eld
