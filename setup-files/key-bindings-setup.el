@@ -184,9 +184,8 @@
 ;; prog-mode specific
 (general-define-key
  :keymaps 'prog-mode-map
- ;; corfu: TAB just indents; corfu popup handles completion via corfu-auto
- "TAB" 'indent-for-tab-command
- "<tab>" 'indent-for-tab-command)
+ "TAB" 'dchrzan/yas-expand-or-tab-indent
+ "<tab>" 'dchrzan/yas-expand-or-tab-indent)
 
 ;; flyspell
 (general-define-key
