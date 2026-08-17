@@ -164,6 +164,11 @@
    '(tree-sitter-hl-face:punctuation ((t (:foreground "#bbc2cf"))))
    '(tree-sitter-hl-face:type\.builtin ((t (:inherit font-lock-type-face))))
    '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
+   ;; vompecc
+   ;; corfu
+   '(corfu-current ((t (:extend t :background "#42444a" :foreground "#bbc2cf"))))
+   ;; orderles
+   '(orderless-match-face-0 ((t (:background "black" :foreground "gold" :weight bold))))
    ;; window border
    '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
    ;; webmode

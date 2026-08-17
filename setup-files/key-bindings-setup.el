@@ -214,6 +214,9 @@
 ;; vertico
 (general-define-key
  :keymaps 'vertico-map
+ "M-i" 'vertico-quick-jump
+ "M-h" 'vertico-directory-up
+ "M-l" 'vertico-insert
  "M-j" 'vertico-next
  "M-k" 'vertico-previous)
 
