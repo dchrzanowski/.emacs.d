@@ -62,15 +62,19 @@
                         (list (cape-capf-super
                                #'cape-file
                                #'cape-dict
+                               #'yasnippet-capf
                                #'cape-dabbrev)))))
 
-;; (add-hook 'emacs-lisp-mode-hook
-;;           (lambda ()
-;;             (setq-local completion-at-point-functions
-;;                         (list (cape-capf-super
-;;                                #'cape-file
-;;                                #'yasnippet-capf
-;;                                #'cape-dabbrev)))))
+;; --------------------------------------------------------------------
+;; emacs lisp
+;; --------------------------------------------------------------------
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq-local completion-at-point-functions
+                        (list (cape-capf-super
+                               #'elisp-completion-at-point
+                               #'yasnippet-capf
+                               #'cape-dabbrev)))))
 
 ;; --------------------------------------------------------------------
 ;; hledger
@@ -83,11 +87,12 @@
 ;; --------------------------------------------------------------------
 ;; LSP mode: capf only (lsp-mode registers its own capf)
 ;; --------------------------------------------------------------------
-;; (add-hook 'lsp-mode-hook
-;;           (lambda ()
-;;             (setq-local completion-at-point-functions
-;;                         (list #'lsp-completion-at-point
-;;                               #'cape-dabbrev))))
+(add-hook 'lsp-mode-hook
+          (lambda ()
+            (setq-local completion-at-point-functions
+                        (list #'yasnippet-capf
+                              #'lsp-completion-at-point
+                              #'cape-dabbrev))))
 
 ;; --------------------------------------------------------------------
 ;; restclient cape adapter (replaces company-restclient)
