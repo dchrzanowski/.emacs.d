@@ -559,6 +559,12 @@
  "H" 'hledger-prev-entry
  "L" 'hledger-next-entry)
 
+;; git-timemachine
+(general-define-key
+ :keymaps 'git-timemachine-mode-map
+ :states 'motion
+ "n" 'git-timemachine-show-next-revision)
+
 ;; evil god state
 (evil-define-key 'normal global-map "," 'evil-execute-in-god-state)
 (evil-define-key 'god global-map [escape] 'evil-god-state-bail)

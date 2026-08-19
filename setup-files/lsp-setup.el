@@ -17,7 +17,6 @@
 ;; --------------------------------------------------------------------
 ;; (use-package eglot
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
-
 (use-package lsp-mode
   :hook ((c-mode          . lsp)
          (c++-mode        . lsp)
@@ -48,8 +47,7 @@
         lsp-signature-doc-lines 10
         lsp-headerline-breadcrumb-segments '(file symbols)
         lsp-headerline-breadcrumb-enable nil
-        lsp-log-io nil
-        lsp-use-plists t)
+        lsp-log-io nil)
 
   ;; disabled lsp clients
   (add-to-list 'lsp-disabled-clients '(typescript-mode . angular-ls)))
@@ -76,7 +74,6 @@
                  (expand-file-name
                   "~/.m2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar")))))
 
-
 ;; --------------------------------------------------------------------
 ;; dart lsp
 ;; --------------------------------------------------------------------
@@ -99,8 +96,8 @@
         lsp-ui-doc-position 'bottom
         lsp-ui-sideline-diagnostic-max-lines 4)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                        (lsp-ui-doc-mode 1)
-                                        (lsp-ui-sideline-mode 1))))
+                                             (lsp-ui-doc-mode 1)
+                                             (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 ;; --------------------------------------------------------------------

@@ -18,7 +18,7 @@
   "General languages ligatures."
   (setq prettify-symbols-alist
         '(("lambda" . ?λ)
-          ("return" . ?⮐)
+          ("return" . ?↲)
           ("null"   . ?∅)
           ("NULL"   . ?∅)
           ("for"    . ?∀)
@@ -56,10 +56,19 @@
 
 (defun sql-style-ligatures ()
   "SQL style languages ligatures."
-  (push '("RETURN" . ?⮐) prettify-symbols-alist)
+  (push '("RETURN" . ?↲) prettify-symbols-alist)
   (push '("IN"     . ?∈) prettify-symbols-alist)
   (push '("not in" . ?∉) prettify-symbols-alist)
   (push '("NOT IN" . ?∉) prettify-symbols-alist))
+
+(defun robot-style-ligatures ()
+  "Robot File style languages ligatures."
+  (push '("Return" . ?↲) prettify-symbols-alist)
+  (push '("In"     . ?∈) prettify-symbols-alist)
+  (push '("For"    . ?∀) prettify-symbols-alist)
+  (push '("RETURN" . ?↲) prettify-symbols-alist)
+  (push '("IN"     . ?∈) prettify-symbols-alist)
+  (push '("FOR"    . ?∀) prettify-symbols-alist))
 
 (add-hook 'prog-mode-hook       #'prog-mode-style-ligatures)
 (add-hook 'go-mode-hook         #'go-style-ligatures)
@@ -69,6 +78,7 @@
 (add-hook 'js2-mode-hook        #'js-style-ligatures)
 (add-hook 'typescript-mode-hook #'js-style-ligatures)
 (add-hook 'sql-mode-hook        #'sql-style-ligatures)
+(add-hook 'robot-mode-hook      #'robot-style-ligatures)
 
 (setq prettify-symbols-unprettify-at-point t)
 (global-prettify-symbols-mode)
