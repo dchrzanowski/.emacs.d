@@ -85,14 +85,15 @@
                         (list #'cape-dabbrev))))
 
 ;; --------------------------------------------------------------------
-;; LSP mode: capf only (lsp-mode registers its own capf)
+;; LSP mode: merge lsp + yasnippet + dabbrev via cape-capf-super
 ;; --------------------------------------------------------------------
-(add-hook 'lsp-mode-hook
+(add-hook 'lsp-completion-mode-hook
           (lambda ()
             (setq-local completion-at-point-functions
-                        (list #'yasnippet-capf
-                              #'lsp-completion-at-point
-                              #'cape-dabbrev))))
+                        (list (cape-capf-super
+                               (cape-capf-properties #'lsp-completion-at-point :exclusive 'no)
+                               #'yasnippet-capf
+                               #'cape-dabbrev)))))
 
 ;; --------------------------------------------------------------------
 ;; restclient cape adapter (replaces company-restclient)
