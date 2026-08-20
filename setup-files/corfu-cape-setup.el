@@ -59,8 +59,8 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (setq-local completion-at-point-functions
-                        (list (cape-capf-super
-                               #'cape-file
+                        (list #'cape-file
+                              (cape-capf-super
                                #'cape-dict
                                #'yasnippet-capf
                                #'cape-dabbrev)))))
