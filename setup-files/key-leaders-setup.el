@@ -39,7 +39,7 @@
  "y" 'consult-yank-pop
  "Y" 'consult-register
  "hg" 'consult-ripgrep
- "hl" 'consult-find
+ "hl" 'consult-locate
  "hw" 'consult-grep
  "hf" 'consult-find
  "hp" 'consult-projectile
