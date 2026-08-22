@@ -166,8 +166,9 @@
    '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
    ;; vompecc
    ;; corfu
+   '(corfu-annotations ((t (:foreground "gray40" :slant italic))))
    '(corfu-border ((t (:background "#51afef"))))
-   '(corfu-current ((t (:extend t :background "#5f5f5f" :foreground "#ececec"))))
+   '(corfu-current ((t (:box (:line-width (-1 . 1) :color "#51afef" :style flat-button)))))
    ;; orderles
    '(orderless-match-face-0 ((t (:foreground "gold" :weight bold))))
    '(orderless-match-face-1 ((t (:foreground "chartreuse" :weight bold))))
