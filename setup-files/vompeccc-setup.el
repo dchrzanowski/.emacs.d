@@ -71,5 +71,5 @@
 (use-package consult-projectile
   :after (consult projectile))
 
-(provide 'vompecc-setup)
-;;; vompecc-setup.el ends here
+(provide 'vompeccc-setup)
+;;; vompeccc-setup.el ends here

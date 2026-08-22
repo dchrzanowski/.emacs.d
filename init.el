@@ -84,7 +84,7 @@
 (require 'editing-assists-setup)
 (require 'evil-setup)
 (require 'project-assist-setup)
-(require 'vompecc-setup)
+(require 'vompeccc-setup)
 (require 'highlights-setup)
 (require 'hydra-setup)
 (require 'linting-setup)

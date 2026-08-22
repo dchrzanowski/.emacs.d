@@ -166,12 +166,13 @@
    '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
    ;; vompecc
    ;; corfu
-   '(corfu-current ((t (:extend t :background "#42444a" :foreground "#bbc2cf"))))
+   '(corfu-border ((t (:background "#51afef"))))
+   '(corfu-current ((t (:extend t :background "#5f5f5f" :foreground "#ececec"))))
    ;; orderles
-   '(orderless-match-face-0 ((t (:background "black" :foreground "gold" :weight bold))))
-   '(orderless-match-face-1 ((t (:background "black" :foreground "chartreuse" :weight bold))))
-   '(orderless-match-face-2 ((t (:background "black" :foreground "cyan" :weight bold))))
-   '(orderless-match-face-3 ((t (:background "black" :foreground "firebrick1" :weight bold))))
+   '(orderless-match-face-0 ((t (:foreground "gold" :weight bold))))
+   '(orderless-match-face-1 ((t (:foreground "chartreuse" :weight bold))))
+   '(orderless-match-face-2 ((t (:foreground "cyan" :weight bold))))
+   '(orderless-match-face-3 ((t (:foreground "firebrick1" :weight bold))))
    ;; window border
    '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
    ;; webmode
