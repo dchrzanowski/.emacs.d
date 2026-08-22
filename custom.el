@@ -317,6 +317,7 @@
  '(tree-sitter-hl-face:type.builtin ((t (:inherit font-lock-type-face))))
  '(tree-sitter-hl-face:variable.builtin ((t (:inherit font-lock-keyword-face))))
  '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
+ '(vertico-current ((t (:background "#131519" :box (:line-width (-1 . 1) :color "#51afef" :style flat-button)))))
  '(web-mode-html-tag-face ((t (:foreground "#db5762")))))
 (provide 'custom)
 ;;; custom.el ends here

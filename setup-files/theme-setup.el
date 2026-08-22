@@ -174,6 +174,8 @@
    '(orderless-match-face-1 ((t (:foreground "chartreuse" :weight bold))))
    '(orderless-match-face-2 ((t (:foreground "cyan" :weight bold))))
    '(orderless-match-face-3 ((t (:foreground "firebrick1" :weight bold))))
+   ;; vertico
+   '(vertico-current ((t (:background "#131519" :box (:line-width (-1 . 1) :color "#51afef" :style flat-button)))))
    ;; window border
    '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
    ;; webmode
