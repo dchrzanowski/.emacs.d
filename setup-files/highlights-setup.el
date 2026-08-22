@@ -116,7 +116,7 @@
   :config
   (setq pulsar-delay 0.055)
   (setq pulsar-iterations 5)
-  (setq pulsar-face 'pulsar-green)
+  (setq pulsar-face 'pulsar-red)
   (setq pulsar-region-face 'pulsar-yellow)
   (setq pulsar-highlight-face 'pulsar-magenta)
   (add-to-list 'pulsar-pulse-functions 'evil-avy-goto-word-or-subword-1 t)
@@ -124,7 +124,14 @@
   (add-to-list 'pulsar-pulse-functions 'xref-find-definitions t)
   (add-to-list 'pulsar-pulse-functions 'scroll-half-page-up t)
   (add-to-list 'pulsar-pulse-functions 'scroll-half-page-down t)
-  (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-green))
+  (add-to-list 'pulsar-pulse-functions 'evil-backward-paragraph t)
+  (add-to-list 'pulsar-pulse-functions 'evil-forward-paragraph t)
+  (add-to-list 'pulsar-pulse-functions 'evil-backward-sentence-begin t)
+  (add-to-list 'pulsar-pulse-functions 'evil-forward-sentence-begin t)
+  (add-to-list 'pulsar-pulse-functions 'evil-search-next t)
+  (add-to-list 'pulsar-pulse-functions 'evil-search-previous t)
+  (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-red)
+  (add-hook 'consult-after-jump-hook #'pulsar-pulse-line-red))
 
 (provide 'highlights-setup)
 ;;; highlights-setup.el ends here
