@@ -53,7 +53,8 @@
 ;; --------------------------------------------------------------------
 (use-package consult
   :config
-  (setq consult-preview-key 'any)
+  (setq consult-preview-key 'any
+        consult-line-start-from-top t)
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref))
 
