@@ -139,8 +139,8 @@
  ;; jump back
  "C-S-o" 'evil-jump-forward
  ;; scroll
- "C-k" (lambda () (interactive) (evil-scroll-up nil))
- "C-j" (lambda () (interactive) (evil-scroll-down nil))
+ "C-k" 'scroll-half-page-up
+ "C-j" 'scroll-half-page-down
  ;; args
  "L" 'evil-forward-arg
  "H" 'evil-backward-arg

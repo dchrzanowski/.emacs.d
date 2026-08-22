@@ -128,6 +128,19 @@ two curly braces, otherwise do a regular newline and indent"
   (message (buffer-file-name)))
 
 ;; --------------------------------------------------------------------
+;; evil scroll helpers
+;; --------------------------------------------------------------------
+(defun scroll-half-page-up ()
+  "Scroll up half a page."
+  (interactive)
+  (evil-scroll-up nil))
+
+(defun scroll-half-page-down ()
+  "Scroll down half a page."
+  (interactive)
+  (evil-scroll-down nil))
+
+;; --------------------------------------------------------------------
 ;; Always paste from zero for evil
 ;; --------------------------------------------------------------------
 (defun always-paste-from-j()
