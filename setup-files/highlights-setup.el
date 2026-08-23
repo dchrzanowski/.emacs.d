@@ -133,6 +133,8 @@
   (add-to-list 'pulsar-pulse-functions 'evil-search-previous t)
   (add-to-list 'pulsar-pulse-functions 'evil-search-word-backward t)
   (add-to-list 'pulsar-pulse-functions 'evil-search-word-forward t)
+  (add-to-list 'pulsar-pulse-functions 'evil-visualstar/begin-search-backward t)
+  (add-to-list 'pulsar-pulse-functions 'evil-visualstar/begin-search-forward t)
   (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-red)
   (add-hook 'consult-after-jump-hook #'pulsar-pulse-line-red))
 
