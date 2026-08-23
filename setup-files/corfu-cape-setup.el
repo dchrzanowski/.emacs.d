@@ -106,5 +106,17 @@
 ;;                           (list (cape-company-to-capf #'company-restclient)
 ;;                                 #'cape-dabbrev)))))
 
+;; --------------------------------------------------------------------
+;; kind-icon icons for corfu
+;; --------------------------------------------------------------------
+(use-package kind-icon
+  :ensure t
+  :after corfu
+  :custom
+  (kind-icon-blend-background t)
+  (kind-icon-default-face 'corfu-default) ; only needed with blend-background
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
 (provide 'corfu-cape-setup)
 ;;; corfu-cape-setup.el ends here
