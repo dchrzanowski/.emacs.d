@@ -171,9 +171,9 @@
    '(corfu-current ((t (:background "gray25" :foreground "#bbc2cf"))))
    ;; orderless
    '(orderless-match-face-0 ((t (:foreground "gold" :weight bold))))
-   '(orderless-match-face-1 ((t (:foreground "chartreuse" :weight bold))))
-   '(orderless-match-face-2 ((t (:foreground "cyan" :weight bold))))
-   '(orderless-match-face-3 ((t (:foreground "firebrick1" :weight bold))))
+   '(orderless-match-face-1 ((t (:foreground "firebrick1" :weight bold))))
+   '(orderless-match-face-2 ((t (:foreground "chartreuse" :weight bold))))
+   '(orderless-match-face-3 ((t (:foreground "cyan" :weight bold))))
    ;; vertico
    '(vertico-current ((t (:extend t :background "gray25"))))
    ;; window border
