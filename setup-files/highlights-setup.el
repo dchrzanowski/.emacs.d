@@ -138,5 +138,14 @@
   (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-red)
   (add-hook 'consult-after-jump-hook #'pulsar-pulse-line-red))
 
+;; --------------------------------------------------------------------
+;; all the icons
+;; --------------------------------------------------------------------
+(use-package all-the-icons)
+(use-package all-the-icons-dired
+  :config
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+
+
 (provide 'highlights-setup)
 ;;; highlights-setup.el ends here
