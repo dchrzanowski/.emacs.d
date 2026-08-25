@@ -109,17 +109,17 @@
 ;; --------------------------------------------------------------------
 ;; kind-icon icons for corfu
 ;; --------------------------------------------------------------------
-(use-package kind-icon
-  :ensure t
-  :after corfu
-  :custom
-  (kind-icon-blend-background t)
-  (kind-icon-default-face 'corfu-default) ; only needed with blend-background
-  :config
-  (setq kind-icon-default-style
-        '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.9 :scale 1.0
-                   :background nil))
-  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+;; (use-package kind-icon
+;;   :ensure t
+;;   :after corfu
+;;   :custom
+;;   (kind-icon-blend-background t)
+;;   (kind-icon-default-face 'corfu-default) ; only needed with blend-background
+;;   :config
+;;   (setq kind-icon-default-style
+;;         '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.9 :scale 1.0
+;;                    :background nil))
+;;   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (provide 'corfu-cape-setup)
 ;;; corfu-cape-setup.el ends here
