@@ -85,20 +85,20 @@
 ;; --------------------------------------------------------------------
 ;; dart lsp
 ;; --------------------------------------------------------------------
-(use-package lsp-dart
-  :hook (dart-mode . lsp)
-  :config
-  (setq lsp-dart-flutter-widget-guides nil))
+;; (use-package lsp-dart
+;;   :hook (dart-mode . lsp)
+;;   :config
+;;   (setq lsp-dart-flutter-widget-guides nil))
 
 ;; --------------------------------------------------------------------
 ;; python lsp (pyright)
 ;; --------------------------------------------------------------------
-(use-package lsp-pyright
-  :ensure t
-  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))  ; or lsp-deferred
+;; (use-package lsp-pyright
+;;   :ensure t
+;;   :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+;;   :hook (python-mode . (lambda ()
+;;                          (require 'lsp-pyright)
+;;                          (lsp))))  ; or lsp-deferred
 
 ;; --------------------------------------------------------------------
 ;; lsp ui

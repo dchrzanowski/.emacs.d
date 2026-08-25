@@ -20,12 +20,12 @@
 ;; --------------------------------------------------------------------
 ;; Eshell syntax highlight
 ;; --------------------------------------------------------------------
-(use-package eshell-syntax-highlighting
-  :after eshell
-  :ensure t
-  :init
-  ;; Enable in all Eshell buffers.
-  (eshell-syntax-highlighting-global-mode +1))
+;; (use-package eshell-syntax-highlighting
+;;   :after eshell
+;;   :ensure t
+;;   :init
+;;   ;; Enable in all Eshell buffers.
+;;   (eshell-syntax-highlighting-global-mode +1))
 
 ;; --------------------------------------------------------------------
 ;; eshell pop
@@ -44,12 +44,12 @@
 ;; --------------------------------------------------------------------
 ;; eshell atuin integration
 ;; --------------------------------------------------------------------
-(use-package eshell-atuin
-  :after eshell
-  :config
-  (setq eshell-atuin-filter-mode 'global)
-  (setq eshell-atuin-search-options '("--limit" "10000"))
-  (eshell-atuin-mode))
+;; (use-package eshell-atuin
+;;   :after eshell
+;;   :config
+;;   (setq eshell-atuin-filter-mode 'global)
+;;   (setq eshell-atuin-search-options '("--limit" "10000"))
+;;   (eshell-atuin-mode))
 
 (provide 'shell-setup)
 ;;; shell-setup.el ends here
