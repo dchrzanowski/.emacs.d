@@ -9,6 +9,10 @@
   "Convert megabytes to bytes.  Express the value as MEGABYTES."
   (* megabytes 1024 1024))
 
+(defun gigabytes-to-bytes (gigabytes)
+  "Convert gigabytes to bytes.  Express the value as GIGABYTES."
+  (megabytes-to-bytes (* gigabytes 1024)))
+
 ;; --------------------------------------------------------------------
 ;; Early setup of garbage collection thresholds and read process max
 ;; --------------------------------------------------------------------
@@ -72,7 +76,7 @@
 (require 'help-setup)
 (require 'custom-functions)
 (require 'saved-macros)
-(require 'company-settings-setup)
+(require 'corfu-cape-setup)
 (require 'eldoc-setup)
 (require 'navigation-setup)
 (require 'bookmarks-setup)
@@ -81,7 +85,7 @@
 (require 'editing-assists-setup)
 (require 'evil-setup)
 (require 'project-assist-setup)
-(require 'helm-setup)
+(require 'vompeccc-setup)
 (require 'highlights-setup)
 (require 'hydra-setup)
 (require 'linting-setup)

@@ -106,7 +106,6 @@
          evil-mc-cursor-variables))
   (add-hook 'evil-mc-before-cursors-created (lambda () (setq-default evil-move-cursor-back t)))
   (add-hook 'evil-mc-after-cursors-deleted (lambda () (setq-default evil-move-cursor-back nil)))
-  (advice-add 'helm-swoop--edit :after #'evil-mc-mode)
   (global-evil-mc-mode 1)
 
   (add-to-list 'evil-mc-custom-known-commands

@@ -164,6 +164,18 @@
    '(tree-sitter-hl-face:punctuation ((t (:foreground "#bbc2cf"))))
    '(tree-sitter-hl-face:type\.builtin ((t (:inherit font-lock-type-face))))
    '(tree-sitter-hl-face:variable\.builtin ((t (:inherit font-lock-keyword-face))))
+   ;; vompecc
+   ;; corfu
+   '(corfu-annotations ((t (:foreground "#51afef" :slant italic))))
+   '(corfu-border ((t (:background "#51afef"))))
+   '(corfu-current ((t (:background "gray25" :foreground "#bbc2cf"))))
+   ;; orderless
+   '(orderless-match-face-0 ((t (:foreground "gold" :weight bold))))
+   '(orderless-match-face-1 ((t (:foreground "firebrick1" :weight bold))))
+   '(orderless-match-face-2 ((t (:foreground "chartreuse" :weight bold))))
+   '(orderless-match-face-3 ((t (:foreground "cyan" :weight bold))))
+   ;; vertico
+   '(vertico-current ((t (:extend t :background "gray25"))))
    ;; window border
    '(vertical-border ((t (:background "gray13" :foreground "gray13"))))
    ;; webmode

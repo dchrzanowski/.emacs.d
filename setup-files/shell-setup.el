@@ -5,7 +5,7 @@
 ;; --------------------------------------------------------------------
 
 ;; --------------------------------------------------------------------
-;; shell pop
+;; Eshell
 ;; --------------------------------------------------------------------
 (use-package eshell
   :config
@@ -20,15 +20,16 @@
 ;; --------------------------------------------------------------------
 ;; Eshell syntax highlight
 ;; --------------------------------------------------------------------
-;; FIXME: fails to native compile, but works
-;; (use-package eshell-syntax-highlighting
-;;   :after eshell
-;;   :ensure t
-;;   :init
-;;   ;; Enable in all Eshell buffers.
-;;   (eshell-syntax-highlighting-global-mode +1))
+(use-package eshell-syntax-highlighting
+  :after eshell
+  :ensure t
+  :init
+  ;; Enable in all Eshell buffers.
+  (eshell-syntax-highlighting-global-mode +1))
 
-
+;; --------------------------------------------------------------------
+;; eshell pop
+;; --------------------------------------------------------------------
 (use-package shell-pop
   :defer t
   :config
@@ -39,6 +40,16 @@
    '(shell-pop-window-size 30)
    '(shell-pop-full-span t)
    '(shell-pop-window-position "bottom")))
+
+;; --------------------------------------------------------------------
+;; eshell atuin integration
+;; --------------------------------------------------------------------
+(use-package eshell-atuin
+  :after eshell
+  :config
+  (setq eshell-atuin-filter-mode 'global)
+  (setq eshell-atuin-search-options '("--limit" "10000"))
+  (eshell-atuin-mode))
 
 (provide 'shell-setup)
 ;;; shell-setup.el ends here

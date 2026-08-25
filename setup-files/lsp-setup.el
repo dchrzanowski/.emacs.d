@@ -18,13 +18,21 @@
 ;; (use-package eglot
 ;;   :ensure-system-package ((javascript-typescript-langserver . "sudo npm i -g javascript-typescript-langserver")))
 (use-package lsp-mode
+  ;; :ensure-system-package (
+                          ;; (pylsp                      . "yay -S python-lsp-server")
+                          ;; (pyright                    . "yay -S pyright")
+                          ;; (jdtls                      . "yay -S jdtls")
+                          ;; (gopls                      . "yay -S gopls")
+                          ;; (typescript-language-server . "yay -S typescript-language-server")
+                          ;; (flutter                    . "yay -S flutter")
+                          ;; (clangd                     . "yay -S clang"))
   :hook ((c-mode          . lsp)
          (c++-mode        . lsp)
          (js2-mode        . lsp)
          (typescript-mode . lsp)
          (gdscript-mode   . lsp)
          (csharp-mode     . lsp)
-         (python-mode     . lsp)
+         ;; (python-mode     . lsp)
          (lua-mode        . lsp)
          (go-mode         . lsp))
   :config
@@ -83,6 +91,16 @@
   (setq lsp-dart-flutter-widget-guides nil))
 
 ;; --------------------------------------------------------------------
+;; python lsp (pyright)
+;; --------------------------------------------------------------------
+(use-package lsp-pyright
+  :ensure t
+  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp))))  ; or lsp-deferred
+
+;; --------------------------------------------------------------------
 ;; lsp ui
 ;; --------------------------------------------------------------------
 (use-package lsp-ui
@@ -96,16 +114,9 @@
         lsp-ui-doc-position 'bottom
         lsp-ui-sideline-diagnostic-max-lines 4)
   (add-hook 'lsp-ui-mode-hook #'(lambda () (progn
-                                             (lsp-ui-doc-mode 1)
-                                             (lsp-ui-sideline-mode 1))))
+                                        (lsp-ui-doc-mode 1)
+                                        (lsp-ui-sideline-mode 1))))
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-
-;; --------------------------------------------------------------------
-;; helm-lsp
-;; --------------------------------------------------------------------
-(use-package helm-lsp
-  :after lsp-mode
-  :commands helm-lsp-workspace-symbol)
 
 ;; --------------------------------------------------------------------
 ;; lsp dap mode (debugging)

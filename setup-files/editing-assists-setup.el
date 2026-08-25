@@ -129,5 +129,11 @@
   ;; (setq separedit-write-file-when-execute-save t)
   (setq separedit-remove-trailing-spaces-in-comment t))
 
+;; --------------------------------------------------------------------
+;; wgrep (editable grep buffers, used with embark-export)
+;; --------------------------------------------------------------------
+(use-package wgrep
+  :defer t)
+
 (provide 'editing-assists-setup)
 ;;; editing-assists-setup.el ends here

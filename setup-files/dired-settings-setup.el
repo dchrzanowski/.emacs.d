@@ -9,7 +9,9 @@
       dired-auto-revert-buffer t
       dired-recursive-copies 'always
       dired-recursive-deletes 'always
-      dired-omit-verbose nil)
+      dired-omit-verbose nil
+      large-file-warning-threshold (gigabytes-to-bytes 10)
+      dired-async-large-file-warning-threshold (gigabytes-to-bytes 10))
 
 ;; default launchers for certain file types
 (setq dired-guess-shell-alist-user

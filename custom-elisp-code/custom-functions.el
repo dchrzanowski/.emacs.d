@@ -16,6 +16,25 @@ two curly braces, otherwise do a regular newline and indent"
          (indent-for-tab-command)))
 
 ;; --------------------------------------------------------------------
+;; Expand yas or indent tab
+;; --------------------------------------------------------------------
+(defun dchrzan/do-yas-expand ()
+  "Do yasnippet expand with a nil fallback if none are found."
+  (let ((yas/fallback-behavior 'return-nil))
+    (yas/expand)))
+
+(defun dchrzan/yas-expand-or-tab-indent ()
+  "Do yas expand or tab indent."
+  (interactive)
+  (cond
+   ((minibufferp)
+    (minibuffer-complete))
+   (t
+    (if (or (not yas/minor-mode)
+            (null (dchrzan/do-yas-expand)))
+        (indent-for-tab-command)))))
+
+;; --------------------------------------------------------------------
 ;; Set tabs mode
 ;; --------------------------------------------------------------------
 (defun dchrzan/tabs-instead-of-spaces ()
@@ -107,6 +126,19 @@ two curly braces, otherwise do a regular newline and indent"
   "Show the full path file name in the minibuffer."
   (interactive)
   (message (buffer-file-name)))
+
+;; --------------------------------------------------------------------
+;; evil scroll helpers
+;; --------------------------------------------------------------------
+(defun scroll-half-page-up ()
+  "Scroll up half a page."
+  (interactive)
+  (evil-scroll-up nil))
+
+(defun scroll-half-page-down ()
+  "Scroll down half a page."
+  (interactive)
+  (evil-scroll-down nil))
 
 ;; --------------------------------------------------------------------
 ;; Always paste from zero for evil
