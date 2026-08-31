@@ -32,7 +32,7 @@
          (typescript-mode . lsp)
          (gdscript-mode   . lsp)
          (csharp-mode     . lsp)
-         ;; (python-mode     . lsp)
+         (python-mode     . lsp)
          (lua-mode        . lsp)
          (go-mode         . lsp))
   :config
