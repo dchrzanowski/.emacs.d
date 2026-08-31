@@ -109,34 +109,33 @@
 ;; --------------------------------------------------------------------
 ;; pulsar (visual indicator when moving point about)
 ;; --------------------------------------------------------------------
-;; (use-package pulsar
-;;   :ensure t
-;;   :init
-;;   (pulsar-global-mode 1)
-;;   :config
-;;   (setq pulsar-delay 0.055)
-;;   (setq pulsar-iterations 5)
-;;   (setq pulsar-face 'pulsar-red)
-;;   (setq pulsar-region-face 'pulsar-yellow)
-;;   (setq pulsar-highlight-face 'pulsar-magenta)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-avy-goto-word-or-subword-1 t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-avy-goto-char-timer t)
-;;   (add-to-list 'pulsar-pulse-functions 'pop-tag-mark t)
-;;   (add-to-list 'pulsar-pulse-functions 'xref-find-definitions t)
-;;   (add-to-list 'pulsar-pulse-functions 'scroll-half-page-up t)
-;;   (add-to-list 'pulsar-pulse-functions 'scroll-half-page-down t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-backward-paragraph t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-forward-paragraph t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-backward-sentence-begin t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-forward-sentence-begin t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-search-next t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-search-previous t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-search-word-backward t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-search-word-forward t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-visualstar/begin-search-backward t)
-;;   (add-to-list 'pulsar-pulse-functions 'evil-visualstar/begin-search-forward t)
-;;   (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-red)
-;;   (add-hook 'consult-after-jump-hook #'pulsar-pulse-line-red))
+(use-package pulsar
+  :init
+  (pulsar-global-mode 1)
+  :config
+  (setq pulsar-delay 0.055)
+  (setq pulsar-iterations 5)
+  (setq pulsar-face 'pulsar-red)
+  (setq pulsar-region-face 'pulsar-yellow)
+  (setq pulsar-highlight-face 'pulsar-magenta)
+  (add-to-list 'pulsar-pulse-functions 'evil-avy-goto-word-or-subword-1 t)
+  (add-to-list 'pulsar-pulse-functions 'evil-avy-goto-char-timer t)
+  (add-to-list 'pulsar-pulse-functions 'pop-tag-mark t)
+  (add-to-list 'pulsar-pulse-functions 'xref-find-definitions t)
+  (add-to-list 'pulsar-pulse-functions 'scroll-half-page-up t)
+  (add-to-list 'pulsar-pulse-functions 'scroll-half-page-down t)
+  (add-to-list 'pulsar-pulse-functions 'evil-backward-paragraph t)
+  (add-to-list 'pulsar-pulse-functions 'evil-forward-paragraph t)
+  (add-to-list 'pulsar-pulse-functions 'evil-backward-sentence-begin t)
+  (add-to-list 'pulsar-pulse-functions 'evil-forward-sentence-begin t)
+  (add-to-list 'pulsar-pulse-functions 'evil-search-next t)
+  (add-to-list 'pulsar-pulse-functions 'evil-search-previous t)
+  (add-to-list 'pulsar-pulse-functions 'evil-search-word-backward t)
+  (add-to-list 'pulsar-pulse-functions 'evil-search-word-forward t)
+  (add-to-list 'pulsar-pulse-functions 'evil-visualstar/begin-search-backward t)
+  (add-to-list 'pulsar-pulse-functions 'evil-visualstar/begin-search-forward t)
+  (add-hook 'eyebrowse-post-window-switch-hook #'pulsar-pulse-line-red)
+  (add-hook 'consult-after-jump-hook #'pulsar-pulse-line-red))
 
 ;; --------------------------------------------------------------------
 ;; all the icons
@@ -146,6 +145,19 @@
   :config
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
+;; --------------------------------------------------------------------
+;; kind-icon icons for corfu
+;; --------------------------------------------------------------------
+(use-package kind-icon
+  :after corfu
+  :custom
+  (kind-icon-blend-background t)
+  (kind-icon-default-face 'corfu-default) ; only needed with blend-background
+  :config
+  (setq kind-icon-default-style
+        '(:padding 0 :stroke 0 :margin 0 :radius 0 :height 0.9 :scale 1.0
+                   :background nil))
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (provide 'highlights-setup)
 ;;; highlights-setup.el ends here
