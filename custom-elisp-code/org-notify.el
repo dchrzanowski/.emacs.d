@@ -1,4 +1,4 @@
-;;; org-notify.el --- Notifications for Org-mode
+;;; org-notify.el --- Notifications for Org-mode  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2012-2018  Free Software Foundation, Inc.
 

@@ -1,4 +1,4 @@
-;;; bookmark+-mac.el --- Macros for Bookmark+.
+;;; bookmark+-mac.el --- Macros for Bookmark+.  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: bookmark+-mac.el
 ;; Description: Macros for Bookmark+.
@@ -77,7 +77,7 @@
 ;;      updated macros.)
 ;;
 ;;    ******************
- 
+
 ;;(@> "Index")
 ;;
 ;;  If you have library `linkd.el' and Emacs 22 or later, load
@@ -90,7 +90,7 @@
 ;;  (@> "Things Defined Here")
 ;;  (@> "Functions")
 ;;  (@> "Macros")
- 
+
 ;;(@* "Things Defined Here")
 ;;
 ;;  Things Defined Here
@@ -140,7 +140,7 @@
 ;; bookmark-bmenu-surreptitiously-rebuild-list, bookmark-get-bookmark,
 ;; bookmark-get-filename
 
- 
+
 ;;(@* "Functions")
 
 ;; Some general Renamings.
@@ -176,7 +176,7 @@
   (if (fboundp 'replace-regexp-in-string) ; Emacs > 20.
       (replace-regexp-in-string regexp rep string fixedcase literal subexp start)
     (if (string-match regexp string) (replace-match rep nil nil string) string))) ; Emacs 20
- 
+
 ;;(@* "Macros")
 
 ;;; Macros -----------------------------------------------------------

@@ -1,4 +1,4 @@
-;;; bookmark+-key.el --- Bookmark+ key and menu bindings.
+;;; bookmark+-key.el --- Bookmark+ key and menu bindings.  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: bookmark+-key.el
 ;; Description: Bookmark+ key and menu bindings.
@@ -209,7 +209,7 @@ there are such bookmarks can take a little time."
 (defvar w3m-mode-map)                   ; In `w3m.el'.
 (defvar woman-menu)                     ; In `woman.el'.
 (defvar woman-mode-map)                 ; In `woman.el'.
- 
+
 ;;(@* "Keymaps")
 ;;; Keymaps ----------------------------------------------------------
 
@@ -950,7 +950,7 @@ Menu for bookmarks that target this file/buffer.")
   "Set a bookmark, prompting for the name."
   (interactive)
   (call-interactively #'bmkp-bookmark-set-confirm-overwrite))
-  
+
 (define-key bmkp-set-bookmark-menu [bmkp-make-function-bookmark]
   '(menu-item "Function Bookmark..." bmkp-make-function-bookmark
     :help "Create a bookmark that will invoke a function when \"jumped\" to"))

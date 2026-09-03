@@ -1,4 +1,4 @@
-;;; bookmark+-1.el - First part of package Bookmark+.
+;;; bookmark+-1.el - First part of package Bookmark+.  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: bookmark+-1.el
 ;; Description: First part of package Bookmark+.

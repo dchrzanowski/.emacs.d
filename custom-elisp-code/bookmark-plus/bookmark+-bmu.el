@@ -1,4 +1,4 @@
-;;; bookmark+-bmu.el --- Bookmark+ code for the `*Bookmark List*' (bmenu).
+;;; bookmark+-bmu.el --- Bookmark+ code for the `*Bookmark List*' (bmenu).  -*- lexical-binding: t; -*-
 ;;
 ;; Filename: bookmark+-bmu.el
 ;; Description: Bookmark+ code for the `*Bookmark List*' (bmenu).
@@ -66,7 +66,7 @@
 ;;
 ;;    (The commentary links in #1 and #3 work only if you have library
 ;;    `bookmark+-doc.el' in your `load-path'.)
- 
+
 ;;(@> "Index")
 ;;
 ;;  Index
@@ -96,7 +96,7 @@
 ;;    (@> "Sorting - Commands")
 ;;    (@> "Other Bookmark+ Functions (`bmkp-*')")
 ;;  (@> "Keymaps")
- 
+
 ;;(@* "Things Defined Here")
 ;;
 ;;  Things Defined Here
@@ -487,7 +487,7 @@ Elements of ALIST that are not conses are ignored."
 (defvar minibuffer-prompt-properties)   ; Emacs 22+.
 (defvar tramp-file-name-regexp)         ; In `tramp.el'.
 
- 
+
 ;;(@* "Utility Functions")
 ;;; Utility Functions ------------------------------------------------
 
@@ -518,7 +518,7 @@ whatever OLD is bound to in MAP, or in OLDMAP, if provided."
 (if (fboundp 'pop-to-buffer-same-window)
     (defalias 'bmkp--pop-to-buffer-same-window 'pop-to-buffer-same-window)
   (defalias 'bmkp--pop-to-buffer-same-window 'switch-to-buffer))
- 
+
 ;;(@* "Faces (Customizable)")
 ;;; Faces (Customizable) ---------------------------------------------
 
@@ -702,7 +702,7 @@ Don't forget to mention your Emacs and library versions."))
                         (t (:foreground "Blue")))
   "*Face used to highlight the headings in various Bookmark+ buffers."
   :group 'bookmark-plus :version "22.1" :group 'faces)
- 
+
 ;;(@* "User Options (Customizable)")
 ;;; User Options (Customizable) --------------------------------------
 
@@ -859,7 +859,7 @@ unreadable by Emacs 20.  To convert the file to be usable with Emacs
 20 you must, in Emacs 21 or later, set this to nil and then do `M-x
 bookmark-save'."
   :type 'boolean :group 'bookmark-plus)
- 
+
 ;;(@* "Internal Variables")
 ;;; Internal Variables -----------------------------------------------
 
@@ -903,7 +903,7 @@ This includes possibly omitted bookmarks, that is, bookmarks listed in
 
 ;; This is a general variable.  It is in this file because it is used only in the bmenu code.
 (defvar bmkp-last-bmenu-bookmark nil "The name of the last bookmark current in the bookmark list.")
- 
+
 ;;(@* "Compatibility Code for Older Emacs Versions")
 ;;; Compatibility Code for Older Emacs Versions ----------------------
 
@@ -924,7 +924,7 @@ prompting with completion for the new path."
           (thispoint  (point)))
       (when bmk (bookmark-relocate bmk))
       (goto-char thispoint))))
- 
+
 ;;(@* "Menu List Replacements (`bookmark-bmenu-*')")
 ;;; Menu List Replacements (`bookmark-bmenu-*') ----------------------
 
@@ -2209,7 +2209,7 @@ for confirmation."
   (bmkp-bmenu-barf-if-not-in-menu-list)
   (bookmark-bmenu-ensure-position)
   (let ((newname  (bookmark-rename (bookmark-bmenu-bookmark)))) (bmkp-bmenu-goto-bookmark-named newname)))
- 
+
 ;;(@* "Bookmark+ Functions (`bmkp-*')")
 ;;; Bookmark+ Functions (`bmkp-*') -----------------------------------
 
@@ -3776,7 +3776,7 @@ Non-interactively, non-nil MSG-P means display messages."
    (let ((tgs  ())
          (all  (and current-prefix-arg  (>= (prefix-numeric-value current-prefix-arg) 0)))
          (omt  (and current-prefix-arg  (<  (prefix-numeric-value current-prefix-arg) 0))))
-           
+
      (dolist (bmk  (bmkp-bmenu-marked-or-this-or-all all omt))
        (setq tgs  (bmkp-set-union tgs (bmkp-get-tags bmk))))
      (unless tgs (error "No tags to remove"))
@@ -5509,7 +5509,7 @@ are marked or ALLP is non-nil."
             (bmkp-marked-bookmarks-only)
           (bmkp-remove-if #'bmkp-omitted-bookmark-p (bmkp-marked-bookmarks-only)))
         (and (bookmark-bmenu-bookmark)  (list (bookmark-get-bookmark (bookmark-bmenu-bookmark)))))))
- 
+
 ;;(@* "Keymaps")
 ;;; Keymaps ----------------------------------------------------------
 
