@@ -55,8 +55,6 @@
    '(calfw-face-toolbar ((t (:foreground nil :background nil))))
    '(calfw-face-toolbar-button-off ((t (:foreground "gray70"))))
    '(calfw-face-toolbar-button-on ((t (:foreground "white" :weight bold))))
-   ;; company
-   '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
    ;; cursor
    '(cursor ((t (:background "#FF0000"))))
    ;; dired
@@ -89,16 +87,8 @@
    '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
    ;; header-line
    '(header-line ((t (:inherit mode-line :background "#131519" :foreground "white" :box (:line-width (6 . 1) :color "#242830")))))
-   ;; helm
-   '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
-   '(helm-ff-directory ((t (:foreground "deep sky blue"))))
-   '(helm-selection ((t (:inherit bold :background "#0b0c0e"))))
-   ;; helm-posframe
+   ;; internal border
    '(internal-border ((t (:background "#51afef"))))
-   ;; helm swoop
-   '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "gold" :weight bold))))
-   '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
-   '(helm-swoop-target-word-face ((t (:background "black" :foreground "gold" :weigth bold))))
    ;; highlight line
    '(hl-line ((t (:background "#0b0c0e"))))
    ;; highlight thing

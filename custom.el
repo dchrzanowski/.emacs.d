@@ -18,38 +18,6 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(browse-url-browser-function 'browse-url-firefox)
  '(column-number-mode t)
- '(company-backends
-   '(company-bbdb company-semantic company-clang company-cmake
-                  company-capf company-files
-                  (company-dabbrev-code company-keywords
-                                        company-web-html company-etags
-                                        company-gtags)
-                  company-oddmuse))
- '(company-begin-commands
-   '(self-insert-command org-self-insert-command
-                         orgtbl-self-insert-command c-scope-operator
-                         c-electric-colon c-electric-lt-gt
-                         c-electric-slash))
- '(company-dabbrev-code-everywhere t)
- '(company-dabbrev-code-modes
-   '(prog-mode batch-file-mode csharp-mode css-mode erlang-mode
-               haskell-mode jde-mode lua-mode python-mode web-mode
-               js2-mode java-mode typescript-mode))
- '(company-dabbrev-code-other-buffers 'all)
- '(company-dabbrev-downcase nil)
- '(company-frontends
-   '(company-pseudo-tooltip-unless-just-one-frontend
-     company-echo-metadata-frontend
-     company-preview-if-just-one-frontend))
- '(company-gtags-modes '(prog-mode jde-mode python-mode))
- '(company-idle-delay 0.2)
- '(company-insertion-triggers '(32 41 46))
- '(company-minimum-prefix-length 2)
- '(company-show-quick-access t)
- '(company-tooltip-align-annotations t)
- '(company-tooltip-idle-delay 0.2)
- '(company-tooltip-minimum-width 40)
- '(company-transformers '(company-sort-by-backend-importance))
  '(cua-rectangle-mark-key [C-M-return])
  '(cursor-type 'bar)
  '(custom-safe-themes
@@ -115,9 +83,6 @@
  '(global-semantic-decoration-mode nil)
  '(global-semantic-idle-scheduler-mode t)
  '(global-semanticdb-minor-mode t)
- '(helm-external-programs-associations '(("html" . "chromium")))
- '(helm-minibuffer-history-key "M-p")
- '(helm-swoop-split-with-multiple-windows t)
  '(holiday-bahai-holidays nil)
  '(holiday-christian-holidays nil)
  '(holiday-general-holidays nil)
@@ -170,8 +135,6 @@
  '(shell-pop-window-position "bottom")
  '(shell-pop-window-size 30)
  '(show-paren-mode t)
- '(split-height-threshold 5)
- '(split-width-threshold 5)
  '(tabbar-separator '(1))
  '(tide-filter-out-warning-completions nil)
  '(tool-bar-mode nil)
@@ -225,7 +188,6 @@
  '(calfw-face-toolbar ((t (:foreground nil :background nil))))
  '(calfw-face-toolbar-button-off ((t (:foreground "gray70"))))
  '(calfw-face-toolbar-button-on ((t (:foreground "white" :weight bold))))
- '(company-template-field ((t (:background "gray14" :foreground "SeaGreen4"))))
  '(corfu-annotations ((t (:foreground "#51afef" :slant italic))))
  '(corfu-border ((t (:background "#51afef"))))
  '(corfu-current ((t (:background "gray25" :foreground "#bbc2cf"))))
@@ -256,12 +218,6 @@
  '(font-lock-keyword-face ((t (:foreground "#51afef" :slant italic))))
  '(font-lock-variable-name-face ((t (:foreground "#db5762"))))
  '(header-line ((t (:inherit mode-line :background "#131519" :foreground "white" :box (:line-width (6 . 1) :color "#242830")))))
- '(helm-buffer-directory ((t (:foreground "deep sky blue" :weight bold))))
- '(helm-ff-directory ((t (:foreground "deep sky blue"))))
- '(helm-selection ((t (:inherit bold :background "#0b0c0e"))))
- '(helm-swoop-target-line-block-face ((t (:background "black" :foreground "chartreuse3"))))
- '(helm-swoop-target-line-face ((t (:background "#AAAAAA" :foreground "gray4" :inverse-video t))))
- '(helm-swoop-target-word-face ((t (:background "black" :foreground "chartreuse3"))))
  '(hi-yellow ((t (:background "nil" :underline "chartreuse" :weight bold))))
  '(highlight-thing ((t (:background "nil" :underline "chartreuse" :weight bold))))
  '(hl-line ((t (:background "#0b0c0e"))))

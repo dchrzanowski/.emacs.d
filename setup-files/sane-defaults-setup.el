@@ -90,6 +90,12 @@
 (setq disabled-command-function nil)
 
 ;; --------------------------------------------------------------------
+;; splitting control
+;; --------------------------------------------------------------------
+(setq split-height-threshold 0
+      split-width-threshold nil)
+
+;; --------------------------------------------------------------------
 ;; indents config
 ;; --------------------------------------------------------------------
 (setq-default indent-tabs-mode nil)  ;; do not insert tabs
