@@ -9,6 +9,7 @@
 ;; --------------------------------------------------------------------
 (global-eldoc-mode)
 (setq eldoc-idle-delay 0.2)
+(setq eldoc-help-at-pt t)
 
 ;; (use-package eldoc-box
 ;;   :config
