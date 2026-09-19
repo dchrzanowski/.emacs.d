@@ -52,10 +52,10 @@
                                  ("j" "Journal Note" entry (file+datetree "~/GoogleDrive/org/journal.org") "* %U %?")
                                  ("w" "Work Journal Note" entry (file+datetree "~/GoogleDrive/org/journal-work.org") "* %U %?")
                                  ("c" "Calfw2org" entry (file "~/GoogleDrive/org/refile.org")  "* %?\n %(calfw-org-capture-day)")))
+
    ;; --------------------------------------------------------------------
    ;; agenda
    ;; --------------------------------------------------------------------
-
    org-agenda-show-all-dates nil
    ;; org agenda files location
    org-agenda-files '("~/GoogleDrive/org/projects"
@@ -122,13 +122,17 @@
 
 ;; org-projectile
 (use-package org-projectile
-  :after org
+  :after org)
+
+;; org-project-capture
+(use-package org-project-capture
   :defer 2
+  :after org-projectile
   :config
-  (progn
-    (setq org-projectile-projects-file
-          "~/GoogleDrive/org/projects/projects_refile.org")
-    (push (org-projectile-project-todo-entry) org-capture-templates)))
+  (setq org-project-capture-default-backend (make-instance 'org-project-capture-project-backend)
+        org-project-capture-projects-file "~/GoogleDrive/org/projects/projects.org")
+  (push (org-projectile-project-todo-entry) org-capture-templates)
+  (org-project-capture-per-project))
 
 ;; org download
 (use-package org-download
